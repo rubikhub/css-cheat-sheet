@@ -14,23 +14,23 @@ Foundation of CSS — box model, cascade, specificity, inheritance, selectors, l
 | 02  | [02-the-cascade.md](beginner/02-the-cascade.md)                         | The Cascade        |
 | 03  | [03-specificity.md](beginner/03-specificity.md)                         | Specificity        |
 | 04  | [04-inheritance.md](beginner/04-inheritance.md)                         | Inheritance        |
-| 05  | [05-logical-properties.md](beginner/05-logical-properties.md)           | Logical Properties |
-| 06  | [06-basic-selectors.md](beginner/06-basic-selectors.md)                 | Basic Selectors    |
-| 07  | [07-combinators-basics.md](beginner/07-combinators-basics.md)           | Combinators        |
-| 08  | [08-color-functions-basics.md](beginner/08-color-functions-basics.md)   | Color Functions    |
-| 09  | [09-background-basics.md](beginner/09-background-basics.md)             | Backgrounds        |
-| 10  | [10-typography-basics.md](beginner/10-typography-basics.md)             | Typography         |
-| 11  | [11-border-basics.md](beginner/11-border-basics.md)                     | Borders            |
-| 12  | [12-lists-and-tables-basics.md](beginner/12-lists-and-tables-basics.md) | Lists & Tables     |
-| 13  | [13-display-and-position.md](beginner/13-display-and-position.md)       | Display & Position |
-| 14  | [14-flexbox-basics.md](beginner/14-flexbox-basics.md)                   | Flexbox Basics     |
-| 15  | [15-grid-basics.md](beginner/15-grid-basics.md)                         | Grid Basics        |
-| 16  | [16-opacity.md](beginner/16-opacity.md)                                 | Opacity            |
-| 17  | [17-pseudo-classes-basics.md](beginner/17-pseudo-classes-basics.md)     | Pseudo-classes     |
-| 18  | [18-pseudo-elements-basics.md](beginner/18-pseudo-elements-basics.md)   | Pseudo-elements    |
-| 19  | [19-cursor.md](beginner/19-cursor.md)                                   | Cursor             |
-| 20  | [20-transition-basics.md](beginner/20-transition-basics.md)             | Transitions        |
-| 21  | [21-gradients-basics.md](beginner/21-gradients-basics.md)               | Gradients          |
+| 05  | [05-basic-selectors.md](beginner/05-basic-selectors.md)                 | Basic Selectors    |
+| 06  | [06-combinators-basics.md](beginner/06-combinators-basics.md)           | Combinators        |
+| 07  | [07-color-functions-basics.md](beginner/07-color-functions-basics.md)   | Color Functions    |
+| 08  | [08-background-basics.md](beginner/08-background-basics.md)             | Backgrounds        |
+| 09  | [09-typography-basics.md](beginner/09-typography-basics.md)             | Typography         |
+| 10  | [10-border-basics.md](beginner/10-border-basics.md)                     | Borders            |
+| 11  | [11-lists-and-tables-basics.md](beginner/11-lists-and-tables-basics.md) | Lists & Tables     |
+| 12  | [12-display-and-position.md](beginner/12-display-and-position.md)       | Display & Position |
+| 13  | [13-flexbox-basics.md](beginner/13-flexbox-basics.md)                   | Flexbox Basics     |
+| 14  | [14-grid-basics.md](beginner/14-grid-basics.md)                         | Grid Basics        |
+| 15  | [15-opacity.md](beginner/15-opacity.md)                                 | Opacity            |
+| 16  | [16-pseudo-classes-basics.md](beginner/16-pseudo-classes-basics.md)     | Pseudo-classes     |
+| 17  | [17-pseudo-elements-basics.md](beginner/17-pseudo-elements-basics.md)   | Pseudo-elements    |
+| 18  | [18-cursor.md](beginner/18-cursor.md)                                   | Cursor             |
+| 19  | [19-transition-basics.md](beginner/19-transition-basics.md)             | Transitions        |
+| 20  | [20-gradients-basics.md](beginner/20-gradients-basics.md)               | Gradients          |
+| 21  | [21-logical-properties.md](beginner/21-logical-properties.md)           | Logical Properties |
 
 ---
 
