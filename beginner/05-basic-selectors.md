@@ -6,6 +6,32 @@ Fundamental ways to target HTML elements for styling.
 
 ---
 
+## Universal Selector
+
+**Syntax:** `*`
+
+Targets all elements in the document.
+
+**Values:**
+- `*` — all elements
+- `*` — commonly used with box-sizing
+
+**Use Cases:**
+- Reset default margins/padding
+- Apply box-sizing globally
+- Create CSS resets
+
+**Example:**
+```css
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+```
+
+---
+
 ## Element Selector
 
 **Syntax:** `element`
@@ -103,43 +129,17 @@ Targets a single element with a specific id attribute.
 
 ---
 
-## Universal Selector
-
-**Syntax:** `*`
-
-Targets all elements in the document.
-
-**Values:**
-- `*` — all elements
-- `*` — commonly used with box-sizing
-
-**Use Cases:**
-- Reset default margins/padding
-- Apply box-sizing globally
-- Create CSS resets
-
-**Example:**
-```css
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-```
-
----
 
 ## Attribute Selector
 
-**Syntax:** `[attribute]` | `[attribute="value"]` | `[attribute~="value"]`
+**Syntax:** `[attribute]` | `[attribute="value"]`
 
 Targets elements with specific attributes or values.
 
 **Values:**
 - `[href]` — elements with href attribute
 - `[type="text"]` — exact attribute match
-- `[class~="active"]` — word list match
-- `[data-role="button"]` — custom attributes
+
 
 **Use Cases:**
 - Style form inputs by type
@@ -157,100 +157,4 @@ Targets elements with specific attributes or values.
   color: #0066cc;
 }
 
-[data-role="button"] {
-  cursor: pointer;
-}
-```
-
----
-
-## Grouping Selector
-
-**Syntax:** `selector1, selector2, selector3`
-
-Applies the same styles to multiple selectors.
-
-**Values:**
-- `h1, h2, h3` — multiple element types
-- `.button, .link` — multiple classes
-- `#header, #footer` — multiple IDs
-- `p, li, span` — mixed selectors
-
-**Use Cases:**
-- Share common styles between elements
-- Reduce CSS repetition
-- Apply base styles to multiple elements
-
-**Example:**
-```css
-h1, h2, h3 {
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.button, .link {
-  cursor: pointer;
-  text-decoration: none;
-}
-```
-
----
-
-## Descendant Selector
-
-**Syntax:** `ancestor descendant`
-
-Targets elements nested inside another element.
-
-**Values:**
-- `div p` — p inside div
-- `.card h2` — h2 inside .card
-- `ul li` — li inside ul
-- `nav a` — a inside nav
-
-**Use Cases:**
-- Style nested elements specifically
-- Create component-specific styles
-- Target elements within containers
-
-**Example:**
-```css
-.card h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.nav a {
-  color: #333;
-  text-decoration: none;
-}
-```
-
----
-
-## Child Selector
-
-**Syntax:** `parent > child`
-
-Targets only direct children of an element.
-
-**Values:**
-- `ul > li` — direct li children of ul
-- `.nav > a` — direct a children of .nav
-- `div > p` — direct p children of div
-
-**Use Cases:**
-- Style only direct children
-- Avoid styling nested descendants
-- Create specific component styles
-
-**Example:**
-```css
-.nav > li {
-  display: inline-block;
-}
-
-.nav > li > a {
-  padding: 0.5rem 1rem;
-}
 ```

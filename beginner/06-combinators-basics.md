@@ -6,6 +6,38 @@ Ways to combine selectors based on relationship.
 
 ---
 
+## Grouping Selector
+
+**Syntax:** `selector1, selector2, selector3`
+
+Applies the same styles to multiple selectors.
+
+**Values:**
+- `h1, h2, h3` — multiple element types
+- `.button, .link` — multiple classes
+- `#header, #footer` — multiple IDs
+- `p, li, span` — mixed selectors
+
+**Use Cases:**
+- Share common styles between elements
+- Reduce CSS repetition
+- Apply base styles to multiple elements
+
+**Example:**
+```css
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.button, .link {
+  cursor: pointer;
+  text-decoration: none;
+}
+```
+
+---
+
 ## Descendant Combinator
 
 **Syntax:** `A B`

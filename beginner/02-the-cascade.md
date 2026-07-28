@@ -117,29 +117,6 @@ Least important → Most important:
 
 **Caution:** Avoid `!important` when possible. It makes CSS harder to maintain and override.
 
----
-
-## Cascade Layers
-
-CSS `@layer` lets you explicitly control layer priority:
-
-```css
-@layer base, components, utilities;
-
-@layer base {
-  p { color: black; }
-}
-
-@layer components {
-  p { color: blue; }
-}
-
-@layer utilities {
-  p { color: green; }
-}
-
-/* Result: green — utilities wins (last declared layer) */
-```
 
 ---
 

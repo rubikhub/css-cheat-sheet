@@ -67,43 +67,6 @@ a.my-class.another-class[href]:hover { color: orange; }
 
 ---
 
-## Special Cases
-
-### `:not()` — adds nothing
-
-The `:not()` pseudo-class itself adds no specificity. Only its argument counts.
-
-```css
-/* (0,0,1) — only div counts */
-div:not(.highlight) { color: red; }
-```
-
-### `:is()` — takes highest argument
-
-The `:is()` pseudo-class takes the specificity of its **most specific argument**.
-
-```css
-/* (0,0,1) — highest argument is h1 */
-:is(h1, h2, h3) { color: blue; }
-
-/* (1,0,0) — highest argument is #main */
-:is(h1, h2, #main) { color: green; }
-```
-
-### `:where()` — always zero
-
-The `:where()` pseudo-class always has specificity `(0,0,0)`, regardless of arguments.
-
-```css
-/* (0,0,0) — even with an ID in the argument */
-:where(#main) { color: red; }
-
-/* (0,0,1) — this simple selector wins */
-p { color: blue; }
-```
-
----
-
 ## Common Pitfalls
 
 ### IDs are very specific
@@ -172,5 +135,3 @@ Inline styles (`style=""`) are resolved at a different cascade step, not through
 | `.intro` | `(0,1,0)` |
 | `#main` | `(1,0,0)` |
 | `#main p.intro` | `(1,1,1)` |
-| `:where(p)` | `(0,0,0)` |
-| `:is(p, #main)` | `(1,0,0)` |

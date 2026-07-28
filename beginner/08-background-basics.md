@@ -118,114 +118,6 @@ Shorthand — combines color, image, position, repeat, size, and attachment.
 
 ---
 
-## Gradient
-
----
-
-## linear-gradient()
-
-**Syntax:** `linear-gradient(<angle>, <color-stops>)`
-
-Linear gradient — transitions colors along a straight line.
-
-**Values:**
-- `to right` — left to right
-- `to bottom` — top to bottom
-- `135deg` — diagonal
-- `red, blue` — simple two-color
-- `#6c5ce7, #a29bfe, #fd79a8` — multi-color
-- `inherit` — inherits from parent
-- `initial` — sets to default
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Create colorful hero sections
-- Add depth to buttons and cards
-
-**Example:**
-```css
-.hero {
-  background: linear-gradient(135deg, #6c5ce7, #a29bfe, #fd79a8);
-}
-
-.button {
-  background: linear-gradient(to right, #00b894, #00cec9);
-}
-```
-
----
-
-## radial-gradient()
-
-**Syntax:** `radial-gradient(<shape>, <color-stops>)`
-
-Radial gradient — radiates colors outward from a center point.
-
-**Values:**
-- `circle` — circular gradient
-- `ellipse` — elliptical gradient (default)
-- `at center` — centered position
-- `red, blue` — simple two-color
-- `#00b894, #00cec9, #0984e3` — multi-color
-- `inherit` — inherits from parent
-- `initial` — sets to default
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Create spotlight effects
-- Add depth to circular elements
-
-**Example:**
-```css
-.spotlight {
-  background: radial-gradient(circle at center, #fff, #000);
-}
-
-.circle {
-  background: radial-gradient(circle, #00b894, #0984e3);
-  border-radius: 50%;
-}
-```
-
----
-
-## conic-gradient()
-
-**Syntax:** `conic-gradient(<color-stops>)`
-
-Conic gradient — sweeps colors around a center point like a color wheel.
-
-**Values:**
-- `red, orange, yellow, green, blue` — color wheel
-- `#ff6b6b, #feca57, #48dbfb` — custom colors
-- `from 0deg` — starting angle
-- `at center` — center position
-- `inherit` — inherits from parent
-- `initial` — sets to default
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Create color wheels and pie charts
-- Add circular gradient effects
-
-**Example:**
-```css
-.color-wheel {
-  background: conic-gradient(#ff6b6b, #feca57, #48dbfb, #ff9ff3);
-  border-radius: 50%;
-}
-
-.pie {
-  background: conic-gradient(#00b894 0% 50%, #0984e3 50% 100%);
-  border-radius: 50%;
-}
-```
-
----
-
 ## Repeat & Size
 
 ---
@@ -342,5 +234,112 @@ Image placement — keyword pairs or x/y coordinates.
 
 .corner-accent {
   background-position: right 20px bottom 10px;
+}
+```
+
+
+## Gradient
+
+---
+
+## linear-gradient()
+
+**Syntax:** `linear-gradient(<angle>, <color-stops>)`
+
+Linear gradient — transitions colors along a straight line.
+
+**Values:**
+- `to right` — left to right
+- `to bottom` — top to bottom
+- `135deg` — diagonal
+- `red, blue` — simple two-color
+- `#6c5ce7, #a29bfe, #fd79a8` — multi-color
+- `inherit` — inherits from parent
+- `initial` — sets to default
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create colorful hero sections
+- Add depth to buttons and cards
+
+**Example:**
+```css
+.hero {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe, #fd79a8);
+}
+
+.button {
+  background: linear-gradient(to right, #00b894, #00cec9);
+}
+```
+
+---
+
+## radial-gradient()
+
+**Syntax:** `radial-gradient(<shape>, <color-stops>)`
+
+Radial gradient — radiates colors outward from a center point.
+
+**Values:**
+- `circle` — circular gradient
+- `ellipse` — elliptical gradient (default)
+- `at center` — centered position
+- `red, blue` — simple two-color
+- `#00b894, #00cec9, #0984e3` — multi-color
+- `inherit` — inherits from parent
+- `initial` — sets to default
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create spotlight effects
+- Add depth to circular elements
+
+**Example:**
+```css
+.spotlight {
+  background: radial-gradient(circle at center, #fff, #000);
+}
+
+.circle {
+  background: radial-gradient(circle, #00b894, #0984e3);
+  border-radius: 50%;
+}
+```
+
+---
+
+## conic-gradient()
+
+**Syntax:** `conic-gradient(<color-stops>)`
+
+Conic gradient — sweeps colors around a center point like a color wheel.
+
+**Values:**
+- `red, orange, yellow, green, blue` — color wheel
+- `#ff6b6b, #feca57, #48dbfb` — custom colors
+- `from 0deg` — starting angle
+- `at center` — center position
+- `inherit` — inherits from parent
+- `initial` — sets to default
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create color wheels and pie charts
+- Add circular gradient effects
+
+**Example:**
+```css
+.color-wheel {
+  background: conic-gradient(#ff6b6b, #feca57, #48dbfb, #ff9ff3);
+  border-radius: 50%;
+}
+
+.pie {
+  background: conic-gradient(#00b894 0% 50%, #0984e3 50% 100%);
+  border-radius: 50%;
 }
 ```
