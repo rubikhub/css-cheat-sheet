@@ -391,3 +391,9 @@ transition-delay: unset;
   transition-delay: 0.6s;
 }
 ```
+
+---
+
+[Example](../examples/intermediate/20-transition-advanced/index.html)
+
+← **Previous Topic:** [Math Functions](../intermediate/19-math-functions.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Nesting](../intermediate/21-nesting.md) →

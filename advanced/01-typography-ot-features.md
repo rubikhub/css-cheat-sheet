@@ -112,3 +112,10 @@ Defines named values for OpenType feature settings, reusable across rules.
   }
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/01-typography-ot-features/index.html)
+
+← **Previous Topic:** [Nesting](../intermediate/21-nesting.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Background Blend Mode](../advanced/02-background-blend-mode.md) →

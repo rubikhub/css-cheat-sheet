@@ -43,3 +43,9 @@ Transparency level — 0 (invisible) to 1 (opaque).
   opacity: 0.8;
 }
 ```
+
+---
+
+**[View Example](../examples/beginner/15-opacity/index.html)**
+
+← **Previous Topic:** [Grid Basics](../beginner/14-grid-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Pseudo-Classes Basics](../beginner/16-pseudo-classes-basics.md) →

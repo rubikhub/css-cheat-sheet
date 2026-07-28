@@ -1407,3 +1407,9 @@ white-space: unset;
   font-size: 0.85rem;
 }
 ```
+
+---
+
+[Example](../examples/intermediate/16-typography-advanced/index.html)
+
+← **Previous Topic:** [Pseudo Elements Advanced](../intermediate/15-pseudo-elements-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [UI & Scroll](../intermediate/17-ui-and-scroll.md) →

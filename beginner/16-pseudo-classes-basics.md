@@ -332,3 +332,9 @@ Targets the element whose ID matches the URL fragment.
   border-left: 4px solid #ffc107;
 }
 ```
+
+---
+
+**[View Example](../examples/beginner/16-pseudo-classes-basics/index.html)**
+
+← **Previous Topic:** [Opacity](../beginner/15-opacity.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Pseudo-Elements Basics](../beginner/17-pseudo-elements-basics.md) →

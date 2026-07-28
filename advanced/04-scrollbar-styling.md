@@ -53,3 +53,10 @@ scrollbar-width: initial;
   scrollbar-width: thin;
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/04-scrollbar-styling/index.html)
+
+← **Previous Topic:** [Border Image & Caret Color](../advanced/03-border-image-and-caret.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Subgrid & Named Grid Lines](../advanced/05-subgrid.md) →

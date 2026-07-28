@@ -173,3 +173,9 @@ input::placeholder {
   font-style: italic;
 }
 ```
+
+---
+
+**[View Example](../examples/beginner/17-pseudo-elements-basics/index.html)**
+
+← **Previous Topic:** [Pseudo-Classes Basics](../beginner/16-pseudo-classes-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Cursor](../beginner/18-cursor.md) →

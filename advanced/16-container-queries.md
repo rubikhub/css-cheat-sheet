@@ -125,3 +125,10 @@ Applies styles based on container dimensions or style state.
   font-size: clamp(1rem, 3cqi, 1.5rem);
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/16-container-queries/index.html)
+
+← **Previous Topic:** [CSS At-Rules — Advanced](../advanced/15-at-rules.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Selectors 2024+](../advanced/17-selectors-2024.md) →

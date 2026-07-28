@@ -461,3 +461,9 @@ form:focus-within {
   color: #333;
 }
 ```
+
+---
+
+[Example](../examples/intermediate/06-state-pseudo-classes/index.html)
+
+← **Previous Topic:** [Form Pseudo Classes](../intermediate/05-form-pseudo-classes.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Border Advanced](../intermediate/07-border-advanced.md) →

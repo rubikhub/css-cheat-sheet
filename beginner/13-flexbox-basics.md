@@ -410,3 +410,9 @@ Visual order — reorders items without changing DOM.
   order: 0;
 }
 ```
+
+---
+
+**[View Example](../examples/beginner/13-flexbox-basics/index.html)**
+
+← **Previous Topic:** [Display & Position](../beginner/12-display-and-position.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Grid Basics](../beginner/14-grid-basics.md) →

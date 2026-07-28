@@ -64,3 +64,10 @@ background-blend-mode: initial;
   background-blend-mode: overlay;
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/02-background-blend-mode/index.html)
+
+← **Previous Topic:** [Typography — OpenType & Variable Font Features](../advanced/01-typography-ot-features.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Border Image & Caret Color](../advanced/03-border-image-and-caret.md) →

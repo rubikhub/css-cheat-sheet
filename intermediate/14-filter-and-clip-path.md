@@ -189,3 +189,9 @@ clip-path: unset;
   clip-path: inset(10px 20px 30px 40px round 10px);
 }
 ```
+
+---
+
+[Example](../examples/intermediate/14-filter-and-clip-path/index.html)
+
+← **Previous Topic:** [Counters & Markers](../intermediate/13-counters-and-markers.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Pseudo Elements Advanced](../intermediate/15-pseudo-elements-advanced.md) →

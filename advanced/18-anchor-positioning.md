@@ -138,3 +138,10 @@ Defines fallback positions when the element overflows.
   position-try-fallbacks: flip-block;
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/18-anchor-positioning/index.html)
+
+← **Previous Topic:** [Selectors 2024+](../advanced/17-selectors-2024.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Scroll-Driven Animations](../advanced/19-scroll-animations.md) →

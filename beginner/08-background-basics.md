@@ -343,3 +343,10 @@ Conic gradient — sweeps colors around a center point like a color wheel.
   border-radius: 50%;
 }
 ```
+
+
+---
+
+**[View Example](../examples/beginner/08-background-basics/index.html)**
+
+← **Previous Topic:** [Color Functions Basics](../beginner/07-color-functions-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Typography Basics](../beginner/09-typography-basics.md) →

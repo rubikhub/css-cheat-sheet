@@ -92,3 +92,10 @@ animation-play-state: initial;
   animation-play-state: paused;
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/07-animation-fill-and-play-state/index.html)
+
+← **Previous Topic:** [3D Transforms](../advanced/06-3d-transforms.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Advanced Visual Effects](../advanced/08-advanced-effects.md) →

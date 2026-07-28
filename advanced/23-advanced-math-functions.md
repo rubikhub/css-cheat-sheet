@@ -201,3 +201,10 @@ h1 {
   }
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/23-advanced-math-functions/index.html)
+
+← **Previous Topic:** [Typography 2024+](../advanced/22-typography-2024.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Web Components & Shadow DOM](../advanced/24-components-and-shadow-dom.md) →

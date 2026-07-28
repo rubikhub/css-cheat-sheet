@@ -616,3 +616,9 @@ background-origin: unset;
   padding: 10px;
 }
 ```
+
+---
+
+[Example](../examples/intermediate/10-background-advanced/index.html)
+
+← **Previous Topic:** [Transform Functions](../intermediate/09-transform-functions.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Flexbox Advanced](../intermediate/11-flexbox-advanced.md) →

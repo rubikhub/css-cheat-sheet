@@ -118,3 +118,10 @@ body {
 |---------|----------|
 | `inherit` | Use parent's value |
 | `initial` | Use property's CSS default |
+
+
+---
+
+**[View Example](../examples/beginner/04-inheritance/index.html)**
+
+← **Previous Topic:** [Specificity](../beginner/03-specificity.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Basic Selectors](../beginner/05-basic-selectors.md) →

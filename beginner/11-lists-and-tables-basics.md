@@ -314,3 +314,9 @@ td {
   vertical-align: top;
 }
 ```
+
+---
+
+**[View Example](../examples/beginner/11-lists-and-tables-basics/index.html)**
+
+← **Previous Topic:** [Border Basics](../beginner/10-border-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Display & Position](../beginner/12-display-and-position.md) →

@@ -874,3 +874,9 @@ box-shadow: inset 0 2px 8px rgba(0,0,0,.6), 0 4px 12px rgba(0,0,0,.3);
   box-shadow: inset 0 2px 8px rgba(0,0,0,.6), 0 4px 12px rgba(0,0,0,.3);
 }
 ```
+
+---
+
+[Example](../examples/intermediate/07-border-advanced/index.html)
+
+← **Previous Topic:** [State Pseudo Classes](../intermediate/06-state-pseudo-classes.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Transform](../intermediate/08-transform.md) →

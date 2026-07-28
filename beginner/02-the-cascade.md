@@ -134,3 +134,10 @@ Least important → Most important:
 ## Debugging
 
 Browser DevTools shows all matching CSS rules, with losing rules crossed out. This helps you understand why a particular style is or isn't being applied.
+
+
+---
+
+**[View Example](../examples/beginner/02-the-cascade/index.html)**
+
+← **Previous Topic:** [Box Model](../beginner/01-box-model.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Specificity](../beginner/03-specificity.md) →

@@ -156,3 +156,10 @@ Derives colors from existing colors using `from`.
   background: oklch(from var(--primary) calc(l + 0.3) c h / 20%);
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/21-color-functions-advanced/index.html)
+
+← **Previous Topic:** [Scroll State Queries](../advanced/20-scroll-state.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Typography 2024+](../advanced/22-typography-2024.md) →

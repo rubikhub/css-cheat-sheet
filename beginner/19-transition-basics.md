@@ -175,3 +175,9 @@ Shorthand — combines property, duration, timing, and delay.
   transition: all 0.3s ease;
 }
 ```
+
+---
+
+**[View Example](../examples/beginner/19-transition-basics/index.html)**
+
+← **Previous Topic:** [Cursor](../beginner/18-cursor.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Gradients Basics](../beginner/20-gradients-basics.md) →

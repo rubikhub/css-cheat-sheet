@@ -790,3 +790,9 @@ animation-play-state: unset;
   animation: bounce 0.6s ease-in-out infinite;
 }
 ```
+
+---
+
+[Example](../examples/intermediate/18-animation/index.html)
+
+← **Previous Topic:** [UI & Scroll](../intermediate/17-ui-and-scroll.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Math Functions](../intermediate/19-math-functions.md) →

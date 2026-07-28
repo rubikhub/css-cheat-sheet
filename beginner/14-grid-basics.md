@@ -352,3 +352,9 @@ Vertical item alignment — overrides align-items for single item.
   align-self: end;
 }
 ```
+
+---
+
+**[View Example](../examples/beginner/14-grid-basics/index.html)**
+
+← **Previous Topic:** [Flexbox Basics](../beginner/13-flexbox-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Opacity](../beginner/15-opacity.md) →

@@ -105,3 +105,10 @@ video:paused {
   border: 3px solid #f39c12;
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/12-state-pseudo-classes-advanced/index.html)
+
+← **Previous Topic:** [:has() — The Parent Selector](../advanced/11-has-selector.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Form Pseudo-classes — Advanced](../advanced/13-form-pseudo-classes-advanced.md) →

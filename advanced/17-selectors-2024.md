@@ -119,3 +119,10 @@ Selects elements currently shown as popovers.
   /* p inside .card-footer won't be affected */
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/17-selectors-2024/index.html)
+
+← **Previous Topic:** [Container Queries](../advanced/16-container-queries.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Anchor Positioning](../advanced/18-anchor-positioning.md) →

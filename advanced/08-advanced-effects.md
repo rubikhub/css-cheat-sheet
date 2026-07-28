@@ -146,3 +146,10 @@ mask-position: top left;
 mask-position: 50% 50%;
 mask-position: 10px 20px;
 ```
+
+
+---
+
+[Example](../examples/advanced/08-advanced-effects/index.html)
+
+← **Previous Topic:** [Animation — Direction, Fill Mode & Play State](../advanced/07-animation-fill-and-play-state.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [CSS Counters — Complex Patterns](../advanced/09-css-counters-complex.md) →

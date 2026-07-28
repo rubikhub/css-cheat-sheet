@@ -451,3 +451,9 @@ input::placeholder {
   border: 1px solid #ccc;
 }
 ```
+
+---
+
+[Example](../examples/intermediate/15-pseudo-elements-advanced/index.html)
+
+← **Previous Topic:** [Filter & Clip Path](../intermediate/14-filter-and-clip-path.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Typography Advanced](../intermediate/16-typography-advanced.md) →

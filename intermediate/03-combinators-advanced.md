@@ -304,3 +304,9 @@ nav a {
   border-left: 3px solid blue;
 }
 ```
+
+---
+
+[Example](../examples/intermediate/03-combinators-advanced/index.html)
+
+← **Previous Topic:** [Attribute Selectors](../intermediate/02-attribute-selectors.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Logic Matching Selectors](../intermediate/04-logic-matching-selectors.md) →

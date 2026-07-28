@@ -253,3 +253,9 @@ button:focus {
   outline-offset: 3px;
 }
 ```
+
+---
+
+**[View Example](../examples/beginner/10-border-basics/index.html)**
+
+← **Previous Topic:** [Typography Basics](../beginner/09-typography-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Lists & Tables Basics](../beginner/11-lists-and-tables-basics.md) →

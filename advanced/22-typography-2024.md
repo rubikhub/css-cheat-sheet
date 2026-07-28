@@ -180,3 +180,10 @@ p {
   color: #667eea;
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/22-typography-2024/index.html)
+
+← **Previous Topic:** [Advanced Color Functions](../advanced/21-color-functions-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Advanced Math Functions](../advanced/23-advanced-math-functions.md) →

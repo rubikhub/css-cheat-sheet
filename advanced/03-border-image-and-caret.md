@@ -74,3 +74,10 @@ caret-color: initial;
   font-size: 1rem;
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/03-border-image-and-caret/index.html)
+
+← **Previous Topic:** [Background Blend Mode](../advanced/02-background-blend-mode.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Scrollbar Styling](../advanced/04-scrollbar-styling.md) →

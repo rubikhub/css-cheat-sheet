@@ -105,3 +105,10 @@ touch-action: initial;
 ```
 
 - **manipulation** — Enables panning and pinch-zoom (disables double-tap zoom)
+
+
+---
+
+[Example](../examples/advanced/10-scroll-snap/index.html)
+
+← **Previous Topic:** [CSS Counters — Complex Patterns](../advanced/09-css-counters-complex.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [:has() — The Parent Selector](../advanced/11-has-selector.md) →

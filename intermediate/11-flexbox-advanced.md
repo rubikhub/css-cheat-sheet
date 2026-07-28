@@ -989,3 +989,9 @@ place-items: center;
   color: #333;
 }
 ```
+
+---
+
+[Example](../examples/intermediate/11-flexbox-advanced/index.html)
+
+← **Previous Topic:** [Background Advanced](../intermediate/10-background-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Grid Advanced](../intermediate/12-grid-advanced.md) →

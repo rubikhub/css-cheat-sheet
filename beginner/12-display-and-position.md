@@ -301,3 +301,9 @@ Prevents float overlap — pushes element below floated elements on specified si
   clear: both;
 }
 ```
+
+---
+
+**[View Example](../examples/beginner/12-display-and-position/index.html)**
+
+← **Previous Topic:** [Lists & Tables Basics](../beginner/11-lists-and-tables-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Flexbox Basics](../beginner/13-flexbox-basics.md) →

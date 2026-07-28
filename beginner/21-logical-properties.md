@@ -215,3 +215,10 @@ border-inline-end: 1px dashed red;
 - **Writing modes** — Works with vertical text
 - **Future-proof** — More flexible than physical directions
 - **Less code** — No need for separate RTL stylesheets
+
+
+---
+
+**[View Example](../examples/beginner/21-logical-properties/index.html)**
+
+← **Previous Topic:** [Gradients Basics](../beginner/20-gradients-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Structural Pseudo Classes](../intermediate/01-structural-pseudo-classes.md) →

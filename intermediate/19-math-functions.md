@@ -183,3 +183,9 @@ gap: clamp(0.5rem, 1vw, 1rem);
   font-size: clamp(12px, 2vw, 16px);
 }
 ```
+
+---
+
+[Example](../examples/intermediate/19-math-functions/index.html)
+
+← **Previous Topic:** [Animation](../intermediate/18-animation.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Transition Advanced](../intermediate/20-transition-advanced.md) →

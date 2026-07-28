@@ -562,3 +562,9 @@ list-style: unset;
   list-style: square inside;
 }
 ```
+
+---
+
+[Example](../examples/intermediate/13-counters-and-markers/index.html)
+
+← **Previous Topic:** [Grid Advanced](../intermediate/12-grid-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Filter & Clip Path](../intermediate/14-filter-and-clip-path.md) →

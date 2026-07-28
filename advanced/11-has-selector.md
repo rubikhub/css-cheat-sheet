@@ -88,3 +88,10 @@ form:has(:valid) {
 ```
 
 > **Note:** `:has()` is often called the "parent selector" — it selects upward or laterally, which was previously impossible in CSS.
+
+
+---
+
+[Example](../examples/advanced/11-has-selector/index.html)
+
+← **Previous Topic:** [Scroll Snap & Touch Interaction](../advanced/10-scroll-snap.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Advanced State Pseudo-classes](../advanced/12-state-pseudo-classes-advanced.md) →

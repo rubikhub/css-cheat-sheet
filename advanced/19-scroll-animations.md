@@ -154,3 +154,10 @@ Provides access to named timelines across the DOM.
   timeline-scope: --my-timeline;
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/19-scroll-animations/index.html)
+
+← **Previous Topic:** [Anchor Positioning](../advanced/18-anchor-positioning.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Scroll State Queries](../advanced/20-scroll-state.md) →

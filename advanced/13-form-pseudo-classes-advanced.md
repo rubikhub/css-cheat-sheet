@@ -78,3 +78,10 @@ Selects elements based on their language.
   direction: rtl;
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/13-form-pseudo-classes-advanced/index.html)
+
+← **Previous Topic:** [Advanced State Pseudo-classes](../advanced/12-state-pseudo-classes-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Cutting-edge Pseudo-elements](../advanced/14-pseudo-elements-cutting-edge.md) →

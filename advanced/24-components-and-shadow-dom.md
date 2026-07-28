@@ -154,3 +154,10 @@ my-card::part(title) {
   background: #764ba2;
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/24-components-and-shadow-dom/index.html)
+
+← **Previous Topic:** [Advanced Math Functions](../advanced/23-advanced-math-functions.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** *(This is the last topic)* →

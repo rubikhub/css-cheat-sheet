@@ -147,3 +147,9 @@
   border-left: 3px solid green;
 }
 ```
+
+---
+
+[Example](../examples/intermediate/21-nesting/index.html)
+
+← **Previous Topic:** [Transition Advanced](../intermediate/20-transition-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Typography — OpenType & Variable Font Features](../advanced/01-typography-ot-features.md) →

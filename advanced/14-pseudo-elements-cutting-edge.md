@@ -154,3 +154,10 @@ Targets the new (incoming) state of a view transition.
   animation: fade-in 0.3s ease;
 }
 ```
+
+
+---
+
+[Example](../examples/advanced/14-pseudo-elements-cutting-edge/index.html)
+
+← **Previous Topic:** [Form Pseudo-classes — Advanced](../advanced/13-form-pseudo-classes-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [CSS At-Rules — Advanced](../advanced/15-at-rules.md) →

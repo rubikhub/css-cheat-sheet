@@ -257,3 +257,9 @@ Tiles a conic gradient pattern.
   border-radius: 50%;
 }
 ```
+
+---
+
+**[View Example](../examples/beginner/20-gradients-basics/index.html)**
+
+← **Previous Topic:** [Transition Basics](../beginner/19-transition-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Logical Properties](../beginner/21-logical-properties.md) →

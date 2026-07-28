@@ -154,7 +154,7 @@ h1 {
 ### :not()
 **Type/Initial:** pseudo-class | (none)
 
-**Description:** Selects elements that do not match the selector.
+**Description:** Selects elements that do not match the selector. it adds no specificity. Only its argument counts.
 
 **CSS:**
 ```css
@@ -317,3 +317,9 @@ nav:has(a:hover) {
   border: 2px solid blue;
 }
 ```
+
+---
+
+[Example](../examples/intermediate/04-logic-matching-selectors/index.html)
+
+← **Previous Topic:** [Combinators Advanced](../intermediate/03-combinators-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Form Pseudo Classes](../intermediate/05-form-pseudo-classes.md) →

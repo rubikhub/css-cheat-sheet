@@ -57,3 +57,9 @@ a, button {
   cursor: wait;
 }
 ```
+
+---
+
+**[View Example](../examples/beginner/18-cursor/index.html)**
+
+← **Previous Topic:** [Pseudo-Elements Basics](../beginner/17-pseudo-elements-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Transition Basics](../beginner/19-transition-basics.md) →

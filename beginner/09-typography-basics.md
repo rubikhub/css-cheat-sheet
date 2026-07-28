@@ -491,3 +491,9 @@ h1 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 ```
+
+---
+
+**[View Example](../examples/beginner/09-typography-basics/index.html)**
+
+← **Previous Topic:** [Background Basics](../beginner/08-background-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Border Basics](../beginner/10-border-basics.md) →

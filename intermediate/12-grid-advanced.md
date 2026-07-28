@@ -1115,3 +1115,9 @@ place-items: unset;
   color: #333;
 }
 ```
+
+---
+
+[Example](../examples/intermediate/12-grid-advanced/index.html)
+
+← **Previous Topic:** [Flexbox Advanced](../intermediate/11-flexbox-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Counters & Markers](../intermediate/13-counters-and-markers.md) →

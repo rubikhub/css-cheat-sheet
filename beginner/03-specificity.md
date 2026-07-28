@@ -135,3 +135,10 @@ Inline styles (`style=""`) are resolved at a different cascade step, not through
 | `.intro` | `(0,1,0)` |
 | `#main` | `(1,0,0)` |
 | `#main p.intro` | `(1,1,1)` |
+
+
+---
+
+**[View Example](../examples/beginner/03-specificity/index.html)**
+
+← **Previous Topic:** [The Cascade](../beginner/02-the-cascade.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Inheritance](../beginner/04-inheritance.md) →
