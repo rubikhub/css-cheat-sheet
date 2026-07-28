@@ -1,0 +1,50 @@
+p {
+  color: red;
+  line-height: 1.6;
+}
+
+.intro {
+  color: blue;
+}
+
+#hero {
+  color: green;
+}
+
+a {
+  color: red;
+  display: block;
+  margin-bottom: 4px;
+}
+
+a.my-class {
+  color: green;
+}
+
+a.my-class.another-class {
+  color: blue;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+.card.primary {
+  border-color: #0066cc;
+}
+
+.card.primary.featured {
+  border-color: gold;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.first {
+  color: red;
+}
+
+.second {
+  color: blue;
+}

@@ -1,0 +1,53 @@
+/* Element selector */
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Class selector */
+.button {
+  background: #0066cc;
+  color: white;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* ID selector */
+#header {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+#hero {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+/* Attribute selectors */
+[type] {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+[type="text"] {
+  border: 1px solid #000;
+}
+
+[href] {
+  color: #0066cc;
+}

@@ -1,0 +1,39 @@
+/* Grouping */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Descendant */
+.card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Child */
+.nav > li {
+  display: inline-block;
+  margin-right: 1rem;
+  border: 1px solid #0066cc;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+}
+.nav > li > a {
+  text-decoration: none;
+  color: #0066cc;
+}
+
+/* Adjacent Sibling */
+h3 + p {
+  margin-top: 0;
+  color: #0066cc;
+  font-weight: bold;
+}
+
+/* General Sibling */
+h4 ~ p {
+  color: #666;
+  font-style: italic;
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06 - Combinators Basics</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Combinators Basics</h1>
+
+    <section>
+      <h2>Grouping Selector (h1, h2, h3)</h2>
+      <div class="demo">
+        <h3>h3 shares styles with h1 and h2</h3>
+      </div>
+    </section>
+
+    <section>
+      <h2>Descendant Combinator (.card p)</h2>
+      <div class="demo">
+        <div class="card">
+          <p>I'm a p inside .card — styled by .card p</p>
+          <div><p>I'm nested deeper — still targeted by .card p</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Child Combinator (.nav > li)</h2>
+      <div class="demo">
+        <ul class="nav">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Adjacent Sibling (h3 + p)</h2>
+      <div class="demo">
+        <h3>Heading</h3>
+        <p>I'm the first p after h3 — styled by h3 + p (blue, bold)</p>
+        <p>I'm the second p — not affected by h3 + p</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>General Sibling (h4 ~ p)</h2>
+      <div class="demo">
+        <h4>Section Title</h4>
+        <p>I'm after h4 — styled by h4 ~ p (italic)</p>
+        <p>I'm also after h4 — also styled</p>
+      </div>
+    </section>
+  </body>
+</html>

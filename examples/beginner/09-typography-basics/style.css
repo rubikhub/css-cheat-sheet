@@ -1,0 +1,100 @@
+/* font-weight */
+h1 {
+  font-weight: 700;
+}
+
+.caption {
+  font-weight: 300;
+}
+
+/* font-style */
+em {
+  font-style: italic;
+}
+
+.quote {
+  font-style: oblique 12deg;
+}
+
+/* color */
+a {
+  color: #0066cc;
+}
+
+/* text-align */
+.centered-text {
+  text-align: center;
+}
+
+.justify-text {
+  text-align: justify;
+}
+
+/* text-decoration */
+.no-underline {
+  text-decoration: none;
+}
+
+.discount {
+  text-decoration: line-through;
+  font-size: 1.2rem;
+}
+
+/* text-transform */
+.button-transform {
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.nav-link {
+  text-transform: capitalize;
+}
+
+/* line-height */
+h1 {
+  line-height: 1.2;
+}
+
+/* letter-spacing */
+.heading-text {
+  letter-spacing: 0.05em;
+  font-size: 1.2rem;
+}
+
+.uppercase-text {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* text-indent */
+.indent-text {
+  text-indent: 2em;
+}
+
+/* white-space */
+.button-text {
+  white-space: nowrap;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.code {
+  white-space: pre;
+  background: #f4f4f4;
+  padding: 12px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* text-shadow */
+.shadow-heading {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}

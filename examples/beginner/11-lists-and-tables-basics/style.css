@@ -1,0 +1,95 @@
+/* list-style-type */
+.decimal-list {
+  list-style-type: decimal;
+}
+
+.steps {
+  list-style-type: decimal-leading-zero;
+}
+
+.no-bullets {
+  list-style-type: none;
+}
+
+/* list-style-position */
+.inside-list {
+  list-style-position: inside;
+}
+
+/* list-style-image */
+.image-list {
+  list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><circle cx="6" cy="6" r="5" fill="%230066cc"/></svg>');
+}
+
+/* list-style shorthand */
+.shorthand-list {
+  list-style: square inside;
+}
+
+.shorthand-steps {
+  list-style: decimal-leading-zero outside;
+}
+
+/* border-collapse */
+.collapsed-table {
+  border-collapse: collapse;
+  width: 300px;
+}
+
+.collapsed-table th,
+.collapsed-table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+/* border-spacing */
+.spaced-table {
+  border-spacing: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.spaced-table th,
+.spaced-table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 12px;
+}
+
+/* table-layout */
+.fixed-table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fixed-table th,
+.fixed-table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 12px;
+}
+
+/* caption-side */
+.caption-bottom caption {
+  caption-side: bottom;
+}
+
+/* empty-cells */
+.hide-empty {
+  border-collapse: collapse;
+}
+
+.hide-empty th,
+.hide-empty td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 12px;
+}
+
+.hide-empty {
+  empty-cells: hide;
+}
+
+/* vertical-align */
+.icon {
+  vertical-align: middle;
+  font-size: 1.5em;
+}

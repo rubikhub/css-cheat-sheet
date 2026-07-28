@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03 - Specificity</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Specificity</h1>
+
+    <section>
+      <h2>Selector Scores (A, B, C)</h2>
+      <p>I am red — <code>p</code> (0,0,1)</p>
+      <p class="intro">I am blue — <code>.intro</code> (0,1,0) wins over p</p>
+      <p id="hero">
+        I am green — <code>#hero</code> (1,0,0) wins over everything
+      </p>
+    </section>
+
+    <section>
+      <h2>Compound Selectors</h2>
+      <a href="#">red — <code>a</code> (0,0,1)</a><br />
+      <a href="#" class="my-class">green — <code>a.my-class</code> (0,1,1)</a
+      ><br />
+      <a href="#" class="my-class another-class"
+        >blue — <code>a.my-class.another-class</code> (0,2,1)</a
+      >
+    </section>
+
+    <section>
+      <h2>Chained Classes</h2>
+      <div class="card">.card — gray border</div>
+      <div class="card primary">.card.primary — blue border</div>
+      <div class="card primary featured">
+        .card.primary.featured — gold border (0,3,0)
+      </div>
+    </section>
+
+    <section>
+      <h2>Tie-Breaking (same specificity, last wins)</h2>
+      <p class="first">I am red — .first</p>
+      <p class="second">I am blue — .second (last declaration wins)</p>
+    </section>
+  </body>
+</html>

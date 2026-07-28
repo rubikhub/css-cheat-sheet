@@ -1,0 +1,132 @@
+.box {
+  background: #667eea;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+
+/* display */
+.flex-container {
+  display: flex;
+  gap: 8px;
+}
+
+/* visibility */
+.vis-container {
+  display: flex;
+  gap: 8px;
+}
+
+.hidden {
+  visibility: hidden;
+  background: #e74c3c;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+
+/* overflow */
+.overflow-box {
+  overflow: hidden;
+  width: 140px;
+  height: 70px;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+/* overflow-wrap */
+.wrap-box {
+  overflow-wrap: break-word;
+  width: 250px;
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+/* position */
+.parent {
+  position: relative;
+  background: #eee;
+  padding: 24px;
+  border-radius: 4px;
+  height: 80px;
+}
+
+.child {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #e74c3c;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* top / left */
+.position-box {
+  position: relative;
+  background: #eee;
+  height: 80px;
+  border-radius: 4px;
+}
+
+.element {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #00b894;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* z-index */
+.z-container {
+  position: relative;
+  height: 100px;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 10;
+  background: rgba(0, 102, 204, 0.8);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 4px;
+  top: 0;
+  left: 0;
+}
+
+.content-box {
+  position: absolute;
+  z-index: 1;
+  background: rgba(255, 107, 107, 0.8);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 4px;
+  top: 20px;
+  left: 20px;
+}
+
+/* float */
+.float-container {
+  overflow: hidden;
+}
+
+.floated-image {
+  float: left;
+  margin-right: 10px;
+  width: 80px;
+  height: 60px;
+  background: #667eea;
+  border-radius: 4px;
+}
+
+/* clear */
+.clearfix {
+  clear: both;
+  background: #f5f5f5;
+  padding: 8px;
+  border-radius: 4px;
+}

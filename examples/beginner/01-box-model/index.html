@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01 - Box Model</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Box Model</h1>
+
+    <section>
+      <h2>content-box vs border-box</h2>
+      <div class="box-model-row">
+        <div>
+          <h3>content-box (default)</h3>
+          <div class="content-box">
+            width: 200px<br />padding: 20px<br />border: 10px<br />Total = 260px
+          </div>
+        </div>
+        <div>
+          <h3>border-box</h3>
+          <div class="border-box">
+            width: 200px<br />padding: 20px<br />border: 10px<br />Total = 200px
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Padding Shorthand</h2>
+      <div class="pad-all">padding: 1rem (all sides)</div>
+      <div class="pad-vh">padding: 1rem 2rem (vertical | horizontal)</div>
+      <div class="pad-trbl">
+        padding: 10px 20px 15px 5px (top | right | bottom | left)
+      </div>
+    </section>
+
+    <section>
+      <h2>Border Shorthand</h2>
+      <div class="border-shorthand">border: 1px solid #333</div>
+      <div class="border-sides">
+        border-top: 1px solid red / border-bottom: 2px dashed green
+      </div>
+    </section>
+
+    <section>
+      <h2>Margin Shorthand</h2>
+      <div class="margin-demo">
+        <div class="margin-all">margin: 1rem</div>
+        <div class="margin-vh">margin: 1rem 2rem</div>
+        <div class="margin-center">margin: 0 auto (centered)</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Width Values</h2>
+      <div class="width-px">width: 200px</div>
+      <div class="width-pct">width: 50%</div>
+      <div class="width-auto">width: auto (fills available space)</div>
+    </section>
+
+    <section>
+      <h2>Overflow</h2>
+      <div class="overflow-row">
+        <div>
+          <h3>overflow: visible</h3>
+          <div class="overflow-box ov-visible">
+            This text overflows the box and is visible outside its boundaries.
+          </div>
+        </div>
+        <div>
+          <h3>overflow: hidden</h3>
+          <div class="overflow-box ov-hidden">
+            This text overflows the box but is clipped and not visible.
+          </div>
+        </div>
+        <div>
+          <h3>overflow: scroll</h3>
+          <div class="overflow-box ov-scroll">
+            This text overflows the box and scrollbars are always shown.
+          </div>
+        </div>
+        <div>
+          <h3>overflow: auto</h3>
+          <div class="overflow-box ov-auto">
+            This text overflows the box and scrollbars appear only when needed.
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

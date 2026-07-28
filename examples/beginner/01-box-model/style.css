@@ -1,0 +1,125 @@
+.box-model-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.content-box {
+  box-sizing: content-box;
+  width: 200px;
+  padding: 20px;
+  border: 10px solid #0066cc;
+  background: #dbeafe;
+}
+
+.border-box {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 10px solid #0066cc;
+  background: #dbeafe;
+}
+
+.pad-all {
+  padding: 1rem;
+  background: #dcfce7;
+  margin-bottom: 8px;
+}
+
+.pad-vh {
+  padding: 1rem 2rem;
+  background: #bbf7d0;
+  margin-bottom: 8px;
+}
+
+.pad-trbl {
+  padding: 10px 20px 15px 5px;
+  background: #86efac;
+}
+
+.border-shorthand {
+  border: 1px solid #333;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.border-sides {
+  border-top: 1px solid red;
+  border-bottom: 2px dashed green;
+  padding: 10px;
+}
+
+.margin-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.margin-all {
+  margin: 1rem;
+  background: #fef3c7;
+  padding: 10px;
+}
+
+.margin-vh {
+  margin: 1rem 2rem;
+  background: #fde68a;
+  padding: 10px;
+}
+
+.margin-center {
+  margin: 0 auto;
+  width: fit-content;
+  background: #fcd34d;
+  padding: 10px;
+}
+
+.width-px {
+  width: 200px;
+  background: #e0e7ff;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.width-pct {
+  width: 50%;
+  background: #c7d2fe;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.width-auto {
+  width: auto;
+  background: #a5b4fc;
+  padding: 10px;
+}
+
+.overflow-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.overflow-box {
+  width: 180px;
+  height: 80px;
+  background: #fecaca;
+  border: 1px solid #ef4444;
+  padding: 8px;
+}
+
+.ov-visible {
+  overflow: visible;
+}
+
+.ov-hidden {
+  overflow: hidden;
+}
+
+.ov-scroll {
+  overflow: scroll;
+}
+
+.ov-auto {
+  overflow: auto;
+}

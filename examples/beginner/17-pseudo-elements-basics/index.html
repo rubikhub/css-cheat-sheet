@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Pseudo-elements Examples</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Pseudo-elements Examples</h1>
+
+    <section class="example">
+      <h2>::before Pseudo-element</h2>
+      <div class="before-demo">This element has content added before it</div>
+      <p class="quote">This is a quote with decorative elements</p>
+    </section>
+
+    <section class="example">
+      <h2>::after Pseudo-element</h2>
+      <div class="after-demo">This element has content added after it</div>
+      <div class="tooltip">
+        Hover over me for a tooltip
+        <span class="tooltip-text">This is a tooltip using ::after</span>
+      </div>
+    </section>
+
+    <section class="example">
+      <h2>::first-line Pseudo-element</h2>
+      <p class="first-line-demo">
+        This is a paragraph with multiple lines. The first line will be styled
+        differently from the rest. This demonstrates how ::first-line works by
+        applying special formatting only to the first line of text, regardless
+        of how the text wraps or how wide the container is.
+      </p>
+    </section>
+
+    <section class="example">
+      <h2>::first-letter (Drop Cap)</h2>
+      <p class="drop-cap">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+    </section>
+
+    <section class="example">
+      <h2>::selection Pseudo-element</h2>
+      <p class="selection-demo">
+        Try selecting this text to see the custom selection styling. The
+        ::selection pseudo-element allows you to style the part of the document
+        that has been highlighted by the user.
+      </p>
+    </section>
+
+    <section class="example">
+      <h2>::placeholder Pseudo-element</h2>
+      <div class="placeholder-demo">
+        <input
+          type="text"
+          class="custom-placeholder"
+          placeholder="This placeholder has custom styling"
+        />
+        <textarea
+          class="custom-placeholder"
+          placeholder="Textarea placeholder styling also works here"
+        ></textarea>
+      </div>
+    </section>
+
+    <section class="example">
+      <h2>Combined Pseudo-elements</h2>
+      <div class="combined-demo">
+        This element uses both ::before and ::after pseudo-elements with content
+      </div>
+      <div class="icon-demo">Icon with text using pseudo-elements</div>
+    </section>
+  </body>
+</html>

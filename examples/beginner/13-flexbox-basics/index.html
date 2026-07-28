@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Basics</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <h2>display: flex</h2>
+      <div class="container">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>flex-direction</h2>
+      <div class="row">
+        <div class="item">Row 1</div>
+        <div class="item">Row 2</div>
+      </div>
+      <div class="column">
+        <div class="item">Col 1</div>
+        <div class="item">Col 2</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>flex-wrap</h2>
+      <div class="grid">
+        <div class="item wide-item">Wrap 1</div>
+        <div class="item wide-item">Wrap 2</div>
+        <div class="item wide-item">Wrap 3</div>
+        <div class="item wide-item">Wrap 4</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>justify-content</h2>
+      <div class="centered">
+        <div class="item">Center</div>
+        <div class="item">Center</div>
+      </div>
+      <div class="nav">
+        <div class="item">Logo</div>
+        <div class="item">Links</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>align-items</h2>
+      <div class="centered cross-center">
+        <div class="item">Center</div>
+        <div class="item tall-item">Tall</div>
+        <div class="item">Center</div>
+      </div>
+      <div class="bottom-align">
+        <div class="item">Bottom</div>
+        <div class="item tall-item">Tall</div>
+        <div class="item">Bottom</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>align-content</h2>
+      <div class="wrapped-content">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>gap</h2>
+      <div class="container gap-default">
+        <div class="item">16px</div>
+        <div class="item">16px</div>
+        <div class="item">16px</div>
+      </div>
+      <div class="container tight">
+        <div class="item">8px</div>
+        <div class="item">8px</div>
+        <div class="item">8px</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>flex-grow</h2>
+      <div class="container">
+        <div class="item equal">grow:1</div>
+        <div class="item equal">grow:1</div>
+        <div class="item equal">grow:1</div>
+      </div>
+      <div class="container">
+        <div class="item sidebar">sidebar 200px</div>
+        <div class="item main">main grow:1</div>
+      </div>
+    </section>
+
+    <section></section>
+    <h2>flex-shrink</h2>
+    <div class="container">
+      <div class="item no-shrink">No shrink</div>
+      <div class="item">Shrinks</div>
+    </div>
+
+    <section>
+      <h2>flex-basis</h2>
+      <div class="container">
+        <div class="item basis-item">basis:200px grow:1</div>
+        <div class="item basis-item">basis:200px grow:1</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>flex (shorthand)</h2>
+      <div class="container">
+        <div class="item equal-flex">flex:1</div>
+        <div class="item equal-flex">flex:1</div>
+        <div class="item equal-flex">flex:1</div>
+      </div>
+      <div class="container">
+        <div class="item fixed-flex">flex:0 0 200px</div>
+        <div class="item grow-flex">flex:1 0 auto</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>order</h2>
+      <div class="container">
+        <div class="item main-order">Main (order:0)</div>
+        <div class="item sidebar-order">Sidebar (order:-1)</div>
+      </div>
+    </section>
+  </body>
+</html>

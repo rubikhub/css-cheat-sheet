@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Pseudo-classes Examples</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Pseudo-classes Examples</h1>
+
+    <section class="example">
+      <h2>:first-child and :last-child</h2>
+      <ul class="child-selectors">
+        <li>First item (gets :first-child)</li>
+        <li>Middle item</li>
+        <li>Middle item</li>
+        <li>Last item (gets :last-child)</li>
+      </ul>
+    </section>
+
+    <section class="example">
+      <h2>:nth-child(an+b) Patterns</h2>
+      <ul class="nth-child-odd">
+        <li>Item 1 (odd)</li>
+        <li>Item 2 (even)</li>
+        <li>Item 3 (odd)</li>
+        <li>Item 4 (even)</li>
+        <li>Item 5 (odd)</li>
+        <li>Item 6 (even)</li>
+      </ul>
+
+      <ul class="nth-child-specific">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3 (every 3rd)</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6 (every 3rd)</li>
+      </ul>
+    </section>
+
+    <section class="example">
+      <h2>Interactive Pseudo-classes</h2>
+      <div class="interactive-demo">
+        <p class="hover-text">Hover over this text</p>
+        <div class="active-box">Click and hold this box</div>
+        <input
+          type="text"
+          class="focus-input"
+          placeholder="Focus on this input"
+        />
+        <a href="#" class="link-visited">Click this link, then visit it</a>
+      </div>
+    </section>
+
+    <section class="example">
+      <h2>:target Pseudo-class</h2>
+      <p>Click the links below to see the target effect:</p>
+      <nav class="target-nav">
+        <a href="#section1">Section 1</a>
+        <a href="#section2">Section 2</a>
+        <a href="#section3">Section 3</a>
+      </nav>
+      <div class="target-content">
+        <div id="section1" class="target-section">Content for Section 1</div>
+        <div id="section2" class="target-section">Content for Section 2</div>
+        <div id="section3" class="target-section">Content for Section 3</div>
+      </div>
+    </section>
+
+    <section class="example">
+      <h2>:only-child and :empty</h2>
+      <div class="only-child-demo">
+        <p>I'm the only child of this container</p>
+        <div class="empty-box">I'm not empty</div>
+        <div class="empty-box"></div>
+      </div>
+    </section>
+  </body>
+</html>

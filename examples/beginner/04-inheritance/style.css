@@ -1,0 +1,13 @@
+.parent {
+  color: #0066cc;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.component strong {
+  font-weight: inherit;
+}
+
+.aside strong {
+  font-weight: initial;
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 - The Cascade</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="other-style.css" />
+    <style>
+      button {
+        color: black;
+        color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Cascade</h1>
+
+    <section>
+      <h2>Position &amp; Order of Appearance</h2>
+      <p>
+        Last rule wins (same specificity). Both target <code>button</code> —
+        second one wins.
+      </p>
+      <button>Blue (last wins)</button>
+      <p class="element-demo">
+        Second background declaration (purple) wins over green.
+      </p>
+    </section>
+
+    <section>
+      <h2>Specificity</h2>
+      <p>
+        <code>.highlight</code> (0,1,0) beats <code>p</code> (0,0,1) even though
+        <code>p</code> comes first.
+      </p>
+      <p class="highlight">I am blue — .highlight wins over p.</p>
+    </section>
+
+    <section>
+      <h2>!important</h2>
+      <p>
+        <code>.button-special</code> with <code>!important</code> overrides
+        <code>.button</code>.
+      </p>
+      <div class="button">I am blue (normal rule)</div>
+      <div class="button button-special">I am red (!important wins)</div>
+    </section>
+  </body>
+</html>

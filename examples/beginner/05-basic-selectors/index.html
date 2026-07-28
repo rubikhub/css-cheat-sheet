@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05 - Basic Selectors</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Basic Selectors</h1>
+
+    <section>
+      <h2>Universal Selector *</h2>
+      <div class="demo">
+        <p>All elements have box-sizing: border-box applied via *</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Element Selector</h2>
+      <div class="demo">
+        <p>All &lt;p&gt; elements have line-height: 1.6 and color: #333</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Class Selector .button / .card</h2>
+      <div class="demo">
+        <button class="button">Click me</button>
+        <div class="card">I'm a .card element</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>ID Selector #header / #hero</h2>
+      <div class="demo">
+        <div id="header">I'm #header</div>
+        <div id="hero">I'm #hero</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Attribute Selector [type="text"] / [href]</h2>
+      <div class="demo">
+        <input type="text" placeholder="Styled by [type='text']" /><br /><br />
+        <a href="#">Styled by [href]</a>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+.position-demo {
+  color: red;
+  color: blue;
+}
+
+.element-demo {
+  background: green;
+  background: purple;
+  color: white;
+  padding: 10px;
+}
+
+p {
+  color: red;
+}
+
+.highlight {
+  color: blue;
+}
+
+.button {
+  background: blue;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.button-special {
+  background: red !important;
+}
