@@ -141,7 +141,6 @@ ul {
 
 ## Tables
 
----
 
 ## border-collapse
 
@@ -253,69 +252,6 @@ caption {
 
 ---
 
-## empty-cells
-
-**Syntax:** `empty-cells: show | hide`
-
-Empty cell visibility — show or hide borders/backgrounds.
-
-**Values:**
-- `show` — show empty cells (default)
-- `hide` — hide empty cells
-- `inherit` — inherits from parent
-- `initial` — sets to default (show)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Hide empty table cells
-- Create cleaner table layouts
-
-**Example:**
-```css
-table {
-  empty-cells: hide;
-}
-```
-
----
-
-## vertical-align
-
-**Syntax:** `vertical-align: baseline | sub | super | text-top | text-bottom | middle | top | bottom`
-
-Vertical alignment — aligns inline/table cell content.
-
-**Values:**
-- `baseline` — align to baseline (default)
-- `sub` — subscript
-- `super` — superscript
-- `text-top` — align to text top
-- `text-bottom` — align to text bottom
-- `middle` — vertical middle
-- `top` — align to top
-- `bottom` — align to bottom
-- `inherit` — inherits from parent
-- `initial` — sets to default (baseline)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Align icons with text
-- Position table cell content
-
-**Example:**
-```css
-.icon {
-  vertical-align: middle;
-}
-
-td {
-  vertical-align: top;
-}
-```
-
----
 
 **[View Example](../examples/beginner/11-lists-and-tables-basics/index.html)**
 

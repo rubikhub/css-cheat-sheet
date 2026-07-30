@@ -10,38 +10,6 @@ Borders, outlines, and rounded corners for element framing.
 
 ---
 
-## border
-
-**Syntax:** `border: <width> <style> <color>`
-
-Shorthand — sets width, style, and color in one declaration.
-
-**Values:**
-- `1px solid #ccc` — width style color
-- `2px dashed red` — thick dashed border
-- `none` — no border (default)
-- `inherit` — inherits from parent
-- `initial` — sets to default (none medium none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Add simple borders to cards
-- Create visual separation between sections
-
-**Example:**
-```css
-.card {
-  border: 1px solid #e0e0e0;
-}
-
-.highlight {
-  border: 2px solid #0066cc;
-}
-```
-
----
-
 ## border-width
 
 **Syntax:** `border-width: <length> | thin | medium | thick`
@@ -151,6 +119,38 @@ Border color — sets the color of the border.
 
 ---
 
+## border
+
+**Syntax:** `border: <width> <style> <color>`
+
+Shorthand — sets width, style, and color in one declaration.
+
+**Values:**
+- `1px solid #ccc` — width style color
+- `2px dashed red` — thick dashed border
+- `none` — no border (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (none medium none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Add simple borders to cards
+- Create visual separation between sections
+
+**Example:**
+```css
+.card {
+  border: 1px solid #e0e0e0;
+}
+
+.highlight {
+  border: 2px solid #0066cc;
+}
+```
+
+---
+
 ## Border Radius
 
 ---
@@ -188,69 +188,6 @@ Rounded corners — rounds the corners of the outer border edge.
   border-radius: 50%;
   width: 48px;
   height: 48px;
-}
-```
-
----
-
-## Outline
-
----
-
-## outline
-
-**Syntax:** `outline: <width> <style> <color>`
-
-Shorthand — sets outline width, style, and color.
-
-**Values:**
-- `2px solid #0066cc` — width style color
-- `none` — no outline (default)
-- `3px dashed red` — emphasis outline
-- `inherit` — inherits from parent
-- `initial` — sets to default (medium none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Create focus indicators for accessibility
-- Add emphasis without affecting layout
-
-**Example:**
-```css
-button:focus {
-  outline: 2px solid #0066cc;
-  outline-offset: 2px;
-}
-```
-
----
-
-## outline-offset
-
-**Syntax:** `outline-offset: <length>`
-
-Outline spacing — adds space between border and outline.
-
-**Values:**
-- `2px` — small gap
-- `4px` — larger gap
-- `0` — no gap (default)
-- `-2px` — inset outline
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Create focus rings with visible gap
-- Style accessible interactive elements
-
-**Example:**
-```css
-button:focus {
-  outline: 2px solid #0066cc;
-  outline-offset: 3px;
 }
 ```
 

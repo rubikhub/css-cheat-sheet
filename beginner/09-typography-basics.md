@@ -135,8 +135,6 @@ Style variant — normal, italic, or oblique with optional angle.
 **Values:**
 - `normal` — upright text (default)
 - `italic` — italic typeface
-- `oblique` — slanted (synthetic)
-- `oblique 14deg` — oblique with specific angle
 - `inherit` — inherits from parent
 - `initial` — sets to default (normal)
 - `revert` — reverts to user agent stylesheet value
@@ -153,7 +151,7 @@ Style variant — normal, italic, or oblique with optional angle.
 }
 
 .quote {
-  font-style: oblique 12deg;
+  font-style: italic;
 }
 ```
 
@@ -161,7 +159,7 @@ Style variant — normal, italic, or oblique with optional angle.
 
 ## font
 
-**Syntax:** `font: <style> <variant> <weight> <size>/<line-height> <family>`
+**Syntax:** `font: <style> <weight> <size>/<line-height> <family>`
 
 Shorthand — sets size, weight, style, and family in one declaration.
 
@@ -186,48 +184,6 @@ body {
 
 ---
 
-## Text
-
----
-
-## color
-
-**Syntax:** `color: <color>`
-
-Foreground color — sets text and decoration color.
-
-**Values:**
-- `currentColor` — matches current color value
-- `red` — named color
-- `#ff5733` — hex color
-- `#f00` — short hex
-- `rgb(255, 0, 0)` — RGB color
-- `rgba(255, 0, 0, 0.5)` — RGB with alpha
-- `hsl(0, 100%, 50%)` — HSL color
-- `hsla(0, 100%, 50%, 0.5)` — HSL with alpha
-- `transparent` — fully transparent
-- `inherit` — inherits from parent
-- `initial` — sets to default (user agent)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Set text color for readability
-- Create color schemes with CSS variables
-
-**Example:**
-```css
-body {
-  color: #333;
-}
-
-a {
-  color: #0066cc;
-}
-```
-
----
-
 ## text-align
 
 **Syntax:** `text-align: left | right | center | justify | start | end`
@@ -239,7 +195,6 @@ Horizontal alignment — left, right, center, or justify within the line box.
 - `right` — align to right edge
 - `center` — center horizontally
 - `justify` — stretch lines to fill width
-- `justify-all` — justify including last line
 - `start` — align to start edge (left in LTR)
 - `end` — align to end edge (right in LTR)
 - `match-parent` — inherit with direction
@@ -276,8 +231,6 @@ Line decoration — underline, overline, or line-through with style and color.
 - `underline` — line under text
 - `overline` — line above text
 - `line-through` — line through text
-- `underline wavy red` — shorthand with style and color
-- `underline dotted` — dotted underline
 - `inherit` — inherits from parent
 - `initial` — sets to default (none)
 - `revert` — reverts to user agent stylesheet value
@@ -461,34 +414,6 @@ Whitespace handling — controls line breaks and space collapsing.
 
 .code {
   white-space: pre;
-}
-```
-
----
-
-## text-shadow
-
-**Syntax:** `text-shadow: none | <shadow-list>`
-
-Text shadow — adds drop shadow effect to text.
-
-**Values:**
-- `none` — no shadow (default)
-- `2px 2px #555` — offset + color
-- `1px 1px 2px rgba(0,0,0,0.5)` — offset + blur + color
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Add depth to headings
-- Create retro text effects
-
-**Example:**
-```css
-h1 {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 ```
 

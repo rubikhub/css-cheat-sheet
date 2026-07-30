@@ -89,6 +89,49 @@ aside strong {
 ```
 ---
 
+### `revert`
+
+Undoes styles from the **same cascade origin**. Useful for resetting your own styles while keeping user agent or user preference styles.
+
+```css
+p {
+  padding: 2rem;
+}
+
+aside p {
+  padding: revert;
+}
+
+/* <p> inside <aside> uses browser default padding, not yours */
+```
+
+### `unset`
+
+If the property is **inherited** by default → behaves like `inherit`.
+If the property is **not inherited** → behaves like `initial`.
+
+```css
+p {
+  color: goldenrod;
+  margin-top: 2em;
+}
+
+aside p {
+  margin: unset; /* Resets to 0 (initial for margin) */
+  color: unset; /* Inherits from parent (color inherits) */
+}
+```
+
+### `all: unset`
+
+Resets all properties at once.
+
+```css
+aside p {
+  all: unset;
+}
+```
+
 ## Practical Example
 
 ```css

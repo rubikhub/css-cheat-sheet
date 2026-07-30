@@ -21,7 +21,8 @@
 
 /* background-image */
 .hero-img {
-  background-image: url("https://picsum.photos/600/200");
+  /* background-image: url("https://picsum.photos/600/200"); */
+  background-image: url("./assets/jdm-engines-slider-compressed-min.jpg");
   height: 150px;
   border-radius: 6px;
   display: flex;
@@ -29,17 +30,6 @@
   justify-content: center;
   color: #fff;
   font-weight: bold;
-}
-
-.gradient {
-  background-image: linear-gradient(135deg, #667eea, #764ba2);
-  height: 80px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 14px;
 }
 
 /* background-repeat */
@@ -53,6 +43,22 @@
 .no-tiling {
   background-image: url("https://picsum.photos/600/200");
   background-repeat: no-repeat;
+  height: 80px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.round {
+  background-image: url("https://picsum.photos/40/40");
+  background-repeat: round;
+  height: 80px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.space {
+  background-image: url("https://picsum.photos/40/40");
+  background-repeat: space;
   height: 80px;
   border-radius: 6px;
   margin-top: 8px;
@@ -92,7 +98,7 @@
   background-image: url("https://picsum.photos/600/200");
   background-position: right 20px bottom 10px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   height: 100px;
   border-radius: 6px;
   margin-top: 8px;

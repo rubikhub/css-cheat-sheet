@@ -69,27 +69,17 @@
 }
 
 /* caption-side */
-.caption-bottom caption {
-  caption-side: bottom;
-}
-
-/* empty-cells */
-.hide-empty {
+.caption-bottom th,
+.caption-bottom td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 12px;
   border-collapse: collapse;
 }
 
-.hide-empty th,
-.hide-empty td {
-  border: 1px solid #e0e0e0;
-  padding: 8px 12px;
+.caption-bottom{
+  width:100%;
 }
 
-.hide-empty {
-  empty-cells: hide;
-}
-
-/* vertical-align */
-.icon {
-  vertical-align: middle;
-  font-size: 1.5em;
+.caption-bottom caption {
+  caption-side: bottom;
 }
