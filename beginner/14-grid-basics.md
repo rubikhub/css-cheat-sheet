@@ -257,45 +257,6 @@ Row placement — positions item in grid rows.
 
 ---
 
-## grid-area
-
-**Syntax:** `grid-area: <row-start> / <column-start> / <row-end> / <column-end>`
-
-Shorthand — positions item in both rows and columns.
-
-**Values:**
-- `1 / 1 / 3 / 3` — row-start column-start row-end column-end
-- `header` — named grid area
-- `main` — named grid area
-- `auto` — auto placement (default)
-- `inherit` — inherits from parent
-- `initial` — sets to default (auto)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Place items in named areas
-- Create complex layouts with grid-template-areas
-
-**Example:**
-```css
-.layout {
-  grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
-}
-
-.header {
-  grid-area: header;
-}
-
-.sidebar {
-  grid-area: sidebar;
-}
-```
-
----
 
 ## justify-self
 

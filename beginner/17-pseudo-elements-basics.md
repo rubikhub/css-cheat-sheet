@@ -16,7 +16,6 @@ Inserts generated content before the element's actual content.
 - `content: ""` — empty pseudo-element
 - `content: "★"` — icon content
 - `content: attr(data-tooltip)` — attribute value
-- `content: counter(list-item)` — counter value
 
 **Use Cases:**
 - Add icons or decorations
@@ -53,7 +52,6 @@ Inserts generated content after the element's actual content.
 - `content: ""` — empty pseudo-element
 - `content: "→"` — arrow icon
 - `content: attr(href)` — link URL
-- `content: counter(list-item) "."` — numbered content
 
 **Use Cases:**
 - Add decorative elements

@@ -91,50 +91,6 @@
   );
 }
 
-/* Repeating gradients */
-.repeating-linear {
-  background: repeating-linear-gradient(
-    45deg,
-    #3498db,
-    #3498db 10px,
-    #2980b9 10px,
-    #2980b9 20px
-  );
-}
-
-.repeating-radial {
-  background: repeating-radial-gradient(
-    circle,
-    #ecf0f1,
-    #ecf0f1 10px,
-    #bdc3c7 10px,
-    #bdc3c7 20px
-  );
-}
-
-.repeating-conic {
-  background: repeating-conic-gradient(#e74c3c 0deg 10deg, #f39c12 10deg 20deg);
-}
-
-.repeating-pattern {
-  background:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 10px,
-      rgba(0, 0, 0, 0.1) 10px,
-      rgba(0, 0, 0, 0.1) 11px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 10px,
-      rgba(0, 0, 0, 0.1) 10px,
-      rgba(0, 0, 0, 0.1) 11px
-    );
-  background-color: #ecf0f1;
-}
-
 /* Background gradient demos */
 .background-demos {
   display: grid;
@@ -167,38 +123,4 @@
 
 .bg-fire {
   background: linear-gradient(to bottom, #f12711, #f5af19);
-}
-
-/* Gradient text */
-.text-demos {
-  text-align: center;
-}
-
-.gradient-text {
-  font-size: 2.5em;
-  margin: 20px 0;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.text-gradient-1 {
-  background: linear-gradient(to right, #3498db, #2ecc71);
-}
-
-.text-gradient-2 {
-  background: linear-gradient(
-    to right,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
-  );
-}
-
-.text-gradient-3 {
-  background: linear-gradient(to bottom, #bdc3c7, #ecf0f1, #bdc3c7);
 }

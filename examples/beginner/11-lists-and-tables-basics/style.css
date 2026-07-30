@@ -18,7 +18,7 @@
 
 /* list-style-image */
 .image-list {
-  list-style-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><circle cx="6" cy="6" r="5" fill="%230066cc"/></svg>');
+  list-style-image: url('https://picsum.photos/600/200');
 }
 
 /* list-style shorthand */

@@ -22,13 +22,9 @@
 }
 
 .quote::before {
-  content: '"';
-  font-size: 48px;
+  content: attr(data-icon);
+  font-size: 20px;
   color: #3498db;
-  position: absolute;
-  left: 10px;
-  top: -10px;
-  font-family: Georgia, serif;
 }
 
 /* ::after pseudo-element */

@@ -114,39 +114,6 @@
   grid-row: span 2;
 }
 
-/* grid-area */
-.layout-areas {
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
-  grid-template-columns: 150px 1fr;
-  gap: 8px;
-}
-
-.area-header {
-  grid-area: header;
-  background: #feca57;
-  color: #333;
-}
-
-.area-sidebar {
-  grid-area: sidebar;
-  background: #e74c3c;
-}
-
-.area-main {
-  grid-area: main;
-  background: #00b894;
-  min-height: 60px;
-}
-
-.area-footer {
-  grid-area: footer;
-  background: #636e72;
-}
-
 /* justify-self */
 .grid-self {
   display: grid;
