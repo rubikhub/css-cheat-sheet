@@ -1,42 +1,12 @@
 # State Pseudo Classes
 
-> 7 pseudo-classes
+> 6 pseudo-classes
 
 Target elements based on user interaction — hover, click, focus, and navigation state.
 
 ---
 
 ## States
-
----
-
-## :hover
-
-**Syntax:** `:hover`
-
-Targets elements when the pointer is over them.
-
-**Values:**
-- `a:hover` — links on hover
-- `button:hover` — buttons on hover
-- `.card:hover` — cards on hover
-
-**Use Cases:**
-- Add hover effects to interactive elements
-- Provide visual feedback
-
-**Example:**
-```css
-a:hover {
-  color: red;
-  text-decoration: underline;
-}
-
-button:hover {
-  background: darkblue;
-  color: white;
-}
-```
 
 ---
 

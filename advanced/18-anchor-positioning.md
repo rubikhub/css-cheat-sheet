@@ -1,6 +1,6 @@
 # Anchor Positioning
 
-> 6 properties
+> 4 properties & 2 functions
 
 Position elements relative to other anchor elements.
 

@@ -1,6 +1,6 @@
 # Counters & Markers
 
-> 8 properties
+> 5 properties
 
 Automatic numbering with CSS counters and custom list marker styles.
 
@@ -88,10 +88,6 @@ Displays the current value of a named counter in generated content.
 - `counter(myCounter, lower-alpha)` — lowercase letters
 - `counter(myCounter, upper-alpha)` — uppercase letters
 - `counter(parent) "." counter(child)` — combined nested counters
-- `inherit` — inherits from parent
-- `initial` — sets to default (normal)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Show automatic numbering in generated content
@@ -119,10 +115,6 @@ Displays all nested counters with the same name, joined by a separator.
 - `counters(myCounter, " - ")` — nested values joined by dashes
 - `counters(myCounter, "", decimal)` — empty separator with a counter style
 - `counters(section, ".")` — numbered section tree
-- `inherit` — inherits from parent
-- `initial` — sets to default (normal)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Number nested lists or sections
@@ -186,97 +178,6 @@ ul {
 
 ol {
   list-style-type: lower-roman;
-}
-```
-
----
-
-## list-style-image
-
-**Syntax:** `list-style-image: <url> | none`
-
-Marker image — uses an image as the list marker.
-
-**Values:**
-- `none` — no image marker
-- `url("check.svg")` — custom SVG marker
-- `url("arrow.png")` — custom PNG marker
-- `url("bullet.gif")` — custom GIF marker
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Replace bullets with custom icons
-- Use brand-specific markers
-
-**Example:**
-```css
-li {
-  list-style-image: url("check.svg");
-}
-```
-
----
-
-## list-style-position
-
-**Syntax:** `list-style-position: outside | inside`
-
-Marker position — whether the marker is inside or outside the content box.
-
-**Values:**
-- `outside` — marker outside the content box (default)
-- `inside` — marker inside the content box
-- `inherit` — inherits from parent
-- `initial` — sets to default (outside)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Keep markers outside list text
-- Wrap markers with text in indented lists
-
-**Example:**
-```css
-ul {
-  list-style-position: inside;
-}
-```
-
----
-
-## list-style
-
-**Syntax:** `list-style: <type> | <type> <position> | <image> <position>`
-
-List style shorthand — combines type, position, and image.
-
-**Values:**
-- `none` — remove markers
-- `disc outside` — disc marker outside
-- `square inside` — square marker inside
-- `url("check.svg") outside` — image marker outside
-- `decimal-leading-zero inside` — numbered marker inside
-- `lower-roman url("marker.png") outside` — combined type and image
-- `inherit` — inherits from parent
-- `initial` — sets to default (disc outside none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Reset list styles quickly
-- Set complete marker styling in one line
-
-**Example:**
-```css
-.nav {
-  list-style: none;
-}
-
-.toc {
-  list-style: decimal inside;
 }
 ```
 

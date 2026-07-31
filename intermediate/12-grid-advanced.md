@@ -1,39 +1,12 @@
 # Grid Advanced
 
-> 14 properties
+> 12 properties
 
 Two-dimensional layout — advanced grid container and item properties.
 
 ---
 
 ## Container
-
----
-
-## display
-
-**Syntax:** `display: grid | inline-grid`
-
-Grid container — enables grid layout on children.
-
-**Values:**
-- `grid` — block-level grid container
-- `inline-grid` — inline-level grid container
-- `inherit` — inherits from parent
-- `initial` — sets to default (inline)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Create complex page layouts
-- Build responsive card grids
-
-**Example:**
-```css
-.container {
-  display: grid;
-}
-```
 
 ---
 
@@ -142,36 +115,6 @@ Areas — names grid areas for placement by name.
 .sidebar { grid-area: sidebar; }
 .main { grid-area: main; }
 .footer { grid-area: footer; }
-```
-
----
-
-## gap
-
-**Syntax:** `gap: <length> | <percentage>`
-
-Gutters — sets spacing between grid rows and columns.
-
-**Values:**
-- `0` — no gap (default)
-- `10px` — fixed gap
-- `1rem 2rem` — row-gap column-gap
-- `5% 10%` — percentage gaps
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Create consistent spacing in grids
-- Replace margins on grid children
-
-**Example:**
-```css
-.grid {
-  display: grid;
-  gap: 20px;
-}
 ```
 
 ---

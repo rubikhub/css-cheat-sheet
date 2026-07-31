@@ -21,10 +21,6 @@ Selects the shadow host element from within the shadow tree.
 - `:host(.large)` — host with the class large
 - `:host(:hover)` — host in a hover state
 - `:host-context(selector)` — host inside a matching ancestor
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Style the component root element
@@ -55,10 +51,6 @@ Selects the host element when it matches a selector.
 - `:host(.theme-dark)` — host with the theme-dark class
 - `:host([disabled])` — disabled host
 - `:host(h1)` — host element of type h1
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Style hosts by class or attribute
@@ -84,10 +76,6 @@ Styles the host element based on an ancestor outside the shadow tree.
 - `:host-context(.theme-dark)` — host inside a theme-dark ancestor
 - `:host-context(body)` — host inside body
 - `:host-context(.sidebar)` — host inside a sidebar
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Theme components from page context
@@ -117,10 +105,6 @@ Selects shadow DOM elements with a `part` attribute from outside the shadow tree
 - `my-card::part(header)` — the header part
 - `my-card::part(body)` — the body part
 - `my-card::part(title)` — any named part
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Style component internals from outside
@@ -147,10 +131,6 @@ Styles slotted content inside the shadow DOM.
 - `::slotted(h1)` — slotted h1 elements
 - `::slotted(p)` — slotted paragraphs
 - `::slotted([slot="footer"])` — elements in the footer slot
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Style user-provided slot content

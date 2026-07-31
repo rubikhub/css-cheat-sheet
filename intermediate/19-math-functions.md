@@ -24,10 +24,6 @@ Function — performs mathematical calculations on values.
 - `14px + 0.5vw` — combine fixed and viewport units
 - `50% - 100px` — center by offsetting a percentage
 - `100% - calc(2 * 20px)` — nested calculation
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Subtract fixed offsets from percentage values
@@ -57,10 +53,6 @@ Function — returns the smallest value from a list.
 - `min(2rem, 40px)` — cap a rem-based padding
 - `min(90%, 800px)` — cap a fluid width
 - `min(5%, 50px)` — cap a percentage margin
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Cap content widths responsively
@@ -92,10 +84,6 @@ Function — returns the largest value from a list.
 - `max(2rem, 40px)` — enforce a minimum padding
 - `max(80%, 600px)` — enforce a minimum width
 - `max(5%, 50px)` — enforce a minimum margin
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Enforce minimum sizes
@@ -123,10 +111,6 @@ Function — clamps a value between a minimum and maximum.
 - `clamp(1rem, 3vw, 3rem)` — fluid margin
 - `clamp(200px, 50vh, 600px)` — fluid height
 - `clamp(0.5rem, 1vw, 1rem)` — fluid gap
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Create fully fluid responsive typography

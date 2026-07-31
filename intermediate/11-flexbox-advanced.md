@@ -1,101 +1,12 @@
 # Flexbox Advanced
 
-> 14 properties
+> 9 properties
 
 Advanced flexbox — container and item properties for distributing and aligning items.
 
 ---
 
 ## Container
-
----
-
-## display
-
-**Syntax:** `display: flex | inline-flex`
-
-Flex container — enables flex layout on children.
-
-**Values:**
-- `flex` — block-level flex container
-- `inline-flex` — inline-level flex container
-- `inherit` — inherits from parent
-- `initial` — sets to default (inline)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Create flexible layouts
-- Align items in a row or column
-
-**Example:**
-```css
-.container {
-  display: flex;
-}
-```
-
----
-
-## flex-direction
-
-**Syntax:** `flex-direction: row | row-reverse | column | column-reverse`
-
-Main axis direction — horizontal or vertical layout.
-
-**Values:**
-- `row` — horizontal, left to right (default)
-- `row-reverse` — horizontal, right to left
-- `column` — vertical, top to bottom
-- `column-reverse` — vertical, bottom to top
-- `inherit` — inherits from parent
-- `initial` — sets to default (row)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Create horizontal navigation
-- Stack items vertically
-
-**Example:**
-```css
-.nav {
-  flex-direction: row;
-}
-
-.sidebar {
-  flex-direction: column;
-}
-```
-
----
-
-## flex-wrap
-
-**Syntax:** `flex-wrap: nowrap | wrap | wrap-reverse`
-
-Wrapping behavior — whether items wrap to new lines.
-
-**Values:**
-- `nowrap` — all items on one line (default)
-- `wrap` — items wrap to new lines
-- `wrap-reverse` — items wrap upward
-- `inherit` — inherits from parent
-- `initial` — sets to default (nowrap)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Create responsive grids
-- Prevent items from overflowing
-
-**Example:**
-```css
-.card-grid {
-  display: flex;
-  flex-wrap: wrap;
-}
-```
 
 ---
 
@@ -281,70 +192,6 @@ Visual order — reorders flex items within the container.
 
 .main {
   order: 0;
-}
-```
-
----
-
-## flex-grow
-
-**Syntax:** `flex-grow: <number>`
-
-Growth factor — how much an item grows relative to siblings.
-
-**Values:**
-- `0` — don't grow (default)
-- `1` — grow equally
-- `2` — grow twice as much
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Make one item fill remaining space
-- Create proportional columns
-
-**Example:**
-```css
-.main {
-  flex-grow: 1;
-}
-
-.sidebar {
-  flex-grow: 0;
-}
-```
-
----
-
-## flex-shrink
-
-**Syntax:** `flex-shrink: <number>`
-
-Shrink factor — how much an item shrinks when space is limited.
-
-**Values:**
-- `0` — don't shrink
-- `1` — shrink equally (default)
-- `2` — shrink twice as much
-- `inherit` — inherits from parent
-- `initial` — sets to default (1)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Prevent items from shrinking
-- Control which items compress first
-
-**Example:**
-```css
-.logo {
-  flex-shrink: 0;
-}
-
-.title {
-  flex-shrink: 1;
 }
 ```
 

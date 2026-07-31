@@ -186,10 +186,6 @@ Defines custom font palettes.
 - `font-family: "Color Font"` — the font to apply the palette to
 - `base-palette: 0` — start from the font's palette index 0
 - `override-colors: 0 #ff6b6b, 1 #feca57` — override specific palette colors
-- `inherit` — inherits from parent
-- `initial` — sets to default (normal)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Define reusable color palettes

@@ -1,51 +1,12 @@
 # UI & Scroll
 
-> 6 properties
+> 5 properties
 
 Control cursor, selection, overflow, and scrollbar appearance.
 
 ---
 
 ## UI
-
----
-
-## cursor
-
-**Syntax:** `cursor: auto | default | pointer | text | move | url(<url>), <fallback>`
-
-Cursor — specifies the mouse cursor appearance.
-
-**Values:**
-- `auto` — browser chooses based on context (default)
-- `default` — standard arrow
-- `pointer` — hand pointer for links and buttons
-- `text` — text caret for selection
-- `move` — drag/move cursor
-- `not-allowed` — indicates a disabled action
-- `grab` — draggable element
-- `zoom-in` — zoom available
-- `url("cursor.svg"), auto` — custom cursor with fallback
-- `inherit` — inherits from parent
-- `initial` — sets to default (auto)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Signal clickable elements
-- Show drag affordances
-
-**Example:**
-```css
-a,
-button {
-  cursor: pointer;
-}
-
-.draggable {
-  cursor: grab;
-}
-```
 
 ---
 

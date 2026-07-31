@@ -1,6 +1,6 @@
 # Border Advanced
 
-> 19 properties
+> 15 properties
 
 Border styling — width, style, color, outlines, rounded corners, and drop shadows.
 
@@ -45,38 +45,6 @@ Shorthand — sets border width, style, and color on all sides.
 
 ---
 
-## border-width
-
-**Syntax:** `border-width: <length> | thin | medium | thick`
-
-Thickness — sets the width of the border on all sides.
-
-**Values:**
-- `thin` — thin border
-- `medium` — medium border
-- `thick` — thick border
-- `1px` — pixel-based width
-- `0.5em` — em-based width
-- `0` — no border
-- `inherit` — inherits from parent
-- `initial` — sets to default (medium)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Control border thickness
-- Remove a border edge
-
-**Example:**
-```css
-.card {
-  border-style: solid;
-  border-width: 2px;
-}
-```
-
----
-
 ## border-style
 
 **Syntax:** `border-style: none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset`
@@ -116,39 +84,6 @@ Line style — sets the style of the border on all sides.
 
 ---
 
-## border-color
-
-**Syntax:** `border-color: <color>`
-
-Line color — sets the color of the border on all sides.
-
-**Values:**
-- `currentColor` — matches the element's text color
-- `red` — named color
-- `transparent` — invisible border
-- `#ff5733` — hex color
-- `rgb(255, 0, 0)` — rgb color
-- `rgba(255, 0, 0, 0.5)` — rgba color with opacity
-- `hsl(0, 100%, 50%)` — hsl color
-- `inherit` — inherits from parent
-- `initial` — sets to default (currentColor)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Color a border to match a brand
-- Create invisible borders for layout alignment
-
-**Example:**
-```css
-.card {
-  border-style: solid;
-  border-color: #6c5ce7;
-}
-```
-
----
-
 ## border-top / right / bottom / left
 
 **Syntax:** `border-top: <width> <style> <color>` (also `border-right`, `border-bottom`, `border-left`)
@@ -175,61 +110,6 @@ Individual sides — sets the border on one edge independently.
 .section {
   border-top: 3px solid #d63031;
   border-bottom: 3px solid #0984e3;
-}
-```
-
----
-
-## border-collapse
-
-**Syntax:** `border-collapse: separate | collapse`
-
-Table model — collapses adjacent borders or keeps them separate.
-
-**Values:**
-- `separate` — keep borders separate (default)
-- `collapse` — merge adjacent borders
-- `inherit` — inherits from parent
-- `initial` — sets to default (separate)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Clean up tables with double borders
-- Create compact table layouts
-
-**Example:**
-```css
-table {
-  border-collapse: collapse;
-}
-```
-
----
-
-## border-spacing
-
-**Syntax:** `border-spacing: <length>`
-
-Cell gap — sets the space between cell borders in the separate model.
-
-**Values:**
-- `6px` — equal horizontal and vertical spacing
-- `0` — no spacing (default)
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Add breathing room between table cells
-- Style data tables without merged borders
-
-**Example:**
-```css
-table {
-  border-collapse: separate;
-  border-spacing: 6px;
 }
 ```
 

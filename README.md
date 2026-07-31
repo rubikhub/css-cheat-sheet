@@ -34,7 +34,7 @@ Foundation of CSS — box model, cascade, specificity, inheritance, selectors, l
 
 ---
 
-## Intermediate (21 topics)
+## Intermediate (20 topics)
 
 Core layout systems — Flexbox, Grid, transitions, media queries.
 
@@ -42,25 +42,24 @@ Core layout systems — Flexbox, Grid, transitions, media queries.
 | --- | ------------------------------------------------------------------------------- | ---------------------------- |
 | 01  | [01-structural-pseudo-classes.md](intermediate/01-structural-pseudo-classes.md) | :nth-child(), :first-of-type |
 | 02  | [02-attribute-selectors.md](intermediate/02-attribute-selectors.md)             | [attr] Selectors             |
-| 03  | [03-combinators-advanced.md](intermediate/03-combinators-advanced.md)           | Advanced Combinators         |
-| 04  | [04-logic-matching-selectors.md](intermediate/04-logic-matching-selectors.md)   | :is(), :not(), :has()        |
-| 05  | [05-form-pseudo-classes.md](intermediate/05-form-pseudo-classes.md)             | Form Pseudo-classes          |
-| 06  | [06-state-pseudo-classes.md](intermediate/06-state-pseudo-classes.md)           | State Pseudo-classes         |
-| 07  | [07-border-advanced.md](intermediate/07-border-advanced.md)                     | Advanced Borders             |
-| 08  | [08-transform.md](intermediate/08-transform.md)                                 | Transforms                   |
-| 09  | [09-transform-functions.md](intermediate/09-transform-functions.md)             | Transform Functions          |
-| 10  | [10-background-advanced.md](intermediate/10-background-advanced.md)             | Advanced Backgrounds         |
-| 11  | [11-flexbox-advanced.md](intermediate/11-flexbox-advanced.md)                   | Advanced Flexbox             |
-| 12  | [12-grid-advanced.md](intermediate/12-grid-advanced.md)                         | Advanced Grid                |
-| 13  | [13-counters-and-markers.md](intermediate/13-counters-and-markers.md)           | Counters & Markers           |
-| 14  | [14-filter-and-clip-path.md](intermediate/14-filter-and-clip-path.md)           | Filters & Clip-path          |
-| 15  | [15-pseudo-elements-advanced.md](intermediate/15-pseudo-elements-advanced.md)   | Advanced Pseudo-elements     |
-| 16  | [16-typography-advanced.md](intermediate/16-typography-advanced.md)             | Advanced Typography          |
-| 17  | [17-ui-and-scroll.md](intermediate/17-ui-and-scroll.md)                         | UI & Scroll                  |
-| 18  | [18-animation.md](intermediate/18-animation.md)                                 | Animation                    |
-| 19  | [19-math-functions.md](intermediate/19-math-functions.md)                       | Math Functions               |
-| 20  | [20-transition-advanced.md](intermediate/20-transition-advanced.md)             | Advanced Transitions         |
-| 21  | [21-nesting.md](intermediate/21-nesting.md)                                     | CSS Nesting                  |
+| 03  | [04-logic-matching-selectors.md](intermediate/04-logic-matching-selectors.md)   | :is(), :not(), :has()        |
+| 04  | [05-form-pseudo-classes.md](intermediate/05-form-pseudo-classes.md)             | Form Pseudo-classes          |
+| 05  | [06-state-pseudo-classes.md](intermediate/06-state-pseudo-classes.md)           | State Pseudo-classes         |
+| 06  | [07-border-advanced.md](intermediate/07-border-advanced.md)                     | Advanced Borders             |
+| 07  | [08-transform.md](intermediate/08-transform.md)                                 | Transforms                   |
+| 08  | [09-transform-functions.md](intermediate/09-transform-functions.md)             | Transform Functions          |
+| 09  | [10-background-advanced.md](intermediate/10-background-advanced.md)             | Advanced Backgrounds         |
+| 10  | [11-flexbox-advanced.md](intermediate/11-flexbox-advanced.md)                   | Advanced Flexbox             |
+| 11  | [12-grid-advanced.md](intermediate/12-grid-advanced.md)                         | Advanced Grid                |
+| 12  | [13-counters-and-markers.md](intermediate/13-counters-and-markers.md)           | Counters & Markers           |
+| 13  | [14-filter-and-clip-path.md](intermediate/14-filter-and-clip-path.md)           | Filters & Clip-path          |
+| 14  | [15-pseudo-elements-advanced.md](intermediate/15-pseudo-elements-advanced.md)   | Advanced Pseudo-elements     |
+| 15  | [16-typography-advanced.md](intermediate/16-typography-advanced.md)             | Advanced Typography          |
+| 16  | [17-ui-and-scroll.md](intermediate/17-ui-and-scroll.md)                         | UI & Scroll                  |
+| 17  | [18-animation.md](intermediate/18-animation.md)                                 | Animation                    |
+| 18  | [19-math-functions.md](intermediate/19-math-functions.md)                       | Math Functions               |
+| 19  | [20-transition-advanced.md](intermediate/20-transition-advanced.md)             | Advanced Transitions         |
+| 20  | [21-nesting.md](intermediate/21-nesting.md)                                     | CSS Nesting                  |
 
 ---
 

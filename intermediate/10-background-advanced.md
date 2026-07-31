@@ -1,50 +1,12 @@
 # Background Advanced
 
-> 14 properties
+> 8 properties
 
 Advanced background control — colors, images, gradients, tiling, sizing, and positioning.
 
 ---
 
 ## Color & Image
-
----
-
-## background-color
-
-**Syntax:** `background-color: <color> | transparent`
-
-Solid color — fills the element with a background color.
-
-**Values:**
-- `transparent` — no background color
-- `red` — named color
-- `currentColor` — uses the element's text color
-- `#ff5733` — hex color
-- `#f00` — shorthand hex
-- `rgb(255, 0, 0)` — RGB color
-- `rgba(255, 0, 0, 0.5)` — RGB color with alpha
-- `hsl(0, 100%, 50%)` — HSL color
-- `hsla(0, 100%, 50%, 0.5)` — HSL color with alpha
-- `inherit` — inherits from parent
-- `initial` — sets to default (transparent)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Set brand and UI colors
-- Layer translucent overlays with rgba() or hsla()
-
-**Example:**
-```css
-.button {
-  background-color: #6c5ce7;
-}
-
-.button:hover {
-  background-color: rgba(108, 92, 231, 0.5);
-}
-```
 
 ---
 
@@ -83,125 +45,7 @@ Background image — tiled by default to fill the element.
 
 ---
 
-## background
-
-**Syntax:** `background: <color> | <image> <position>/<size> <repeat> <attachment>`
-
-Shorthand — combines color, image, position, repeat, size, and attachment.
-
-**Values:**
-- `red` — color only
-- `url('image.jpg')` — image only
-- `center` — position only
-- `no-repeat` — repeat only
-- `fixed` — attachment only
-- `url('image.jpg') center no-repeat` — image with position and repeat
-- `red url('image.jpg') center/cover no-repeat` — full shorthand
-- `inherit` — inherits from parent
-- `initial` — sets to default (transparent)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Set complete backgrounds in one line
-- Combine gradients with fallback colors
-
-**Example:**
-```css
-.hero {
-  background: url('hero.jpg') center/cover no-repeat;
-}
-
-.banner {
-  background: #6c5ce7 url('pattern.png') no-repeat;
-}
-```
-
----
-
 ## Gradient
-
----
-
-## linear-gradient()
-
-**Syntax:** `background: linear-gradient(<angle>, <color-stops>)`
-
-Linear gradient — transitions colors along a straight line.
-
-**Values:**
-- `to right, red, blue` — gradient from left to right
-- `135deg, #667eea 0%, #764ba2 100%` — angle with explicit color stops
-- `135deg, #6c5ce7, #a29bfe, #fd79a8` — diagonal gradient through three colors
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Create smooth color transitions
-- Build layered gradient backgrounds
-
-**Example:**
-```css
-.hero {
-  background: linear-gradient(135deg, #6c5ce7, #a29bfe, #fd79a8);
-}
-```
-
----
-
-## radial-gradient()
-
-**Syntax:** `background: radial-gradient(<shape> <size> at <position>, <color-stops>)`
-
-Radial gradient — radiates colors outward from a center point.
-
-**Values:**
-- `circle, red, blue` — circular gradient
-- `circle, #00b894, #00cec9, #0984e3` — circular gradient through three colors
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Create spotlight or glow effects
-- Add depth to buttons
-
-**Example:**
-```css
-.button {
-  background: radial-gradient(circle, #00b894, #00cec9, #0984e3);
-}
-```
-
----
-
-## conic-gradient()
-
-**Syntax:** `background: conic-gradient(<from-angle> at <position>, <color-stops>)`
-
-Conic gradient — sweeps colors around a center point like a color wheel.
-
-**Values:**
-- `#ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b` — color wheel sweep
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Build color wheels and donut charts
-- Create rotating-hue effects
-
-**Example:**
-```css
-.wheel {
-  background: conic-gradient(#ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b);
-  border-radius: 50%;
-}
-```
 
 ---
 
@@ -213,10 +57,6 @@ Repeating linear — tiles a gradient pattern.
 
 **Values:**
 - `90deg, #d63031 0px, #d63031 20px, #fdcb6e 20px, #fdcb6e 40px` — vertical stripes repeating every 40px
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Create stripes and repeating patterns
@@ -239,10 +79,6 @@ Repeating radial — tiles a radial gradient pattern.
 
 **Values:**
 - `circle, #2d3436 0px, #2d3436 10px, #636e72 10px, #636e72 20px` — concentric rings
-- `inherit` — inherits from parent
-- `initial` — sets to default (none)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Create concentric ring patterns
@@ -296,44 +132,6 @@ Tiling behavior — repeat, no-repeat, repeat-x, repeat-y, round, space.
 .hero {
   background-image: url('hero.jpg');
   background-repeat: no-repeat;
-}
-```
-
----
-
-## background-size
-
-**Syntax:** `background-size: auto | <length> | <percentage> | cover | contain`
-
-Image dimensions — auto, cover (fill), or contain (fit).
-
-**Values:**
-- `auto` — natural image size (default)
-- `cover` — fills the area, cropping as needed
-- `contain` — fits entirely inside
-- `200px` — single width value
-- `200px 100px` — width and height
-- `50%` — single percentage
-- `50% 75%` — width and height percentages
-- `inherit` — inherits from parent
-- `initial` — sets to default (auto)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
-
-**Use Cases:**
-- Cover backgrounds in hero sections
-- Fit logos and icons cleanly
-
-**Example:**
-```css
-.hero {
-  background: url('image.jpg') center no-repeat;
-  background-size: cover;
-}
-
-.icon {
-  background: url('icon.png') no-repeat;
-  background-size: contain;
 }
 ```
 

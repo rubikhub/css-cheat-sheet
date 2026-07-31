@@ -1,69 +1,12 @@
 # Attribute Selectors
 
-> 7 selectors
+> 5 selectors
 
 Target elements based on the presence or value of their attributes.
 
 ---
 
 ## Selectors
-
----
-
-## [attr]
-
-**Syntax:** `[attr]`
-
-Targets elements that have the specified attribute.
-
-**Values:**
-- `[title]` — elements with a title attribute
-- `[href]` — elements with an href attribute
-- `[data-active]` — elements with a data-active attribute
-
-**Use Cases:**
-- Style elements that have a specific attribute
-- Target elements by data attributes
-
-**Example:**
-```css
-[href] {
-  color: blue;
-}
-
-[data-active] {
-  font-weight: bold;
-}
-```
-
----
-
-## [attr="value"]
-
-**Syntax:** `[attr="value"]`
-
-Targets elements with an exact attribute value match.
-
-**Values:**
-- `[type="text"]` — text inputs
-- `[type="email"]` — email inputs
-- `[type="password"]` — password inputs
-- `[data-status="active"]` — elements with an active status
-
-**Use Cases:**
-- Style inputs by type
-- Target elements by exact data values
-
-**Example:**
-```css
-[type="text"] {
-  border: 2px solid blue;
-}
-
-[type="email"] {
-  border: 2px solid green;
-}
-```
 
 ---
 
@@ -212,4 +155,4 @@ Targets elements whose attribute value contains the substring.
 
 **[View Example](../examples/intermediate/02-attribute-selectors/index.html)**
 
-← **Previous Topic:** [Structural Pseudo Classes](../intermediate/01-structural-pseudo-classes.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Combinators Advanced](../intermediate/03-combinators-advanced.md) →
+← **Previous Topic:** [Structural Pseudo Classes](../intermediate/01-structural-pseudo-classes.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Logic Matching Selectors](../intermediate/04-logic-matching-selectors.md) →

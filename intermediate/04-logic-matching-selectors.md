@@ -129,4 +129,4 @@ Selects elements that contain a matching descendant.
 
 **[View Example](../examples/intermediate/04-logic-matching-selectors/index.html)**
 
-← **Previous Topic:** [Combinators Advanced](../intermediate/03-combinators-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Form Pseudo Classes](../intermediate/05-form-pseudo-classes.md) →
+← **Previous Topic:** [Attribute Selectors](../intermediate/02-attribute-selectors.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Form Pseudo Classes](../intermediate/05-form-pseudo-classes.md) →

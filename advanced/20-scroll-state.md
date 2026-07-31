@@ -1,6 +1,6 @@
 # Scroll State Queries
 
-> 5 properties
+> 5 scroll-state conditions
 
 Query the scroll state of elements and the viewport.
 

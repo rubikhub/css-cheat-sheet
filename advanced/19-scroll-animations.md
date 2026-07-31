@@ -118,6 +118,10 @@ Sets the start or end boundary of the animation range.
 **Values:**
 - `entry 20%` — start at 20% through entry
 - `exit 80%` — end at 80% through exit
+- `inherit` — inherits from parent
+- `initial` — sets to default (normal)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Fine-tune when an animation begins
@@ -144,6 +148,10 @@ Declares a named view timeline on an element.
 **Values:**
 - `view-timeline-name: --reveal` — the timeline name
 - `view-timeline-axis: block` — the scroll axis
+- `inherit` — inherits from parent
+- `initial` — sets to default (none block)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Share a named timeline across elements

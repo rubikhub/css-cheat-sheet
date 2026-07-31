@@ -21,10 +21,6 @@ Performs calculations at computed-value time.
 - `calc(1rem + 0.5vw)` — combine units
 - `calc(calc(10px * 2) + calc(1rem / 2))` — nested calc
 - `calc(100% / 3)` — divide values
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Create fluid sizing calculations
@@ -50,10 +46,6 @@ Constrains a value between a minimum and maximum.
 - `clamp(1rem, 2vw + 0.5rem, 2.5rem)` — responsive font-size
 - `clamp(300px, 80%, 1200px)` — fluid width
 - `clamp(0.5rem, 2vw, 2rem)` — fluid padding
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Fluid typography
@@ -79,10 +71,6 @@ Returns the smaller or larger of a set of values.
 - `min(2rem, 5vw)` — responsive padding
 - `max(1rem, 2vw)` — at least 1rem
 - `max(300px, 50%)` — at least 300px
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Cap widths responsively
@@ -114,10 +102,6 @@ Rounds a value to a rounding interval.
 - `round(down, 100px, 10px)` — round down
 - `round(nearest, 100px, 10px)` — round to nearest
 - `round(to-zero, 100px, 10px)` — round toward zero
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Snap sizes to a grid
@@ -142,10 +126,6 @@ Returns the remainder of a division.
 - `rem(10px, 3px)` — remainder is 1px
 - `rem(var(--index), 3)` — cycles through 0 to 2
 - `rem(-10px, 3px)` — negative remainder follows the dividend
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Cycle values with a repeating pattern
@@ -170,10 +150,6 @@ Returns the modulus of a division, always positive.
 - `mod(10px, 3px)` — remainder is 1px
 - `mod(-10px, 3px)` — remainder is 2px
 - `mod(7, 4)` — remainder is 3
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Get a positive remainder
@@ -203,10 +179,6 @@ Trigonometric functions for angle calculations.
 - `cos(45deg)` — 0.707
 - `tan(45deg)` — 1
 - `calc(100px * sin(45deg))` — combined with calc
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Calculate circular motion offsets
@@ -237,10 +209,6 @@ Inverse trigonometric functions.
 - `acos(0.5)` — 60 degrees
 - `atan(1)` — 45 degrees
 - `atan2(var(--y), var(--x))` — full-circle angle from coordinates
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Compute angles from ratios
@@ -271,10 +239,6 @@ Exponential and logarithmic functions.
 - `exp(1)` — e (about 2.718)
 - `log(100)` — natural log, about 4.6
 - `log(100, 10)` — base-10 log, 2
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Scale values exponentially
@@ -301,10 +265,6 @@ Sign-related functions for absolute value and direction.
 - `sign(-50px)` — -1
 - `sign(50px)` — 1
 - `sign(0)` — 0
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Normalize directions
@@ -329,10 +289,6 @@ Returns the hypotenuse of a set of values.
 - `hypot(3px, 4px)` — 5px
 - `hypot(5px, 12px)` — 13px
 - `hypot(3px, 4px, 12px)` — 13px across three axes
-- `inherit` — inherits from parent
-- `initial` — sets to default (0)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Compute distances from offsets

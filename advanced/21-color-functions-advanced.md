@@ -22,10 +22,6 @@ Defines colors using Lightness, Chroma, and Hue in the OKLCH color space.
 - `oklch(0.5 0.2 300)` — purple at 50% lightness
 - `oklch(65% 0.15 260)` — primary blue
 - `oklch(75% 0.2 30)` — orange accent
-- `inherit` — inherits from parent
-- `initial` — sets to default (currentColor)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Create perceptually uniform color palettes
@@ -51,10 +47,6 @@ Defines colors using Lightness, a-axis, and b-axis in the OKLAB color space.
 - `oklab(0.7 0.1 -0.1)` — mid lightness with a green-blue cast
 - `oklab(0.9 0.05 0.05 / 0.5)` — pale color at 50% opacity
 - `oklab(0.5 0.2 0)` — deep neutral color
-- `inherit` — inherits from parent
-- `initial` — sets to default (currentColor)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Create perceptually uniform colors
@@ -80,10 +72,6 @@ Defines colors using Lightness, Chroma, and Hue in the CIE LCH color space.
 - `lch(70% 50 240)` — blue at 70% lightness
 - `lch(90% 30 120 / 0.9)` — green at 90% opacity
 - `lch(50% 60 20)` — saturated red-orange
-- `inherit` — inherits from parent
-- `initial` — sets to default (currentColor)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Define colors by perceptual lightness
@@ -109,10 +97,6 @@ Defines colors using Lightness and the a and b axes in the CIE LAB color space.
 - `lab(50% 30 -20)` — green-blue at 50% lightness
 - `lab(90% 10 20 / 0.8)` — pale red at 80% opacity
 - `lab(30% 50 50)` — deep red
-- `inherit` — inherits from parent
-- `initial` — sets to default (currentColor)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Define device-independent colors
@@ -138,10 +122,6 @@ Defines colors in various color spaces.
 - `color(display-p3 1 0.5 0)` — orange in Display P3
 - `color(prophoto-rgb 0.8 0.4 0.2)` — brown in ProPhoto RGB
 - `color(rec2020 0.5 0.3 0.7)` — purple in Rec2020
-- `inherit` — inherits from parent
-- `initial` — sets to default (currentColor)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Use wide-gamut colors such as Display P3
@@ -170,10 +150,6 @@ Mixes two colors in a given color space.
 - `color-mix(in srgb, red, blue)` — equal 50/50 mix
 - `color-mix(in oklch, #667eea 30%, #764ba2 70%)` — weighted mix
 - `color-mix(in srgb, currentColor 50%, transparent)` — mix with transparency
-- `inherit` — inherits from parent
-- `initial` — sets to default (currentColor)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Create color shades from a base color
@@ -199,10 +175,6 @@ Derives colors from existing colors using `from`.
 - `oklch(from var(--primary) calc(l - 0.2) c h)` — darker version
 - `oklch(from var(--primary) l c h / 50%)` — transparent version
 - `oklch(from var(--primary) l calc(c * 0.5) h)` — desaturated version
-- `inherit` — inherits from parent
-- `initial` — sets to default (currentColor)
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Create hover and active color variants

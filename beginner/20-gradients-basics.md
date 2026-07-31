@@ -19,10 +19,6 @@ Transitions colors along a straight line.
 - `red, blue` — simple two-color
 - `#6c5ce7, #a29bfe, #fd79a8` — multi-color
 - `red 0%, blue 100%` — color stops
-- `inherit` — inherits from parent
-- `initial` — sets to default
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Create colorful hero sections
@@ -59,10 +55,6 @@ Radiates colors outward from a center point.
 - `at top left` — positioned at corner
 - `red, blue` — simple two-color
 - `#00b894, #00cec9, #0984e3` — multi-color
-- `inherit` — inherits from parent
-- `initial` — sets to default
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Create spotlight effects
@@ -99,10 +91,6 @@ Sweeps colors around a center point like a color wheel.
 - `from 0deg` — starting angle
 - `from 90deg` — rotated start
 - `at center` — center position
-- `inherit` — inherits from parent
-- `initial` — sets to default
-- `revert` — reverts to user agent stylesheet value
-- `unset` — inherits or initial depending on property
 
 **Use Cases:**
 - Create color wheels and pie charts
