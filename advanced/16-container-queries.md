@@ -1,63 +1,90 @@
 # Container Queries
 
+> 3 properties
+
 Responsive design based on container size instead of viewport.
 
 ---
 
 ## container-type
-**Type:** keyword | **Initial:** normal
+
+**Syntax:** `container-type: inline-size | size | block-size | normal`
 
 Declares an element as a containment context.
 
+**Values:**
+- `inline-size` — inline size containment only (most common)
+- `size` — containment on both dimensions
+- `block-size` — block size containment only
+- `normal` — no containment (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (normal)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create size-based responsiveness
+- Build self-contained card layouts
+
+**Example:**
 ```css
-/* Inline size only (most common) */
 .card-wrapper {
   container-type: inline-size;
 }
 
-/* Both dimensions */
 .sidebar {
   container-type: size;
 }
-
-/* Block size only */
-.column {
-  container-type: block-size;
-}
-
-/* Global values */
-container-type: inherit;
-container-type: initial;
 ```
 
 ---
 
 ## container-name
-**Type:** name | **Initial:** none
+
+**Syntax:** `container-name: <name> | none`
 
 Names a container for targeted queries.
 
+**Values:**
+- `sidebar` — named container for sidebar queries
+- `card` — named container for card queries
+- `none` — no container name (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Target a specific container with @container
+- Support multiple container types on one page
+
+**Example:**
 ```css
 .sidebar {
   container-type: inline-size;
   container-name: sidebar;
-}
-
-.card {
-  container-type: inline-size;
-  container-name: card;
 }
 ```
 
 ---
 
 ## @container
-**Type:** at-rule
+
+**Syntax:** `@container (<condition>) { ... }` | `@container <name> (<condition>) { ... }`
 
 Applies styles based on container dimensions or style state.
 
+**Values:**
+- `@container (min-width: 500px)` — size-based query
+- `@container sidebar (max-width: 300px)` — query a named container
+- `@container style(--theme: dark)` — style query
+
+**Use Cases:**
+- Adapt components to their container width
+- Apply styles based on container state
+
+**Example:**
 ```css
-/* Size-based query */
 @container (min-width: 500px) {
   .card {
     display: grid;
@@ -65,45 +92,8 @@ Applies styles based on container dimensions or style state.
   }
 }
 
-/* Named container */
-@container sidebar (max-width: 300px) {
-  .nav { font-size: 0.8rem; }
-}
-
-/* Style queries */
 @container style(--theme: dark) {
   .card { background: #1a1a1a; color: white; }
-}
-```
-
-```html
-<div class="card-wrapper">
-  <div class="card">
-    <img src="photo.jpg" alt="Photo">
-    <div class="card-body">
-      <h3>Title</h3>
-      <p>Description</p>
-    </div>
-  </div>
-</div>
-```
-
-```css
-.card-wrapper {
-  container-type: inline-size;
-  container-name: card;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-}
-
-@container card (min-width: 500px) {
-  .card {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-  }
 }
 ```
 
@@ -126,9 +116,8 @@ Applies styles based on container dimensions or style state.
 }
 ```
 
-
 ---
 
-[Example](../examples/advanced/16-container-queries/index.html)
+**[View Example](../examples/advanced/16-container-queries/index.html)**
 
 ← **Previous Topic:** [CSS At-Rules — Advanced](../advanced/15-at-rules.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Selectors 2024+](../advanced/17-selectors-2024.md) →

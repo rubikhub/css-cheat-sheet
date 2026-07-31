@@ -1,87 +1,70 @@
 # Form Pseudo-classes — Advanced
 
+> 2 pseudo-classes
+
 Direction and language pseudo-classes for forms.
 
 ---
 
 ## :dir()
-**Type:** pseudo-class
+
+**Syntax:** `:dir(ltr)` | `:dir(rtl)`
 
 Selects elements based on text directionality.
 
+**Values:**
+- `:dir(ltr)` — left-to-right text
+- `:dir(rtl)` — right-to-left text
+- `input:dir(rtl)` — input with right-to-left text
+
+**Use Cases:**
+- Align text by reading direction
+- Style inputs for RTL languages
+
+**Example:**
 ```css
-/* Left-to-right */
 :dir(ltr) {
   text-align: left;
   padding-left: 1rem;
 }
 
-/* Right-to-left */
 :dir(rtl) {
   text-align: right;
   padding-right: 1rem;
-}
-
-/* Specific element */
-input:dir(rtl) {
-  text-align: right;
 }
 ```
 
 ---
 
 ## :lang()
-**Type:** pseudo-class
+
+**Syntax:** `:lang(en)` | `:lang(en, fr, de)`
 
 Selects elements based on their language.
 
-```css
-/* English text */
-:lang(en) {
-  quotes: "\201C" "\201D";
-}
+**Values:**
+- `:lang(en)` — English text
+- `:lang(fr)` — French text
+- `:lang(ar)` — Arabic text
+- `:lang(en, fr, de)` — text in multiple languages
 
-/* French text */
-:lang(fr) {
-  quotes: "\00AB" "\00BB";
-}
+**Use Cases:**
+- Apply per-language typography
+- Set quotes and direction by language
 
-/* Arabic text */
-:lang(ar) {
-  direction: rtl;
-  font-family: 'Arabic Font', serif;
-}
-
-/* Specific language ranges */
-:lang(en, fr, de) {
-  font-family: 'Latin Font', sans-serif;
-}
-```
-
-```html
-<p lang="en">"Hello world"</p>
-<p lang="fr">"Bonjour le monde"</p>
-<p lang="ar" dir="rtl">مرحبا بالعالم</p>
-```
-
+**Example:**
 ```css
 :lang(en) {
   quotes: "\201C" "\201D";
 }
 
-:lang(fr) {
-  quotes: "\00AB" "\00BB";
-}
-
 :lang(ar) {
-  quotes: "\300E" "\300F";
   direction: rtl;
 }
 ```
-
 
 ---
 
-[Example](../examples/advanced/13-form-pseudo-classes-advanced/index.html)
+**[View Example](../examples/advanced/13-form-pseudo-classes-advanced/index.html)**
 
 ← **Previous Topic:** [Advanced State Pseudo-classes](../advanced/12-state-pseudo-classes-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Cutting-edge Pseudo-elements](../advanced/14-pseudo-elements-cutting-edge.md) →

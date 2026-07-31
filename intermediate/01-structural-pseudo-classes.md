@@ -1,85 +1,65 @@
 # Structural Pseudo Classes
+
+> 8 pseudo-classes
+
+Target elements based on their position among siblings.
+
 ---
-## Container Properties
-### :first-child
-**Type/Initial:** pseudo-class | (none)
 
-**Description:** Selects the first child element of its parent.
+## Structural
 
-**CSS:**
+---
+
+## :first-child
+
+**Syntax:** `:first-child`
+
+Selects the first child element of its parent.
+
+**Values:**
+- `li:first-child` — first list item
+- `.item:first-child` — first .item element
+- `.card:first-child` — first card
+- `p:first-child` — first paragraph
+
+**Use Cases:**
+- Style the first element in a group
+- Remove the top border of a first child
+
+**Example:**
 ```css
 li:first-child {
   font-weight: bold;
-  color: blue;
-}
-
-.item:first-child {
-  border-top: 2px solid green;
-}
-
-.card:first-child {
-  background: lightyellow;
 }
 
 p:first-child {
   font-size: 1.2em;
 }
-```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    first child (selected)
-  </div>
-  <div class="db style-c">
-    second child
-  </div>
-  <div class="db style-d">
-    third child
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border-top: 2px solid green;
-  font-weight: bold;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+.card:first-child {
+  background: lightyellow;
 }
 ```
 
-### :last-child
-**Type/Initial:** pseudo-class | (none)
+---
 
-**Description:** Selects the last child element of its parent.
+## :last-child
 
-**CSS:**
+**Syntax:** `:last-child`
+
+Selects the last child element of its parent.
+
+**Values:**
+- `li:last-child` — last list item
+- `.item:last-child` — last .item element
+- `.card:last-child` — last card
+- `p:last-child` — last paragraph
+
+**Use Cases:**
+- Style the last element in a group
+- Remove the bottom border of a last child
+
+**Example:**
 ```css
 li:last-child {
   font-weight: bold;
@@ -90,191 +70,71 @@ li:last-child {
   border-bottom: 2px solid green;
 }
 
-.card:last-child {
-  background: lightyellow;
-}
-
 p:last-child {
   margin-bottom: 0;
 }
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    first child
-  </div>
-  <div class="db style-c">
-    second child
-  </div>
-  <div class="db style-d">
-    last child (selected)
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
+## :nth-child(an+b)
+
+**Syntax:** `:nth-child(an+b)`
+
+Selects elements based on their position among siblings.
+
+**Values:**
+- `2` — second element
+- `odd` — odd elements (1, 3, 5...)
+- `even` — even elements (2, 4, 6...)
+- `3n` — every third element
+- `3n+1` — every third starting at 1
+- `-n+3` — first three elements
+- `n+4` — elements from 4 onward
+
+**Use Cases:**
+- Create zebra-striped lists and tables
+- Target specific positions in a group
+
+**Example:**
 ```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border-bottom: 2px solid green;
-  font-weight: bold;
-}
-```
-
-### :nth-child()
-**Type/Initial:** pseudo-class | (none)
-
-**Description:** Selects elements based on their position among siblings.
-
-**CSS:**
-```css
-/* Specific position */
 li:nth-child(2) {
   color: blue;
-}
-
-/* Odd/even */
-li:nth-child(odd) {
-  background: lightgray;
 }
 
 li:nth-child(even) {
   background: lightyellow;
 }
 
-/* Formula */
 li:nth-child(3n) {
   font-weight: bold;
-}
-
-li:nth-child(3n+1) {
-  color: red;
 }
 
 li:nth-child(-n+3) {
   border-left: 3px solid blue;
 }
-
-li:nth-child(n+4) {
-  opacity: 0.7;
-}
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    1
-  </div>
-  <div class="db style-c">
-    2
-  </div>
-  <div class="db style-d">
-    3
-  </div>
-  <div class="db style-e">
-    4
-  </div>
-  <div class="db style-f">
-    5
-  </div>
-  <div class="db style-g">
-    6
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.5rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightgray;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightyellow;
-  color: blue;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightgray;
-  font-weight: bold;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightyellow;
-}
-.style-f {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightgray;
-}
-.style-g {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightyellow;
-}
-```
+## :nth-last-child(an+b)
 
-### :nth-last-child()
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:nth-last-child(an+b)`
 
-**Description:** Selects elements based on position from the end.
+Selects elements based on position from the end.
 
-**CSS:**
+**Values:**
+- `1` — last element
+- `odd` — odd positions from the end
+- `even` — even positions from the end
+- `3n` — every third from the end
+- `-n+2` — last two elements
+
+**Use Cases:**
+- Style elements near the end of a group
+- Create reverse counting patterns
+
+**Example:**
 ```css
 li:nth-last-child(1) {
   color: red;
@@ -284,100 +144,30 @@ li:nth-last-child(odd) {
   background: lightgray;
 }
 
-li:nth-last-child(even) {
-  background: lightyellow;
-}
-
-li:nth-last-child(3n) {
-  font-weight: bold;
-}
-
 li:nth-last-child(-n+2) {
   border-right: 3px solid blue;
 }
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    1
-  </div>
-  <div class="db style-c">
-    2
-  </div>
-  <div class="db style-d">
-    3
-  </div>
-  <div class="db style-e">
-    4
-  </div>
-  <div class="db style-f">
-    5
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.5rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightgray;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightyellow;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightgray;
-  font-weight: bold;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightyellow;
-  border-right: 3px solid blue;
-}
-.style-f {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightgray;
-  border-right: 3px solid blue;
-  color: red;
-}
-```
+## :nth-of-type(an+b)
 
-### :nth-of-type()
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:nth-of-type(an+b)`
 
-**Description:** Selects elements of a specific type among siblings.
+Selects elements of a specific type among siblings.
 
-**CSS:**
+**Values:**
+- `1` — first element of that type
+- `2` — second element of that type
+- `odd` — odd positions of that type
+- `3n` — every third element of that type
+
+**Use Cases:**
+- Target specific tags among mixed siblings
+- Style paragraphs or divs by position
+
+**Example:**
 ```css
 p:nth-of-type(1) {
   font-size: 1.2em;
@@ -396,69 +186,25 @@ p:nth-of-type(2) {
 }
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    div 1
-  </div>
-  <div class="db style-c">
-    div 2
-  </div>
-  <div class="db style-d">
-    div 3
-  </div>
-  <div class="db style-e">
-    div 4
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightgray;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightgray;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
+## :nth-last-of-type(an+b)
 
-### :nth-last-of-type()
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:nth-last-of-type(an+b)`
 
-**Description:** Selects elements of a specific type from the end.
+Selects elements of a specific type from the end.
 
-**CSS:**
+**Values:**
+- `1` — last element of that type
+- `2` — second to last of that type
+- `odd` — odd positions from the end
+- `3n` — every third from the end
+
+**Use Cases:**
+- Target the last of a specific tag type
+- Style from the end of mixed sibling groups
+
+**Example:**
 ```css
 p:nth-last-of-type(1) {
   font-size: 1.2em;
@@ -477,69 +223,25 @@ p:nth-last-of-type(2) {
 }
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    div 1
-  </div>
-  <div class="db style-c">
-    div 2
-  </div>
-  <div class="db style-d">
-    div 3
-  </div>
-  <div class="db style-e">
-    div 4
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightgray;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightgray;
-}
-```
+## :only-child
 
-### :only-child
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:only-child`
 
-**Description:** Selects an element that is the only child of its parent.
+Selects an element that is the only child of its parent.
 
-**CSS:**
+**Values:**
+- `li:only-child` — only list item
+- `.item:only-child` — only .item element
+- `.card:only-child` — only card
+- `p:only-child` — only paragraph
+
+**Use Cases:**
+- Style single items differently
+- Adjust spacing for solo elements
+
+**Example:**
 ```css
 li:only-child {
   font-weight: bold;
@@ -550,58 +252,33 @@ li:only-child {
   border: 2px solid green;
 }
 
-.card:only-child {
-  background: lightyellow;
-}
-
 p:only-child {
   font-size: 1.2em;
 }
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    only child (selected)
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border: 2px solid green;
-  font-weight: bold;
-}
-```
+## :empty
 
-### :empty
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:empty`
 
-**Description:** Selects elements with no children or text content.
+Selects elements with no children or text content.
 
-**CSS:**
+**Values:**
+- `div:empty` — empty div elements
+- `.cell:empty` — empty table cells
+- `.input:empty` — empty input containers
+- `.container:empty` — empty containers
+
+**Use Cases:**
+- Hide empty elements
+- Add placeholder content via ::before
+
+**Example:**
 ```css
 div:empty {
   display: none;
-}
-
-.cell:empty {
-  background: lightgray;
 }
 
 .input:empty::before {
@@ -614,56 +291,8 @@ div:empty {
 }
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    has content
-  </div>
-  <div class="db style-c">
-  </div>
-  <div class="db style-d">
-    has content
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: lightgray;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
-
 ---
 
-[Example](../examples/intermediate/01-structural-pseudo-classes/index.html)
+**[View Example](../examples/intermediate/01-structural-pseudo-classes/index.html)**
 
 ← **Previous Topic:** [Logical Properties](../beginner/21-logical-properties.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Attribute Selectors](../intermediate/02-attribute-selectors.md) →

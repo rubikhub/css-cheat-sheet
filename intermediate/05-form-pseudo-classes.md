@@ -1,12 +1,31 @@
 # Form Pseudo Classes
+
+> 7 pseudo-classes
+
+Target form elements based on their state and validation status.
+
 ---
-## Container Properties
-### :enabled
-**Type/Initial:** pseudo-class | (none)
 
-**Description:** Selects enabled form elements.
+## States
 
-**CSS:**
+---
+
+## :enabled
+
+**Syntax:** `:enabled`
+
+Selects enabled form elements.
+
+**Values:**
+- `input:enabled` — enabled inputs
+- `button:enabled` — enabled buttons
+- `select:enabled` — enabled selects
+
+**Use Cases:**
+- Style enabled form controls
+- Differentiate enabled and disabled fields
+
+**Example:**
 ```css
 input:enabled {
   background: white;
@@ -16,73 +35,27 @@ input:enabled {
 button:enabled {
   background: blue;
   color: white;
-  cursor: pointer;
-}
-
-select:enabled {
-  border-color: green;
 }
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    enabled input
-  </div>
-  <div class="db style-c">
-    enabled button
-  </div>
-  <div class="db style-d">
-    disabled input
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border: 1px solid #ccc;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: blue;
-  color: white;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: #f5f5f5;
-  color: #999;
-}
-```
+## :disabled
 
-### :disabled
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:disabled`
 
-**Description:** Selects disabled form elements.
+Selects disabled form elements.
 
-**CSS:**
+**Values:**
+- `input:disabled` — disabled inputs
+- `button:disabled` — disabled buttons
+- `select:disabled` — disabled selects
+
+**Use Cases:**
+- Visually disable form fields
+- Show that a control cannot be used
+
+**Example:**
 ```css
 input:disabled {
   background: #f5f5f5;
@@ -93,71 +66,27 @@ input:disabled {
 button:disabled {
   background: #ccc;
   color: #666;
-  cursor: not-allowed;
-}
-
-select:disabled {
-  background: #f5f5f5;
-  border-color: #ddd;
 }
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    enabled
-  </div>
-  <div class="db style-c">
-    disabled
-  </div>
-  <div class="db style-d">
-    enabled
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  background: #f5f5f5;
-  color: #999;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
+## :checked
 
-### :checked
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:checked`
 
-**Description:** Selects checked checkboxes and radio buttons.
+Selects checked checkboxes and radio buttons.
 
-**CSS:**
+**Values:**
+- `input:checked` — checked inputs
+- `input:checked + label` — label next to a checked input
+- `input:checked::before` — marker on a checked input
+
+**Use Cases:**
+- Style selected options
+- Highlight the label of a checked input
+
+**Example:**
 ```css
 input:checked {
   accent-color: blue;
@@ -167,79 +96,29 @@ input:checked + label {
   color: blue;
   font-weight: bold;
 }
-
-input:checked::before {
-  content: "✓ ";
-  color: green;
-}
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    checked
-  </div>
-  <div class="db style-c">
-    unchecked
-  </div>
-  <div class="db style-d">
-    checked
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border-left: 3px solid blue;
-  font-weight: bold;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border-left: 3px solid blue;
-  font-weight: bold;
-}
-```
+## :indeterminate
 
-### :indeterminate
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:indeterminate`
 
-**Description:** Selects indeterminate checkboxes, radio groups, and progress bars.
+Selects indeterminate checkboxes, radio groups, and progress bars.
 
-**CSS:**
+**Values:**
+- `input:indeterminate` — indeterminate checkboxes
+- `input:indeterminate + label` — label next to an indeterminate input
+- `progress:indeterminate` — indeterminate progress bars
+
+**Use Cases:**
+- Style tri-state checkboxes
+- Style progress bars without a value
+
+**Example:**
 ```css
 input:indeterminate {
   accent-color: orange;
-}
-
-input:indeterminate + label {
-  color: orange;
-  font-style: italic;
 }
 
 progress:indeterminate {
@@ -247,62 +126,28 @@ progress:indeterminate {
 }
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    indeterminate checkbox
-  </div>
-  <div class="db style-c">
-    progress bar
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border-left: 3px solid orange;
-  font-style: italic;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  opacity: 0.7;
-}
-```
+## :placeholder-shown
 
-### :placeholder-shown
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:placeholder-shown`
 
-**Description:** Selects inputs when placeholder is visible (empty).
+Selects inputs when the placeholder is visible (empty).
 
-**CSS:**
+**Values:**
+- `input:placeholder-shown` — empty inputs showing a placeholder
+- `input:placeholder-shown + label` — label next to an empty input
+- `textarea:placeholder-shown` — empty textareas
+
+**Use Cases:**
+- Style empty inputs differently
+- Hide labels until a field has a value
+
+**Example:**
 ```css
 input:placeholder-shown {
   border-color: #ccc;
   font-style: italic;
-}
-
-input:placeholder-shown + label {
-  opacity: 0.5;
 }
 
 textarea:placeholder-shown {
@@ -310,54 +155,25 @@ textarea:placeholder-shown {
 }
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    empty (placeholder shown)
-  </div>
-  <div class="db style-c">
-    has value
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border: 1px solid #ccc;
-  font-style: italic;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border: 1px solid green;
-}
-```
+## :required
 
-### :required
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:required`
 
-**Description:** Selects required form elements.
+Selects required form elements.
 
-**CSS:**
+**Values:**
+- `input:required` — required inputs
+- `input:required + label::after` — add a required marker to the label
+- `select:required` — required selects
+- `textarea:required` — required textareas
+
+**Use Cases:**
+- Highlight mandatory fields
+- Add an asterisk to required labels
+
+**Example:**
 ```css
 input:required {
   border-left: 3px solid red;
@@ -367,142 +183,39 @@ input:required + label::after {
   content: " *";
   color: red;
 }
-
-select:required {
-  border-color: red;
-}
-
-textarea:required {
-  border-left: 3px solid red;
-}
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    required
-  </div>
-  <div class="db style-c">
-    optional
-  </div>
-  <div class="db style-d">
-    required
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border-left: 3px solid red;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border-left: 3px solid red;
-}
-```
+## :optional
 
-### :optional
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:optional`
 
-**Description:** Selects optional form elements.
+Selects optional form elements.
 
-**CSS:**
+**Values:**
+- `input:optional` — optional inputs
+- `input:optional + label` — label next to an optional input
+- `select:optional` — optional selects
+- `textarea:optional` — optional textareas
+
+**Use Cases:**
+- De-emphasize optional fields
+- Mark fields that are not required
+
+**Example:**
 ```css
 input:optional {
   border-left: 3px solid green;
 }
 
-input:optional + label {
-  color: green;
-}
-
 select:optional {
   border-color: green;
-}
-
-textarea:optional {
-  border-left: 3px solid green;
-}
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    optional
-  </div>
-  <div class="db style-c">
-    required
-  </div>
-  <div class="db style-d">
-    optional
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border-left: 3px solid green;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border-left: 3px solid green;
 }
 ```
 
 ---
 
-[Example](../examples/intermediate/05-form-pseudo-classes/index.html)
+**[View Example](../examples/intermediate/05-form-pseudo-classes/index.html)**
 
 ← **Previous Topic:** [Logic Matching Selectors](../intermediate/04-logic-matching-selectors.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [State Pseudo Classes](../intermediate/06-state-pseudo-classes.md) →

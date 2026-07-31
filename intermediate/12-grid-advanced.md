@@ -1,1123 +1,479 @@
 # Grid Advanced
+
+> 14 properties
+
+Two-dimensional layout — advanced grid container and item properties.
+
 ---
-## Container Properties
-### display
-**Type/Initial:** keyword | inline
 
-**Description:** Grid container — enables grid layout on children.
+## Container
 
-**CSS:**
+---
+
+## display
+
+**Syntax:** `display: grid | inline-grid`
+
+Grid container — enables grid layout on children.
+
+**Values:**
+- `grid` — block-level grid container
+- `inline-grid` — inline-level grid container
+- `inherit` — inherits from parent
+- `initial` — sets to default (inline)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create complex page layouts
+- Build responsive card grids
+
+**Example:**
 ```css
-display: grid;
-display: inline-grid;
-display: block-grid;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.3rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
 }
 ```
 
-### grid-template-columns
-**Type/Initial:** track list | none
+---
 
-**Description:** Columns — defines the column tracks of a grid container.
+## grid-template-columns
 
-**CSS:**
+**Syntax:** `grid-template-columns: <track-list>`
+
+Columns — defines the column tracks of a grid container.
+
+**Values:**
+- `none` — no explicit columns (default)
+- `200px` — single fixed column
+- `200px 100px auto` — mixed fixed and auto columns
+- `repeat(3, 1fr)` — three equal columns
+- `repeat(2, minmax(100px, 1fr))` — two flexible columns
+- `repeat(auto-fit, minmax(200px, 1fr))` — responsive grid that grows to fill
+- `repeat(auto-fill, minmax(150px, 1fr))` — fills available space with columns
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create responsive card layouts
+- Build magazine-style layouts
+
+**Example:**
 ```css
-/* None */
-grid-template-columns: none;
+.grid {
+  grid-template-columns: repeat(3, 1fr);
+}
 
-/* Track sizes */
-grid-template-columns: 200px;
-grid-template-columns: 200px 100px auto;
-grid-template-columns: repeat(3, 1fr);
-grid-template-columns: repeat(4, 1fr);
-grid-template-columns: repeat(2, minmax(100px, 1fr));
-
-/* Auto-fit / auto-fill */
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-
-/* Global values */
-grid-template-columns: inherit;
-grid-template-columns: initial;
-grid-template-columns: revert;
-grid-template-columns: unset;
+.sidebar-layout {
+  grid-template-columns: 200px 1fr;
+}
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    1
-  </div>
-  <div class="db style-c">
-    2
-  </div>
-  <div class="db style-d">
-    3
-  </div>
-  <div class="db style-e">
-    4
-  </div>
-  <div class="db style-f">
-    5
-  </div>
-  <div class="db style-g">
-    6
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
+## grid-template-rows
+
+**Syntax:** `grid-template-rows: <track-list>`
+
+Rows — defines the row tracks of a grid container.
+
+**Values:**
+- `none` — no explicit rows (default)
+- `100px` — single fixed row
+- `100px 200px auto` — mixed fixed and auto rows
+- `repeat(3, 1fr)` — three equal rows
+- `minmax(50px, auto)` — minimum height row
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create fixed-height headers and footers
+- Ensure minimum row heights
+
+**Example:**
 ```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
+.layout {
+  grid-template-rows: auto 1fr auto;
 }
-.style-a {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.3rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-f {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-g {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+
+.card-grid {
+  grid-template-rows: repeat(3, minmax(100px, auto));
 }
 ```
 
-### grid-template-rows
-**Type/Initial:** track list | none
+---
 
-**Description:** Rows — defines the row tracks of a grid container.
+## grid-template-areas
 
-**CSS:**
+**Syntax:** `grid-template-areas: <string> | none`
+
+Areas — names grid areas for placement by name.
+
+**Values:**
+- `none` — no named areas (default)
+- `"header header"` — two-column header row
+- `"sidebar main"` — two-column content row
+- `"footer footer"` — two-column footer row
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Define named page layouts
+- Place items by area name with `grid-area`
+
+**Example:**
 ```css
-/* None */
-grid-template-rows: none;
-
-/* Track sizes */
-grid-template-rows: 100px;
-grid-template-rows: 100px 200px auto;
-grid-template-rows: repeat(3, 1fr);
-grid-template-rows: minmax(50px, auto);
-
-/* Global values */
-grid-template-rows: inherit;
-grid-template-rows: initial;
-grid-template-rows: revert;
-grid-template-rows: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    1
-  </div>
-  <div class="db style-c">
-    2
-  </div>
-  <div class="db style-d">
-    3
-  </div>
-  <div class="db style-e">
-    4
-  </div>
-  <div class="db style-f">
-    5
-  </div>
-  <div class="db style-g">
-    6
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 40px auto 40px;
-  gap: 0.3rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-f {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-g {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
-
-### grid-template-areas
-**Type/Initial:** string | none
-
-**Description:** Areas — names grid areas for placement by name.
-
-**CSS:**
-```css
-/* None */
-grid-template-areas: none;
-
-/* Named areas */
-grid-template-areas:
-  "header header"
-  "sidebar main"
-  "footer footer";
-
-grid-template-areas:
-  "a a a"
-  "b b c"
-  "d d d";
-
-/* Global values */
-grid-template-areas: inherit;
-grid-template-areas: initial;
-grid-template-areas: revert;
-grid-template-areas: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    header
-  </div>
-  <div class="db style-c">
-    side
-  </div>
-  <div class="db style-d">
-    main
-  </div>
-  <div class="db style-e">
-    footer
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.layout {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto auto auto;
-  grid-template-areas: 'header header' 'sidebar main' 'footer footer';
-  gap: 0.3rem;
-  font-size: 0.75rem;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
 }
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  grid-area: header;
-  text-align: center;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  grid-area: sidebar;
-  text-align: center;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  grid-area: main;
-  text-align: center;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  grid-area: footer;
-  text-align: center;
-}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
 ```
 
-### gap
-**Type/Initial:** length | 0
+---
 
-**Description:** Gutters — sets spacing between grid rows and columns.
+## gap
 
-**CSS:**
+**Syntax:** `gap: <length> | <percentage>`
+
+Gutters — sets spacing between grid rows and columns.
+
+**Values:**
+- `0` — no gap (default)
+- `10px` — fixed gap
+- `1rem 2rem` — row-gap column-gap
+- `5% 10%` — percentage gaps
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create consistent spacing in grids
+- Replace margins on grid children
+
+**Example:**
 ```css
-gap: 10px;
-gap: 1rem 2rem;
-gap: 5% 10%;
-
-gap: inherit;
-gap: initial;
-gap: revert;
-gap: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    1
-  </div>
-  <div class="db style-c">
-    2
-  </div>
-  <div class="db style-d">
-    3
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.8rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+  gap: 20px;
 }
 ```
 
-### grid-auto-columns
-**Type/Initial:** track size | auto
+---
 
-**Description:** Auto columns — sets the size for auto-placed columns.
+## grid-auto-columns
 
-**CSS:**
+**Syntax:** `grid-auto-columns: <track-size>`
+
+Auto columns — sets the size for auto-placed columns.
+
+**Values:**
+- `auto` — auto-sized (default)
+- `100px` — fixed size
+- `1fr` — flexible size
+- `min-content` — smallest content size
+- `max-content` — largest content size
+- `minmax(100px, 1fr)` — min/max size range
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Size columns created by auto-placement
+- Create flexible implicit tracks
+
+**Example:**
 ```css
-grid-auto-columns: auto;
-grid-auto-columns: 100px;
-grid-auto-columns: 1fr;
-grid-auto-columns: min-content;
-grid-auto-columns: max-content;
-grid-auto-columns: minmax(100px, 1fr);
-
-grid-auto-columns: inherit;
-grid-auto-columns: initial;
-grid-auto-columns: revert;
-grid-auto-columns: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    1
-  </div>
-  <div class="db style-c">
-    2
-  </div>
-  <div class="db style-d">
-    3
-  </div>
-  <div class="db style-e">
-    4
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.auto-grid {
   display: grid;
   grid-template-columns: 80px;
   grid-auto-columns: 1fr;
   grid-auto-flow: column;
-  gap: 0.3rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
-
-### grid-auto-rows
-**Type/Initial:** track size | auto
-
-**Description:** Auto rows — sets the size for auto-placed rows.
-
-**CSS:**
-```css
-grid-auto-rows: auto;
-grid-auto-rows: 100px;
-grid-auto-rows: 1fr;
-grid-auto-rows: min-content;
-grid-auto-rows: max-content;
-grid-auto-rows: minmax(50px, auto);
-
-grid-auto-rows: inherit;
-grid-auto-rows: initial;
-grid-auto-rows: revert;
-grid-auto-rows: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    1
-  </div>
-  <div class="db style-c">
-    2
-  </div>
-  <div class="db style-d">
-    3
-  </div>
-  <div class="db style-e">
-    4
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 40px;
-  gap: 0.3rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
-
-### grid-auto-flow
-**Type/Initial:** keyword | row
-
-**Description:** Auto flow — controls how auto-placed items are inserted.
-
-**CSS:**
-```css
-grid-auto-flow: row;
-grid-auto-flow: column;
-grid-auto-flow: dense;
-grid-auto-flow: row dense;
-grid-auto-flow: column dense;
-
-grid-auto-flow: inherit;
-grid-auto-flow: initial;
-grid-auto-flow: revert;
-grid-auto-flow: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    1
-  </div>
-  <div class="db style-c">
-    2
-  </div>
-  <div class="db style-d">
-    3
-  </div>
-  <div class="db style-e">
-    4
-  </div>
-  <div class="db style-f">
-    5
-  </div>
-  <div class="db style-g">
-    6
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-auto-flow: column;
-  gap: 0.3rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-f {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-g {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
-
-## Item Properties
-### grid-column
-**Type/Initial:** span | auto
-
-**Description:** Column span — makes an item span across grid columns.
-
-**CSS:**
-```css
-/* Span */
-grid-column: 1 / 3;
-grid-column: 1 / span 2;
-grid-column: span 2;
-
-/* Auto placement */
-grid-column: auto;
-grid-column: auto / 1;
-
-/* Named lines */
-grid-column: header-start / header-end;
-
-/* Global values */
-grid-column: inherit;
-grid-column: initial;
-grid-column: revert;
-grid-column: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    span 2
-  </div>
-  <div class="db style-c">
-    1
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.3rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  grid-column: span 2;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
-
-### grid-row
-**Type/Initial:** span | auto
-
-**Description:** Row span — makes an item span across grid rows.
-
-**CSS:**
-```css
-grid-row: 1 / 3;
-grid-row: 1 / span 2;
-grid-row: span 2;
-grid-row: auto;
-grid-row: auto / 1;
-
-grid-row: inherit;
-grid-row: initial;
-grid-row: revert;
-grid-row: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    span 2
-  </div>
-  <div class="db style-c">
-    2
-  </div>
-  <div class="db style-d">
-    3
-  </div>
-  <div class="db style-e">
-    4
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 32px;
-  gap: 0.3rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  grid-row: span 2;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
-
-### grid-area
-**Type/Initial:** name / span | auto
-
-**Description:** Area — places an item into a named grid area or by line numbers.
-
-**CSS:**
-```css
-/* Named areas */
-grid-area: header;
-grid-area: sidebar;
-grid-area: main;
-grid-area: footer;
-
-/* Shorthand: row-start / column-start / row-end / column-end */
-grid-area: 1 / 1 / 3 / 3;
-grid-area: 1 / span 2 / 3 / span 2;
-
-/* Global values */
-grid-area: inherit;
-grid-area: initial;
-grid-area: revert;
-grid-area: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-  <div class="db style-e">
-    D
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 0.3rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  grid-area: 1/1/3/2;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
-
-### justify-items
-**Type/Initial:** keyword | stretch
-
-**Description:** Justify items — aligns items along the inline (row) axis within their cell.
-
-**CSS:**
-```css
-justify-items: start;
-justify-items: end;
-justify-items: center;
-justify-items: stretch;
-justify-items: left;
-justify-items: right;
-
-justify-items: inherit;
-justify-items: initial;
-justify-items: revert;
-justify-items: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.3rem;
-  justify-items: center;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
-
-### align-items
-**Type/Initial:** keyword | stretch
-
-**Description:** Align items — aligns items along the block (column) axis within their cell.
-
-**CSS:**
-```css
-align-items: start;
-align-items: end;
-align-items: center;
-align-items: stretch;
-align-items: baseline;
-align-items: self-start;
-align-items: self-end;
-
-align-items: inherit;
-align-items: initial;
-align-items: revert;
-align-items: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 64px;
-  gap: 0.3rem;
-  align-items: center;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
-
-### place-items
-**Type/Initial:** shorthand | stretch
-
-**Description:** Place items — shorthand for align-items and justify-items together.
-
-**CSS:**
-```css
-/* Single value */
-place-items: center;
-place-items: start;
-place-items: stretch;
-
-/* Two values */
-place-items: center start;
-place-items: stretch end;
-
-place-items: inherit;
-place-items: initial;
-place-items: revert;
-place-items: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 64px;
-  gap: 0.3rem;
-  place-items: center;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
 }
 ```
 
 ---
 
-[Example](../examples/intermediate/12-grid-advanced/index.html)
+## grid-auto-rows
+
+**Syntax:** `grid-auto-rows: <track-size>`
+
+Auto rows — sets the size for auto-placed rows.
+
+**Values:**
+- `auto` — auto-sized (default)
+- `100px` — fixed size
+- `1fr` — flexible size
+- `min-content` — smallest content size
+- `max-content` — largest content size
+- `minmax(50px, auto)` — min/max size range
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Size rows created by auto-placement
+- Ensure minimum row heights
+
+**Example:**
+```css
+.auto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 40px;
+}
+```
+
+---
+
+## grid-auto-flow
+
+**Syntax:** `grid-auto-flow: row | column | dense`
+
+Auto flow — controls how auto-placed items are inserted.
+
+**Values:**
+- `row` — fill by rows (default)
+- `column` — fill by columns
+- `dense` — backfill gaps left by earlier items
+- `row dense` — rows with dense packing
+- `column dense` — columns with dense packing
+- `inherit` — inherits from parent
+- `initial` — sets to default (row)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Control the order auto-placed items fill
+- Pack items densely to fill gaps
+
+**Example:**
+```css
+.masonry {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.dense {
+  grid-auto-flow: row dense;
+}
+```
+
+---
+
+## Items
+
+---
+
+## grid-column
+
+**Syntax:** `grid-column: <start> | <start> / <end>`
+
+Column span — places an item across grid columns.
+
+**Values:**
+- `1 / 3` — from line 1 to line 3
+- `1 / span 2` — start at line 1, span 2 columns
+- `span 2` — span 2 columns
+- `auto` — auto placement (default)
+- `auto / 1` — end at line 1
+- `header-start / header-end` — place by named lines
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Span items across multiple columns
+- Place items in specific columns
+
+**Example:**
+```css
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.wide {
+  grid-column: span 2;
+}
+```
+
+---
+
+## grid-row
+
+**Syntax:** `grid-row: <start> | <start> / <end>`
+
+Row span — places an item across grid rows.
+
+**Values:**
+- `1 / 3` — from row line 1 to line 3
+- `1 / span 2` — start at line 1, span 2 rows
+- `span 2` — span 2 rows
+- `auto` — auto placement (default)
+- `auto / 1` — end at line 1
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Span items across multiple rows
+- Place items in specific rows
+
+**Example:**
+```css
+.tall {
+  grid-row: span 2;
+}
+```
+
+---
+
+## grid-area
+
+**Syntax:** `grid-area: <name> | <row-start> / <column-start> / <row-end> / <column-end>`
+
+Area — places an item into a named grid area or by line numbers.
+
+**Values:**
+- `header` — place into a named area
+- `sidebar` — place into a named area
+- `1 / 1 / 3 / 3` — row-start / column-start / row-end / column-end
+- `1 / span 2 / 3 / span 2` — line numbers with spans
+- `auto` — auto placement (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Place items into named template areas
+- Shorthand for full row/column placement
+
+**Example:**
+```css
+.header {
+  grid-area: header;
+}
+
+.hero {
+  grid-area: 1 / 1 / 3 / 3;
+}
+```
+
+---
+
+## justify-items
+
+**Syntax:** `justify-items: start | end | center | stretch | left | right`
+
+Justify items — aligns items along the inline (row) axis within their cell.
+
+**Values:**
+- `stretch` — stretch to fill cell (default)
+- `start` — align to cell start
+- `end` — align to cell end
+- `center` — center in cell
+- `left` — align left
+- `right` — align right
+- `inherit` — inherits from parent
+- `initial` — sets to default (stretch)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Center content in grid cells
+- Align items to one side of cells
+
+**Example:**
+```css
+.centered {
+  justify-items: center;
+}
+```
+
+---
+
+## align-items
+
+**Syntax:** `align-items: start | end | center | stretch | baseline | self-start | self-end`
+
+Align items — aligns items along the block (column) axis within their cell.
+
+**Values:**
+- `stretch` — stretch to fill cell (default)
+- `start` — align to cell start
+- `end` — align to cell end
+- `center` — center in cell
+- `baseline` — align by text baseline
+- `self-start` — align to own start edge
+- `self-end` — align to own end edge
+- `inherit` — inherits from parent
+- `initial` — sets to default (stretch)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Vertically center content
+- Align items to bottom of cells
+
+**Example:**
+```css
+.vertically-centered {
+  align-items: center;
+}
+```
+
+---
+
+## place-items
+
+**Syntax:** `place-items: <align-items> <justify-items>`
+
+Place items — shorthand for align-items and justify-items together.
+
+**Values:**
+- `center` — centered on both axes
+- `start` — aligned to start on both axes
+- `stretch` — stretched on both axes
+- `center start` — center vertically, start horizontally
+- `stretch end` — stretch vertically, end horizontally
+- `inherit` — inherits from parent
+- `initial` — sets to default (stretch)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Center content in one declaration
+- Combine row and column alignment
+
+**Example:**
+```css
+.centered {
+  place-items: center;
+}
+```
+
+---
+
+**[View Example](../examples/intermediate/12-grid-advanced/index.html)**
 
 ← **Previous Topic:** [Flexbox Advanced](../intermediate/11-flexbox-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Counters & Markers](../intermediate/13-counters-and-markers.md) →

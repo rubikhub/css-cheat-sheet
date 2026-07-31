@@ -1,191 +1,150 @@
 # Math Functions
+
+> 4 functions
+
+Functions for performing mathematical calculations and creating dynamic, fluid values.
+
 ---
-## Container Properties
-### calc()
-**Type/Initial:** function | (none)
 
-**Description:** Function — performs mathematical calculations on values.
+## Math Functions
 
-**CSS:**
+---
+
+## calc()
+
+**Syntax:** `calc(<expression>)`
+
+Function — performs mathematical calculations on values.
+
+**Values:**
+- `100% - 40px` — subtract a fixed width from a percentage
+- `100vh - 80px` — subtract a fixed height from viewport height
+- `1rem + 10px` — add rem and pixel values
+- `2 * 1rem` — multiply a value
+- `14px + 0.5vw` — combine fixed and viewport units
+- `50% - 100px` — center by offsetting a percentage
+- `100% - calc(2 * 20px)` — nested calculation
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Subtract fixed offsets from percentage values
+- Mix units that can't be combined directly
+- Create fluid responsive sizing
+
+**Example:**
 ```css
-width: calc(100% - 40px);
-height: calc(100vh - 80px);
-margin: calc(1rem + 10px);
-padding: calc(2 * 1rem);
-font-size: calc(14px + 0.5vw);
-left: calc(50% - 100px);
-top: calc(100% - 50px);
-
-/* Nested */
-width: calc(100% - calc(2 * 20px));
-
-/* Mixed units */
-font-size: calc(1.2rem + 2px);
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    calc(100% - 40px)
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+.container {
   width: calc(100% - 40px);
+  font-size: calc(14px + 0.5vw);
 }
 ```
 
-### min()
-**Type/Initial:** function | (none)
+---
 
-**Description:** Function — returns the smallest value from a list.
+## min()
 
-**CSS:**
+**Syntax:** `min(<values>)`
+
+Function — returns the smallest value from a list.
+
+**Values:**
+- `min(50%, 300px)` — cap a percentage at a fixed maximum
+- `min(100vh, 600px)` — cap a viewport height
+- `min(2vw, 16px)` — cap a viewport-based font size
+- `min(2rem, 40px)` — cap a rem-based padding
+- `min(90%, 800px)` — cap a fluid width
+- `min(5%, 50px)` — cap a percentage margin
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Cap content widths responsively
+- Prevent values from exceeding a maximum
+
+**Example:**
 ```css
-width: min(50%, 300px);
-height: min(100vh, 600px);
-font-size: min(2vw, 16px);
-padding: min(2rem, 40px);
-max-width: min(90%, 800px);
-margin: min(5%, 50px);
+.content {
+  width: min(90%, 800px);
+}
+
+.text {
+  font-size: min(2vw, 16px);
+}
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    min(50%, 300px)
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
+## max()
+
+**Syntax:** `max(<values>)`
+
+Function — returns the largest value from a list.
+
+**Values:**
+- `max(50%, 300px)` — enforce a minimum width
+- `max(100vh, 600px)` — enforce a minimum height
+- `max(1rem, 16px)` — enforce a minimum font size
+- `max(2rem, 40px)` — enforce a minimum padding
+- `max(80%, 600px)` — enforce a minimum width
+- `max(5%, 50px)` — enforce a minimum margin
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Enforce minimum sizes
+- Ensure values never fall below a floor
+
+**Example:**
 ```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  width: min(50%, 300px);
+.sidebar {
+  width: max(30%, 300px);
 }
 ```
 
-### max()
-**Type/Initial:** function | (none)
+---
 
-**Description:** Function — returns the largest value from a list.
+## clamp()
 
-**CSS:**
+**Syntax:** `clamp(<min>, <preferred>, <max>)`
+
+Function — clamps a value between a minimum and maximum.
+
+**Values:**
+- `clamp(12px, 2vw, 16px)` — fluid font size
+- `clamp(300px, 50%, 800px)` — fluid width
+- `clamp(0.5rem, 2vw, 2rem)` — fluid padding
+- `clamp(1rem, 3vw, 3rem)` — fluid margin
+- `clamp(200px, 50vh, 600px)` — fluid height
+- `clamp(0.5rem, 1vw, 1rem)` — fluid gap
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create fully fluid responsive typography
+- Set responsive sizes with built-in min/max
+
+**Example:**
 ```css
-width: max(50%, 300px);
-height: max(100vh, 600px);
-font-size: max(1rem, 16px);
-padding: max(2rem, 40px);
-max-width: max(80%, 600px);
-margin: max(5%, 50px);
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    max(50%, 300px)
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  width: max(50%, 300px);
-}
-```
-
-### clamp()
-**Type/Initial:** function | (none)
-
-**Description:** Function — clamps a value between a minimum and maximum.
-
-**CSS:**
-```css
-font-size: clamp(12px, 2vw, 16px);
-width: clamp(300px, 50%, 800px);
-padding: clamp(0.5rem, 2vw, 2rem);
-margin: clamp(1rem, 3vw, 3rem);
-height: clamp(200px, 50vh, 600px);
-gap: clamp(0.5rem, 1vw, 1rem);
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    clamp(12px, 2vw, 16px)
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+h1 {
   font-size: clamp(12px, 2vw, 16px);
 }
+
+.button {
+  padding: clamp(0.5rem, 2vw, 2rem);
+}
 ```
 
 ---
 
-[Example](../examples/intermediate/19-math-functions/index.html)
+**[View Example](../examples/intermediate/19-math-functions/index.html)**
 
 ← **Previous Topic:** [Animation](../intermediate/18-animation.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Transition Advanced](../intermediate/20-transition-advanced.md) →

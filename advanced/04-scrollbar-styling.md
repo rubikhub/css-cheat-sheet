@@ -1,62 +1,71 @@
 # Scrollbar Styling
 
+> 2 properties
+
 Customize scrollbar appearance and width.
 
 ---
 
 ## scrollbar-color
-**Type:** color | **Initial:** auto
+
+**Syntax:** `scrollbar-color: <thumb-color> <track-color> | auto`
 
 Sets the track and thumb colors of the scrollbar.
 
+**Values:**
+- `auto` — browser default colors (default)
+- `#888 #f1f1f1` — thumb then track color
+- `#333 transparent` — visible thumb, transparent track
+- `currentColor transparent` — thumb matches text color
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Match the scrollbar to a theme
+- Customize scrollbar colors for dark mode
+
+**Example:**
 ```css
-/* Two colors: thumb, track */
-scrollbar-color: #888 #f1f1f1;
-scrollbar-color: #333 transparent;
-scrollbar-color: currentColor transparent;
-
-scrollbar-color: auto;
-
-/* Global values */
-scrollbar-color: inherit;
-scrollbar-color: initial;
+.custom-scrollbar {
+  overflow-y: scroll;
+  scrollbar-color: #888 #f1f1f1;
+}
 ```
 
 ---
 
 ## scrollbar-width
-**Type:** keyword | **Initial:** auto
+
+**Syntax:** `scrollbar-width: auto | thin | none`
 
 Controls the thickness of the scrollbar.
 
-```css
-scrollbar-width: auto;
-scrollbar-width: thin;
-scrollbar-width: none;
+**Values:**
+- `auto` — default scrollbar width (default)
+- `thin` — narrow scrollbar
+- `none` — hides the scrollbar while keeping scroll
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
 
-/* Global values */
-scrollbar-width: inherit;
-scrollbar-width: initial;
-```
+**Use Cases:**
+- Slim down scrollbars for a cleaner look
+- Hide scrollbars without disabling scrolling
 
-```html
-<div class="custom-scrollbar">
-  <p>Long content...</p>
-</div>
-```
-
+**Example:**
 ```css
 .custom-scrollbar {
   height: 200px;
   overflow-y: scroll;
-  scrollbar-color: #888 #f1f1f1;
   scrollbar-width: thin;
 }
 ```
 
-
 ---
 
-[Example](../examples/advanced/04-scrollbar-styling/index.html)
+**[View Example](../examples/advanced/04-scrollbar-styling/index.html)**
 
 ← **Previous Topic:** [Border Image & Caret Color](../advanced/03-border-image-and-caret.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Subgrid & Named Grid Lines](../advanced/05-subgrid.md) →

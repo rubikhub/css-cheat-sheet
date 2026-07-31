@@ -1,12 +1,31 @@
 # State Pseudo Classes
+
+> 7 pseudo-classes
+
+Target elements based on user interaction — hover, click, focus, and navigation state.
+
 ---
-## Container Properties
-### :hover
-**Type/Initial:** pseudo-class | (none)
 
-**Description:** Selects elements when the mouse is over them.
+## States
 
-**CSS:**
+---
+
+## :hover
+
+**Syntax:** `:hover`
+
+Targets elements when the pointer is over them.
+
+**Values:**
+- `a:hover` — links on hover
+- `button:hover` — buttons on hover
+- `.card:hover` — cards on hover
+
+**Use Cases:**
+- Add hover effects to interactive elements
+- Provide visual feedback
+
+**Example:**
 ```css
 a:hover {
   color: red;
@@ -17,258 +36,114 @@ button:hover {
   background: darkblue;
   color: white;
 }
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.item:hover {
-  background: lightyellow;
-}
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    hover me
-  </div>
-  <div class="db style-c">
-    hover me too
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
+## :active
+
+**Syntax:** `:active`
+
+Targets elements while they are being clicked/activated.
+
+**Values:**
+- `a:active` — links while clicking
+- `button:active` — buttons while clicking
+- `.card:active` — cards while pressing
+
+**Use Cases:**
+- Add click feedback
+- Create pressed button effects
+
+**Example:**
 ```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition: all 0.2s ease;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition: all 0.2s ease;
-}
-```
-
-### :active
-**Type/Initial:** pseudo-class | (none)
-
-**Description:** Selects elements when they are being activated (clicked).
-
-**CSS:**
-```css
-a:active {
-  color: red;
-}
-
 button:active {
   background: darkred;
   transform: scale(0.95);
 }
 
-.link:active {
-  color: blue;
-}
-
-.card:active {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+a:active {
+  color: red;
 }
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    click me
-  </div>
-  <div class="db style-c">
-    click me too
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition: all 0.1s ease;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition: all 0.1s ease;
-}
-```
+## :focus
 
-### :focus
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:focus`
 
-**Description:** Selects elements when they receive focus.
+Targets elements that have keyboard or programmatic focus.
 
-**CSS:**
+**Values:**
+- `input:focus` — inputs when focused
+- `textarea:focus` — textareas when focused
+- `a:focus` — links when focused
+
+**Use Cases:**
+- Create focus indicators for accessibility
+- Highlight active form fields
+
+**Example:**
 ```css
 input:focus {
   border-color: blue;
-  outline: none;
   box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
-}
-
-textarea:focus {
-  border-color: green;
-  outline: none;
 }
 
 a:focus {
   outline: 2px solid blue;
   outline-offset: 2px;
 }
-
-button:focus {
-  outline: 2px solid green;
-  outline-offset: 2px;
-}
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    focus on input below
-  </div>
-  <div class="db style-c">
-    click to focus
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
+## :visited
 
-### :visited
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:visited`
 
-**Description:** Selects links that have been visited.
+Targets links that have been visited.
 
-**CSS:**
+**Values:**
+- `a:visited` — visited links
+- `a:visited:hover` — visited links on hover
+- `.link:visited` — custom visited links
+
+**Use Cases:**
+- Show visited state
+- Distinguish visited from unvisited
+
+**Example:**
 ```css
 a:visited {
   color: purple;
 }
 
-a:visited:hover {
-  color: red;
-}
-
 .link:visited {
-  text-decoration: none;
   color: #551a8b;
+  text-decoration: none;
 }
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    visited link
-  </div>
-  <div class="db style-c">
-    unvisited link
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
+## :focus-visible
 
-### :focus-visible
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:focus-visible`
 
-**Description:** Selects elements when focused via keyboard (not mouse).
+Targets elements focused via keyboard rather than mouse.
 
-**CSS:**
+**Values:**
+- `button:focus-visible` — buttons when keyboard focused
+- `input:focus-visible` — inputs when keyboard focused
+- `a:focus-visible` — links when keyboard focused
+
+**Use Cases:**
+- Show focus rings only for keyboard users
+- Avoid focus outlines on mouse clicks
+
+**Example:**
 ```css
 button:focus-visible {
   outline: 2px solid blue;
@@ -279,58 +154,26 @@ input:focus-visible {
   border-color: blue;
   box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
 }
-
-a:focus-visible {
-  outline: 2px solid blue;
-  outline-offset: 2px;
-}
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    tab to focus
-  </div>
-  <div class="db style-c">
-    tab to focus
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-```
+## :focus-within
 
-### :focus-within
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:focus-within`
 
-**Description:** Selects an element when it or any descendant has focus.
+Targets an element when it or any descendant has focus.
 
-**CSS:**
+**Values:**
+- `form:focus-within` — forms containing a focused field
+- `.card:focus-within` — cards containing a focused element
+- `.container:focus-within` — containers containing a focused element
+
+**Use Cases:**
+- Highlight whole containers on focus
+- Style form groups when a field is focused
+
+**Example:**
 ```css
 form:focus-within {
   border-color: blue;
@@ -340,59 +183,26 @@ form:focus-within {
 .card:focus-within {
   background: lightyellow;
 }
-
-.container:focus-within {
-  outline: 2px solid blue;
-}
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    click inside card
-  </div>
-  <div class="db style-c">
-    click inside card
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition: all 0.2s ease;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition: all 0.2s ease;
-}
-```
+## :target
 
-### :target
-**Type/Initial:** pseudo-class | (none)
+**Syntax:** `:target`
 
-**Description:** Selects the element whose ID matches the URL fragment.
+Targets the element whose ID matches the URL fragment.
 
-**CSS:**
+**Values:**
+- `:target` — element matching the URL fragment
+- `.section:target` — sections matching a fragment
+- `.tab:target` — tabs matching a fragment
+
+**Use Cases:**
+- Highlight the current section in single-page navigation
+- Style anchored content
+
+**Example:**
 ```css
 :target {
   background: lightyellow;
@@ -402,68 +212,10 @@ form:focus-within {
 .section:target {
   scroll-margin-top: 80px;
 }
-
-.tab:target {
-  display: block;
-}
-
-.panel:target {
-  opacity: 1;
-  transform: translateY(0);
-}
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    #section-1 (target)
-  </div>
-  <div class="db style-c">
-    #section-2
-  </div>
-  <div class="db style-d">
-    #section-3
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  border: 2px solid blue;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
 ```
 
 ---
 
-[Example](../examples/intermediate/06-state-pseudo-classes/index.html)
+**[View Example](../examples/intermediate/06-state-pseudo-classes/index.html)**
 
 ← **Previous Topic:** [Form Pseudo Classes](../intermediate/05-form-pseudo-classes.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Border Advanced](../intermediate/07-border-advanced.md) →

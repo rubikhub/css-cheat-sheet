@@ -1,28 +1,49 @@
 # Cutting-edge Pseudo-elements
 
+> 8 pseudo-elements
+
 Modern pseudo-elements for spelling, grammar, highlights, and view transitions.
 
 ---
 
 ## ::spelling-error
-**Type:** pseudo-element
+
+**Syntax:** `::spelling-error`
 
 Selects text with a spelling error (browser-dependent).
 
+**Values:**
+- `::spelling-error` — misspelled text
+- `p::spelling-error` — misspelled text in a paragraph
+
+**Use Cases:**
+- Customize the spelling error underline
+- Style error text to match your theme
+
+**Example:**
 ```css
 ::spelling-error {
   text-decoration: wavy underline red;
-  text-decoration-skip-ink: none;
 }
 ```
 
 ---
 
 ## ::grammar-error
-**Type:** pseudo-element
+
+**Syntax:** `::grammar-error`
 
 Selects text with a grammar error (browser-dependent).
 
+**Values:**
+- `::grammar-error` — grammatically incorrect text
+- `p::grammar-error` — grammar errors in a paragraph
+
+**Use Cases:**
+- Customize the grammar error underline
+- Distinguish grammar errors from spelling errors
+
+**Example:**
 ```css
 ::grammar-error {
   text-decoration: wavy underline green;
@@ -32,32 +53,43 @@ Selects text with a grammar error (browser-dependent).
 ---
 
 ## ::highlight()
-**Type:** pseudo-element
+
+**Syntax:** `::highlight(<custom-highlight-name>)`
 
 Selects text within a named CSS Highlight.
 
+**Values:**
+- `::highlight(my-highlight)` — text in a named highlight
+- `::highlight(search)` — search results highlight
+
+**Use Cases:**
+- Style ranges marked by the Highlight API
+- Apply consistent styling to selected text
+
+**Example:**
 ```css
-/* Define a highlight */
 ::highlight(my-highlight) {
   background: yellow;
   color: black;
 }
 ```
 
-```js
-// JavaScript to create the highlight
-const range = document.createRange();
-range.selectNodeContents(document.querySelector('p'));
-CSS.highlights.set('my-highlight', new Highlight(range));
-```
-
 ---
 
 ## ::view-transition
-**Type:** pseudo-element
+
+**Syntax:** `::view-transition`
 
 The root pseudo-element wrapping the entire view transition.
 
+**Values:**
+- `::view-transition` — the root transition container
+
+**Use Cases:**
+- Style the transition overlay
+- Set fixed positioning for the snapshot layer
+
+**Example:**
 ```css
 ::view-transition {
   position: fixed;
@@ -68,10 +100,20 @@ The root pseudo-element wrapping the entire view transition.
 ---
 
 ## ::view-transition-group()
-**Type:** pseudo-element
+
+**Syntax:** `::view-transition-group(<name>)`
 
 Targets a specific view transition group by name.
 
+**Values:**
+- `::view-transition-group(hero)` — the hero element's group
+- `::view-transition-group(page)` — the page's group
+
+**Use Cases:**
+- Animate different groups at different speeds
+- Control the layout of transition snapshots
+
+**Example:**
 ```css
 ::view-transition-group(hero) {
   animation-duration: 0.5s;
@@ -85,79 +127,71 @@ Targets a specific view transition group by name.
 ---
 
 ## ::view-transition-image-pair()
-**Type:** pseudo-element
+
+**Syntax:** `::view-transition-image-pair(<name>)`
 
 Targets the before/after image pair of a transition.
 
+**Values:**
+- `::view-transition-image-pair(hero)` — the old and new state pair
+
+**Use Cases:**
+- Blend or mask the old and new snapshots
+- Customize how states layer during a transition
+
+**Example:**
 ```css
 ::view-transition-image-pair(hero) {
-  /* Style the old and new states */
+  mix-blend-mode: normal;
 }
 ```
 
 ---
 
 ## ::view-transition-old()
-**Type:** pseudo-element
+
+**Syntax:** `::view-transition-old(<name>)`
 
 Targets the old (outgoing) state of a view transition.
 
+**Values:**
+- `::view-transition-old(hero)` — the outgoing hero snapshot
+
+**Use Cases:**
+- Create exit animations
+- Fade out the old page state
+
+**Example:**
 ```css
 ::view-transition-old(hero) {
   animation: fade-out 0.3s ease;
-}
-
-@keyframes fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
 }
 ```
 
 ---
 
 ## ::view-transition-new()
-**Type:** pseudo-element
+
+**Syntax:** `::view-transition-new(<name>)`
 
 Targets the new (incoming) state of a view transition.
 
+**Values:**
+- `::view-transition-new(hero)` — the incoming hero snapshot
+
+**Use Cases:**
+- Create entrance animations
+- Fade in the new page state
+
+**Example:**
 ```css
 ::view-transition-new(hero) {
   animation: fade-in 0.3s ease;
 }
-
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 ```
-
-```html
-<h1 class="hero-title">Page Title</h1>
-```
-
-```css
-/* Enable view transitions */
-@view-transition {
-  navigation: auto;
-}
-
-/* Named transition for hero */
-.hero-title {
-  view-transition-name: hero;
-}
-
-::view-transition-old(hero) {
-  animation: fade-out 0.3s ease;
-}
-
-::view-transition-new(hero) {
-  animation: fade-in 0.3s ease;
-}
-```
-
 
 ---
 
-[Example](../examples/advanced/14-pseudo-elements-cutting-edge/index.html)
+**[View Example](../examples/advanced/14-pseudo-elements-cutting-edge/index.html)**
 
 ← **Previous Topic:** [Form Pseudo-classes — Advanced](../advanced/13-form-pseudo-classes-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [CSS At-Rules — Advanced](../advanced/15-at-rules.md) →

@@ -1,702 +1,308 @@
 # Animation
+
+> 10 properties
+
+Animate elements with keyframes and animation timing controls.
+
 ---
-## Container Properties
-### animation
-**Type/Initial:** shorthand | none 0s ease 0s 1 normal none running
 
-**Description:** Shorthand — combines all animation properties into one declaration.
+## Animation
 
-**CSS:**
+---
+
+## animation
+
+**Syntax:** `animation: <name> <duration> <timing> <delay> <iteration> <direction> <fill-mode> <play-state>`
+
+Shorthand — combines all animation properties into one declaration.
+
+**Values:**
+- `fadeIn 1s ease-in-out` — name and duration
+- `fadeIn 1s ease-in-out, slideUp 0.5s ease` — multiple animations
+- `fadeIn 1s ease-in-out 0.2s infinite alternate both` — full shorthand
+- `inherit` — inherits from parent
+- `initial` — sets to default (none 0s ease 0s 1 normal none running)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Add entrance animations
+- Combine multiple effects
+
+**Example:**
 ```css
-/* Single animation */
-animation: fadeIn 1s ease-in-out;
-
-/* Multiple animations */
-animation: fadeIn 1s ease-in-out, slideUp 0.5s ease;
-
-/* With all values */
-animation: fadeIn 1s ease-in-out 0.2s infinite alternate both;
-
-/* Global values */
-animation: inherit;
-animation: initial;
-animation: revert;
-animation: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    fadeIn 1s
-  </div>
-  <div class="db style-c">
-    slideUp 0.5s
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+.fade-in {
   animation: fadeIn 1s ease-in-out;
 }
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation: slideUp 0.5s ease;
-}
 ```
 
-### animation-name
-**Type/Initial:** keyframe name | none
+---
 
-**Description:** Name — specifies the name of the @keyframes animation.
+## animation-name
 
-**CSS:**
+**Syntax:** `animation-name: none | <keyframe-name>`
+
+Name — specifies the name of the @keyframes animation.
+
+**Values:**
+- `none` — no animation (default)
+- `fadeIn` — run the fadeIn keyframes
+- `slideUp` — run the slideUp keyframes
+- `fadeIn, pulse` — multiple animations
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Reuse keyframe definitions
+- Chain multiple animations
+
+**Example:**
 ```css
-animation-name: none;
-animation-name: fadeIn;
-animation-name: slideUp;
-animation-name: pulse;
-
-/* Multiple */
-animation-name: fadeIn, pulse;
-
-animation-name: inherit;
-animation-name: initial;
-animation-name: revert;
-animation-name: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    fadeIn
-  </div>
-  <div class="db style-c">
-    pulse
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+.box {
   animation-name: pulse;
   animation-duration: 1s;
-  animation-iteration-count: infinite;
 }
 ```
 
-### animation-duration
-**Type/Initial:** time | 0s
+---
 
-**Description:** Duration — specifies how long one cycle of the animation takes.
+## animation-duration
 
-**CSS:**
+**Syntax:** `animation-duration: <time>`
+
+Duration — specifies how long one cycle of the animation takes.
+
+**Values:**
+- `0s` — no animation (default)
+- `0.5s` — half a second
+- `1s` — one second
+- `2000ms` — milliseconds
+- `1s, 0.5s` — multiple durations
+- `inherit` — inherits from parent
+- `initial` — sets to default (0s)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Control animation speed
+- Time multi-step sequences
+
+**Example:**
 ```css
-animation-duration: 0s;
-animation-duration: 0.5s;
-animation-duration: 1s;
-animation-duration: 2000ms;
-
-/* Multiple durations */
-animation-duration: 1s, 0.5s;
-
-animation-duration: inherit;
-animation-duration: initial;
-animation-duration: revert;
-animation-duration: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    0.5s
-  </div>
-  <div class="db style-c">
-    1s
-  </div>
-  <div class="db style-d">
-    2s
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 0.5s;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+.box {
   animation-name: fadeIn;
   animation-duration: 1s;
 }
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 2s;
-}
 ```
 
-### animation-timing-function
-**Type/Initial:** keyword | ease
+---
 
-**Description:** Timing — defines the speed curve of the animation.
+## animation-timing-function
 
-**CSS:**
+**Syntax:** `animation-timing-function: ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier() | steps()`
+
+Timing — defines the speed curve of the animation.
+
+**Values:**
+- `ease` — slow start and end (default)
+- `linear` — constant speed
+- `ease-in` — accelerates
+- `ease-out` — decelerates
+- `ease-in-out` — accelerate and decelerate
+- `cubic-bezier(0.25, 0.1, 0.25, 1)` — custom curve
+- `steps(5, end)` — stepped animation
+- `inherit` — inherits from parent
+- `initial` — sets to default (ease)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create natural motion
+- Add custom timing curves
+
+**Example:**
 ```css
-animation-timing-function: ease;
-animation-timing-function: linear;
-animation-timing-function: ease-in;
-animation-timing-function: ease-out;
-animation-timing-function: ease-in-out;
-animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-animation-timing-function: steps(5, end);
-animation-timing-function: step-start;
-animation-timing-function: step-end;
-
-animation-timing-function: inherit;
-animation-timing-function: initial;
-animation-timing-function: revert;
-animation-timing-function: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    ease
-  </div>
-  <div class="db style-c">
-    linear
-  </div>
-  <div class="db style-d">
-    ease-in-out
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+.box {
   animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
   animation-timing-function: ease-in-out;
 }
 ```
 
-### animation-delay
-**Type/Initial:** time | 0s
+---
 
-**Description:** Delay — specifies when the animation starts.
+## animation-delay
 
-**CSS:**
+**Syntax:** `animation-delay: <time>`
+
+Delay — specifies when the animation starts.
+
+**Values:**
+- `0s` — start immediately (default)
+- `0.3s` — start after a delay
+- `1s` — start after one second
+- `-0.5s` — start mid-animation
+- `0s, 0.3s` — multiple delays
+- `inherit` — inherits from parent
+- `initial` — sets to default (0s)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Stagger list items
+- Sequence animations
+
+**Example:**
 ```css
-animation-delay: 0s;
-animation-delay: 0.3s;
-animation-delay: 1s;
-animation-delay: -0.5s;
-
-/* Multiple delays */
-animation-delay: 0s, 0.3s;
-
-animation-delay: inherit;
-animation-delay: initial;
-animation-delay: revert;
-animation-delay: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    0s
-  </div>
-  <div class="db style-c">
-    0.3s
-  </div>
-  <div class="db style-d">
-    0.6s
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+.item {
   animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-delay: 0s;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
   animation-delay: 0.3s;
 }
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-delay: 0.6s;
-}
 ```
 
-### animation-iteration-count
-**Type/Initial:** number | 1
+---
 
-**Description:** Iteration count — specifies how many times the animation plays.
+## animation-iteration-count
 
-**CSS:**
+**Syntax:** `animation-iteration-count: <number> | infinite`
+
+Iteration count — specifies how many times the animation plays.
+
+**Values:**
+- `1` — play once (default)
+- `3` — play three times
+- `0.5` — play half a cycle
+- `infinite` — loop forever
+- `1, 3` — multiple counts
+- `inherit` — inherits from parent
+- `initial` — sets to default (1)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Loop loading spinners
+- Play effects a set number of times
+
+**Example:**
 ```css
-animation-iteration-count: 1;
-animation-iteration-count: 3;
-animation-iteration-count: 0.5;
-animation-iteration-count: infinite;
-
-/* Multiple counts */
-animation-iteration-count: 1, 3;
-
-animation-iteration-count: inherit;
-animation-iteration-count: initial;
-animation-iteration-count: revert;
-animation-iteration-count: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    1
-  </div>
-  <div class="db style-c">
-    3
-  </div>
-  <div class="db style-d">
-    infinite
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-iteration-count: 3;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
+.spinner {
+  animation-name: spin;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
 ```
 
-### animation-direction
-**Type/Initial:** keyword | normal
+---
 
-**Description:** Direction — specifies whether the animation plays forward, reverse, or alternating.
+## animation-direction
 
-**CSS:**
+**Syntax:** `animation-direction: normal | reverse | alternate | alternate-reverse`
+
+Direction — specifies whether the animation plays forward, reverse, or alternating.
+
+**Values:**
+- `normal` — play forward (default)
+- `reverse` — play backward
+- `alternate` — forward then backward
+- `alternate-reverse` — backward then forward
+- `inherit` — inherits from parent
+- `initial` — sets to default (normal)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create pulsing effects
+- Reverse animations for symmetric motion
+
+**Example:**
 ```css
-animation-direction: normal;
-animation-direction: reverse;
-animation-direction: alternate;
-animation-direction: alternate-reverse;
-
-/* Multiple directions */
-animation-direction: normal, reverse;
-
-animation-direction: inherit;
-animation-direction: initial;
-animation-direction: revert;
-animation-direction: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    normal
-  </div>
-  <div class="db style-c">
-    reverse
-  </div>
-  <div class="db style-d">
-    alternate
-  </div>
-  <div class="db style-e">
-    alternate-reverse
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: reverse;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
+.pulse {
+  animation-name: pulse;
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate-reverse;
-}
 ```
 
-### animation-fill-mode
-**Type/Initial:** keyword | none
+---
 
-**Description:** Fill mode — determines styles applied before/after animation.
+## animation-fill-mode
 
-**CSS:**
+**Syntax:** `animation-fill-mode: none | forwards | backwards | both`
+
+Fill mode — determines styles applied before/after the animation.
+
+**Values:**
+- `none` — no styles outside the animation (default)
+- `forwards` — keep the end styles
+- `backwards` — apply start styles during the delay
+- `both` — apply both
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Keep the final state after an animation
+- Pre-apply the start state during the delay
+
+**Example:**
 ```css
-animation-fill-mode: none;
-animation-fill-mode: forwards;
-animation-fill-mode: backwards;
-animation-fill-mode: both;
-
-/* Multiple fill modes */
-animation-fill-mode: none, forwards;
-
-animation-fill-mode: inherit;
-animation-fill-mode: initial;
-animation-fill-mode: revert;
-animation-fill-mode: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    none
-  </div>
-  <div class="db style-c">
-    forwards
-  </div>
-  <div class="db style-d">
-    backwards
-  </div>
-  <div class="db style-e">
-    both
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+.box {
   animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-fill-mode: none;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-fill-mode: backwards;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
   animation-fill-mode: both;
 }
 ```
 
-### animation-play-state
-**Type/Initial:** keyword | running
+---
 
-**Description:** Play state — controls whether the animation is playing or paused.
+## animation-play-state
 
-**CSS:**
+**Syntax:** `animation-play-state: running | paused`
+
+Play state — controls whether the animation is playing or paused.
+
+**Values:**
+- `running` — playing (default)
+- `paused` — paused
+- `inherit` — inherits from parent
+- `initial` — sets to default (running)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Pause animations on hover
+- Control animations with JavaScript
+
+**Example:**
 ```css
-animation-play-state: running;
-animation-play-state: paused;
-
-/* Multiple play states */
-animation-play-state: running, paused;
-
-animation-play-state: inherit;
-animation-play-state: initial;
-animation-play-state: revert;
-animation-play-state: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    running
-  </div>
-  <div class="db style-c">
-    paused
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
+.card:hover {
   animation-play-state: paused;
 }
 ```
 
-### @keyframes
-**Type/Initial:** at-rule | (none)
+---
 
-**Description:** Keyframes — defines the stages of an animation sequence.
+## @keyframes
 
-**CSS:**
+**Syntax:** `@keyframes <name> { <selector> { <declaration> } }`
+
+Keyframes — defines the stages of an animation sequence.
+
+**Values:**
+- `from { ... }` — start state
+- `to { ... }` — end state
+- `0% { ... }` — explicit start state
+- `50% { ... }` — midpoint state
+- `100% { ... }` — explicit end state
+- `0%, 100% { ... }` — shared states
+
+**Use Cases:**
+- Define reusable animation sequences
+- Animate transforms and opacity
+
+**Example:**
 ```css
 @keyframes fadeIn {
   from {
@@ -707,92 +313,18 @@ animation-play-state: unset;
   }
 }
 
-@keyframes slideUp {
-  0% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 @keyframes pulse {
-  0% {
+  0%, 100% {
     transform: scale(1);
   }
   50% {
     transform: scale(1.05);
   }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    fadeIn
-  </div>
-  <div class="db style-c">
-    pulse
-  </div>
-  <div class="db style-d">
-    bounce
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation: fadeIn 1s ease-in-out;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation: pulse 1s ease-in-out infinite;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  animation: bounce 0.6s ease-in-out infinite;
 }
 ```
 
 ---
 
-[Example](../examples/intermediate/18-animation/index.html)
+**[View Example](../examples/intermediate/18-animation/index.html)**
 
 ← **Previous Topic:** [UI & Scroll](../intermediate/17-ui-and-scroll.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Math Functions](../intermediate/19-math-functions.md) →

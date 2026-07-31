@@ -1,45 +1,71 @@
 # Web Components & Shadow DOM
 
+> 5 properties
+
 Styling inside Shadow DOM and component encapsulation.
 
 ---
 
+## Host Styling
+
+---
+
 ## :host
-**Type:** pseudo-class
+
+**Syntax:** `:host`
 
 Selects the shadow host element from within the shadow tree.
 
+**Values:**
+- `:host` — any host element
+- `:host(.large)` — host with the class large
+- `:host(:hover)` — host in a hover state
+- `:host-context(selector)` — host inside a matching ancestor
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Style the component root element
+- Apply conditional host styles
+
+**Example:**
 ```css
-/* Style the host element */
 :host {
   display: block;
   font-family: sans-serif;
   border: 1px solid #ccc;
 }
 
-/* Conditional styling */
 :host(.large) {
   font-size: 1.5rem;
-}
-
-:host(:hover) {
-  border-color: blue;
 }
 ```
 
 ---
 
 ## :host()
-**Type:** pseudo-class function
 
-Selects the host element with matching selector.
+**Syntax:** `:host(<selector>)`
 
+Selects the host element when it matches a selector.
+
+**Values:**
+- `:host(.theme-dark)` — host with the theme-dark class
+- `:host([disabled])` — disabled host
+- `:host(h1)` — host element of type h1
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Style hosts by class or attribute
+- Theme components from the host state
+
+**Example:**
 ```css
-:host(.theme-dark) {
-  background: #1a1a1a;
-  color: white;
-}
-
 :host([disabled]) {
   opacity: 0.5;
   pointer-events: none;
@@ -49,45 +75,62 @@ Selects the host element with matching selector.
 ---
 
 ## :host-context()
-**Type:** pseudo-class function
+
+**Syntax:** `:host-context(<selector>)`
 
 Styles the host element based on an ancestor outside the shadow tree.
 
+**Values:**
+- `:host-context(.theme-dark)` — host inside a theme-dark ancestor
+- `:host-context(body)` — host inside body
+- `:host-context(.sidebar)` — host inside a sidebar
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Theme components from page context
+- Apply styles based on ancestor classes
+
+**Example:**
 ```css
 :host-context(.theme-dark) {
   background: #1a1a1a;
   color: white;
 }
-
-:host-context(body) {
-  margin: 1rem;
-}
 ```
 
 ---
 
+## Slots & Parts
+
+---
+
 ## ::part()
-**Type:** pseudo-element
 
-Selects shadow DOM elements with `part` attribute.
+**Syntax:** `::part(<name>)`
 
-```html
-<!-- Host element -->
-<my-card>
-  <div slot="header">Title</div>
-  <div slot="body">Content</div>
-</my-card>
-```
+Selects shadow DOM elements with a `part` attribute from outside the shadow tree.
 
+**Values:**
+- `my-card::part(header)` — the header part
+- `my-card::part(body)` — the body part
+- `my-card::part(title)` — any named part
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Style component internals from outside
+- Expose themable parts of a component
+
+**Example:**
 ```css
-/* From outside the shadow tree */
 my-card::part(header) {
   background: #667eea;
   color: white;
-  padding: 1rem;
-}
-
-my-card::part(body) {
   padding: 1rem;
 }
 ```
@@ -95,18 +138,28 @@ my-card::part(body) {
 ---
 
 ## ::slotted()
-**Type:** pseudo-element
 
-Styles slotted content inside shadow DOM.
+**Syntax:** `::slotted(<selector>)`
 
+Styles slotted content inside the shadow DOM.
+
+**Values:**
+- `::slotted(h1)` — slotted h1 elements
+- `::slotted(p)` — slotted paragraphs
+- `::slotted([slot="footer"])` — elements in the footer slot
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Style user-provided slot content
+- Provide default styling for slotted elements
+
+**Example:**
 ```css
-/* Inside shadow tree */
 ::slotted(h1) {
   color: #667eea;
-}
-
-::slotted(p) {
-  line-height: 1.6;
 }
 
 ::slotted([slot="footer"]) {
@@ -118,46 +171,6 @@ Styles slotted content inside shadow DOM.
 
 ---
 
-## Full Example
-
-```html
-<my-card>
-  <span slot="title">Card Title</span>
-  <p slot="content">Card content goes here.</p>
-</my-card>
-```
-
-```css
-/* Component styles (inside shadow root) */
-:host {
-  display: block;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-::slotted([slot="title"]) {
-  display: block;
-  padding: 1rem;
-  background: #667eea;
-  color: white;
-  font-weight: bold;
-}
-
-::slotted([slot="content"]) {
-  display: block;
-  padding: 1rem;
-}
-
-/* From outside (in global stylesheet) */
-my-card::part(title) {
-  background: #764ba2;
-}
-```
-
-
----
-
-[Example](../examples/advanced/24-components-and-shadow-dom/index.html)
+**[View Example](../examples/advanced/24-components-and-shadow-dom/index.html)**
 
 ← **Previous Topic:** [Advanced Math Functions](../advanced/23-advanced-math-functions.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** *(This is the last topic)* →

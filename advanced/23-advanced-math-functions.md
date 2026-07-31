@@ -1,110 +1,219 @@
 # Advanced Math Functions
 
-Complex calculations and statistical functions.
+> 11 functions
+
+CSS functions for complex calculations, rounding, and trigonometry.
+
+---
+
+## Basic Functions
 
 ---
 
 ## calc()
-**Type:** function
+
+**Syntax:** `calc(<expression>)`
 
 Performs calculations at computed-value time.
 
-```css
-/* Basic */
-width: calc(100% - 2rem);
-font-size: calc(1rem + 0.5vw);
+**Values:**
+- `calc(100% - 2rem)` — subtract lengths
+- `calc(1rem + 0.5vw)` — combine units
+- `calc(calc(10px * 2) + calc(1rem / 2))` — nested calc
+- `calc(100% / 3)` — divide values
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
 
-/* Nested */
-padding: calc(calc(10px * 2) + calc(1rem / 2));
+**Use Cases:**
+- Create fluid sizing calculations
+- Combine fixed and relative units
+
+**Example:**
+```css
+.element {
+  width: calc(100% - 2rem);
+  font-size: calc(1rem + 0.5vw);
+}
 ```
 
 ---
 
 ## clamp()
-**Type:** function
+
+**Syntax:** `clamp(<min>, <preferred>, <max>)`
 
 Constrains a value between a minimum and maximum.
 
+**Values:**
+- `clamp(1rem, 2vw + 0.5rem, 2.5rem)` — responsive font-size
+- `clamp(300px, 80%, 1200px)` — fluid width
+- `clamp(0.5rem, 2vw, 2rem)` — fluid padding
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Fluid typography
+- Responsive sizing with bounds
+
+**Example:**
 ```css
-/* clamp(min, preferred, max) */
-font-size: clamp(1rem, 2vw + 0.5rem, 2.5rem);
-width: clamp(300px, 80%, 1200px);
-padding: clamp(0.5rem, 2vw, 2rem);
+h1 {
+  font-size: clamp(1rem, 2vw + 0.5rem, 2.5rem);
+}
 ```
 
 ---
 
 ## min() / max()
-**Type:** function
 
-Returns the smaller or larger of values.
+**Syntax:** `min(<values...>)` | `max(<values...>)`
 
+Returns the smaller or larger of a set of values.
+
+**Values:**
+- `min(100%, 600px)` — never wider than 600px
+- `min(2rem, 5vw)` — responsive padding
+- `max(1rem, 2vw)` — at least 1rem
+- `max(300px, 50%)` — at least 300px
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Cap widths responsively
+- Set minimum sizes with max()
+
+**Example:**
 ```css
-/* min() */
-width: min(100%, 600px);
-padding: min(2rem, 5vw);
-
-/* max() */
-font-size: max(1rem, 2vw);
-width: max(300px, 50%);
+.element {
+  width: min(100%, 600px);
+  font-size: max(1rem, 2vw);
+}
 ```
 
 ---
 
+## Rounding
+
+---
+
 ## round()
-**Type:** function
 
-Rounds a number.
+**Syntax:** `round(<strategy>, <value>, <interval>)`
 
+Rounds a value to a rounding interval.
+
+**Values:**
+- `round(100px, 10px)` — nearest multiple of 10px
+- `round(up, 100px, 10px)` — round up
+- `round(down, 100px, 10px)` — round down
+- `round(nearest, 100px, 10px)` — round to nearest
+- `round(to-zero, 100px, 10px)` — round toward zero
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Snap sizes to a grid
+- Round to consistent spacing steps
+
+**Example:**
 ```css
-/* round(value, roundingInterval) */
-width: round(100px, 10px); /* 100px */
-
-/* round-to-zero, up, down, nearest */
-width: round(up, 100px, 10px);
-width: round(down, 100px, 10px);
-width: round(nearest, 100px, 10px);
+.element {
+  width: round(up, 100px, 10px);
+}
 ```
 
 ---
 
 ## rem()
-**Type:** function
 
-Returns the remainder (modulo).
+**Syntax:** `rem(<dividend>, <divisor>)`
 
+Returns the remainder of a division.
+
+**Values:**
+- `rem(10px, 3px)` — remainder is 1px
+- `rem(var(--index), 3)` — cycles through 0 to 2
+- `rem(-10px, 3px)` — negative remainder follows the dividend
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Cycle values with a repeating pattern
+- Stagger styles by index
+
+**Example:**
 ```css
-/* rem(dividend, divisor) */
-value: rem(10px, 3px); /* 1px */
-
-/* Useful for cycling */
-column-width: rem(var(--index), 3);
+:root {
+  --index-offset: rem(var(--index), 3);
+}
 ```
 
 ---
 
 ## mod()
-**Type:** function
 
-Returns the modulus (always positive).
+**Syntax:** `mod(<dividend>, <divisor>)`
 
+Returns the modulus of a division, always positive.
+
+**Values:**
+- `mod(10px, 3px)` — remainder is 1px
+- `mod(-10px, 3px)` — remainder is 2px
+- `mod(7, 4)` — remainder is 3
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Get a positive remainder
+- Cycle values predictably
+
+**Example:**
 ```css
-/* mod(dividend, divisor) */
-value: mod(10px, 3px); /* 1px */
-value: mod(-10px, 3px); /* 2px */
+:root {
+  --index-mod: mod(var(--index), 3);
+}
 ```
 
 ---
 
+## Trigonometric
+
+---
+
 ## sin() / cos() / tan()
-**Type:** trigonometric functions
 
+**Syntax:** `sin(<angle>)` | `cos(<angle>)` | `tan(<angle>)`
+
+Trigonometric functions for angle calculations.
+
+**Values:**
+- `sin(45deg)` — 0.707
+- `cos(45deg)` — 0.707
+- `tan(45deg)` — 1
+- `calc(100px * sin(45deg))` — combined with calc
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Calculate circular motion offsets
+- Position elements along a circle
+
+**Example:**
 ```css
-/* Trigonometric calculations */
-offset-x: calc(100px * sin(45deg));
-offset-y: calc(100px * cos(45deg));
-
-/* Circular motion */
 @keyframes spin {
   from {
     transform: rotate(0deg) translateX(50px) rotate(0deg);
@@ -118,93 +227,126 @@ offset-y: calc(100px * cos(45deg));
 ---
 
 ## asin() / acos() / atan() / atan2()
-**Type:** inverse trigonometric functions
 
+**Syntax:** `asin(<number>)` | `acos(<number>)` | `atan(<number>)` | `atan2(<y>, <x>)`
+
+Inverse trigonometric functions.
+
+**Values:**
+- `asin(0.5)` — 30 degrees
+- `acos(0.5)` — 60 degrees
+- `atan(1)` — 45 degrees
+- `atan2(var(--y), var(--x))` — full-circle angle from coordinates
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Compute angles from ratios
+- Derive rotation from coordinates
+
+**Example:**
 ```css
-/* Inverse trig */
-angle: asin(0.5);
-angle: acos(0.5);
-angle: atan(1);
-
-/* atan2 for full circle */
-angle: atan2(var(--y), var(--x));
+:root {
+  --angle: atan2(var(--y), var(--x));
+}
 ```
 
 ---
 
+## Exponential & Sign
+
+---
+
 ## pow() / sqrt() / exp() / log()
-**Type:** exponential and logarithmic functions
 
+**Syntax:** `pow(<base>, <exponent>)` | `sqrt(<number>)` | `exp(<number>)` | `log(<number>, <base>)`
+
+Exponential and logarithmic functions.
+
+**Values:**
+- `pow(2, 10)` — 1024
+- `sqrt(16)` — 4
+- `exp(1)` — e (about 2.718)
+- `log(100)` — natural log, about 4.6
+- `log(100, 10)` — base-10 log, 2
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Scale values exponentially
+- Reverse exponentiation
+
+**Example:**
 ```css
-/* Power */
-value: pow(2, 10); /* 1024 */
-
-/* Square root */
-value: sqrt(16); /* 4 */
-
-/* Exponential */
-value: exp(1); /* e */
-
-/* Logarithmic */
-value: log(100); /* ~4.6 */
+:root {
+  --value: pow(2, 10);
+}
 ```
 
 ---
 
 ## abs() / sign()
-**Type:** sign-related functions
 
+**Syntax:** `abs(<number>)` | `sign(<number>)`
+
+Sign-related functions for absolute value and direction.
+
+**Values:**
+- `abs(-100px)` — 100px
+- `abs(100px)` — 100px
+- `sign(-50px)` — -1
+- `sign(50px)` — 1
+- `sign(0)` — 0
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Normalize directions
+- Remove negative signs from offsets
+
+**Example:**
 ```css
-/* Absolute value */
-offset: abs(-100px); /* 100px */
-
-/* Sign */
-direction: sign(-50px); /* -1 */
+:root {
+  --offset: abs(-100px);
+}
 ```
 
 ---
 
 ## hypot()
-**Type:** function
 
-Returns the hypotenuse.
+**Syntax:** `hypot(<numbers...>)`
 
+Returns the hypotenuse of a set of values.
+
+**Values:**
+- `hypot(3px, 4px)` — 5px
+- `hypot(5px, 12px)` — 13px
+- `hypot(3px, 4px, 12px)` — 13px across three axes
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Compute distances from offsets
+- Measure multi-axis lengths
+
+**Example:**
 ```css
-/* hypot(a, b, ...) */
-distance: hypot(3px, 4px); /* 5px */
-```
-
-```css
-/* Complex layout calculation */
-.grid-item {
-  --gap: 1rem;
-  --columns: 4;
-  width: calc((100% - var(--gap) * (var(--columns) - 1)) / var(--columns));
-}
-
-/* Responsive font with complex math */
-h1 {
-  font-size: clamp(
-    max(1.5rem, 2vw),
-    min(3rem, 4vw),
-    4rem
-  );
-}
-
-/* Animated circle */
-@keyframes orbit {
-  from {
-    transform: rotate(0deg) translateX(100px) rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg) translateX(100px) rotate(-360deg);
-  }
+:root {
+  --distance: hypot(3px, 4px);
 }
 ```
-
 
 ---
 
-[Example](../examples/advanced/23-advanced-math-functions/index.html)
+**[View Example](../examples/advanced/23-advanced-math-functions/index.html)**
 
 ← **Previous Topic:** [Typography 2024+](../advanced/22-typography-2024.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Web Components & Shadow DOM](../advanced/24-components-and-shadow-dom.md) →

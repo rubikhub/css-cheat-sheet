@@ -1,570 +1,287 @@
 # Counters & Markers
+
+> 8 properties
+
+Automatic numbering with CSS counters and custom list marker styles.
+
 ---
-## Container Properties
-### counter-reset
-**Type/Initial:** identifier | none
 
-**Description:** Reset — creates or resets a CSS counter to a given value.
+## Counters
 
-**CSS:**
+---
+
+## counter-reset
+
+**Syntax:** `counter-reset: <name> <integer> | none`
+
+Counter reset — creates or resets a named CSS counter to a value.
+
+**Values:**
+- `none` — no counter reset
+- `myCounter` — create counter at 0
+- `myCounter 0` — create counter at 0
+- `myCounter 10` — create counter at 10
+- `myCounter -1` — create counter at -1
+- `myCounter 0 anotherCounter 0` — reset multiple counters
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Start numbered content at a specific value
+- Manage multiple counters at once
+
+**Example:**
 ```css
-counter-reset: none;
-counter-reset: myCounter;
-counter-reset: myCounter 0;
-counter-reset: myCounter 10;
-counter-reset: myCounter -1;
-counter-reset: myCounter 0 anotherCounter 0;
-
-counter-reset: inherit;
-counter-reset: initial;
-counter-reset: revert;
-counter-reset: unset;
+.section {
+  counter-reset: chapter 0;
+}
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    item 1
-  </div>
-  <div class="db style-c">
-    item 2
-  </div>
-  <div class="db style-d">
-    item 3
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
+## counter-increment
+
+**Syntax:** `counter-increment: <name> <integer> | none`
+
+Counter increment — increases a named CSS counter by a value.
+
+**Values:**
+- `none` — no increment
+- `myCounter` — increment by 1
+- `myCounter 1` — increment by 1
+- `myCounter 2` — increment by 2
+- `myCounter -1` — decrement by 1
+- `myCounter 0.5` — increment by 0.5
+- `myCounter anotherCounter` — increment multiple counters
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Number list items automatically
+- Step by values other than one
+
+**Example:**
 ```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  counter-reset: myCounter;
-  padding: 1rem;
-  display: flex;
-  gap: 0.5rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+ol li {
+  counter-increment: item;
 }
 ```
 
-### counter-increment
-**Type/Initial:** identifier | none
+---
 
-**Description:** Increment — increments a CSS counter by a given value.
+## counter()
 
-**CSS:**
+**Syntax:** `content: counter(<name>) | counter(<name>, <list-style-type>)`
+
+Displays the current value of a named counter in generated content.
+
+**Values:**
+- `counter(myCounter)` — plain decimal value
+- `counter(myCounter, decimal)` — decimal value
+- `counter(myCounter, decimal-leading-zero)` — zero-padded numbers
+- `counter(myCounter, lower-roman)` — lowercase roman numerals
+- `counter(myCounter, upper-roman)` — uppercase roman numerals
+- `counter(myCounter, lower-alpha)` — lowercase letters
+- `counter(myCounter, upper-alpha)` — uppercase letters
+- `counter(parent) "." counter(child)` — combined nested counters
+- `inherit` — inherits from parent
+- `initial` — sets to default (normal)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Show automatic numbering in generated content
+- Format numbers with roman or alphabetic styles
+
+**Example:**
 ```css
-counter-increment: none;
-counter-increment: myCounter;
-counter-increment: myCounter 1;
-counter-increment: myCounter 2;
-counter-increment: myCounter -1;
-counter-increment: myCounter 0.5;
-counter-increment: myCounter anotherCounter;
-
-counter-increment: inherit;
-counter-increment: initial;
-counter-increment: revert;
-counter-increment: unset;
+ol li::before {
+  counter-increment: item;
+  content: counter(item, upper-roman) ". ";
+}
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    item
-  </div>
-  <div class="db style-c">
-    item
-  </div>
-  <div class="db style-d">
-    item
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
+## counters()
+
+**Syntax:** `content: counters(<name>, <separator>) | counters(<name>, <separator>, <list-style-type>)`
+
+Displays all nested counters with the same name, joined by a separator.
+
+**Values:**
+- `counters(myCounter, ".")` — nested values joined by dots
+- `counters(myCounter, " > ")` — nested values joined by arrows
+- `counters(myCounter, " - ")` — nested values joined by dashes
+- `counters(myCounter, "", decimal)` — empty separator with a counter style
+- `counters(section, ".")` — numbered section tree
+- `inherit` — inherits from parent
+- `initial` — sets to default (normal)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Number nested lists or sections
+- Build outline-style numbering
+
+**Example:**
 ```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  counter-reset: myCounter;
-  padding: 1rem;
-  display: flex;
-  gap: 0.5rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  counter-increment: myCounter;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  counter-increment: myCounter;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  counter-increment: myCounter;
-}
-```
-
-### counter()
-**Type/Initial:** function | (none)
-
-**Description:** Function — displays the current value of a named counter.
-
-**CSS:**
-```css
-/* Basic */
-content: counter(myCounter);
-
-/* With counter style */
-content: counter(myCounter, decimal);
-content: counter(myCounter, decimal-leading-zero);
-content: counter(myCounter, lower-roman);
-content: counter(myCounter, upper-roman);
-content: counter(myCounter, lower-alpha);
-content: counter(myCounter, upper-alpha);
-
-/* Nested counters */
-content: counter(parent) "." counter(child);
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    decimal
-  </div>
-  <div class="db style-c">
-    upper-roman
-  </div>
-  <div class="db style-d">
-    lower-alpha
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  counter-reset: myCounter;
-  padding: 1rem;
-  display: flex;
-  gap: 0.8rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  counter-increment: myCounter;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  counter-increment: myCounter;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  counter-increment: myCounter;
-}
-```
-
-### counters()
-**Type/Initial:** function | (none)
-
-**Description:** Function — displays the current value of all nested counters with the same name.
-
-**CSS:**
-```css
-/* Basic with separator */
-counters(myCounter, ".");
-counters(myCounter, " > ");
-counters(myCounter, " - ");
-counters(myCounter, "", decimal);
-
-/* Nested structure */
-counters(section, ".");
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    item
-  </div>
-  <div class="db style-c">
-    item
-  </div>
-  <div class="db style-d">
-    item
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  counter-reset: section;
-  padding: 1rem;
-  display: flex;
-  gap: 0.8rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+ol li::before {
   counter-increment: section;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  counter-increment: section;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  counter-increment: section;
+  content: counters(section, ".") " ";
 }
 ```
 
-### list-style-type
-**Type/Initial:** keyword | disc
+---
 
-**Description:** Type — specifies the marker style for list items.
+## Markers
 
-**CSS:**
+---
+
+## list-style-type
+
+**Syntax:** `list-style-type: disc | circle | square | none | decimal | lower-roman | upper-roman | <string>`
+
+Marker type — specifies the marker style for list items.
+
+**Values:**
+- `disc` — filled circle (default)
+- `circle` — hollow circle
+- `square` — filled square
+- `none` — no marker
+- `decimal` — 1, 2, 3...
+- `decimal-leading-zero` — 01, 02, 03...
+- `lower-roman` — i, ii, iii...
+- `upper-roman` — I, II, III...
+- `lower-alpha` — a, b, c...
+- `upper-alpha` — A, B, C...
+- `lower-greek` — greek letters
+- `lower-latin` — lowercase latin letters
+- `upper-latin` — uppercase latin letters
+- `disclosure-open` — expanded disclosure triangle
+- `disclosure-closed` — collapsed disclosure triangle
+- `hebrew` — hebrew numerals
+- `cjk-ideographic` — CJK numerals
+- `hiragana` — hiragana characters
+- `katakana` — katakana characters
+- `"→"` — custom string marker
+- `inherit` — inherits from parent
+- `initial` — sets to default (disc)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Style ordered and unordered lists
+- Use custom string markers
+
+**Example:**
 ```css
-/* Disc types */
-list-style-type: disc;
-list-style-type: circle;
-list-style-type: square;
-list-style-type: none;
-
-/* Numbering */
-list-style-type: decimal;
-list-style-type: decimal-leading-zero;
-list-style-type: lower-roman;
-list-style-type: upper-roman;
-list-style-type: lower-alpha;
-list-style-type: upper-alpha;
-list-style-type: lower-greek;
-list-style-type: lower-latin;
-list-style-type: upper-latin;
-
-/* Symbols */
-list-style-type: disclosure-open;
-list-style-type: disclosure-closed;
-list-style-type: hebrew;
-list-style-type: cjk-ideographic;
-list-style-type: hiragana;
-list-style-type: katakana;
-
-/* Custom symbol */
-list-style-type: "→";
-
-list-style-type: inherit;
-list-style-type: initial;
-list-style-type: revert;
-list-style-type: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    disc
-  </div>
-  <div class="db style-c">
-    circle
-  </div>
-  <div class="db style-d">
-    square
-  </div>
-  <div class="db style-e">
-    decimal
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  list-style-type: disc;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  list-style-type: circle;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+ul {
   list-style-type: square;
 }
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  list-style-type: decimal;
+
+ol {
+  list-style-type: lower-roman;
 }
 ```
 
-### list-style-image
-**Type/Initial:** url | none
+---
 
-**Description:** Image — specifies an image as the list marker.
+## list-style-image
 
-**CSS:**
+**Syntax:** `list-style-image: <url> | none`
+
+Marker image — uses an image as the list marker.
+
+**Values:**
+- `none` — no image marker
+- `url("check.svg")` — custom SVG marker
+- `url("arrow.png")` — custom PNG marker
+- `url("bullet.gif")` — custom GIF marker
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Replace bullets with custom icons
+- Use brand-specific markers
+
+**Example:**
 ```css
-list-style-image: none;
-list-style-image: url("check.svg");
-list-style-image: url("arrow.png");
-list-style-image: url("bullet.gif");
-
-list-style-image: inherit;
-list-style-image: initial;
-list-style-image: revert;
-list-style-image: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    custom image
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+li {
   list-style-image: url("check.svg");
 }
 ```
 
-### list-style-position
-**Type/Initial:** keyword | outside
+---
 
-**Description:** Position — determines whether the marker is inside or outside the content box.
+## list-style-position
 
-**CSS:**
+**Syntax:** `list-style-position: outside | inside`
+
+Marker position — whether the marker is inside or outside the content box.
+
+**Values:**
+- `outside` — marker outside the content box (default)
+- `inside` — marker inside the content box
+- `inherit` — inherits from parent
+- `initial` — sets to default (outside)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Keep markers outside list text
+- Wrap markers with text in indented lists
+
+**Example:**
 ```css
-list-style-position: outside;
-list-style-position: inside;
-
-list-style-position: inherit;
-list-style-position: initial;
-list-style-position: revert;
-list-style-position: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    outside
-  </div>
-  <div class="db style-c">
-    inside
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 1.5rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  list-style-position: outside;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+ul {
   list-style-position: inside;
-}
-```
-
-### list-style
-**Type/Initial:** shorthand | disc outside none
-
-**Description:** Shorthand — combines list-style-type, list-style-position, and list-style-image.
-
-**CSS:**
-```css
-list-style: none;
-list-style: disc outside;
-list-style: square inside;
-list-style: url("check.svg") outside;
-list-style: decimal leading-zero inside;
-list-style: lower-roman url("marker.png") outside;
-
-list-style: inherit;
-list-style: initial;
-list-style: revert;
-list-style: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    none
-  </div>
-  <div class="db style-c">
-    disc outside
-  </div>
-  <div class="db style-d">
-    square inside
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  list-style: none;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  list-style: disc outside;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  list-style: square inside;
 }
 ```
 
 ---
 
-[Example](../examples/intermediate/13-counters-and-markers/index.html)
+## list-style
+
+**Syntax:** `list-style: <type> | <type> <position> | <image> <position>`
+
+List style shorthand — combines type, position, and image.
+
+**Values:**
+- `none` — remove markers
+- `disc outside` — disc marker outside
+- `square inside` — square marker inside
+- `url("check.svg") outside` — image marker outside
+- `decimal-leading-zero inside` — numbered marker inside
+- `lower-roman url("marker.png") outside` — combined type and image
+- `inherit` — inherits from parent
+- `initial` — sets to default (disc outside none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Reset list styles quickly
+- Set complete marker styling in one line
+
+**Example:**
+```css
+.nav {
+  list-style: none;
+}
+
+.toc {
+  list-style: decimal inside;
+}
+```
+
+---
+
+**[View Example](../examples/intermediate/13-counters-and-markers/index.html)**
 
 ← **Previous Topic:** [Grid Advanced](../intermediate/12-grid-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Filter & Clip Path](../intermediate/14-filter-and-clip-path.md) →

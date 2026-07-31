@@ -1,399 +1,184 @@
 # Transition Advanced
+
+> 5 properties
+
+Smooth property changes over time using the transition shorthand and its longhand properties.
+
 ---
-## Container Properties
-### transition
-**Type/Initial:** shorthand | all 0s ease 0s
 
-**Description:** Shorthand — combines all transition properties into one declaration.
+## Transitions
 
-**CSS:**
+---
+
+## transition
+
+**Syntax:** `transition: <property> <duration> <timing> <delay>`
+
+Shorthand — combines all transition properties into one declaration.
+
+**Values:**
+- `color 0.3s ease` — transition a single property
+- `color 0.3s ease, background 0.5s ease-in-out` — transition multiple properties
+- `all 0.3s ease` — transition all properties
+- `inherit` — inherits from parent
+- `initial` — sets to default (all 0s ease 0s)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Animate property changes on hover
+- Simplify transition declarations into one line
+
+**Example:**
 ```css
-/* Single property */
-transition: color 0.3s ease;
-
-/* Multiple properties */
-transition: color 0.3s ease, background 0.5s ease-in-out;
-
-/* All properties */
-transition: all 0.3s ease;
-
-/* Global values */
-transition: inherit;
-transition: initial;
-transition: revert;
-transition: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    all 0.3s ease
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+.card {
   transition: all 0.3s ease;
 }
+
+.card:hover {
+  transform: scale(1.05);
+}
 ```
 
-### transition-property
-**Type/Initial:** keyword | all
+---
 
-**Description:** Property — specifies which CSS properties to animate.
+## transition-property
 
-**CSS:**
+**Syntax:** `transition-property: <property> | none | all`
+
+Property — specifies which CSS properties to animate.
+
+**Values:**
+- `color` — transition color changes
+- `background-color` — transition background changes
+- `opacity` — transition opacity changes
+- `transform` — transition transforms
+- `box-shadow` — transition shadow changes
+- `color, background-color, opacity` — transition multiple properties
+- `all` — transition all properties
+- `none` — transition nothing
+- `inherit` — inherits from parent
+- `initial` — sets to default (all)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Limit which properties animate
+- Optimize performance by avoiding all-property transitions
+
+**Example:**
 ```css
-/* Single property */
-transition-property: color;
-transition-property: background-color;
-transition-property: opacity;
-transition-property: transform;
-transition-property: box-shadow;
-
-/* Multiple properties */
-transition-property: color, background-color, opacity;
-
-/* All properties */
-transition-property: all;
-
-/* No properties */
-transition-property: none;
-
-/* Global values */
-transition-property: inherit;
-transition-property: initial;
-transition-property: revert;
-transition-property: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    color
-  </div>
-  <div class="db style-c">
-    background-color
-  </div>
-  <div class="db style-d">
-    transform
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition-property: color;
-  transition-duration: 0.3s;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+.button {
   transition-property: background-color;
   transition-duration: 0.3s;
 }
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition-property: transform;
-  transition-duration: 0.3s;
-}
-```
 
-### transition-duration
-**Type/Initial:** time | 0s
-
-**Description:** Duration — specifies how long the transition takes.
-
-**CSS:**
-```css
-transition-duration: 0s;
-transition-duration: 0.3s;
-transition-duration: 500ms;
-transition-duration: 1s;
-transition-duration: 2.5s;
-
-/* Multiple durations */
-transition-duration: 0.3s, 0.5s;
-
-transition-duration: inherit;
-transition-duration: initial;
-transition-duration: revert;
-transition-duration: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    0.1s
-  </div>
-  <div class="db style-c">
-    0.3s
-  </div>
-  <div class="db style-d">
-    1s
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition-property: all;
-  transition-duration: 0.1s;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition-property: all;
-  transition-duration: 0.3s;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition-property: all;
-  transition-duration: 1s;
-}
-```
-
-### transition-timing-function
-**Type/Initial:** keyword | ease
-
-**Description:** Timing — defines the speed curve of the transition.
-
-**CSS:**
-```css
-/* Keyword values */
-transition-timing-function: ease;
-transition-timing-function: linear;
-transition-timing-function: ease-in;
-transition-timing-function: ease-out;
-transition-timing-function: ease-in-out;
-
-/* Bezier curves */
-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
-transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-
-/* Step functions */
-transition-timing-function: steps(5, end);
-transition-timing-function: step-start;
-transition-timing-function: step-end;
-
-transition-timing-function: inherit;
-transition-timing-function: initial;
-transition-timing-function: revert;
-transition-timing-function: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    ease
-  </div>
-  <div class="db style-c">
-    linear
-  </div>
-  <div class="db style-d">
-    ease-in-out
-  </div>
-  <div class="db style-e">
-    cubic-bezier(0.68, -0.55, 0.27, 1.55)
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition-property: transform;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition-property: transform;
-  transition-duration: 0.3s;
-  transition-timing-function: linear;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition-property: transform;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition-property: transform;
-  transition-duration: 0.3s;
-  transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-```
-
-### transition-delay
-**Type/Initial:** time | 0s
-
-**Description:** Delay — specifies when the transition starts.
-
-**CSS:**
-```css
-transition-delay: 0s;
-transition-delay: 0.2s;
-transition-delay: 500ms;
-transition-delay: 1s;
-
-/* Multiple delays */
-transition-delay: 0s, 0.2s;
-
-transition-delay: inherit;
-transition-delay: initial;
-transition-delay: revert;
-transition-delay: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    0s delay
-  </div>
-  <div class="db style-c">
-    0.3s delay
-  </div>
-  <div class="db style-d">
-    0.6s delay
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.8rem;
-  padding: 1rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition-property: transform;
-  transition-duration: 0.3s;
-  transition-delay: 0s;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition-property: transform;
-  transition-duration: 0.3s;
-  transition-delay: 0.3s;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  transition-property: transform;
-  transition-duration: 0.3s;
-  transition-delay: 0.6s;
+.button:hover {
+  background-color: #0055aa;
 }
 ```
 
 ---
 
-[Example](../examples/intermediate/20-transition-advanced/index.html)
+## transition-duration
+
+**Syntax:** `transition-duration: <time>`
+
+Duration — specifies how long the transition takes.
+
+**Values:**
+- `0s` — no transition (default)
+- `0.3s` — quick transition
+- `500ms` — half-second transition
+- `1s` — one-second transition
+- `2.5s` — slow transition
+- `0.3s, 0.5s` — per-property durations
+- `inherit` — inherits from parent
+- `initial` — sets to default (0s)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Control how fast changes animate
+- Create staggered transitions
+
+**Example:**
+```css
+.link {
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+```
+
+---
+
+## transition-timing-function
+
+**Syntax:** `transition-timing-function: <timing-function>`
+
+Timing — defines the speed curve of the transition.
+
+**Values:**
+- `ease` — slow start and end (default)
+- `linear` — constant speed
+- `ease-in` — slow start, fast end
+- `ease-out` — fast start, slow end
+- `ease-in-out` — slow start and end
+- `cubic-bezier(0.25, 0.1, 0.25, 1)` — custom curve
+- `cubic-bezier(0.68, -0.55, 0.27, 1.55)` — bounce curve
+- `steps(5, end)` — jump in discrete steps
+- `step-start` — jump to end instantly
+- `step-end` — hold until the end
+- `inherit` — inherits from parent
+- `initial` — sets to default (ease)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Add natural easing to transitions
+- Create custom acceleration curves
+- Animate in discrete steps
+
+**Example:**
+```css
+.card {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+```
+
+---
+
+## transition-delay
+
+**Syntax:** `transition-delay: <time>`
+
+Delay — specifies when the transition starts.
+
+**Values:**
+- `0s` — start immediately (default)
+- `0.2s` — short delay
+- `500ms` — half-second delay
+- `1s` — one-second delay
+- `0s, 0.2s` — per-property delays
+- `inherit` — inherits from parent
+- `initial` — sets to default (0s)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Stagger multiple transitions
+- Create dropdown and menu expansion effects
+
+**Example:**
+```css
+.menu-item {
+  transition: opacity 0.3s ease;
+  transition-delay: 0.2s;
+}
+```
+
+---
+
+**[View Example](../examples/intermediate/20-transition-advanced/index.html)**
 
 ← **Previous Topic:** [Math Functions](../intermediate/19-math-functions.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Nesting](../intermediate/21-nesting.md) →

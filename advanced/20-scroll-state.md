@@ -1,33 +1,32 @@
 # Scroll State Queries
 
+> 5 properties
+
 Query the scroll state of elements and the viewport.
 
 ---
 
 ## @scroll-state
-**Type:** at-rule
+
+**Syntax:** `@scroll-state(<query>)`
 
 Applies styles based on scroll position and snap state.
 
+**Values:**
+- `stuck: top` — element stuck to the top edge
+- `snapped: top` — element snapped to the top
+- `scrollable: bottom` — content scrollable past the bottom
+
+**Use Cases:**
+- Add a shadow to a sticky header once stuck
+- Highlight the snapped slide
+- Reveal a load-more button at the end
+
+**Example:**
 ```css
-/* Sticky header when scrolled past */
 @scroll-state(stuck: top) {
   .header {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-}
-
-/* Snapped element */
-@scroll-state(snapped: top) {
-  .card {
-    border: 2px solid blue;
-  }
-}
-
-/* Scrolled to bottom */
-@scroll-state(scrollable: bottom) {
-  .load-more {
-    display: block;
   }
 }
 ```
@@ -36,12 +35,22 @@ Applies styles based on scroll position and snap state.
 
 ## scroll-state()
 
-**Type:** function
+**Syntax:** `scroll-state(<query>)`
 
 References the scroll state of a named element.
 
+**Values:**
+- `stuck: top` — element stuck to the top
+- `not stuck: top` — element not stuck to the top
+- `snapped: top` — element snapped to the top
+- `scrollable: bottom` — content scrollable past the bottom
+
+**Use Cases:**
+- Style based on another element's scroll state
+- Respond to sticky and snap positions
+
+**Example:**
 ```css
-/* Style based on named element's scroll state */
 @scroll-state(stuck: top) {
   .header {
     background: rgba(255, 255, 255, 0.95);
@@ -56,9 +65,24 @@ References the scroll state of a named element.
 
 ## Scroll State Properties
 
-### scroll-state(stuck)
+---
+
+## scroll-state(stuck)
+
+**Syntax:** `@scroll-state(stuck: <edge>)`
+
+Styles an element based on whether it is stuck to a scroll edge.
+
+**Values:**
+- `stuck: top` — element stuck to the top
+- `not stuck: top` — element not stuck to the top
+
+**Use Cases:**
+- Show or hide a sticky header
+- Add elevation when the header is stuck
+
+**Example:**
 ```css
-/* Header becomes visible when stuck */
 @scroll-state(stuck: top) {
   .header {
     opacity: 1;
@@ -74,9 +98,23 @@ References the scroll state of a named element.
 }
 ```
 
-### scroll-state(snapped)
+---
+
+## scroll-state(snapped)
+
+**Syntax:** `@scroll-state(snapped: <edge>)`
+
+Styles elements based on their scroll-snap alignment.
+
+**Values:**
+- `snapped: top` — element snapped to the top
+
+**Use Cases:**
+- Highlight the active snap item
+- Scale up the currently snapped item
+
+**Example:**
 ```css
-/* Highlight snapped item */
 @scroll-state(snapped: top) {
   .snap-item {
     background: lightblue;
@@ -85,9 +123,24 @@ References the scroll state of a named element.
 }
 ```
 
-### scroll-state(scrollable)
+---
+
+## scroll-state(scrollable)
+
+**Syntax:** `@scroll-state(scrollable: <edge>)`
+
+Styles elements based on remaining scrollable content.
+
+**Values:**
+- `scrollable: bottom` — content scrollable past the bottom
+- `not scrollable: bottom` — content ends at the bottom
+
+**Use Cases:**
+- Show a scroll indicator only when more content exists
+- Reveal a load-more button at the end of content
+
+**Example:**
 ```css
-/* Show scroll indicator only when scrollable */
 @scroll-state(scrollable: bottom) {
   .scroll-indicator {
     display: block;
@@ -101,34 +154,8 @@ References the scroll state of a named element.
 }
 ```
 
-```html
-<header class="header">Sticky Header</header>
-<div class="content">
-  <p>Long content...</p>
-</div>
-```
-
-```css
-.header {
-  position: sticky;
-  top: 0;
-  padding: 1rem;
-  background: white;
-  transition: box-shadow 0.3s, background 0.3s;
-}
-
-@scroll-state(stuck: top) {
-  .header {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-  }
-}
-```
-
-
 ---
 
-[Example](../examples/advanced/20-scroll-state/index.html)
+**[View Example](../examples/advanced/20-scroll-state/index.html)**
 
 ← **Previous Topic:** [Scroll-Driven Animations](../advanced/19-scroll-animations.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Advanced Color Functions](../advanced/21-color-functions-advanced.md) →

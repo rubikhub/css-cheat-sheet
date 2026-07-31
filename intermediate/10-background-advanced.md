@@ -1,615 +1,471 @@
 # Background Advanced
+
+> 14 properties
+
+Advanced background control — colors, images, gradients, tiling, sizing, and positioning.
+
 ---
+
 ## Color & Image
-### background-color
-**Type/Initial:** color | transparent
 
-**Description:** Solid color — fills the element with a background color.
+---
 
-**CSS:**
+## background-color
+
+**Syntax:** `background-color: <color> | transparent`
+
+Solid color — fills the element with a background color.
+
+**Values:**
+- `transparent` — no background color
+- `red` — named color
+- `currentColor` — uses the element's text color
+- `#ff5733` — hex color
+- `#f00` — shorthand hex
+- `rgb(255, 0, 0)` — RGB color
+- `rgba(255, 0, 0, 0.5)` — RGB color with alpha
+- `hsl(0, 100%, 50%)` — HSL color
+- `hsla(0, 100%, 50%, 0.5)` — HSL color with alpha
+- `inherit` — inherits from parent
+- `initial` — sets to default (transparent)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Set brand and UI colors
+- Layer translucent overlays with rgba() or hsla()
+
+**Example:**
 ```css
-/* Named colors */
-background-color: transparent;
-background-color: red;
-background-color: currentColor;
-
-/* Hex */
-background-color: #ff5733;
-background-color: #f00;
-
-/* RGB/RGBA */
-background-color: rgb(255, 0, 0);
-background-color: rgba(255, 0, 0, 0.5);
-
-/* HSL/HSLA */
-background-color: hsl(0, 100%, 50%);
-background-color: hsla(0, 100%, 50%, 0.5);
-
-/* Global values */
-background-color: inherit;
-background-color: initial;
-background-color: revert;
-background-color: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Solid background color fills this box.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
+.button {
+  background-color: #6c5ce7;
 }
-.style-a {
-  background: #6c5ce7;
-  color: #fff;
+
+.button:hover {
+  background-color: rgba(108, 92, 231, 0.5);
 }
 ```
 
-### background-image
-**Type/Initial:** url() | none
+---
 
-**Description:** Background image — tiled by default to fill the element.
+## background-image
 
-**CSS:**
+**Syntax:** `background-image: <image> | <gradient> | none`
+
+Background image — tiled by default to fill the element.
+
+**Values:**
+- `none` — no image
+- `url('image.jpg')` — image from a URL
+- `linear-gradient(to right, red, blue)` — linear gradient
+- `linear-gradient(135deg, #667eea 0%, #764ba2 100%)` — angled gradient with explicit stops
+- `radial-gradient(circle, red, blue)` — radial gradient
+- `conic-gradient(red, orange, yellow, green, blue)` — conic gradient
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Add images behind content
+- Create gradient backgrounds
+
+**Example:**
 ```css
-/* No image */
-background-image: none;
-
-/* URL */
-background-image: url('image.jpg');
-
-/* Gradients */
-background-image: linear-gradient(to right, red, blue);
-background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-background-image: radial-gradient(circle, red, blue);
-background-image: conic-gradient(red, orange, yellow, green, blue);
-
-/* Global values */
-background-image: inherit;
-background-image: initial;
-background-image: revert;
-background-image: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Diagonal stripe pattern from background-image.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
+.hero {
+  background-image: url('hero.jpg');
 }
-.style-a {
-  background-image: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(255,255,255,.08) 8px, rgba(255,255,255,.08) 16px);
+
+.card {
+  background-image: linear-gradient(135deg, #667eea, #764ba2);
 }
 ```
 
-### background
-**Type/Initial:** shorthand | —
+---
 
-**Description:** Shorthand — combines color, image, position, repeat, size, and attachment.
+## background
 
-**CSS:**
+**Syntax:** `background: <color> | <image> <position>/<size> <repeat> <attachment>`
+
+Shorthand — combines color, image, position, repeat, size, and attachment.
+
+**Values:**
+- `red` — color only
+- `url('image.jpg')` — image only
+- `center` — position only
+- `no-repeat` — repeat only
+- `fixed` — attachment only
+- `url('image.jpg') center no-repeat` — image with position and repeat
+- `red url('image.jpg') center/cover no-repeat` — full shorthand
+- `inherit` — inherits from parent
+- `initial` — sets to default (transparent)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Set complete backgrounds in one line
+- Combine gradients with fallback colors
+
+**Example:**
 ```css
-/* Single values */
-background: red;
-background: url('image.jpg');
-background: center;
-background: no-repeat;
-background: fixed;
-
-/* Multi values */
-background: url('image.jpg') center no-repeat;
-background: red url('image.jpg') center/cover no-repeat;
-
-/* Global values */
-background: inherit;
-background: initial;
-background: revert;
-background: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Shorthand sets color + image + position + size + repeat.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
+.hero {
+  background: url('hero.jpg') center/cover no-repeat;
 }
-.style-a {
-  background: linear-gradient(135deg, #e17055, #d63031);
-  background-size: cover;
-  background-position: center;
+
+.banner {
+  background: #6c5ce7 url('pattern.png') no-repeat;
 }
 ```
+
+---
 
 ## Gradient
-### linear-gradient()
-**Type/Initial:** function | —
 
-**Description:** Linear gradient — transitions colors along a straight line.
+---
 
-**CSS:**
+## linear-gradient()
+
+**Syntax:** `background: linear-gradient(<angle>, <color-stops>)`
+
+Linear gradient — transitions colors along a straight line.
+
+**Values:**
+- `to right, red, blue` — gradient from left to right
+- `135deg, #667eea 0%, #764ba2 100%` — angle with explicit color stops
+- `135deg, #6c5ce7, #a29bfe, #fd79a8` — diagonal gradient through three colors
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create smooth color transitions
+- Build layered gradient backgrounds
+
+**Example:**
 ```css
-background: linear-gradient(135deg, #6c5ce7, #a29bfe, #fd79a8);
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  135deg gradient from purple to pink.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.hero {
   background: linear-gradient(135deg, #6c5ce7, #a29bfe, #fd79a8);
-  color: #fff;
 }
 ```
 
-### radial-gradient()
-**Type/Initial:** function | —
+---
 
-**Description:** Radial gradient — radiates colors outward from a center point.
+## radial-gradient()
 
-**CSS:**
+**Syntax:** `background: radial-gradient(<shape> <size> at <position>, <color-stops>)`
+
+Radial gradient — radiates colors outward from a center point.
+
+**Values:**
+- `circle, red, blue` — circular gradient
+- `circle, #00b894, #00cec9, #0984e3` — circular gradient through three colors
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create spotlight or glow effects
+- Add depth to buttons
+
+**Example:**
 ```css
-background: radial-gradient(circle, #00b894, #00cec9, #0984e3);
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Radial burst from green to blue center.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.button {
   background: radial-gradient(circle, #00b894, #00cec9, #0984e3);
-  color: #fff;
 }
 ```
 
-### conic-gradient()
-**Type/Initial:** function | —
+---
 
-**Description:** Conic gradient — sweeps colors around a center point like a color wheel.
+## conic-gradient()
 
-**CSS:**
+**Syntax:** `background: conic-gradient(<from-angle> at <position>, <color-stops>)`
+
+Conic gradient — sweeps colors around a center point like a color wheel.
+
+**Values:**
+- `#ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b` — color wheel sweep
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Build color wheels and donut charts
+- Create rotating-hue effects
+
+**Example:**
 ```css
-background: conic-gradient(#ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b);
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Conic color wheel sweep.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.wheel {
   background: conic-gradient(#ff6b6b, #feca57, #48dbfb, #ff9ff3, #ff6b6b);
   border-radius: 50%;
-  aspect-ratio: 1;
-  max-width: 200px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 ```
 
-### repeating-linear-gradient()
-**Type/Initial:** function | —
+---
 
-**Description:** Repeating linear — tiles a gradient pattern.
+## repeating-linear-gradient()
 
-**CSS:**
+**Syntax:** `background: repeating-linear-gradient(<angle>, <color-stops>)`
+
+Repeating linear — tiles a gradient pattern.
+
+**Values:**
+- `90deg, #d63031 0px, #d63031 20px, #fdcb6e 20px, #fdcb6e 40px` — vertical stripes repeating every 40px
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create stripes and repeating patterns
+- Build progress-bar textures
+
+**Example:**
 ```css
-background: repeating-linear-gradient(90deg, #d63031 0px, #d63031 20px, #fdcb6e 20px, #fdcb6e 40px);
+.stripes {
+  background: repeating-linear-gradient(45deg, #d63031 0, #d63031 10px, #fdcb6e 10px, #fdcb6e 20px);
+}
 ```
 
-**HTML:**
-```html
-<div class="db style-a">
-  Red and yellow vertical stripes repeating at 20px.
-</div>
-```
+---
 
-**CSS Rendered:**
+## repeating-radial-gradient()
+
+**Syntax:** `background: repeating-radial-gradient(<shape>, <color-stops>)`
+
+Repeating radial — tiles a radial gradient pattern.
+
+**Values:**
+- `circle, #2d3436 0px, #2d3436 10px, #636e72 10px, #636e72 20px` — concentric rings
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create concentric ring patterns
+- Build radar or target designs
+
+**Example:**
 ```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  background: repeating-linear-gradient(90deg, #d63031 0px, #d63031 20px, #fdcb6e 20px, #fdcb6e 40px);
-  color: #fff;
+.target {
+  background: repeating-radial-gradient(circle, #2d3436 0, #2d3436 10px, #636e72 10px, #636e72 20px);
 }
 ```
 
-### repeating-radial-gradient()
-**Type/Initial:** function | —
-
-**Description:** Repeating radial — tiles a radial gradient pattern.
-
-**CSS:**
-```css
-background: repeating-radial-gradient(circle, #2d3436 0px, #2d3436 10px, #636e72 10px, #636e72 20px);
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Concentric dark rings repeating outward.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  background: repeating-radial-gradient(circle, #2d3436 0px, #2d3436 10px, #636e72 10px, #636e72 20px);
-  color: #fff;
-}
-```
+---
 
 ## Repeat & Size
-### background-repeat
-**Type/Initial:** keyword | repeat
 
-**Description:** Tiling behavior — repeat, no-repeat, repeat-x, repeat-y, round, space.
+---
 
-**CSS:**
+## background-repeat
+
+**Syntax:** `background-repeat: repeat | repeat-x | repeat-y | no-repeat | space | round`
+
+Tiling behavior — repeat, no-repeat, repeat-x, repeat-y, round, space.
+
+**Values:**
+- `repeat` — tile in both directions (default)
+- `repeat-x` — tile horizontally only
+- `repeat-y` — tile vertically only
+- `no-repeat` — no tiling
+- `space` — tile with even spacing between images
+- `round` — tile and scale to fit the area
+- `repeat space` — repeat horizontally, space vertically
+- `repeat round` — repeat horizontally, round vertically
+- `no-repeat space` — no-repeat horizontally, space vertically
+- `inherit` — inherits from parent
+- `initial` — sets to default (repeat)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Control how background images tile
+- Create seamless patterns
+
+**Example:**
 ```css
-background-repeat: repeat;
-background-repeat: repeat-x;
-background-repeat: repeat-y;
-background-repeat: no-repeat;
-background-repeat: space;
-background-repeat: round;
-
-/* Two-value syntax */
-background-repeat: repeat space;
-background-repeat: repeat round;
-background-repeat: no-repeat space;
-
-/* Global values */
-background-repeat: inherit;
-background-repeat: initial;
-background-repeat: revert;
-background-repeat: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Vertical bars distributed with even spacing via round.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
+.pattern {
+  background-image: url('dot.png');
+  background-repeat: round;
 }
-.style-a {
-  background: repeating-linear-gradient(0deg, #6c5ce7 0px, #6c5ce7 6px, transparent 6px, transparent 18px);
-  background-repeat: space;
-  background-size: 6px 18px;
+
+.hero {
+  background-image: url('hero.jpg');
+  background-repeat: no-repeat;
 }
 ```
 
-### background-size
-**Type/Initial:** length | % | cover | contain | auto
+---
 
-**Description:** Image dimensions — auto, cover (fill), or contain (fit).
+## background-size
 
-**CSS:**
+**Syntax:** `background-size: auto | <length> | <percentage> | cover | contain`
+
+Image dimensions — auto, cover (fill), or contain (fit).
+
+**Values:**
+- `auto` — natural image size (default)
+- `cover` — fills the area, cropping as needed
+- `contain` — fits entirely inside
+- `200px` — single width value
+- `200px 100px` — width and height
+- `50%` — single percentage
+- `50% 75%` — width and height percentages
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Cover backgrounds in hero sections
+- Fit logos and icons cleanly
+
+**Example:**
 ```css
-/* Keywords */
-background-size: auto;
-background-size: cover;
-background-size: contain;
-
-/* Length values */
-background-size: 200px;
-background-size: 200px 100px;
-
-/* Percentage values */
-background-size: 50%;
-background-size: 50% 75%;
-
-/* Global values */
-background-size: inherit;
-background-size: initial;
-background-size: revert;
-background-size: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  <div class="style-b">
-    cover fills area
-  </div>
-  <div class="style-c">
-    contain fits inside
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  padding: 0;
-}
-.style-b {
-  flex: 1;
-  min-width: 120px;
-  background: linear-gradient(135deg, #00b894, #0984e3);
+.hero {
+  background: url('image.jpg') center no-repeat;
   background-size: cover;
-  background-position: center;
-  padding: 1.2rem 0.6rem;
-  border-radius: 4px;
-  color: #fff;
 }
-.style-c {
-  flex: 1;
-  min-width: 120px;
-  background: linear-gradient(135deg, #fdcb6e, #e17055);
+
+.icon {
+  background: url('icon.png') no-repeat;
   background-size: contain;
+}
+```
+
+---
+
+## background-position
+
+**Syntax:** `background-position: <position> | <x> <y>`
+
+Image placement — keyword pairs or x/y coordinates.
+
+**Values:**
+- `center` — centered (default)
+- `top` — top edge
+- `bottom` — bottom edge
+- `left` — left edge
+- `right` — right edge
+- `20px` — single offset
+- `50%` — single percentage
+- `20px 40px` — x and y offsets
+- `top right` — keyword pair
+- `center bottom` — keyword pair
+- `right 10px bottom 20px` — edge offsets
+- `inherit` — inherits from parent
+- `initial` — sets to default (0% 0%)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Position background images precisely
+- Pin accents to corners
+
+**Example:**
+```css
+.badge {
+  background-image: url('icon.png');
+  background-position: right 10px bottom 10px;
   background-repeat: no-repeat;
-  padding: 1.2rem 0.6rem;
-  border-radius: 4px;
-  color: #fff;
 }
 ```
 
-### background-position
-**Type/Initial:** position | 0% 0%
+---
 
-**Description:** Image placement — keyword pairs or x/y coordinates.
+## background-attachment
 
-**CSS:**
+**Syntax:** `background-attachment: scroll | fixed | local`
+
+Scroll behavior — fixed (viewport), local (scroll container), or scroll.
+
+**Values:**
+- `scroll` — scrolls with the page (default)
+- `fixed` — stays fixed to the viewport
+- `local` — scrolls with the element content
+- `local scroll` — local vertically, scroll horizontally
+- `inherit` — inherits from parent
+- `initial` — sets to default (scroll)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create parallax effects
+- Keep backgrounds fixed while content scrolls
+
+**Example:**
 ```css
-/* Keywords */
-background-position: top;
-background-position: bottom;
-background-position: left;
-background-position: right;
-background-position: center;
-
-/* One value */
-background-position: 20px;
-background-position: 50%;
-
-/* Two values */
-background-position: 20px 40px;
-background-position: top right;
-background-position: center bottom;
-
-/* Three/four values */
-background-position: right 10px bottom 20px;
-
-/* Global values */
-background-position: inherit;
-background-position: initial;
-background-position: revert;
-background-position: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Gradient bar pinned to bottom-right corner.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  background: linear-gradient(to right, #6c5ce7 4px, transparent 4px);
-  background-position: right 20px bottom 10px;
-  background-repeat: no-repeat;
-  background-size: 4px 60%;
-}
-```
-
-### background-attachment
-**Type/Initial:** keyword | scroll
-
-**Description:** Scroll behavior — fixed (viewport), local (scroll container), or scroll.
-
-**CSS:**
-```css
-background-attachment: scroll;
-background-attachment: fixed;
-background-attachment: local;
-background-attachment: local scroll;
-
-/* Global values */
-background-attachment: inherit;
-background-attachment: initial;
-background-attachment: revert;
-background-attachment: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Fixed gradient stays in place when scrolling.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  background: linear-gradient(180deg, #0984e3 0%, #6c5ce7 50%, #d63031 100%);
+.parallax {
+  background-image: url('mountains.jpg');
   background-attachment: fixed;
-  color: #fff;
+  background-size: cover;
 }
 ```
+
+---
 
 ## Clip & Origin
-### background-clip
-**Type/Initial:** keyword | border-box
 
-**Description:** Paint boundary — how far the background extends (border-box, padding-box, content-box, text).
+---
 
-**CSS:**
+## background-clip
+
+**Syntax:** `background-clip: border-box | padding-box | content-box | text`
+
+Paint boundary — how far the background extends (border-box, padding-box, content-box, text).
+
+**Values:**
+- `border-box` — extends under the border (default)
+- `padding-box` — stops at the padding edge
+- `content-box` — stops at the content edge
+- `text` — clipped to the text shape
+- `inherit` — inherits from parent
+- `initial` — sets to default (border-box)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create gradient text headings
+- Keep backgrounds inside the content area
+
+**Example:**
 ```css
-background-clip: border-box;
-background-clip: padding-box;
-background-clip: content-box;
-background-clip: text;
-background-clip: no-clip;
-
-/* Global values */
-background-clip: inherit;
-background-clip: initial;
-background-clip: revert;
-background-clip: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Gradient clipped to text shape.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  background: linear-gradient(135deg, #fd79a8, #fdcb6e, #00cec9);
+.heading {
+  background: linear-gradient(135deg, #fd79a8, #fdcb6e);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-weight: 700;
-  font-size: 1.3rem;
 }
 ```
 
-### background-origin
-**Type/Initial:** keyword | padding-box
+---
 
-**Description:** Position origin — coordinate system for background-position.
+## background-origin
 
-**CSS:**
+**Syntax:** `background-origin: border-box | padding-box | content-box`
+
+Position origin — coordinate system for background-position.
+
+**Values:**
+- `padding-box` — relative to the padding box (default)
+- `border-box` — relative to the border box
+- `content-box` — relative to the content box
+- `inherit` — inherits from parent
+- `initial` — sets to default (padding-box)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Align backgrounds to the content area
+- Create offset background effects
+
+**Example:**
 ```css
-background-origin: padding-box;
-background-origin: border-box;
-background-origin: content-box;
-
-/* Global values */
-background-origin: inherit;
-background-origin: initial;
-background-origin: revert;
-background-origin: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Background starts from content-box, showing padding as transparent gap.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.card {
   background-image: linear-gradient(135deg, #d63031, #fdcb6e);
   background-origin: content-box;
   background-clip: content-box;
@@ -619,6 +475,6 @@ background-origin: unset;
 
 ---
 
-[Example](../examples/intermediate/10-background-advanced/index.html)
+**[View Example](../examples/intermediate/10-background-advanced/index.html)**
 
 ← **Previous Topic:** [Transform Functions](../intermediate/09-transform-functions.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Flexbox Advanced](../intermediate/11-flexbox-advanced.md) →

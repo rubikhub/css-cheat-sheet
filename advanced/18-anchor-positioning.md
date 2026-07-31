@@ -1,14 +1,30 @@
 # Anchor Positioning
 
-Position elements relative to other "anchor" elements.
+> 6 properties
+
+Position elements relative to other anchor elements.
 
 ---
 
 ## anchor-name
-**Type:** name | **Initial:** none
+
+**Syntax:** `anchor-name: <dashed-ident> | none`
 
 Declares an element as an anchor that other elements can reference.
 
+**Values:**
+- `--trigger` — the anchor's dashed-ident name
+- `none` — no anchor name (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Define a trigger for a tooltip or popover
+- Name multiple anchors on a page
+
+**Example:**
 ```css
 .tooltip-trigger {
   anchor-name: --trigger;
@@ -22,65 +38,116 @@ Declares an element as an anchor that other elements can reference.
 ---
 
 ## position-anchor
-**Type:** name | **Initial:** auto
+
+**Syntax:** `position-anchor: <anchor-name> | auto`
 
 Links an absolutely-positioned element to an anchor.
 
+**Values:**
+- `--trigger` — the anchor name to position against
+- `auto` — default anchor resolution (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Attach tooltips and popovers to a trigger
+- Position dropdowns relative to their buttons
+
+**Example:**
 ```css
 .tooltip {
   position: fixed;
   position-anchor: --trigger;
   top: anchor(bottom);
   left: anchor(center);
-  translate: -50% 8px;
 }
 ```
 
 ---
 
 ## anchor()
-**Type:** function
+
+**Syntax:** `anchor(<anchor-name>, <side>)`
 
 References a position on the anchor element.
 
+**Values:**
+- `anchor(bottom)` — below the anchor
+- `anchor(top)` — above the anchor
+- `anchor(right)` — right side of the anchor
+- `anchor(left)` — left side of the anchor
+- `anchor(center)` — center of the anchor
+- `anchor(--trigger bottom)` — named anchor, specific side
+
+**Use Cases:**
+- Position tooltips against anchor edges
+- Align elements to the center of an anchor
+
+**Example:**
 ```css
-/* Anchor edges */
-top: anchor(bottom);
-bottom: anchor(top);
-left: anchor(right);
-right: anchor(left);
-
-/* Anchor center */
-top: anchor(center);
-left: anchor(center);
-
-/* Named anchor */
-top: anchor(--trigger bottom);
-left: anchor(--trigger center);
+.tooltip {
+  position: fixed;
+  position-anchor: --trigger;
+  top: anchor(bottom);
+  left: anchor(center);
+}
 ```
 
 ---
 
 ## anchor-size()
-**Type:** function
+
+**Syntax:** `anchor-size(<anchor-name> <dimension>)`
 
 References the size of an anchor element.
 
-```css
-/* Match anchor width */
-width: anchor-size(--trigger width);
+**Values:**
+- `anchor-size(--trigger width)` — the anchor's width
+- `anchor-size(--trigger height)` — the anchor's height
 
-/* Match anchor height */
-height: anchor-size(--trigger height);
+**Use Cases:**
+- Match a popover's width to its trigger
+- Match an element's height to its anchor
+
+**Example:**
+```css
+.popup {
+  width: anchor-size(--trigger width);
+}
+
+.full-height {
+  height: anchor-size(--trigger height);
+}
 ```
 
 ---
 
 ## position-area
-**Type:** grid-area
 
-Places the element relative to the anchor using a grid notation.
+**Syntax:** `position-area: <area>`
 
+Places the element relative to the anchor using grid notation.
+
+**Values:**
+- `top` — above the anchor
+- `bottom` — below the anchor
+- `left` — to the left of the anchor
+- `right` — to the right of the anchor
+- `top left` — top-left corner
+- `bottom center` — bottom-center
+- `auto` — no fixed area (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Position tooltips on any side of a trigger
+- Pin elements to anchor corners
+
+**Example:**
 ```css
 .tooltip {
   position: fixed;
@@ -88,60 +155,45 @@ Places the element relative to the anchor using a grid notation.
   position-area: top;
 }
 
-/* Other areas */
-position-area: bottom;
-position-area: left;
-position-area: right;
-position-area: top left;
-position-area: bottom center;
+.tooltip-bottom {
+  position-area: bottom;
+}
 ```
 
 ---
 
 ## position-try-fallbacks
-**Type:** list | **Initial:** none
 
-Defines fallback positions when the element overflows.
+**Syntax:** `position-try-fallbacks: <try-option>`
 
+Defines fallback positions when the element overflows the viewport.
+
+**Values:**
+- `flip-block` — flip across the block axis
+- `flip-inline` — flip across the inline axis
+- `flip-block flip-inline` — flip on both axes
+- `none` — no fallbacks (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Keep tooltips inside the viewport
+- Handle overflow near screen edges
+
+**Example:**
 ```css
 .tooltip {
   position: fixed;
   position-anchor: --trigger;
   position-area: top;
-  position-try-fallbacks:
-    flip-block,
-    flip-inline,
-    flip-block flip-inline;
+  position-try-fallbacks: flip-block, flip-inline;
 }
 ```
-
-```html
-<button class="trigger" style="anchor-name: --btn">Hover me</button>
-<div class="tooltip" style="position-anchor: --btn">Tooltip content</div>
-```
-
-```css
-.trigger {
-  anchor-name: --btn;
-}
-
-.tooltip {
-  position: fixed;
-  position-anchor: --btn;
-  top: anchor(bottom);
-  left: anchor(center);
-  translate: -50% 8px;
-  background: #333;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  position-try-fallbacks: flip-block;
-}
-```
-
 
 ---
 
-[Example](../examples/advanced/18-anchor-positioning/index.html)
+**[View Example](../examples/advanced/18-anchor-positioning/index.html)**
 
 ← **Previous Topic:** [Selectors 2024+](../advanced/17-selectors-2024.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Scroll-Driven Animations](../advanced/19-scroll-animations.md) →

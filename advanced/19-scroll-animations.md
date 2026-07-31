@@ -1,93 +1,71 @@
 # Scroll-Driven Animations
 
+> 6 properties
+
 Animations driven by scroll position instead of time.
 
 ---
 
 ## animation-timeline
-**Type:** keyword | function | **Initial:** auto
+
+**Syntax:** `animation-timeline: scroll() | view()`
 
 Connects an animation to scroll or view progress.
 
+**Values:**
+- `scroll()` — scroll container progress
+- `view()` — element visibility progress
+- `scroll(root)` — the root scroll container
+- `scroll(nearest, block)` — nearest scroll container, block axis
+- `auto` — time-based animation (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Animate a progress bar with page scroll
+- Reveal elements as they enter the viewport
+
+**Example:**
 ```css
-/* Scroll progress */
-animation-timeline: scroll();
-
-/* View progress */
-animation-timeline: view();
-
-/* Named scroll container */
-animation-timeline: scroll(root);
-
-/* Named element */
-animation-timeline: scroll(nearest, block);
-```
-
----
-
-## animation-range
-**Type:** keyword | length | percentage | **Initial:** normal
-
-Defines the range of the animation timeline.
-
-```css
-/* Percentage range */
-animation-range: 0% 100%;
-
-/* Entry/exit */
-animation-range: entry 0% entry 100%;
-animation-range: exit 0% exit 100%;
-
-/* Covering */
-animation-range: cover 0% cover 100%;
-
-/* Containing */
-animation-range: contain 0% contain 100%;
-```
-
----
-
-## animation-range-name
-**Type:** name | **Initial:** normal
-
-Names a specific point in the animation range.
-
-```css
-animation-range-name: --my-range;
-animation-range-start: --my-range;
-animation-range-end: --my-range;
-```
-
----
-
-## animation-range-start / animation-range-end
-**Type:** keyword | length | percentage
-
-```css
-animation-range-start: entry 20%;
-animation-range-end: exit 80%;
-```
-
-```css
-/* Progress bar tied to scroll */
 .progress-bar {
   animation: grow-width linear;
   animation-timeline: scroll(root block);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: blue;
-  transform-origin: left;
 }
 
 @keyframes grow-width {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
 }
+```
 
-/* Reveal on scroll */
+---
+
+## animation-range
+
+**Syntax:** `animation-range: <start> <end>`
+
+Defines the range of the animation timeline.
+
+**Values:**
+- `0% 100%` — full percentage range
+- `entry 0% entry 100%` — from element entry to fully entered
+- `exit 0% exit 100%` — from exit start to fully exited
+- `cover 0% cover 100%` — full covered range
+- `contain 0% contain 100%` — full contained range
+- `normal` — default range (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (normal)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Start a reveal animation as an element enters
+- Delay animation until partway through scroll
+
+**Example:**
+```css
 .reveal {
   animation: fade-in linear;
   animation-timeline: view();
@@ -100,41 +78,78 @@ animation-range-end: exit 80%;
 }
 ```
 
-```html
-<div class="progress-bar"></div>
-<div class="content">
-  <div class="reveal">Item 1</div>
-  <div class="reveal">Item 2</div>
-  <div class="reveal">Item 3</div>
-</div>
+---
+
+## animation-range-name
+
+**Syntax:** `animation-range-name: <custom-ident> | normal`
+
+Names a specific point in the animation range.
+
+**Values:**
+- `--my-range` — a named range point
+- `normal` — default range name (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (normal)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Reference named range points
+- Coordinate start and end with named ranges
+
+**Example:**
+```css
+.element {
+  animation-range-name: --my-range;
+  animation-range-start: --my-range;
+  animation-range-end: --my-range;
+}
 ```
 
-```css
-.progress-bar {
-  animation: grow-width linear;
-  animation-timeline: scroll(root block);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(to right, #667eea, #764ba2);
-  transform-origin: left;
-}
+---
 
-@keyframes grow-width {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+## animation-range-start / animation-range-end
+
+**Syntax:** `animation-range-start: <start>` | `animation-range-end: <end>`
+
+Sets the start or end boundary of the animation range.
+
+**Values:**
+- `entry 20%` — start at 20% through entry
+- `exit 80%` — end at 80% through exit
+
+**Use Cases:**
+- Fine-tune when an animation begins
+- Control when an animation ends
+
+**Example:**
+```css
+.reveal {
+  animation: fade-in linear;
+  animation-timeline: view();
+  animation-range-start: entry 20%;
+  animation-range-end: exit 80%;
 }
 ```
 
 ---
 
 ## view-timeline
-**Type:** keyword | **Initial:** auto
+
+**Syntax:** `view-timeline-name: <name>; view-timeline-axis: <axis>`
 
 Declares a named view timeline on an element.
 
+**Values:**
+- `view-timeline-name: --reveal` — the timeline name
+- `view-timeline-axis: block` — the scroll axis
+
+**Use Cases:**
+- Share a named timeline across elements
+- Trigger animations based on element visibility
+
+**Example:**
 ```css
 .timeline-item {
   view-timeline-name: --reveal;
@@ -145,19 +160,32 @@ Declares a named view timeline on an element.
 ---
 
 ## timeline-scope
-**Type:** name | **Initial:** none
+
+**Syntax:** `timeline-scope: <name> | none`
 
 Provides access to named timelines across the DOM.
 
+**Values:**
+- `--my-timeline` — the name of the timeline to scope
+- `none` — no scoped timeline (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Use a timeline declared on another element
+- Share scroll timelines between components
+
+**Example:**
 ```css
 .timeline-scope {
   timeline-scope: --my-timeline;
 }
 ```
 
-
 ---
 
-[Example](../examples/advanced/19-scroll-animations/index.html)
+**[View Example](../examples/advanced/19-scroll-animations/index.html)**
 
 ← **Previous Topic:** [Anchor Positioning](../advanced/18-anchor-positioning.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Scroll State Queries](../advanced/20-scroll-state.md) →

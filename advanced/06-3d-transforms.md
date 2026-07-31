@@ -1,32 +1,30 @@
 # 3D Transforms
 
+> 3 properties
+
 Properties for creating three-dimensional visual effects.
 
 ---
 
 ## transform-style
-**Type:** keyword | **Initial:** flat
+
+**Syntax:** `transform-style: flat | preserve-3d`
 
 Controls whether child elements are positioned in 3D space or flattened.
 
-```css
-transform-style: flat;
-transform-style: preserve-3d;
+**Values:**
+- `flat` — children flattened onto the element's plane (default)
+- `preserve-3d` — children kept in 3D space
+- `inherit` — inherits from parent
+- `initial` — sets to default (flat)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
 
-/* Global values */
-transform-style: inherit;
-transform-style: initial;
-```
+**Use Cases:**
+- Build 3D cubes and card stacks
+- Enable nested 3D transforms
 
-```html
-<div class="scene">
-  <div class="cube">
-    <div class="face front">Front</div>
-    <div class="face back">Back</div>
-  </div>
-</div>
-```
-
+**Example:**
 ```css
 .scene {
   perspective: 500px;
@@ -41,37 +39,53 @@ transform-style: initial;
 ---
 
 ## perspective
-**Type:** length | **Initial:** none
+
+**Syntax:** `perspective: <length> | none`
 
 Sets the distance from the viewer for 3D transformed children.
 
-```css
-perspective: none;
-perspective: 500px;
-perspective: 1000px;
-perspective: 20em;
+**Values:**
+- `none` — no perspective (default)
+- `500px` — short distance, strong depth
+- `1000px` — long distance, subtle depth
+- `20em` — relative length distance
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
 
-/* Global values */
-perspective: inherit;
-perspective: initial;
+**Use Cases:**
+- Add depth to 3D scenes
+- Create card flip and tilt effects
+
+**Example:**
+```css
+.scene {
+  perspective: 500px;
+}
 ```
 
 ---
 
 ## backface-visibility
-**Type:** keyword | **Initial:** visible
+
+**Syntax:** `backface-visibility: visible | hidden`
 
 Determines if the back face of an element is visible when rotated.
 
-```css
-backface-visibility: visible;
-backface-visibility: hidden;
+**Values:**
+- `visible` — back face visible (default)
+- `hidden` — back face hidden
+- `inherit` — inherits from parent
+- `initial` — sets to default (visible)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
 
-/* Global values */
-backface-visibility: inherit;
-backface-visibility: initial;
-```
+**Use Cases:**
+- Build card flip animations
+- Hide the reverse faces of 3D elements
 
+**Example:**
 ```css
 .card {
   backface-visibility: hidden;
@@ -79,9 +93,8 @@ backface-visibility: initial;
 }
 ```
 
-
 ---
 
-[Example](../examples/advanced/06-3d-transforms/index.html)
+**[View Example](../examples/advanced/06-3d-transforms/index.html)**
 
 ← **Previous Topic:** [Subgrid & Named Grid Lines](../advanced/05-subgrid.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Animation — Direction, Fill Mode & Play State](../advanced/07-animation-fill-and-play-state.md) →

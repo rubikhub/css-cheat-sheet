@@ -1,997 +1,490 @@
 # Flexbox Advanced
+
+> 14 properties
+
+Advanced flexbox — container and item properties for distributing and aligning items.
+
 ---
-## Container Properties
-### display
-**Type/Initial:** keyword | inline
 
-**Description:** Flex container — enables flex layout on children.
+## Container
 
-**CSS:**
+---
+
+## display
+
+**Syntax:** `display: flex | inline-flex`
+
+Flex container — enables flex layout on children.
+
+**Values:**
+- `flex` — block-level flex container
+- `inline-flex` — inline-level flex container
+- `inherit` — inherits from parent
+- `initial` — sets to default (inline)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create flexible layouts
+- Align items in a row or column
+
+**Example:**
 ```css
-display: flex;
-display: inline-flex;
-display: block-flex;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.container {
   display: flex;
-  gap: 0.4rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
 }
 ```
 
-### flex-direction
-**Type/Initial:** keyword | row
+---
 
-**Description:** Direction — sets main axis direction of flex items.
+## flex-direction
 
-**CSS:**
+**Syntax:** `flex-direction: row | row-reverse | column | column-reverse`
+
+Main axis direction — horizontal or vertical layout.
+
+**Values:**
+- `row` — horizontal, left to right (default)
+- `row-reverse` — horizontal, right to left
+- `column` — vertical, top to bottom
+- `column-reverse` — vertical, bottom to top
+- `inherit` — inherits from parent
+- `initial` — sets to default (row)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create horizontal navigation
+- Stack items vertically
+
+**Example:**
 ```css
-flex-direction: row;
-flex-direction: row-reverse;
-flex-direction: column;
-flex-direction: column-reverse;
-
-flex-direction: inherit;
-flex-direction: initial;
-flex-direction: revert;
-flex-direction: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
+.nav {
+  flex-direction: row;
 }
-.style-a {
-  display: flex;
+
+.sidebar {
   flex-direction: column;
-  gap: 0.3rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
 }
 ```
 
-### flex-wrap
-**Type/Initial:** keyword | nowrap
+---
 
-**Description:** Wrap — allows flex items to wrap onto multiple lines.
+## flex-wrap
 
-**CSS:**
+**Syntax:** `flex-wrap: nowrap | wrap | wrap-reverse`
+
+Wrapping behavior — whether items wrap to new lines.
+
+**Values:**
+- `nowrap` — all items on one line (default)
+- `wrap` — items wrap to new lines
+- `wrap-reverse` — items wrap upward
+- `inherit` — inherits from parent
+- `initial` — sets to default (nowrap)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create responsive grids
+- Prevent items from overflowing
+
+**Example:**
 ```css
-flex-wrap: nowrap;
-flex-wrap: wrap;
-flex-wrap: wrap-reverse;
-
-flex-wrap: inherit;
-flex-wrap: initial;
-flex-wrap: revert;
-flex-wrap: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.card-grid {
   display: flex;
   flex-wrap: wrap;
-  width: 160px;
-  gap: 0.3rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
 }
 ```
 
-### justify-content
-**Type/Initial:** keyword | flex-start
+---
 
-**Description:** Main-axis alignment — distributes space along the main axis.
+## justify-content
 
-**CSS:**
+**Syntax:** `justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right | stretch`
+
+Main axis alignment — distributes space along the main axis.
+
+**Values:**
+- `flex-start` — items at start (default)
+- `flex-end` — items at end
+- `center` — items centered
+- `space-between` — space between items
+- `space-around` — space around items
+- `space-evenly` — equal space around items
+- `start` — align to the start edge
+- `end` — align to the end edge
+- `left` — align to the left
+- `right` — align to the right
+- `stretch` — stretch items to fill
+- `inherit` — inherits from parent
+- `initial` — sets to default (flex-start)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Center content horizontally
+- Spread items evenly across a row
+
+**Example:**
 ```css
-justify-content: flex-start;
-justify-content: flex-end;
-justify-content: center;
-justify-content: space-between;
-justify-content: space-around;
-justify-content: space-evenly;
-justify-content: start;
-justify-content: end;
-justify-content: left;
-justify-content: right;
-justify-content: stretch;
-
-justify-content: inherit;
-justify-content: initial;
-justify-content: revert;
-justify-content: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.nav {
   display: flex;
   justify-content: space-between;
 }
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+
+.centered {
+  display: flex;
+  justify-content: center;
 }
 ```
 
-### align-items
-**Type/Initial:** keyword | stretch
+---
 
-**Description:** Cross-axis alignment — aligns items along the cross axis.
+## align-items
 
-**CSS:**
+**Syntax:** `align-items: flex-start | flex-end | center | baseline | stretch | start | end | self-start | self-end`
+
+Cross axis alignment — aligns items along the cross axis.
+
+**Values:**
+- `stretch` — stretch to fill container (default)
+- `flex-start` — items at start
+- `flex-end` — items at end
+- `center` — items centered
+- `baseline` — aligned by text baseline
+- `start` — align to the start edge
+- `end` — align to the end edge
+- `self-start` — align to own start edge
+- `self-end` — align to own end edge
+- `inherit` — inherits from parent
+- `initial` — sets to default (stretch)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Center items vertically
+- Align items to the bottom of a container
+
+**Example:**
 ```css
-align-items: flex-start;
-align-items: flex-end;
-align-items: center;
-align-items: baseline;
-align-items: stretch;
-align-items: start;
-align-items: end;
-align-items: self-start;
-align-items: self-end;
-
-align-items: inherit;
-align-items: initial;
-align-items: revert;
-align-items: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.centered {
   display: flex;
   align-items: center;
-  height: 64px;
-  gap: 0.4rem;
 }
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 1.2rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.6rem;
-  border-radius: 4px;
-  color: #333;
+
+.bottom {
+  display: flex;
+  align-items: flex-end;
 }
 ```
 
-### align-content
-**Type/Initial:** keyword | stretch
+---
 
-**Description:** Multi-line alignment — aligns packed lines in a multi-line flex container.
+## align-content
 
-**CSS:**
+**Syntax:** `align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end`
+
+Multi-line alignment — aligns packed lines in a multi-line flex container.
+
+**Values:**
+- `stretch` — stretch lines to fill (default)
+- `flex-start` — lines at start
+- `flex-end` — lines at end
+- `center` — lines centered
+- `space-between` — space between lines
+- `space-around` — space around lines
+- `space-evenly` — equal space between lines
+- `start` — align to the start edge
+- `end` — align to the end edge
+- `inherit` — inherits from parent
+- `initial` — sets to default (stretch)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Center wrapped content vertically
+- Space out multiple rows evenly
+
+**Example:**
 ```css
-align-content: flex-start;
-align-content: flex-end;
-align-content: center;
-align-content: space-between;
-align-content: space-around;
-align-content: space-evenly;
-align-content: stretch;
-align-content: start;
-align-content: end;
-
-align-content: inherit;
-align-content: initial;
-align-content: revert;
-align-content: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-  <div class="db style-e">
-    D
-  </div>
-  <div class="db style-f">
-    E
-  </div>
-  <div class="db style-g">
-    F
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.wrapped {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  height: 100px;
-  gap: 0.3rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-e {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-f {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-g {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
 }
 ```
 
-### gap
-**Type/Initial:** length | 0
+---
 
-**Description:** Gutters — sets spacing between flex items.
+## gap
 
-**CSS:**
+**Syntax:** `gap: <length> | <percentage>`
+
+Spacing between items — sets the gutter between flex items.
+
+**Values:**
+- `0` — no gap (default)
+- `10px` — fixed gap
+- `1rem` — rem-based gap
+- `5%` — percentage gap
+- `10px 20px` — row-gap column-gap
+- `1rem 2rem` — rem-based row/column gap
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create consistent spacing between items
+- Replace margins on flex children
+
+**Example:**
 ```css
-gap: 10px;
-gap: 1rem;
-gap: 5%;
-
-gap: 10px 20px;
-gap: 1rem 2rem;
-
-gap: inherit;
-gap: initial;
-gap: revert;
-gap: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.toolbar {
   display: flex;
   gap: 1rem;
 }
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
 ```
 
-## Item Properties
-### order
-**Type/Initial:** integer | 0
+---
 
-**Description:** Order — reorders flex items within the container.
+## Items
 
-**CSS:**
+---
+
+## order
+
+**Syntax:** `order: <integer>`
+
+Visual order — reorders flex items within the container.
+
+**Values:**
+- `0` — default order
+- `1` — moved later
+- `-1` — moved earlier
+- `10` — moved much later
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Reorder items for responsive layouts
+- Put key content first visually
+
+**Example:**
 ```css
-order: 0;
-order: 1;
-order: -1;
-order: 10;
+.sidebar {
+  order: -1;
+}
 
-order: inherit;
-order: initial;
-order: revert;
-order: unset;
+.main {
+  order: 0;
+}
 ```
 
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
+---
 
-**CSS Rendered:**
+## flex-grow
+
+**Syntax:** `flex-grow: <number>`
+
+Growth factor — how much an item grows relative to siblings.
+
+**Values:**
+- `0` — don't grow (default)
+- `1` — grow equally
+- `2` — grow twice as much
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Make one item fill remaining space
+- Create proportional columns
+
+**Example:**
 ```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
+.main {
+  flex-grow: 1;
 }
-.style-a {
-  display: flex;
-  gap: 0.4rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  order: 2;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  order: 3;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  order: 1;
-}
-```
 
-### flex-grow
-**Type/Initial:** number | 0
-
-**Description:** Grow — defines how much an item grows relative to others.
-
-**CSS:**
-```css
-flex-grow: 0;
-flex-grow: 1;
-flex-grow: 2;
-
-flex-grow: inherit;
-flex-grow: initial;
-flex-grow: revert;
-flex-grow: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.4rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  flex-grow: 0;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  flex-grow: 2;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+.sidebar {
   flex-grow: 0;
 }
 ```
 
-### flex-shrink
-**Type/Initial:** number | 1
+---
 
-**Description:** Shrink — defines how much an item shrinks when space is limited.
+## flex-shrink
 
-**CSS:**
+**Syntax:** `flex-shrink: <number>`
+
+Shrink factor — how much an item shrinks when space is limited.
+
+**Values:**
+- `0` — don't shrink
+- `1` — shrink equally (default)
+- `2` — shrink twice as much
+- `inherit` — inherits from parent
+- `initial` — sets to default (1)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Prevent items from shrinking
+- Control which items compress first
+
+**Example:**
 ```css
-flex-shrink: 0;
-flex-shrink: 1;
-flex-shrink: 2;
-
-flex-shrink: inherit;
-flex-shrink: initial;
-flex-shrink: revert;
-flex-shrink: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  width: 120px;
-  gap: 0.4rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+.logo {
   flex-shrink: 0;
 }
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  flex-shrink: 2;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
+
+.title {
   flex-shrink: 1;
 }
 ```
 
-### flex-basis
-**Type/Initial:** length | auto
+---
 
-**Description:** Basis — sets the initial main-axis size of an item before growing/shrinking.
+## flex-basis
 
-**CSS:**
+**Syntax:** `flex-basis: <length> | <percentage> | auto | content`
+
+Initial main-axis size — starting size before growing/shrinking.
+
+**Values:**
+- `auto` — use width/height (default)
+- `content` — intrinsic content size
+- `0` — zero initial size
+- `100px` — fixed length
+- `10em` — em-based length
+- `50%` — percentage of container
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Set initial size before growth
+- Create equal-width items
+
+**Example:**
 ```css
-/* Length values */
-flex-basis: 100px;
-flex-basis: 0;
-flex-basis: 10em;
-
-/* Percentage values */
-flex-basis: 50%;
-
-/* Keyword values */
-flex-basis: auto;
-flex-basis: content;
-
-/* Global values */
-flex-basis: inherit;
-flex-basis: initial;
-flex-basis: revert;
-flex-basis: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.4rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  flex-basis: 40px;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  flex-basis: 80px;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  flex-basis: 40px;
-}
-```
-
-### flex
-**Type/Initial:** shorthand | 0 1 auto
-
-**Description:** Shorthand — combines grow, shrink, and basis in one declaration.
-
-**CSS:**
-```css
-/* Single values */
-flex: auto;
-flex: initial;
-flex: none;
-flex: 1;
-flex: 0 1 auto;
-flex: 1 0 0%;
-
-/* Global values */
-flex: inherit;
-flex: initial;
-flex: revert;
-flex: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.4rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  flex: 0 1 40px;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  flex: 2 1 60px;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  flex: 0 1 40px;
-}
-```
-
-### align-self
-**Type/Initial:** keyword | auto
-
-**Description:** Self-align — overrides align-items for a single flex item.
-
-**CSS:**
-```css
-align-self: auto;
-align-self: flex-start;
-align-self: flex-end;
-align-self: center;
-align-self: baseline;
-align-self: stretch;
-align-self: start;
-align-self: end;
-align-self: self-start;
-align-self: self-end;
-
-align-self: inherit;
-align-self: initial;
-align-self: revert;
-align-self: unset;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  height: 64px;
-  gap: 0.4rem;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  align-self: flex-start;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  align-self: center;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-  align-self: flex-end;
-}
-```
-
-### place-items
-**Type/Initial:** shorthand | stretch
-
-**Description:** Place items — shorthand for align-items and justify-items together.
-
-**CSS:**
-```css
-display: flex;
-place-items: center;
-```
-
-**HTML:**
-```html
-<div class="style-a">
-  <div class="db style-b">
-    A
-  </div>
-  <div class="db style-c">
-    B
-  </div>
-  <div class="db style-d">
-    C
-  </div>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  height: 64px;
-  gap: 0.4rem;
-  place-items: center;
-}
-.style-b {
-  background: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-c {
-  background: #fff;
-  padding: 0.4rem 1.2rem;
-  border-radius: 4px;
-  color: #333;
-}
-.style-d {
-  background: #fff;
-  padding: 0.4rem 0.5rem;
-  border-radius: 4px;
-  color: #333;
+.item {
+  flex-basis: 200px;
+  flex-grow: 1;
 }
 ```
 
 ---
 
-[Example](../examples/intermediate/11-flexbox-advanced/index.html)
+## flex
+
+**Syntax:** `flex: <grow> <shrink> <basis>`
+
+Shorthand — combines grow, shrink, and basis in one declaration.
+
+**Values:**
+- `auto` — grow and shrink by 1, basis auto
+- `initial` — don't grow, shrink, auto basis (default)
+- `none` — fully inflexible
+- `1` — grow equally, shrink equally, basis 0
+- `0 1 auto` — don't grow, shrink, auto basis
+- `1 0 0%` — grow, don't shrink, zero basis
+- `inherit` — inherits from parent
+- `initial` — sets to default (0 1 auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Simplify flex item declarations
+- Create fixed and flexible columns
+
+**Example:**
+```css
+.sidebar {
+  flex: 0 0 200px;
+}
+
+.main {
+  flex: 1 0 0%;
+}
+```
+
+---
+
+## align-self
+
+**Syntax:** `align-self: auto | flex-start | flex-end | center | baseline | stretch | start | end | self-start | self-end`
+
+Self alignment — overrides align-items for a single flex item.
+
+**Values:**
+- `auto` — follow container's align-items (default)
+- `flex-start` — align to start
+- `flex-end` — align to end
+- `center` — centered
+- `baseline` — align by text baseline
+- `stretch` — stretch to fill
+- `start` — align to the start edge
+- `end` — align to the end edge
+- `self-start` — align to own start edge
+- `self-end` — align to own end edge
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Override alignment for a single item
+- Align individual elements differently
+
+**Example:**
+```css
+.item-center {
+  align-self: center;
+}
+
+.item-end {
+  align-self: flex-end;
+}
+```
+
+---
+
+## place-items
+
+**Syntax:** `place-items: <align-items> <justify-items>`
+
+Placement shorthand — sets align-items and justify-items together.
+
+**Values:**
+- `center` — centered on both axes
+- `stretch` — stretched on both axes (default)
+- `center stretch` — center vertically, stretch horizontally
+- `inherit` — inherits from parent
+- `initial` — sets to default (stretch)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Center content in one declaration
+- Combine cross and inline alignment
+
+**Example:**
+```css
+.centered {
+  display: flex;
+  place-items: center;
+}
+```
+
+---
+
+**[View Example](../examples/intermediate/11-flexbox-advanced/index.html)**
 
 ← **Previous Topic:** [Background Advanced](../intermediate/10-background-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Grid Advanced](../intermediate/12-grid-advanced.md) →

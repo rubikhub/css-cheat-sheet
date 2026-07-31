@@ -1,882 +1,616 @@
 # Border Advanced
+
+> 19 properties
+
+Border styling — width, style, color, outlines, rounded corners, and drop shadows.
+
 ---
+
 ## Border
-### border
-**Type/Initial:** shorthand | —
 
-**Description:** Shorthand — sets width, style, and color on all sides.
+---
 
-**CSS:**
+## border
+
+**Syntax:** `border: <width> <style> <color>`
+
+Shorthand — sets border width, style, and color on all sides.
+
+**Values:**
+- `1px` — width only
+- `solid` — style only
+- `red` — color only
+- `1px solid` — width and style
+- `1px solid red` — full border
+- `1px red` — width and color
+- `inherit` — inherits from parent
+- `initial` — sets to default (medium none currentColor)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Give elements a visible edge
+- Combine width, style, and color in one declaration
+
+**Example:**
 ```css
-/* Single values */
-border: 1px;
-border: solid;
-border: red;
-
-/* Multi values */
-border: 1px solid;
-border: 1px solid red;
-border: 1px red;
-
-border: inherit;
-border: initial;
-border: revert;
-border: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  3px solid purple border on all sides.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
+.card {
   border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
 }
-.style-a {
-  border: 3px solid #6c5ce7;
+
+.error {
+  border: 2px solid red;
 }
 ```
 
-### border-width
-**Type/Initial:** shorthand | medium
+---
 
-**Description:** Thickness — thin, medium, thick, or custom length.
+## border-width
 
-**CSS:**
+**Syntax:** `border-width: <length> | thin | medium | thick`
+
+Thickness — sets the width of the border on all sides.
+
+**Values:**
+- `thin` — thin border
+- `medium` — medium border
+- `thick` — thick border
+- `1px` — pixel-based width
+- `0.5em` — em-based width
+- `0` — no border
+- `inherit` — inherits from parent
+- `initial` — sets to default (medium)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Control border thickness
+- Remove a border edge
+
+**Example:**
 ```css
-/* Keyword values */
-border-width: thin;
-border-width: medium;
-border-width: thick;
-
-/* Length values */
-border-width: 1px;
-border-width: 0.5em;
-border-width: 0;
-
-border-width: inherit;
-border-width: initial;
-border-width: revert;
-border-width: unset;
+.card {
+  border-style: solid;
+  border-width: 2px;
+}
 ```
 
-**HTML:**
-```html
-<div class="db style-a">
-  Thick border using border-width: 5px.
-</div>
-```
+---
 
-**CSS Rendered:**
+## border-style
+
+**Syntax:** `border-style: none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset`
+
+Line style — sets the style of the border on all sides.
+
+**Values:**
+- `none` — no border
+- `hidden` — no border, hides in table layout
+- `dotted` — dotted line
+- `dashed` — dashed line
+- `solid` — solid line
+- `double` — double line
+- `groove` — 3D grooved line
+- `ridge` — 3D ridged line
+- `inset` — 3D inset line
+- `outset` — 3D outset line
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create dashed or dotted separators
+- Add a solid border to elements
+
+**Example:**
 ```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
+.dashed {
+  border-style: dashed;
 }
-.style-a {
-  border: 5px solid #fff;
+
+.solid {
+  border-style: solid;
 }
 ```
 
-### border-style
-**Type/Initial:** keyword | none
+---
 
-**Description:** Line style — solid, dashed, dotted, double, groove, ridge, inset, outset.
+## border-color
 
-**CSS:**
+**Syntax:** `border-color: <color>`
+
+Line color — sets the color of the border on all sides.
+
+**Values:**
+- `currentColor` — matches the element's text color
+- `red` — named color
+- `transparent` — invisible border
+- `#ff5733` — hex color
+- `rgb(255, 0, 0)` — rgb color
+- `rgba(255, 0, 0, 0.5)` — rgba color with opacity
+- `hsl(0, 100%, 50%)` — hsl color
+- `inherit` — inherits from parent
+- `initial` — sets to default (currentColor)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Color a border to match a brand
+- Create invisible borders for layout alignment
+
+**Example:**
 ```css
-border-style: none;
-border-style: hidden;
-border-style: dotted;
-border-style: dashed;
-border-style: solid;
-border-style: double;
-border-style: groove;
-border-style: ridge;
-border-style: inset;
-border-style: outset;
-
-border-style: inherit;
-border-style: initial;
-border-style: revert;
-border-style: unset;
+.card {
+  border-style: solid;
+  border-color: #6c5ce7;
+}
 ```
 
-**HTML:**
-```html
-<div class="db style-a">
-  <span class="style-b">
-    solid
-  </span>
-  <span class="style-c">
-    dashed
-  </span>
-  <span class="style-d">
-    dotted
-  </span>
-  <span class="style-e">
-    double
-  </span>
-</div>
-```
+---
 
-**CSS Rendered:**
+## border-top / right / bottom / left
+
+**Syntax:** `border-top: <width> <style> <color>` (also `border-right`, `border-bottom`, `border-left`)
+
+Individual sides — sets the border on one edge independently.
+
+**Values:**
+- `1px` — width only
+- `solid` — style only
+- `red` — color only
+- `1px solid red` — full top border
+- `2px dashed blue` — dashed top border
+- `inherit` — inherits from parent
+- `initial` — sets to default (medium none currentColor)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Style individual edges of an element
+- Create underlines and separators
+
+**Example:**
 ```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  padding: 0.4rem;
-}
-.style-b {
-  border: 2px solid #6c5ce7;
-  padding: 0.3rem 0.5rem;
-  border-radius: 3px;
-}
-.style-c {
-  border: 2px dashed #00b894;
-  padding: 0.3rem 0.5rem;
-  border-radius: 3px;
-}
-.style-d {
-  border: 2px dotted #fdcb6e;
-  padding: 0.3rem 0.5rem;
-  border-radius: 3px;
-}
-.style-e {
-  border: 3px double #e17055;
-  padding: 0.3rem 0.5rem;
-  border-radius: 3px;
-}
-```
-
-### border-color
-**Type/Initial:** color | currentColor
-
-**Description:** Line color — sets the color of the border.
-
-**CSS:**
-```css
-/* Named colors */
-border-color: currentColor;
-border-color: red;
-border-color: transparent;
-
-/* Hex */
-border-color: #ff5733;
-
-/* RGB/RGBA */
-border-color: rgb(255, 0, 0);
-border-color: rgba(255, 0, 0, 0.5);
-
-/* HSL/HSLA */
-border-color: hsl(0, 100%, 50%);
-
-border-color: inherit;
-border-color: initial;
-border-color: revert;
-border-color: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Cyan-colored border line.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  border: 3px solid #00cec9;
-}
-```
-
-### border-top / right / bottom / left
-**Type/Initial:** shorthand | —
-
-**Description:** Individual sides — style each border edge independently.
-
-**CSS:**
-```css
-/* Single values */
-border-top: 1px;
-border-right: solid;
-border-bottom: red;
-
-/* Multi values */
-border-top: 1px solid red;
-border-right: 2px dashed blue;
-
-border-top: inherit;
-border-top: initial;
-border-top: revert;
-border-top: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Red top border, blue bottom border, no sides.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
+.section {
   border-top: 3px solid #d63031;
   border-bottom: 3px solid #0984e3;
 }
 ```
 
-### border-collapse
-**Type/Initial:** keyword | separate
+---
 
-**Description:** Table model — collapse adjacent borders or keep separate.
+## border-collapse
 
-**CSS:**
+**Syntax:** `border-collapse: separate | collapse`
+
+Table model — collapses adjacent borders or keeps them separate.
+
+**Values:**
+- `separate` — keep borders separate (default)
+- `collapse` — merge adjacent borders
+- `inherit` — inherits from parent
+- `initial` — sets to default (separate)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Clean up tables with double borders
+- Create compact table layouts
+
+**Example:**
 ```css
-border-collapse: separate;
-border-collapse: collapse;
-
-border-collapse: inherit;
-border-collapse: initial;
-border-collapse: revert;
-border-collapse: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  <table class="style-b">
-    <tr>
-      <td class="style-c">
-        A1
-      </td>
-      <td class="style-d">
-        B1
-      </td>
-    </tr>
-    <tr>
-      <td class="style-e">
-        A2
-      </td>
-      <td class="style-f">
-        B2
-      </td>
-    </tr>
-  </table>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 0;
-}
-.style-b {
-  width: 100%;
+table {
   border-collapse: collapse;
-  font-size: 0.85rem;
-}
-.style-c {
-  border: 1px solid #fff;
-  padding: 0.3rem;
-}
-.style-d {
-  border: 1px solid #fff;
-  padding: 0.3rem;
-}
-.style-e {
-  border: 1px solid #fff;
-  padding: 0.3rem;
-}
-.style-f {
-  border: 1px solid #fff;
-  padding: 0.3rem;
-}
-```
-
-### border-spacing
-**Type/Initial:** length | 0
-
-**Description:** Cell gap — space between table cell borders in separate model.
-
-**CSS:**
-```css
-border-spacing: 6px;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  <table class="style-b">
-    <tr>
-      <td class="style-c">
-        A1
-      </td>
-      <td class="style-d">
-        B1
-      </td>
-    </tr>
-    <tr>
-      <td class="style-e">
-        A2
-      </td>
-      <td class="style-f">
-        B2
-      </td>
-    </tr>
-  </table>
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  padding: 0;
-}
-.style-b {
-  width: 100%;
-  border: 1px solid #fff;
-  border-collapse: separate;
-  border-spacing: 6px;
-  font-size: 0.85rem;
-}
-.style-c {
-  background: #fff;
-  padding: 0.3rem;
-  border-radius: 3px;
-}
-.style-d {
-  background: #fff;
-  padding: 0.3rem;
-  border-radius: 3px;
-}
-.style-e {
-  background: #fff;
-  padding: 0.3rem;
-  border-radius: 3px;
-}
-.style-f {
-  background: #fff;
-  padding: 0.3rem;
-  border-radius: 3px;
-}
-```
-
-### border-image
-**Type/Initial:** shorthand | —
-
-**Description:** Image border — uses an image slice as the border decoration.
-
-**CSS:**
-```css
-border-image: url('border.png') 30;
-border-image: url('border.png') 30 / 10px;
-border-image: url('border.png') 30 / 10px / 5px stretch;
-
-border-image: inherit;
-border-image: initial;
-border-image: revert;
-border-image: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Gradient border using border-image.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  border: 4px solid;
-  border-image: linear-gradient(135deg, #6c5ce7, #fd79a8) 1;
-}
-```
-
-## Outline
-### outline
-**Type/Initial:** shorthand | —
-
-**Description:** Outline — a line drawn outside the border edge (doesn't affect layout).
-
-**CSS:**
-```css
-/* Single values */
-outline: 1px;
-outline: solid;
-outline: red;
-
-/* Multi values */
-outline: 1px solid;
-outline: 1px solid red;
-outline: 2px dashed blue 3px;
-
-outline: inherit;
-outline: initial;
-outline: revert;
-outline: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Outline drawn outside the border, no layout shift.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  border: 2px solid #fff;
-  outline: 3px solid #00cec9;
-}
-```
-
-### outline-width
-**Type/Initial:** length | medium
-
-**Description:** Outline thickness — controls how thick the outline is.
-
-**CSS:**
-```css
-outline-width: thin;
-outline-width: medium;
-outline-width: thick;
-outline-width: 2px;
-outline-width: 0;
-
-outline-width: inherit;
-outline-width: initial;
-outline-width: revert;
-outline-width: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  4px pink outline around the element.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  border: 2px solid #fff;
-  outline: 4px solid #fd79a8;
-}
-```
-
-### outline-style
-**Type/Initial:** keyword | none
-
-**Description:** Outline style — same values as border-style.
-
-**CSS:**
-```css
-outline-style: none;
-outline-style: dotted;
-outline-style: dashed;
-outline-style: solid;
-outline-style: double;
-outline-style: groove;
-outline-style: ridge;
-outline-style: inset;
-outline-style: outset;
-outline-style: auto;
-
-outline-style: inherit;
-outline-style: initial;
-outline-style: revert;
-outline-style: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Dashed yellow outline style.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  border: 2px solid #fff;
-  outline: 3px dashed #fdcb6e;
-}
-```
-
-### outline-color
-**Type/Initial:** color | currentColor
-
-**Description:** Outline color — sets the outline's color independently.
-
-**CSS:**
-```css
-/* Keyword value */
-outline-color: invert;
-
-/* Colors */
-outline-color: red;
-outline-color: #ff5733;
-outline-color: rgb(255, 0, 0);
-
-outline-color: inherit;
-outline-color: initial;
-outline-color: revert;
-outline-color: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Double orange outline color.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  border: 2px solid #fff;
-  outline: 3px double #e17055;
-}
-```
-
-### outline-offset
-**Type/Initial:** length | 0
-
-**Description:** Outline gap — distance between border edge and outline.
-
-**CSS:**
-```css
-/* Length values */
-outline-offset: 3px;
-outline-offset: -2px;
-outline-offset: 0;
-
-/* Global values */
-outline-offset: inherit;
-outline-offset: initial;
-outline-offset: revert;
-outline-offset: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Outline pushed 6px away from border edge.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  border: 2px solid #fff;
-  outline: 2px solid #6c5ce7;
-  outline-offset: 6px;
-}
-```
-
-## Border Radius
-### border-radius
-**Type/Initial:** shorthand | 0
-
-**Description:** Rounded corners — curves the border-box corners.
-
-**CSS:**
-```css
-/* Length values */
-border-radius: 10px;
-border-radius: 50%;
-border-radius: 0;
-
-/* Two-value syntax */
-border-radius: 10px 20px;
-border-radius: 10px 20px 30px;
-border-radius: 10px 20px 30px 40px;
-
-/* Global values */
-border-radius: inherit;
-border-radius: initial;
-border-radius: revert;
-border-radius: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  All four corners rounded to 12px.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  border: 2px solid #fff;
-  border-radius: 12px;
-}
-```
-
-### border-top-left-radius / top-right-radius
-**Type/Initial:** length | % | 0
-
-**Description:** Individual corner — radius for a specific corner.
-
-**CSS:**
-```css
-border-top-left-radius: 10px;
-border-top-left-radius: 50%;
-border-top-left-radius: 10px 20px;
-
-border-top-left-radius: inherit;
-border-top-left-radius: initial;
-border-top-left-radius: revert;
-border-top-left-radius: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Only top-left and bottom-right corners rounded.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  border: 2px solid #fff;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-```
-
-### border-bottom-left-radius / bottom-right-radius
-**Type/Initial:** length | % | 0
-
-**Description:** Individual corner — radius for a specific corner.
-
-**CSS:**
-```css
-border-bottom-left-radius: 10px;
-border-bottom-left-radius: 50%;
-border-bottom-left-radius: 10px 20px;
-
-border-bottom-left-radius: inherit;
-border-bottom-left-radius: initial;
-border-bottom-left-radius: revert;
-border-bottom-left-radius: unset;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Bottom corners at 50% create a pill/squircle shape.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  border: 2px solid #fff;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-}
-```
-
-### border-start-radius / border-end-radius
-**Type/Initial:** length | % | 0
-
-**Description:** Logical corner radius — maps to physical corners based on writing direction.
-
-**CSS:**
-```css
-border-start-start-radius: 16px;
-border-start-end-radius: 0;
-border-end-start-radius: 0;
-border-end-end-radius: 16px;
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Logical start/start + end/end match top-left + bottom-right in LTR.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  border: 2px solid #fff;
-  border-start-start-radius: 16px;
-  border-end-end-radius: 16px;
-}
-```
-
-## Shadow
-### box-shadow
-**Type/Initial:** none | shadow list | none
-
-**Description:** Drop shadow — adds one or more shadows behind the element.
-
-**CSS:**
-```css
-box-shadow: 0 4px 6px rgba(108,92,231,.4), 0 12px 24px rgba(108,92,231,.2);
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Layered purple drop shadows create depth.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  box-shadow: 0 4px 6px rgba(108,92,231,.4), 0 12px 24px rgba(108,92,231,.2);
-}
-```
-
-### box-shadow: inset
-**Type/Initial:** inset | offset | blur | spread | color | none
-
-**Description:** Inset shadows — appear inside the element's border.
-
-**CSS:**
-```css
-box-shadow: inset 0 2px 8px rgba(0,0,0,.6), 0 4px 12px rgba(0,0,0,.3);
-```
-
-**HTML:**
-```html
-<div class="db style-a">
-  Inner shadow creates pressed-in look, outer shadow adds lift.
-</div>
-```
-
-**CSS Rendered:**
-```css
-.db {
-  background: #f5f5f5;
-  border: 1px solid #e5e5e5;
-  padding: .6rem .8rem;
-  border-radius: 6px;
-}
-.style-a {
-  box-shadow: inset 0 2px 8px rgba(0,0,0,.6), 0 4px 12px rgba(0,0,0,.3);
 }
 ```
 
 ---
 
-[Example](../examples/intermediate/07-border-advanced/index.html)
+## border-spacing
+
+**Syntax:** `border-spacing: <length>`
+
+Cell gap — sets the space between cell borders in the separate model.
+
+**Values:**
+- `6px` — equal horizontal and vertical spacing
+- `0` — no spacing (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Add breathing room between table cells
+- Style data tables without merged borders
+
+**Example:**
+```css
+table {
+  border-collapse: separate;
+  border-spacing: 6px;
+}
+```
+
+---
+
+## border-image
+
+**Syntax:** `border-image: <source> <slice> / <width> / <outset> <repeat>`
+
+Image border — uses an image slice as the border decoration.
+
+**Values:**
+- `url('border.png') 30` — image with slice
+- `url('border.png') 30 / 10px` — slice with border width
+- `url('border.png') 30 / 10px / 5px stretch` — full shorthand with repeat
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create image-based borders
+- Add decorative gradient or pattern borders
+
+**Example:**
+```css
+.badge {
+  border: 4px solid;
+  border-image: linear-gradient(135deg, #6c5ce7, #fd79a8) 1;
+}
+```
+
+---
+
+## Outline
+
+---
+
+## outline
+
+**Syntax:** `outline: <width> <style> <color>`
+
+Outline — a line drawn outside the border edge that doesn't affect layout.
+
+**Values:**
+- `1px` — width only
+- `solid` — style only
+- `red` — color only
+- `1px solid` — width and style
+- `1px solid red` — full outline
+- `2px dashed blue 3px` — outline with offset
+- `inherit` — inherits from parent
+- `initial` — sets to default (medium none currentColor)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Highlight focused elements
+- Draw focus indicators without layout shift
+
+**Example:**
+```css
+button:focus {
+  outline: 2px solid #6c5ce7;
+}
+```
+
+---
+
+## outline-width
+
+**Syntax:** `outline-width: <length> | thin | medium | thick`
+
+Outline thickness — controls how thick the outline is.
+
+**Values:**
+- `thin` — thin outline
+- `medium` — medium outline
+- `thick` — thick outline
+- `2px` — pixel-based width
+- `0` — no outline
+- `inherit` — inherits from parent
+- `initial` — sets to default (medium)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Make focus indicators more visible
+- Control outline thickness independently
+
+**Example:**
+```css
+:focus-visible {
+  outline-style: solid;
+  outline-width: 2px;
+}
+```
+
+---
+
+## outline-style
+
+**Syntax:** `outline-style: auto | none | dotted | dashed | solid | double | groove | ridge | inset | outset`
+
+Outline style — same values as border-style.
+
+**Values:**
+- `none` — no outline
+- `auto` — browser-defined style
+- `dotted` — dotted line
+- `dashed` — dashed line
+- `solid` — solid line
+- `double` — double line
+- `groove` — 3D grooved line
+- `ridge` — 3D ridged line
+- `inset` — 3D inset line
+- `outset` — 3D outset line
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Style focus outlines
+- Create dashed outlines for debugging
+
+**Example:**
+```css
+:focus-visible {
+  outline-style: dashed;
+  outline-color: #fdcb6e;
+}
+```
+
+---
+
+## outline-color
+
+**Syntax:** `outline-color: <color> | invert`
+
+Outline color — sets the outline's color independently.
+
+**Values:**
+- `invert` — inverted color for visibility
+- `red` — named color
+- `#ff5733` — hex color
+- `rgb(255, 0, 0)` — rgb color
+- `inherit` — inherits from parent
+- `initial` — sets to default (currentColor)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Match outline color to a brand
+- Make focus rings stand out
+
+**Example:**
+```css
+:focus-visible {
+  outline-style: solid;
+  outline-color: #e17055;
+}
+```
+
+---
+
+## outline-offset
+
+**Syntax:** `outline-offset: <length>`
+
+Outline gap — distance between the border edge and the outline.
+
+**Values:**
+- `3px` — outline pushed outward
+- `-2px` — outline drawn inside the border edge
+- `0` — outline flush with the border edge (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Separate focus rings from the element
+- Draw an outline inside the element
+
+**Example:**
+```css
+:focus-visible {
+  outline: 2px solid #6c5ce7;
+  outline-offset: 2px;
+}
+```
+
+---
+
+## Border Radius
+
+---
+
+## border-radius
+
+**Syntax:** `border-radius: <length> | <percentage>`
+
+Rounded corners — curves the border-box corners.
+
+**Values:**
+- `10px` — rounded corners
+- `50%` — fully rounded, circle or pill shape
+- `0` — square corners
+- `10px 20px` — two-value radii
+- `10px 20px 30px` — three-value radii
+- `10px 20px 30px 40px` — all four corners
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Round button and card corners
+- Create circular or pill-shaped elements
+
+**Example:**
+```css
+.button {
+  border-radius: 8px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+```
+
+---
+
+## border-top-left-radius / top-right-radius
+
+**Syntax:** `border-<corner>-radius: <length> | <percentage>`
+
+Individual corner — radius for a specific corner.
+
+**Values:**
+- `10px` — rounded corner
+- `50%` — fully rounded corner
+- `10px 20px` — horizontal and vertical radii
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Round individual corners of a card
+- Create asymmetric shapes
+
+**Example:**
+```css
+.card {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+```
+
+---
+
+## border-bottom-left-radius / bottom-right-radius
+
+**Syntax:** `border-<corner>-radius: <length> | <percentage>`
+
+Individual corner — radius for a specific corner.
+
+**Values:**
+- `10px` — rounded corner
+- `50%` — fully rounded corner
+- `10px 20px` — horizontal and vertical radii
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Round bottom corners of a card
+- Create pill or squircle shapes
+
+**Example:**
+```css
+.pill {
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+```
+
+---
+
+## border-start-radius / border-end-radius
+
+**Syntax:** `border-start-start-radius: <length> | <percentage>` (also `border-start-end-radius`, `border-end-start-radius`, `border-end-end-radius`)
+
+Logical corner radius — maps to physical corners based on writing direction.
+
+**Values:**
+- `border-start-start-radius: 16px` — first logical corner
+- `border-start-end-radius: 0` — no rounding
+- `border-end-start-radius: 0` — no rounding
+- `border-end-end-radius: 16px` — last logical corner
+- `inherit` — inherits from parent
+- `initial` — sets to default (0)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Round corners based on writing direction
+- Support RTL layouts with logical properties
+
+**Example:**
+```css
+.card {
+  border-start-start-radius: 16px;
+  border-end-end-radius: 16px;
+}
+```
+
+---
+
+## Shadow
+
+---
+
+## box-shadow
+
+**Syntax:** `box-shadow: none | <offset-x> <offset-y> <blur> <spread> <color>`
+
+Drop shadow — adds one or more shadows behind the element.
+
+**Values:**
+- `0 4px 6px rgba(108, 92, 231, 0.4)` — single shadow
+- `0 4px 6px rgba(108, 92, 231, 0.4), 0 12px 24px rgba(108, 92, 231, 0.2)` — layered shadows
+- `none` — no shadow (default)
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create depth and elevation
+- Add soft shadows to cards
+
+**Example:**
+```css
+.card {
+  box-shadow: 0 4px 6px rgba(108, 92, 231, 0.4);
+}
+```
+
+---
+
+## box-shadow: inset
+
+**Syntax:** `box-shadow: inset <offset-x> <offset-y> <blur> <spread> <color>`
+
+Inset shadows — appear inside the element's border.
+
+**Values:**
+- `inset 0 2px 8px rgba(0, 0, 0, 0.6)` — inner shadow
+- `inset 0 2px 8px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.3)` — inner and outer shadows combined
+- `inherit` — inherits from parent
+- `initial` — sets to default (none)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Create pressed-in button effects
+- Add depth to wells and panels
+
+**Example:**
+```css
+.well {
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+```
+
+---
+
+**[View Example](../examples/intermediate/07-border-advanced/index.html)**
 
 ← **Previous Topic:** [State Pseudo Classes](../intermediate/06-state-pseudo-classes.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Transform](../intermediate/08-transform.md) →
