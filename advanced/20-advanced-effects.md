@@ -1,6 +1,6 @@
 # Advanced Visual Effects
 
-> 2 properties
+> 3 properties
 
 Backdrop filters and blend modes.
 
@@ -80,6 +80,29 @@ Determines how an element's content blends with what's behind it.
 
 .logo {
   mix-blend-mode: screen;
+}
+```
+
+---
+
+## isolation
+
+**Syntax:** `isolation: auto | isolate`
+
+Creates a new stacking context, isolating mix-blend-mode blending.
+
+**Values:**
+- `auto` — no new stacking context (default)
+- `isolate` — create a stacking context and isolate blending
+
+**Use Cases:**
+- Stop blend modes from affecting content outside a group
+- Group elements for blend scoping
+
+**Example:**
+```css
+.blend-group {
+  isolation: isolate;
 }
 ```
 

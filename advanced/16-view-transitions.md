@@ -1,6 +1,6 @@
 # View Transitions
 
-> 6 features
+> 12 features
 
 Cross-document and in-page view transitions — pseudo-elements and the enabling at-rule.
 
@@ -141,6 +141,159 @@ Enables view transitions for navigation.
 ```css
 @view-transition {
   navigation: auto;
+}
+```
+
+---
+
+## view-transition-name
+
+**Syntax:** `view-transition-name: none | <custom-ident>`
+
+Assigns an element to a named view transition group.
+
+**Values:**
+- `none` — element takes no part in transitions (default)
+- `hero` — name a group to animate separately
+
+**Use Cases:**
+- Morph a shared element between pages
+- Control per-element transition snapshots
+
+**Example:**
+```css
+.page-hero {
+  view-transition-name: hero;
+}
+```
+
+---
+
+## view-transition-class
+
+**Syntax:** `view-transition-class: none | <custom-ident>*`
+
+Applies the same styles to multiple view transition groups.
+
+**Values:**
+- `card` — group several elements under one class
+- `none` — no class (default)
+
+**Use Cases:**
+- Animate all cards with one rule
+- Avoid repeating group-name selectors
+
+**Example:**
+```css
+.card {
+  view-transition-name: card-1;
+  view-transition-class: card;
+}
+
+::view-transition-group(.card) {
+  animation-duration: 0.4s;
+}
+```
+
+---
+
+## :active-view-transition
+
+**Syntax:** `:active-view-transition`
+
+Selects the root of a view transition while it is running.
+
+**Values:**
+- `:active-view-transition` — the running transition root
+- `:active-view-transition::view-transition-group(*)>::view-transition-image-pair(*)` — style active snapshots
+
+**Use Cases:**
+- Detect a running transition in CSS
+- Style the root while the transition plays
+
+**Example:**
+```css
+:active-view-transition {
+  cursor: progress;
+}
+```
+
+---
+
+## :active-view-transition-type()
+
+**Syntax:** `:active-view-transition-type(<types>)`
+
+Selects a running view transition of a specific type.
+
+**Values:**
+- `:active-view-transition-type(back)` — the back-navigation transition
+- `:active-view-transition-type(forward)` — the forward transition
+
+**Use Cases:**
+- Direction-aware transition styling
+- Differentiate back vs forward navigations
+
+**Example:**
+```css
+:active-view-transition-type(back)::view-transition-old(root) {
+  animation-name: slide-out-right;
+}
+```
+
+---
+
+## Nested & Group View Transitions
+
+**Syntax:** `view-transition-name` on nested elements + `::view-transition-group(<name>)`
+
+Creates multiple nested groups so child and parent animations compose.
+
+**Values:**
+- Name child elements separately from the page root
+- Animate the child group inside the parent snapshot
+
+**Use Cases:**
+- Morph one element into another across layouts
+- Keep internal groups animating during a page transition
+
+**Example:**
+```css
+.card {
+  view-transition-name: card;
+}
+
+.card img {
+  view-transition-name: card-image;
+}
+```
+
+---
+
+## Cross-document View Transitions
+
+**Syntax:** `@view-transition { navigation: auto; }`
+
+Transitions animate between whole documents during same-origin navigation.
+
+**Values:**
+- `navigation: auto` — enable transitions for navigation
+- `navigation: same-document` — same-document navigations only
+- `navigation: none` — disable
+- Combined with `view-transition-name` on shared elements
+
+**Use Cases:**
+- Animate shared hero elements between pages
+- Add smooth page-to-page transitions
+
+**Example:**
+```css
+@view-transition {
+  navigation: auto;
+}
+
+.page-title {
+  view-transition-name: title;
 }
 ```
 

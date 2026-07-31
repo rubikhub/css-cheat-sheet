@@ -37,7 +37,7 @@ Foundation of CSS — box model, cascade, specificity, inheritance, selectors, l
 
 ---
 
-## Intermediate (27 topics)
+## Intermediate (29 topics)
 
 Core layout systems — Flexbox, Grid, transitions, media queries, responsive design.
 
@@ -70,10 +70,12 @@ Core layout systems — Flexbox, Grid, transitions, media queries, responsive de
 | 25  | [25-math-functions.md](intermediate/25-math-functions.md)                               | Math Functions               |
 | 26  | [26-nesting.md](intermediate/26-nesting.md)                                             | Nesting                      |
 | 27  | [27-media-queries.md](intermediate/27-media-queries.md)                                 | Media Queries                |
+| 28  | [28-css-shapes.md](intermediate/28-css-shapes.md)                                       | CSS Shapes                   |
+| 29  | [29-performance-and-rendering.md](intermediate/29-performance-and-rendering.md)         | Performance & Rendering      |
 
 ---
 
-## Advanced (31 topics)
+## Advanced (32 topics)
 
 Modern CSS — :has(), container queries, scroll animations, anchor positioning.
 
@@ -110,3 +112,4 @@ Modern CSS — :has(), container queries, scroll animations, anchor positioning.
 | 29  | [29-multi-column-layout.md](advanced/29-multi-column-layout.md)                                 | Multi-column Layout                  |
 | 30  | [30-motion-path.md](advanced/30-motion-path.md)                                                 | Motion Path                          |
 | 31  | [31-paged-media.md](advanced/31-paged-media.md)                                                 | Paged Media & Print                  |
+| 32  | [32-css-2026-and-beyond.md](advanced/32-css-2026-and-beyond.md)                                 | CSS 2026 & Beyond                    |

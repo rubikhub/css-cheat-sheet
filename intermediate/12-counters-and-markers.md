@@ -1,6 +1,6 @@
 # Counters & Markers
 
-> 5 properties
+> 6 properties
 
 Automatic numbering with CSS counters and custom list marker styles.
 
@@ -178,6 +178,35 @@ ul {
 
 ol {
   list-style-type: lower-roman;
+}
+```
+
+---
+
+## ::marker
+
+**Syntax:** `::marker`
+
+Styles the list item marker (bullet or number) box.
+
+**Values:**
+- `::marker` — the marker of list items
+- `content` — change the marker text or emoji
+- `color`, `font-*`, `text-align`, `white-space` — supported marker properties
+
+**Use Cases:**
+- Color or resize bullets and numbers
+- Replace default markers with emoji
+
+**Example:**
+```css
+li::marker {
+  color: #667eea;
+  font-weight: bold;
+}
+
+li.fancy::marker {
+  content: "→ ";
 }
 ```
 

@@ -1,6 +1,6 @@
 # Selectors 2024+
 
-> 7 selectors
+> 14 selectors
 
 Cutting-edge selectors and matching functions.
 
@@ -188,6 +188,175 @@ Scopes styles to a subtree, optionally limited by a boundary element.
   p {
     color: #333;
   }
+}
+```
+
+---
+
+## :target-current
+
+**Syntax:** `:target-current` | `:target-current(<name>)`
+
+Selects the scroll-target element of a container being scrolled (CSS carousels).
+
+**Values:**
+- `:target-current` — the current target of any scrolled container
+- `:target-current(--gallery)` — current target of a specific container
+
+**Use Cases:**
+- Style the active item of a scrollable carousel
+- Highlight the item a container is scrolled to
+
+**Example:**
+```css
+.gallery-item:target-current {
+  outline: 2px solid #667eea;
+}
+```
+
+---
+
+## :blank
+
+**Syntax:** `:blank`
+
+Selects user-input controls with no value entered.
+
+**Values:**
+- `input:blank` — empty input
+- `textarea:blank` — empty textarea
+- distinct from `:empty` — applies to form controls, not elements
+
+**Use Cases:**
+- Style empty form fields
+- Show placeholder styling until input is typed
+
+**Example:**
+```css
+input:blank {
+  border-color: #ccc;
+}
+```
+
+---
+
+## :fullscreen
+
+**Syntax:** `:fullscreen`
+
+Selects the element currently displayed in fullscreen mode.
+
+**Values:**
+- `:fullscreen` — the fullscreen element
+- `:fullscreen::backdrop` — the fullscreen backdrop
+
+**Use Cases:**
+- Style the fullscreen video or content
+- Hide chrome when entering fullscreen
+
+**Example:**
+```css
+video:fullscreen {
+  border-radius: 0;
+}
+
+:fullscreen::backdrop {
+  background: #000;
+}
+```
+
+---
+
+## :state()
+
+**Syntax:** `:state(<custom-state-name>)`
+
+Matches custom elements in a specific custom state (used with CustomStateSet).
+
+**Values:**
+- `:state(loading)` — custom element in the loading state
+- `button:state(favorite)` — button in the favorite state
+- Works with `CustomStateSet` in web components
+
+**Use Cases:**
+- Style custom elements by internal state
+- Replace attribute selector hacks in web components
+
+**Example:**
+```css
+rating-widget:state(loading) {
+  opacity: 0.5;
+}
+```
+
+---
+
+## appearance: base-select
+
+**Syntax:** `appearance: base-select`
+
+Enables the customizable select — fully styleable dropdown boxes.
+
+**Values:**
+- `base-select` — opt into the customizable select rendering
+- `appearance: none` — remove all native select chrome
+
+**Use Cases:**
+- Style select dropdowns freely
+- Pair with ::picker() and ::selectedcontent pseudo-elements
+
+**Example:**
+```css
+select {
+  appearance: base-select;
+}
+```
+
+---
+
+## ::picker()
+
+**Syntax:** `::picker(<element>)`
+
+Targets the popup panel that opens for controls with a picker (customizable select).
+
+**Values:**
+- `select::picker(select)` — the select dropdown panel
+- `input::picker(date-picker)` — the date picker panel
+
+**Use Cases:**
+- Style the open dropdown panel
+- Animate the picker in and out
+
+**Example:**
+```css
+select::picker(select) {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+}
+```
+
+---
+
+## ::selectedcontent
+
+**Syntax:** `::selectedcontent`
+
+Targets the currently selected option shown in the closed customizable select.
+
+**Values:**
+- `select::selectedcontent` — the displayed selected option
+- Works only with appearance: base-select
+
+**Use Cases:**
+- Style the visible selected option label
+- Hide the default arrow or add a custom indicator
+
+**Example:**
+```css
+select::selectedcontent {
+  font-weight: bold;
 }
 ```
 

@@ -1,6 +1,6 @@
 # Typography Advanced
 
-> 11 properties
+> 13 properties
 
 Fine-tune fonts and text rendering with advanced typography properties.
 
@@ -345,6 +345,60 @@ body {
 
 .link {
   color: hsl(210, 100%, 40%);
+}
+```
+
+---
+
+## word-spacing
+
+**Syntax:** `word-spacing: normal | <length>`
+
+Controls the spacing between words.
+
+**Values:**
+- `normal` — use the font's normal word spacing (default)
+- `0.5em` — half-em extra space between words
+- `-2px` — tighten word spacing
+
+**Use Cases:**
+- Loosen or tighten word spacing in headings
+- Emphasize or de-emphasize text blocks
+
+**Example:**
+```css
+.headline {
+  word-spacing: 0.25em;
+}
+```
+
+---
+
+## vertical-align
+
+**Syntax:** `vertical-align: baseline | sub | super | top | bottom | middle | <length> | <percentage>`
+
+Aligns inline-level content and table cells vertically.
+
+**Values:**
+- `baseline` — align to the text baseline (default)
+- `middle` — center the box on the parent baseline
+- `top` / `bottom` — align to the line box top or bottom
+- `sub` / `super` — align like subscript or superscript
+- `20px` — offset from the baseline by a length
+
+**Use Cases:**
+- Align images and icons with surrounding text
+- Vertically center content in table cells
+
+**Example:**
+```css
+.icon {
+  vertical-align: middle;
+}
+
+td {
+  vertical-align: top;
 }
 ```
 

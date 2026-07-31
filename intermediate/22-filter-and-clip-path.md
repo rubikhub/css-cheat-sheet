@@ -1,6 +1,6 @@
 # Filter & Clip Path
 
-> 2 properties
+> 3 properties
 
 Graphical effects — filters for image manipulation and clip paths for custom shapes.
 
@@ -89,6 +89,30 @@ Defines a visible region of an element using shapes.
 
 .badge {
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+```
+
+---
+
+## shape() (clip-path)
+
+**Syntax:** `clip-path: shape(<values> from <coordinate-system>)`
+
+The shape() function builds rectangular, rounded, or circular clip regions with per-corner control.
+
+**Values:**
+- `shape() from border-box` — clip to the border box
+- `shape(round <length>) from margin-box` — rounded clip on the margin box
+- `shape() from content-box` — clip to the content box
+
+**Use Cases:**
+- Clip elements with rounded shapes without SVG
+- Animate clip shapes smoothly
+
+**Example:**
+```css
+.card {
+  clip-path: shape(round 16px) from border-box;
 }
 ```
 

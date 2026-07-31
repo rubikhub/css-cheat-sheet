@@ -1,6 +1,6 @@
 # Color Manipulation
 
-> 4 features
+> 5 features
 
 Mixing and deriving colors, and scheme-aware theming.
 
@@ -99,6 +99,31 @@ Returns a color based on the current color scheme.
   color-scheme: light dark;
   background: light-dark(#fff, #222);
   color: light-dark(#222, #fff);
+}
+```
+
+---
+
+## contrast-color()
+
+**Syntax:** `contrast-color(<color>)`
+
+Picks a contrasting text color (black or white) for a given background (Baseline 2026).
+
+**Values:**
+- `contrast-color(white)` — black text on white
+- `contrast-color(#667eea)` — automatic contrast against a brand color
+- `contrast-color(var(--bg))` — works with custom properties
+
+**Use Cases:**
+- Ensure readable text on dynamic backgrounds
+- Build auto-themed badges and buttons
+
+**Example:**
+```css
+.badge {
+  background: var(--bg);
+  color: contrast-color(var(--bg));
 }
 ```
 

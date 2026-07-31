@@ -1,6 +1,6 @@
 # Anchor Positioning
 
-> 4 properties & 2 functions
+> 6 properties & 2 functions
 
 Position elements relative to other anchor elements.
 
@@ -189,6 +189,64 @@ Defines fallback positions when the element overflows the viewport.
   position-anchor: --trigger;
   position-area: top;
   position-try-fallbacks: flip-block, flip-inline;
+}
+```
+
+---
+
+## @position-try
+
+**Syntax:** `@position-try --name { position-area; position-anchor; top/left/...; }`
+
+Defines a reusable position fallback that position-try-fallbacks can reference.
+
+**Values:**
+- `@position-try --top { position-area: top; }` — a named try option
+- `position-try-fallbacks: --top` — reference the try option
+- Custom inset, margin, and position-anchor values inside the block
+
+**Use Cases:**
+- Reuse complex fallback positions
+- Combine with flip-* keywords for robust popovers
+
+**Example:**
+```css
+@position-try --tooltip-top {
+  position-area: top;
+  margin-bottom: 8px;
+}
+
+.tooltip {
+  position: fixed;
+  position-anchor: --trigger;
+  position-area: bottom;
+  position-try-fallbacks: --tooltip-top;
+}
+```
+
+---
+
+## position-visibility
+
+**Syntax:** `position-visibility: always | anchors-visible | no-overflow`
+
+Controls whether a positioned element is displayed based on its anchor's visibility.
+
+**Values:**
+- `always` — always show, even without an anchor
+- `anchors-visible` — hide when the anchor is off-screen (default)
+- `no-overflow` — show only when it fits without overflowing
+
+**Use Cases:**
+- Hide tooltips when their trigger is scrolled away
+- Hide popovers when they would overflow the viewport
+
+**Example:**
+```css
+.tooltip {
+  position: fixed;
+  position-anchor: --trigger;
+  position-visibility: anchors-visible;
 }
 ```
 

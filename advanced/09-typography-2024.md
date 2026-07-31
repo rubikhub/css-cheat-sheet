@@ -1,6 +1,6 @@
 # Typography 2024+
 
-> 9 properties
+> 16 properties
 
 Modern CSS typography features for text wrapping, font metrics, and color fonts.
 
@@ -298,6 +298,185 @@ Controls the minimum number of characters for hyphenation.
 p {
   hyphens: auto;
   hyphenate-limit-chars: 6 3 2;
+}
+```
+
+---
+
+## International & Vertical Text
+
+---
+
+## text-emphasis
+
+**Syntax:** `text-emphasis: <style> <color> | none`
+
+Adds emphasis marks (dots, circles) to East Asian text.
+
+**Values:**
+- `dot` — filled circle marks
+- `circle` — outlined circle marks
+- `filled` / `open` — filled or open forms
+- `text-emphasis-style: dot #333` — style and color shorthand
+
+**Use Cases:**
+- Add emphasis marks for Japanese and Chinese text
+- Replace bold with emoji-style emphasis
+
+**Example:**
+```css
+.japanese {
+  text-emphasis: filled dot;
+  text-emphasis-color: #667eea;
+}
+```
+
+---
+
+## text-orientation
+
+**Syntax:** `text-orientation: mixed | upright | sideways`
+
+Controls the orientation of characters in vertical writing modes.
+
+**Values:**
+- `mixed` — rotate Latin, keep CJK upright (default)
+- `upright` — keep all characters upright
+- `sideways` — rotate all characters sideways
+
+**Use Cases:**
+- Style vertical text for titles and covers
+- Combine with writing-mode: vertical-rl
+
+**Example:**
+```css
+.vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+```
+
+---
+
+## text-combine-upright
+
+**Syntax:** `text-combine-upright: none | all | digits <integer>`
+
+Combines multiple characters into a single space in vertical text.
+
+**Values:**
+- `none` — no combining (default)
+- `all` — combine all characters
+- `digits 2` — combine runs of up to 2 digits
+
+**Use Cases:**
+- Keep numbers like 2026 upright in vertical text
+- Fit dates and years into one vertical slot
+
+**Example:**
+```css
+.year {
+  text-combine-upright: digits 4;
+}
+```
+
+---
+
+## unicode-bidi
+
+**Syntax:** `unicode-bidi: normal | embed | isolate | bidi-override | isolate-override | plaintext`
+
+Controls the Unicode bidi algorithm for mixed-direction text.
+
+**Values:**
+- `normal` — standard bidi behavior (default)
+- `embed` — treat as an embedded bidi run
+- `isolate` — isolate from surrounding bidi (default in most cases)
+- `bidi-override` — override the algorithm with explicit direction
+
+**Use Cases:**
+- Handle mixed RTL/LTR content correctly
+- Pair with direction for special layouts
+
+**Example:**
+```css
+.username {
+  unicode-bidi: isolate;
+  direction: rtl;
+}
+```
+
+---
+
+## ruby-align
+
+**Syntax:** `ruby-align: start | center | space-between | space-around`
+
+Aligns ruby annotations relative to their base text.
+
+**Values:**
+- `start` — align to the base start
+- `center` — center over the base text
+- `space-between` — distribute space between characters
+- `space-around` — distribute space around characters
+
+**Use Cases:**
+- Style furigana placement over kanji
+- Control annotation spacing in CJK text
+
+**Example:**
+```css
+ruby {
+  ruby-align: center;
+}
+```
+
+---
+
+## ruby-position
+
+**Syntax:** `ruby-position: over | under | alternate | inter-character`
+
+Sets where ruby annotations are placed relative to the base.
+
+**Values:**
+- `over` — above the base text (default)
+- `under` — below the base text
+- `alternate` — alternate over/under for nested ruby
+- `inter-character` — between characters (vertical)
+
+**Use Cases:**
+- Place furigana above or below kanji
+- Support alternate ruby for nested annotations
+
+**Example:**
+```css
+ruby {
+  ruby-position: over;
+}
+```
+
+---
+
+## ruby-merge
+
+**Syntax:** `ruby-merge: separate | collapse | auto`
+
+Controls how adjacent ruby annotations are merged.
+
+**Values:**
+- `separate` — keep annotations separate (default)
+- `collapse` — merge adjacent annotations of the same text
+- `auto` — browser chooses
+
+**Use Cases:**
+- Merge repeated ruby annotations
+- Compact annotation-heavy text
+
+**Example:**
+```css
+ruby {
+  ruby-merge: collapse;
 }
 ```
 

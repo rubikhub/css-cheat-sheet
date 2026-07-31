@@ -1,6 +1,6 @@
 # Scroll Snap & Touch Interaction
 
-> 4 properties
+> 9 properties
 
 Snap scrolling behavior and touch gesture control.
 
@@ -138,6 +138,149 @@ Defines touch gestures allowed on the element.
 
 .button {
   touch-action: manipulation;
+}
+```
+
+---
+
+## scroll-start-target
+
+**Syntax:** `scroll-start-target: auto | <element-id> | none`
+
+Sets the initial scroll position of a scroll container.
+
+**Values:**
+- `auto` — scroll container decides the start position (default)
+- `none` — no scroll-start target
+- `#item-3` — start scrolled to that element
+
+**Use Cases:**
+- Open a carousel on a specific item
+- Preserve scroll position across navigations
+
+**Example:**
+```css
+.gallery {
+  scroll-start-target: #item-3;
+}
+```
+
+---
+
+## scroll-initial-target
+
+**Syntax:** `scroll-initial-target: auto | <element-id> | none`
+
+Declares the default scroll target of a scroll container (used with scroll-target-group).
+
+**Values:**
+- `auto` — use the first focusable or scroll-start target
+- `#item-5` — default target element
+- `none` — no initial target
+
+**Use Cases:**
+- Pick the default item in a snap carousel
+- Pair with :target-current for the selected state
+
+**Example:**
+```css
+.gallery {
+  scroll-initial-target: #item-5;
+}
+```
+
+---
+
+## ::scroll-marker & ::scroll-marker-group
+
+**Syntax:** `::scroll-marker` | `::scroll-marker-group`
+
+Carousel navigation markers shown in the scrollbar or a marker group.
+
+**Values:**
+- `::scroll-marker` — a marker for each scroll-snap item
+- `::scroll-marker-group` — the container of the markers
+- Works with `scroll-marker-group: after | before` on the container
+
+**Use Cases:**
+- Build dot indicators for carousels without JS
+- Style the active marker with :target-current
+
+**Example:**
+```css
+.gallery {
+  scroll-marker-group: after;
+}
+
+.gallery::scroll-marker {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.gallery::scroll-marker:target-current {
+  background: #667eea;
+}
+```
+
+---
+
+## ::scroll-button() & ::selecteditem
+
+**Syntax:** `::scroll-button(<direction>)` | `::selecteditem`
+
+Navigation arrows and the selected item of a scrollable carousel.
+
+**Values:**
+- `::scroll-button(left)` — a left arrow
+- `::scroll-button(right)` — a right arrow
+- `::selecteditem` — the currently selected (target-current) item
+
+**Use Cases:**
+- Add prev/next arrows with pure CSS
+- Style the active slide
+
+**Example:**
+```css
+.gallery::scroll-button(left) {
+  content: "‹";
+}
+
+.gallery::scroll-button(right) {
+  content: "›";
+}
+
+.gallery::selecteditem {
+  opacity: 1;
+}
+```
+
+---
+
+## scroll-target-group
+
+**Syntax:** `scroll-target-group: <custom-ident> | none`
+
+Names a group so :target-current can match items scrolled by different containers.
+
+**Values:**
+- `auto` — groups by the scroll container
+- `--hero-carousel` — a custom named group
+- `none` — no group (default)
+
+**Use Cases:**
+- Sync selection across multiple carousels
+- Group scroll containers that share a selection state
+
+**Example:**
+```css
+.gallery {
+  scroll-target-group: --gallery;
+}
+
+.gallery-item:target-current {
+  border-color: #667eea;
 }
 ```
 

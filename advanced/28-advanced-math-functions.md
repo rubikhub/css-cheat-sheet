@@ -1,6 +1,6 @@
 # Advanced Math Functions
 
-> 12 functions
+> 19 functions
 
 CSS functions for complex calculations, rounding, and trigonometry.
 
@@ -322,6 +322,191 @@ Performs calculations based on intrinsic sizes such as auto.
 .menu {
   height: calc-size(auto, size);
   transition: height 0.3s;
+}
+```
+
+---
+
+## Conditional Functions
+
+---
+
+## if()
+
+**Syntax:** `if(<condition>: <value>; <condition>: <value>; <else>)`
+
+Returns the first value whose condition is true (2025+).
+
+**Values:**
+- `if(style(--variant: dark): black; white)` — dark-mode value
+- `if(media(width >= 600px): 2fr; 1fr)` — media-condition value
+- `if(supports(display: grid): grid; block)` — support check
+- The final argument is the fallback
+
+**Use Cases:**
+- Replace media-query/value duplication
+- Conditional values inline in a single declaration
+
+**Example:**
+```css
+.card {
+  background: if(
+    style(--theme: dark): #222;
+    #fff
+  );
+}
+```
+
+---
+
+## random()
+
+**Syntax:** `random()` | `random(<min>, <max>)` | `random(--seed)`
+
+Generates a pseudo-random value, optionally in a range (2026).
+
+**Values:**
+- `random()` — a random number between 0 and 1
+- `random(10px, 40px)` — random length in a range
+- `random(0deg, 360deg)` — random angle
+- `random(--seed, 0.5, 1)` — seeded randomness
+
+**Use Cases:**
+- Vary animation delays and durations
+- Scatter decorative elements naturally
+
+**Example:**
+```css
+.star {
+  animation-delay: random(-2s, 0s);
+  left: random(0%, 100%);
+}
+```
+
+---
+
+## random-item()
+
+**Syntax:** `random-item(<values...>)`
+
+Picks one value at random from a list (2026).
+
+**Values:**
+- `random-item(red, blue, green)` — a random color
+- `random-item(10px, 20px, 30px)` — a random length
+- `random-item(--seed, a, b, c)` — seeded choice
+
+**Use Cases:**
+- Random background colors per instance
+- Random shapes and decorations
+
+**Example:**
+```css
+.emoji {
+  content: random-item("🎈", "🎉", "🎊");
+}
+```
+
+---
+
+## Tree Counting
+
+---
+
+## sibling-index()
+
+**Syntax:** `sibling-index()`
+
+Returns the index of an element among its siblings (2025+).
+
+**Values:**
+- `sibling-index()` — 1-based position among siblings
+- Returns `0` for a lone child
+- Works inside any property accepting a number
+
+**Use Cases:**
+- Compute rotations or offsets per sibling
+- Build nth-item-like effects with math
+
+**Example:**
+```css
+.card {
+  transform: rotate(calc(sibling-index() * 5deg));
+}
+```
+
+---
+
+## sibling-count()
+
+**Syntax:** `sibling-count()`
+
+Returns the number of siblings of an element (2025+).
+
+**Values:**
+- `sibling-count()` — total sibling count
+- Returns `0` for a lone child
+
+**Use Cases:**
+- Size items by how many siblings exist
+- Toggle layouts for single vs many items
+
+**Example:**
+```css
+.item {
+  width: calc(100% / sibling-count());
+}
+```
+
+---
+
+## Value Functions
+
+---
+
+## toggle()
+
+**Syntax:** `toggle(<values...>)`
+
+Cycles through values for successive elements (custom toggles, 2026).
+
+**Values:**
+- `toggle(1rem, 2rem)` — alternate between two values
+- `toggle(red, blue, green)` — cycle three values
+- Cycles per element instance, in document order
+
+**Use Cases:**
+- Alternate stripe backgrounds across rows
+- Cycle item sizes or colors
+
+**Example:**
+```css
+tr {
+  background: toggle(#fff, #f5f5f5);
+}
+```
+
+---
+
+## attr() — typed values
+
+**Syntax:** `attr(<attr-name> type(<type>), <fallback>)`
+
+Reads HTML attributes with a typed value (2025+).
+
+**Values:**
+- `attr(data-width type(<length>), 0)` — a length attribute
+- `attr(data-color type(<color>), black)` — a color attribute
+- `attr(data-count type(<integer>), 0)` — an integer attribute
+
+**Use Cases:**
+- Move presentational data into HTML attributes
+- Avoid inline style hacks for widths and colors
+
+**Example:**
+```css
+.bar {
+  width: attr(data-width type(<length>), 0);
 }
 ```
 

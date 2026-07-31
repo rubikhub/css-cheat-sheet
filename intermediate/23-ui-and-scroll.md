@@ -1,6 +1,6 @@
 # UI & Scroll
 
-> 11 properties
+> 17 properties
 
 Control cursor, selection, overflow, and scrollbar appearance.
 
@@ -303,6 +303,154 @@ Controls whether an element can be the target of pointer events.
 
 .close-button {
   pointer-events: auto;
+}
+```
+
+---
+
+## field-sizing
+
+**Syntax:** `field-sizing: fixed | content`
+
+Controls whether form controls size to fixed or content dimensions.
+
+**Values:**
+- `fixed` — control keeps a fixed size (default)
+- `content` — control grows/shrinks to fit its content
+
+**Use Cases:**
+- Auto-growing textareas
+- Inputs that shrink to fit their value
+
+**Example:**
+```css
+textarea {
+  field-sizing: content;
+  max-width: 300px;
+}
+```
+
+---
+
+## accent-color
+
+**Syntax:** `accent-color: auto | <color>`
+
+Sets the accent color for native form controls like checkboxes, radios, and range inputs.
+
+**Values:**
+- `auto` — use the browser default accent (default)
+- `#667eea` — brand accent color
+- `currentColor` — follow the text color
+
+**Use Cases:**
+- Theme checkboxes and radio buttons without rebuilding them
+- Match range sliders to brand colors
+
+**Example:**
+```css
+input {
+  accent-color: #667eea;
+}
+```
+
+---
+
+## forced-color-adjust
+
+**Syntax:** `forced-color-adjust: auto | none`
+
+Controls whether an element's colors are adjusted in forced-colors mode.
+
+**Values:**
+- `auto` — browser may override colors in forced-colors mode (default)
+- `none` — keep author colors in forced-colors mode
+
+**Use Cases:**
+- Preserve brand colors in Windows High Contrast mode
+- Keep charts and maps readable under forced colors
+
+**Example:**
+```css
+.logo {
+  forced-color-adjust: none;
+}
+```
+
+---
+
+## zoom
+
+**Syntax:** `zoom: normal | reset | <number> | <percentage>`
+
+Scales an element and its layout (unlike transform: scale) as of the 2024 standardization.
+
+**Values:**
+- `normal` — no zoom (default)
+- `1.5` — 150% scale
+- `150%` — percentage scale
+- `reset` — reset zoom to 1 for the subtree
+
+**Use Cases:**
+- Zoom widget content in and out
+- Scale layout including dimensions and font sizes
+
+**Example:**
+```css
+.dashboard {
+  zoom: 1.25;
+}
+
+.reset {
+  zoom: reset;
+}
+```
+
+---
+
+## overflow-clip-margin
+
+**Syntax:** `overflow-clip-margin: <length>`
+
+Sets how far content can overflow before being clipped when overflow: clip is used.
+
+**Values:**
+- `0px` — clip at the padding box edge (default)
+- `20px` — let content overflow 20px before clipping
+- `content-box` — clip relative to the content box
+
+**Use Cases:**
+- Let box shadows and drop-shadows show beyond a clip
+- Clip layout without cutting off visual effects
+
+**Example:**
+```css
+.carousel {
+  overflow: clip;
+  overflow-clip-margin: 16px;
+}
+```
+
+---
+
+## empty-cells
+
+**Syntax:** `empty-cells: show | hide`
+
+Controls whether empty table cells render borders and backgrounds.
+
+**Values:**
+- `show` — render empty cells (default)
+- `hide` — hide empty cells
+
+**Use Cases:**
+- Remove borders from blank table cells
+- Keep calendars and grids visually clean
+
+**Example:**
+```css
+table {
+  empty-cells: hide;
 }
 ```
 

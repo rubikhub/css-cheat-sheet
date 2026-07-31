@@ -41,5 +41,5 @@ form:has(:invalid) {
 
 **[View Example](../examples/advanced/01-has-selector/index.html)**
 
-← **Previous Topic:** [Media Queries](../intermediate/27-media-queries.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Selectors 2024+](../advanced/02-selectors-2024.md) →
+← **Previous Topic:** [Performance & Rendering](../intermediate/29-performance-and-rendering.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Selectors 2024+](../advanced/02-selectors-2024.md) →
 

@@ -1,6 +1,6 @@
 # CSS At-Rules — Advanced
 
-> 8 features
+> 15 features
 
 Modern at-rules for layers, properties, scope, and counters.
 
@@ -227,6 +227,196 @@ Allows transitions and animations between keyword and numeric sizes.
 .accordion {
   height: auto;
   transition: height 300ms;
+}
+```
+
+---
+
+## @custom-media
+
+**Syntax:** `@custom-media --name (<media-features>);`
+
+Defines reusable named media queries.
+
+**Values:**
+- `@custom-media --narrow (width < 600px);` — a named width query
+- `@custom-media --dark (prefers-color-scheme: dark);` — named preference query
+
+**Use Cases:**
+- Reuse media conditions across files
+- Centralize breakpoints in one place
+
+**Example:**
+```css
+@custom-media --narrow (width < 600px);
+@custom-media --motion-ok (prefers-reduced-motion: no-preference);
+
+@media (--narrow) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
+---
+
+## @when / @else
+
+**Syntax:** `@when <condition> { ... } @else <condition> { ... } @else { ... }`
+
+Conditional group rules — the generic if/else for CSS.
+
+**Values:**
+- `@when media(...)` — media-condition branch
+- `@when supports(...)` — support-condition branch
+- `@else media(...)` — subsequent conditions
+- `@else` — the fallback branch
+
+**Use Cases:**
+- Replace nested @media/@supports combinations
+- Write clearer progressive enhancement
+
+**Example:**
+```css
+@when media (width >= 600px) {
+  .layout {
+    display: grid;
+  }
+} @else {
+  .layout {
+    display: block;
+  }
+}
+```
+
+---
+
+## @function
+
+**Syntax:** `@function --name (<args>) { result: <value>; }`
+
+Defines custom CSS functions (2026).
+
+**Values:**
+- `@function --spacing($mult) { result: calc(0.5rem * $mult); }` — a scaling function
+- `result:` — the function's return value
+- Arguments are used inside the body
+
+**Use Cases:**
+- Encapsulate reusable calculations
+- Reduce repetition of complex math
+
+**Example:**
+```css
+@function --fluid($min, $max) {
+  result: clamp($min, 2vw, $max);
+}
+
+h1 {
+  font-size: --fluid(1rem, 2.5rem);
+}
+```
+
+---
+
+## @mixin / @apply
+
+**Syntax:** `@mixin --name { ... }` | `@apply --name;`
+
+CSS mixins — reusable style blocks applied with @apply.
+
+**Values:**
+- `@mixin --button { ... }` — define a mixin
+- `@apply --button;` — apply it inside a rule
+- Mixins can accept arguments in the extended syntax
+
+**Use Cases:**
+- Share button, badge, and card styles
+- Replace preprocessor mixins in native CSS
+
+**Example:**
+```css
+@mixin --chip {
+  padding: 4px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+}
+
+.tag {
+  @apply --chip;
+  background: #667eea;
+}
+```
+
+---
+
+## @nest
+
+**Syntax:** `@nest <selector> { ... }`
+
+Enables nesting a selector that does not start with a nesting selector.
+
+**Values:**
+- `@nest &:hover` — nest using & explicitly
+- `@nest .parent > &` — nest a compound selector
+- Mostly superseded by the & nesting shorthand
+
+**Use Cases:**
+- Nest selectors that need a leading compound
+- Keep preprocessor-style nesting
+
+**Example:**
+```css
+.card {
+  @nest section > & {
+    margin: 2rem;
+  }
+}
+```
+
+---
+
+## @charset
+
+**Syntax:** `@charset "UTF-8";`
+
+Declares the character encoding of the stylesheet.
+
+**Values:**
+- `@charset "UTF-8";` — UTF-8 encoding
+- Must be the very first line of the file, no leading characters
+
+**Use Cases:**
+- Declare encoding for legacy servers and tools
+- Ensure emoji and non-Latin text render correctly
+
+**Example:**
+```css
+@charset "UTF-8";
+```
+
+---
+
+## @namespace
+
+**Syntax:** `@namespace <prefix>? <url>;`
+
+Declares namespaces used by element and attribute selectors.
+
+**Values:**
+- `@namespace svg url(http://www.w3.org/2000/svg);` — an SVG prefix
+- `svg|circle { ... }` — select within the namespace
+- `@namespace url(...)` — default namespace
+
+**Use Cases:**
+- Style SVG or XML documents by namespace
+- Scope selectors to a specific markup language
+
+**Example:**
+```css
+@namespace svg url(http://www.w3.org/2000/svg);
+svg|a {
+  fill: blue;
 }
 ```
 

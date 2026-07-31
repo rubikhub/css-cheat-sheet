@@ -1,6 +1,6 @@
 # Media Queries
 
-> 6 features
+> 8 features
 
 Apply styles conditionally based on viewport size, device capabilities, and user preferences.
 
@@ -213,7 +213,87 @@ Media features that respect user OS-level preferences.
 
 ---
 
+## Display & Device Features
+
+**Syntax:** `@media (color-gamut: srgb | p3 | rec2020)`
+
+Media features describing display color, contrast, and refresh capabilities.
+
+**Values:**
+- `color-gamut` — `srgb` | `p3` | `rec2020` — display color range
+- `dynamic-range` — `standard` | `high` — HDR support
+- `update` — `none` | `slow` | `fast` — how often the display refreshes
+- `scripting` — `none` | `initial-only` | `enabled` — JS availability
+
+**Use Cases:**
+- Serve wide-gamut colors only to capable displays
+- Enable HDR media for high dynamic range screens
+- Gate script-heavy effects on scripting support
+
+**Example:**
+```css
+@media (color-gamut: p3) {
+  .banner {
+    color: color(display-p3 1 0.5 0);
+  }
+}
+
+@media (dynamic-range: high) {
+  video {
+    filter: none;
+  }
+}
+
+@media (scripting: none) {
+  .accordion {
+    height: auto;
+  }
+}
+```
+
+---
+
+## Additional Preference Features
+
+**Syntax:** `@media (forced-colors: none | active)`
+
+Media features for user accessibility and ambient preferences.
+
+**Values:**
+- `forced-colors` — `none` | `active` — forced color (High Contrast) mode
+- `light-level` — `dim` | `normal` | `washed` — ambient light
+- `inverted-colors` — `none` | `inverted` — inverted display colors
+- `prefers-reduced-data` — `no-preference` | `reduce` — reduced data usage
+
+**Use Cases:**
+- Preserve contrast under Windows High Contrast
+- Adapt brightness for low-light rooms
+- Serve lighter assets when users opt into reduced data
+
+**Example:**
+```css
+@media (forced-colors: active) {
+  .button {
+    border: 2px solid ButtonText;
+  }
+}
+
+@media (light-level: dim) {
+  body {
+    filter: brightness(0.9);
+  }
+}
+
+@media (prefers-reduced-data: reduce) {
+  .hero {
+    background-image: none;
+  }
+}
+```
+
+---
+
 **[View Example](../examples/intermediate/27-media-queries/index.html)**
 
-← **Previous Topic:** [Nesting](../intermediate/26-nesting.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [:has() — The Parent Selector](../advanced/01-has-selector.md) →
+← **Previous Topic:** [Nesting](../intermediate/26-nesting.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [CSS Shapes](../intermediate/28-css-shapes.md) →
 

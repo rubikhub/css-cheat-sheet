@@ -1,6 +1,6 @@
 # Grid Advanced
 
-> 12 properties
+> 14 properties
 
 Two-dimensional layout — advanced grid container and item properties.
 
@@ -412,6 +412,68 @@ Place items — shorthand for align-items and justify-items together.
 ```css
 .centered {
   place-items: center;
+}
+```
+
+---
+
+## place-content
+
+**Syntax:** `place-content: <align-content> <justify-content>`
+
+Shorthand — sets align-content and justify-content together for the grid container.
+
+**Values:**
+- `center` — centered on both axes
+- `start` — aligned to start on both axes
+- `space-between` — spread out on both axes
+- `center space-between` — center rows, space columns
+- `inherit` — inherits from parent
+- `initial` — sets to default (normal)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Center the whole grid in its container
+- Control free space around tracks
+
+**Example:**
+```css
+.center-grid {
+  place-content: center;
+}
+
+.distributed {
+  place-content: space-between;
+}
+```
+
+---
+
+## place-self
+
+**Syntax:** `place-self: <align-self> <justify-self>`
+
+Shorthand — sets align-self and justify-self together for a grid item.
+
+**Values:**
+- `center` — centered in the cell on both axes
+- `start` — aligned to cell start on both axes
+- `stretch` — stretched in both axes
+- `end center` — aligned to the end vertically, center horizontally
+- `inherit` — inherits from parent
+- `initial` — sets to default (auto)
+- `revert` — reverts to user agent stylesheet value
+- `unset` — inherits or initial depending on property
+
+**Use Cases:**
+- Align a single grid item quickly
+- Override container alignment for one item
+
+**Example:**
+```css
+.badge {
+  place-self: end center;
 }
 ```
 

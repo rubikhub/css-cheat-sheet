@@ -1,6 +1,6 @@
 # Image Sizing
 
-> 4 properties
+> 6 properties
 
 Sizing and positioning for images and video — aspect ratios, object fit, and resolution-aware sources.
 
@@ -115,6 +115,63 @@ Provides multiple image candidates for different resolutions.
     'hero-1x.jpg' 1x,
     'hero-2x.jpg' 2x
   );
+}
+```
+
+---
+
+## object-view-box
+
+**Syntax:** `object-view-box: inset(<top> <right> <bottom> <left>)`
+
+Crops a replaced element by defining a view box inside its natural content.
+
+**Values:**
+- `inset(0)` — no cropping (default)
+- `inset(25%)` — crop an inner 50% square centered
+- `inset(10% 20% 30% 40%)` — crop each side by a percentage
+
+**Use Cases:**
+- Zoom into a region of an image without extra files
+- Create focus crops that are easy to animate
+
+**Example:**
+```css
+.avatar {
+  object-view-box: inset(25%);
+}
+
+img {
+  object-view-box: inset(10% 20% 30% 40%);
+}
+```
+
+---
+
+## image-rendering
+
+**Syntax:** `image-rendering: auto | crisp-edges | pixelated | smooth`
+
+Controls the scaling algorithm browsers use for images and canvas.
+
+**Values:**
+- `auto` — browser chooses a quality algorithm (default)
+- `pixelated` — nearest-neighbor scaling, keeps hard pixels
+- `crisp-edges` — preserve contrast and edges (no blur)
+- `smooth` — smoothing is always used when scaling
+
+**Use Cases:**
+- Keep pixel-art crisp when scaled up
+- Avoid blurry downscaled images
+
+**Example:**
+```css
+.pixel-art {
+  image-rendering: pixelated;
+}
+
+img {
+  image-rendering: auto;
 }
 ```
 

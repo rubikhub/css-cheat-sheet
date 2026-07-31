@@ -1,6 +1,6 @@
 # Text Layout & Wrapping
 
-> 11 properties
+> 18 properties
 
 Text alignment, wrapping, and overflow behavior.
 
@@ -330,6 +330,187 @@ Limits text to a number of lines and truncates with an ellipsis.
   overflow: hidden;
   text-overflow: ellipsis;
   line-clamp: 2;
+}
+```
+
+---
+
+## text-justify
+
+**Syntax:** `text-justify: auto | none | inter-word | inter-character`
+
+Controls how justified text is spaced.
+
+**Values:**
+- `auto` — browser picks the best method (default)
+- `none` — no justification, like text-align: left
+- `inter-word` — justify by adding space between words
+- `inter-character` — justify by adding space between characters (CJK)
+
+**Use Cases:**
+- Fine-tune justification for CJK text
+- Avoid stretched spacing in narrow columns
+
+**Example:**
+```css
+.cjk {
+  text-align: justify;
+  text-justify: inter-character;
+}
+```
+
+---
+
+## line-break
+
+**Syntax:** `line-break: auto | loose | normal | strict | anywhere`
+
+Controls line breaking rules for CJK and punctuation.
+
+**Values:**
+- `auto` — browser default rules (default)
+- `loose` — relaxed rules, less strict breaks
+- `normal` — standard breaking rules
+- `strict` — stricter rules for punctuation
+- `anywhere` — break between any characters
+
+**Use Cases:**
+- Control where CJK text wraps
+- Prevent punctuation from breaking rules
+
+**Example:**
+```css
+.japanese {
+  line-break: strict;
+}
+```
+
+---
+
+## white-space-collapse
+
+**Syntax:** `white-space-collapse: collapse | preserve | preserve-breaks | preserve-spaces | break-spaces`
+
+Longhand of white-space controlling how whitespace sequences collapse.
+
+**Values:**
+- `collapse` — collapse spaces and line breaks (default)
+- `preserve` — keep spaces and line breaks
+- `preserve-breaks` — keep line breaks, collapse spaces
+- `preserve-spaces` — keep spaces, collapse line breaks
+- `break-spaces` — preserve everything and allow breaks
+
+**Use Cases:**
+- Replace white-space shorthand with composable longhands
+- Keep newlines without preserving spaces
+
+**Example:**
+```css
+.code {
+  white-space-collapse: preserve;
+  text-wrap-mode: wrap;
+}
+```
+
+---
+
+## text-wrap-mode
+
+**Syntax:** `text-wrap-mode: wrap | nowrap`
+
+Longhand of text-wrap controlling whether text wraps at all.
+
+**Values:**
+- `wrap` — text wraps at soft wrap opportunities (default)
+- `nowrap` — text does not wrap
+
+**Use Cases:**
+- Control wrapping independently of text-wrap-style
+- Replace white-space: nowrap with composable longhands
+
+**Example:**
+```css
+.tag {
+  text-wrap-mode: nowrap;
+}
+```
+
+---
+
+## text-wrap-style
+
+**Syntax:** `text-wrap-style: auto | balance | pretty | stable`
+
+Longhand of text-wrap controlling the wrapping algorithm.
+
+**Values:**
+- `auto` — browser default wrapping (default)
+- `balance` — balance line lengths across the block
+- `pretty` — minimize orphans and ragged right edges
+- `stable` — keep wrapping stable while editing
+
+**Use Cases:**
+- Balance headings without affecting nowrap behavior
+- Improve paragraphs without balancing everywhere
+
+**Example:**
+```css
+h2 {
+  text-wrap-style: balance;
+}
+
+p {
+  text-wrap-style: pretty;
+}
+```
+
+---
+
+## hyphens
+
+**Syntax:** `hyphens: none | manual | auto`
+
+Controls hyphenation of words at line breaks.
+
+**Values:**
+- `none` — no hyphenation (default)
+- `manual` — hyphenate only at explicit hyphens
+- `auto` — hyphenate automatically (needs lang attribute)
+
+**Use Cases:**
+- Hyphenate justified text for tighter lines
+- Improve narrow-column typography
+
+**Example:**
+```css
+article {
+  hyphens: auto;
+  text-align: justify;
+}
+```
+
+---
+
+## hyphenate-character
+
+**Syntax:** `hyphenate-character: auto | <string>`
+
+Sets the character used at hyphenation break points.
+
+**Values:**
+- `auto` — use the language-appropriate hyphen (default)
+- `"-"` — a plain hyphen
+- `"·"` — middle dot
+
+**Use Cases:**
+- Customize the visible hyphen glyph
+- Use a preferred break mark for a language
+
+**Example:**
+```css
+p {
+  hyphens: auto;
+  hyphenate-character: "‑";
 }
 ```
 

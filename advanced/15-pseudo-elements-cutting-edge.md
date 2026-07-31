@@ -1,6 +1,6 @@
 # Cutting-edge Pseudo-elements
 
-> 4 pseudo-elements
+> 6 pseudo-elements
 
 Modern pseudo-elements for spelling, grammar, and highlights.
 
@@ -95,6 +95,57 @@ Styles the full-screen backdrop behind a top-layer element (dialog or fullscreen
 dialog::backdrop {
   background: rgb(0 0 0 / 0.6);
   backdrop-filter: blur(4px);
+}
+```
+
+---
+
+## ::target-text
+
+**Syntax:** `::target-text`
+
+Styles the text that the browser scrolls to when navigating with text fragments.
+
+**Values:**
+- `::target-text` — the highlighted fragment text
+- Pairs with `#:~:text=` URLs
+
+**Use Cases:**
+- Customize the text-fragment highlight color
+- Match highlights to your theme
+
+**Example:**
+```css
+::target-text {
+  background: yellow;
+  color: black;
+}
+```
+
+---
+
+## ::details-content
+
+**Syntax:** `::details-content`
+
+Styles the hidden content area of a details element.
+
+**Values:**
+- `details::details-content` — the content region
+- Pairs with `:open` for the expanded state
+
+**Use Cases:**
+- Animate accordion content in and out
+- Style the details content area separately from the summary
+
+**Example:**
+```css
+details::details-content {
+  padding: 1rem;
+}
+
+details:open::details-content {
+  animation: expand 0.3s ease;
 }
 ```
 

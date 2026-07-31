@@ -1,6 +1,6 @@
 # Border Radius
 
-> 4 properties
+> 5 properties
 
 Rounded corners — shorthand, individual corners, and logical radii.
 
@@ -124,6 +124,38 @@ Logical corner radius — maps to physical corners based on writing direction.
 .card {
   border-start-start-radius: 16px;
   border-end-end-radius: 16px;
+}
+```
+
+---
+
+## corner-shape
+
+**Syntax:** `corner-shape: round | scoop | notch | bevel | squircle`
+
+Sets the shape of rounded corners (2026 standard for squircle and bevel corners).
+
+**Values:**
+- `round` — circular corner arcs (default)
+- `squircle` — continuous superellipse corners
+- `bevel` — flat diagonal corner cut
+- `scoop` — inward scoop cut
+- `notch` — inward rectangular notch
+
+**Use Cases:**
+- Create squircle app-icon shapes
+- Apply beveled cutting-edge buttons
+
+**Example:**
+```css
+.app-icon {
+  border-radius: 24px;
+  corner-shape: squircle;
+}
+
+.beveled {
+  border-radius: 12px;
+  corner-shape: bevel;
 }
 ```
 

@@ -1,6 +1,6 @@
 # Color Spaces
 
-> 5 features
+> 7 features
 
 Modern color definition functions using perceptually uniform color spaces.
 
@@ -131,6 +131,56 @@ Defines colors in various color spaces.
 ```css
 .element {
   color: color(display-p3 1 0.5 0);
+}
+```
+
+---
+
+## hwb()
+
+**Syntax:** `hwb(H W B / alpha)`
+
+Defines colors by Hue, Whiteness, and Blackness.
+
+**Values:**
+- `hwb(120 0% 0%)` — pure green
+- `hwb(30 40% 10%)` — soft orange
+- `hwb(240 100% 0%)` — white
+- `hwb(0 0% 100%)` — black
+
+**Use Cases:**
+- Create tints by adding white directly
+- Define colors intuitively from a base hue
+
+**Example:**
+```css
+.element {
+  background: hwb(210 20% 10%);
+}
+```
+
+---
+
+## device-cmyk()
+
+**Syntax:** `device-cmyk(<c> <m> <y> <k> / <alpha>)`
+
+Defines colors in the device CMYK color space.
+
+**Values:**
+- `device-cmyk(0 1 1 0)` — red in CMYK
+- `device-cmyk(1 0 0 0)` — cyan in CMYK
+- `device-cmyk(0 0 0 1)` — black in CMYK
+- Used with `@media (color-gamut: srgb)` fallbacks
+
+**Use Cases:**
+- Target print-specific color definitions
+- Control ink levels for print output
+
+**Example:**
+```css
+.print-element {
+  background: device-cmyk(0.2 0.6 0.1 0.3);
 }
 ```
 
