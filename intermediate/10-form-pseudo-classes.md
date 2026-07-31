@@ -1,6 +1,6 @@
 # Form Pseudo Classes
 
-> 7 pseudo-classes
+> 13 pseudo-classes
 
 Target form elements based on their state and validation status.
 
@@ -211,6 +211,129 @@ input:optional {
 
 select:optional {
   border-color: green;
+}
+```
+
+---
+
+## :valid / :invalid
+
+**Syntax:** `:valid` | `:invalid`
+
+Match form fields that pass or fail constraint validation.
+
+**Values:**
+- `input:valid` — value meets its constraints
+- `input:invalid` — value violates its constraints
+- `:invalid` also matches empty required fields before interaction
+
+**Use Cases:**
+- Style valid and invalid inputs
+- Show error borders
+
+**Example:**
+```css
+input:valid {
+  border-color: green;
+}
+
+input:invalid {
+  border-color: red;
+}
+```
+
+---
+
+## :in-range / :out-of-range
+
+**Syntax:** `:in-range` | `:out-of-range`
+
+Match numeric inputs whose value is inside or outside their min/max range.
+
+**Values:**
+- `input:in-range` — value within the allowed range
+- `input:out-of-range` — value outside the allowed range
+
+**Use Cases:**
+- Highlight out-of-range number inputs
+
+**Example:**
+```css
+input[type='number']:out-of-range {
+  background: #ffe9e9;
+}
+```
+
+---
+
+## :read-only / :read-write
+
+**Syntax:** `:read-only` | `:read-write`
+
+Match elements based on whether they are editable.
+
+**Values:**
+- `input:read-only` — non-editable fields
+- `textarea:read-only` — read-only text areas
+- `[contenteditable]:read-write` — editable content
+
+**Use Cases:**
+- Style read-only form views
+- Indicate editable content
+
+**Example:**
+```css
+input:read-only {
+  background: #f3f4f6;
+}
+
+[contenteditable]:read-write {
+  outline: 1px dashed #999;
+}
+```
+
+---
+
+## :autofill
+
+**Syntax:** `:autofill`
+
+Matches inputs that the browser has autofilled.
+
+**Values:**
+- `input:autofill` — autofilled inputs
+- Pair with `-webkit-autofill` for Safari
+
+**Use Cases:**
+- Restyle autofilled backgrounds
+- Remove the default yellow fill
+
+**Example:**
+```css
+input:autofill {
+  background-color: #eef2ff;
+}
+```
+
+---
+
+## :default
+
+**Syntax:** `:default`
+
+Matches the default item in a group of choices.
+
+**Values:**
+- `button:default` — the default submit button
+- `input:default` — the default-checked radio or checkbox
+
+**Use Cases:**
+- Emphasize the primary submit button
+
+**Example:**
+```css
+button:default {
+  box-shadow: 0 0 0 3px #2563eb;
 }
 ```
 

@@ -1,6 +1,6 @@
 # Web Components & Shadow DOM
 
-> 5 properties
+> 6 features
 
 Styling inside Shadow DOM and component encapsulation.
 
@@ -146,6 +146,32 @@ Styles slotted content inside the shadow DOM.
   border-top: 1px solid #eee;
   margin-top: 1rem;
   padding-top: 1rem;
+}
+```
+
+---
+
+## :defined
+
+**Syntax:** `:defined`
+
+Matches any element that is defined — built-in or a registered custom element.
+
+**Values:**
+- `my-widget:defined` — registered and upgraded custom element
+- `:not(:defined)` — custom elements not yet upgraded
+
+**Use Cases:**
+- Hide unstyled custom elements until they are upgraded
+
+**Example:**
+```css
+my-widget:not(:defined) {
+  visibility: hidden;
+}
+
+my-widget:defined {
+  visibility: visible;
 }
 ```
 

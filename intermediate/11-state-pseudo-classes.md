@@ -1,6 +1,6 @@
 # State Pseudo Classes
 
-> 6 pseudo-classes
+> 8 pseudo-classes
 
 Target elements based on user interaction — hover, click, focus, and navigation state.
 
@@ -181,6 +181,55 @@ Targets the element whose ID matches the URL fragment.
 
 .section:target {
   scroll-margin-top: 80px;
+}
+```
+
+---
+
+## :any-link
+
+**Syntax:** `:any-link`
+
+Matches every hyperlink, covering both `:link` and `:visited`.
+
+**Values:**
+- `a:any-link` — any anchor with an href
+- `a:any-link:hover` — hover on any link state
+
+**Use Cases:**
+- Style links without repeating :link and :visited
+
+**Example:**
+```css
+a:any-link {
+  color: #2563eb;
+}
+```
+
+---
+
+## :modal
+
+**Syntax:** `:modal`
+
+Matches elements displayed in a modal state, such as a dialog opened with showModal().
+
+**Values:**
+- `dialog:modal` — an open modal dialog
+- `dialog:modal::backdrop` — style the modal backdrop
+
+**Use Cases:**
+- Style open dialogs and their backdrops
+
+**Example:**
+```css
+dialog:modal {
+  border: none;
+  border-radius: 8px;
+}
+
+dialog:modal::backdrop {
+  background: rgb(0 0 0 / 0.5);
 }
 ```
 

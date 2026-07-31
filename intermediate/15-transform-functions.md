@@ -1,6 +1,6 @@
 # Transform Functions
 
-> 5 functions
+> 6 features
 
 Transform functions — move, rotate, resize, skew, and add depth to elements.
 
@@ -155,6 +155,33 @@ Defines a perspective view for 3D transforms on the element itself.
 ```css
 .card {
   transform: perspective(500px) rotateY(45deg);
+}
+```
+
+---
+
+## Individual transform properties
+
+**Syntax:** `translate: <length-percentage> ...` | `rotate: <angle> ...` | `scale: <number> ...`
+
+Standalone properties for translating, rotating, and scaling — independent of the transform property.
+
+**Values:**
+- `translate: 50% 20px` — move the element
+- `rotate: 45deg` — rotate the element
+- `scale: 1.5` — scale the element
+- Apply in the order translate, rotate, scale
+
+**Use Cases:**
+- Animate one transform axis independently
+- Separate transform concerns in components
+
+**Example:**
+```css
+.card {
+  translate: 0 -4px;
+  rotate: 2deg;
+  scale: 1.05;
 }
 ```
 

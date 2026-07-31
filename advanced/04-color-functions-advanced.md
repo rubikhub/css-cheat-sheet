@@ -1,6 +1,6 @@
 # Advanced Color Functions
 
-> 7 functions
+> 9 features
 
 Modern color definition and mixing functions using perceptually uniform color spaces.
 
@@ -184,6 +184,55 @@ Derives colors from existing colors using `from`.
 ```css
 .button:hover {
   background: oklch(from var(--primary) calc(l - 0.1) c h);
+}
+```
+
+---
+
+## color-scheme
+
+**Syntax:** `color-scheme: normal | light | dark | light dark`
+
+Declares which color schemes an element renders in.
+
+**Values:**
+- `normal` — no preference (default)
+- `light` — light scheme only
+- `dark` — dark scheme only
+- `light dark` — supports both
+
+**Use Cases:**
+- Opt into dark scrollbars and form controls
+
+**Example:**
+```css
+:root {
+  color-scheme: light dark;
+}
+```
+
+---
+
+## light-dark()
+
+**Syntax:** `color: light-dark(<light-color>, <dark-color>)`
+
+Returns a color based on the current color scheme.
+
+**Values:**
+- `light-dark(white, black)` — white in light, black in dark mode
+- `light-dark(var(--bg), var(--bg-dark))` — use with custom properties
+- Requires `color-scheme` to be set on an ancestor
+
+**Use Cases:**
+- Theme components without media queries
+
+**Example:**
+```css
+.card {
+  color-scheme: light dark;
+  background: light-dark(#fff, #222);
+  color: light-dark(#222, #fff);
 }
 ```
 

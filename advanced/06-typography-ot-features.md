@@ -1,6 +1,6 @@
 # Typography — OpenType & Variable Font Features
 
-> 5 properties
+> 8 properties
 
 Advanced typography properties for OpenType features, variable fonts, and font face declarations.
 
@@ -180,6 +180,78 @@ Defines named values for OpenType feature settings, reusable across rules.
   @swash {
     swsh: 1;
   }
+}
+```
+
+---
+
+## font-variant-ligatures
+
+**Syntax:** `font-variant-ligatures: normal | none | <ligature>`
+
+Controls common, contextual, discretionary, and historical ligatures.
+
+**Values:**
+- `normal` — common and contextual ligatures (default)
+- `none` — no ligatures
+- `common-ligatures` / `no-common-ligatures`
+- `discretionary-ligatures` / `historical-ligatures`
+
+**Use Cases:**
+- Enable fancy ligatures for display text
+
+**Example:**
+```css
+.brand {
+  font-variant-ligatures: discretionary-ligatures;
+}
+```
+
+---
+
+## font-variant-numeric
+
+**Syntax:** `font-variant-numeric: normal | <numeric-feature>`
+
+Controls figure style, spacing, fractions, and ordinals.
+
+**Values:**
+- `lining-nums` / `oldstyle-nums` — figure style
+- `tabular-nums` — fixed-width digits for tables
+- `proportional-nums` — natural digit widths
+- `diagonal-fractions` / `stacked-fractions`
+
+**Use Cases:**
+- Align numbers in tables and stat blocks
+
+**Example:**
+```css
+.price {
+  font-variant-numeric: tabular-nums;
+}
+```
+
+---
+
+## font-variant-caps
+
+**Syntax:** `font-variant-caps: normal | small-caps | all-small-caps | petite-caps | unicase | titling-caps`
+
+Controls capital-letter styling.
+
+**Values:**
+- `normal` — default capitalization (default)
+- `small-caps` — small capital letters
+- `all-small-caps` — small caps for all letters
+- `titling-caps` — display capitals
+
+**Use Cases:**
+- Style headings and labels without retyping
+
+**Example:**
+```css
+.nav-label {
+  font-variant-caps: all-small-caps;
 }
 ```
 

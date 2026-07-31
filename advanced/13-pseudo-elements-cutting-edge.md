@@ -1,6 +1,6 @@
 # Cutting-edge Pseudo-elements
 
-> 8 pseudo-elements
+> 9 pseudo-elements
 
 Modern pseudo-elements for spelling, grammar, highlights, and view transitions.
 
@@ -187,6 +187,30 @@ Targets the new (incoming) state of a view transition.
 ```css
 ::view-transition-new(hero) {
   animation: fade-in 0.3s ease;
+}
+```
+
+---
+
+## ::backdrop
+
+**Syntax:** `::backdrop`
+
+Styles the full-screen backdrop behind a top-layer element (dialog or fullscreen).
+
+**Values:**
+- `dialog:modal::backdrop` — modal dialog backdrop
+- `:fullscreen::backdrop` — fullscreen backdrop
+- Style with color, blur, and backdrop-filter
+
+**Use Cases:**
+- Dim and blur content behind modals
+
+**Example:**
+```css
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.6);
+  backdrop-filter: blur(4px);
 }
 ```
 

@@ -54,4 +54,4 @@ Feature — allows nesting selectors inside other selectors.
 
 **[View Example](../examples/intermediate/20-nesting/index.html)**
 
-← **Previous Topic:** [Math Functions](../intermediate/19-math-functions.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [:has() — The Parent Selector](../advanced/01-has-selector.md) →
+← **Previous Topic:** [Math Functions](../intermediate/19-math-functions.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Media Queries](../intermediate/21-media-queries.md) →

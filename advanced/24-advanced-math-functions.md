@@ -1,6 +1,6 @@
 # Advanced Math Functions
 
-> 11 functions
+> 12 functions
 
 CSS functions for complex calculations, rounding, and trigonometry.
 
@@ -303,6 +303,30 @@ Returns the hypotenuse of a set of values.
 
 ---
 
+## calc-size()
+
+**Syntax:** `calc-size(<basis>, <calculation>)`
+
+Performs calculations based on intrinsic sizes such as auto.
+
+**Values:**
+- `calc-size(auto, size * 0.5)` — half of the intrinsic size
+- `calc-size(min-content, size + 2rem)` — add to min-content
+- `size` refers to the basis value in the calculation
+
+**Use Cases:**
+- Animate between auto and numeric sizes
+
+**Example:**
+```css
+.menu {
+  height: calc-size(auto, size);
+  transition: height 0.3s;
+}
+```
+
+---
+
 **[View Example](../examples/advanced/24-advanced-math-functions/index.html)**
 
-← **Previous Topic:** [Scroll State Queries](../advanced/23-scroll-state.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** *(This is the last topic)* →
+← **Previous Topic:** [Scroll State Queries](../advanced/23-scroll-state.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Multi-column Layout](../advanced/25-multi-column-layout.md) →

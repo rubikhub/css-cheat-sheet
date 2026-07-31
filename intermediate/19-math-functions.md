@@ -1,6 +1,6 @@
 # Math Functions
 
-> 4 functions
+> 5 functions
 
 Functions for performing mathematical calculations and creating dynamic, fluid values.
 
@@ -124,6 +124,30 @@ h1 {
 
 .button {
   padding: clamp(0.5rem, 2vw, 2rem);
+}
+```
+
+---
+
+## env()
+
+**Syntax:** `env(<custom-ident>, <fallback>)`
+
+Returns environment variables such as viewport safe-area insets.
+
+**Values:**
+- `env(safe-area-inset-top)` — top safe area
+- `env(safe-area-inset-bottom)` — bottom safe area (home indicator)
+- `env(safe-area-inset-left, 0px)` — left safe area with fallback
+- `env(safe-area-inset-right, 12px)` — right safe area with fallback
+
+**Use Cases:**
+- Pad content for notched phones
+
+**Example:**
+```css
+.shell {
+  padding-bottom: env(safe-area-inset-bottom, 16px);
 }
 ```
 

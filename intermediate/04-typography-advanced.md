@@ -1,6 +1,6 @@
 # Typography Advanced
 
-> 23 properties
+> 28 properties
 
 Fine-tune fonts and text rendering with advanced typography properties.
 
@@ -734,6 +734,133 @@ pre {
 
 .tag {
   white-space: nowrap;
+}
+```
+
+---
+
+## word-break
+
+**Syntax:** `word-break: normal | break-all | keep-all | auto-phrase`
+
+Controls where line-breaking happens within words.
+
+**Values:**
+- `normal` — default line breaking rules (default)
+- `break-all` — break between any characters
+- `keep-all` — no breaks between CJK words
+- `auto-phrase` — break at phrase boundaries
+
+**Use Cases:**
+- Wrap long URLs and code tokens
+- Handle CJK text correctly
+
+**Example:**
+```css
+.url {
+  word-break: break-all;
+}
+
+.cjk {
+  word-break: keep-all;
+}
+```
+
+---
+
+## tab-size
+
+**Syntax:** `tab-size: <integer> | <length>`
+
+Sets the width of a tab character.
+
+**Values:**
+- `tab-size: 4` — four spaces per tab
+- `tab-size: 2` — two spaces per tab
+- `tab-size: 8` — default tab width
+
+**Use Cases:**
+- Control indentation width in pre blocks
+
+**Example:**
+```css
+pre {
+  tab-size: 2;
+}
+```
+
+---
+
+## line-clamp
+
+**Syntax:** `line-clamp: none | <integer>`
+
+Limits text to a number of lines and truncates with an ellipsis.
+
+**Values:**
+- `none` — no clamping (default)
+- `line-clamp: 2` — max two lines
+- `line-clamp: 3` — max three lines
+- legacy pattern — `display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical`
+
+**Use Cases:**
+- Truncate card titles and previews
+
+**Example:**
+```css
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 2;
+}
+```
+
+---
+
+## font-kerning
+
+**Syntax:** `font-kerning: auto | normal | none`
+
+Controls whether kerning pairs are applied.
+
+**Values:**
+- `auto` — browser decides whether to kern (default)
+- `normal` — always apply kerning
+- `none` — never apply kerning
+
+**Use Cases:**
+- Improve large display text
+- Tighten small headings
+
+**Example:**
+```css
+h1 {
+  font-kerning: normal;
+}
+```
+
+---
+
+## font-stretch
+
+**Syntax:** `font-stretch: normal | <keyword> | <percentage>`
+
+Selects a wider or narrower face of a font family.
+
+**Values:**
+- `normal` — regular width (default)
+- `condensed` / `semi-condensed` — narrower faces
+- `expanded` / `semi-expanded` — wider faces
+- `font-stretch: 125%` — percentage width
+
+**Use Cases:**
+- Pick a condensed headline face
+- Fit more text in a fixed space
+
+**Example:**
+```css
+.headline {
+  font-stretch: condensed;
 }
 ```
 

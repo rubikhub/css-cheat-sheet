@@ -1,6 +1,6 @@
 # Transition Advanced
 
-> 5 properties
+> 7 properties
 
 Smooth property changes over time using the transition shorthand and its longhand properties.
 
@@ -174,6 +174,53 @@ Delay — specifies when the transition starts.
 .menu-item {
   transition: opacity 0.3s ease;
   transition-delay: 0.2s;
+}
+```
+
+---
+
+## linear() easing
+
+**Syntax:** `transition-timing-function: linear(<points>)`
+
+Defines a piecewise-linear easing function from stop points between 0 and 1.
+
+**Values:**
+- `linear(0, 0.5, 1)` — a three-point ramp
+- `linear(0, 0.3 20%, 0.9 80%, 1)` — stops with positions
+- Use to approximate complex curves with segments
+
+**Use Cases:**
+- Multi-stage easing without keyframes
+
+**Example:**
+```css
+.card {
+  transition: transform 300ms linear(0, 0.5 40%, 1);
+}
+```
+
+---
+
+## transition-behavior
+
+**Syntax:** `transition-behavior: normal | allow-discrete`
+
+Controls whether discrete properties (like display) can transition.
+
+**Values:**
+- `normal` — no discrete property transitions (default)
+- `allow-discrete` — allows transitions of discrete properties
+
+**Use Cases:**
+- Animate element appearance together with @starting-style
+
+**Example:**
+```css
+.dropdown {
+  transition:
+    display 0.5s allow-discrete,
+    opacity 0.5s;
 }
 ```
 

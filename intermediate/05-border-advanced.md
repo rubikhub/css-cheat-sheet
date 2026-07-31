@@ -1,6 +1,6 @@
 # Border Advanced
 
-> 15 properties
+> 16 properties
 
 Border styling — width, style, color, outlines, rounded corners, and drop shadows.
 
@@ -486,6 +486,31 @@ Inset shadows — appear inside the element's border.
 ```css
 .well {
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+```
+
+---
+
+## box-decoration-break
+
+**Syntax:** `box-decoration-break: slice | clone`
+
+Controls how borders, backgrounds, and shadows split across line or column breaks.
+
+**Values:**
+- `slice` — decorations are cut at the break (default)
+- `clone` — decorations repeat on each fragment
+
+**Use Cases:**
+- Keep rounded corners on wrapped inline highlights
+- Apply padding per line for highlighted text
+
+**Example:**
+```css
+mark {
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  box-decoration-break: clone;
 }
 ```
 

@@ -1,6 +1,6 @@
 # Pseudo Elements Advanced
 
-> 6 pseudo-elements
+> 7 pseudo-elements
 
 Insert and style generated content with pseudo-elements.
 
@@ -179,6 +179,32 @@ Styles the placeholder text of form inputs.
 input::placeholder {
   color: #999;
   font-style: italic;
+}
+```
+
+---
+
+## ::file-selector-button
+
+**Syntax:** `::file-selector-button`
+
+Targets the file-picker button of an `input[type=file]`.
+
+**Values:**
+- `input[type='file']::file-selector-button` — the button element
+- Style it with normal button properties
+
+**Use Cases:**
+- Match file upload buttons to the design system
+
+**Example:**
+```css
+input[type='file']::file-selector-button {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 6px;
 }
 ```
 

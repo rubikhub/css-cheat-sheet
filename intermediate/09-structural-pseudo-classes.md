@@ -1,6 +1,6 @@
 # Structural Pseudo Classes
 
-> 4 pseudo-classes
+> 8 pseudo-classes
 
 Target elements based on their position among siblings.
 
@@ -153,6 +153,107 @@ div:empty {
 
 .container:empty {
   border: 1px dashed #ccc;
+}
+```
+
+---
+
+## :only-of-type
+
+**Syntax:** `:only-of-type`
+
+Matches an element that is the only element of its type among its siblings.
+
+**Values:**
+- `p:only-of-type` — the only paragraph among siblings
+- `li:only-of-type` — the only list item in its list
+- Implies `:first-of-type` and `:last-of-type`
+
+**Use Cases:**
+- Style a lone callout
+- Distinguish single items in a group
+
+**Example:**
+```css
+p:only-of-type {
+  font-style: italic;
+}
+```
+
+---
+
+## :first-of-type / :last-of-type
+
+**Syntax:** `:first-of-type` | `:last-of-type`
+
+Matches the first or last element of its type among siblings.
+
+**Values:**
+- `p:first-of-type` — first paragraph among siblings
+- `li:last-of-type` — last list item
+- `:first-of-type` is the same as `:nth-of-type(1)`
+
+**Use Cases:**
+- Style intro paragraphs
+- Remove borders from the last block
+
+**Example:**
+```css
+p:first-of-type {
+  font-size: 1.1em;
+}
+
+li:last-of-type {
+  border-bottom: none;
+}
+```
+
+---
+
+## :root
+
+**Syntax:** `:root`
+
+Matches the document root element (the html element).
+
+**Values:**
+- `:root { --brand: #123; }` — define global custom properties
+- `:root { color-scheme: light dark; }` — set the color scheme
+- Equivalent to `html` but with higher specificity
+
+**Use Cases:**
+- Centralize global custom properties
+- Set document-level defaults
+
+**Example:**
+```css
+:root {
+  --brand: #4f46e5;
+  --spacing: 1rem;
+}
+```
+
+---
+
+## :nth-child(An+B of S)
+
+**Syntax:** `:nth-child(<An+B> of <selector-list>)`
+
+Limits nth-child matching to elements that also match the given selector list.
+
+**Values:**
+- `:nth-child(2 of .item)` — the second .item
+- `:nth-child(odd of li.active)` — odd-numbered active items
+- `:nth-child(3n of .featured)` — every third featured item
+
+**Use Cases:**
+- Style every other tile in a filtered list
+- Target a specific item within a subset
+
+**Example:**
+```css
+li:nth-child(3n of .featured) {
+  color: var(--brand);
 }
 ```
 

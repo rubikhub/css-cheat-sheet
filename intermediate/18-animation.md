@@ -1,6 +1,6 @@
 # Animation
 
-> 10 properties
+> 11 properties
 
 Animate elements with keyframes and animation timing controls.
 
@@ -320,6 +320,32 @@ Keyframes — defines the stages of an animation sequence.
   50% {
     transform: scale(1.05);
   }
+}
+```
+
+---
+
+## animation-composition
+
+**Syntax:** `animation-composition: replace | add | accumulate`
+
+Defines how multiple animations combine values for the same property.
+
+**Values:**
+- `replace` — later animation overrides earlier ones (default)
+- `add` — values are added together
+- `accumulate` — values are accumulated
+
+**Use Cases:**
+- Compose transform animations from different keyframes
+
+**Example:**
+```css
+.ball {
+  animation:
+    move 2s linear infinite,
+    bounce 1s ease-in-out infinite;
+  animation-composition: add;
 }
 ```
 

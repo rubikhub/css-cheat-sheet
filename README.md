@@ -34,9 +34,9 @@ Foundation of CSS — box model, cascade, specificity, inheritance, selectors, l
 
 ---
 
-## Intermediate (20 topics)
+## Intermediate (21 topics)
 
-Core layout systems — Flexbox, Grid, transitions, media queries.
+Core layout systems — Flexbox, Grid, transitions, media queries, responsive design.
 
 | #   | File                                                                            | Topic                        |
 | --- | ------------------------------------------------------------------------------- | ---------------------------- |
@@ -60,10 +60,11 @@ Core layout systems — Flexbox, Grid, transitions, media queries.
 | 18  | [18-animation.md](intermediate/18-animation.md)                                 | Animation                    |
 | 19  | [19-math-functions.md](intermediate/19-math-functions.md)                       | Math Functions               |
 | 20  | [20-nesting.md](intermediate/20-nesting.md)                                     | CSS Nesting                  |
+| 21  | [21-media-queries.md](intermediate/21-media-queries.md)                         | Media Queries                |
 
 ---
 
-## Advanced (24 topics)
+## Advanced (27 topics)
 
 Modern CSS — :has(), container queries, scroll animations, anchor positioning.
 
@@ -93,3 +94,6 @@ Modern CSS — :has(), container queries, scroll animations, anchor positioning.
 | 22  | [22-scroll-animations.md](advanced/22-scroll-animations.md)                         | Scroll-Driven Animations          |
 | 23  | [23-scroll-state.md](advanced/23-scroll-state.md)                                   | Scroll State Queries              |
 | 24  | [24-advanced-math-functions.md](advanced/24-advanced-math-functions.md)             | round(), trig, log()              |
+| 25  | [25-multi-column-layout.md](advanced/25-multi-column-layout.md)                     | Multi-column Layout               |
+| 26  | [26-motion-path.md](advanced/26-motion-path.md)                                     | Motion Path                       |
+| 27  | [27-paged-media.md](advanced/27-paged-media.md)                                     | Paged Media                       |

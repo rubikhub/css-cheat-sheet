@@ -1,6 +1,6 @@
 # CSS At-Rules — Advanced
 
-> 6 at-rules
+> 9 features
 
 Modern at-rules for layers, properties, scope, and view transitions.
 
@@ -174,6 +174,83 @@ Defines custom counter styles.
 
 ol {
   list-style-type: thumbs;
+}
+```
+
+---
+
+## @supports
+
+**Syntax:** `@supports (<property>: <value>) | not <condition> | and | or`
+
+Applies styles only when the browser supports a feature.
+
+**Values:**
+- `@supports (display: grid)` — property support
+- `@supports (selector(:has(*)))` — selector support
+- `@supports not (display: grid)` — negation
+- `@supports (display: grid) and (gap: 1rem)` — combination
+
+**Use Cases:**
+- Progressive enhancement with fallbacks
+
+**Example:**
+```css
+@supports (display: grid) {
+  .layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+```
+
+---
+
+## @import
+
+**Syntax:** `@import url(<url>) [<media-query>]`
+
+Loads an external stylesheet into the current one.
+
+**Values:**
+- `@import url('theme.css')` — plain import
+- `@import 'print.css' print;` — import for print only
+- Must appear before other rules except @charset and @layer statements
+
+**Use Cases:**
+- Split stylesheets across files
+- Conditional imports per media type
+
+**Example:**
+```css
+@import 'theme.css';
+@import 'print.css' print;
+```
+
+---
+
+## interpolate-size
+
+**Syntax:** `interpolate-size: numeric-only | allow-keywords`
+
+Allows transitions and animations between keyword and numeric sizes.
+
+**Values:**
+- `numeric-only` — only numeric values animate (default)
+- `allow-keywords` — enables animating to auto/intrinsic sizes
+
+**Use Cases:**
+- Animate height to auto together with @starting-style
+
+**Example:**
+```css
+:root {
+  interpolate-size: allow-keywords;
+}
+
+.accordion {
+  height: auto;
+  transition: height 300ms;
 }
 ```
 

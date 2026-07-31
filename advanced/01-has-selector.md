@@ -41,4 +41,4 @@ form:has(:invalid) {
 
 **[View Example](../examples/advanced/01-has-selector/index.html)**
 
-← **Previous Topic:** [Nesting](../intermediate/20-nesting.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Selectors 2024+](../advanced/02-selectors-2024.md) →
+← **Previous Topic:** [Media Queries](../intermediate/21-media-queries.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Selectors 2024+](../advanced/02-selectors-2024.md) →
