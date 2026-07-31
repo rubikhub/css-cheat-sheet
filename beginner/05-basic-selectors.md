@@ -159,9 +159,9 @@ Targets elements with specific attributes or values.
 
 ```
 
-
 ---
 
 **[View Example](../examples/beginner/05-basic-selectors/index.html)**
 
 ← **Previous Topic:** [Inheritance](../beginner/04-inheritance.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Combinators Basics](../beginner/06-combinators-basics.md) →
+

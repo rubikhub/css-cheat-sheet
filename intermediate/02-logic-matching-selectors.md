@@ -130,3 +130,4 @@ Selects elements that contain a matching descendant.
 **[View Example](../examples/intermediate/02-logic-matching-selectors/index.html)**
 
 ← **Previous Topic:** [Attribute Selectors](../intermediate/01-attribute-selectors.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Background Advanced](../intermediate/03-background-advanced.md) →
+

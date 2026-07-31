@@ -155,4 +155,5 @@ Targets elements whose attribute value contains the substring.
 
 **[View Example](../examples/intermediate/01-attribute-selectors/index.html)**
 
-← **Previous Topic:** [Logical Properties](../beginner/21-logical-properties.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Logic Matching Selectors](../intermediate/02-logic-matching-selectors.md) →
+← **Previous Topic:** [Logical Properties](../beginner/24-logical-properties.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Logic Matching Selectors](../intermediate/02-logic-matching-selectors.md) →
+

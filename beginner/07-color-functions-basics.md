@@ -204,3 +204,4 @@ Keyword for fully transparent color.
 **[View Example](../examples/beginner/07-color-functions-basics/index.html)**
 
 ← **Previous Topic:** [Combinators Basics](../beginner/06-combinators-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Background Basics](../beginner/08-background-basics.md) →
+

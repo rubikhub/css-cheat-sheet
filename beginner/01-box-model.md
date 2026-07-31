@@ -190,9 +190,9 @@ In browser DevTools, select any element to see a visual diagram of its box model
 | `overflow` | `visible` | Use `auto` or `hidden` when needed |
 | `margin` | `0` | Use `0 auto` for centering |
 
-
 ---
 
 **[View Example](../examples/beginner/01-box-model/index.html)**
 
 ← **Previous Topic:** *(This is the first topic)* &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [The Cascade](../beginner/02-the-cascade.md) →
+

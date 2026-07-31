@@ -422,3 +422,4 @@ Whitespace handling — controls line breaks and space collapsing.
 **[View Example](../examples/beginner/09-typography-basics/index.html)**
 
 ← **Previous Topic:** [Background Basics](../beginner/08-background-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Border Basics](../beginner/10-border-basics.md) →
+

@@ -156,3 +156,4 @@ h2 ~ p {
 **[View Example](../examples/beginner/06-combinators-basics/index.html)**
 
 ← **Previous Topic:** [Basic Selectors](../beginner/05-basic-selectors.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Color Functions Basics](../beginner/07-color-functions-basics.md) →
+

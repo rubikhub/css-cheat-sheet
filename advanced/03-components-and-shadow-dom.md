@@ -179,4 +179,5 @@ my-widget:defined {
 
 **[View Example](../examples/advanced/03-components-and-shadow-dom/index.html)**
 
-← **Previous Topic:** [Selectors 2024+](../advanced/02-selectors-2024.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Advanced Color Functions](../advanced/04-color-functions-advanced.md) →
+← **Previous Topic:** [Selectors 2024+](../advanced/02-selectors-2024.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Color Spaces](../advanced/04-color-spaces.md) →
+

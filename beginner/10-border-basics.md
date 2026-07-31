@@ -195,4 +195,5 @@ Rounded corners — rounds the corners of the outer border edge.
 
 **[View Example](../examples/beginner/10-border-basics/index.html)**
 
-← **Previous Topic:** [Typography Basics](../beginner/09-typography-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Lists & Tables Basics](../beginner/11-lists-and-tables-basics.md) →
+← **Previous Topic:** [Typography Basics](../beginner/09-typography-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Lists Basics](../beginner/11-lists-basics.md) →
+

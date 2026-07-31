@@ -196,3 +196,4 @@ Scopes styles to a subtree, optionally limited by a boundary element.
 **[View Example](../examples/advanced/02-selectors-2024/index.html)**
 
 ← **Previous Topic:** [:has() — The Parent Selector](../advanced/01-has-selector.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Web Components & Shadow DOM](../advanced/03-components-and-shadow-dom.md) →
+
