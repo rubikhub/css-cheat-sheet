@@ -143,4 +143,4 @@ ol li::before {
 
 **[View Example](../examples/advanced/09-css-counters-complex/index.html)**
 
-← **Previous Topic:** [Advanced Visual Effects](../advanced/08-advanced-effects.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Scroll Snap & Touch Interaction](../advanced/10-scroll-snap.md) →
+← **Previous Topic:** [Border Image & Caret Color](../advanced/08-border-image-and-caret.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Subgrid & Named Grid Lines](../advanced/10-subgrid.md) →

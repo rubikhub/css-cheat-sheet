@@ -131,4 +131,4 @@ h1 {
 
 **[View Example](../examples/intermediate/19-math-functions/index.html)**
 
-← **Previous Topic:** [Animation](../intermediate/18-animation.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Transition Advanced](../intermediate/20-transition-advanced.md) →
+← **Previous Topic:** [Animation](../intermediate/18-animation.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Nesting](../intermediate/20-nesting.md) →

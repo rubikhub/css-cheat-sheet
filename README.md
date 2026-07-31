@@ -40,26 +40,26 @@ Core layout systems — Flexbox, Grid, transitions, media queries.
 
 | #   | File                                                                            | Topic                        |
 | --- | ------------------------------------------------------------------------------- | ---------------------------- |
-| 01  | [01-structural-pseudo-classes.md](intermediate/01-structural-pseudo-classes.md) | :nth-child(), :first-of-type |
-| 02  | [02-attribute-selectors.md](intermediate/02-attribute-selectors.md)             | [attr] Selectors             |
-| 03  | [04-logic-matching-selectors.md](intermediate/04-logic-matching-selectors.md)   | :is(), :not(), :has()        |
-| 04  | [05-form-pseudo-classes.md](intermediate/05-form-pseudo-classes.md)             | Form Pseudo-classes          |
-| 05  | [06-state-pseudo-classes.md](intermediate/06-state-pseudo-classes.md)           | State Pseudo-classes         |
-| 06  | [07-border-advanced.md](intermediate/07-border-advanced.md)                     | Advanced Borders             |
-| 07  | [08-transform.md](intermediate/08-transform.md)                                 | Transforms                   |
-| 08  | [09-transform-functions.md](intermediate/09-transform-functions.md)             | Transform Functions          |
-| 09  | [10-background-advanced.md](intermediate/10-background-advanced.md)             | Advanced Backgrounds         |
-| 10  | [11-flexbox-advanced.md](intermediate/11-flexbox-advanced.md)                   | Advanced Flexbox             |
-| 11  | [12-grid-advanced.md](intermediate/12-grid-advanced.md)                         | Advanced Grid                |
-| 12  | [13-counters-and-markers.md](intermediate/13-counters-and-markers.md)           | Counters & Markers           |
-| 13  | [14-filter-and-clip-path.md](intermediate/14-filter-and-clip-path.md)           | Filters & Clip-path          |
-| 14  | [15-pseudo-elements-advanced.md](intermediate/15-pseudo-elements-advanced.md)   | Advanced Pseudo-elements     |
-| 15  | [16-typography-advanced.md](intermediate/16-typography-advanced.md)             | Advanced Typography          |
-| 16  | [17-ui-and-scroll.md](intermediate/17-ui-and-scroll.md)                         | UI & Scroll                  |
-| 17  | [18-animation.md](intermediate/18-animation.md)                                 | Animation                    |
-| 18  | [19-math-functions.md](intermediate/19-math-functions.md)                       | Math Functions               |
-| 19  | [20-transition-advanced.md](intermediate/20-transition-advanced.md)             | Advanced Transitions         |
-| 20  | [21-nesting.md](intermediate/21-nesting.md)                                     | CSS Nesting                  |
+| 01  | [01-attribute-selectors.md](intermediate/01-attribute-selectors.md)             | [attr] Selectors             |
+| 02  | [02-logic-matching-selectors.md](intermediate/02-logic-matching-selectors.md)   | :is(), :not(), :has()        |
+| 03  | [03-background-advanced.md](intermediate/03-background-advanced.md)             | Advanced Backgrounds         |
+| 04  | [04-typography-advanced.md](intermediate/04-typography-advanced.md)             | Advanced Typography          |
+| 05  | [05-border-advanced.md](intermediate/05-border-advanced.md)                     | Advanced Borders             |
+| 06  | [06-counters-and-markers.md](intermediate/06-counters-and-markers.md)           | Counters & Markers           |
+| 07  | [07-flexbox-advanced.md](intermediate/07-flexbox-advanced.md)                   | Advanced Flexbox             |
+| 08  | [08-grid-advanced.md](intermediate/08-grid-advanced.md)                         | Advanced Grid                |
+| 09  | [09-structural-pseudo-classes.md](intermediate/09-structural-pseudo-classes.md) | :nth-child(), :first-of-type |
+| 10  | [10-form-pseudo-classes.md](intermediate/10-form-pseudo-classes.md)             | Form Pseudo-classes          |
+| 11  | [11-state-pseudo-classes.md](intermediate/11-state-pseudo-classes.md)           | State Pseudo-classes         |
+| 12  | [12-pseudo-elements-advanced.md](intermediate/12-pseudo-elements-advanced.md)   | Advanced Pseudo-elements     |
+| 13  | [13-transition-advanced.md](intermediate/13-transition-advanced.md)             | Advanced Transitions         |
+| 14  | [14-transform.md](intermediate/14-transform.md)                                 | Transforms                   |
+| 15  | [15-transform-functions.md](intermediate/15-transform-functions.md)             | Transform Functions          |
+| 16  | [16-filter-and-clip-path.md](intermediate/16-filter-and-clip-path.md)           | Filters & Clip-path          |
+| 17  | [17-ui-and-scroll.md](intermediate/17-ui-and-scroll.md)                         | UI & Scroll                  |
+| 18  | [18-animation.md](intermediate/18-animation.md)                                 | Animation                    |
+| 19  | [19-math-functions.md](intermediate/19-math-functions.md)                       | Math Functions               |
+| 20  | [20-nesting.md](intermediate/20-nesting.md)                                     | CSS Nesting                  |
 
 ---
 
@@ -69,27 +69,27 @@ Modern CSS — :has(), container queries, scroll animations, anchor positioning.
 
 | #   | File                                                                                | Topic                             |
 | --- | ----------------------------------------------------------------------------------- | --------------------------------- |
-| 01  | [01-typography-ot-features.md](advanced/01-typography-ot-features.md)               | OpenType Features                 |
-| 02  | [02-background-blend-mode.md](advanced/02-background-blend-mode.md)                 | Background Blend Mode             |
-| 03  | [03-border-image-and-caret.md](advanced/03-border-image-and-caret.md)               | Border Image & Caret              |
-| 04  | [04-scrollbar-styling.md](advanced/04-scrollbar-styling.md)                         | Scrollbar Styling                 |
-| 05  | [05-subgrid.md](advanced/05-subgrid.md)                                             | CSS Subgrid                       |
-| 06  | [06-3d-transforms.md](advanced/06-3d-transforms.md)                                 | 3D Transforms                     |
-| 07  | [07-animation-fill-and-play-state.md](advanced/07-animation-fill-and-play-state.md) | Animation Direction & Fill        |
-| 08  | [08-advanced-effects.md](advanced/08-advanced-effects.md)                           | Backdrop Filter & Masks           |
+| 01  | [01-has-selector.md](advanced/01-has-selector.md)                                   | :has() Parent Selector            |
+| 02  | [02-selectors-2024.md](advanced/02-selectors-2024.md)                               | :is(), :where(), :open            |
+| 03  | [03-components-and-shadow-dom.md](advanced/03-components-and-shadow-dom.md)         | Web Components & Shadow DOM       |
+| 04  | [04-color-functions-advanced.md](advanced/04-color-functions-advanced.md)           | oklch(), color-mix()              |
+| 05  | [05-background-blend-mode.md](advanced/05-background-blend-mode.md)                 | Background Blend Mode             |
+| 06  | [06-typography-ot-features.md](advanced/06-typography-ot-features.md)               | OpenType Features                 |
+| 07  | [07-typography-2024.md](advanced/07-typography-2024.md)                             | text-wrap: balance                |
+| 08  | [08-border-image-and-caret.md](advanced/08-border-image-and-caret.md)               | Border Image & Caret              |
 | 09  | [09-css-counters-complex.md](advanced/09-css-counters-complex.md)                   | CSS Counters — Complex            |
-| 10  | [10-scroll-snap.md](advanced/10-scroll-snap.md)                                     | Scroll Snap                       |
-| 11  | [11-has-selector.md](advanced/11-has-selector.md)                                   | :has() Parent Selector            |
-| 12  | [12-state-pseudo-classes-advanced.md](advanced/12-state-pseudo-classes-advanced.md) | :playing, :paused, :past, :future |
-| 13  | [13-form-pseudo-classes-advanced.md](advanced/13-form-pseudo-classes-advanced.md)   | :dir(), :lang()                   |
-| 14  | [14-pseudo-elements-cutting-edge.md](advanced/14-pseudo-elements-cutting-edge.md)   | ::view-transition, ::highlight    |
-| 15  | [15-at-rules.md](advanced/15-at-rules.md)                                           | @layer, @scope, @property         |
-| 16  | [16-container-queries.md](advanced/16-container-queries.md)                         | Container Queries                 |
-| 17  | [17-selectors-2024.md](advanced/17-selectors-2024.md)                               | :is(), :where(), :open            |
-| 18  | [18-anchor-positioning.md](advanced/18-anchor-positioning.md)                       | Anchor Positioning                |
-| 19  | [19-scroll-animations.md](advanced/19-scroll-animations.md)                         | Scroll-Driven Animations          |
-| 20  | [20-scroll-state.md](advanced/20-scroll-state.md)                                   | Scroll State Queries              |
-| 21  | [21-color-functions-advanced.md](advanced/21-color-functions-advanced.md)           | oklch(), color-mix()              |
-| 22  | [22-typography-2024.md](advanced/22-typography-2024.md)                             | text-wrap: balance                |
-| 23  | [23-advanced-math-functions.md](advanced/23-advanced-math-functions.md)             | round(), trig, log()              |
-| 24  | [24-components-and-shadow-dom.md](advanced/24-components-and-shadow-dom.md)         | Web Components & Shadow DOM       |
+| 10  | [10-subgrid.md](advanced/10-subgrid.md)                                             | CSS Subgrid                       |
+| 11  | [11-state-pseudo-classes-advanced.md](advanced/11-state-pseudo-classes-advanced.md) | :playing, :paused, :past, :future |
+| 12  | [12-form-pseudo-classes-advanced.md](advanced/12-form-pseudo-classes-advanced.md)   | :dir(), :lang()                   |
+| 13  | [13-pseudo-elements-cutting-edge.md](advanced/13-pseudo-elements-cutting-edge.md)   | ::view-transition, ::highlight    |
+| 14  | [14-scrollbar-styling.md](advanced/14-scrollbar-styling.md)                         | Scrollbar Styling                 |
+| 15  | [15-3d-transforms.md](advanced/15-3d-transforms.md)                                 | 3D Transforms                     |
+| 16  | [16-animation-fill-and-play-state.md](advanced/16-animation-fill-and-play-state.md) | Animation Direction & Fill        |
+| 17  | [17-advanced-effects.md](advanced/17-advanced-effects.md)                           | Backdrop Filter & Masks           |
+| 18  | [18-scroll-snap.md](advanced/18-scroll-snap.md)                                     | Scroll Snap                       |
+| 19  | [19-at-rules.md](advanced/19-at-rules.md)                                           | @layer, @scope, @property         |
+| 20  | [20-container-queries.md](advanced/20-container-queries.md)                         | Container Queries                 |
+| 21  | [21-anchor-positioning.md](advanced/21-anchor-positioning.md)                       | Anchor Positioning                |
+| 22  | [22-scroll-animations.md](advanced/22-scroll-animations.md)                         | Scroll-Driven Animations          |
+| 23  | [23-scroll-state.md](advanced/23-scroll-state.md)                                   | Scroll State Queries              |
+| 24  | [24-advanced-math-functions.md](advanced/24-advanced-math-functions.md)             | round(), trig, log()              |

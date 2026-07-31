@@ -221,4 +221,4 @@ border-inline-end: 1px dashed red;
 
 **[View Example](../examples/beginner/21-logical-properties/index.html)**
 
-← **Previous Topic:** [Gradients Basics](../beginner/20-gradients-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Structural Pseudo Classes](../intermediate/01-structural-pseudo-classes.md) →
+← **Previous Topic:** [Gradients Basics](../beginner/20-gradients-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Attribute Selectors](../intermediate/01-attribute-selectors.md) →

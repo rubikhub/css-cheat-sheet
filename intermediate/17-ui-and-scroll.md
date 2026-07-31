@@ -163,4 +163,4 @@ Scrollbar color — sets the thumb and track colors of the scrollbar.
 
 **[View Example](../examples/intermediate/17-ui-and-scroll/index.html)**
 
-← **Previous Topic:** [Typography Advanced](../intermediate/16-typography-advanced.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Animation](../intermediate/18-animation.md) →
+← **Previous Topic:** [Filter & Clip Path](../intermediate/16-filter-and-clip-path.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Animation](../intermediate/18-animation.md) →
