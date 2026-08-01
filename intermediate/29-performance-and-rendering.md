@@ -113,4 +113,4 @@ Hints which properties will change so the browser can optimize ahead of time.
 
 **[View Example](../examples/intermediate/29-performance-and-rendering/index.html)**
 
-← **Previous Topic:** [CSS Shapes](../intermediate/28-css-shapes.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [:has() — The Parent Selector](../advanced/01-has-selector.md) →
+← **Previous Topic:** [CSS Shapes](../intermediate/28-css-shapes.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Relative & Viewport Units](../intermediate/30-relative-and-viewport-units.md) →

@@ -220,5 +220,5 @@ border-inline-end: 1px dashed red;
 
 **[View Example](../examples/beginner/24-logical-properties/index.html)**
 
-← **Previous Topic:** [Gradients Basics](../beginner/23-gradients-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [Attribute Selectors](../intermediate/01-attribute-selectors.md) →
+← **Previous Topic:** [Gradients Basics](../beginner/23-gradients-basics.md) &nbsp;&nbsp;|&nbsp;&nbsp; **Next Topic:** [CSS Units Basics](../beginner/25-css-units-basics.md) →
 
