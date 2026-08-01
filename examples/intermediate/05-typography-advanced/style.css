@@ -88,7 +88,6 @@
 .current-demo {
   color: #2563eb;
   border: 2px solid currentColor;
-  border-radius: 6px;
   padding: 0 6px;
 }
 
@@ -98,8 +97,8 @@
 .ws-neg { word-spacing: -2px; }
 
 /* vertical-align */
-.va-super { vertical-align: super; font-size: 0.7rem; }
-.va-sub { vertical-align: sub; font-size: 0.7rem; }
+.va-super { vertical-align: super; font-size: 16px; }
+.va-sub { vertical-align: sub; font-size: 16px; }
 .va-middle { vertical-align: middle; }
 .va-top { vertical-align: top; }
 .va-bottom { vertical-align: bottom; }

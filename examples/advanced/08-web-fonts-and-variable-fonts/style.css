@@ -21,10 +21,9 @@
   padding: 12px 14px;
   background: #0f172a;
   color: #e2e8f0;
-  border-radius: 8px;
   overflow-x: auto;
   font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
-  font-size: 0.78rem;
+  font-size: 16px;
   line-height: 1.55;
 }
 
@@ -33,11 +32,10 @@
   margin: 0;
   padding: 8px 10px;
   font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
-  font-size: 0.75rem;
+  font-size: 16px;
   color: #0f172a;
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
-  border-radius: 6px;
   max-width: 210px;
   word-break: break-word;
 }
@@ -49,7 +47,6 @@
   font-size: 1.05rem;
   color: #1f2937;
   border: 1px dashed #cbd5e1;
-  border-radius: 6px;
   padding: 10px 12px;
   max-width: 210px;
 }
@@ -67,7 +64,6 @@
   font-weight: 400;
   color: #1f2937;
   border: 1px dashed #cbd5e1;
-  border-radius: 6px;
   padding: 10px 14px;
   min-width: 120px;
   text-align: center;

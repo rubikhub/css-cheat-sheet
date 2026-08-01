@@ -4,8 +4,7 @@
   padding: 10px;
   background: #fff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.72rem;
+  font-size: 16px;
   color: #64748b;
 }
 .mini p,
@@ -15,12 +14,11 @@
 .mini figcaption {
   margin: 4px 0;
   padding: 4px 8px;
-  border-radius: 5px;
   background: #f1f5f9;
 }
 .mini h2 {
   margin: 0 0 4px;
-  font-size: 0.8rem;
+  font-size: 16px;
   color: #0f172a;
   background: #e2e8f0;
 }
@@ -33,20 +31,18 @@
 .grp-headings h3 {
   color: #8b5cf6;
   background: #ede9fe;
-  border-radius: 5px;
   margin: 4px 0;
   padding: 4px 8px;
 }
-.grp-headings h1 { font-size: 0.95rem; }
-.grp-headings h2 { font-size: 0.85rem; }
-.grp-headings h3 { font-size: 0.75rem; }
+.grp-headings h1 { font-size: 16px; }
+.grp-headings h2 { font-size: 16px; }
+.grp-headings h3 { font-size: 16px; }
 .grp-links .button,
 .grp-links .link {
   display: inline-block;
   color: #fff;
   background: #3b82f6;
   padding: 6px 14px;
-  border-radius: 6px;
   text-decoration: none;
   margin: 4px 4px 4px 0;
 }
@@ -55,7 +51,6 @@
   background: #1e293b;
   color: #fff;
   padding: 6px 10px;
-  border-radius: 5px;
   margin: 4px 0;
 }
 .grp-mixed p,
@@ -74,7 +69,6 @@
 }
 .grp-desc-card .card {
   border: 1px dashed #14b8a6;
-  border-radius: 6px;
   padding: 6px;
   margin-bottom: 6px;
 }
@@ -90,7 +84,6 @@
 }
 .grp-desc-art article {
   border: 1px dashed #6366f1;
-  border-radius: 6px;
   padding: 6px;
   margin-bottom: 6px;
 }
@@ -136,12 +129,10 @@
 .grp-adj-fig figure {
   margin: 0;
   border: 1px dashed #64748b;
-  border-radius: 6px;
   padding: 6px;
 }
 .grp-adj-fig img {
   display: block;
-  border-radius: 4px;
 }
 .grp-adj-fig img + figcaption {
   background: #14b8a6;

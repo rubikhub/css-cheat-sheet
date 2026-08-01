@@ -12,11 +12,10 @@
 
 .g-item {
   min-height: 44px;
-  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
   color: #fff;
 }
@@ -27,12 +26,11 @@
   min-width: 170px;
   padding: 6px 10px;
   font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
-  font-size: 0.72rem;
+  font-size: 16px;
   text-align: center;
   color: #0f172a;
   background: #fff;
   border: 1px solid #cbd5e1;
-  border-radius: 6px;
 }
 
 /* --- media types --- */
@@ -55,9 +53,8 @@
 .hbox {
   width: 90px;
   height: 70px;
-  border-radius: 6px;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 16px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -71,7 +68,6 @@
 .oribox {
   width: 120px;
   height: 70px;
-  border-radius: 6px;
 }
 @media (orientation: portrait) {
   .oribox { width: 70px; height: 120px; }
@@ -109,9 +105,8 @@
 
 .hovcard {
   padding: 10px 16px;
-  border-radius: 8px;
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -142,8 +137,7 @@
   background: #fff;
   color: #1f2937;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.78rem;
+  font-size: 16px;
   transition: background 0.2s ease, color 0.2s ease;
 }
 @media (prefers-color-scheme: dark) {
@@ -159,9 +153,8 @@
 
 .motbox {
   padding: 10px 14px;
-  border-radius: 8px;
   color: #fff;
-  font-size: 0.72rem;
+  font-size: 16px;
   font-weight: 600;
   animation: bob 1.2s ease-in-out infinite;
 }
@@ -202,8 +195,7 @@
   padding: 8px 16px;
   background: #fff;
   border: 2px solid #94a3b8;
-  border-radius: 6px;
-  font-size: 0.78rem;
+  font-size: 16px;
 }
 @media (forced-colors: active) {
   .fc-btn { border: 2px solid ButtonText; }

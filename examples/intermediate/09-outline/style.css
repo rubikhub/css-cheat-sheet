@@ -20,8 +20,7 @@
   background: #3b82f6;
   color: #fff;
   border: none;
-  border-radius: 8px;
-  font-size: 0.8rem;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -76,9 +75,8 @@
   background: #fff;
   color: #1f2937;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
   padding: 10px 12px;
-  font-size: 0.8rem;
+  font-size: 16px;
   line-height: 1.7;
   text-align: left;
 }
@@ -86,7 +84,6 @@
   background: #fef08a;
   color: #1f2937;
   border: 1px solid #ca8a04;
-  border-radius: 6px;
   padding: 0.1em 0.35em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;

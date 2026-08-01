@@ -4,20 +4,17 @@
   padding: 12px;
   background: #eef2ff;
   border: 1px solid #c7d2fe;
-  border-radius: 8px;
-  font-size: 0.78rem;
+  font-size: 16px;
   color: #6366f1;
 }
 .inh-parent p {
   margin: 6px 0 0;
   background: #e0e7ff;
-  border-radius: 6px;
   padding: 6px;
 }
 .inh-parent div {
   margin: 6px 0 0;
   background: #c7d2fe;
-  border-radius: 6px;
   padding: 6px;
 }
 
@@ -26,21 +23,19 @@
 .inh-not {
   width: 230px;
   padding: 12px;
-  border-radius: 8px;
-  font-size: 0.75rem;
+  font-size: 16px;
 }
 .inh-inh {
   background: #ecfdf5;
   border: 1px solid #6ee7b7;
   color: #065f46;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.85rem;
+  font-size: 16px;
   letter-spacing: 0.05em;
 }
 .inh-inh p {
   margin: 6px 0 0;
   background: #d1fae5;
-  border-radius: 6px;
   padding: 6px;
 }
 .inh-not {
@@ -53,7 +48,6 @@
 .inh-not p {
   margin: 6px 0 0;
   background: #fff;
-  border-radius: 6px;
   padding: 6px;
 }
 
@@ -67,8 +61,7 @@
   padding: 12px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.75rem;
+  font-size: 16px;
   color: #334155;
 }
 .inh-ctl { font-weight: 400; }
@@ -80,7 +73,6 @@
 .inh-rev p {
   padding: 2rem;
   background: #fef3c7;
-  border-radius: 6px;
 }
 .inh-rev .revert-p { padding: revert; }
 
@@ -89,14 +81,12 @@
   color: #b45309;
   margin-top: 2em;
   background: #fef3c7;
-  border-radius: 6px;
   padding: 6px;
 }
 .inh-uns .unset-p {
   color: unset;
   margin: unset;
   background: #eef2ff;
-  border-radius: 6px;
   padding: 6px;
 }
 
@@ -107,12 +97,10 @@
   margin: 1em 0;
   padding: 1em;
   background: #fef3c7;
-  border-radius: 6px;
 }
 .inh-all .all-unset {
   all: unset;
   background: #eef2ff;
-  border-radius: 6px;
   padding: 6px;
 }
 
@@ -122,9 +110,8 @@
   padding: 12px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.9rem;
+  font-size: 16px;
   color: #475569;
 }
 .inh-prac p { margin: 0; }

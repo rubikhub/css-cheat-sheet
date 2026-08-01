@@ -2,7 +2,7 @@
 .tb {
   border-collapse: separate;
   width: 240px;
-  font-size: 0.8rem;
+  font-size: 16px;
   color: #334155;
 }
 .tb th,
@@ -14,7 +14,7 @@
 }
 .tb caption {
   padding: 4px 0;
-  font-size: 0.75rem;
+  font-size: 16px;
   color: #64748b;
 }
 

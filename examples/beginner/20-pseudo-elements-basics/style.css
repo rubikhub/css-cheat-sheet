@@ -6,9 +6,8 @@
   padding: 8px 14px;
   background: #eff6ff;
   border: 1px solid #bfdbfe;
-  border-radius: 999px;
   color: #1d4ed8;
-  font-size: 0.8rem;
+  font-size: 16px;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
@@ -20,7 +19,6 @@
   width: 8px;
   height: 8px;
   background: #3b82f6;
-  border-radius: 50%;
 }
 .be-star::before {
   content: "★ ";
@@ -40,9 +38,8 @@
   white-space: nowrap;
   background: #1e293b;
   color: #fff;
-  font-size: 0.68rem;
+  font-size: 16px;
   font-weight: 400;
-  border-radius: 6px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s, transform 0.2s;
@@ -64,7 +61,7 @@
 }
 .af-url::after {
   content: " (" attr(href) ")";
-  font-size: 0.65em;
+  font-size: 16px;
   font-weight: 400;
   color: #94a3b8;
 }
@@ -99,11 +96,10 @@
   margin: 0;
   padding: 8px 10px;
   text-align: left;
-  font-size: 0.76rem;
+  font-size: 16px;
   color: #334155;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 6px;
 }
 
 /* ::first-line */
@@ -151,7 +147,6 @@
   font: inherit;
   color: #1f2937;
   border: 1px solid #cbd5e1;
-  border-radius: 8px;
 }
 .ph-input::placeholder {
   color: #94a3b8;

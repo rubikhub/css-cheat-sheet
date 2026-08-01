@@ -6,16 +6,14 @@
   padding: 12px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
   min-width: 180px;
 }
 
 .tctrl {
   font-family: inherit;
-  font-size: 0.8rem;
+  font-size: 16px;
   padding: 6px 14px;
   border: 1px solid #cbd5e1;
-  border-radius: 6px;
   background: #fff;
   color: #1f2937;
   cursor: pointer;
@@ -24,16 +22,15 @@
 .tinput {
   padding: 6px 10px;
   font-family: inherit;
-  font-size: 0.8rem;
+  font-size: 16px;
   color: #1f2937;
   background: #fff;
   border: 1px solid #cbd5e1;
-  border-radius: 6px;
 }
 
 .flabel {
   display: block;
-  font-size: 0.72rem;
+  font-size: 16px;
   color: #64748b;
 }
 
@@ -46,8 +43,7 @@
   padding: 10px 16px;
   background: #fff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.8rem;
+  font-size: 16px;
   color: #334155;
 }
 
@@ -98,11 +94,10 @@
   padding: 10px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
 }
 .st-fw .fw-title {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: 16px;
   color: #64748b;
 }
 .st-fw form:focus-within,
@@ -117,8 +112,7 @@
   padding: 10px 14px;
   background: #fff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.8rem;
+  font-size: 16px;
   color: #334155;
 }
 .st-tgt :target {
@@ -134,14 +128,12 @@
 /* :modal */
 .st-modal dialog {
   border: none;
-  border-radius: 10px;
   padding: 20px;
   box-shadow: 0 20px 40px rgb(15 23 42 / 0.3);
   max-width: 320px;
 }
 .st-modal dialog:modal {
   border: none;
-  border-radius: 10px;
   padding: 20px;
 }
 .st-modal dialog:modal::backdrop {
@@ -155,7 +147,7 @@
 }
 .modal-text {
   margin: 0;
-  font-size: 0.82rem;
+  font-size: 16px;
   color: #475569;
 }
 .modal-actions {

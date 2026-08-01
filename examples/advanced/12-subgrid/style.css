@@ -7,16 +7,14 @@
   gap: 4px;
   padding: 4px;
   background: #e2e8f0;
-  border-radius: 6px;
 }
 
 .gi {
   background: #3b82f6;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 16px;
   text-align: center;
   padding: 8px 4px;
-  border-radius: 4px;
 }
 .gi-alt  { background: #14b8a6; }
 .gi-dark { background: #1e293b; }

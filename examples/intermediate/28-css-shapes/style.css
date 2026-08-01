@@ -12,7 +12,7 @@
 .wrap {
   width: 100%;
   max-width: 460px;
-  font-size: 0.72rem;
+  font-size: 16px;
   line-height: 1.45;
   color: #475569;
 }
@@ -32,12 +32,10 @@
 .sh-none { shape-outside: none; }
 
 .sh-circle {
-  border-radius: 50%;
   shape-outside: circle(50%);
 }
 
 .sh-ellipse {
-  border-radius: 50% / 40%;
   shape-outside: ellipse(50% 40%);
 }
 
@@ -77,9 +75,9 @@
 .sb-content { shape-outside: content-box; }
 
 /* shape-margin */
-.sm-0 { border-radius: 50%; shape-outside: circle(50%); shape-margin: 0; }
-.sm-20 { border-radius: 50%; shape-outside: circle(50%); shape-margin: 20px; }
-.sm-10p { border-radius: 50%; shape-outside: circle(50%); shape-margin: 10%; }
+.sm-0 { shape-outside: circle(50%); shape-margin: 0; }
+.sm-20 { shape-outside: circle(50%); shape-margin: 20px; }
+.sm-10p { shape-outside: circle(50%); shape-margin: 10%; }
 
 /* shape-image-threshold */
 .th-0 {

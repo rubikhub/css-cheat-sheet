@@ -3,7 +3,6 @@
   font-size: 1rem;
   padding: 6px 10px;
   border: 1px dashed #cbd5e1;
-  border-radius: 6px;
   background: #f8fafc;
 }
 .sample span {
@@ -12,20 +11,18 @@
 .chip {
   display: inline-block;
   padding: 8px 14px;
-  border-radius: 999px;
   background: #e2e8f0;
   color: #334155;
-  font-size: 0.85rem;
+  font-size: 16px;
   font-weight: 600;
   border: 2px solid transparent;
 }
 .link {
   display: inline-block;
   padding: 8px 14px;
-  border-radius: 8px;
   background: #f1f5f9;
   color: #2563eb;
-  font-size: 0.85rem;
+  font-size: 16px;
   text-decoration: none;
 }
 
@@ -33,13 +30,11 @@
 [title] {
   color: #0f766e;
   background: #ccfbf1;
-  border-radius: 4px;
   font-weight: 600;
 }
 [data-tag] {
   color: #7c3aed;
   background: #ede9fe;
-  border-radius: 4px;
   font-weight: 600;
 }
 

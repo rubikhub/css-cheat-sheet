@@ -184,7 +184,6 @@
 .spin-demo {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
   background: conic-gradient(#3b82f6 0 90deg, #f59e0b 90deg 360deg);
 }
 .ps-running {

@@ -6,13 +6,12 @@
   padding: 12px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
   min-width: 180px;
 }
 
 .flabel {
   display: block;
-  font-size: 0.72rem;
+  font-size: 16px;
   color: #64748b;
 }
 
@@ -23,18 +22,16 @@ select,
 textarea {
   padding: 6px 10px;
   font-family: inherit;
-  font-size: 0.8rem;
+  font-size: 16px;
   color: #1f2937;
   background: #fff;
   border: 1px solid #cbd5e1;
-  border-radius: 6px;
 }
 
 button {
   font-family: inherit;
-  font-size: 0.8rem;
+  font-size: 16px;
   padding: 6px 14px;
-  border-radius: 6px;
   border: 1px solid #cbd5e1;
   background: #fff;
   color: #1f2937;
@@ -83,7 +80,6 @@ button {
   width: 18px;
   height: 18px;
   border: 2px solid #94a3b8;
-  border-radius: 4px;
   background: #fff;
   vertical-align: middle;
   cursor: pointer;
@@ -97,7 +93,7 @@ button {
   display: block;
   color: #fff;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 700;
   line-height: 14px;
 }
@@ -172,11 +168,10 @@ progress { accent-color: #2563eb; }
 }
 .f-rw .ce {
   padding: 6px 10px;
-  font-size: 0.8rem;
+  font-size: 16px;
   color: #1f2937;
   background: #fff;
   border: 1px solid #cbd5e1;
-  border-radius: 6px;
   outline: 1px dashed #2563eb;
   outline-offset: 2px;
 }

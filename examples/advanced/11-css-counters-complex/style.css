@@ -9,7 +9,7 @@
 }
 .list li {
   padding: 2px 0;
-  font-size: 0.85rem;
+  font-size: 16px;
   color: #1f2937;
 }
 .list li::before {

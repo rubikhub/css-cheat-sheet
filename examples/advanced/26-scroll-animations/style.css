@@ -6,7 +6,6 @@
   overflow-y: auto;
   background: #f8fafc;
   border: 1px solid #cbd5e1;
-  border-radius: 8px;
   padding: 0 14px;
   scrollbar-width: thin;
   margin-bottom: 8px;
@@ -40,10 +39,9 @@
 .reveal {
   margin: 16px 0;
   padding: 14px;
-  border-radius: 8px;
   background: #3b82f6;
   color: #fff;
-  font-size: 0.82rem;
+  font-size: 16px;
   font-weight: 600;
   text-align: center;
   opacity: 0;
@@ -60,7 +58,6 @@
 .pulse {
   width: 60px;
   height: 60px;
-  border-radius: 50%;
   background: #ec4899;
   animation: pulse 1.6s ease-in-out infinite;
 }
@@ -89,10 +86,9 @@
 .range-item {
   margin: 16px 0;
   padding: 14px;
-  border-radius: 8px;
   background: #3b82f6;
   color: #fff;
-  font-size: 0.82rem;
+  font-size: 16px;
   font-weight: 600;
   text-align: center;
 }
@@ -183,10 +179,9 @@
 .vt-subject {
   margin: 18px 0;
   padding: 16px;
-  border-radius: 8px;
   background: #8b5cf6;
   color: #fff;
-  font-size: 0.82rem;
+  font-size: 16px;
   font-weight: 600;
   text-align: center;
   view-timeline-name: --reveal;

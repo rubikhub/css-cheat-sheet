@@ -8,7 +8,6 @@
   background: #3b82f6;
   color: #fff;
   font-weight: 600;
-  border-radius: 8px;
 }
 
 .px-border {
@@ -20,7 +19,6 @@
   background: #f8fafc;
   color: #1f2937;
   border: 3px solid #1e293b;
-  border-radius: 8px;
 }
 
 .px-pad {
@@ -30,7 +28,6 @@
   color: #fff;
   font-weight: 600;
   padding: 12px;
-  border-radius: 8px;
 }
 
 /* percentage demos */
@@ -41,7 +38,6 @@
   padding: 12px;
   background: #f1f5f9;
   border: 1px solid #cbd5e1;
-  border-radius: 8px;
 }
 
 .pct {
@@ -51,8 +47,7 @@
   justify-content: center;
   color: #fff;
   font-weight: 600;
-  border-radius: 6px;
-  font-size: 0.8rem;
+  font-size: 16px;
 }
 
 .pct-80 { width: 80%; background: #3b82f6; }
@@ -65,8 +60,7 @@
   padding: 10px 14px;
   background: #eff6ff;
   border: 1px solid #bfdbfe;
-  border-radius: 8px;
-  font-size: 0.8rem;
+  font-size: 16px;
   color: #1d4ed8;
 }
 
@@ -86,7 +80,6 @@
   background: #f59e0b;
   color: #fff;
   font-weight: 600;
-  border-radius: 8px;
 }
 
 .vh-demo {
@@ -99,13 +92,12 @@
   background: #ec4899;
   color: #fff;
   font-weight: 600;
-  border-radius: 8px;
 }
 
 /* unitless values */
 .unitless-hint {
   margin: 0 0 10px;
-  font-size: 0.8rem;
+  font-size: 16px;
   color: #334155;
 }
 
@@ -114,7 +106,6 @@
   padding: 12px 14px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.95rem;
+  font-size: 16px;
   line-height: 1.5;
 }

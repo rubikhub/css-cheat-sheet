@@ -15,7 +15,6 @@
   color: #fff;
   background: #3b82f6;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
 }
@@ -49,7 +48,6 @@
   color: #1d4ed8;
   background: none;
   border: none;
-  border-radius: 6px;
   cursor: pointer;
 }
 .link-btn:active {
@@ -64,7 +62,6 @@
   font: inherit;
   color: #1f2937;
   border: 2px solid #cbd5e1;
-  border-radius: 8px;
 }
 .demo-input:focus {
   outline: 2px solid #2563eb;
@@ -86,10 +83,9 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 0.72rem;
+  font-size: 16px;
   background: #f1f5f9;
   border: 1px solid #cbd5e1;
-  border-radius: 6px;
   transition: background 0.3s, border-color 0.3s;
 }
 .target-box:target {

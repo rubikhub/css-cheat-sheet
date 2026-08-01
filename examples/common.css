@@ -12,91 +12,107 @@
 
 body {
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
-  max-width: 1000px;
+  font-size: 16px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 24px 20px 60px;
+  padding: 28px 24px 64px;
   color: #1f2937;
   background: #f8fafc;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 h1 {
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin: 0 0 20px;
-  padding-bottom: 10px;
+  margin: 0 0 24px;
+  padding-bottom: 12px;
   border-bottom: 3px solid #0f172a;
 }
 
 h2 {
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #334155;
-  margin: 0 0 4px;
-}
-
-h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #475569;
   margin: 0 0 8px;
 }
 
+section > h2 {
+  display: inline-block;
+  margin: 0 14px 8px 0;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+section > h2 + .code {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 16px;
+}
+
+h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #475569;
+  margin: 0 0 10px;
+}
+
 section {
-  margin-bottom: 26px;
-  padding: 18px 20px 20px;
+  margin-bottom: 32px;
+  padding: 22px 26px 26px;
   background: #fff;
   border: 1px solid #e2e8f0;
-  border-radius: 10px;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
 }
 
 /* --- value / selector label (monospace badge) --- */
 .code {
   display: inline-block;
-  margin: 0 0 14px;
-  padding: 2px 8px;
+  margin: 0 0 16px;
+  padding: 3px 10px;
   font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #0f766e;
   background: #f0fdfa;
   border: 1px solid #99f6e4;
-  border-radius: 5px;
 }
 
 code,
 .val {
   font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
-  font-size: 0.82em;
+  font-size: 1em;
   background: #f1f5f9;
-  padding: 1px 5px;
-  border-radius: 4px;
+  padding: 2px 6px;
   color: #0f172a;
 }
 
-/* --- demo grid --- */
+/* --- demo grid: one example per line, full width --- */
 .row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
 }
 
 .cell {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  min-width: 90px;
-  max-width: 220px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  padding: 22px 24px;
+  background: #fbfdff;
+  border: 1px solid #eef2f7;
 }
 
 .cap {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: #64748b;
-  text-align: center;
-  line-height: 1.35;
+  text-align: left;
+  line-height: 1.5;
+  max-width: 640px;
   word-break: break-word;
 }
 
@@ -106,14 +122,13 @@ code,
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 130px;
-  height: 100px;
-  padding: 8px;
+  width: 170px;
+  height: 130px;
+  padding: 10px;
   background: #3b82f6;
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
-  border-radius: 8px;
   flex-shrink: 0;
 }
 
@@ -134,45 +149,42 @@ code,
 
 /* --- color swatch --- */
 .swatch {
-  width: 90px;
-  height: 90px;
-  border-radius: 8px;
+  width: 110px;
+  height: 110px;
   border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 /* --- callout / note --- */
 .note {
-  margin: 12px 0 0;
-  padding: 8px 12px;
-  font-size: 0.82rem;
+  margin: 16px 0 0;
+  padding: 10px 14px;
+  font-size: 1rem;
   color: #475569;
   background: #f8fafc;
   border-left: 3px solid #94a3b8;
-  border-radius: 0 6px 6px 0;
 }
 
 .hint {
-  margin: 0 0 12px;
-  padding: 8px 12px;
-  font-size: 0.82rem;
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  font-size: 1rem;
   color: #1d4ed8;
   background: #eff6ff;
   border: 1px solid #bfdbfe;
-  border-radius: 6px;
 }
 
 /* --- generic table for value demos --- */
 .demo-table {
   border-collapse: collapse;
   width: 100%;
-  max-width: 680px;
-  font-size: 0.85rem;
+  max-width: 760px;
+  font-size: 1rem;
 }
 
 .demo-table th,
 .demo-table td {
   border: 1px solid #e2e8f0;
-  padding: 8px 10px;
+  padding: 10px 12px;
   text-align: left;
 }
 
@@ -198,14 +210,13 @@ code,
   position: absolute;
   display: inline-block;
   max-width: 30vw;
-  padding: 10px 14px;
-  font-size: 0.8rem;
+  padding: 12px 16px;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 1.3;
   color: #fff;
   background: rgba(15, 23, 42, 0.92);
   border: 1px solid rgba(59, 130, 246, 0.5);
-  border-radius: 8px;
   text-decoration: none;
   white-space: nowrap;
   overflow: hidden;
@@ -246,20 +257,19 @@ code,
 /* --- examples index page --- */
 .index-row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
 }
 
 .index-link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 9px 12px;
-  font-size: 0.85rem;
+  gap: 10px;
+  padding: 12px 14px;
+  font-size: 1rem;
   color: #1f2937;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
   text-decoration: none;
   transition: border-color 0.15s, background 0.15s;
 }
@@ -272,14 +282,13 @@ code,
 
 .index-num {
   flex-shrink: 0;
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   display: grid;
   place-items: center;
   font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
-  font-size: 0.72rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #fff;
   background: #64748b;
-  border-radius: 6px;
 }

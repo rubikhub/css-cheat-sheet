@@ -3,7 +3,6 @@
   background: #e0e7ff;
   color: #3730a3;
   border: 1px solid #a5b4fc;
-  border-radius: 6px;
   padding: 6px;
   margin: 4px 0;
 }
@@ -12,8 +11,7 @@
   padding: 8px;
   background: #fff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.75rem;
+  font-size: 16px;
 }
 .uni-demo p,
 .uni-demo div,
@@ -24,7 +22,6 @@
   padding: 8px;
   background: #fff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
   min-width: 90px;
   text-align: center;
 }
@@ -35,20 +32,19 @@
 }
 .el-box h1 {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 16px;
   color: #3b82f6;
   border-bottom: none;
 }
 .el-box div {
   background: #f1f5f9;
   padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.75rem;
+  font-size: 16px;
   color: #334155;
 }
 .el-box a {
   color: #8b5cf6;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
 }
 .el-box img {
@@ -56,7 +52,6 @@
   width: 60px;
   height: 60px;
   margin: 0 auto;
-  border-radius: 6px;
 }
 
 /* class selector */
@@ -64,7 +59,6 @@
   padding: 8px;
   background: #fff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
   min-width: 90px;
   text-align: center;
 }
@@ -72,31 +66,27 @@
   background: #3b82f6;
   color: #fff;
   padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
 }
 .card {
   border: 1px solid #cbd5e1;
-  border-radius: 8px;
   padding: 10px 14px;
-  font-size: 0.75rem;
+  font-size: 16px;
   color: #334155;
 }
 .active {
   background: #10b981;
   color: #fff;
   padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
 }
 .primary {
   background: #8b5cf6;
   color: #fff;
   padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -106,8 +96,7 @@
 #id-footer,
 #id-hero {
   padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
   color: #fff;
 }
@@ -123,18 +112,16 @@
   padding: 8px;
   background: #fff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
 }
 .attr-box [href] {
   color: #06b6d4;
-  font-size: 0.8rem;
+  font-size: 16px;
   font-weight: 600;
   text-decoration: underline;
 }
 .attr-box [type="text"] {
   border: 2px solid #06b6d4;
-  border-radius: 6px;
   padding: 6px 10px;
-  font-size: 0.75rem;
+  font-size: 16px;
   color: #334155;
 }

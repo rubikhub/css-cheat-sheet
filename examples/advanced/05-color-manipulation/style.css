@@ -24,7 +24,6 @@
   color: #fff;
   border: 0;
   padding: 10px 16px;
-  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -38,7 +37,6 @@
   padding: 10px 12px;
   min-height: 56px;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
   background: #fff;
 }
 .sc-normal { color-scheme: normal; }
@@ -52,10 +50,9 @@
 .ld-btn {
   display: inline-block;
   padding: 8px 14px;
-  border-radius: 8px;
   background: #1d4ed8;
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   user-select: none;
@@ -67,18 +64,16 @@
   gap: 10px;
   width: 220px;
   padding: 12px;
-  border-radius: 10px;
   border: 1px solid #cbd5e1;
   color-scheme: light;
 }
 .ld-check:checked ~ .ld-stage { color-scheme: dark; }
 .ld-card {
   padding: 10px;
-  border-radius: 8px;
   border: 1px solid light-dark(#cbd5e1, #334155);
   background: light-dark(white, black);
   color: light-dark(black, white);
-  font-size: 0.75rem;
+  font-size: 16px;
 }
 .ld-card p { margin: 0 0 4px; }
 .ld-card p:last-child { margin: 0; }
@@ -93,8 +88,7 @@
 .badge {
   display: inline-block;
   padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 0.78rem;
+  font-size: 16px;
   font-weight: 600;
   background: var(--bg);
   color: contrast-color(var(--bg));

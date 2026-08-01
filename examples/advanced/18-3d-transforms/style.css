@@ -7,12 +7,11 @@
   display: inline-block;
   margin: 0 0 8px;
   padding: 4px 12px;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
   color: #1d4ed8;
   background: #eff6ff;
   border: 1px solid #bfdbfe;
-  border-radius: 999px;
   cursor: pointer;
   user-select: none;
 }
@@ -50,9 +49,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 16px;
   font-weight: 700;
   background: linear-gradient(120deg, #3b82f6, #6366f1);
 }
@@ -82,9 +80,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 16px;
   font-weight: 700;
   background: linear-gradient(120deg, #8b5cf6, #ec4899);
   transform: rotateY(35deg) rotateX(20deg);

@@ -90,10 +90,9 @@
   display: inline-block;
   margin-left: 6px;
   padding: 2px 6px;
-  font-size: 0.7rem;
+  font-size: 16px;
   font-weight: 600;
   background: rgba(255, 255, 255, 0.25);
-  border-radius: 4px;
 }
 .tb-normal .pop { display: none; transition: display 0.5s; }
 .tb-ad .pop { display: none; opacity: 0; transition: display 0.5s allow-discrete, opacity 0.5s; }

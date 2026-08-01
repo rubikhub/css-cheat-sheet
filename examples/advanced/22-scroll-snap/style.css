@@ -11,17 +11,15 @@
   overflow: auto;
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
 }
 .snap > * {
   flex: 0 0 72px;
   height: 72px;
   display: grid;
   place-items: center;
-  border-radius: 6px;
   background: #3b82f6;
   color: white;
-  font-size: 0.8rem;
+  font-size: 16px;
 }
 .snap.none { scroll-snap-type: none; }
 .snap.x-mand { scroll-snap-type: x mandatory; }
@@ -41,13 +39,13 @@
 .snap.align-center > * { scroll-snap-align: center; }
 
 /* overscroll-behavior */
-.os { width: 100%; height: 90px; overflow: auto; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px; box-sizing: border-box; }
+.os { width: 100%; height: 90px; overflow: auto; background: #f8fafc; border: 1px solid #e2e8f0; padding: 8px; box-sizing: border-box; }
 .os.auto { overscroll-behavior: auto; }
 .os.contain { overscroll-behavior: contain; }
 .os.none { overscroll-behavior: none; }
 
 /* touch-action */
-.touch { width: 100%; height: 64px; display: grid; place-items: center; border-radius: 8px; background: #eef2ff; border: 1px solid #c7d2fe; font-size: 0.85rem; }
+.touch { width: 100%; height: 64px; display: grid; place-items: center; background: #eef2ff; border: 1px solid #c7d2fe; font-size: 16px; }
 .touch.auto { touch-action: auto; }
 .touch.none { touch-action: none; }
 .touch.pan-x { touch-action: pan-x; }
@@ -62,7 +60,7 @@
 
 /* scroll-marker demo */
 .marker-demo { scroll-marker-group: after; }
-.marker-demo > * { width: 8px; height: 8px; flex-basis: 8px; border-radius: 50%; background: #cbd5e1; font-size: 0; }
+.marker-demo > * { width: 8px; height: 8px; flex-basis: 8px; background: #cbd5e1; font-size: 0; }
 .marker-demo > *:target-current { background: #667eea; }
 
 /* scroll-button demo */

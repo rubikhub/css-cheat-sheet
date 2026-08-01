@@ -4,11 +4,10 @@
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   color: #fff;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
 }
 .ratio-auto {
   aspect-ratio: auto;
@@ -23,7 +22,6 @@
   width: 140px;
   height: 90px;
   border: 2px dashed #94a3b8;
-  border-radius: 8px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -49,7 +47,6 @@
 .iset {
   width: 180px;
   height: 110px;
-  border-radius: 8px;
   border: 1px solid #cbd5e1;
 }
 .iset-density {
@@ -75,7 +72,6 @@
 .ovb {
   width: 160px;
   height: 120px;
-  border-radius: 8px;
   border: 2px dashed #94a3b8;
   background: #f1f5f9;
 }
@@ -88,7 +84,6 @@
   width: 120px;
   height: 120px;
   image-rendering: auto;
-  border-radius: 8px;
 }
 .ir-auto { image-rendering: auto; }
 .ir-pixelated { image-rendering: pixelated; }

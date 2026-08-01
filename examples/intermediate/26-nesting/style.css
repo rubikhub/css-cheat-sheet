@@ -4,8 +4,7 @@ pre {
   padding: 12px 14px;
   background: #0f172a;
   color: #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.74rem;
+  font-size: 16px;
   line-height: 1.5;
   overflow-x: auto;
   max-width: 520px;
@@ -24,8 +23,7 @@ pre code {
   padding: 14px;
   background: #fff;
   border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  font-size: 0.78rem;
+  font-size: 16px;
   color: #334155;
   transition: border-color 0.15s ease;
 

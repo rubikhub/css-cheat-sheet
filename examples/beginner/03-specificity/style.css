@@ -4,18 +4,17 @@
   padding: 12px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
   text-align: center;
 }
 .spec-label {
   display: block;
-  font-size: 0.72rem;
+  font-size: 16px;
   font-weight: 600;
   color: #64748b;
 }
 .spec-score {
   display: block;
-  font-size: 0.95rem;
+  font-size: 16px;
   font-weight: 700;
   color: #0f172a;
   margin-top: 4px;
@@ -26,13 +25,11 @@
   padding: 8px;
   background: #fff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.8rem;
+  font-size: 16px;
 }
 .sp-box p {
   margin: 4px 0;
   padding: 6px 10px;
-  border-radius: 6px;
   font-weight: 600;
 }
 .sp-box p { color: #ef4444; }
@@ -42,7 +39,6 @@
 .sp-box a {
   display: block;
   padding: 6px 10px;
-  border-radius: 6px;
   font-weight: 600;
 }
 .sp-box a { color: #ef4444; }
@@ -56,8 +52,7 @@
   padding: 8px;
   background: #fff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.8rem;
+  font-size: 16px;
   min-width: 150px;
 }
 #sp-sidebar {
@@ -65,13 +60,12 @@
   background: #ef4444;
   color: #fff;
   padding: 10px;
-  border-radius: 6px;
   font-weight: 600;
 }
 .sp-widget .sp-nav { width: 160px; }
 .sp-card {
   padding: 12px;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
   color: #334155;
 }
@@ -84,10 +78,9 @@
 .sp-btn {
   width: 150px;
   padding: 12px;
-  border-radius: 8px;
   background: #3b82f6;
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
   text-align: center;
 }

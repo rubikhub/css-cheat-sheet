@@ -3,10 +3,9 @@
   width: 120px;
   background: #3b82f6;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 16px;
   font-weight: 600;
   padding: 6px;
-  border-radius: 6px;
   position: relative;
   text-align: center;
 }
@@ -14,7 +13,6 @@
 .con .kid {
   height: 54px;
   margin-top: 4px;
-  border-radius: 4px;
   background: rgba(255, 255, 255, 0.35);
 }
 
@@ -32,14 +30,13 @@
   width: 100px;
   height: 40px;
   background: #ef4444;
-  border-radius: 4px;
 }
 
 /* style containment — counter isolation */
 .seq {
   counter-reset: item 0;
   width: 150px;
-  font-size: 0.72rem;
+  font-size: 16px;
   color: #334155;
 }
 .seq > p { margin: 0 0 2px; }
@@ -52,7 +49,6 @@
 .c-style-box {
   contain: style;
   background: #f1f5f9;
-  border-radius: 6px;
   padding: 4px 8px;
   margin: 2px 0;
 }
@@ -68,9 +64,8 @@
 .cvbox {
   width: 130px;
   height: 100px;
-  border-radius: 8px;
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -82,17 +77,15 @@
   height: 150px;
   overflow: auto;
   border: 1px solid #e2e8f0;
-  border-radius: 6px;
   padding: 6px;
 }
 .cv-item {
   content-visibility: auto;
   contain-intrinsic-size: auto 60px;
   min-height: 60px;
-  border-radius: 6px;
   margin-bottom: 6px;
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -107,9 +100,8 @@
   padding: 8px;
   background: #f1f5f9;
   border: 1px dashed #94a3b8;
-  border-radius: 6px;
   font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
-  font-size: 0.72rem;
+  font-size: 16px;
   color: #475569;
   text-align: center;
 }
@@ -123,18 +115,16 @@
   display: inline-block;
   padding: 4px 10px;
   font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
-  font-size: 0.72rem;
+  font-size: 16px;
   color: #0f172a;
   background: #fff;
   border: 1px solid #cbd5e1;
-  border-radius: 6px;
 }
 .anim-box {
   width: 130px;
   height: 100px;
-  border-radius: 8px;
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -167,7 +157,6 @@
   top: 0;
   width: 40px;
   height: 40px;
-  border-radius: 8px;
 }
 .anim-t { animation: t-slide 1.2s ease-in-out infinite alternate; }
 .anim-l { animation: l-slide 1.2s ease-in-out infinite alternate; }

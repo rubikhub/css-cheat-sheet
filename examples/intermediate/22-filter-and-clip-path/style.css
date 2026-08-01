@@ -57,7 +57,7 @@
   border: 10px solid rgba(15, 23, 42, 0.35);
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 16px;
   font-weight: 600;
 }
 .sh-border { clip-path: shape() from border-box; }

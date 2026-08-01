@@ -3,7 +3,7 @@
 .flow {
   width: 170px;
   margin: 0;
-  font-size: 0.78rem;
+  font-size: 16px;
   color: #334155;
   line-height: 1.5;
 }
@@ -14,7 +14,6 @@
   gap: 6px;
   padding: 8px;
   border: 1px dashed #94a3b8;
-  border-radius: 8px;
   background: #fff;
 }
 .item {
@@ -23,9 +22,8 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: 6px;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 16px;
   font-weight: 600;
 }
 .mini {
@@ -34,25 +32,21 @@
   justify-content: center;
   width: 22px;
   height: 22px;
-  border-radius: 4px;
   color: #fff;
-  font-size: 0.65rem;
+  font-size: 16px;
   font-weight: 600;
 }
 .inline-flex-box {
   padding: 3px;
-  border-radius: 4px;
   vertical-align: middle;
 }
 .inline-grid-box {
   padding: 3px;
-  border-radius: 4px;
   vertical-align: middle;
 }
 .dot {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
   background: rgba(255, 255, 255, 0.9);
 }
 
@@ -65,9 +59,8 @@
   width: 150px;
   height: 62px;
   padding: 6px;
-  border-radius: 6px;
   color: #fff;
-  font-size: 0.72rem;
+  font-size: 16px;
   line-height: 1.3;
 }
 .ov-visible { overflow: visible; }
@@ -81,9 +74,8 @@
 .ow-box {
   width: 120px;
   padding: 6px;
-  border-radius: 6px;
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 16px;
   line-height: 1.3;
 }
 .ow-normal { overflow-wrap: normal; }
@@ -94,7 +86,6 @@
 .d-inline { display: inline; }
 .d-inline-tag {
   padding: 1px 5px;
-  border-radius: 4px;
   color: #fff;
 }
 .d-block { display: block; width: 100%; }
@@ -118,5 +109,5 @@
   display: table-cell;
   padding: 6px 12px;
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 16px;
 }
