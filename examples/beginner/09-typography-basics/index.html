@@ -12,83 +12,415 @@
 
     <section>
       <h2>font-family</h2>
-      <p>This paragraph uses 'Inter', system-ui, sans-serif.</p>
+      <p class="code">font-family: &lt;family-name&gt; | &lt;generic-family&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-blue ff-serif">AaBb 123</div>
+          <p class="cap">serif — serif typefaces</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal ff-sans">AaBb 123</div>
+          <p class="cap">sans-serif — sans-serif typefaces</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-dark ff-mono">AaBb 123</div>
+          <p class="cap">monospace — monospaced typefaces</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-pink ff-cursive">AaBb 123</div>
+          <p class="cap">cursive — cursive typefaces</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-purple ff-fantasy">AaBb 123</div>
+          <p class="cap">fantasy — decorative typefaces</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-green ff-system">AaBb 123</div>
+          <p class="cap">system-ui — system default UI font</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-indigo ff-stack">AaBb 123</div>
+          <p class="cap">"Helvetica Neue", Arial, sans-serif — specific stack</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (browser default) · revert · unset.</p>
     </section>
 
     <section>
       <h2>font-size</h2>
-      <p>Body is 16px, h1 is 2rem.</p>
+      <p class="code">font-size: &lt;length&gt; | &lt;percentage&gt; | &lt;keyword&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-blue fs-xxs">Ag</div>
+          <p class="cap">xx-small</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue fs-xs">Ag</div>
+          <p class="cap">x-small</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue fs-sm">Ag</div>
+          <p class="cap">small</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue fs-md">Ag</div>
+          <p class="cap">medium — default</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue fs-lg">Ag</div>
+          <p class="cap">large</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue fs-xl">Ag</div>
+          <p class="cap">x-large</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue fs-xxl">Ag</div>
+          <p class="cap">xx-large</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue fs-relative">
+            <span class="fs-smaller">smaller</span>
+          </div>
+          <p class="cap">smaller — relative to parent</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue fs-relative">
+            <span class="fs-larger">larger</span>
+          </div>
+          <p class="cap">larger — relative to parent</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue fs-px">Ag</div>
+          <p class="cap">16px — absolute pixel size</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue fs-em">Ag</div>
+          <p class="cap">1.2em — relative to parent</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue fs-rem">Ag</div>
+          <p class="cap">1.5rem — relative to root</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue fs-pct">Ag</div>
+          <p class="cap">100% — same as parent</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (medium) · revert · unset.</p>
     </section>
 
     <section>
       <h2>font-weight</h2>
-      <p class="caption">This caption is font-weight 300 (light).</p>
+      <p class="code">font-weight: &lt;number&gt; | normal | bold | lighter | bolder</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-teal fw-100">100</div>
+          <p class="cap">100 — thin</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fw-200">200</div>
+          <p class="cap">200 — extra light</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fw-300">300</div>
+          <p class="cap">300 — light</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fw-400">400</div>
+          <p class="cap">400 — normal (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fw-500">500</div>
+          <p class="cap">500 — medium</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fw-600">600</div>
+          <p class="cap">600 — semi-bold</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fw-700">700</div>
+          <p class="cap">700 — bold</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fw-800">800</div>
+          <p class="cap">800 — extra bold</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fw-900">900</div>
+          <p class="cap">900 — black</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fw-normal">normal</div>
+          <p class="cap">normal — same as 400</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fw-bold">bold</div>
+          <p class="cap">bold — same as 700</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fw-parent">
+            <span class="fw-lighter">lighter</span>
+          </div>
+          <p class="cap">lighter — lighter than parent (700)</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fw-parent">
+            <span class="fw-bolder">bolder</span>
+          </div>
+          <p class="cap">bolder — bolder than parent (300)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
     </section>
 
     <section>
       <h2>font-style</h2>
-      <p><em>This text is italic.</em></p>
-      <p class="quote">This text is oblique 12deg.</p>
+      <p class="code">font-style: normal | italic | oblique</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-purple fs-normal">Normal</div>
+          <p class="cap">normal — upright text (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-purple fs-italic">Italic</div>
+          <p class="cap">italic — italic typeface</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
     </section>
 
     <section>
-      <h2>font (shorthand)</h2>
-      <p>Body uses font: 400 1rem/1.5 'Inter', system-ui, sans-serif.</p>
+      <h2>font</h2>
+      <p class="code">font: &lt;style&gt; &lt;weight&gt; &lt;size&gt;/&lt;line-height&gt; &lt;family&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-blue font-sh1">bold 1.2rem</div>
+          <p class="cap">700 1.2rem/1.4 'Inter', sans-serif — weight size/line-height family</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal font-sh2">italic Georgia</div>
+          <p class="cap">italic 1rem Georgia, serif — style size family</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (all sub-property defaults) · revert · unset.</p>
     </section>
 
     <section>
       <h2>text-align</h2>
-      <p class="centered-text">This heading is centered.</p>
-      <p class="justify-text">
-        This paragraph is justified. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-      </p>
+      <p class="code">text-align: left | right | center | justify | start | end</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox ta-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+          <p class="cap">left — align to left edge</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ta-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+          <p class="cap">right — align to right edge</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ta-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+          <p class="cap">center — center horizontally</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ta-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+          <p class="cap">justify — stretch lines to fill width</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ta-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+          <p class="cap">start — start edge (left in LTR)</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ta-end">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+          <p class="cap">end — end edge (right in LTR)</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ta-match-parent">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+          <p class="cap">match-parent — inherit with direction</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (start) · revert · unset.</p>
     </section>
 
     <section>
       <h2>text-decoration</h2>
-      <p><a href="#" class="no-underline">This link has no underline.</a></p>
-      <p class="discount">$49.99</p>
+      <p class="code">text-decoration: none | underline | overline | line-through</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox td-none">plain text</div>
+          <p class="cap">none — no decoration (default)</p>
+        </div>
+        <div class="cell">
+          <div class="tbox td-underline">underline</div>
+          <p class="cap">underline — line under text</p>
+        </div>
+        <div class="cell">
+          <div class="tbox td-overline">overline</div>
+          <p class="cap">overline — line above text</p>
+        </div>
+        <div class="cell">
+          <div class="tbox td-line-through">line-through</div>
+          <p class="cap">line-through — line through text</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
     </section>
 
     <section>
       <h2>text-transform</h2>
-      <button class="button-transform">click me</button>
-      <span class="nav-link">hello world</span>
+      <p class="code">text-transform: none | capitalize | uppercase | lowercase | full-width</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox tt-none">hello world 123</div>
+          <p class="cap">none — no transformation (default)</p>
+        </div>
+        <div class="cell">
+          <div class="tbox tt-capitalize">hello world 123</div>
+          <p class="cap">capitalize — first letter of each word</p>
+        </div>
+        <div class="cell">
+          <div class="tbox tt-uppercase">hello world 123</div>
+          <p class="cap">uppercase — ALL CAPS</p>
+        </div>
+        <div class="cell">
+          <div class="tbox tt-lowercase">HELLO WORLD 123</div>
+          <p class="cap">lowercase — all lowercase</p>
+        </div>
+        <div class="cell">
+          <div class="tbox tt-fullwidth">abc 123</div>
+          <p class="cap">full-width — full-width characters</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
     </section>
 
     <section>
       <h2>line-height</h2>
-      <p>
-        Body line-height is 1.6. This paragraph demonstrates the default spacing
-        between lines of text in a block element.
-      </p>
+      <p class="code">line-height: normal | &lt;number&gt; | &lt;length&gt; | &lt;percentage&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox lh-normal">Line one<br />Line two<br />Line three</div>
+          <p class="cap">normal — browser default (~1.2)</p>
+        </div>
+        <div class="cell">
+          <div class="tbox lh-15">Line one<br />Line two<br />Line three</div>
+          <p class="cap">1.5 — 1.5x font size</p>
+        </div>
+        <div class="cell">
+          <div class="tbox lh-24">Line one<br />Line two<br />Line three</div>
+          <p class="cap">24px — fixed pixel height</p>
+        </div>
+        <div class="cell">
+          <div class="tbox lh-150">Line one<br />Line two<br />Line three</div>
+          <p class="cap">150% — 150% of font size</p>
+        </div>
+        <div class="cell">
+          <div class="tbox lh-1">Line one<br />Line two<br />Line three</div>
+          <p class="cap">1 — no extra spacing</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
     </section>
 
     <section>
       <h2>letter-spacing</h2>
-      <p class="heading-text">Spaced heading</p>
-      <p class="uppercase-text">SPACED UPPERCASE</p>
+      <p class="code">letter-spacing: normal | &lt;length&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox ls-normal">Tracking</div>
+          <p class="cap">normal — default spacing</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ls-005">Tracking</div>
+          <p class="cap">0.05em — add slight spacing</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ls-2px">Tracking</div>
+          <p class="cap">2px — fixed pixel spacing</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ls-neg">Tracking</div>
+          <p class="cap">-0.02em — tighten spacing</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
     </section>
 
     <section>
       <h2>text-indent</h2>
-      <p class="indent-text">
-        This paragraph has a 2em indent on the first line. Only the first line is
-        affected by text-indent.
-      </p>
+      <p class="code">text-indent: &lt;length&gt; | &lt;percentage&gt; | each-line</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox ti-2em">First line is indented by two em units. The rest of the paragraph flows normally.</div>
+          <p class="cap">2em — indent by 2em</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ti-20px">First line is indented by twenty pixels. The rest of the paragraph flows normally.</div>
+          <p class="cap">20px — fixed pixel indent</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ti-10">First line is indented by ten percent of the container width. The rest flows normally.</div>
+          <p class="cap">10% — percentage of container width</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ti-each-line">First line indented, and so is every wrapped line. The whole paragraph shifts right.</div>
+          <p class="cap">2em each-line — indent each line</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ti-0">First line has no indent at all. The paragraph starts flush with the edge.</div>
+          <p class="cap">0 — no indent (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0) · revert · unset.</p>
     </section>
 
     <section>
       <h2>white-space</h2>
-      <button class="button-text">
-        A Very Long Button Text That Should Not Wrap
-      </button>
-      <div class="code">
-function hello() {
-  return "world";
-}</div
-    >
+      <p class="code">white-space: normal | nowrap | pre | pre-wrap | pre-line | break-spaces</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox ws-normal">A  B C D E F G H I J
+K L M N O P Q R S T U V W
+X Y Z</div>
+          <p class="cap">normal — collapses spaces, wraps (default)</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ws-nowrap">A  B C D E F G H I J
+K L M N O P Q R S T U V W
+X Y Z</div>
+          <p class="cap">nowrap — no wrapping</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ws-pre">A  B C D E F G H I J
+K L M N O P Q R S T U V W
+X Y Z</div>
+          <p class="cap">pre — preserves whitespace, no wrap</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ws-pre-wrap">A  B C D E F G H I J
+K L M N O P Q R S T U V W
+X Y Z</div>
+          <p class="cap">pre-wrap — preserves whitespace, wraps</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ws-pre-line">A  B C D E F G H I J
+K L M N O P Q R S T U V W
+X Y Z</div>
+          <p class="cap">pre-line — preserves newlines, wraps</p>
+        </div>
+        <div class="cell">
+          <div class="tbox ws-break-spaces">A  B C D E F G H I J
+K L M N O P Q R S T U V W
+X Y Z</div>
+          <p class="cap">break-spaces — preserves spaces, wraps</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../08-background-basics/index.html">&larr; Background Basics</a>
+  <a class="pager-btn pager-next" href="../10-border-basics/index.html">Border Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
   </body>
 </html>

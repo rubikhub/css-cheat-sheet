@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Spaces</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Color Spaces</h1>
+
+    <section>
+      <h2>oklch()</h2>
+      <p class="code">oklch(L C H / alpha)</p>
+      <p class="hint">Checkerboard marks transparency — the / 0.8 swatch is 80% opaque.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch sw-oklch-1"></div>
+          <p class="cap">oklch(70% 0.15 250) — blue at 70% lightness</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-oklch-2 checker"></div>
+          <p class="cap">oklch(0.9 0.05 100 / 0.8) — pale green at 80% opacity</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-oklch-3"></div>
+          <p class="cap">oklch(0.5 0.2 300) — purple at 50% lightness</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-oklch-4"></div>
+          <p class="cap">oklch(65% 0.15 260) — primary blue</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-oklch-5"></div>
+          <p class="cap">oklch(75% 0.2 30) — orange accent</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>oklab()</h2>
+      <p class="code">oklab(L a b / alpha)</p>
+      <p class="hint">Fine-tune with the a axis (green↔red) and b axis (blue↔yellow).</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch sw-oklab-1"></div>
+          <p class="cap">oklab(0.7 0.1 -0.1) — mid lightness, green-blue cast</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-oklab-2 checker"></div>
+          <p class="cap">oklab(0.9 0.05 0.05 / 0.5) — pale color at 50% opacity</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-oklab-3"></div>
+          <p class="cap">oklab(0.5 0.2 0) — deep neutral color</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>lch()</h2>
+      <p class="code">lch(L C H / alpha)</p>
+      <p class="hint">CIE LCH — keep perceptual lightness stable while changing hue.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch sw-lch-1"></div>
+          <p class="cap">lch(70% 50 240) — blue at 70% lightness</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-lch-2 checker"></div>
+          <p class="cap">lch(90% 30 120 / 0.9) — green at 90% opacity</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-lch-3"></div>
+          <p class="cap">lch(50% 60 20) — saturated red-orange</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>lab()</h2>
+      <p class="code">lab(L a b / alpha)</p>
+      <p class="hint">Device-independent — colors match across displays.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch sw-lab-1"></div>
+          <p class="cap">lab(50% 30 -20) — green-blue at 50% lightness</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-lab-2 checker"></div>
+          <p class="cap">lab(90% 10 20 / 0.8) — pale red at 80% opacity</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-lab-3"></div>
+          <p class="cap">lab(30% 50 50) — deep red</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>color()</h2>
+      <p class="code">color(&lt;color-space&gt; &lt;channels&gt; / &lt;alpha&gt;)</p>
+      <p class="hint">Wide-gamut spaces — each swatch ships an sRGB fallback first, so it still renders on narrower displays.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch sw-p3"></div>
+          <p class="cap">color(display-p3 1 0.5 0) — orange in Display P3</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-prophoto"></div>
+          <p class="cap">color(prophoto-rgb 0.8 0.4 0.2) — brown in ProPhoto RGB</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-rec2020"></div>
+          <p class="cap">color(rec2020 0.5 0.3 0.7) — purple in Rec2020</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>hwb()</h2>
+      <p class="code">hwb(H W B / alpha)</p>
+      <p class="hint">Add whiteness or blackness directly to a hue to build tints and shades.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch sw-hwb-1"></div>
+          <p class="cap">hwb(120 0% 0%) — pure green</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-hwb-2"></div>
+          <p class="cap">hwb(30 40% 10%) — soft orange</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-hwb-3"></div>
+          <p class="cap">hwb(240 100% 0%) — white</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-hwb-4"></div>
+          <p class="cap">hwb(0 0% 100%) — black</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-hwb-5"></div>
+          <p class="cap">hwb(210 20% 10%) — example steel blue</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>device-cmyk()</h2>
+      <p class="code">device-cmyk(&lt;c&gt; &lt;m&gt; &lt;y&gt; &lt;k&gt; / &lt;alpha&gt;)</p>
+      <p class="hint">Print-targeted ink definitions — browsers approximate to sRGB, so each swatch has an sRGB fallback.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch sw-cmyk-1"></div>
+          <p class="cap">device-cmyk(0 1 1 0) — red in CMYK</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-cmyk-2"></div>
+          <p class="cap">device-cmyk(1 0 0 0) — cyan in CMYK</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-cmyk-3"></div>
+          <p class="cap">device-cmyk(0 0 0 1) — black in CMYK</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-cmyk-4"></div>
+          <p class="cap">device-cmyk(0.2 0.6 0.1 0.3) — example brown</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../03-components-and-shadow-dom/index.html">&larr; Web Components & Shadow DOM</a>
+  <a class="pager-btn pager-next" href="../05-color-manipulation/index.html">Color Manipulation &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

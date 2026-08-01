@@ -1,0 +1,210 @@
+/* ============================================================
+   CSS 2026 & Beyond — topic-specific rules for experimental features.
+   Unsupported properties are ignored by the browser and demo
+   elements simply fall back to their base styling.
+   ============================================================ */
+
+/* code card for value labels */
+.card {
+  width: 190px;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
+  font-size: 0.7rem;
+  color: #0f172a;
+  flex-shrink: 0;
+}
+
+/* margin-trim */
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 170px;
+  border: 2px dashed #94a3b8;
+  border-radius: 6px;
+}
+.stack div {
+  width: 60px;
+  height: 22px;
+  margin: 12px;
+  background: #3b82f6;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.mt-block { margin-trim: block; }
+.mt-inline { margin-trim: inline; }
+
+/* masonry() */
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 58px);
+  grid-template-rows: masonry;
+  gap: 6px;
+  width: 186px;
+}
+.masonry-c {
+  display: grid;
+  grid-template-columns: masonry;
+  grid-template-rows: repeat(3, 46px);
+  gap: 6px;
+  width: 186px;
+}
+.tile { border-radius: 4px; }
+.t1 { height: 30px; background: #3b82f6; }
+.t2 { height: 54px; background: #10b981; }
+.t3 { height: 40px; background: #f59e0b; }
+.t4 { height: 60px; background: #ef4444; }
+.t5 { height: 34px; background: #8b5cf6; }
+.t6 { height: 50px; background: #14b8a6; }
+.t7 { height: 44px; background: #ec4899; }
+.t8 { height: 30px; background: #6366f1; }
+
+/* shape-morphing */
+.morph {
+  border-radius: 8px;
+  clip-path: shape(round 8px) from border-box;
+  transition: clip-path 0.3s;
+}
+.morph:hover { clip-path: shape(round 50%) from border-box; }
+.morph-bevel {
+  border-radius: 8px;
+  clip-path: shape(bevel 8px) from border-box;
+  transition: clip-path 0.3s;
+}
+.morph-bevel:hover { clip-path: shape(round 8px) from border-box; }
+.morph-squircle {
+  border-radius: 8px;
+  clip-path: shape(squircle 12px) from border-box;
+  transition: clip-path 0.3s;
+}
+.morph-squircle:hover { clip-path: shape(round 12px) from border-box; }
+
+/* gap-decoration */
+.columns {
+  columns: 3;
+  column-gap: 16px;
+  width: 210px;
+  font-size: 0.7rem;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px;
+}
+.gd-solid { gap-decoration-line: solid #94a3b8; }
+.gd-dashed { gap-decoration-line: dashed #94a3b8; }
+.gd-none { gap-decoration-line: none; }
+
+/* text-autospace */
+.autospace {
+  width: 170px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+.ta-none { text-autospace: no-autospace; }
+.ta-ida { text-autospace: ideograph-alpha; }
+
+/* line-fit-edge */
+.lfe {
+  width: 90px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1f2937;
+  background: #e2e8f0;
+  border-radius: 6px;
+}
+.lfe-tb { line-fit-edge: top bottom; }
+.lfe-c { line-fit-edge: center; }
+
+/* anchored container queries */
+.anchor-demo {
+  position: relative;
+  width: 200px;
+  height: 120px;
+  padding: 10px;
+  border: 1.5px dashed #94a3b8;
+  border-radius: 8px;
+}
+.anchor-trigger {
+  width: 90px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #6366f1;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 6px;
+  anchor-name: --trigger;
+}
+.anchor-pop {
+  position: absolute;
+  position-anchor: --trigger;
+  inset-area: bottom;
+  container-type: anchored-size;
+  width: 100cqw;
+  margin-top: 8px;
+  padding: 6px 10px;
+  background: #eef2ff;
+  color: #4338ca;
+  border: 1px solid #a5b4fc;
+  border-radius: 6px;
+  font-size: 0.7rem;
+}
+
+/* interest */
+.tooltip-demo {
+  position: relative;
+  width: 160px;
+  height: 80px;
+}
+.tt-trigger {
+  width: 90px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ec4899;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 6px;
+  interest: auto;
+}
+.tt-tip {
+  width: 90px;
+  padding: 6px 10px;
+  margin-top: 6px;
+  background: #fdf2f8;
+  color: #be185d;
+  border: 1px solid #fbcfe8;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.tt-trigger:hover + .tt-tip,
+.tt-trigger:interest + .tt-tip {
+  opacity: 1;
+}

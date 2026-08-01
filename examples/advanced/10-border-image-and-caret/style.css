@@ -1,0 +1,58 @@
+/* border image & caret color */
+
+/* frame with a transparent border for the image to replace */
+.frame {
+  width: 150px;
+  height: 110px;
+  margin: 4px;
+  border: 24px solid transparent;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* border-image — shorthand and longhands */
+.bi-none { border: 4px solid #94a3b8; border-image: none; }
+.bi-round { border-image: linear-gradient(45deg, #ec4899, #8b5cf6) 30 round; }
+.bi-stretch { border-image: linear-gradient(45deg, #06b6d4, #6366f1) 30 stretch; }
+.bi-fill { border-image: linear-gradient(45deg, #f59e0b, #ef4444) 30 fill; }
+.bi-source {
+  border-image-source: linear-gradient(90deg, #10b981, #3b82f6);
+  border-image-slice: 20;
+  border-image-width: 12px;
+  border-image-repeat: stretch;
+}
+.bi-slice30 { border-image: linear-gradient(90deg, #84cc16, #14b8a6) 30 round; }
+.bi-slice-sides { border-image: linear-gradient(90deg, #f472b6, #a855f7) 10 20 30 40 round; }
+.bi-width { border-image: linear-gradient(90deg, #38bdf8, #818cf8) 30 / 10px round; }
+.bi-outset {
+  margin: 0 14px 4px;
+  border-image: linear-gradient(90deg, #fb923c, #e11d48) 30 / 16px / 10px round;
+}
+.bi-repeat {
+  border-image: repeating-linear-gradient(45deg, #14b8a6 0 10px, #0891b2 10px 20px) 30 / 20px / 0 repeat;
+}
+.bi-repeat-round {
+  border-image: repeating-linear-gradient(45deg, #f0abfc 0 10px, #c084fc 10px 20px) 30 / 20px / 0 round;
+}
+.bi-repeat-space {
+  border-image: repeating-linear-gradient(45deg, #fdba74 0 10px, #f43f5e 10px 20px) 30 / 20px / 0 space;
+}
+
+/* caret-color */
+.inp {
+  width: 170px;
+  padding: 6px 8px;
+  border: 2px solid #94a3b8;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.cc-auto    { caret-color: auto; }
+.cc-red     { caret-color: red; }
+.cc-hex     { caret-color: #d946ef; }
+.cc-current { caret-color: currentColor; color: #0f766e; }
+.cc-trans   { caret-color: transparent; }

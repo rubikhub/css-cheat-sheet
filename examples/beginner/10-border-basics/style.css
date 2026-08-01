@@ -1,85 +1,44 @@
-div {
-  padding: 12px 16px;
-  margin-bottom: 8px;
-}
-
-/* border */
-.card {
-  border: 1px solid #e0e0e0;
-}
-
-.highlight {
-  border: 2px solid #0066cc;
-}
-
 /* border-width */
-.card-width {
-  border-width: 1px;
-  border-style: solid;
+.bd-box {
+  background: #fff;
+  color: #0f172a;
 }
-
-.emphasis {
-  border-width: 3px;
-  border-style: solid;
-}
+.bw-solid { border-style: solid; border-color: #64748b; }
+.bw-thin { border-width: thin; }
+.bw-medium { border-width: medium; }
+.bw-thick { border-width: thick; }
+.bw-1 { border-width: 1px; }
+.bw-2 { border-width: 2px; }
+.bw-0 { border-width: 0; }
 
 /* border-style */
-.card-style {
-  border-style: solid;
-  border-width: 1px;
-  border-color: #999;
-}
-
-.secondary {
-  border-style: dashed;
-  border-width: 1px;
-  border-color: #999;
-}
+.bs-none { border: 4px none #64748b; }
+.bs-solid { border: 4px solid #64748b; }
+.bs-dashed { border: 4px dashed #64748b; }
+.bs-dotted { border: 4px dotted #64748b; }
+.bs-double { border: 4px double #64748b; }
+.bs-groove { border: 4px groove #64748b; }
+.bs-ridge { border: 4px ridge #64748b; }
+.bs-inset { border: 4px inset #64748b; }
+.bs-outset { border: 4px outset #64748b; }
 
 /* border-color */
-.card-color {
-  border-color: #e0e0e0;
-  border-width: 2px;
-  border-style: solid;
-}
+.bc-current { border: 4px solid currentColor; color: #0d9488; }
+.bc-ccc { border: 4px solid #ccc; }
+.bc-rgb { border: 4px solid rgb(0, 0, 0); }
+.bc-red { border: 4px solid red; }
+.bc-trans { border: 4px solid transparent; }
 
-.accent {
-  border-color: #0066cc;
-  border-width: 2px;
-  border-style: solid;
-}
+/* border (shorthand) */
+.b-1 { border: 1px solid #ccc; }
+.b-2 { border: 2px dashed red; }
+.b-none { border: none; }
 
 /* border-radius */
-.card-radius {
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-}
-
-.avatar {
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  background: #667eea;
-  margin-top: 8px;
-}
-
-/* outline */
-button {
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #fff;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.outline-btn:focus {
-  outline: 2px solid #0066cc;
-  outline-offset: 2px;
-}
-
-/* outline-offset */
-.offset-btn:focus {
-  outline: 2px solid #0066cc;
-  outline-offset: 3px;
-}
+.br-px4 { border-radius: 4px; }
+.br-8 { border-radius: 8px; }
+.br-50 { border-radius: 50%; }
+.br-rem { border-radius: 1rem; }
+.br-2 { border-radius: 4px 8px; }
+.br-4 { border-radius: 4px 8px 12px 16px; }
+.br-0 { border-radius: 0; }

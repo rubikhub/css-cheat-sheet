@@ -1,0 +1,21 @@
+/* cursor — keyword values */
+.cur-default { cursor: default; }
+.cur-pointer { cursor: pointer; }
+.cur-text { cursor: text; }
+.cur-wait { cursor: wait; }
+.cur-help { cursor: help; }
+.cur-move { cursor: move; }
+.cur-not-allowed { cursor: not-allowed; }
+.cur-grab { cursor: grab; }
+.cur-grabbing { cursor: grabbing; }
+.cur-crosshair { cursor: crosshair; }
+.cur-zoom-in { cursor: zoom-in; }
+.cur-zoom-out { cursor: zoom-out; }
+.cur-col-resize { cursor: col-resize; }
+.cur-row-resize { cursor: row-resize; }
+.cur-none { cursor: none; }
+
+/* cursor — custom image (inline SVG data URI; real usage uses a .png/.cur file) */
+.cur-custom {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><circle cx='12' cy='12' r='9' fill='%23ef4444' stroke='white' stroke-width='2'/></svg>") 12 12, auto;
+}

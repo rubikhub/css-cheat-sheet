@@ -1,0 +1,96 @@
+/* css-shapes — clip-path visual shapes */
+.shape {
+  width: 110px;
+  height: 110px;
+}
+.cp-circle { clip-path: circle(50%); }
+.cp-ellipse { clip-path: ellipse(50% 40%); }
+.cp-poly { clip-path: polygon(50% 0, 100% 38%, 82% 100%, 18% 100%, 0 38%); }
+.cp-inset { clip-path: inset(20px); }
+
+/* css-shapes — shape-outside text wraps */
+.wrap {
+  width: 100%;
+  max-width: 460px;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: #475569;
+}
+
+.wrap p {
+  margin: 0;
+  text-align: justify;
+}
+
+.floaty {
+  float: left;
+  width: 110px;
+  height: 110px;
+  margin-right: 12px;
+}
+
+.sh-none { shape-outside: none; }
+
+.sh-circle {
+  border-radius: 50%;
+  shape-outside: circle(50%);
+}
+
+.sh-ellipse {
+  border-radius: 50% / 40%;
+  shape-outside: ellipse(50% 40%);
+}
+
+.sh-inset { shape-outside: inset(20px); }
+
+.sh-poly {
+  clip-path: polygon(50% 0, 100% 38%, 82% 100%, 18% 100%, 0 38%);
+  shape-outside: polygon(50% 0, 100% 38%, 82% 100%, 18% 100%, 0 38%);
+}
+
+/* shape from image alpha (inline SVG data URI) */
+.imgfloat {
+  float: left;
+  width: 110px;
+  height: 110px;
+  margin-right: 12px;
+  display: block;
+}
+
+.sh-image {
+  shape-outside: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='110' height='110'><circle cx='55' cy='55' r='52' fill='%233b82f6'/></svg>");
+}
+
+/* shape boxes */
+.sb {
+  float: left;
+  width: 84px;
+  height: 84px;
+  margin-right: 14px;
+  padding: 12px;
+  background: #f59e0b;
+  border: 10px solid rgba(255, 255, 255, 0.45);
+}
+.sb-margin { shape-outside: margin-box; margin: 14px 14px 14px 0; }
+.sb-border { shape-outside: border-box; }
+.sb-padding { shape-outside: padding-box; }
+.sb-content { shape-outside: content-box; }
+
+/* shape-margin */
+.sm-0 { border-radius: 50%; shape-outside: circle(50%); shape-margin: 0; }
+.sm-20 { border-radius: 50%; shape-outside: circle(50%); shape-margin: 20px; }
+.sm-10p { border-radius: 50%; shape-outside: circle(50%); shape-margin: 10%; }
+
+/* shape-image-threshold */
+.th-0 {
+  shape-outside: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='110' height='110'><defs><radialGradient id='g'><stop offset='50%' stop-color='%23ef4444' stop-opacity='1'/><stop offset='100%' stop-color='%23ef4444' stop-opacity='0'/></radialGradient></defs><rect width='110' height='110' fill='url(%23g)'/></svg>");
+  shape-image-threshold: 0.0;
+}
+.th-5 {
+  shape-outside: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='110' height='110'><defs><radialGradient id='g'><stop offset='50%' stop-color='%23ef4444' stop-opacity='1'/><stop offset='100%' stop-color='%23ef4444' stop-opacity='0'/></radialGradient></defs><rect width='110' height='110' fill='url(%23g)'/></svg>");
+  shape-image-threshold: 0.5;
+}
+.th-1 {
+  shape-outside: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='110' height='110'><defs><radialGradient id='g'><stop offset='50%' stop-color='%23ef4444' stop-opacity='1'/><stop offset='100%' stop-color='%23ef4444' stop-opacity='0'/></radialGradient></defs><rect width='110' height='110' fill='url(%23g)'/></svg>");
+  shape-image-threshold: 1.0;
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>03 - Specificity</title>
+    <title>Specificity</title>
     <link rel="stylesheet" href="../../common.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -11,37 +11,182 @@
     <h1>Specificity</h1>
 
     <section>
-      <h2>Selector Scores (A, B, C)</h2>
-      <p>I am red — <code>p</code> (0,0,1)</p>
-      <p class="intro">I am blue — <code>.intro</code> (0,1,0) wins over p</p>
-      <p id="hero">
-        I am green — <code>#hero</code> (1,0,0) wins over everything
-      </p>
+      <h2>How Specificity Works</h2>
+      <p class="code">specificity = (A, B, C)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="spec-chip">
+            <span class="spec-label">A — ID selectors</span>
+            <span class="spec-score">(1,0,0)</span>
+          </div>
+          <p class="cap">#hero — highest weight</p>
+        </div>
+        <div class="cell">
+          <div class="spec-chip">
+            <span class="spec-label">B — class / pseudo-class / attribute</span>
+            <span class="spec-score">(0,1,0)</span>
+          </div>
+          <p class="cap">.btn, :hover, [type]</p>
+        </div>
+        <div class="cell">
+          <div class="spec-chip">
+            <span class="spec-label">C — element / pseudo-element</span>
+            <span class="spec-score">(0,0,1)</span>
+          </div>
+          <p class="cap">div, ::before</p>
+        </div>
+      </div>
+      <p class="note">Compare A first, then B, then C. If all three are tied, the last declaration wins.</p>
     </section>
 
     <section>
-      <h2>Compound Selectors</h2>
-      <a href="#">red — <code>a</code> (0,0,1)</a><br />
-      <a href="#" class="my-class">green — <code>a.my-class</code> (0,1,1)</a
-      ><br />
-      <a href="#" class="my-class another-class"
-        >blue — <code>a.my-class.another-class</code> (0,2,1)</a
-      >
+      <h2>Specificity Scores by Selector Type</h2>
+      <table class="demo-table">
+        <thead>
+          <tr>
+            <th>Selector Type</th>
+            <th>Increments</th>
+            <th>Example</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Universal *</td>
+            <td>None</td>
+            <td><code>*</code></td>
+            <td>(0,0,0)</td>
+          </tr>
+          <tr>
+            <td>Element / pseudo-element</td>
+            <td>C</td>
+            <td><code>div</code>, <code>::before</code></td>
+            <td>(0,0,1)</td>
+          </tr>
+          <tr>
+            <td>Class / pseudo-class / attribute</td>
+            <td>B</td>
+            <td><code>.btn</code>, <code>:hover</code>, <code>[type]</code></td>
+            <td>(0,1,0)</td>
+          </tr>
+          <tr>
+            <td>ID</td>
+            <td>A</td>
+            <td><code>#main</code></td>
+            <td>(1,0,0)</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <section>
-      <h2>Chained Classes</h2>
-      <div class="card">.card — gray border</div>
-      <div class="card primary">.card.primary — blue border</div>
-      <div class="card primary featured">
-        .card.primary.featured — gold border (0,3,0)
+      <h2>Examples</h2>
+      <p class="code">p { color: red; }&nbsp;&nbsp;.intro { color: blue; }&nbsp;&nbsp;#hero { color: green; }</p>
+      <p class="hint">Hover the link in the last cell — its :hover rule (0,4,1) is the most specific selector here.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="sp-box"><p>p</p></div>
+          <p class="cap">p (0,0,1) — red</p>
+        </div>
+        <div class="cell">
+          <div class="sp-box"><p class="sp-intro">.intro</p></div>
+          <p class="cap">.intro (0,1,0) — wins over p</p>
+        </div>
+        <div class="cell">
+          <div class="sp-box"><p class="sp-intro" id="sp-hero">#hero</p></div>
+          <p class="cap">#hero (1,0,0) — wins over everything above</p>
+        </div>
+        <div class="cell">
+          <div class="sp-box">
+            <a class="sp-a sp-my sp-another" href="#">a.my-class.another-class[href]</a>
+          </div>
+          <p class="cap">Normal: (0,3,1) purple · Hover: (0,4,1) orange</p>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>Tie-Breaking (same specificity, last wins)</h2>
-      <p class="first">I am red — .first</p>
-      <p class="second">I am blue — .second (last declaration wins)</p>
+      <h2>Common Pitfalls</h2>
+      <div class="row">
+        <div class="cell">
+          <div class="sp-pit"><div class="sp-widget"><div class="sp-nav" id="sp-sidebar">ID wins</div></div></div>
+          <p class="cap">#sidebar (1,0,0) beats .sidebar-widget .nav (0,2,0) — IDs are hard to override</p>
+        </div>
+        <div class="cell">
+          <div class="sp-card sp-primary sp-featured">chained classes</div>
+          <p class="cap">.card.primary.featured (0,3,0) — chained classes add up</p>
+        </div>
+      </div>
     </section>
+
+    <section>
+      <h2>Boosting Specificity</h2>
+      <p class="code">.button { background: blue; }&nbsp;&nbsp;.button.button { background: green; }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="sp-btn">.button</div>
+          <p class="cap">.button (0,1,0) — blue</p>
+        </div>
+        <div class="cell">
+          <div class="sp-btn sp-btn">.button.button</div>
+          <p class="cap">.button.button (0,2,0) — wins without !important</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Tie-Breaking</h2>
+      <p class="code">.first { color: red; }&nbsp;&nbsp;.second { color: blue; }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="sp-box"><p class="sp-first sp-second">identical specificity</p></div>
+          <p class="cap">Both are (0,1,0) — the last declaration wins (blue)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Specificity vs Cascade</h2>
+      <p class="note">Specificity is just one stage. Before it, the cascade checks origin (user agent vs authored) and !important declarations. Inline styles (style="") are resolved at a different cascade step — not through specificity.</p>
+    </section>
+
+    <section>
+      <h2>Quick Reference</h2>
+      <table class="demo-table">
+        <thead>
+          <tr>
+            <th>Selector</th>
+            <th>Specificity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>*</code></td>
+            <td>(0,0,0)</td>
+          </tr>
+          <tr>
+            <td><code>p</code></td>
+            <td>(0,0,1)</td>
+          </tr>
+          <tr>
+            <td><code>.intro</code></td>
+            <td>(0,1,0)</td>
+          </tr>
+          <tr>
+            <td><code>#main</code></td>
+            <td>(1,0,0)</td>
+          </tr>
+          <tr>
+            <td><code>#main p.intro</code></td>
+            <td>(1,1,1)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../02-the-cascade/index.html">&larr; The Cascade</a>
+  <a class="pager-btn pager-next" href="../04-inheritance/index.html">Inheritance &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
   </body>
 </html>

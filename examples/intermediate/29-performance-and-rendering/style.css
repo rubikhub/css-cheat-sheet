@@ -1,0 +1,195 @@
+/* performance — contain */
+.con {
+  width: 120px;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 6px;
+  border-radius: 6px;
+  position: relative;
+  text-align: center;
+}
+
+.con .kid {
+  height: 54px;
+  margin-top: 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.c-size { contain: size; height: 70px; }
+.c-layout { contain: layout; }
+.c-style { contain: style; }
+.c-strict { contain: strict; height: 70px; }
+.c-content { contain: content; }
+
+.c-paint { contain: paint; height: 70px; }
+.con .poke {
+  position: absolute;
+  left: 12px;
+  top: 44px;
+  width: 100px;
+  height: 40px;
+  background: #ef4444;
+  border-radius: 4px;
+}
+
+/* style containment — counter isolation */
+.seq {
+  counter-reset: item 0;
+  width: 150px;
+  font-size: 0.72rem;
+  color: #334155;
+}
+.seq > p { margin: 0 0 2px; }
+.seq > p::before {
+  counter-increment: item;
+  content: counter(item) ": ";
+  font-weight: 700;
+  color: #3b82f6;
+}
+.c-style-box {
+  contain: style;
+  background: #f1f5f9;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin: 2px 0;
+}
+.c-style-box p { margin: 0; }
+.c-style-box p::before {
+  counter-increment: item;
+  content: counter(item) ". ";
+  font-weight: 700;
+  color: #ef4444;
+}
+
+/* performance — content-visibility */
+.cvbox {
+  width: 130px;
+  height: 100px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cvbox.cv-hidden { content-visibility: hidden; }
+
+.cv-list {
+  height: 150px;
+  overflow: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px;
+}
+.cv-item {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 60px;
+  min-height: 60px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* performance — contain-intrinsic-size */
+.cis-chip {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 90px;
+  width: 120px;
+  padding: 8px;
+  background: #f1f5f9;
+  border: 1px dashed #94a3b8;
+  border-radius: 6px;
+  font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
+  font-size: 0.72rem;
+  color: #475569;
+  text-align: center;
+}
+.cis-500 { contain-intrinsic-size: 500px; }
+.cis-auto { contain-intrinsic-size: auto 500px; }
+.cis-wh { contain-intrinsic-size: 500px 300px; }
+.cis-none { contain-intrinsic-size: none; }
+
+/* performance — will-change */
+.wc-chip {
+  display: inline-block;
+  padding: 4px 10px;
+  font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
+  font-size: 0.72rem;
+  color: #0f172a;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+.anim-box {
+  width: 130px;
+  height: 100px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wc-transform { will-change: transform; animation: slide 2s ease-in-out infinite alternate; }
+.wc-opacity { will-change: opacity; animation: fade 2s ease-in-out infinite alternate; }
+
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(90px); }
+}
+@keyframes fade {
+  from { opacity: 1; }
+  to { opacity: 0.25; }
+}
+
+/* performance — transform vs layout animation */
+.anim-wrap {
+  position: relative;
+  width: 170px;
+  height: 40px;
+}
+.anim-t,
+.anim-l,
+.tl-t,
+.tl-l {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+.anim-t { animation: t-slide 1.2s ease-in-out infinite alternate; }
+.anim-l { animation: l-slide 1.2s ease-in-out infinite alternate; }
+
+@keyframes t-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(130px); }
+}
+@keyframes l-slide {
+  from { left: 0; }
+  to { left: 130px; }
+}
+
+/* performance — translate vs top/left */
+.tl-t { animation: tl-slide 1.2s ease-in-out infinite alternate; }
+.tl-l { animation: ll-slide 1.2s ease-in-out infinite alternate; }
+
+@keyframes tl-slide {
+  from { translate: 0; }
+  to { translate: 130px; }
+}
+@keyframes ll-slide {
+  from { left: 0; }
+  to { left: 130px; }
+}

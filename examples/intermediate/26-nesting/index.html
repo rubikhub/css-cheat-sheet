@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Nesting</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Nesting</h1>
+
+    <section>
+      <h2>CSS Nesting</h2>
+      <p class="code">&amp; &lt;selector&gt; | &amp;:pseudo-class | @media &lt;condition&gt;</p>
+      <p class="hint">Group descendant, state, and media rules inside their parent. The source below is the actual nested CSS in this page's style.css.</p>
+
+      <pre><code>.nestcard {
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+
+  &amp; .title { font-weight: 700; }
+
+  &amp; a { color: #3b82f6; }
+
+  &amp;:hover { border-color: #3b82f6; }
+
+  &amp;.active { background: #eff6ff; }
+
+  &amp; a.external::after { content: " ↗"; }
+
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
+}</code></pre>
+
+      <div class="row">
+        <div class="cell">
+          <div class="nestcard"><h3 class="title">Card title</h3><p>Descendant heading</p></div>
+          <p class="cap">&amp; .title — nested descendant selector</p>
+        </div>
+        <div class="cell">
+          <div class="nestcard"><a href="#">Read more</a></div>
+          <p class="cap">&amp; a — nested element selector</p>
+        </div>
+        <div class="cell">
+          <div class="nestcard"><p>Hover this card</p></div>
+          <p class="cap">&amp;:hover — nested pseudo-class</p>
+        </div>
+        <div class="cell">
+          <div class="nestcard active"><p>Active card</p></div>
+          <p class="cap">&amp;.active — nested compound selector</p>
+        </div>
+        <div class="cell">
+          <div class="nestcard"><a class="external" href="#">External</a></div>
+          <p class="cap">&amp; a.external::after — nested pseudo-element adds ↗</p>
+        </div>
+        <div class="cell">
+          <div class="nestcard"><p>Resize the window</p></div>
+          <p class="cap">@media (max-width: 768px) — nested media query shrinks the padding</p>
+        </div>
+      </div>
+      <p class="note">Global keywords do not apply here — nesting is a syntax feature, not a property. Browser support is universal since 2023 (Chrome 120, Firefox 117, Safari 17).</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../25-math-functions/index.html">&larr; Math Functions</a>
+  <a class="pager-btn pager-next" href="../27-media-queries/index.html">Media Queries &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

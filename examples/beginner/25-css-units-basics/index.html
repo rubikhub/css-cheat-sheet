@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Units Basics</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Units Basics</h1>
+
+    <section>
+      <h2>px — Pixels (Absolute)</h2>
+      <p class="code">width: 200px · padding: 12px · border: 1px solid</p>
+      <p class="hint">Absolute units are fixed — they do not change with parent size, root font, or viewport.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="px-box">200px</div>
+          <p class="cap">width: 200px — fixed on every screen</p>
+        </div>
+        <div class="cell">
+          <div class="px-border">1px</div>
+          <p class="cap">border: 3px solid — crisp fixed edge</p>
+        </div>
+        <div class="cell">
+          <div class="px-pad">12px</div>
+          <p class="cap">padding: 12px — fixed inset</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>% — Percentage (Parent-Relative)</h2>
+      <p class="code">width: 80% · width: 50%</p>
+      <p class="hint">The gray frame is the parent. Each blue child is a percentage of it.</p>
+      <div class="frame">
+        <div class="pct pct-80">80%</div>
+        <div class="pct pct-50">50%</div>
+        <div class="pct pct-25">25%</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>em — Relative to Parent Font</h2>
+      <p class="code">font-size: 1.5em · padding: 1em</p>
+      <p class="hint">em compounds through nesting — each box multiplies the parent font size.</p>
+      <div class="nest nest-16">
+        16px
+        <div class="nest nest-15">
+          1.5em = 24px
+          <div class="nest nest-15">1.5em = 36px</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>rem — Relative to Root Font</h2>
+      <p class="code">font-size: 2rem · font-size: 1rem</p>
+      <p class="hint">rem ignores nesting — it always measures against the root (html) font size.</p>
+      <div class="nest nest-16">
+        16px root
+        <div class="nest rem-2">
+          2rem = 32px
+          <div class="nest rem-2">2rem = still 32px</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>vw / vh — Viewport Units</h2>
+      <p class="code">height: 30vh · width: 60vw</p>
+      <p class="hint">Each strip is a fraction of the visible window. Resize the window to see them change.</p>
+      <div class="vw-demo">60vw wide</div>
+      <div class="vh-demo">30vh tall</div>
+    </section>
+
+    <section>
+      <h2>Unitless Values</h2>
+      <p class="code">line-height: 1.5 · opacity: 0.8 · flex: 1</p>
+      <p class="unitless-hint">line-height: 1.5 — no unit needed, scales with font size.</p>
+      <div class="unitless">
+        This paragraph has line-height: 1.5 — the spacing between these lines scales
+        automatically with the font size, with no unit required.
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../24-logical-properties/index.html">&larr; Logical Properties</a>
+  <a class="pager-btn pager-next" href="../../intermediate/01-attribute-selectors/index.html">Intermediate: Attribute Selectors &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

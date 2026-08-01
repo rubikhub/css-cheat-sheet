@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Visual Effects</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Advanced Visual Effects</h1>
+
+    <section>
+      <h2>backdrop-filter</h2>
+      <p class="code">backdrop-filter: &lt;filter-function-list&gt; | none</p>
+      <p class="hint">Each glass panel sits over the same striped gradient — compare how it filters the pixels behind it.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="bf-stage">
+            <div class="glass g-none">none</div>
+          </div>
+          <p class="cap">none — no backdrop filter (default)</p>
+        </div>
+        <div class="cell">
+          <div class="bf-stage">
+            <div class="glass g-blur">blur(10px)</div>
+          </div>
+          <p class="cap">blur(10px) — gaussian blur on the backdrop</p>
+        </div>
+        <div class="cell">
+          <div class="bf-stage">
+            <div class="glass g-brightness">brightness(150%)</div>
+          </div>
+          <p class="cap">brightness(150%) — adjusts backdrop brightness</p>
+        </div>
+        <div class="cell">
+          <div class="bf-stage">
+            <div class="glass g-contrast">contrast(200%)</div>
+          </div>
+          <p class="cap">contrast(200%) — adjusts backdrop contrast</p>
+        </div>
+        <div class="cell">
+          <div class="bf-stage">
+            <div class="glass g-grayscale">grayscale(100%)</div>
+          </div>
+          <p class="cap">grayscale(100%) — converts backdrop to grayscale</p>
+        </div>
+        <div class="cell">
+          <div class="bf-stage">
+            <div class="glass g-mix">blur+bright</div>
+          </div>
+          <p class="cap">blur(5px) brightness(150%) — combines multiple filters</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>mix-blend-mode</h2>
+      <p class="code">mix-blend-mode: normal | multiply | screen | overlay | darken | lighten | color-dodge | color-burn | hard-light | soft-light | difference | exclusion | hue | saturation | color | luminosity</p>
+      <p class="hint">Every chip is the same orange — only the blend mode differs as it mixes with the photo-like gradient behind it.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-normal"></div></div>
+          <p class="cap">normal — no blending (default)</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-multiply"></div></div>
+          <p class="cap">multiply — multiplies colors, darkens</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-screen"></div></div>
+          <p class="cap">screen — inverts multiply, lightens</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-overlay"></div></div>
+          <p class="cap">overlay — combines multiply and screen</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-darken"></div></div>
+          <p class="cap">darken — keeps the darker color</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-lighten"></div></div>
+          <p class="cap">lighten — keeps the lighter color</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-dodge"></div></div>
+          <p class="cap">color-dodge — brightens the backdrop</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-burn"></div></div>
+          <p class="cap">color-burn — darkens the backdrop</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-hard"></div></div>
+          <p class="cap">hard-light — strong contrast blend</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-soft"></div></div>
+          <p class="cap">soft-light — subtle contrast blend</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-diff"></div></div>
+          <p class="cap">difference — subtracts colors</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-excl"></div></div>
+          <p class="cap">exclusion — like difference, softer</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-hue"></div></div>
+          <p class="cap">hue — element hue with backdrop saturation/luminosity</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-sat"></div></div>
+          <p class="cap">saturation — uses element saturation</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-color"></div></div>
+          <p class="cap">color — uses element hue and saturation</p>
+        </div>
+        <div class="cell">
+          <div class="mb-stage"><div class="chip b-lum"></div></div>
+          <p class="cap">luminosity — uses element luminosity</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>isolation</h2>
+      <p class="code">isolation: auto | isolate</p>
+      <p class="hint">Both discs use mix-blend-mode: multiply. The group on the right isolates blending so the discs stop bleeding into the gradient.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="iso-stage">
+            <div class="iso-pair">
+              <span class="disc d-a"></span>
+              <span class="disc d-b"></span>
+            </div>
+          </div>
+          <p class="cap">auto — no stacking context; discs blend with the gradient (default)</p>
+        </div>
+        <div class="cell">
+          <div class="iso-stage">
+            <div class="iso-pair isolated">
+              <span class="disc d-a"></span>
+              <span class="disc d-b"></span>
+            </div>
+          </div>
+          <p class="cap">isolate — stacking context scopes blending to the group</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../19-animation-fill-and-play-state/index.html">&larr; Animation — Direction, Fill & Play</a>
+  <a class="pager-btn pager-next" href="../21-css-masks/index.html">CSS Masks &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

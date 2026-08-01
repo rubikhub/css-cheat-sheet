@@ -1,0 +1,142 @@
+/* background-image */
+.bg-box {
+  width: 180px;
+  height: 110px;
+  border: 2px dashed #94a3b8;
+  border-radius: 8px;
+}
+.bg-none {
+  background: none;
+  background-color: #e2e8f0;
+}
+.bg-linear {
+  background-image: linear-gradient(to right, red, blue);
+}
+.bg-angle {
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.bg-radial {
+  background-image: radial-gradient(circle, red, blue);
+}
+.bg-conic {
+  background-image: conic-gradient(red, orange, yellow, green, blue);
+}
+
+/* repeating gradients */
+.bg-rep-linear {
+  background: repeating-linear-gradient(90deg, #d63031 0px, #d63031 20px, #fdcb6e 20px, #fdcb6e 40px);
+}
+.bg-rep-linear-diag {
+  background: repeating-linear-gradient(45deg, #d63031 0, #d63031 10px, #fdcb6e 10px, #fdcb6e 20px);
+}
+.bg-rep-radial {
+  background: repeating-radial-gradient(circle, #2d3436 0px, #2d3436 10px, #636e72 10px, #636e72 20px);
+}
+
+/* background-repeat — 40px dot */
+.bg-rep-repeat,
+.bg-rep-x,
+.bg-rep-y,
+.bg-rep-none,
+.bg-rep-space,
+.bg-rep-round {
+  background-image: radial-gradient(circle, #6366f1 12px, transparent 13px);
+  background-size: 40px 40px;
+}
+.bg-rep-repeat { background-repeat: repeat; }
+.bg-rep-x { background-repeat: repeat-x; }
+.bg-rep-y { background-repeat: repeat-y; }
+.bg-rep-none { background-repeat: no-repeat; }
+.bg-rep-space { background-repeat: space; }
+.bg-rep-round { background-repeat: round; }
+
+/* background-position — 18px dot, no-repeat */
+.bg-pos-center,
+.bg-pos-top,
+.bg-pos-bottom,
+.bg-pos-left,
+.bg-pos-right,
+.bg-pos-px,
+.bg-pos-pair,
+.bg-pos-edge {
+  background-image: radial-gradient(circle, #10b981 9px, transparent 10px);
+  background-repeat: no-repeat;
+}
+.bg-pos-center { background-position: center; }
+.bg-pos-top { background-position: top; }
+.bg-pos-bottom { background-position: bottom; }
+.bg-pos-left { background-position: left; }
+.bg-pos-right { background-position: right; }
+.bg-pos-px { background-position: 20px 40px; }
+.bg-pos-pair { background-position: top right; }
+.bg-pos-edge { background-position: right 10px bottom 20px; }
+
+/* background-attachment */
+.bg-scroll {
+  width: 200px;
+  height: 130px;
+  overflow: auto;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background-image: linear-gradient(45deg, #0ea5e9 25%, transparent 25%),
+    linear-gradient(-45deg, #0ea5e9 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #0ea5e9 75%),
+    linear-gradient(-45deg, transparent 75%, #0ea5e9 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0;
+  font-size: 0.8rem;
+  color: #0c4a6e;
+  font-weight: 600;
+}
+.bg-attach-scroll { background-attachment: scroll; }
+.bg-attach-fixed { background-attachment: fixed; }
+.bg-attach-local { background-attachment: local; }
+
+/* background-clip */
+.bg-clip {
+  width: 160px;
+  height: 96px;
+  padding: 14px;
+  border: 6px dashed #475569;
+  background: linear-gradient(135deg, #f43f5e, #f59e0b);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.bg-clip-border { background-clip: border-box; }
+.bg-clip-padding { background-clip: padding-box; }
+.bg-clip-content { background-clip: content-box; }
+.bg-clip-text {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #f43f5e, #f59e0b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* background-origin */
+.bg-origin {
+  width: 160px;
+  height: 96px;
+  padding: 14px;
+  border: 6px dashed #475569;
+  background-image: linear-gradient(135deg, #14b8a6 0%, #0ea5e9 100%);
+  background-repeat: no-repeat;
+  background-size: 70px 70px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.bg-origin-padding { background-origin: padding-box; }
+.bg-origin-border { background-origin: border-box; }
+.bg-origin-content { background-origin: content-box; }

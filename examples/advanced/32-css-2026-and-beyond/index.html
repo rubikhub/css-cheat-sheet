@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 2026 &amp; Beyond</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS 2026 &amp; Beyond</h1>
+
+    <section>
+      <h2>margin-trim</h2>
+      <p class="code">margin-trim: none | block | inline | block-start | block-end | inline-start | inline-end</p>
+      <p class="hint">Experimental — trims child margins along container edges. The dashed boxes show the trimmed edge.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="stack"><div></div><div></div><div></div></div>
+          <p class="cap">none — no trimming (default)</p>
+        </div>
+        <div class="cell">
+          <div class="stack mt-block"><div></div><div></div><div></div></div>
+          <p class="cap">block — trim margins at the block start and end</p>
+        </div>
+        <div class="cell">
+          <div class="stack mt-inline"><div></div><div></div><div></div></div>
+          <p class="cap">inline — trim margins at the inline start and end</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>masonry()</h2>
+      <p class="code">grid-template-columns: masonry; | masonry-auto-flow: next | definite-first</p>
+      <p class="hint">Native masonry as a grid value — experimental. Unsupported browsers fall back to a regular grid.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="masonry">
+            <div class="tile t1"></div><div class="tile t2"></div><div class="tile t3"></div>
+            <div class="tile t4"></div><div class="tile t5"></div><div class="tile t6"></div>
+            <div class="tile t7"></div><div class="tile t8"></div>
+          </div>
+          <p class="cap">grid-template-rows: masonry — masonry along the column axis</p>
+        </div>
+        <div class="cell">
+          <div class="masonry-c">
+            <div class="tile t1"></div><div class="tile t2"></div><div class="tile t3"></div>
+            <div class="tile t4"></div><div class="tile t5"></div><div class="tile t6"></div>
+          </div>
+          <p class="cap">grid-template-columns: masonry — masonry along the row axis</p>
+        </div>
+        <div class="cell">
+          <div class="card">masonry-auto-flow: next</div>
+          <p class="cap">masonry-auto-flow: next — items flow like a packing algorithm</p>
+        </div>
+        <div class="cell">
+          <div class="card">masonry-auto-flow: definite-first</div>
+          <p class="cap">masonry-auto-flow: definite-first — place definite items first</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>shape-morphing</h2>
+      <p class="code">clip-path: shape(round ...); + transition of shape() functions</p>
+      <p class="hint">Hover the boxes — shape() interpolates smoothly when the function type stays the same.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo morph">hover me</div>
+          <p class="cap">shape(round 8px) → shape(round 50%) — morph on hover</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-purple morph-bevel">hover me</div>
+          <p class="cap">bevel → round — animate between shapes</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal morph-squircle">hover me</div>
+          <p class="cap">pairs with corner-shape for squircle morphing</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>gap-decoration</h2>
+      <p class="code">gap-decoration-line: &lt;line-style&gt; &lt;color&gt;;</p>
+      <p class="hint">Experimental — decorates the gutter between multicol columns.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="columns gd-solid">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</div>
+          <p class="cap">gap-decoration-line: solid #94a3b8 — a solid divider</p>
+        </div>
+        <div class="cell">
+          <div class="columns gd-dashed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</div>
+          <p class="cap">gap-decoration-line: dashed #94a3b8 — a dashed divider</p>
+        </div>
+        <div class="cell">
+          <div class="columns gd-none">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</div>
+          <p class="cap">gap-decoration-line: none — no decoration</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>text-autospace</h2>
+      <p class="code">text-autospace: normal | no-autospace | ideograph-alpha</p>
+      <div class="row">
+        <div class="cell">
+          <div class="autospace">中文English混排2026 CSS</div>
+          <p class="cap">normal — browser applies spacing (default)</p>
+        </div>
+        <div class="cell">
+          <div class="autospace ta-none">中文English混排2026 CSS</div>
+          <p class="cap">no-autospace — no automatic spacing</p>
+        </div>
+        <div class="cell">
+          <div class="autospace ta-ida">中文English混排2026 CSS</div>
+          <p class="cap">ideograph-alpha — space between ideographs and Latin</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>line-fit-edge</h2>
+      <p class="code">line-fit-edge: &lt;edge&gt; &lt;edge&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="lfe lfe-tb">Ag</div>
+          <p class="cap">top bottom — fit the line box to ascent / descent</p>
+        </div>
+        <div class="cell">
+          <div class="lfe lfe-c">Ag</div>
+          <p class="cap">center — center the line box</p>
+        </div>
+        <div class="cell">
+          <div class="lfe">Ag</div>
+          <p class="cap">none — default line fitting</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>Anchored Container Queries</h2>
+      <p class="code">container-type: anchored-size;</p>
+      <p class="hint">Experimental (Chromium) — the popover is sized to its anchor via anchored-size + 100cqw.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="anchor-demo">
+            <div class="anchor-trigger">trigger</div>
+            <div class="anchor-pop">sized to anchor</div>
+          </div>
+          <p class="cap">container-type: anchored-size — size by the anchor</p>
+        </div>
+        <div class="cell">
+          <div class="card">container-type: normal</div>
+          <p class="cap">container-type: normal — default (no size containment)</p>
+        </div>
+        <div class="cell">
+          <div class="card">anchor-name + container queries</div>
+          <p class="cap">used with anchor-name and container queries together</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>interest</h2>
+      <p class="code">interest: auto | none;</p>
+      <p class="hint">Experimental — hover the trigger: the tooltip stays open because the interest area covers the gap.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tooltip-demo">
+            <div class="tt-trigger">hover me</div>
+            <div class="tt-tip">tooltip</div>
+          </div>
+          <p class="cap">interest: auto — the element becomes an interest target</p>
+        </div>
+        <div class="cell">
+          <div class="card">interest: none</div>
+          <p class="cap">interest: none — not an interest target</p>
+        </div>
+        <div class="cell">
+          <div class="card">:interest</div>
+          <p class="cap">:interest — matches while the interest area is hovered or focused</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../31-paged-media/index.html">&larr; Paged Media & Print</a>
+  <a class="pager-btn pager-next" href="../33-container-and-modern-units/index.html">Container & Modern Units &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

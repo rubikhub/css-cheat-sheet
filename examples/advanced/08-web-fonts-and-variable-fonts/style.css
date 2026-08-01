@@ -1,0 +1,89 @@
+/* web & variable fonts */
+
+/* @font-face — maps the demo family to a locally installed font */
+@font-face {
+  font-family: "DemoFont";
+  src: local("Segoe UI");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @font-feature-values — named styleset/swash for the demo family */
+@font-feature-values DemoFont {
+  @styleset { pretty: "ss01"; }
+  @swash    { swsh: 1; }
+}
+
+/* code snippet block */
+.snippet {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+/* descriptor / value box */
+.valbox {
+  margin: 0;
+  padding: 8px 10px;
+  font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
+  font-size: 0.75rem;
+  color: #0f172a;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  max-width: 210px;
+  word-break: break-word;
+}
+
+/* @font-face demo family — falls back to local Segoe UI */
+.demo-font {
+  margin: 0;
+  font-family: "DemoFont", "Segoe UI", system-ui, sans-serif;
+  font-size: 1.05rem;
+  color: #1f2937;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+  padding: 10px 12px;
+  max-width: 210px;
+}
+
+/* @font-feature-values usage */
+.fva {
+  font-variant-alternates: styleset(pretty);
+}
+
+/* font-variation-settings */
+.vf {
+  margin: 0;
+  font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1f2937;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+  padding: 10px 14px;
+  min-width: 120px;
+  text-align: center;
+}
+
+.vf-w200  { font-variation-settings: "wght" 200; }
+.vf-w700  { font-variation-settings: "wght" 700; }
+.vf-wdth  { font-variation-settings: "wdth" 110; }
+.vf-opsz  { font-variation-settings: "opsz" 36; font-size: 2.2rem; }
+.vf-multi { font-variation-settings: "wght" 750, "opsz" 36, "wdth" 110; }
+.vf-xtra  { font-variation-settings: "XTRA" 500; }
+
+/* font-optical-sizing */
+.vf-os {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.vf-os-auto { font-optical-sizing: auto; }
+.vf-os-none { font-optical-sizing: none; }

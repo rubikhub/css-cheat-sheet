@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typography — OpenType Features</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Typography — OpenType Features</h1>
+
+    <section>
+      <h2>font-feature-settings</h2>
+      <p class="code">font-feature-settings: &lt;feature-tag&gt; &lt;value&gt;</p>
+      <p class="hint">Features are switched on by OpenType tag. Each font decides which tags it actually supports — if a tag is missing, the declaration has no visible effect.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="fp ffs-liga">office fluently flips</p>
+          <p class="cap">"liga" 1 — enable ligatures</p>
+        </div>
+        <div class="cell">
+          <p class="fp ffs-kern">AVATAR TORTOISE</p>
+          <p class="cap">"kern" 1 — enable kerning</p>
+        </div>
+        <div class="cell">
+          <p class="fp ffs-smcp">The Quick Brown Fox</p>
+          <p class="cap">"smcp" 1 — enable small caps</p>
+        </div>
+        <div class="cell">
+          <p class="fp ffs-onum">0123456789</p>
+          <p class="cap">"onum" 1 — old-style numerals</p>
+        </div>
+        <div class="cell">
+          <p class="fp ffs-liga0">office fluently flips</p>
+          <p class="cap">"liga" 0 — disable a feature</p>
+        </div>
+        <div class="cell">
+          <p class="fp ffs-multi">Fantastic AVATAR</p>
+          <p class="cap">"liga" 1, "kern" 1, "smcp" 1 — multiple features at once</p>
+        </div>
+        <div class="cell">
+          <p class="fp">office fluently flips</p>
+          <p class="cap">normal — no feature settings (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>font-variant-ligatures</h2>
+      <p class="code">font-variant-ligatures: normal | none | &lt;ligature&gt;</p>
+      <p class="hint">Ligature pairs such as “fi”, “fl” and “ffi” are clearest in a serif face.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="fp fvl-normal">office fluffy flicks</p>
+          <p class="cap">normal — common and contextual ligatures (default)</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvl-none">office fluffy flicks</p>
+          <p class="cap">none — no ligatures</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvl-common">office fluffy flicks</p>
+          <p class="cap">common-ligatures — standard ligatures on</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvl-nocommon">office fluffy flicks</p>
+          <p class="cap">no-common-ligatures — standard ligatures off</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvl-disc">office fluffy flicks</p>
+          <p class="cap">discretionary-ligatures — decorative ligatures</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvl-hist">office fluffy flicks</p>
+          <p class="cap">historical-ligatures — old-style ligatures</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>font-variant-numeric</h2>
+      <p class="code">font-variant-numeric: normal | &lt;numeric-feature&gt;</p>
+      <p class="hint">Old-style figures and fractions need a font that ships those glyphs — Georgia provides old-style numerals.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="fp fvn-lining">0123456789</p>
+          <p class="cap">lining-nums — modern figures (default)</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvn-oldstyle">0123456789</p>
+          <p class="cap">oldstyle-nums — old-style figures</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvn-tabular">00123 45678</p>
+          <p class="cap">tabular-nums — fixed-width digits for tables</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvn-prop">00123 45678</p>
+          <p class="cap">proportional-nums — natural digit widths</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvn-diag">1/2 3/4 5/6</p>
+          <p class="cap">diagonal-fractions — slanted fraction glyphs</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvn-stacked">1/2 3/4 5/6</p>
+          <p class="cap">stacked-fractions — vertical fraction glyphs</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>font-variant-caps</h2>
+      <p class="code">font-variant-caps: normal | small-caps | all-small-caps | petite-caps | unicase | titling-caps</p>
+      <div class="row">
+        <div class="cell">
+          <p class="fp fvc-normal">The Quick Brown Fox</p>
+          <p class="cap">normal — default capitalization (default)</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvc-small">The Quick Brown Fox</p>
+          <p class="cap">small-caps — small capitals for lowercase</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvc-all">The Quick Brown Fox</p>
+          <p class="cap">all-small-caps — small caps for every letter</p>
+        </div>
+        <div class="cell">
+          <p class="fp fvc-titling">The Quick Brown Fox</p>
+          <p class="cap">titling-caps — display capitals</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../06-background-blend-mode/index.html">&larr; Background Blend Mode</a>
+  <a class="pager-btn pager-next" href="../08-web-fonts-and-variable-fonts/index.html">Web & Variable Fonts &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

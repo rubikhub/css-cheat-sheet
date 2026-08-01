@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Structural Pseudo Classes</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Structural Pseudo Classes</h1>
+
+    <section>
+      <h2>:nth-child(an+b)</h2>
+      <p class="code">li:nth-child(&lt;an+b&gt;)</p>
+      <p class="hint">Each row shows the same eight items with a different formula — the matched items are teal.</p>
+      <div class="row">
+        <div class="cell">
+          <ul class="nc-list nc-2">
+            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li>
+          </ul>
+          <p class="cap">2 — second element</p>
+        </div>
+        <div class="cell">
+          <ul class="nc-list nc-odd">
+            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li>
+          </ul>
+          <p class="cap">odd — odd elements (1, 3, 5&hellip;)</p>
+        </div>
+        <div class="cell">
+          <ul class="nc-list nc-even">
+            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li>
+          </ul>
+          <p class="cap">even — even elements (2, 4, 6&hellip;)</p>
+        </div>
+        <div class="cell">
+          <ul class="nc-list nc-3n">
+            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li>
+          </ul>
+          <p class="cap">3n — every third element</p>
+        </div>
+        <div class="cell">
+          <ul class="nc-list nc-3np1">
+            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li>
+          </ul>
+          <p class="cap">3n+1 — every third starting at 1</p>
+        </div>
+        <div class="cell">
+          <ul class="nc-list nc-neg">
+            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li>
+          </ul>
+          <p class="cap">-n+3 — first three elements</p>
+        </div>
+        <div class="cell">
+          <ul class="nc-list nc-n4">
+            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li>
+          </ul>
+          <p class="cap">n+4 — elements from 4 onward</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:nth-of-type(an+b)</h2>
+      <p class="code">p:nth-of-type(&lt;an+b&gt;)</p>
+      <p class="hint">Each block mixes &lt;p&gt; and &lt;div&gt; siblings — the formula only counts paragraphs.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mix mix-t1">
+            <p>P1</p><div>D1</div><p>P2</p><div>D2</div><p>P3</p><div>D3</div><p>P4</p><div>D4</div><p>P5</p>
+          </div>
+          <p class="cap">1 — first element of that type</p>
+        </div>
+        <div class="cell">
+          <div class="mix mix-t2">
+            <p>P1</p><div>D1</div><p>P2</p><div>D2</div><p>P3</p><div>D3</div><p>P4</p><div>D4</div><p>P5</p>
+          </div>
+          <p class="cap">2 — second element of that type</p>
+        </div>
+        <div class="cell">
+          <div class="mix mix-todd">
+            <p>P1</p><div>D1</div><p>P2</p><div>D2</div><p>P3</p><div>D3</div><p>P4</p><div>D4</div><p>P5</p>
+          </div>
+          <p class="cap">odd — odd positions of that type</p>
+        </div>
+        <div class="cell">
+          <div class="mix mix-t3n">
+            <p>P1</p><div>D1</div><p>P2</p><div>D2</div><p>P3</p><div>D3</div><p>P4</p><div>D4</div><p>P5</p>
+          </div>
+          <p class="cap">3n — every third element of that type</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:nth-last-of-type(an+b)</h2>
+      <p class="code">p:nth-last-of-type(&lt;an+b&gt;)</p>
+      <p class="hint">The same mixed block, but positions are counted from the end of each type.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mix mix-l1">
+            <p>P1</p><div>D1</div><p>P2</p><div>D2</div><p>P3</p><div>D3</div><p>P4</p><div>D4</div><p>P5</p>
+          </div>
+          <p class="cap">1 — last element of that type</p>
+        </div>
+        <div class="cell">
+          <div class="mix mix-l2">
+            <p>P1</p><div>D1</div><p>P2</p><div>D2</div><p>P3</p><div>D3</div><p>P4</p><div>D4</div><p>P5</p>
+          </div>
+          <p class="cap">2 — second to last of that type</p>
+        </div>
+        <div class="cell">
+          <div class="mix mix-lodd">
+            <p>P1</p><div>D1</div><p>P2</p><div>D2</div><p>P3</p><div>D3</div><p>P4</p><div>D4</div><p>P5</p>
+          </div>
+          <p class="cap">odd — odd positions from the end</p>
+        </div>
+        <div class="cell">
+          <div class="mix mix-l3n">
+            <p>P1</p><div>D1</div><p>P2</p><div>D2</div><p>P3</p><div>D3</div><p>P4</p><div>D4</div><p>P5</p>
+          </div>
+          <p class="cap">3n — every third from the end</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:empty</h2>
+      <p class="code">div:empty | .cell:empty | .input:empty | .container:empty</p>
+      <p class="hint">Empty elements (no children, no text) match — here they get a teal border and placeholder text.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="empty-row">
+            <div>A</div><div></div><div>B</div><div>C</div><div></div>
+          </div>
+          <p class="cap">div:empty — empty divs get highlighted</p>
+        </div>
+        <div class="cell">
+          <table class="empty-tbl">
+            <tr><td>1</td><td>2</td><td></td></tr>
+            <tr><td>3</td><td></td><td>4</td></tr>
+          </table>
+          <p class="cap">.cell:empty — empty table cells</p>
+        </div>
+        <div class="cell">
+          <div class="empty-input"></div>
+          <p class="cap">.input:empty — placeholder added via ::before</p>
+        </div>
+        <div class="cell">
+          <div class="empty-container"></div>
+          <p class="cap">.container:empty — dashed border fallback</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:only-of-type</h2>
+      <p class="code">p:only-of-type | li:only-of-type</p>
+      <div class="row">
+        <div class="cell">
+          <div class="oot-block">
+            <p>Only paragraph</p>
+            <div>D1</div>
+            <div>D2</div>
+          </div>
+          <p class="cap">p:only-of-type — the only paragraph among siblings</p>
+        </div>
+        <div class="cell">
+          <ul class="oot-li">
+            <li>Only list item</li>
+          </ul>
+          <p class="cap">li:only-of-type — the only list item in its list</p>
+        </div>
+      </div>
+      <p class="note">:only-of-type also implies :first-of-type and :last-of-type.</p>
+    </section>
+
+    <section>
+      <h2>:first-of-type / :last-of-type</h2>
+      <p class="code">p:first-of-type | li:last-of-type</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fot-block">
+            <p>First paragraph</p>
+            <div>D1</div>
+            <p>Second paragraph</p>
+            <div>D2</div>
+            <p>Third paragraph</p>
+          </div>
+          <p class="cap">p:first-of-type — first paragraph among siblings</p>
+        </div>
+        <div class="cell">
+          <ul class="lot-list">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+            <li>Four</li>
+          </ul>
+          <p class="cap">li:last-of-type — last list item</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:root</h2>
+      <p class="code">:root { --brand: #6366f1; color-scheme: light dark; }</p>
+      <p class="hint">:root matches the document root (&lt;html&gt;) with higher specificity — ideal for global custom properties.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="root-swatches">
+            <span class="root-box brand">brand</span>
+            <span class="root-box accent">accent</span>
+          </div>
+          <p class="cap">:root { --brand; --accent } — global custom properties used anywhere</p>
+        </div>
+        <div class="cell">
+          <div class="root-scheme">
+            <label><input type="checkbox" checked /> checkbox</label>
+            <label><input type="range" /> slider</label>
+          </div>
+          <p class="cap">:root { color-scheme: light dark } — native controls follow the scheme</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:nth-child(An+B of S)</h2>
+      <p class="code">:nth-child(&lt;An+B&gt; of &lt;selector-list&gt;)</p>
+      <p class="hint">The formula only counts siblings that also match the selector list.</p>
+      <div class="row">
+        <div class="cell">
+          <ul class="nc-list of-2">
+            <li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li>
+          </ul>
+          <p class="cap">:nth-child(2 of .item) — the second .item</p>
+        </div>
+        <div class="cell">
+          <ul class="nc-list of-odd">
+            <li class="active">1</li><li class="active">2</li><li>3</li><li class="active">4</li><li>5</li><li class="active">6</li>
+          </ul>
+          <p class="cap">:nth-child(odd of li.active) — odd-numbered active items</p>
+        </div>
+        <div class="cell">
+          <ul class="nc-list of-3n">
+            <li class="featured">1</li><li class="featured">2</li><li>3</li><li class="featured">4</li><li class="featured">5</li><li>6</li>
+          </ul>
+          <p class="cap">:nth-child(3n of .featured) — every third featured item</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../14-grid-advanced/index.html">&larr; Grid Advanced</a>
+  <a class="pager-btn pager-next" href="../16-form-pseudo-classes/index.html">Form Pseudo Classes &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

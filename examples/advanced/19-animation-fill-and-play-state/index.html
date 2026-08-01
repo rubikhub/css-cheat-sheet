@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation — Direction, Fill Mode &amp; Play State</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Animation — Direction, Fill Mode &amp; Play State</h1>
+
+    <section>
+      <h2>animation-direction</h2>
+      <p class="code">animation-direction: normal | reverse | alternate | alternate-reverse</p>
+      <p class="hint">Each disc slides on a 2s loop in its own direction. Uncheck a box to pause it mid-travel.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="toggle">
+            <input id="dir-normal" type="checkbox" checked />
+            <label for="dir-normal" class="tgl-btn">pause/resume</label>
+            <div class="dir-box dr-normal">normal</div>
+          </div>
+          <p class="cap">normal — plays forward (default)</p>
+        </div>
+        <div class="cell">
+          <div class="toggle">
+            <input id="dir-reverse" type="checkbox" checked />
+            <label for="dir-reverse" class="tgl-btn">pause/resume</label>
+            <div class="dir-box dr-reverse">reverse</div>
+          </div>
+          <p class="cap">reverse — plays backward</p>
+        </div>
+        <div class="cell">
+          <div class="toggle">
+            <input id="dir-alternate" type="checkbox" checked />
+            <label for="dir-alternate" class="tgl-btn">pause/resume</label>
+            <div class="dir-box dr-alternate">alternate</div>
+          </div>
+          <p class="cap">alternate — forward then backward</p>
+        </div>
+        <div class="cell">
+          <div class="toggle">
+            <input id="dir-altrev" type="checkbox" checked />
+            <label for="dir-altrev" class="tgl-btn">pause/resume</label>
+            <div class="dir-box dr-altrev">alt-rev</div>
+          </div>
+          <p class="cap">alternate-reverse — backward then forward</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-fill-mode</h2>
+      <p class="code">animation-fill-mode: none | forwards | backwards | both</p>
+      <p class="hint">Tick a box to play a one-shot slide (1s, 0.6s delay). Compare how each mode holds the start frame during the delay and the end frame after.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="toggle">
+            <input id="fm-none" type="checkbox" />
+            <label for="fm-none" class="tgl-btn">play</label>
+            <div class="fm-box fm-none">none</div>
+          </div>
+          <p class="cap">none — no styles before/after (default)</p>
+        </div>
+        <div class="cell">
+          <div class="toggle">
+            <input id="fm-forwards" type="checkbox" />
+            <label for="fm-forwards" class="tgl-btn">play</label>
+            <div class="fm-box fm-forwards">forwards</div>
+          </div>
+          <p class="cap">forwards — retains the final keyframe values</p>
+        </div>
+        <div class="cell">
+          <div class="toggle">
+            <input id="fm-backwards" type="checkbox" />
+            <label for="fm-backwards" class="tgl-btn">play</label>
+            <div class="fm-box fm-backwards">backwards</div>
+          </div>
+          <p class="cap">backwards — applies the first keyframe during the delay</p>
+        </div>
+        <div class="cell">
+          <div class="toggle">
+            <input id="fm-both" type="checkbox" />
+            <label for="fm-both" class="tgl-btn">play</label>
+            <div class="fm-box fm-both">both</div>
+          </div>
+          <p class="cap">both — applies forwards and backwards</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-play-state</h2>
+      <p class="code">animation-play-state: running | paused</p>
+      <p class="hint">Pause or resume each disc with its checkbox — pausing freezes it mid-turn.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="toggle">
+            <input id="ps-running" type="checkbox" checked />
+            <label for="ps-running" class="tgl-btn">pause/resume</label>
+            <div class="ps-demo ps-running"></div>
+          </div>
+          <p class="cap">running — plays normally (default)</p>
+        </div>
+        <div class="cell">
+          <div class="toggle">
+            <input id="ps-paused" type="checkbox" />
+            <label for="ps-paused" class="tgl-btn">pause/resume</label>
+            <div class="ps-demo ps-paused"></div>
+          </div>
+          <p class="cap">paused — frozen (check to run)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (running) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../18-3d-transforms/index.html">&larr; 3D Transforms</a>
+  <a class="pager-btn pager-next" href="../20-advanced-effects/index.html">Advanced Visual Effects &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

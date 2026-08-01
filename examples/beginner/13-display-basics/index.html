@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Basics</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Display Basics</h1>
+
+    <section>
+      <h2>display</h2>
+      <p class="code">display: inline | block | flex | grid | none | inline-block | inline-flex | inline-grid | contents | list-item | table</p>
+      <div class="row">
+        <div class="cell">
+          <p class="flow">This word flows <span class="d-inline d-inline-tag demo-cyan">inline</span> inside the sentence.</p>
+          <p class="cap">inline — element flows within text</p>
+        </div>
+        <div class="cell">
+          <div class="demo d-block demo-blue">block</div>
+          <p class="cap">block — element takes full width</p>
+        </div>
+        <div class="cell">
+          <div class="demo d-flex demo-slate">
+            <span class="mini demo-blue">1</span>
+            <span class="mini demo-green">2</span>
+            <span class="mini demo-amber">3</span>
+          </div>
+          <p class="cap">flex — block-level flex container</p>
+        </div>
+        <div class="cell">
+          <div class="demo d-grid demo-slate">
+            <span class="mini demo-blue">1</span>
+            <span class="mini demo-green">2</span>
+            <span class="mini demo-amber">3</span>
+          </div>
+          <p class="cap">grid — block-level grid container</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <span class="item demo-blue">A</span>
+            <span class="item d-none demo-green">B</span>
+            <span class="item demo-amber">C</span>
+          </div>
+          <p class="cap">none — B is removed from layout</p>
+        </div>
+        <div class="cell">
+          <p class="flow">Two <span class="mini d-inline-block demo-pink">AB</span> and <span class="mini d-inline-block demo-teal">CD</span> sit in a line.</p>
+          <p class="cap">inline-block — inline with block-level sizing</p>
+        </div>
+        <div class="cell">
+          <p class="flow">Inline <span class="inline-flex-box d-inline-flex demo-green"><span class="dot"></span><span class="dot"></span></span> flex container.</p>
+          <p class="cap">inline-flex — inline-level flex container</p>
+        </div>
+        <div class="cell">
+          <p class="flow">Inline <span class="inline-grid-box d-inline-grid demo-purple"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span> grid container.</p>
+          <p class="cap">inline-grid — inline-level grid container</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <span class="item demo-blue">1</span>
+            <span class="item demo-green">2</span>
+            <span class="item demo-amber">3</span>
+            <span class="item demo-purple">4</span>
+            <div class="d-contents">
+              <span class="item demo-pink">5</span>
+              <span class="item demo-teal">6</span>
+            </div>
+          </div>
+          <p class="cap">contents — wrapper box omitted, children inherit layout</p>
+        </div>
+        <div class="cell">
+          <div class="demo d-list-item demo-red">list-item</div>
+          <p class="cap">list-item — element displays as list item</p>
+        </div>
+        <div class="cell">
+          <div class="d-table demo-slate">
+            <div class="d-tr">
+              <span class="d-td">A</span>
+              <span class="d-td">B</span>
+            </div>
+            <div class="d-tr">
+              <span class="d-td">C</span>
+              <span class="d-td">D</span>
+            </div>
+          </div>
+          <p class="cap">table — element behaves as &lt;table&gt;</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (inline) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>visibility</h2>
+      <p class="code">visibility: visible | hidden | collapse</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-blue">visible</div>
+          <p class="cap">visible — element is visible (default)</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <span class="item demo-blue">A</span>
+            <span class="item v-hidden demo-green">B</span>
+            <span class="item demo-amber">C</span>
+          </div>
+          <p class="cap">hidden — B is invisible but keeps its space</p>
+        </div>
+        <div class="cell">
+          <table class="demo-table">
+            <tr>
+              <td>Row 1</td>
+              <td>visible</td>
+            </tr>
+            <tr class="v-collapse">
+              <td>Row 2</td>
+              <td>collapsed</td>
+            </tr>
+            <tr>
+              <td>Row 3</td>
+              <td>visible</td>
+            </tr>
+          </table>
+          <p class="cap">collapse — table row collapses (space removed)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (visible) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>overflow</h2>
+      <p class="code">overflow: visible | hidden | scroll | auto | clip</p>
+      <div class="row">
+        <div class="cell">
+          <div class="ov-box ov-visible demo-red">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+          <p class="cap">visible — overflow spills outside (default)</p>
+        </div>
+        <div class="cell">
+          <div class="ov-box ov-hidden demo-green">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+          <p class="cap">hidden — overflow is clipped</p>
+        </div>
+        <div class="cell">
+          <div class="ov-box ov-clip demo-blue">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+          <p class="cap">clip — clipped without any scrolling</p>
+        </div>
+        <div class="cell">
+          <div class="ov-box ov-scroll demo-amber">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+          <p class="cap">scroll — scrollbars always shown</p>
+        </div>
+        <div class="cell">
+          <div class="ov-box ov-auto demo-purple">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+          <p class="cap">auto — scrollbars only when needed</p>
+        </div>
+        <div class="cell">
+          <div class="ov-box ov-hv demo-teal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</div>
+          <p class="cap">hidden auto — horizontal hidden, vertical auto</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (visible) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>overflow-wrap</h2>
+      <p class="code">overflow-wrap: normal | break-word | anywhere</p>
+      <div class="row">
+        <div class="cell">
+          <div class="ow-box ow-normal demo-slate">supercalifragilisticexpialidocious</div>
+          <p class="cap">normal — breaks only at allowed points (default)</p>
+        </div>
+        <div class="cell">
+          <div class="ow-box ow-break demo-blue">supercalifragilisticexpialidocious</div>
+          <p class="cap">break-word — breaks long words to prevent overflow</p>
+        </div>
+        <div class="cell">
+          <div class="ow-box ow-anywhere demo-green">supercalifragilisticexpialidocious</div>
+          <p class="cap">anywhere — breaks at any character if needed</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../12-tables-basics/index.html">&larr; Tables Basics</a>
+  <a class="pager-btn pager-next" href="../14-positioning-basics/index.html">Positioning Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

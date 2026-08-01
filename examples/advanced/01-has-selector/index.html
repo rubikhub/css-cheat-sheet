@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>:has() — The Parent Selector</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>:has() — The Parent Selector</h1>
+
+    <section>
+      <h2>:has()</h2>
+      <p class="code">:has(&lt;relative-selector-list&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="card has-img">
+            <span class="thumb"></span>
+            <p>Card with an image</p>
+          </div>
+          <p class="cap">.card:has(img) — card turns blue grid when it contains an image</p>
+        </div>
+        <div class="cell">
+          <form class="frm-invalid">
+            <input type="email" placeholder="name@site.com" required />
+            <span class="fstatus">filled with a valid email → no red</span>
+          </form>
+          <p class="cap">form:has(:invalid) — red border while input is invalid</p>
+        </div>
+        <div class="cell">
+          <label class="lbl-checked">
+            <input type="checkbox" checked />
+            Checked option
+          </label>
+          <p class="cap">label:has(+ input:checked) — highlight the label of a checked input</p>
+        </div>
+        <div class="cell">
+          <div class="card has-both">
+            <span class="thumb"></span>
+            <p>Image</p>
+          </div>
+          <p class="cap">div:has(p):has(img) — only when both p and img are inside</p>
+        </div>
+        <div class="cell">
+          <div class="card no-img">
+            <p>Card with no image</p>
+          </div>
+          <p class="cap">.card:not(:has(img)) — cards without an image stay muted</p>
+        </div>
+        <div class="cell">
+          <ul class="list-empty">
+            <li>Item 1</li>
+            <li></li>
+          </ul>
+          <p class="cap">.list:has(&gt; :empty) — outline when a direct child is empty</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../../intermediate/30-relative-and-viewport-units/index.html">&larr; Intermediate: Relative & Viewport Units</a>
+  <a class="pager-btn pager-next" href="../02-selectors-2024/index.html">Selectors 2024+ &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

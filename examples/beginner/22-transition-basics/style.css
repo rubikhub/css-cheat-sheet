@@ -1,0 +1,62 @@
+/* shared hover target: changes background, transform, opacity and color */
+.tp-base,
+.td-base,
+.tt-base,
+.tdly-base,
+.sh-base {
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+.tp-base:hover,
+.td-base:hover,
+.tt-base:hover,
+.tdly-base:hover,
+.sh-base:hover {
+  background: #8b5cf6;
+  transform: translateX(10px);
+  opacity: 0.55;
+  color: #fde68a;
+}
+
+/* transition-property */
+.tp-none { transition-property: none; }
+.tp-all { transition-property: all; }
+.tp-opacity { transition-property: opacity; }
+.tp-transform { transition-property: transform; }
+.tp-bg { transition-property: background-color; }
+.tp-multi { transition-property: color, opacity; }
+
+/* transition-duration */
+.td-base { transition-property: all; }
+.td-0s { transition-duration: 0s; }
+.td-02s { transition-duration: 0.2s; }
+.td-03s { transition-duration: 0.3s; }
+.td-05s { transition-duration: 0.5s; }
+.td-1s { transition-duration: 1s; }
+.td-200ms { transition-duration: 200ms; }
+
+/* transition-timing-function */
+.tt-base {
+  transition-property: all;
+  transition-duration: 0.8s;
+}
+.tt-ease { transition-timing-function: ease; }
+.tt-linear { transition-timing-function: linear; }
+.tt-ease-in { transition-timing-function: ease-in; }
+.tt-ease-out { transition-timing-function: ease-out; }
+.tt-ease-in-out { transition-timing-function: ease-in-out; }
+.tt-cubic { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+.tt-steps { transition-timing-function: steps(5, end); }
+
+/* transition-delay */
+.tdly-base { transition-property: all; }
+.tdly-0s { transition-delay: 0s; }
+.tdly-01s { transition-delay: 0.1s; }
+.tdly-02s { transition-delay: 0.2s; }
+.tdly-100ms { transition-delay: 100ms; }
+
+/* transition (shorthand) */
+.ts-all { transition: all 0.3s ease; }
+.ts-bg { transition: background-color 0.2s ease-in-out; }
+.ts-opacity { transition: opacity 0.5s linear 0.1s; }
+.ts-none { transition: none; }

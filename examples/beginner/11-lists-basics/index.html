@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lists Basics</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Lists Basics</h1>
+
+    <section>
+      <h2>list-style-type</h2>
+      <p class="code">list-style-type: disc | circle | square | decimal | none | &lt;string&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <ul class="ls ls-disc"><li>One</li><li>Two</li><li>Three</li></ul>
+          <p class="cap">disc — filled circle (default)</p>
+        </div>
+        <div class="cell">
+          <ul class="ls ls-circle"><li>One</li><li>Two</li><li>Three</li></ul>
+          <p class="cap">circle — hollow circle</p>
+        </div>
+        <div class="cell">
+          <ul class="ls ls-square"><li>One</li><li>Two</li><li>Three</li></ul>
+          <p class="cap">square — filled square</p>
+        </div>
+        <div class="cell">
+          <ol class="ls ls-decimal"><li>One</li><li>Two</li><li>Three</li></ol>
+          <p class="cap">decimal — numbers (1, 2, 3)</p>
+        </div>
+        <div class="cell">
+          <ol class="ls ls-dlz" start="8"><li>Eight</li><li>Nine</li><li>Ten</li></ol>
+          <p class="cap">decimal-leading-zero — 08, 09, 10</p>
+        </div>
+        <div class="cell">
+          <ol class="ls ls-lroman"><li>One</li><li>Two</li><li>Three</li></ol>
+          <p class="cap">lower-roman — i, ii, iii</p>
+        </div>
+        <div class="cell">
+          <ol class="ls ls-uroman"><li>One</li><li>Two</li><li>Three</li></ol>
+          <p class="cap">upper-roman — I, II, III</p>
+        </div>
+        <div class="cell">
+          <ol class="ls ls-lalpha"><li>One</li><li>Two</li><li>Three</li></ol>
+          <p class="cap">lower-alpha — a, b, c</p>
+        </div>
+        <div class="cell">
+          <ol class="ls ls-ualpha"><li>One</li><li>Two</li><li>Three</li></ol>
+          <p class="cap">upper-alpha — A, B, C</p>
+        </div>
+        <div class="cell">
+          <ul class="ls ls-none"><li>One</li><li>Two</li><li>Three</li></ul>
+          <p class="cap">none — no marker</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (disc) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>list-style-position</h2>
+      <p class="code">list-style-position: inside | outside</p>
+      <div class="row">
+        <div class="cell">
+          <ul class="ls ls-box lp-outside"><li>One short item</li><li>Two item</li></ul>
+          <p class="cap">outside — marker outside content (default)</p>
+        </div>
+        <div class="cell">
+          <ul class="ls ls-box lp-inside"><li>One short item</li><li>Two item</li></ul>
+          <p class="cap">inside — marker inside content</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (outside) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>list-style-image</h2>
+      <p class="code">list-style-image: none | &lt;image&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <ul class="ls ls-box li-none"><li>One item</li><li>Two item</li></ul>
+          <p class="cap">none — use default marker (default)</p>
+        </div>
+        <div class="cell">
+          <ul class="ls ls-box li-url"><li>One item</li><li>Two item</li></ul>
+          <p class="cap">url('bullet.png') — custom image marker</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>list-style</h2>
+      <p class="code">list-style: &lt;type&gt; &lt;position&gt; &lt;image&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <ul class="ls ls-box sh-disc-in"><li>One item</li><li>Two item</li></ul>
+          <p class="cap">disc inside — type and position</p>
+        </div>
+        <div class="cell">
+          <ol class="ls ls-box sh-decimal-img"><li>One item</li><li>Two item</li></ol>
+          <p class="cap">decimal url('bullet.png') — type and image</p>
+        </div>
+        <div class="cell">
+          <ul class="ls ls-box sh-none"><li>One item</li><li>Two item</li></ul>
+          <p class="cap">none — no styling</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (disc outside none) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../10-border-basics/index.html">&larr; Border Basics</a>
+  <a class="pager-btn pager-next" href="../12-tables-basics/index.html">Tables Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Snap & Touch Interaction</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Scroll Snap & Touch Interaction</h1>
+
+    <section>
+      <h2>scroll-snap-type</h2>
+      <p class="code">scroll-snap-type: none | [x | y | both] [mandatory | proximity]</p>
+      <div class="row">
+        <div class="cell">
+          <div class="snap none">no snap</div>
+          <p class="cap">none — free scrolling (default)</p>
+        </div>
+        <div class="cell">
+          <div class="snap x-mand">x mandatory</div>
+          <p class="cap">x mandatory — always snaps on the x axis</p>
+        </div>
+        <div class="cell">
+          <div class="snap y-mand">y mandatory</div>
+          <p class="cap">y mandatory — always snaps on the y axis</p>
+        </div>
+        <div class="cell">
+          <div class="snap x-prox">x proximity</div>
+          <p class="cap">x proximity — snaps only when close</p>
+        </div>
+        <div class="cell">
+          <div class="snap y-prox">y proximity</div>
+          <p class="cap">y proximity — snaps on y when close</p>
+        </div>
+        <div class="cell">
+          <div class="snap both-mand">both mandatory</div>
+          <p class="cap">both mandatory — snaps on both axes</p>
+        </div>
+        <div class="cell">
+          <div class="snap both-prox">both proximity</div>
+          <p class="cap">both proximity — snaps on both axes when close</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+      <p class="hint">Drag the strips horizontally (or use shift+scroll) to feel the snapping.</p>
+    </section>
+
+    <section>
+      <h2>scroll-snap-align</h2>
+      <p class="code">scroll-snap-align: none | start | end | center</p>
+      <div class="row">
+        <div class="cell">
+          <div class="snap align-none">align none</div>
+          <p class="cap">none — no alignment (default)</p>
+        </div>
+        <div class="cell">
+          <div class="snap align-start">align start</div>
+          <p class="cap">start — aligns item start edge to container</p>
+        </div>
+        <div class="cell">
+          <div class="snap align-end">align end</div>
+          <p class="cap">end — aligns item end edge to container</p>
+        </div>
+        <div class="cell">
+          <div class="snap align-center">align center</div>
+          <p class="cap">center — centers the item</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>overscroll-behavior</h2>
+      <p class="code">overscroll-behavior: auto | contain | none</p>
+      <div class="row">
+        <div class="cell">
+          <div class="os auto">auto — chains to parent</div>
+          <p class="cap">auto — default overscroll chaining</p>
+        </div>
+        <div class="cell">
+          <div class="os contain">contain</div>
+          <p class="cap">contain — prevents chaining to parent</p>
+        </div>
+        <div class="cell">
+          <div class="os none">none</div>
+          <p class="cap">none — prevents all overscroll</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>touch-action</h2>
+      <p class="code">touch-action: auto | none | pan-x | pan-y | pinch-zoom | manipulation</p>
+      <div class="row">
+        <div class="cell">
+          <div class="touch auto">auto</div>
+          <p class="cap">auto — browser decides (default)</p>
+        </div>
+        <div class="cell">
+          <div class="touch none">none</div>
+          <p class="cap">none — no touch gestures</p>
+        </div>
+        <div class="cell">
+          <div class="touch pan-x">pan-x</div>
+          <p class="cap">pan-x — horizontal panning only</p>
+        </div>
+        <div class="cell">
+          <div class="touch pan-y">pan-y</div>
+          <p class="cap">pan-y — vertical panning only</p>
+        </div>
+        <div class="cell">
+          <div class="touch pinch">pan-x pan-y</div>
+          <p class="cap">pan-x pan-y — panning both directions</p>
+        </div>
+        <div class="cell">
+          <div class="touch pinch">pinch-zoom</div>
+          <p class="cap">pinch-zoom — allows pinch zooming</p>
+        </div>
+        <div class="cell">
+          <div class="touch mani">manipulation</div>
+          <p class="cap">manipulation — pan + pinch, no double-tap zoom</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>scroll-start-target</h2>
+      <p class="code">scroll-start-target: auto | &lt;element-id&gt; | none</p>
+      <div class="row">
+        <div class="cell">
+          <div class="snap start-target">
+            <span class="ss-item">1</span>
+            <span class="ss-item" id="item-3">3</span>
+            <span class="ss-item">5</span>
+          </div>
+          <p class="cap">#item-3 — carousel opens scrolled to item 3</p>
+        </div>
+        <div class="cell">
+          <div class="snap none-target">no target</div>
+          <p class="cap">none — no scroll-start target</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>scroll-initial-target</h2>
+      <p class="code">scroll-initial-target: auto | &lt;element-id&gt; | none</p>
+      <div class="row">
+        <div class="cell">
+          <div class="snap init-target">
+            <span class="ss-item">1</span>
+            <span class="ss-item" id="item-5">5</span>
+            <span class="ss-item">9</span>
+          </div>
+          <p class="cap">#item-5 — default target element in the carousel</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::scroll-marker &amp; ::scroll-marker-group</h2>
+      <p class="code">::scroll-marker | ::scroll-marker-group</p>
+      <div class="row">
+        <div class="cell">
+          <div class="snap marker-demo">
+            <span class="ss-item">a</span>
+            <span class="ss-item">b</span>
+            <span class="ss-item">c</span>
+            <span class="ss-item">d</span>
+          </div>
+          <p class="cap">::scroll-marker-group: after — dot indicators, active one highlighted</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::scroll-button() &amp; ::selecteditem</h2>
+      <p class="code">::scroll-button(&lt;direction&gt;) | ::selecteditem</p>
+      <div class="row">
+        <div class="cell">
+          <div class="snap btn-demo">
+            <span class="ss-item">1</span>
+            <span class="ss-item">2</span>
+            <span class="ss-item">3</span>
+          </div>
+          <p class="cap">::scroll-button(left/right) — prev/next arrows; ::selecteditem highlights the active slide</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>scroll-target-group</h2>
+      <p class="code">scroll-target-group: &lt;custom-ident&gt; | none</p>
+      <div class="row">
+        <div class="cell">
+          <div class="snap group-demo">
+            <span class="ss-item">1</span>
+            <span class="ss-item">2</span>
+            <span class="ss-item">3</span>
+          </div>
+          <p class="cap">--hero-carousel — items share one selection state via :target-current</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../21-css-masks/index.html">&larr; CSS Masks</a>
+  <a class="pager-btn pager-next" href="../23-at-rules/index.html">CSS At-Rules — Advanced &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

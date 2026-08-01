@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrollbar Styling</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Scrollbar Styling</h1>
+
+    <section>
+      <h2>scrollbar-color</h2>
+      <p class="code">scrollbar-color: &lt;thumb-color&gt; &lt;track-color&gt; | auto</p>
+      <p class="hint">Roll the mouse wheel over each box (or drag its scrollbar) to see the thumb and track colors.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="scroll-box sb-auto">
+            <p class="sb-line">Line 1 — browser default colors.</p>
+            <p class="sb-line">Line 2 — keep scrolling to see more.</p>
+            <p class="sb-line">Line 3 — the thumb and track show here.</p>
+            <p class="sb-line">Line 4 — default theme on this box.</p>
+            <p class="sb-line">Line 5 — bottom of the content.</p>
+          </div>
+          <p class="cap">auto — browser default colors (default)</p>
+        </div>
+        <div class="cell">
+          <div class="scroll-box sb-888">
+            <p class="sb-line">Line 1 — thumb #888, track #f1f1f1.</p>
+            <p class="sb-line">Line 2 — keep scrolling to see more.</p>
+            <p class="sb-line">Line 3 — classic gray-on-light scrollbar.</p>
+            <p class="sb-line">Line 4 — thumb then track color.</p>
+            <p class="sb-line">Line 5 — bottom of the content.</p>
+          </div>
+          <p class="cap">#888 #f1f1f1 — thumb then track color</p>
+        </div>
+        <div class="cell">
+          <div class="scroll-box sb-333">
+            <p class="sb-line">Line 1 — thumb #333, transparent track.</p>
+            <p class="sb-line">Line 2 — keep scrolling to see more.</p>
+            <p class="sb-line">Line 3 — dark thumb floats over content.</p>
+            <p class="sb-line">Line 4 — no visible track behind it.</p>
+            <p class="sb-line">Line 5 — bottom of the content.</p>
+          </div>
+          <p class="cap">#333 transparent — visible thumb, transparent track</p>
+        </div>
+        <div class="cell">
+          <div class="scroll-box sb-current">
+            <p class="sb-line">Line 1 — thumb follows currentColor.</p>
+            <p class="sb-line">Line 2 — keep scrolling to see more.</p>
+            <p class="sb-line">Line 3 — thumb is purple like the text.</p>
+            <p class="sb-line">Line 4 — matches the box's color.</p>
+            <p class="sb-line">Line 5 — bottom of the content.</p>
+          </div>
+          <p class="cap">currentColor transparent — thumb matches text color</p>
+        </div>
+        <div class="cell">
+          <div class="scroll-box sb-webkit">
+            <p class="sb-line">Line 1 — styled with ::-webkit-scrollbar.</p>
+            <p class="sb-line">Line 2 — keep scrolling to see more.</p>
+            <p class="sb-line">Line 3 — gradient thumb, rounded ends.</p>
+            <p class="sb-line">Line 4 — the WebKit/Chromium route.</p>
+            <p class="sb-line">Line 5 — bottom of the content.</p>
+          </div>
+          <p class="cap">::-webkit-scrollbar — WebKit/Chromium alternative</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset. scrollbar-color works in Firefox and Chromium (Chrome 121+); WebKit/Safari still use the ::-webkit-scrollbar pseudo-elements shown in the last cell — and where those are present in Chromium, they win over scrollbar-color.</p>
+    </section>
+
+    <section>
+      <h2>scrollbar-width</h2>
+      <p class="code">scrollbar-width: auto | thin | none</p>
+      <p class="hint">The width applies in Firefox and Chromium (Chrome 121+). For <code>none</code> the bar is hidden — wheel-scroll to confirm the box still scrolls.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="scroll-box sw-auto">
+            <p class="sb-line">Line 1 — default scrollbar width.</p>
+            <p class="sb-line">Line 2 — keep scrolling to see more.</p>
+            <p class="sb-line">Line 3 — auto is the widest option.</p>
+            <p class="sb-line">Line 4 — thickness set by the browser.</p>
+            <p class="sb-line">Line 5 — bottom of the content.</p>
+          </div>
+          <p class="cap">auto — default scrollbar width (default)</p>
+        </div>
+        <div class="cell">
+          <div class="scroll-box sw-thin">
+            <p class="sb-line">Line 1 — thin scrollbar width.</p>
+            <p class="sb-line">Line 2 — keep scrolling to see more.</p>
+            <p class="sb-line">Line 3 — a slimmer, tidier bar.</p>
+            <p class="sb-line">Line 4 — narrower than auto.</p>
+            <p class="sb-line">Line 5 — bottom of the content.</p>
+          </div>
+          <p class="cap">thin — narrow scrollbar</p>
+        </div>
+        <div class="cell">
+          <div class="scroll-box sw-none">
+            <p class="sb-line">Line 1 — scrollbar is hidden here.</p>
+            <p class="sb-line">Line 2 — keep scrolling to see more.</p>
+            <p class="sb-line">Line 3 — no visible bar at all.</p>
+            <p class="sb-line">Line 4 — wheel scrolling still works.</p>
+            <p class="sb-line">Line 5 — bottom of the content.</p>
+          </div>
+          <p class="cap">none — hides the scrollbar while keeping scroll</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../16-view-transitions/index.html">&larr; View Transitions</a>
+  <a class="pager-btn pager-next" href="../18-3d-transforms/index.html">3D Transforms &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

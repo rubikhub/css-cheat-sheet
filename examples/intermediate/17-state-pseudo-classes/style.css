@@ -1,0 +1,165 @@
+/* shared scaffolding */
+.tbox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  min-width: 180px;
+}
+
+.tctrl {
+  font-family: inherit;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #fff;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.tinput {
+  padding: 6px 10px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: #1f2937;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+.flabel {
+  display: block;
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.tlink {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.press-card {
+  padding: 10px 16px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #334155;
+}
+
+/* :active */
+.st-act a:active { color: #ef4444; }
+.st-act button:active {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+  transform: scale(0.95);
+}
+.st-act .press-card:active {
+  background: #fee2e2;
+  border-color: #ef4444;
+  transform: scale(0.97);
+}
+
+/* :focus */
+.st-foc input:focus,
+.st-foc textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+  outline: none;
+}
+.st-foc a:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* :visited */
+.st-vis a:visited { color: #7c3aed; }
+.st-vis a:visited:hover { color: #6d28d9; }
+.st-vis .link:visited { color: #7c3aed; text-decoration: none; }
+
+/* :focus-visible */
+.st-fv button:focus-visible,
+.st-fv input:focus-visible,
+.st-fv a:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* :focus-within */
+.st-fw .fw-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+.st-fw .fw-title {
+  margin: 0;
+  font-size: 0.72rem;
+  color: #64748b;
+}
+.st-fw form:focus-within,
+.st-fw .fw-card:focus-within {
+  background: #eff6ff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* :target */
+.st-tgt .tgt-box {
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #334155;
+}
+.st-tgt :target {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+}
+.st-tgt .tgt-box { scroll-margin-top: 24px; }
+
+/* :any-link */
+.st-al a:any-link { color: #2563eb; }
+.st-al a:any-link:hover { color: #1e40af; text-decoration: underline; }
+
+/* :modal */
+.st-modal dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgb(15 23 42 / 0.3);
+  max-width: 320px;
+}
+.st-modal dialog:modal {
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+}
+.st-modal dialog:modal::backdrop {
+  background: rgb(15 23 42 / 0.5);
+}
+.modal-title {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.modal-text {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #475569;
+}
+.modal-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+}

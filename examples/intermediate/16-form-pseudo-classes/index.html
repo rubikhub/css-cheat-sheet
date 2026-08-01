@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pseudo Classes</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Form Pseudo Classes</h1>
+
+    <section>
+      <h2>:enabled</h2>
+      <p class="code">input:enabled | button:enabled | select:enabled</p>
+      <p class="hint">All three controls are usable — enabled fields get a green border.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-box f-en">
+            <label class="flabel">input:enabled</label>
+            <input type="text" placeholder="Type here" />
+          </div>
+          <p class="cap">input:enabled — enabled inputs</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-en">
+            <label class="flabel">button:enabled</label>
+            <button type="button">Click me</button>
+          </div>
+          <p class="cap">button:enabled — enabled buttons</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-en">
+            <label class="flabel">select:enabled</label>
+            <select>
+              <option>One</option>
+              <option>Two</option>
+            </select>
+          </div>
+          <p class="cap">select:enabled — enabled selects</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:disabled</h2>
+      <p class="code">input:disabled | button:disabled | select:disabled</p>
+      <p class="hint">Disabled controls are greyed out and cannot be focused or used.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-box f-dis">
+            <label class="flabel">input:disabled</label>
+            <input type="text" placeholder="Locked" disabled />
+          </div>
+          <p class="cap">input:disabled — disabled inputs</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-dis">
+            <label class="flabel">button:disabled</label>
+            <button type="button" disabled>Cannot click</button>
+          </div>
+          <p class="cap">button:disabled — disabled buttons</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-dis">
+            <label class="flabel">select:disabled</label>
+            <select disabled>
+              <option>Locked</option>
+            </select>
+          </div>
+          <p class="cap">select:disabled — disabled selects</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:checked</h2>
+      <p class="code">input:checked | input:checked + label | input:checked::before</p>
+      <p class="hint">Click the checkboxes — the checked state is styled blue.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-box f-chk">
+            <label><input type="checkbox" checked /> Apples</label>
+            <label><input type="checkbox" /> Bananas</label>
+            <label><input type="checkbox" /> Cherries</label>
+          </div>
+          <p class="cap">input:checked — checked inputs use accent-color</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-chk">
+            <input type="radio" name="g1" id="g1a" checked />
+            <label for="g1a">radio:checked + label</label>
+            <input type="radio" name="g1" id="g1b" />
+            <label for="g1b">unchecked</label>
+          </div>
+          <p class="cap">input:checked + label — the adjacent label turns bold blue</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-chk">
+            <label><input type="checkbox" class="chk-marker" checked /> custom</label>
+            <label><input type="checkbox" class="chk-marker" /> custom</label>
+          </div>
+          <p class="cap">input:checked::before — a &quot;✓&quot; marker via ::before</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:indeterminate</h2>
+      <p class="code">input:indeterminate | input:indeterminate + label | progress:indeterminate</p>
+      <p class="hint">The checkbox is set to indeterminate via a script; the radio group has no selection; the progress bar has no value.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-box f-ind">
+            <label><input type="checkbox" class="indet-cb" /> Tri-state</label>
+          </div>
+          <p class="cap">input:indeterminate — indeterminate checkboxes</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-ind">
+            <input type="radio" name="ind" id="inda" />
+            <label for="inda">unanswered</label>
+            <input type="radio" name="ind" id="indb" />
+            <label for="indb">also unanswered</label>
+          </div>
+          <p class="cap">input:indeterminate + label — an unchecked radio group is indeterminate</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-ind">
+            <label class="flabel">progress:indeterminate</label>
+            <progress></progress>
+          </div>
+          <p class="cap">progress:indeterminate — no value attribute</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:placeholder-shown</h2>
+      <p class="code">input:placeholder-shown | input:placeholder-shown + label | textarea:placeholder-shown</p>
+      <p class="hint">Type into the fields — the amber placeholder state disappears once there is text.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-box f-ph">
+            <label class="flabel">input:placeholder-shown</label>
+            <input type="text" placeholder="Write something" />
+          </div>
+          <p class="cap">input:placeholder-shown — empty input showing a placeholder</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-ph">
+            <input type="text" id="phx" placeholder="Your name" />
+            <label for="phx">input + label</label>
+          </div>
+          <p class="cap">input:placeholder-shown + label — label next to an empty input</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-ph">
+            <label class="flabel">textarea:placeholder-shown</label>
+            <textarea rows="2" placeholder="Add a note"></textarea>
+          </div>
+          <p class="cap">textarea:placeholder-shown — empty textareas</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:required</h2>
+      <p class="code">input:required | input:required + label::after | select:required | textarea:required</p>
+      <p class="hint">Required fields get a red left border; their labels gain a red asterisk.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-box f-req">
+            <label class="flabel">input:required</label>
+            <input type="text" required />
+          </div>
+          <p class="cap">input:required — required inputs</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-req">
+            <input type="text" id="rq" required placeholder="Name" />
+            <label for="rq">Name</label>
+          </div>
+          <p class="cap">input:required + label::after — asterisk on the label</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-req">
+            <label class="flabel">select:required</label>
+            <select required>
+              <option value="">Pick one</option>
+              <option>One</option>
+            </select>
+          </div>
+          <p class="cap">select:required — required selects</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-req">
+            <label class="flabel">textarea:required</label>
+            <textarea rows="2" required></textarea>
+          </div>
+          <p class="cap">textarea:required — required textareas</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:optional</h2>
+      <p class="code">input:optional | input:optional + label | select:optional | textarea:optional</p>
+      <p class="hint">Optional fields get a green left border and are de-emphasized.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-box f-opt">
+            <label class="flabel">input:optional</label>
+            <input type="text" placeholder="Anything" />
+          </div>
+          <p class="cap">input:optional — optional inputs</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-opt">
+            <input type="text" id="op" placeholder="Nickname" />
+            <label for="op">input + label</label>
+          </div>
+          <p class="cap">input:optional + label — label next to an optional input</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-opt">
+            <label class="flabel">select:optional</label>
+            <select>
+              <option>One</option>
+              <option>Two</option>
+            </select>
+          </div>
+          <p class="cap">select:optional — optional selects</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-opt">
+            <label class="flabel">textarea:optional</label>
+            <textarea rows="2" placeholder="Optional note"></textarea>
+          </div>
+          <p class="cap">textarea:optional — optional textareas</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:valid / :invalid</h2>
+      <p class="code">input:valid | input:invalid</p>
+      <p class="hint">Type in the email fields — a valid address is green, an invalid one is red.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-box f-vi">
+            <label class="flabel">input:valid</label>
+            <input type="email" value="me@example.com" />
+          </div>
+          <p class="cap">input:valid — value meets its constraints</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-vi">
+            <label class="flabel">input:invalid</label>
+            <input type="email" value="not-an-email" />
+          </div>
+          <p class="cap">input:invalid — value violates its constraints</p>
+        </div>
+      </div>
+      <p class="note">:invalid also matches empty required fields before interaction.</p>
+    </section>
+
+    <section>
+      <h2>:in-range / :out-of-range</h2>
+      <p class="code">input:in-range | input:out-of-range</p>
+      <p class="hint">Both fields allow 1&ndash;10 — type 5 (green) or 15 (red).</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-box f-io">
+            <label class="flabel">input:in-range</label>
+            <input type="number" min="1" max="10" value="5" />
+          </div>
+          <p class="cap">input:in-range — value within the allowed range</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-io">
+            <label class="flabel">input:out-of-range</label>
+            <input type="number" min="1" max="10" value="15" />
+          </div>
+          <p class="cap">input:out-of-range — value outside the allowed range</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:read-only / :read-write</h2>
+      <p class="code">input:read-only | textarea:read-only | [contenteditable]:read-write</p>
+      <p class="hint">Read-only fields are greyed with a dashed border; the editable box keeps a blue outline.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-box f-rw">
+            <label class="flabel">input:read-only</label>
+            <input type="text" value="Read only" readonly />
+          </div>
+          <p class="cap">input:read-only — non-editable fields</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-rw">
+            <label class="flabel">textarea:read-only</label>
+            <textarea rows="2" readonly>Fixed text</textarea>
+          </div>
+          <p class="cap">textarea:read-only — read-only text areas</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-rw">
+            <label class="flabel">[contenteditable]:read-write</label>
+            <div class="ce" contenteditable="true">Click and edit me</div>
+          </div>
+          <p class="cap">[contenteditable]:read-write — editable content</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:autofill</h2>
+      <p class="code">input:autofill | input:-webkit-autofill</p>
+      <p class="hint">Browsers only autofill real forms with saved data, so this state cannot be triggered here — the rule would restyle the default yellow fill.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-box f-auto">
+            <label class="flabel">input:autofill</label>
+            <input type="email" name="email" placeholder="Autofilled email" />
+          </div>
+          <p class="cap">input:autofill — autofilled inputs (also pair -webkit-autofill for Safari)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:default</h2>
+      <p class="code">button:default | input:default</p>
+      <p class="hint">The submit button is the form&apos;s default button; the radio with a checked attribute is the default choice.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-box f-def">
+            <form onsubmit="return false">
+              <label class="flabel">button:default</label>
+              <input type="text" placeholder="Any value" />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+          <p class="cap">button:default — the default submit button</p>
+        </div>
+        <div class="cell">
+          <div class="form-box f-def">
+            <label><input type="radio" name="def" checked /> Default choice</label>
+            <label><input type="radio" name="def" /> Other choice</label>
+          </div>
+          <p class="cap">input:default — the default-checked radio</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll(".indet-cb").forEach(function (cb) {
+        cb.indeterminate = true;
+      });
+    </script>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../15-structural-pseudo-classes/index.html">&larr; Structural Pseudo Classes</a>
+  <a class="pager-btn pager-next" href="../17-state-pseudo-classes/index.html">State Pseudo Classes &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

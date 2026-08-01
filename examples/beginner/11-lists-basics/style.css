@@ -1,0 +1,41 @@
+/* list-style-type */
+.ls {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 0.8rem;
+  color: #334155;
+}
+.ls-disc { list-style-type: disc; }
+.ls-circle { list-style-type: circle; }
+.ls-square { list-style-type: square; }
+.ls-decimal { list-style-type: decimal; }
+.ls-dlz { list-style-type: decimal-leading-zero; }
+.ls-lroman { list-style-type: lower-roman; }
+.ls-uroman { list-style-type: upper-roman; }
+.ls-lalpha { list-style-type: lower-alpha; }
+.ls-ualpha { list-style-type: upper-alpha; }
+.ls-none { list-style-type: none; }
+
+/* list-style-position */
+.ls-box {
+  width: 150px;
+  padding-left: 26px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+  background: #fff;
+}
+.lp-outside { list-style-type: decimal; list-style-position: outside; }
+.lp-inside { list-style-type: decimal; list-style-position: inside; }
+
+/* list-style-image */
+.li-none { list-style-image: none; }
+.li-url {
+  list-style-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='12'%20height='12'%3E%3Ccircle%20cx='6'%20cy='6'%20r='5'%20fill='%236366f1'/%3E%3C/svg%3E");
+}
+
+/* list-style (shorthand) */
+.sh-disc-in { list-style: disc inside; }
+.sh-decimal-img {
+  list-style: decimal url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='12'%20height='12'%3E%3Ccircle%20cx='6'%20cy='6'%20r='5'%20fill='%236366f1'/%3E%3C/svg%3E");
+}
+.sh-none { list-style: none; }

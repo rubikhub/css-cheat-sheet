@@ -3,49 +3,159 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>02 - The Cascade</title>
+    <title>The Cascade</title>
     <link rel="stylesheet" href="../../common.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="other-style.css" />
-    <style>
-      button {
-        color: black;
-        color: aquamarine;
-      }
-    </style>
   </head>
   <body>
     <h1>The Cascade</h1>
 
     <section>
-      <h2>Position &amp; Order of Appearance</h2>
-      <p>
-        Last rule wins (same specificity). Both target <code>button</code> —
-        second one wins.
-      </p>
-      <button>Blue (last wins)</button>
-      <p class="element-demo">
-        Second background declaration (purple) wins over green.
-      </p>
+      <h2>How the Cascade Works</h2>
+      <p class="code">cascade = position &amp; order → specificity → origin → importance</p>
+      <div class="row">
+        <div class="cell">
+          <div class="stage-chip">
+            <span class="stage-num">1</span>
+            <span class="stage-name">Position &amp; Order</span>
+          </div>
+          <p class="cap">Last declared rule wins on ties</p>
+        </div>
+        <div class="cell">
+          <div class="stage-chip">
+            <span class="stage-num">2</span>
+            <span class="stage-name">Specificity</span>
+          </div>
+          <p class="cap">Strongest selector wins</p>
+        </div>
+        <div class="cell">
+          <div class="stage-chip">
+            <span class="stage-num">3</span>
+            <span class="stage-name">Origin</span>
+          </div>
+          <p class="cap">Authored CSS beats browser defaults</p>
+        </div>
+        <div class="cell">
+          <div class="stage-chip">
+            <span class="stage-num">4</span>
+            <span class="stage-name">Importance</span>
+          </div>
+          <p class="cap">!important wins over normal rules</p>
+        </div>
+      </div>
+      <p class="note">The cascade runs these four stages in order — earlier stages beat later ones.</p>
     </section>
 
     <section>
-      <h2>Specificity</h2>
-      <p>
-        <code>.highlight</code> (0,1,0) beats <code>p</code> (0,0,1) even though
-        <code>p</code> comes first.
-      </p>
-      <p class="highlight">I am blue — .highlight wins over p.</p>
+      <h2>Stage 1: Position &amp; Order of Appearance</h2>
+      <p class="code">button { color: red; } button { color: blue; } /* blue wins */</p>
+      <div class="row">
+        <div class="cell">
+          <div class="ord-box ord-blue">two rules, later wins</div>
+          <p class="cap">Same stylesheet, two rules — the later one wins (purple)</p>
+        </div>
+        <div class="cell">
+          <div class="ord-box ord-decl">last declaration wins</div>
+          <p class="cap">Same rule, two declarations — the last one wins (orange)</p>
+        </div>
+        <div class="cell">
+          <div class="ord-box cross">two stylesheets</div>
+          <p class="cap">style.css sets red, other-style.css sets green — later link wins (green)</p>
+        </div>
+      </div>
+      <p class="note">Applies to rules in the same stylesheet, in different &lt;style&gt; / &lt;link&gt; elements, and to declarations within one rule.</p>
     </section>
 
     <section>
-      <h2>!important</h2>
-      <p>
-        <code>.button-special</code> with <code>!important</code> overrides
-        <code>.button</code>.
-      </p>
-      <div class="button">I am blue (normal rule)</div>
-      <div class="button button-special">I am red (!important wins)</div>
+      <h2>Stage 2: Specificity</h2>
+      <p class="code">p { color: red; } /* (0,0,1) */&nbsp;&nbsp;.highlight { color: blue; } /* (0,1,0) */</p>
+      <div class="row">
+        <div class="cell">
+          <div class="casc-spec"><p>p — red</p></div>
+          <p class="cap">Element selector only: (0,0,1)</p>
+        </div>
+        <div class="cell">
+          <div class="casc-spec"><p class="highlight">.highlight — blue</p></div>
+          <p class="cap">Class selector beats element: (0,1,0) wins</p>
+        </div>
+      </div>
+      <p class="note">.highlight wins even though the p rule comes first — specificity outranks position.</p>
     </section>
+
+    <section>
+      <h2>Stage 3: Origin</h2>
+      <p class="code">user agent → local user → authored → !important</p>
+      <div class="row">
+        <div class="cell">
+          <div>
+            <h3>User agent defaults</h3>
+            <ul class="ua-item"><li>List item</li></ul>
+            <p class="ua-item">Paragraph</p>
+          </div>
+          <p class="cap">Browser default styles (UA origin)</p>
+        </div>
+        <div class="cell">
+          <div>
+            <h3>Authored CSS</h3>
+            <ul class="authored-item"><li>List item</li></ul>
+            <p class="authored-item">Paragraph</p>
+          </div>
+          <p class="cap">Authored CSS overrides user agent defaults</p>
+        </div>
+      </div>
+      <p class="note">A user's custom CSS with !important would override authored styles without !important — hard to demo on this page, but it is the highest non-UA layer.</p>
+    </section>
+
+    <section>
+      <h2>Stage 4: Importance</h2>
+      <p class="code">.button { color: blue; } .button-special { color: red !important; }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="imp-box imp-normal">normal rule</div>
+          <p class="cap">Normal declaration — blue</p>
+        </div>
+        <div class="cell">
+          <div class="imp-box imp-normal imp-special">!important wins</div>
+          <p class="cap">!important overrides normal rules regardless of specificity — red</p>
+        </div>
+      </div>
+      <p class="note">Least to most important: normal → @animation → !important → @transition. Avoid !important when possible — it makes CSS harder to override.</p>
+    </section>
+
+    <section>
+      <h2>Quick Reference</h2>
+      <table class="demo-table">
+        <thead>
+          <tr>
+            <th>Stage</th>
+            <th>What It Resolves</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1. Position</td>
+            <td>Which rule comes last</td>
+          </tr>
+          <tr>
+            <td>2. Specificity</td>
+            <td>Which selector is strongest</td>
+          </tr>
+          <tr>
+            <td>3. Origin</td>
+            <td>Where the CSS comes from</td>
+          </tr>
+          <tr>
+            <td>4. Importance</td>
+            <td>!important, animation, transition</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../01-box-model/index.html">&larr; Box Model</a>
+  <a class="pager-btn pager-next" href="../03-specificity/index.html">Specificity &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
   </body>
 </html>

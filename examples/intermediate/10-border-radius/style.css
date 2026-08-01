@@ -1,0 +1,41 @@
+/* border-radius — corner values */
+.br-zero { border-radius: 0; }
+.br-10 { border-radius: 10px; }
+.br-50 { border-radius: 50%; }
+.br-two { border-radius: 10px 20px; }
+.br-three { border-radius: 10px 20px 30px; }
+.br-four { border-radius: 10px 20px 30px 40px; }
+.br-pill { width: 200px; border-radius: 50%; }
+
+/* border-top-left-radius / border-top-right-radius */
+.br-tl-tr {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.br-tl-half { border-top-left-radius: 50%; }
+.br-tr-ellipse { border-top-right-radius: 10px 20px; }
+
+/* border-bottom-left-radius / border-bottom-right-radius */
+.br-bl-br {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.br-bl-half { border-bottom-left-radius: 50%; }
+.br-pill-bottom {
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+/* logical corners */
+.br-logical {
+  border-start-start-radius: 16px;
+  border-end-end-radius: 16px;
+}
+.rtl { direction: rtl; }
+
+/* corner-shape */
+.cs-round { border-radius: 24px; corner-shape: round; }
+.cs-squircle { border-radius: 24px; corner-shape: squircle; }
+.cs-bevel { border-radius: 24px; corner-shape: bevel; }
+.cs-scoop { border-radius: 24px; corner-shape: scoop; }
+.cs-notch { border-radius: 24px; corner-shape: notch; }

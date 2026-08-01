@@ -1,0 +1,201 @@
+/* shared form scaffolding */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  min-width: 180px;
+}
+
+.flabel {
+  display: block;
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  padding: 6px 10px;
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: #1f2937;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+button {
+  font-family: inherit;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+/* :enabled */
+.f-en input:enabled,
+.f-en select:enabled {
+  border-color: #10b981;
+  box-shadow: 0 0 0 1px #10b981;
+}
+.f-en button:enabled {
+  background: #10b981;
+  border-color: #10b981;
+  color: #fff;
+}
+
+/* :disabled */
+.f-dis input:disabled,
+.f-dis select:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  border-color: #e2e8f0;
+  cursor: not-allowed;
+}
+.f-dis button:disabled {
+  background: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+.f-dis textarea:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  border-color: #e2e8f0;
+  cursor: not-allowed;
+}
+
+/* :checked */
+.f-chk input:checked { accent-color: #2563eb; }
+.f-chk input:checked + label { color: #2563eb; font-weight: 700; }
+
+.chk-marker {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #94a3b8;
+  border-radius: 4px;
+  background: #fff;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.chk-marker:checked {
+  border-color: #2563eb;
+  background: #2563eb;
+}
+.chk-marker:checked::before {
+  content: "\2713";
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 14px;
+}
+
+/* :indeterminate */
+.f-ind input:indeterminate { accent-color: #f59e0b; }
+.f-ind input:indeterminate + label { color: #f59e0b; font-weight: 700; }
+.f-ind progress:indeterminate { accent-color: #f59e0b; }
+progress { accent-color: #2563eb; }
+
+/* :placeholder-shown */
+.f-ph input:placeholder-shown,
+.f-ph textarea:placeholder-shown {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+.f-ph input:placeholder-shown + label {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+/* :required */
+.f-req input:required,
+.f-req select:required,
+.f-req textarea:required {
+  border-left: 3px solid #ef4444;
+}
+.f-req input:required + label::after,
+.f-req select:required + label::after,
+.f-req textarea:required + label::after {
+  content: " *";
+  color: #ef4444;
+}
+
+/* :optional */
+.f-opt input:optional,
+.f-opt select:optional,
+.f-opt textarea:optional {
+  border-left: 3px solid #10b981;
+}
+.f-opt input:optional + label {
+  color: #10b981;
+  font-weight: 700;
+}
+
+/* :valid / :invalid */
+.f-vi input:valid {
+  border-color: #10b981;
+  box-shadow: 0 0 0 1px #10b981;
+}
+.f-vi input:invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 1px #ef4444;
+}
+
+/* :in-range / :out-of-range */
+.f-io input:in-range {
+  border-color: #10b981;
+  box-shadow: 0 0 0 1px #10b981;
+}
+.f-io input:out-of-range {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 1px #ef4444;
+}
+
+/* :read-only / :read-write */
+.f-rw input:read-only,
+.f-rw textarea:read-only {
+  background: #f1f5f9;
+  color: #64748b;
+  border-style: dashed;
+}
+.f-rw .ce {
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  color: #1f2937;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: 1px dashed #2563eb;
+  outline-offset: 2px;
+}
+
+/* :autofill */
+.f-auto input:autofill {
+  box-shadow: 0 0 0 1000px #eef2ff inset;
+  background-color: #eef2ff;
+}
+.f-auto input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #eef2ff inset;
+  -webkit-text-fill-color: #1f2937;
+}
+
+/* :default */
+.f-def button:default {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+.f-def input:default { accent-color: #2563eb; }

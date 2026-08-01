@@ -1,0 +1,236 @@
+/* scrollport used by every demo below */
+.scrollport {
+  width: 360px;
+  max-width: 100%;
+  height: 220px;
+  overflow-y: auto;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0 14px;
+  scrollbar-width: thin;
+  margin-bottom: 8px;
+}
+
+.scrollport.range-port {
+  height: 300px;
+}
+
+.filler {
+  height: 1200px;
+}
+
+/* animation-timeline: scroll() progress bars */
+.sbar {
+  position: sticky;
+  top: 0;
+  height: 8px;
+  background: #2563eb;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: grow 1s linear both;
+  animation-timeline: scroll(nearest block);
+}
+
+@keyframes grow {
+  to { transform: scaleX(1); }
+}
+
+/* animation-timeline: view() reveals */
+.reveal {
+  margin: 16px 0;
+  padding: 14px;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fade-up 1s linear both;
+  animation-timeline: view(block);
+}
+
+@keyframes fade-up {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* animation-timeline: auto (time-based) */
+.pulse {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ec4899;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.35); opacity: 0.55; }
+}
+
+/* animation-timeline: scroll(root) — fixed page bar */
+.root-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #3b82f6;
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 50;
+  pointer-events: none;
+  animation: grow 1s linear both;
+  animation-timeline: scroll(root block);
+}
+
+/* animation-range items */
+.range-item {
+  margin: 16px 0;
+  padding: 14px;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.rg-full {
+  animation: grow-in 1s linear both;
+  animation-timeline: view();
+  animation-range: 0% 100%;
+}
+
+.rg-entry {
+  animation: fade-up 1s linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.rg-exit {
+  animation: fade-out 1s linear both;
+  animation-timeline: view();
+  animation-range: exit 0% exit 100%;
+}
+
+.rg-cover {
+  animation: grow-in 1s linear both;
+  animation-timeline: view();
+  animation-range: cover 0% cover 100%;
+}
+
+.rg-contain {
+  animation: pulse-color 1s linear both;
+  animation-timeline: view();
+  animation-range: contain 0% contain 100%;
+}
+
+.rg-normal {
+  animation: grow-in 1s linear both;
+  animation-timeline: view();
+  animation-range: normal;
+}
+
+@keyframes grow-in {
+  from { transform: scale(0.6); background: #bfdbfe; }
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+
+@keyframes pulse-color {
+  from { background: #2563eb; }
+  to { background: #ec4899; }
+}
+
+/* animation-range-name */
+.rn-named {
+  animation: grow-in 1s linear both;
+  animation-timeline: view();
+  animation-range-name: --my-range;
+  animation-range: cover 0% cover 100%;
+}
+
+.rn-normal {
+  animation: fade-up 1s linear both;
+  animation-timeline: view();
+  animation-range-name: normal;
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* animation-range-start / animation-range-end */
+.rs-20 {
+  animation: fade-up 1s linear both;
+  animation-timeline: view();
+  animation-range-start: entry 20%;
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.re-80 {
+  animation: fade-out 1s linear both;
+  animation-timeline: view();
+  animation-range-end: exit 80%;
+}
+
+/* view-timeline */
+.vt-subject {
+  margin: 18px 0;
+  padding: 16px;
+  border-radius: 8px;
+  background: #8b5cf6;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  view-timeline-name: --reveal;
+  view-timeline-axis: block;
+}
+
+.vt-bar {
+  margin-top: 10px;
+  height: 8px;
+  background: #fbbf24;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: grow 1s linear both;
+  animation-timeline: --reveal;
+}
+
+/* timeline-scope */
+.scope-wrap {
+  position: relative;
+  width: 360px;
+  max-width: 100%;
+  margin-bottom: 18px;
+  timeline-scope: --scroller;
+}
+
+.scope-wrap.none {
+  timeline-scope: none;
+}
+
+.scope-port {
+  scroll-timeline-name: --scroller;
+  scroll-timeline-axis: block;
+  margin-bottom: 0;
+}
+
+.scope-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  height: 8px;
+  background: #10b981;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: grow 1s linear both;
+  animation-timeline: --scroller;
+}

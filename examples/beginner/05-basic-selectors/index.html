@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>05 - Basic Selectors</title>
+    <title>Basic Selectors</title>
     <link rel="stylesheet" href="../../common.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -11,41 +11,114 @@
     <h1>Basic Selectors</h1>
 
     <section>
-      <h2>Universal Selector *</h2>
-      <div class="demo">
-        <p>All elements have box-sizing: border-box applied via *</p>
+      <h2>Universal Selector</h2>
+      <p class="code">* { box-sizing: border-box; margin: 0; padding: 0; }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="uni-demo">
+            <p>a paragraph</p>
+            <div>a div</div>
+            <span>a span</span>
+          </div>
+          <p class="cap">* — every element inside the box is matched</p>
+        </div>
       </div>
+      <p class="note">Commonly used with box-sizing, resets, and applying default styles to everything.</p>
     </section>
 
     <section>
       <h2>Element Selector</h2>
-      <div class="demo">
-        <p>All &lt;p&gt; elements have line-height: 1.6 and color: #333</p>
+      <p class="code">p { … }&nbsp;&nbsp;h1 { … }&nbsp;&nbsp;div { … }&nbsp;&nbsp;a { … }&nbsp;&nbsp;img { … }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="el-box"><p>p</p></div>
+          <p class="cap">p — all paragraph elements</p>
+        </div>
+        <div class="cell">
+          <div class="el-box"><h1>h1</h1></div>
+          <p class="cap">h1 — all h1 elements</p>
+        </div>
+        <div class="cell">
+          <div class="el-box"><div>div</div></div>
+          <p class="cap">div — all div elements</p>
+        </div>
+        <div class="cell">
+          <div class="el-box"><a href="#">a</a></div>
+          <p class="cap">a — all anchor elements</p>
+        </div>
+        <div class="cell">
+          <div class="el-box"><img alt="img" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60'><rect width='60' height='60' fill='%23cbd5e1'/></svg>" /></div>
+          <p class="cap">img — all image elements</p>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>Class Selector .button / .card</h2>
-      <div class="demo">
-        <button class="button">Click me</button>
-        <div class="card">I'm a .card element</div>
+      <h2>Class Selector</h2>
+      <p class="code">.class</p>
+      <div class="row">
+        <div class="cell">
+          <div class="sel-box"><div class="button">.button</div></div>
+          <p class="cap">.button — elements with class="button"</p>
+        </div>
+        <div class="cell">
+          <div class="sel-box"><div class="card">.card</div></div>
+          <p class="cap">.card — elements with class="card"</p>
+        </div>
+        <div class="cell">
+          <div class="sel-box"><div class="active">.active</div></div>
+          <p class="cap">.active — elements with class="active"</p>
+        </div>
+        <div class="cell">
+          <div class="sel-box"><div class="primary">.primary</div></div>
+          <p class="cap">.primary — elements with class="primary"</p>
+        </div>
       </div>
+      <p class="note">Classes are the workhorse of reusable component styling and variants.</p>
     </section>
 
     <section>
-      <h2>ID Selector #header / #hero</h2>
-      <div class="demo">
-        <div id="header">I'm #header</div>
-        <div id="hero">I'm #hero</div>
+      <h2>ID Selector</h2>
+      <p class="code">#id</p>
+      <div class="row">
+        <div class="cell">
+          <div class="sel-box"><div id="id-header">#header</div></div>
+          <p class="cap">#header — element with id="header"</p>
+        </div>
+        <div class="cell">
+          <div class="sel-box"><div id="id-main">#main-content</div></div>
+          <p class="cap">#main-content — element with id="main-content"</p>
+        </div>
+        <div class="cell">
+          <div class="sel-box"><div id="id-footer">#footer</div></div>
+          <p class="cap">#footer — element with id="footer"</p>
+        </div>
+        <div class="cell">
+          <div class="sel-box"><div id="id-hero">#hero</div></div>
+          <p class="cap">#hero — element with id="hero"</p>
+        </div>
       </div>
+      <p class="note">IDs must be unique on a page — use them for unique sections, not reusable styles.</p>
     </section>
 
     <section>
-      <h2>Attribute Selector [type="text"] / [href]</h2>
-      <div class="demo">
-        <input type="text" placeholder="Styled by [type='text']" /><br /><br />
-        <a href="#">Styled by [href]</a>
+      <h2>Attribute Selector</h2>
+      <p class="code">[attribute]&nbsp;&nbsp;|&nbsp;&nbsp;[attribute="value"]</p>
+      <div class="row">
+        <div class="cell">
+          <div class="attr-box"><a href="#">[href] link</a></div>
+          <p class="cap">[href] — elements with an href attribute</p>
+        </div>
+        <div class="cell">
+          <div class="attr-box"><input type="text" value="[type=text]" /></div>
+          <p class="cap">[type="text"] — exact attribute match</p>
+        </div>
       </div>
     </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../04-inheritance/index.html">&larr; Inheritance</a>
+  <a class="pager-btn pager-next" href="../06-combinators-basics/index.html">Combinators Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
   </body>
 </html>

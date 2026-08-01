@@ -1,0 +1,128 @@
+/* checkbox-hack trigger */
+.trigger {
+  display: none;
+}
+
+.run-btn {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.run-btn:active {
+  background: #dbeafe;
+}
+
+/* 3D scene wrapper — every scene gets a fixed viewer distance */
+.scene3d {
+  width: 150px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 500px;
+  flex-shrink: 0;
+}
+
+/* transform-style */
+.stage3d {
+  position: relative;
+  width: 110px;
+  height: 80px;
+  transform: rotateX(25deg) rotateY(25deg);
+  transition: transform 0.6s ease;
+}
+
+.st-flat { transform-style: flat; }
+.st-preserve { transform-style: preserve-3d; }
+
+.face3d {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: linear-gradient(120deg, #3b82f6, #6366f1);
+}
+
+.face3d.z {
+  background: linear-gradient(120deg, #10b981, #06b6d4);
+  transform: translateZ(40px);
+}
+
+#ts1:checked ~ .scene3d .st-flat {
+  transform: rotateY(110deg) rotateX(10deg);
+}
+
+#ts2:checked ~ .scene3d .st-preserve {
+  transform: rotateY(110deg) rotateX(10deg);
+}
+
+/* perspective */
+.pe-none { perspective: none; }
+.pe-500 { perspective: 500px; }
+.pe-1000 { perspective: 1000px; }
+.pe-20em { perspective: 20em; }
+
+.pe-box {
+  width: 110px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: linear-gradient(120deg, #8b5cf6, #ec4899);
+  transform: rotateY(35deg) rotateX(20deg);
+  transition: transform 0.6s ease;
+}
+
+#pe1:checked ~ .scene3d .pe-box,
+#pe2:checked ~ .scene3d .pe-box,
+#pe3:checked ~ .scene3d .pe-box,
+#pe4:checked ~ .scene3d .pe-box {
+  transform: rotateY(120deg) rotateX(0deg);
+}
+
+/* backface-visibility */
+.flip {
+  position: relative;
+  width: 110px;
+  height: 80px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.bf-front {
+  background: linear-gradient(120deg, #6366f1, #8b5cf6);
+}
+
+.bf-back {
+  background: linear-gradient(120deg, #f59e0b, #ef4444);
+  transform: rotateY(180deg);
+}
+
+.bfv { backface-visibility: visible; }
+.bfh { backface-visibility: hidden; }
+
+#bf1:checked ~ .scene3d .flip {
+  transform: rotateY(180deg);
+}
+
+#bf2:checked ~ .scene3d .flip {
+  transform: rotateY(180deg);
+}

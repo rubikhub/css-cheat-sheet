@@ -1,124 +1,85 @@
 /* background-color */
-.card {
-  background-color: #f5f5f5;
-  padding: 16px;
-  border-radius: 6px;
-}
-
-.button {
-  background-color: #ccc;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 8px;
-}
-
-.button:hover {
-  background-color: #0066cc;
-  color: #fff;
+.bgc-trans {
+  background: transparent;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
 }
 
 /* background-image */
-.hero-img {
-  /* background-image: url("https://picsum.photos/600/200"); */
-  background-image: url("./assets/jdm-engines-slider-compressed-min.jpg");
-  height: 150px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: bold;
+.bgi-none { background-image: none; }
+.bgi-url {
+  background-image: url("assets/jdm-engines-slider-compressed-min.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 /* background-repeat */
-.pattern {
-  background-image: url("https://picsum.photos/40/40");
-  background-repeat: repeat;
-  height: 80px;
-  border-radius: 6px;
+.bgrep {
+  width: 200px;
+  height: 120px;
+  background-image: url("assets/jdm-engines-slider-compressed-min.jpg");
+  background-size: 60px 60px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
-
-.no-tiling {
-  background-image: url("https://picsum.photos/600/200");
-  background-repeat: no-repeat;
-  height: 80px;
-  border-radius: 6px;
-  margin-top: 8px;
-}
-
-.round {
-  background-image: url("https://picsum.photos/40/40");
-  background-repeat: round;
-  height: 80px;
-  border-radius: 6px;
-  margin-top: 8px;
-}
-
-.space {
-  background-image: url("https://picsum.photos/40/40");
-  background-repeat: space;
-  height: 80px;
-  border-radius: 6px;
-  margin-top: 8px;
-}
+.bgrep-repeat { background-repeat: repeat; }
+.bgrep-norepeat { background-repeat: no-repeat; }
+.bgrep-x { background-repeat: repeat-x; }
+.bgrep-y { background-repeat: repeat-y; }
+.bgrep-round { background-repeat: round; }
+.bgrep-space { background-repeat: space; }
+.bgrep-two { background-repeat: repeat space; }
 
 /* background-size */
-.hero-cover {
-  background-image: url("https://picsum.photos/800/300");
-  background-size: cover;
-  background-position: center;
+.bgsz {
+  width: 180px;
   height: 120px;
-  border-radius: 6px;
-}
-
-.contained {
-  background-image: url("https://picsum.photos/200/200");
-  background-size: contain;
+  background-image: url("assets/jdm-engines-slider-compressed-min.jpg");
   background-repeat: no-repeat;
   background-position: center;
-  height: 120px;
-  border-radius: 6px;
-  margin-top: 8px;
-  background-color: #eee;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
 }
+.bgsz-auto { background-size: auto; }
+.bgsz-cover { background-size: cover; }
+.bgsz-contain { background-size: contain; }
+.bgsz-200 { background-size: 200px; }
+.bgsz-200-100 { background-size: 200px 100px; }
+.bgsz-50 { background-size: 50%; }
+.bgsz-50-75 { background-size: 50% 75%; }
 
 /* background-position */
-.hero-position {
-  background-image: url("https://picsum.photos/600/200");
-  background-position: center;
+.bgpos {
+  width: 160px;
+  height: 110px;
+  background-color: #eef2f7;
+  background-image: url("assets/jdm-engines-slider-compressed-min.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 100px;
-  border-radius: 6px;
+  background-size: 48px 48px;
+  color: #475569;
+  text-shadow: none;
 }
-
-.corner-accent {
-  background-image: url("https://picsum.photos/600/200");
-  background-position: right 20px bottom 10px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 100px;
-  border-radius: 6px;
-  margin-top: 8px;
-}
+.bgpos-top { background-position: top; }
+.bgpos-bottom { background-position: bottom; }
+.bgpos-left { background-position: left; }
+.bgpos-right { background-position: right; }
+.bgpos-center { background-position: center; }
+.bgpos-20px { background-position: 20px; }
+.bgpos-50 { background-position: 50%; }
+.bgpos-top-right { background-position: top right; }
+.bgpos-center-bottom { background-position: center bottom; }
+.bgpos-offset { background-position: right 10px bottom 20px; }
 
 /* background (shorthand) */
-.hero-shorthand {
-  background: url("https://picsum.photos/600/200") center/cover no-repeat;
-  height: 150px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: bold;
+.bgsh-red { background: red; }
+.bgsh-url { background: url("assets/jdm-engines-slider-compressed-min.jpg"); }
+.bgsh-center { background: center; background-color: #dbeafe; }
+.bgsh-norepeat { background: no-repeat; background-color: #dbeafe; }
+.bgsh-fixed {
+  height: 160px;
+  background: url("assets/jdm-engines-slider-compressed-min.jpg") center / cover fixed;
 }
-
-.card-shorthand {
-  background: #f5f5f5 url("https://picsum.photos/40/40") repeat;
-  padding: 16px;
-  border-radius: 6px;
-  min-height: 60px;
+.bgsh-multi {
+  background: url("assets/jdm-engines-slider-compressed-min.jpg") center no-repeat;
+}
+.bgsh-full {
+  background: red url("assets/jdm-engines-slider-compressed-min.jpg") center / cover no-repeat;
 }

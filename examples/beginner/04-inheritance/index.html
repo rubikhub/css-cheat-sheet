@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>04 - Inheritance</title>
+    <title>Inheritance</title>
     <link rel="stylesheet" href="../../common.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -11,27 +11,130 @@
     <h1>Inheritance</h1>
 
     <section>
-      <h2>Properties inherit downward</h2>
-      <div class="parent">
-        <p>I inherit color, font-size, and font-weight from .parent</p>
-        <span>I also inherit them</span>
+      <h2>How Inheritance Works</h2>
+      <p class="code">html { color: lightslategray; }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="inh-parent">
+            parent — color set here
+            <p>child p — inherits color</p>
+            <div><span>nested span — still inherits</span></div>
+          </div>
+          <p class="cap">Properties cascade down from parent to child; every nested element inherits</p>
+        </div>
+      </div>
+      <p class="note">Inheritance only flows downward — children inherit from parents, never the other way around.</p>
+    </section>
+
+    <section>
+      <h2>Which Properties Inherit?</h2>
+      <div class="row">
+        <div class="cell">
+          <div class="inh-inh">
+            parent: font, color, letter-spacing
+            <p>child inherits the font and color</p>
+          </div>
+          <p class="cap">Inherited by default: color, fonts, line-height, text-align, cursor, list-style…</p>
+        </div>
+        <div class="cell">
+          <div class="inh-not">
+            parent: border, padding, background
+            <p>child does NOT inherit border or background</p>
+          </div>
+          <p class="cap">Not inherited: width, height, margin, padding, border, background, display, position…</p>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>font-weight: inherit</h2>
-      <strong>Normal strong: bold by default</strong>
-      <div class="component">
-        <strong>Inside .component: inherit (matches parent's weight)</strong>
+      <h2>Controlling Inheritance</h2>
+      <p class="code">inherit | initial | revert | unset | all</p>
+      <div class="row">
+        <div class="cell">
+          <div class="inh-ctl">
+            parent (weight 400) with <strong>strong</strong>
+          </div>
+          <p class="cap">font-weight: inherit — strong matches its parent's weight</p>
+        </div>
+        <div class="cell">
+          <div class="inh-init">
+            parent (weight 700) with <strong>strong</strong>
+          </div>
+          <p class="cap">font-weight: initial — strong resets to the CSS default (400)</p>
+        </div>
+        <div class="cell">
+          <div class="inh-rev">
+            <p>styled p has 2rem padding</p>
+            <p class="revert-p">this p uses padding: revert</p>
+          </div>
+          <p class="cap">padding: revert — drops back to the browser default padding</p>
+        </div>
+        <div class="cell">
+          <div class="inh-uns">
+            parent color
+            <p class="golden">golden, 2em margin-top</p>
+            <p class="unset-p">unset: inherits color, margin resets to 0</p>
+          </div>
+          <p class="cap">color: unset inherits · margin: unset resets (margin does not inherit)</p>
+        </div>
+        <div class="cell">
+          <div class="inh-all">
+            parent color
+            <p class="styled-p">styled: goldenrod, bold, padded, margined</p>
+            <p class="all-unset">all: unset — plain, inherits color, no margin or padding</p>
+          </div>
+          <p class="cap">all: unset resets every property at once</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset. unset behaves like inherit for inherited properties and like initial for the rest.</p>
+    </section>
+
+    <section>
+      <h2>Practical Example</h2>
+      <p class="code">body { font-family: Arial; font-size: 16px; color: #333; }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="inh-prac">
+            <p>This inherits font-family, font-size, and color from its parent.</p>
+          </div>
+          <p class="cap">One declaration on an ancestor styles every descendant</p>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>font-weight: initial</h2>
-      <strong>Normal strong: bold by default</strong>
-      <div class="aside">
-        <strong>Inside .aside: initial (back to normal 400)</strong>
-      </div>
+      <h2>Quick Reference</h2>
+      <table class="demo-table">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Behavior</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>inherit</code></td>
+            <td>Use the parent's computed value</td>
+          </tr>
+          <tr>
+            <td><code>initial</code></td>
+            <td>Use the property's CSS default</td>
+          </tr>
+          <tr>
+            <td><code>revert</code></td>
+            <td>Undo styles from the same cascade origin</td>
+          </tr>
+          <tr>
+            <td><code>unset</code></td>
+            <td>inherit if the property inherits, otherwise initial</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../03-specificity/index.html">&larr; Specificity</a>
+  <a class="pager-btn pager-next" href="../05-basic-selectors/index.html">Basic Selectors &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
   </body>
 </html>

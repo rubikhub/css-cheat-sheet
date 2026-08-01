@@ -1,0 +1,122 @@
+/* shared demo pieces */
+.chip {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* :is() */
+.is-heading {
+  color: #1e40af;
+}
+h3:is(h1, h2, h3) {
+  border-left: 4px solid #3b82f6;
+  padding-left: 10px;
+}
+.is-card,
+.is-panel {
+  width: 150px;
+  padding: 22px 12px;
+  border-radius: 8px;
+  background: #dbeafe;
+  border: 2px solid #60a5fa;
+  text-align: center;
+  font-weight: 600;
+  color: #1e3a8a;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+:is(.is-card, .is-panel):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* :where() */
+.wh-heading {
+  color: #065f46;
+}
+:where(.wh-heading, h3) {
+  border-left: 4px solid #10b981;
+  padding-left: 10px;
+}
+.wh-card,
+.wh-panel {
+  width: 150px;
+  padding: 22px 12px;
+  border-radius: 8px;
+  background: #d1fae5;
+  border: 2px solid #34d399;
+  text-align: center;
+  font-weight: 600;
+  color: #064e3b;
+  transition: transform 0.2s ease;
+}
+:where(.wh-card, .wh-panel):hover {
+  transform: translateY(-3px);
+}
+.wh-panel {
+  background: #fde68a;
+  border-color: #f59e0b;
+  color: #78350f;
+}
+
+/* :not() */
+.chips-row .chip {
+  margin-right: 10px;
+}
+.chips-row .chip:not(:last-child) {
+  border-right: 3px solid #94a3b8;
+}
+.chip:not(.disabled) {
+  background: #c7d2fe;
+  color: #312e81;
+}
+.chip.disabled {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+.not-input {
+  background: #fed7aa;
+  color: #7c2d12;
+}
+
+/* :has() */
+.has-card {
+  width: 140px;
+  height: 90px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  border: 2px dashed #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+.has-card:has(img) {
+  border: 2px solid #8b5cf6;
+  background: #ede9fe;
+  color: #5b21b6;
+}
+.has-form {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  display: inline-block;
+}
+.has-form:has(input:checked) {
+  background: #dcfce7;
+  border-color: #16a34a;
+}
+.checkbox-line {
+  font-size: 0.9rem;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+}

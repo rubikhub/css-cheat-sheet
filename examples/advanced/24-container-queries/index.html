@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Container Queries</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Container Queries</h1>
+
+    <section>
+      <h2>container-type</h2>
+      <p class="code">container-type: inline-size | size | block-size | normal</p>
+      <div class="row">
+        <div class="cell">
+          <div class="cq-wrap inline-size">
+            <div class="cq-card">inline-size</div>
+          </div>
+          <p class="cap">inline-size — responds to container width (most common)</p>
+        </div>
+        <div class="cell">
+          <div class="cq-wrap size">
+            <div class="cq-card">size</div>
+          </div>
+          <p class="cap">size — containment on both dimensions</p>
+        </div>
+        <div class="cell">
+          <div class="cq-wrap block-size">
+            <div class="cq-card">block-size</div>
+          </div>
+          <p class="cap">block-size — block size containment only</p>
+        </div>
+        <div class="cell">
+          <div class="cq-wrap normal">
+            <div class="cq-card">normal</div>
+          </div>
+          <p class="cap">normal — no containment (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+      <p class="hint">Drag the resize handle on the container wrappers to watch the card adapt.</p>
+    </section>
+
+    <section>
+      <h2>container-name</h2>
+      <p class="code">container-name: &lt;name&gt; | none</p>
+      <div class="row">
+        <div class="cell">
+          <div class="cq-wrap sidebar">
+            <div class="cq-card">sidebar</div>
+          </div>
+          <p class="cap">sidebar — named container, targeted with @container sidebar (...)</p>
+        </div>
+        <div class="cell">
+          <div class="cq-wrap card">
+            <div class="cq-card">card</div>
+          </div>
+          <p class="cap">card — named container for card queries</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>@container</h2>
+      <p class="code">@container (&lt;condition&gt;) { ... } | @container &lt;name&gt; (&lt;condition&gt;) { ... }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="cq-wrap min-width">
+            <div class="cq-card">min-width query</div>
+          </div>
+          <p class="cap">@container (min-width: 220px) — card switches to a grid layout</p>
+        </div>
+        <div class="cell">
+          <div class="cq-wrap named-query">
+            <div class="cq-card">named query</div>
+          </div>
+          <p class="cap">@container sidebar (max-width: 260px) — targets a named container</p>
+        </div>
+        <div class="cell">
+          <div class="cq-wrap style-query">
+            <div class="cq-card">style query</div>
+          </div>
+          <p class="cap">@container style(--theme: dark) — responds to a custom property</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Container Query Units</h2>
+      <p class="code">cqw | cqh | cqi | cqb | cqmin | cqmax</p>
+      <div class="row">
+        <div class="cell">
+          <div class="cq-wrap units">
+            <div class="cq-card units-card">cqi title</div>
+          </div>
+          <p class="cap">cqi — title font-size scales with container inline size</p>
+        </div>
+        <div class="cell">
+          <div class="cq-wrap units">
+            <div class="cq-card cqw-card">cqw</div>
+          </div>
+          <p class="cap">cqw — 1% of container width</p>
+        </div>
+        <div class="cell">
+          <div class="cq-wrap units">
+            <div class="cq-card cqmin-card">cqmin</div>
+          </div>
+          <p class="cap">cqmin — smaller of cqi and cqb</p>
+        </div>
+      </div>
+      <p class="note">cqh · cqb · cqmax behave identically for their respective axes.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../23-at-rules/index.html">&larr; CSS At-Rules — Advanced</a>
+  <a class="pager-btn pager-next" href="../25-anchor-positioning/index.html">Anchor Positioning &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

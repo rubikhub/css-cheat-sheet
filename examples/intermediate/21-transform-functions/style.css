@@ -1,0 +1,88 @@
+/* translate() */
+.fn-tr { transition: transform 0.4s ease; }
+.fn-tr:hover { transform: translate(100px, 50px); }
+.fn-tr-x { transition: transform 0.4s ease; }
+.fn-tr-x:hover { transform: translate(100px); }
+.fn-trx { transition: transform 0.4s ease; }
+.fn-trx:hover { transform: translateX(100px); }
+.fn-try { transition: transform 0.4s ease; }
+.fn-try:hover { transform: translateY(50px); }
+.fn-tr-pct { transition: transform 0.4s ease; }
+.fn-tr-pct:hover { transform: translate(50%, 50%); }
+.fn-tr3d { transition: transform 0.4s ease; }
+.fn-tr3d:hover { transform: perspective(600px) translate3d(100px, 50px, 200px); }
+.fn-trz { transition: transform 0.4s ease; }
+.fn-trz:hover { transform: perspective(600px) translateZ(200px); }
+
+/* rotate() */
+.fn-r45 { transition: transform 0.4s ease; }
+.fn-r45:hover { transform: rotate(45deg); }
+.fn-r45n { transition: transform 0.4s ease; }
+.fn-r45n:hover { transform: rotate(-45deg); }
+.fn-rturn { transition: transform 0.4s ease; }
+.fn-rturn:hover { transform: rotate(0.5turn); }
+.fn-rrad { transition: transform 0.4s ease; }
+.fn-rrad:hover { transform: rotate(3.14rad); }
+.fn-rx { transition: transform 0.4s ease; }
+.fn-rx:hover { transform: perspective(600px) rotateX(45deg); }
+.fn-ry { transition: transform 0.4s ease; }
+.fn-ry:hover { transform: perspective(600px) rotateY(45deg); }
+.fn-rz { transition: transform 0.4s ease; }
+.fn-rz:hover { transform: rotateZ(45deg); }
+.fn-r3d { transition: transform 0.4s ease; }
+.fn-r3d:hover { transform: perspective(600px) rotate3d(1, 1, 1, 45deg); }
+
+/* scale() */
+.fn-s2 { transition: transform 0.4s ease; }
+.fn-s2:hover { transform: scale(2); }
+.fn-s05 { transition: transform 0.4s ease; }
+.fn-s05:hover { transform: scale(0.5); }
+.fn-sxy { transition: transform 0.4s ease; }
+.fn-sxy:hover { transform: scale(2, 0.5); }
+.fn-sx { transition: transform 0.4s ease; }
+.fn-sx:hover { transform: scaleX(2); }
+.fn-sy { transition: transform 0.4s ease; }
+.fn-sy:hover { transform: scaleY(0.5); }
+.fn-s3d { perspective: 400px; transform-style: preserve-3d; transition: transform 0.4s ease; }
+.fn-s3d:hover { transform: scale3d(1, 1, 2); }
+.fn-sz { perspective: 400px; transform-style: preserve-3d; transition: transform 0.4s ease; }
+.fn-sz:hover { transform: scaleZ(2); }
+
+/* scale() Z-depth chips */
+.fn-chip {
+  display: inline-block;
+  padding: 3px 7px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+.fn-chip-back { transform: translateZ(-30px); }
+.fn-chip-front { transform: translateZ(30px); }
+
+/* skew() */
+.fn-k20 { transition: transform 0.4s ease; }
+.fn-k20:hover { transform: skew(20deg); }
+.fn-kxy { transition: transform 0.4s ease; }
+.fn-kxy:hover { transform: skew(20deg, -10deg); }
+.fn-kx { transition: transform 0.4s ease; }
+.fn-kx:hover { transform: skewX(20deg); }
+.fn-ky { transition: transform 0.4s ease; }
+.fn-ky:hover { transform: skewY(-10deg); }
+
+/* perspective() */
+.fn-p200 { transition: transform 0.4s ease; }
+.fn-p200:hover { transform: perspective(200px) rotateY(45deg); }
+.fn-p500 { transition: transform 0.4s ease; }
+.fn-p500:hover { transform: perspective(500px) rotateX(30deg); }
+.fn-p1000 { transition: transform 0.4s ease; }
+.fn-p1000:hover { transform: perspective(1000px) rotateY(-20deg) translateZ(100px); }
+
+/* individual transform properties */
+.fn-ipt {
+  transition: translate 0.4s ease, rotate 0.4s ease, scale 0.4s ease;
+}
+.fn-ipt-t:hover { translate: 50% 20px; }
+.fn-ipt-r:hover { rotate: 45deg; }
+.fn-ipt-s:hover { scale: 1.5; }
+.fn-ipt-c:hover { translate: 30px 10px; rotate: 15deg; scale: 1.2; }

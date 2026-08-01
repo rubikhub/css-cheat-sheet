@@ -1,100 +1,110 @@
-/* font-weight */
-h1 {
-  font-weight: 700;
-}
+/* font-family */
+.ff-serif { font-family: serif; }
+.ff-sans { font-family: sans-serif; }
+.ff-mono { font-family: monospace; }
+.ff-cursive { font-family: cursive; }
+.ff-fantasy { font-family: fantasy; }
+.ff-system { font-family: system-ui; }
+.ff-stack { font-family: "Helvetica Neue", Arial, sans-serif; }
 
-.caption {
-  font-weight: 300;
-}
+/* font-size */
+.fs-xxs { font-size: xx-small; }
+.fs-xs { font-size: x-small; }
+.fs-sm { font-size: small; }
+.fs-md { font-size: medium; }
+.fs-lg { font-size: large; }
+.fs-xl { font-size: x-large; }
+.fs-xxl { font-size: xx-large; }
+.fs-relative { font-size: 1.1rem; }
+.fs-smaller { font-size: smaller; }
+.fs-larger { font-size: larger; }
+.fs-px { font-size: 16px; }
+.fs-em { font-size: 1.2em; }
+.fs-rem { font-size: 1.5rem; }
+.fs-pct { font-size: 100%; }
+
+/* font-weight */
+.fw-100 { font-weight: 100; }
+.fw-200 { font-weight: 200; }
+.fw-300 { font-weight: 300; }
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+.fw-800 { font-weight: 800; }
+.fw-900 { font-weight: 900; }
+.fw-normal { font-weight: normal; }
+.fw-bold { font-weight: bold; }
+.fw-parent { font-weight: 700; }
+.fw-lighter { font-weight: lighter; }
+.fw-bolder { font-weight: bolder; }
 
 /* font-style */
-em {
-  font-style: italic;
-}
+.fs-normal { font-style: normal; }
+.fs-italic { font-style: italic; }
 
-.quote {
-  font-style: oblique 12deg;
-}
+/* font (shorthand) */
+.font-sh1 { font: 700 1.2rem/1.4 system-ui, sans-serif; }
+.font-sh2 { font: italic 1rem Georgia, serif; }
 
-/* color */
-a {
-  color: #0066cc;
+/* typography text block */
+.tbox {
+  width: 210px;
+  min-height: 64px;
+  padding: 8px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #fff;
+  color: #0f172a;
+  font-size: 0.85rem;
 }
 
 /* text-align */
-.centered-text {
-  text-align: center;
-}
-
-.justify-text {
-  text-align: justify;
-}
+.ta-left { text-align: left; }
+.ta-right { text-align: right; }
+.ta-center { text-align: center; }
+.ta-justify { text-align: justify; }
+.ta-start { text-align: start; }
+.ta-end { text-align: end; }
+.ta-match-parent { text-align: match-parent; }
 
 /* text-decoration */
-.no-underline {
-  text-decoration: none;
-}
-
-.discount {
-  text-decoration: line-through;
-  font-size: 1.2rem;
-}
+.td-none { text-decoration: none; }
+.td-underline { text-decoration: underline; }
+.td-overline { text-decoration: overline; }
+.td-line-through { text-decoration: line-through; }
 
 /* text-transform */
-.button-transform {
-  text-transform: uppercase;
-  padding: 8px 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-right: 12px;
-}
-
-.nav-link {
-  text-transform: capitalize;
-}
+.tt-none { text-transform: none; }
+.tt-capitalize { text-transform: capitalize; }
+.tt-uppercase { text-transform: uppercase; }
+.tt-lowercase { text-transform: lowercase; }
+.tt-fullwidth { text-transform: full-width; }
 
 /* line-height */
-h1 {
-  line-height: 1.2;
-}
+.lh-normal { line-height: normal; }
+.lh-15 { line-height: 1.5; }
+.lh-24 { line-height: 24px; }
+.lh-150 { line-height: 150%; }
+.lh-1 { line-height: 1; }
 
 /* letter-spacing */
-.heading-text {
-  letter-spacing: 0.05em;
-  font-size: 1.2rem;
-}
-
-.uppercase-text {
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
+.ls-normal { letter-spacing: normal; }
+.ls-005 { letter-spacing: 0.05em; }
+.ls-2px { letter-spacing: 2px; }
+.ls-neg { letter-spacing: -0.02em; }
 
 /* text-indent */
-.indent-text {
-  text-indent: 2em;
-}
+.ti-2em { text-indent: 2em; }
+.ti-20px { text-indent: 20px; }
+.ti-10 { text-indent: 10%; }
+.ti-each-line { text-indent: 2em each-line; }
+.ti-0 { text-indent: 0; }
 
 /* white-space */
-.button-text {
-  white-space: nowrap;
-  padding: 8px 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.code {
-  white-space: pre;
-  background: #f4f4f4;
-  padding: 12px;
-  border-radius: 4px;
-  font-family: monospace;
-}
-
-/* text-shadow */
-.shadow-heading {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
+.ws-normal { white-space: normal; }
+.ws-nowrap { white-space: nowrap; }
+.ws-pre { white-space: pre; }
+.ws-pre-wrap { white-space: pre-wrap; }
+.ws-pre-line { white-space: pre-line; }
+.ws-break-spaces { white-space: break-spaces; }

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Sizing</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Image Sizing</h1>
+
+    <section>
+      <h2>aspect-ratio</h2>
+      <p class="code">aspect-ratio: auto | &lt;ratio&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="ratio ratio-auto">auto</div>
+          <p class="cap">auto — intrinsic ratio (default)</p>
+        </div>
+        <div class="cell">
+          <div class="ratio ratio-square">1/1</div>
+          <p class="cap">1 / 1 — square</p>
+        </div>
+        <div class="cell">
+          <div class="ratio ratio-wide">16/9</div>
+          <p class="cap">16 / 9 — widescreen</p>
+        </div>
+        <div class="cell">
+          <div class="ratio ratio-photo">3/2</div>
+          <p class="cap">3 / 2 — photo ratio</p>
+        </div>
+      </div>
+      <p class="note">Width is fixed, height derives from the ratio.</p>
+    </section>
+
+    <section>
+      <h2>object-fit</h2>
+      <p class="code">object-fit: fill | contain | cover | none | scale-down</p>
+      <p class="hint">Each frame is 140×90 with a 4:3 image squeezed into it.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="frame"><img class="of-fill" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120'%3E%3Cdefs%3E%3Cpattern id='p' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Crect width='40' height='40' fill='%233b82f6'/%3E%3Crect width='20' height='20' fill='%2393c5fd'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='160' height='120' fill='url(%23p)'/%3E%3C/svg%3E" alt="" /></div>
+          <p class="cap">fill — stretch to fill (default)</p>
+        </div>
+        <div class="cell">
+          <div class="frame"><img class="of-contain" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120'%3E%3Crect width='160' height='120' fill='%233b82f6'/%3E%3C/svg%3E" alt="" /></div>
+          <p class="cap">contain — fit inside, keep ratio</p>
+        </div>
+        <div class="cell">
+          <div class="frame"><img class="of-cover" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120'%3E%3Crect width='160' height='120' fill='%233b82f6'/%3E%3C/svg%3E" alt="" /></div>
+          <p class="cap">cover — fill, crop overflow</p>
+        </div>
+        <div class="cell">
+          <div class="frame"><img class="of-none" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120'%3E%3Crect width='160' height='120' fill='%233b82f6'/%3E%3C/svg%3E" alt="" /></div>
+          <p class="cap">none — natural size</p>
+        </div>
+        <div class="cell">
+          <div class="frame"><img class="of-scale-down" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120'%3E%3Crect width='160' height='120' fill='%233b82f6'/%3E%3C/svg%3E" alt="" /></div>
+          <p class="cap">scale-down — none or contain, smaller</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>object-position</h2>
+      <p class="code">object-position: &lt;position&gt;</p>
+      <p class="hint">A 160×120 image is cover-cropped into each 140×90 frame — the crop region shows the position.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="frame"><img class="op-center" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120'%3E%3Crect width='160' height='120' fill='%2310b981'/%3E%3Ccircle cx='80' cy='60' r='22' fill='%2306523f'/%3E%3C/svg%3E" alt="" /></div>
+          <p class="cap">50% 50% — centered (default)</p>
+        </div>
+        <div class="cell">
+          <div class="frame"><img class="op-top" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120'%3E%3Crect width='160' height='120' fill='%23f59e0b'/%3E%3Ccircle cx='80' cy='20' r='22' fill='%23783c00'/%3E%3C/svg%3E" alt="" /></div>
+          <p class="cap">top — align to top edge</p>
+        </div>
+        <div class="cell">
+          <div class="frame"><img class="op-left" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120'%3E%3Crect width='160' height='120' fill='%23ec4899'/%3E%3Ccircle cx='25' cy='60' r='22' fill='%23831c64'/%3E%3C/svg%3E" alt="" /></div>
+          <p class="cap">left — align to left edge</p>
+        </div>
+        <div class="cell">
+          <div class="frame"><img class="op-edge" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120'%3E%3Crect width='160' height='120' fill='%238b5cf6'/%3E%3Ccircle cx='140' cy='100' r='22' fill='%234c1d95'/%3E%3C/svg%3E" alt="" /></div>
+          <p class="cap">right 20px bottom 10px</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>image-set()</h2>
+      <p class="code">background-image: image-set(&lt;url&gt; &lt;resolution&gt;, ...)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="iset iset-density"></div>
+          <p class="cap">image-set('photo@1x.png' 1x, 'photo@2x.png' 2x)</p>
+        </div>
+        <div class="cell">
+          <div class="iset iset-width"></div>
+          <p class="cap">image-set('photo-640.jpg' 640w, 'photo-1280.jpg' 1280w)</p>
+        </div>
+        <div class="cell">
+          <div class="iset iset-type"></div>
+          <p class="cap">image-set(url(a.avif) type('image/avif'), url(a.jpg))</p>
+        </div>
+      </div>
+      <p class="note">In this demo the candidates all resolve to the same SVG so it renders everywhere; real usage swaps files by resolution.</p>
+    </section>
+
+    <section>
+      <h2>object-view-box</h2>
+      <p class="code">object-view-box: inset(&lt;top&gt; &lt;right&gt; &lt;bottom&gt; &lt;left&gt;)</p>
+      <p class="hint">A 160×120 checkerboard is zoomed via the view box.</p>
+      <div class="row">
+        <div class="cell">
+          <img class="ovb ovb-0" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120'%3E%3Cdefs%3E%3Cpattern id='ch' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Crect width='40' height='40' fill='%236366f1'/%3E%3Crect width='20' height='20' fill='%23a5b4fc'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='160' height='120' fill='url(%23ch)'/%3E%3C/svg%3E" alt="" />
+          <p class="cap">inset(0) — no crop (default)</p>
+        </div>
+        <div class="cell">
+          <img class="ovb ovb-25" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120'%3E%3Cdefs%3E%3Cpattern id='ch2' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Crect width='40' height='40' fill='%23f43f5e'/%3E%3Crect width='20' height='20' fill='%23fda4af'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='160' height='120' fill='url(%23ch2)'/%3E%3C/svg%3E" alt="" />
+          <p class="cap">inset(25%) — inner 50% square</p>
+        </div>
+        <div class="cell">
+          <img class="ovb ovb-sides" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120'%3E%3Cdefs%3E%3Cpattern id='ch3' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Crect width='40' height='40' fill='%2310b981'/%3E%3Crect width='20' height='20' fill='%236ee7b7'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='160' height='120' fill='url(%23ch3)'/%3E%3C/svg%3E" alt="" />
+          <p class="cap">inset(10% 20% 30% 40%)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>image-rendering</h2>
+      <p class="code">image-rendering: auto | crisp-edges | pixelated | smooth</p>
+      <p class="hint">A tiny 4×4 pixel pattern scaled up — compare the scaling algorithm.</p>
+      <div class="row">
+        <div class="cell">
+          <img class="ir ir-auto" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFUlEQVR42mP8z8Dwn4EIwESiYlIYAAAbQwH/0NvLAAAAAElFTkSuQmCC" alt="" />
+          <p class="cap">auto — quality algorithm (default)</p>
+        </div>
+        <div class="cell">
+          <img class="ir ir-pixelated" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFUlEQVR42mP8z8Dwn4EIwESiYlIYAAAbQwH/0NvLAAAAAElFTkSuQmCC" alt="" />
+          <p class="cap">pixelated — nearest-neighbor, hard pixels</p>
+        </div>
+        <div class="cell">
+          <img class="ir ir-crisp" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFUlEQVR42mP8z8Dwn4EIwESiYlIYAAAbQwH/0NvLAAAAAElFTkSuQmCC" alt="" />
+          <p class="cap">crisp-edges — preserve contrast</p>
+        </div>
+        <div class="cell">
+          <img class="ir ir-smooth" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFUlEQVR42mP8z8Dwn4EIwESiYlIYAAAbQwH/0NvLAAAAAElFTkSuQmCC" alt="" />
+          <p class="cap">smooth — always smooth when scaling</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../03-background-advanced/index.html">&larr; Background Advanced</a>
+  <a class="pager-btn pager-next" href="../05-typography-advanced/index.html">Typography Advanced &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

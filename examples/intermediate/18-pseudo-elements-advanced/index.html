@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo Elements Advanced</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Pseudo Elements Advanced</h1>
+
+    <section>
+      <h2>::before</h2>
+      <p class="code">.icon::before | .arrow::before | .card::before | blockquote::before | .list-item::before</p>
+      <p class="hint">::before inserts generated content at the start of each element.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pe-panel"><p class="pe-text pe-icon">Star icon</p></div>
+          <p class="cap">.icon::before — a star icon</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel"><p class="pe-text pe-arrow">Next step</p></div>
+          <p class="cap">.arrow::before — a unicode arrow</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel"><div class="pe-card">A card with a top bar</div></div>
+          <p class="cap">.card::before — empty content for decoration</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel"><blockquote class="pe-quote">A memorable quote</blockquote></div>
+          <p class="cap">blockquote::before — an opening quote</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel"><ol class="pe-counter"><li>First</li><li>Second</li><li>Third</li></ol></div>
+          <p class="cap">.list-item::before — a counter number</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::after</h2>
+      <p class="code">.icon::after | .clearfix::after | .tooltip::after | a[target=&quot;_blank&quot;]::after | blockquote::after</p>
+      <p class="hint">::after inserts generated content at the end of each element.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pe-panel"><p class="pe-text pe-star">Favorite</p></div>
+          <p class="cap">.icon::after — a star icon</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel"><div class="pe-clearfix pe-cf"><span class="pe-float demo-blue">1</span><span class="pe-float demo-green">2</span><span class="pe-float demo-red">3</span></div></div>
+          <p class="cap">.clearfix::after — the dashed container wraps its floated children</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel"><p class="pe-text pe-tooltip" data-tooltip="Hello there">Badge from data</p></div>
+          <p class="cap">.tooltip::after — text rendered from a data attribute</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel"><p class="pe-text"><a href="index.html" target="_blank" class="pe-external">Open page</a></p></div>
+          <p class="cap">a[target=&quot;_blank&quot;]::after — external link indicator</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel"><blockquote class="pe-quote-after">Quoted wisdom</blockquote></div>
+          <p class="cap">blockquote::after — a closing quote</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::first-line</h2>
+      <p class="code">p::first-line | h1::first-line | blockquote::first-line | .article::first-line</p>
+      <p class="hint">Only the first line of each block is styled — resize the window to see the wrap point move.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pe-panel pe-fl"><p class="pe-text">The first line of this paragraph is bold and blue, while the rest of the wrapped text stays normal.</p></div>
+          <p class="cap">p::first-line — first line of paragraphs</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel pe-fl"><h1 class="pe-head">A heading with a styled first line</h1></div>
+          <p class="cap">h1::first-line — first line of headings</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel pe-fl"><blockquote class="pe-text pe-quote-fl">A longer blockquote whose opening line is uppercased and italic before it wraps onto further lines.</blockquote></div>
+          <p class="cap">blockquote::first-line — first line of blockquotes</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel pe-fl"><div class="article pe-text">Article lead-in text: the very first line is emphasized and everything that follows keeps the default styling.</div></div>
+          <p class="cap">.article::first-line — first line of article text</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::first-letter</h2>
+      <p class="code">p::first-letter | h1::first-letter | blockquote::first-letter</p>
+      <p class="hint">The first letter becomes a drop cap.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pe-panel pe-flet"><p class="pe-text">A paragraph that opens with a large drop capital, pulling the first letter down beside the first two lines of text.</p></div>
+          <p class="cap">p::first-letter — drop cap on paragraphs</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel pe-flet"><h1 class="pe-head">Heading drop cap</h1></div>
+          <p class="cap">h1::first-letter — drop cap on headings</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel pe-flet"><blockquote class="pe-text pe-quote-fl">A blockquote whose opening letter is enlarged and amber as an ornamental start.</blockquote></div>
+          <p class="cap">blockquote::first-letter — drop cap on blockquotes</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::selection</h2>
+      <p class="code">::selection | p::selection | h1::selection</p>
+      <p class="hint">Select the text with your mouse — each scope has a different highlight color.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pe-panel pe-sel"><p class="pe-text">Select this whole paragraph — paragraphs turn orange.</p></div>
+          <p class="cap">::selection — styles all selected text (yellow here)</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel pe-sel"><p class="pe-text">This is a paragraph scope: selection turns orange.</p></div>
+          <p class="cap">p::selection — styles selected text in paragraphs</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel pe-sel"><h1 class="pe-head">Heading selection</h1></div>
+          <p class="cap">h1::selection — styles selected text in headings (blue)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::placeholder</h2>
+      <p class="code">input::placeholder | textarea::placeholder</p>
+      <p class="hint">Placeholders are italic and muted — clear the field to see them again.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pe-panel pe-ph">
+            <label class="flabel">input::placeholder</label>
+            <input type="text" class="pe-input" placeholder="e.g. Ada Lovelace" />
+          </div>
+          <p class="cap">input::placeholder — placeholder of text inputs</p>
+        </div>
+        <div class="cell">
+          <div class="pe-panel pe-ph">
+            <label class="flabel">textarea::placeholder</label>
+            <textarea rows="2" class="pe-input" placeholder="Leave a note..."></textarea>
+          </div>
+          <p class="cap">textarea::placeholder — placeholder of textareas</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::file-selector-button</h2>
+      <p class="code">input[type=&quot;file&quot;]::file-selector-button</p>
+      <p class="hint">The file-picker button is styled with the same properties as a normal button.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pe-panel pe-file">
+            <label class="flabel">input[type=&quot;file&quot;]::file-selector-button</label>
+            <input type="file" />
+          </div>
+          <p class="cap">the button element inside an input[type=file]</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../17-state-pseudo-classes/index.html">&larr; State Pseudo Classes</a>
+  <a class="pager-btn pager-next" href="../19-transition-advanced/index.html">Transition Advanced &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

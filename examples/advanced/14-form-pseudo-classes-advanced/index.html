@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pseudo-classes — Advanced</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Form Pseudo-classes — Advanced</h1>
+
+    <section>
+      <h2>:dir()</h2>
+      <p class="code">:dir(ltr) | :dir(rtl)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="dir-box" dir="ltr">Left-to-right text</div>
+          <p class="cap">:dir(ltr) — aligned left</p>
+        </div>
+        <div class="cell">
+          <div class="dir-box" dir="rtl">Right-to-left text</div>
+          <p class="cap">:dir(rtl) — aligned right</p>
+        </div>
+        <div class="cell">
+          <input class="dir-input" dir="rtl" value="RTL input" />
+          <p class="cap">input:dir(rtl) — input with right-to-left text</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>:lang()</h2>
+      <p class="code">:lang(en) | :lang(en, fr, de)</p>
+      <div class="row">
+        <div class="cell">
+          <p class="lang-box" lang="en">"English" — curly quotes</p>
+          <p class="cap">:lang(en) — English text with en quotes</p>
+        </div>
+        <div class="cell">
+          <p class="lang-box" lang="fr">«French» — French quotes</p>
+          <p class="cap">:lang(fr) — French text with guillemets</p>
+        </div>
+        <div class="cell">
+          <p class="lang-box" lang="ar">العربية — right-to-left Arabic</p>
+          <p class="cap">:lang(ar) — direction rtl applied</p>
+        </div>
+        <div class="cell">
+          <p class="lang-box" lang="de">„Deutsch" — German quotes</p>
+          <p class="cap">:lang(en, fr, de) — any of multiple languages matches</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../13-state-pseudo-classes-advanced/index.html">&larr; Advanced State Pseudo-classes</a>
+  <a class="pager-btn pager-next" href="../15-pseudo-elements-cutting-edge/index.html">Cutting-edge Pseudo-elements &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

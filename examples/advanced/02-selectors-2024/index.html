@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selectors 2024+</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Selectors 2024+</h1>
+
+    <section>
+      <h2>:has() (Deep)</h2>
+      <p class="code">:has(&lt;relative-selector-list&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="form-item">
+            <input type="password" placeholder="password" />
+            <span class="fbadge">has password input</span>
+          </div>
+          <p class="cap">form:has(input[type="password"]) — blue border</p>
+        </div>
+        <div class="cell">
+          <div class="flabel">
+            <label class="focus-label">Name <input type="text" placeholder="click me" /></label>
+            <span class="fbadge">label focused</span>
+          </div>
+          <p class="cap">label:has(+ input:focus) — label colors blue when input is focused</p>
+        </div>
+        <div class="cell">
+          <div class="article has-img-no-video">
+            <span class="a-thumb"></span>
+            <p>Image, no video</p>
+          </div>
+          <p class="cap">article:has(img):not(:has(video)) — shows image grid</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>:is() (Specificity)</h2>
+      <p class="code">:is(&lt;selector-list&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="is-headings">
+            <h3>H3</h3>
+            <p>P — not matched</p>
+          </div>
+          <p class="cap">:is(h1, h2, h3) — matches any heading (specificity 0,1,0)</p>
+        </div>
+        <div class="cell">
+          <div class="is-card">
+            <h4>Inside .card</h4>
+            <p>paragraph</p>
+          </div>
+          <p class="cap">:is(.card) h4 — matches h4 inside .card</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:where() (Zero Specificity)</h2>
+      <p class="code">:where(&lt;selector-list&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="where-headings">
+            <h3>H3 via :where()</h3>
+            <p>paragraph</p>
+          </div>
+          <p class="cap">:where(h1, h2, h3) — zero specificity, easily overridden</p>
+        </div>
+        <div class="cell">
+          <ul class="where-list">
+            <li>List 1</li>
+            <li>List 2</li>
+          </ul>
+          <p class="cap">:where(ul, ol) — resets list styles at zero specificity</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:user-valid</h2>
+      <p class="code">input:user-valid | input:user-invalid</p>
+      <div class="row">
+        <div class="cell">
+          <input class="u-valid" type="email" placeholder="type a valid email" value="test@site.com" />
+          <p class="cap">input:user-valid — green border after interacting with a valid value</p>
+        </div>
+        <div class="cell">
+          <input class="u-invalid" type="email" placeholder="type an invalid email" required />
+          <p class="cap">input:user-invalid — red border after interacting with an invalid value</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:open</h2>
+      <p class="code">:open</p>
+      <div class="row">
+        <div class="cell">
+          <details class="open-demo" open>
+            <summary>Click to toggle</summary>
+            <p>Open details body</p>
+          </details>
+          <p class="cap">details:open — blue border when open</p>
+        </div>
+        <div class="cell">
+          <details class="open-marker" open>
+            <summary>Marker demo</summary>
+            <p>Body text</p>
+          </details>
+          <p class="cap">details:open::marker — custom "▼ " marker when open</p>
+        </div>
+        <div class="cell">
+          <select class="open-select">
+            <option>Option A</option>
+            <option>Option B</option>
+          </select>
+          <p class="cap">select:open — styled while the dropdown is open</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:popover-open</h2>
+      <p class="code">:popover-open</p>
+      <div class="row">
+        <div class="cell">
+          <button popovertarget="pop-a">Show popover</button>
+          <div popover id="pop-a" class="pop-a">Popover content</div>
+          <p class="cap">[popover]:popover-open — animated in while shown</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>@scope (in Selectors context)</h2>
+      <p class="code">@scope (&lt;scope-root&gt;) to (&lt;scope-limit&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="scope-card">
+            <p>Scoped paragraph — blue</p>
+            <div class="scope-footer">
+              <p>Footer — excluded, keeps global color</p>
+            </div>
+          </div>
+          <p class="cap">@scope (.card) to (.card-footer) — limits styles to the subtree</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:target-current</h2>
+      <p class="code">:target-current | :target-current(&lt;name&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="carousel">
+            <span class="slide">1</span>
+            <span class="slide">2</span>
+            <span class="slide">3</span>
+          </div>
+          <p class="cap">:target-current — outline the currently scrolled item (carousel)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:blank</h2>
+      <p class="code">:blank</p>
+      <div class="row">
+        <div class="cell">
+          <input class="blank-demo" type="text" placeholder="empty field" />
+          <p class="cap">input:blank — border turns gray while empty (unlike :empty)</p>
+        </div>
+        <div class="cell">
+          <textarea class="blank-demo" placeholder="empty textarea"></textarea>
+          <p class="cap">textarea:blank — gray border until text is typed</p>
+        </div>
+      </div>
+      <p class="note">:blank applies to form controls, distinct from :empty which matches elements.</p>
+    </section>
+
+    <section>
+      <h2>:fullscreen</h2>
+      <p class="code">:fullscreen</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fs-box" id="fs-box">Fullscreen target</div>
+          <p class="cap">:fullscreen — element gets a dark backdrop when fullscreen</p>
+        </div>
+      </div>
+      <p class="note">Use the browser's fullscreen API (e.g. requestFullscreen) to observe :fullscreen.</p>
+    </section>
+
+    <section>
+      <h2>:state()</h2>
+      <p class="code">:state(&lt;custom-state-name&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <rating-widget class="state-loading">rating</rating-widget>
+          <p class="cap">:state(loading) — custom element in a loading state</p>
+        </div>
+      </div>
+      <p class="note">Works with CustomStateSet in web components; :state() needs a registered custom state to match.</p>
+    </section>
+
+    <section>
+      <h2>appearance: base-select</h2>
+      <p class="code">appearance: base-select | none</p>
+      <div class="row">
+        <div class="cell">
+          <select class="base-select">
+            <option>Styled option A</option>
+            <option>Styled option B</option>
+          </select>
+          <p class="cap">base-select — opt into fully styleable dropdowns</p>
+        </div>
+        <div class="cell">
+          <select class="app-none">
+            <option>No native chrome</option>
+            <option>Second</option>
+          </select>
+          <p class="cap">appearance: none — removes all native select chrome</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::picker()</h2>
+      <p class="code">::picker(&lt;element&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <select class="picker-select">
+            <option>Option 1</option>
+            <option>Option 2</option>
+          </select>
+          <p class="cap">select::picker(select) — styles the dropdown panel</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::selectedcontent</h2>
+      <p class="code">::selectedcontent</p>
+      <div class="row">
+        <div class="cell">
+          <select class="selected-content">
+            <option>Selected shows bold</option>
+            <option>Option 2</option>
+          </select>
+          <p class="cap">select::selectedcontent — bold the displayed selected option</p>
+        </div>
+      </div>
+      <p class="note">Works only with appearance: base-select.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../01-has-selector/index.html">&larr; :has() — The Parent Selector</a>
+  <a class="pager-btn pager-next" href="../03-components-and-shadow-dom/index.html">Web Components & Shadow DOM &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

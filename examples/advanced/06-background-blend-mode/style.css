@@ -1,0 +1,23 @@
+/* background-blend-mode — same two gradient layers on every demo box */
+.blend {
+  background-image: linear-gradient(#ff6b6b, #4d96ff),
+                    linear-gradient(45deg, #ffd93d, #6bcb77);
+}
+.bd-normal { background-blend-mode: normal; }
+.bd-multiply { background-blend-mode: multiply; }
+.bd-screen { background-blend-mode: screen; }
+.bd-overlay { background-blend-mode: overlay; }
+.bd-darken { background-blend-mode: darken; }
+.bd-lighten { background-blend-mode: lighten; }
+.bd-dodge { background-blend-mode: color-dodge; }
+.bd-burn { background-blend-mode: color-burn; }
+.bd-hardlight { background-blend-mode: hard-light; }
+.bd-softlight { background-blend-mode: soft-light; }
+.bd-difference { background-blend-mode: difference; }
+.bd-exclusion { background-blend-mode: exclusion; }
+.bd-hue { background-blend-mode: hue; }
+.bd-saturation { background-blend-mode: saturation; }
+.bd-color { background-blend-mode: color; }
+.bd-luminosity { background-blend-mode: luminosity; }
+.bd-hover { background-blend-mode: normal; }
+.bd-hover:hover { background-blend-mode: multiply; }

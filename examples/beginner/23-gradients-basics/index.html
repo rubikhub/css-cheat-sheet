@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradients Basics</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Gradients Basics</h1>
+
+    <section>
+      <h2>linear-gradient()</h2>
+      <p class="code">linear-gradient(&lt;angle&gt;, &lt;color-stops&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="gbox lg-right"></div>
+          <p class="cap">to right — left to right</p>
+        </div>
+        <div class="cell">
+          <div class="gbox lg-bottom"></div>
+          <p class="cap">to bottom — top to bottom (default)</p>
+        </div>
+        <div class="cell">
+          <div class="gbox lg-135"></div>
+          <p class="cap">135deg — diagonal</p>
+        </div>
+        <div class="cell">
+          <div class="gbox lg-two"></div>
+          <p class="cap">red, blue — simple two-color</p>
+        </div>
+        <div class="cell">
+          <div class="gbox lg-multi"></div>
+          <p class="cap">#6c5ce7, #a29bfe, #fd79a8 — multi-color</p>
+        </div>
+        <div class="cell">
+          <div class="gbox lg-stops"></div>
+          <p class="cap">red 0%, blue 100% — color stops</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>radial-gradient()</h2>
+      <p class="code">radial-gradient(&lt;shape&gt;, &lt;color-stops&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="gbox rg-circle"></div>
+          <p class="cap">circle — circular gradient</p>
+        </div>
+        <div class="cell">
+          <div class="gbox rg-ellipse"></div>
+          <p class="cap">ellipse — elliptical gradient (default)</p>
+        </div>
+        <div class="cell">
+          <div class="gbox rg-center"></div>
+          <p class="cap">at center — centered position</p>
+        </div>
+        <div class="cell">
+          <div class="gbox rg-top-left"></div>
+          <p class="cap">at top left — positioned at corner</p>
+        </div>
+        <div class="cell">
+          <div class="gbox rg-two"></div>
+          <p class="cap">red, blue — simple two-color</p>
+        </div>
+        <div class="cell">
+          <div class="gbox rg-multi"></div>
+          <p class="cap">#00b894, #00cec9, #0984e3 — multi-color</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>conic-gradient()</h2>
+      <p class="code">conic-gradient(&lt;color-stops&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="gbox cg-wheel"></div>
+          <p class="cap">red, orange, yellow, green, blue — color wheel</p>
+        </div>
+        <div class="cell">
+          <div class="gbox cg-custom"></div>
+          <p class="cap">#ff6b6b, #feca57, #48dbfb — custom colors</p>
+        </div>
+        <div class="cell">
+          <div class="gbox cg-from0"></div>
+          <p class="cap">from 0deg — starting angle</p>
+        </div>
+        <div class="cell">
+          <div class="gbox cg-from90"></div>
+          <p class="cap">from 90deg — rotated start</p>
+        </div>
+        <div class="cell">
+          <div class="gbox cg-center"></div>
+          <p class="cap">at center — center position</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Repeating gradients</h2>
+      <p class="code">repeating-linear-gradient() | repeating-radial-gradient() | repeating-conic-gradient()</p>
+      <p class="hint">Repeating variants tile the color stops over and over.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="gbox rgp-linear"></div>
+          <p class="cap">repeating-linear-gradient(red 0 10px, blue 10px 20px)</p>
+        </div>
+        <div class="cell">
+          <div class="gbox rgp-radial"></div>
+          <p class="cap">repeating-radial-gradient(circle, red 0 10px, blue 10px 20px)</p>
+        </div>
+        <div class="cell">
+          <div class="gbox rgp-conic"></div>
+          <p class="cap">repeating-conic-gradient(red 0 10%, blue 10% 20%)</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../22-transition-basics/index.html">&larr; Transition Basics</a>
+  <a class="pager-btn pager-next" href="../24-logical-properties/index.html">Logical Properties &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

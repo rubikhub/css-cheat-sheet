@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typography 2024+</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Typography 2024+</h1>
+
+    <section>
+      <h2>text-wrap: balance</h2>
+      <p class="code">text-wrap: balance</p>
+      <p class="hint">Balancing only applies to the block’s own text — nested block-level children are ignored.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="tbox tw-head tw-bal">Designing Balanced Headlines That Look Great</p>
+          <p class="cap">balance — balances line lengths across the block</p>
+        </div>
+        <div class="cell">
+          <p class="tbox tw-head tw-wrap">Designing Balanced Headlines That Look Great</p>
+          <p class="cap">wrap — normal wrapping (default)</p>
+        </div>
+        <div class="cell">
+          <p class="tbox tw-head tw-nowrap">Designing Balanced Headlines That Look Great</p>
+          <p class="cap">nowrap — no wrapping</p>
+        </div>
+        <div class="cell">
+          <p class="tbox tw-head tw-pretty">Designing Balanced Headlines That Look Great</p>
+          <p class="cap">pretty — optimizes line breaks</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (wrap) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>text-wrap: pretty</h2>
+      <p class="code">text-wrap: pretty</p>
+      <p class="hint">Pretty wrapping trades a little extra layout time for better last-line breaks.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="tbox tw-pretty">Pretty wrapping avoids a single orphaned word dangling on the last line of a narrow paragraph.</p>
+          <p class="cap">pretty — optimizes line breaking and avoids orphans</p>
+        </div>
+        <div class="cell">
+          <p class="tbox tw-wrap">Pretty wrapping avoids a single orphaned word dangling on the last line of a narrow paragraph.</p>
+          <p class="cap">wrap — normal wrapping (default)</p>
+        </div>
+        <div class="cell">
+          <p class="tbox tw-bal">Pretty wrapping avoids a single orphaned word dangling on the last line of a narrow paragraph.</p>
+          <p class="cap">balance — balances line lengths</p>
+        </div>
+        <div class="cell">
+          <p class="tbox tw-nowrap">Pretty wrapping avoids a single orphaned word dangling on the last line of a narrow paragraph.</p>
+          <p class="cap">nowrap — no wrapping</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (wrap) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>text-box-trim / text-box-edge</h2>
+      <p class="code">text-box-trim: none | trim-start | trim-end | both; text-box-edge: auto | &lt;edge&gt;</p>
+      <p class="hint">Trims the text box to the used font metrics — clearest on line-height: 1 boxes with a background. Supported in Chrome 131+.</p>
+      <div class="row">
+        <div class="cell">
+          <span class="tb tbt-both">Ag</span>
+          <p class="cap">both — trim above and below</p>
+        </div>
+        <div class="cell">
+          <span class="tb tbt-start">Ag</span>
+          <p class="cap">trim-start — trim above only</p>
+        </div>
+        <div class="cell">
+          <span class="tb tbt-end">Ag</span>
+          <p class="cap">trim-end — trim below only</p>
+        </div>
+        <div class="cell">
+          <span class="tb tbt-none">Ag</span>
+          <p class="cap">none — no trimming (default)</p>
+        </div>
+        <div class="cell">
+          <span class="tb tbt-both tbe-ex">Ag</span>
+          <p class="cap">ex alphabetic — trim to ex-height and alphabetic baseline</p>
+        </div>
+        <div class="cell">
+          <span class="tb tbt-both tbe-cap">Ag</span>
+          <p class="cap">cap alphabetic — trim to cap height and alphabetic baseline</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none / auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>font-size-adjust</h2>
+      <p class="code">font-size-adjust: &lt;number&gt; | none</p>
+      <p class="hint">The demo uses a missing primary font, so the fallback renders — font-size-adjust then scales it to match the requested metric, changing the visible size.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="fsa fsa-none">Agpx123</p>
+          <p class="cap">none — no adjustment (default)</p>
+        </div>
+        <div class="cell">
+          <p class="fsa fsa-05">Agpx123</p>
+          <p class="cap">0.5 — match an x-height ratio of 0.5</p>
+        </div>
+        <div class="cell">
+          <p class="fsa fsa-ex">Agpx123</p>
+          <p class="cap">ex-height 0.5 — adjust using the ex-height metric</p>
+        </div>
+        <div class="cell">
+          <p class="fsa fsa-ch">Agpx123</p>
+          <p class="cap">ch-width 0.5 — adjust using the ch-width metric</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>font-palette</h2>
+      <p class="code">font-palette: normal | &lt;palette-identifier&gt;</p>
+      <p class="hint">Only affects color (COLRv1) fonts. Ordinary system fonts have no palettes, so the glyphs below look identical — the declaration is what matters.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="pal">Aa</p>
+          <p class="cap">normal — use the font’s default palette (default)</p>
+        </div>
+        <div class="cell">
+          <p class="pal pal-my">Aa</p>
+          <p class="cap">--my-palette — use a custom palette</p>
+        </div>
+        <div class="cell">
+          <p class="pal pal-light">Aa</p>
+          <p class="cap">light — use the font’s light palette</p>
+        </div>
+        <div class="cell">
+          <p class="pal pal-dark">Aa</p>
+          <p class="cap">dark — use the font’s dark palette</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>@font-palette-values</h2>
+      <p class="code">@font-palette-values &lt;name&gt; { font-family: &lt;family&gt;; base-palette: &lt;index&gt;; override-colors: &lt;index color&gt;... }</p>
+      <p class="hint">Applies to a color font family; harmless (and invisible) on ordinary fonts.</p>
+      <pre class="snippet"><code>@font-palette-values --rainbow {
+  font-family: "Color Font";
+  base-palette: 0;
+  override-colors:
+    0 #ff6b6b,
+    1 #feca57;
+}</code></pre>
+      <div class="row">
+        <div class="cell">
+          <p class="valbox">font-family: "Color Font"</p>
+          <p class="cap">font-family — the font the palette applies to</p>
+        </div>
+        <div class="cell">
+          <p class="valbox">base-palette: 0</p>
+          <p class="cap">base-palette — start from palette index 0</p>
+        </div>
+        <div class="cell">
+          <p class="valbox">override-colors: 0 #ff6b6b, 1 #feca57</p>
+          <p class="cap">override-colors — recolor specific palette slots</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>font-variant-position</h2>
+      <p class="code">font-variant-position: normal | super | sub</p>
+      <p class="hint">Uses real super/subscript glyphs instead of scaled characters. Only Firefox renders the true glyphs today; other browsers fall back to scaled text.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="tbox pos">E = mc2</p>
+          <p class="cap">normal — no superscript or subscript positioning (default)</p>
+        </div>
+        <div class="cell">
+          <p class="tbox pos pos-super">E = mc<sup>2</sup></p>
+          <p class="cap">super — use superscript glyphs</p>
+        </div>
+        <div class="cell">
+          <p class="tbox pos pos-sub">H<sub>2</sub>O</p>
+          <p class="cap">sub — use subscript glyphs</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>initial-letter</h2>
+      <p class="code">initial-letter: &lt;number&gt; | normal</p>
+      <p class="hint">Applies to ::first-letter and needs two or more lines to show the drop cap.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="tbox il il-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+          <p class="cap">normal — no initial letter (default)</p>
+        </div>
+        <div class="cell">
+          <p class="tbox il il-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+          <p class="cap">3 — drop the first letter across 3 lines</p>
+        </div>
+        <div class="cell">
+          <p class="tbox il il-2-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+          <p class="cap">2 1 — height 2 lines, sink 1 line</p>
+        </div>
+        <div class="cell">
+          <p class="tbox il il-3-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+          <p class="cap">3 2 — height 3 lines, sink 2 lines</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>hyphenate-limit-chars</h2>
+      <p class="code">hyphenate-limit-chars: &lt;number&gt; &lt;number&gt; &lt;number&gt;</p>
+      <p class="hint">Needs hyphens: auto on a narrow column with the language set. Windows: Firefox hyphenates, Chrome does not.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="hyph hyph-631" lang="en">Antidisestablishmentarianism counterrevolutionary constitutionalization.</p>
+          <p class="cap">6 3 2 — minimum 6 before, 3 after, 2 per word</p>
+        </div>
+        <div class="cell">
+          <p class="hyph hyph-auto" lang="en">Antidisestablishmentarianism counterrevolutionary constitutionalization.</p>
+          <p class="cap">auto — browser decides the limits (default)</p>
+        </div>
+        <div class="cell">
+          <p class="hyph hyph-4" lang="en">Antidisestablishmentarianism counterrevolutionary constitutionalization.</p>
+          <p class="cap">4 — minimum 4 characters per word</p>
+        </div>
+        <div class="cell">
+          <p class="hyph hyph-52" lang="en">Antidisestablishmentarianism counterrevolutionary constitutionalization.</p>
+          <p class="cap">5 2 — minimum 5 before and 2 after a hyphen</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>text-emphasis</h2>
+      <p class="code">text-emphasis: &lt;style&gt; &lt;color&gt; | none</p>
+      <p class="hint">Emphasis marks are typically used on East Asian text.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="em em-dot">日本語のテキスト</p>
+          <p class="cap">filled dot — filled circle marks</p>
+        </div>
+        <div class="cell">
+          <p class="em em-odot">日本語のテキスト</p>
+          <p class="cap">open dot — outlined circle marks</p>
+        </div>
+        <div class="cell">
+          <p class="em em-circle">日本語のテキスト</p>
+          <p class="cap">filled circle — filled ring marks</p>
+        </div>
+        <div class="cell">
+          <p class="em em-ocircle">日本語のテキスト</p>
+          <p class="cap">open circle — outlined ring marks</p>
+        </div>
+        <div class="cell">
+          <p class="em em-short">日本語のテキスト</p>
+          <p class="cap">dot #333 — style and color shorthand</p>
+        </div>
+        <div class="cell">
+          <p class="em em-none">日本語のテキスト</p>
+          <p class="cap">none — no emphasis marks</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>text-orientation</h2>
+      <p class="code">text-orientation: mixed | upright | sideways</p>
+      <p class="hint">Only matters inside a vertical writing mode (writing-mode: vertical-rl here).</p>
+      <div class="row">
+        <div class="cell">
+          <p class="vt to-mixed">A漢B</p>
+          <p class="cap">mixed — rotate Latin, keep CJK upright (default)</p>
+        </div>
+        <div class="cell">
+          <p class="vt to-upright">A漢B</p>
+          <p class="cap">upright — keep all characters upright</p>
+        </div>
+        <div class="cell">
+          <p class="vt to-sideways">A漢B</p>
+          <p class="cap">sideways — rotate all characters sideways</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>text-combine-upright</h2>
+      <p class="code">text-combine-upright: none | all | digits &lt;integer&gt;</p>
+      <p class="hint">Compresses runs of digits into a single vertical slot so years stay upright.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="vt tcu tcu-none">年2026</p>
+          <p class="cap">none — no combining (default)</p>
+        </div>
+        <div class="cell">
+          <p class="vt tcu tcu-all">年2026</p>
+          <p class="cap">all — combine all characters</p>
+        </div>
+        <div class="cell">
+          <p class="vt tcu tcu-digits">年26</p>
+          <p class="cap">digits 2 — combine runs of up to 2 digits</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>unicode-bidi</h2>
+      <p class="code">unicode-bidi: normal | embed | isolate | bidi-override | isolate-override | plaintext</p>
+      <p class="hint">All demos pair with direction: rtl — compare where the Latin phrase lands under each value.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="bidi ub-normal">Hello مرحبا 123</p>
+          <p class="cap">normal — standard bidi behavior (default)</p>
+        </div>
+        <div class="cell">
+          <p class="bidi ub-embed">Hello مرحبا 123</p>
+          <p class="cap">embed — treat as an embedded bidi run</p>
+        </div>
+        <div class="cell">
+          <p class="bidi ub-isolate">Hello مرحبا 123</p>
+          <p class="cap">isolate — isolate from surrounding bidi</p>
+        </div>
+        <div class="cell">
+          <p class="bidi ub-override">Hello مرحبا 123</p>
+          <p class="cap">bidi-override — override the algorithm with explicit direction</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>ruby-align</h2>
+      <p class="code">ruby-align: start | center | space-between | space-around</p>
+      <p class="hint">Alignment is visible when the annotation (rt) is a different width than its base.</p>
+      <div class="row">
+        <div class="cell">
+          <ruby class="ra-start">漢字<rt>かんじ</rt></ruby>
+          <p class="cap">start — align to the base start</p>
+        </div>
+        <div class="cell">
+          <ruby class="ra-center">漢字<rt>かんじ</rt></ruby>
+          <p class="cap">center — center over the base text</p>
+        </div>
+        <div class="cell">
+          <ruby class="ra-between">漢字<rt>かんじ</rt></ruby>
+          <p class="cap">space-between — distribute space between characters</p>
+        </div>
+        <div class="cell">
+          <ruby class="ra-around">漢字<rt>かんじ</rt></ruby>
+          <p class="cap">space-around — distribute space around characters</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>ruby-position</h2>
+      <p class="code">ruby-position: over | under | alternate | inter-character</p>
+      <p class="hint">inter-character only applies in vertical writing mode.</p>
+      <div class="row">
+        <div class="cell">
+          <ruby class="rp-over">漢字<rt>かんじ</rt></ruby>
+          <p class="cap">over — above the base text (default)</p>
+        </div>
+        <div class="cell">
+          <ruby class="rp-under">漢字<rt>かんじ</rt></ruby>
+          <p class="cap">under — below the base text</p>
+        </div>
+        <div class="cell">
+          <ruby class="rp-alt">漢字<rt>かんじ</rt></ruby>
+          <p class="cap">alternate — alternate over/under for nested ruby</p>
+        </div>
+        <div class="cell">
+          <ruby class="rp-inter">漢字<rt>かんじ</rt></ruby>
+          <p class="cap">inter-character — between characters (vertical)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>ruby-merge</h2>
+      <p class="code">ruby-merge: separate | collapse | auto</p>
+      <p class="hint">collapse merges adjacent annotations that share the same text.</p>
+      <div class="row">
+        <div class="cell">
+          <ruby class="rm-sep">東<rt>とう</rt></ruby><ruby class="rm-sep">京<rt>とう</rt></ruby>
+          <p class="cap">separate — keep annotations separate (default)</p>
+        </div>
+        <div class="cell">
+          <ruby class="rm-col">東<rt>とう</rt></ruby><ruby class="rm-col">京<rt>とう</rt></ruby>
+          <p class="cap">collapse — merge adjacent annotations of the same text</p>
+        </div>
+        <div class="cell">
+          <ruby class="rm-auto">東<rt>とう</rt></ruby><ruby class="rm-auto">京<rt>とう</rt></ruby>
+          <p class="cap">auto — browser chooses</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../08-web-fonts-and-variable-fonts/index.html">&larr; Web & Variable Fonts</a>
+  <a class="pager-btn pager-next" href="../10-border-image-and-caret/index.html">Border Image & Caret Color &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

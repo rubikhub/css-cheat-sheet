@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-Elements Basics</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Pseudo-Elements Basics</h1>
+
+    <section>
+      <h2>::before</h2>
+      <p class="code">::before { content: ... }</p>
+      <p class="hint">::before inserts generated content before the element's real content.</p>
+      <div class="row">
+        <div class="cell">
+          <span class="pill be-bullet">item</span>
+          <p class="cap">content: "" — empty pseudo-element (custom bullet)</p>
+        </div>
+        <div class="cell">
+          <span class="pill be-star">title</span>
+          <p class="cap">content: "★" — icon content</p>
+        </div>
+        <div class="cell">
+          <span class="pill be-tooltip" data-tooltip="Hello from CSS!">hover</span>
+          <p class="cap">content: attr(data-tooltip) — attribute value</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::after</h2>
+      <p class="code">::after { content: ... }</p>
+      <p class="hint">::after inserts generated content after the element's real content.</p>
+      <div class="row">
+        <div class="cell">
+          <a class="pill af-arrow" href="#after-arrow">learn more</a>
+          <p class="cap">content: "→" — arrow icon</p>
+        </div>
+        <div class="cell">
+          <a class="af-url" href="https://example.com/reference">visit</a>
+          <p class="cap">content: attr(href) — link URL</p>
+        </div>
+        <div class="cell">
+          <a class="af-underline" href="#after-underline">hover me</a>
+          <p class="cap">content: "" — empty pseudo-element (animated underline)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::first-line</h2>
+      <p class="code">p::first-line</p>
+      <div class="row">
+        <div class="cell text-cell">
+          <p class="line-demo">p::first-line — the first wrapped line of this paragraph is bold and blue, while the rest keeps its normal style.</p>
+          <p class="cap">p::first-line — first line of paragraphs</p>
+        </div>
+        <div class="cell text-cell">
+          <p class="line-demo line-demo-alt">.article::first-line — articles style their opening line differently to draw the reader in.</p>
+          <p class="cap">.article::first-line — first line of articles</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::first-letter</h2>
+      <p class="code">p::first-letter</p>
+      <div class="row">
+        <div class="cell text-cell">
+          <p class="cap-demo cap-demo-red">p::first-letter — the first character is enlarged and colored for emphasis.</p>
+          <p class="cap">p::first-letter — first letter of paragraphs</p>
+        </div>
+        <div class="cell text-cell">
+          <p class="cap-demo cap-demo-green">.drop-cap::first-letter — a classic drop cap floats the big letter into the text.</p>
+          <p class="cap">.drop-cap::first-letter — drop cap styling</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::selection</h2>
+      <p class="code">::selection</p>
+      <p class="hint">Select some text with your mouse to see the custom selection colors.</p>
+      <div class="row">
+        <div class="cell text-cell">
+          <p class="line-demo">Global ::selection — this paragraph uses the site-wide selection style (blue on white).</p>
+          <p class="cap">::selection — selected text</p>
+        </div>
+        <div class="cell text-cell">
+          <p class="line-demo sel-alt">p::selection — this paragraph overrides selection with its own green style.</p>
+          <p class="cap">p::selection — selected text in paragraphs</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::placeholder</h2>
+      <p class="code">input::placeholder</p>
+      <p class="hint">Click into each field to see the placeholder styling.</p>
+      <div class="row">
+        <div class="cell">
+          <input class="ph-input" type="text" placeholder="Your name" aria-label="your name" />
+          <p class="cap">input::placeholder — placeholder text</p>
+        </div>
+        <div class="cell">
+          <textarea class="ph-input ph-area" placeholder="Leave a message" aria-label="message"></textarea>
+          <p class="cap">textarea::placeholder — textarea placeholder</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../19-pseudo-classes-state/index.html">&larr; State Pseudo-classes</a>
+  <a class="pager-btn pager-next" href="../21-cursor/index.html">Cursor &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+/* typography — OpenType features */
+
+/* readable paragraph used for every demo */
+.fp {
+  width: 200px;
+  margin: 0;
+  padding: 10px 12px;
+  font-family: Georgia, "Segoe UI", serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #1f2937;
+  background: #fff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+  font-variant-ligatures: none;
+}
+
+/* font-feature-settings */
+.ffs-liga  { font-feature-settings: "liga" 1; }
+.ffs-kern  { font-feature-settings: "kern" 1; font-family: "Segoe UI", Georgia, serif; font-size: 1.15rem; }
+.ffs-smcp  { font-feature-settings: "smcp" 1; font-family: "Segoe UI", Georgia, serif; }
+.ffs-onum  { font-feature-settings: "onum" 1; font-family: Georgia, serif; font-size: 1.4rem; }
+.ffs-liga0 { font-feature-settings: "liga" 0; }
+.ffs-multi { font-feature-settings: "liga" 1, "kern" 1, "smcp" 1; font-family: "Segoe UI", Georgia, serif; }
+
+/* font-variant-ligatures */
+.fvl-normal  { font-variant-ligatures: normal; }
+.fvl-none    { font-variant-ligatures: none; }
+.fvl-common  { font-variant-ligatures: common-ligatures; }
+.fvl-nocommon{ font-variant-ligatures: no-common-ligatures; }
+.fvl-disc    { font-variant-ligatures: discretionary-ligatures; }
+.fvl-hist    { font-variant-ligatures: historical-ligatures; }
+
+/* font-variant-numeric */
+.fvn-lining  { font-variant-numeric: lining-nums; }
+.fvn-oldstyle{ font-variant-numeric: oldstyle-nums; font-size: 1.4rem; }
+.fvn-tabular { font-variant-numeric: tabular-nums; }
+.fvn-prop    { font-variant-numeric: proportional-nums; }
+.fvn-diag    { font-variant-numeric: diagonal-fractions; }
+.fvn-stacked { font-variant-numeric: stacked-fractions; }
+
+/* font-variant-caps */
+.fvc-normal  { font-variant-caps: normal; }
+.fvc-small   { font-variant-caps: small-caps; }
+.fvc-all     { font-variant-caps: all-small-caps; }
+.fvc-titling { font-variant-caps: titling-caps; }

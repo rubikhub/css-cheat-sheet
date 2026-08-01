@@ -1,4 +1,6 @@
-button {
-  background: blue;
-  color: white;
+/* Loaded AFTER style.css in the HTML <head>. On ties (same origin and
+   specificity), rules from this file win because they appear later. */
+
+.cross {
+  background: #10b981;
 }

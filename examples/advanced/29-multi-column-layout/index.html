@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-column Layout</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Multi-column Layout</h1>
+
+    <section>
+      <h2>columns</h2>
+      <p class="code">columns: &lt;column-width&gt; || &lt;column-count&gt;</p>
+      <div class="mc mc-auto">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">auto — the browser picks width and count</p>
+      <div class="mc mc-em">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">12em — aim for columns about 12em wide</p>
+      <div class="mc mc-3">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">3 — exactly three columns</p>
+      <div class="mc mc-both">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">20rem 2 — width and count together</p>
+    </section>
+
+    <section>
+      <h2>column-count</h2>
+      <p class="code">column-count: auto | &lt;integer&gt;</p>
+      <div class="mc cc-auto">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">auto — the browser decides the count (default)</p>
+      <div class="mc cc-2">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">2 — two columns</p>
+      <div class="mc cc-3">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">3 — three columns</p>
+    </section>
+
+    <section>
+      <h2>column-width</h2>
+      <p class="code">column-width: auto | &lt;length&gt;</p>
+      <div class="mc cw-auto">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">auto — width based on other properties (default)</p>
+      <div class="mc cw-250">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">250px — aim for 250px-wide columns</p>
+      <div class="mc cw-15">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">15rem — rem-based column width</p>
+    </section>
+
+    <section>
+      <h2>column-gap</h2>
+      <p class="code">column-gap: normal | &lt;length&gt; | &lt;percentage&gt;</p>
+      <div class="mc mc-3 cg-normal">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">normal — the browser default gap</p>
+      <div class="mc mc-3 cg-2rem">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">2rem — a fixed gap</p>
+      <div class="mc mc-3 cg-5">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">5% — a percentage of the container width</p>
+    </section>
+
+    <section>
+      <h2>column-rule</h2>
+      <p class="code">column-rule: &lt;width&gt; || &lt;style&gt; || &lt;color&gt;</p>
+      <div class="mc mc-3 cr-solid">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">1px solid — a thin solid divider</p>
+      <div class="mc mc-3 cr-dashed">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">2px dashed — a dashed divider</p>
+      <div class="mc mc-3 cr-long">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">longhands — column-rule-style + column-rule-width + column-rule-color</p>
+    </section>
+
+    <section>
+      <h2>column-span</h2>
+      <p class="code">column-span: none | all</p>
+      <div class="mc mc-span">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <h3 class="span-none">Inside the columns</h3>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">none — the heading stays inside the columns (default)</p>
+      <div class="mc mc-span">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <h3 class="span-all">Spanning all columns</h3>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">all — the heading breaks out across every column</p>
+    </section>
+
+    <section>
+      <h2>column-fill</h2>
+      <p class="code">column-fill: auto | balance | balance-all</p>
+      <p class="hint">All three boxes are the same fixed height; the difference is how the text is distributed.</p>
+      <div class="mc mc-3 cf-balance">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">balance — columns are evened out (default)</p>
+      <div class="mc mc-3 cf-auto">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">auto — each column fills completely in order</p>
+      <div class="mc mc-3 cf-balance-all">
+        <p>The quick brown fox jumps over the lazy dog while the sun sets behind the hills.</p>
+        <p>The river winds slowly through the valley toward the distant sea, past the old stone bridge.</p>
+        <p>Farmers gather the last harvest before the first frost paints the fields silver and gold.</p>
+      </div>
+      <p class="cap">balance-all — balanced, including the last column</p>
+    </section>
+
+    <section>
+      <h2>break-inside</h2>
+      <p class="code">break-inside: auto | avoid | avoid-page | avoid-column</p>
+      <p class="hint">Each box holds the same four cards; compare how the cards split across the two columns.</p>
+      <div class="break-grid">
+        <div class="mc-card-port">
+          <div class="mc-card"><strong>auto</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+          <div class="mc-card"><strong>auto</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+          <div class="mc-card"><strong>auto</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+          <div class="mc-card"><strong>auto</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+        </div>
+        <div class="mc-card-port">
+          <div class="mc-card avoid"><strong>avoid</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+          <div class="mc-card avoid"><strong>avoid</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+          <div class="mc-card avoid"><strong>avoid</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+          <div class="mc-card avoid"><strong>avoid</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+        </div>
+        <div class="mc-card-port">
+          <div class="mc-card avoid-page"><strong>avoid-page</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+          <div class="mc-card avoid-page"><strong>avoid-page</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+          <div class="mc-card avoid-page"><strong>avoid-page</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+          <div class="mc-card avoid-page"><strong>avoid-page</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+        </div>
+        <div class="mc-card-port">
+          <div class="mc-card avoid-column"><strong>avoid-column</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+          <div class="mc-card avoid-column"><strong>avoid-column</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+          <div class="mc-card avoid-column"><strong>avoid-column</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+          <div class="mc-card avoid-column"><strong>avoid-column</strong><br />Line one of the card body.<br />Line two of the card body.<br />Line three keeps it tall.</div>
+        </div>
+      </div>
+      <p class="cap">auto — cards may split across columns · avoid / avoid-column — kept whole in one column · avoid-page — avoids page breaks (and column breaks by extension)</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../28-advanced-math-functions/index.html">&larr; Advanced Math Functions</a>
+  <a class="pager-btn pager-next" href="../30-motion-path/index.html">Motion Path &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

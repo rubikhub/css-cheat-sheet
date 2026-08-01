@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subgrid &amp; Named Grid Lines</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Subgrid &amp; Named Grid Lines</h1>
+
+    <section>
+      <h2>grid-template-columns: subgrid</h2>
+      <p class="code">grid-template-columns: subgrid</p>
+      <p class="hint">The child spans the full width and inherits the parent’s column tracks, so its items line up with the parent’s columns.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid grid-p-col">
+            <div class="gi">side</div>
+            <div class="gi">main</div>
+            <div class="gi">side</div>
+            <div class="gc-sub">
+              <div class="gi gi-alt">a</div>
+              <div class="gi gi-alt">b</div>
+              <div class="gi gi-alt">c</div>
+            </div>
+          </div>
+          <p class="cap">subgrid — inherits the parent’s column tracks</p>
+        </div>
+        <div class="cell">
+          <div class="grid grid-p-col">
+            <div class="gi">side</div>
+            <div class="gi">main</div>
+            <div class="gi">side</div>
+            <div class="gc-none">
+              <div class="gi gi-alt">a</div>
+              <div class="gi gi-alt">b</div>
+              <div class="gi gi-alt">c</div>
+            </div>
+          </div>
+          <p class="cap">none — no explicit columns (default, items misalign)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>grid-template-rows: subgrid</h2>
+      <p class="code">grid-template-rows: subgrid</p>
+      <p class="hint">The child spans multiple parent rows and inherits those row track sizes — here 40px / 80px / 40px.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid grid-p-row">
+            <div class="gc-side-sub">
+              <div class="gi gi-alt">a</div>
+              <div class="gi gi-alt">b</div>
+              <div class="gi gi-alt">c</div>
+            </div>
+            <div class="gi gi-dark row-span">main</div>
+          </div>
+          <p class="cap">subgrid — inherits the parent’s row tracks</p>
+        </div>
+        <div class="cell">
+          <div class="grid grid-p-row">
+            <div class="gc-side-none">
+              <div class="gi gi-alt">a</div>
+              <div class="gi gi-alt">b</div>
+              <div class="gi gi-alt">c</div>
+            </div>
+            <div class="gi gi-dark row-span">main</div>
+          </div>
+          <p class="cap">none — no explicit rows (default, rows misalign)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>Named Grid Lines</h2>
+      <p class="code">grid-template-columns: [line-name] &lt;track-list&gt;</p>
+      <p class="hint">Items are placed by line name instead of number, so layouts survive track edits.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid grid-named-col">
+            <div class="gi nc-a">sidebar</div>
+            <div class="gi nc-b">content</div>
+            <div class="gi nc-c">aside</div>
+          </div>
+          <p class="cap">[start] 60px [content-start] 1fr [content-end] 60px [end] — named column lines</p>
+        </div>
+        <div class="cell">
+          <div class="grid grid-named-row">
+            <div class="gi nr-h">header</div>
+            <div class="gi nr-m">main</div>
+          </div>
+          <p class="cap">[header-start] 40px [header-end main-start] 90px [main-end] — named row lines</p>
+        </div>
+        <div class="cell">
+          <div class="grid grid-named-col">
+            <div class="gi nc-b">content</div>
+          </div>
+          <p class="cap">grid-column: content-start / content-end — place items by named lines</p>
+        </div>
+        <div class="cell">
+          <div class="grid grid-named-row">
+            <div class="gi nr-h">header</div>
+          </div>
+          <p class="cap">grid-row: header-start / header-end — place items by named row lines</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../11-css-counters-complex/index.html">&larr; CSS Counters — Complex Patterns</a>
+  <a class="pager-btn pager-next" href="../13-state-pseudo-classes-advanced/index.html">Advanced State Pseudo-classes &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

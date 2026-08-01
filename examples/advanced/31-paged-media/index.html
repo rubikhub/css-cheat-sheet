@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paged Media &amp; Print</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Paged Media &amp; Print</h1>
+
+    <section>
+      <h2>@page</h2>
+      <p class="code">@page { &lt;descriptors&gt; }</p>
+      <p class="hint">@page rules apply only when printing. This example ships real @page rules in style.css — press the button or Ctrl+P to see them in the print output.</p>
+      <button class="print-btn" onclick="window.print()">Print page</button>
+      <div class="row">
+        <div class="cell">
+          <div class="pc">@page {<br />&nbsp;&nbsp;margin: 1in;<br />}</div>
+          <p class="cap">margin: 1in — set printed margins</p>
+        </div>
+        <div class="cell">
+          <div class="pc">@page {<br />&nbsp;&nbsp;size: A4;<br />}</div>
+          <p class="cap">size: A4 — set the paper size</p>
+        </div>
+        <div class="cell">
+          <div class="pc">@page :first {<br />&nbsp;&nbsp;margin-top: 2in;<br />}</div>
+          <p class="cap">:first — style the first page</p>
+        </div>
+        <div class="cell">
+          <div class="pc">@page :left / :right</div>
+          <p class="cap">:left / :right — style left / right pages</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>size</h2>
+      <p class="code">@page { size: auto | &lt;length&gt; | &lt;page-size&gt; || portrait | landscape }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pc">size: auto</div>
+          <p class="cap">auto — browser default size (default)</p>
+        </div>
+        <div class="cell">
+          <div class="pc">size: A4</div>
+          <p class="cap">A4 — ISO A4 paper</p>
+        </div>
+        <div class="cell">
+          <div class="pc">size: A4 landscape</div>
+          <p class="cap">A4 landscape — landscape orientation</p>
+        </div>
+        <div class="cell">
+          <div class="pc">size: 8.5in 11in</div>
+          <p class="cap">8.5in 11in — explicit dimensions</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section class="break-section">
+      <h2>break-before / break-after</h2>
+      <p class="code">break-before: auto | page | left | right | column</p>
+      <p class="hint">This section carries break-before: page — check the printout to see it start on a fresh page.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pc">break-before: auto</div>
+          <p class="cap">auto — no forced break (default)</p>
+        </div>
+        <div class="cell">
+          <div class="pc">break-before: page</div>
+          <p class="cap">page — start on a new page</p>
+        </div>
+        <div class="cell">
+          <div class="pc">break-before: left | right</div>
+          <p class="cap">left / right — start on a left / right page</p>
+        </div>
+        <div class="cell">
+          <div class="pc">break-before: column</div>
+          <p class="cap">column — start on a new column</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>break-inside</h2>
+      <p class="code">break-inside: auto | avoid | avoid-page | avoid-column</p>
+      <p class="hint">Every section in this example prints with break-inside: avoid, so each one stays whole on a page.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pc">break-inside: auto</div>
+          <p class="cap">auto — allow breaks (default)</p>
+        </div>
+        <div class="cell">
+          <div class="pc">break-inside: avoid</div>
+          <p class="cap">avoid — keep the element whole</p>
+        </div>
+        <div class="cell">
+          <div class="pc">break-inside: avoid-page</div>
+          <p class="cap">avoid-page — avoid page breaks inside</p>
+        </div>
+        <div class="cell">
+          <div class="pc">break-inside: avoid-column</div>
+          <p class="cap">avoid-column — avoid column breaks inside</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>orphans / widows</h2>
+      <p class="code">orphans: &lt;integer&gt; | widows: &lt;integer&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pc">orphans: 3</div>
+          <p class="cap">orphans: 3 — at least 3 lines at the bottom of a page</p>
+        </div>
+        <div class="cell">
+          <div class="pc">widows: 3</div>
+          <p class="cap">widows: 3 — at least 3 lines at the top of a page</p>
+        </div>
+        <div class="cell">
+          <div class="pc">orphans: 1<br />widows: 1</div>
+          <p class="cap">orphans: 1 / widows: 1 — default</p>
+        </div>
+        <div class="cell">
+          <div class="ow-demo">A long paragraph that uses orphans: 3 and widows: 3 — when it breaks across pages, no page may leave fewer than three lines stranded at the bottom or top of a page.</div>
+          <p class="cap">demo paragraph with orphans / widows applied</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>print-color-adjust</h2>
+      <p class="code">print-color-adjust: economy | exact</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pc">economy</div>
+          <p class="cap">economy — browser may drop backgrounds to save ink (default)</p>
+        </div>
+        <div class="cell">
+          <div class="pc">exact</div>
+          <p class="cap">exact — always print backgrounds and colors</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-dark print-exact">banner</div>
+          <p class="cap">dark banner with print-color-adjust: exact — keeps its colors on paper</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (economy) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>@media print</h2>
+      <p class="code">@media print { ... }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pc">nav, .ads { display: none; }</div>
+          <p class="cap">hide navigation and interactive elements</p>
+        </div>
+        <div class="cell">
+          <div class="pc">@media print { .print-only { display: block; } }</div>
+          <p class="cap">show print-only content with display toggling</p>
+        </div>
+        <div class="cell">
+          <div class="pc">.content { width: 100%; }</div>
+          <p class="cap">linearize multi-column layouts</p>
+        </div>
+        <div class="cell">
+          <div class="screen-only">I hide on paper</div>
+          <p class="cap">screen-only — hidden when printed</p>
+        </div>
+        <div class="cell">
+          <div class="screen-ph">appears on paper</div>
+          <p class="cap">print-only — shown only when printed</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cover-page">
+      <h2>Named Pages</h2>
+      <p class="code">page: &lt;page-name&gt;; + @page &lt;page-name&gt; { ... }</p>
+      <p class="hint">This section is assigned page: cover — in the printout it lands on its own landscape A4 page.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pc">page: cover</div>
+          <p class="cap">page: cover — place the element on a cover page</p>
+        </div>
+        <div class="cell">
+          <div class="pc">@page cover {<br />&nbsp;&nbsp;size: A4 landscape;<br />}</div>
+          <p class="cap">@page cover — style that named page</p>
+        </div>
+        <div class="cell">
+          <div class="pc">page: auto</div>
+          <p class="cap">page: auto — default page (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>Margin Boxes</h2>
+      <p class="code">@page { @top-center { content: ...; } }</p>
+      <p class="hint">style.css adds a running header (string(book-title)) and page numbers (counter(page) " / " counter(pages)) to the printed output.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pc">@top-left / @top-center / @top-right</div>
+          <p class="cap">top margin boxes</p>
+        </div>
+        <div class="cell">
+          <div class="pc">@bottom-left / @bottom-center / @bottom-right</div>
+          <p class="cap">bottom margin boxes</p>
+        </div>
+        <div class="cell">
+          <div class="pc">content: string(book-title)</div>
+          <p class="cap">content: string(page-title) — string-set content</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>counter(page) &amp; counter(pages)</h2>
+      <p class="code">content: counter(page) " / " counter(pages);</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pc">counter(page)</div>
+          <p class="cap">counter(page) — the current page number</p>
+        </div>
+        <div class="cell">
+          <div class="pc">counter(pages)</div>
+          <p class="cap">counter(pages) — the total number of pages</p>
+        </div>
+        <div class="cell">
+          <div class="pc">counter(page, lower-roman)</div>
+          <p class="cap">counter(page, lower-roman) — roman page numbers</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>bleed</h2>
+      <p class="code">@page { bleed: &lt;length&gt;; }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pc">bleed: 3mm</div>
+          <p class="cap">bleed: 3mm — standard print bleed</p>
+        </div>
+        <div class="cell">
+          <div class="pc">bleed: 0</div>
+          <p class="cap">bleed: 0 — no bleed (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>marks</h2>
+      <p class="code">@page { marks: crop cross; }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pc">marks: crop</div>
+          <p class="cap">crop — trim marks at the page corners</p>
+        </div>
+        <div class="cell">
+          <div class="pc">marks: cross</div>
+          <p class="cap">cross — registration marks</p>
+        </div>
+        <div class="cell">
+          <div class="pc">marks: none</div>
+          <p class="cap">none — no marks (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../30-motion-path/index.html">&larr; Motion Path</a>
+  <a class="pager-btn pager-next" href="../32-css-2026-and-beyond/index.html">CSS 2026 & Beyond &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

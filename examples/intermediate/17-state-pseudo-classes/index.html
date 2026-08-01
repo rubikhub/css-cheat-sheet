@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>State Pseudo Classes</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>State Pseudo Classes</h1>
+
+    <section>
+      <h2>:active</h2>
+      <p class="code">a:active | button:active | .card:active</p>
+      <p class="hint">Click and hold any of the items — the pressed state turns red.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox st-act">
+            <a class="tlink" href="#active-demo">a:active link</a>
+          </div>
+          <p class="cap">a:active — links while clicking</p>
+        </div>
+        <div class="cell">
+          <div class="tbox st-act">
+            <button type="button" class="tctrl">Hold me</button>
+          </div>
+          <p class="cap">button:active — buttons while clicking</p>
+        </div>
+        <div class="cell">
+          <div class="tbox st-act">
+            <div class="press-card" id="active-demo">Press me</div>
+          </div>
+          <p class="cap">.card:active — cards while pressing</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:focus</h2>
+      <p class="code">input:focus | textarea:focus | a:focus</p>
+      <p class="hint">Tab through or click the controls — focused fields get a blue ring.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox st-foc">
+            <label class="flabel">input:focus</label>
+            <input type="text" class="tinput" placeholder="Click or tab" />
+          </div>
+          <p class="cap">input:focus — inputs when focused</p>
+        </div>
+        <div class="cell">
+          <div class="tbox st-foc">
+            <label class="flabel">textarea:focus</label>
+            <textarea rows="2" class="tinput" placeholder="Focus me"></textarea>
+          </div>
+          <p class="cap">textarea:focus — textareas when focused</p>
+        </div>
+        <div class="cell">
+          <div class="tbox st-foc">
+            <a class="tlink" href="#focus-demo">a:focus link</a>
+          </div>
+          <p class="cap">a:focus — links when focused</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:visited</h2>
+      <p class="code">a:visited | a:visited:hover | .link:visited</p>
+      <p class="hint">Visit a link (then come back) — :visited needs a real browser-history visit and cannot be forced. Visited links turn purple.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox st-vis">
+            <a class="tlink" href="index.html">a:visited link</a>
+          </div>
+          <p class="cap">a:visited — visited links</p>
+        </div>
+        <div class="cell">
+          <div class="tbox st-vis">
+            <a class="tlink" href="index.html">hover this after visiting</a>
+          </div>
+          <p class="cap">a:visited:hover — visited links on hover</p>
+        </div>
+        <div class="cell">
+          <div class="tbox st-vis">
+            <a class="tlink link" href="index.html">.link:visited</a>
+          </div>
+          <p class="cap">.link:visited — custom visited links</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:focus-visible</h2>
+      <p class="code">button:focus-visible | input:focus-visible | a:focus-visible</p>
+      <p class="hint">Use Tab to focus via keyboard — the ring appears only for keyboard (not mouse) focus.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox st-fv">
+            <button type="button" class="tctrl">Tab to me</button>
+          </div>
+          <p class="cap">button:focus-visible — buttons when keyboard focused</p>
+        </div>
+        <div class="cell">
+          <div class="tbox st-fv">
+            <input type="text" class="tinput" placeholder="Tab to me" />
+          </div>
+          <p class="cap">input:focus-visible — inputs when keyboard focused</p>
+        </div>
+        <div class="cell">
+          <div class="tbox st-fv">
+            <a class="tlink" href="#fv-demo">Tab to link</a>
+          </div>
+          <p class="cap">a:focus-visible — links when keyboard focused</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:focus-within</h2>
+      <p class="code">form:focus-within | .card:focus-within</p>
+      <p class="hint">Click inside any of the boxes — the whole container lights up while a descendant has focus.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox st-fw fw-card">
+            <form class="fw-form">
+              <label class="flabel">form:focus-within</label>
+              <input type="text" class="tinput" placeholder="Click here" />
+              <input type="text" class="tinput" placeholder="or here" />
+            </form>
+          </div>
+          <p class="cap">form:focus-within — forms containing a focused field</p>
+        </div>
+        <div class="cell">
+          <div class="tbox st-fw fw-card">
+            <p class="fw-title">.card:focus-within</p>
+            <input type="text" class="tinput" placeholder="Focus this" />
+          </div>
+          <p class="cap">.card:focus-within — cards containing a focused element</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:target</h2>
+      <p class="code">:target | .section:target</p>
+      <p class="hint">Click a link — the section matching the URL fragment gets highlighted.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox st-tgt">
+            <a class="tlink" href="#target-a">Go to A</a>
+            <a class="tlink" href="#target-b">Go to B</a>
+            <a class="tlink" href="#no-hash">Clear</a>
+          </div>
+          <p class="cap">:target — element matching the URL fragment</p>
+        </div>
+        <div class="cell">
+          <div class="tbox st-tgt">
+            <div class="tgt-box" id="target-a">Target A</div>
+            <div class="tgt-box" id="target-b">Target B</div>
+          </div>
+          <p class="cap">.section:target — sections matching a fragment</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:any-link</h2>
+      <p class="code">a:any-link | a:any-link:hover</p>
+      <p class="hint">Every anchor with an href matches — hover to see the underline.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox st-al">
+            <a class="tlink" href="#any1">Unvisited link</a>
+            <a class="tlink" href="index.html">Visitable link</a>
+          </div>
+          <p class="cap">a:any-link — any anchor with an href (covers :link and :visited)</p>
+        </div>
+        <div class="cell">
+          <div class="tbox st-al">
+            <a class="tlink" href="#any2">Hover over me</a>
+          </div>
+          <p class="cap">a:any-link:hover — hover on any link state</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:modal</h2>
+      <p class="code">dialog:modal | dialog:modal::backdrop</p>
+      <p class="hint">Click the button to open the dialog with showModal() — the open dialog and its backdrop are styled via :modal.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tbox">
+            <button type="button" class="tctrl" id="open-modal">Open modal</button>
+          </div>
+          <p class="cap">dialog:modal — an open modal dialog</p>
+        </div>
+        <div class="cell">
+          <div class="tbox st-modal">
+            <dialog id="demo-modal">
+              <p class="modal-title">Modal dialog</p>
+              <p class="modal-text">Opened with showModal(), so it matches :modal and its ::backdrop is dimmed.</p>
+              <div class="modal-actions">
+                <button type="button" class="tctrl" id="close-modal">Close</button>
+              </div>
+            </dialog>
+          </div>
+          <p class="cap">dialog:modal::backdrop — the dimmed backdrop behind the dialog</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.getElementById("open-modal").addEventListener("click", function () {
+        document.getElementById("demo-modal").showModal();
+      });
+      document.getElementById("close-modal").addEventListener("click", function () {
+        document.getElementById("demo-modal").close();
+      });
+    </script>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../16-form-pseudo-classes/index.html">&larr; Form Pseudo Classes</a>
+  <a class="pager-btn pager-next" href="../18-pseudo-elements-advanced/index.html">Pseudo Elements Advanced &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

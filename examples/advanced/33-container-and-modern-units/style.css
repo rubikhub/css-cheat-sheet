@@ -1,0 +1,74 @@
+/* container query units */
+.cq-card {
+  container-type: inline-size;
+  width: 320px;
+  max-width: 100%;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+.cq-wide { width: 100%; }
+
+.cq-title {
+  margin: 0 0 6px;
+  font-size: 4cqi;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.cq-body {
+  margin: 0;
+  font-size: 2.2cqi;
+  color: #475569;
+}
+
+/* cqmin square */
+.cq-shape {
+  width: 30cqmin;
+  height: 30cqmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #8b5cf6;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  font-size: 2cqi;
+}
+
+/* ic */
+.cjk-box {
+  max-width: 16ic;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+/* cap */
+.cap-box {
+  display: inline-block;
+  padding: 4px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  border-bottom: 0.15cap solid #ef4444;
+}
+
+/* fallback clamp */
+.cq-clamp {
+  width: 100%;
+}
+
+.cq-clamp .cq-title {
+  font-size: clamp(1rem, 4cqi, 2rem);
+}
+
+.cq-clamp .cq-body {
+  font-size: clamp(0.8rem, 2.2cqi, 1.1rem);
+}

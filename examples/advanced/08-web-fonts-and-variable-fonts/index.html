@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web &amp; Variable Fonts</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Web &amp; Variable Fonts</h1>
+
+    <section>
+      <h2>@font-face</h2>
+      <p class="code">@font-face { font-family: &lt;name&gt;; src: url(...) format(...); font-weight: ...; font-style: ...; font-display: ...; }</p>
+      <p class="hint">No network fonts are used on this page — the demo family maps to a locally installed font, so the @font-face structure applies while the page still works offline.</p>
+      <pre class="snippet"><code>@font-face {
+  font-family: "DemoFont";
+  src: local("Segoe UI");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}</code></pre>
+      <div class="row">
+        <div class="cell">
+          <p class="valbox">font-family: "DemoFont"</p>
+          <p class="cap">font-family — the name used to reference the font</p>
+        </div>
+        <div class="cell">
+          <p class="valbox">src: local("Segoe UI")</p>
+          <p class="cap">src — font file (or local font) and format</p>
+        </div>
+        <div class="cell">
+          <p class="valbox">font-weight: 100 900</p>
+          <p class="cap">font-weight — range of supported weights</p>
+        </div>
+        <div class="cell">
+          <p class="valbox">font-style: normal</p>
+          <p class="cap">font-style — style of the loaded face</p>
+        </div>
+        <div class="cell">
+          <p class="valbox">font-display: swap</p>
+          <p class="cap">font-display — fallback behavior while loading</p>
+        </div>
+        <div class="cell">
+          <p class="demo-font"><b>Bold</b> &amp; <i>italic</i> DemoFont</p>
+          <p class="cap">rendered via the @font-face above — falls back to local Segoe UI</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@font-feature-values</h2>
+      <p class="code">@font-feature-values &lt;family&gt; { @styleset { ... } }</p>
+      <p class="hint">Named feature values are bound to one family and referenced with font-variant-alternates. They only take effect when that family actually ships the feature.</p>
+      <pre class="snippet"><code>@font-feature-values DemoFont {
+  @styleset { pretty: "ss01"; }
+  @swash    { swsh: 1; }
+}</code></pre>
+      <div class="row">
+        <div class="cell">
+          <p class="valbox">@font-feature-values DemoFont</p>
+          <p class="cap">binds the named values to a font family</p>
+        </div>
+        <div class="cell">
+          <p class="valbox">@styleset { pretty: "ss01" }</p>
+          <p class="cap">@styleset — named stylistic set values</p>
+        </div>
+        <div class="cell">
+          <p class="valbox">@swash { swsh: 1 }</p>
+          <p class="cap">@swash — named swash values</p>
+        </div>
+        <div class="cell">
+          <p class="demo-font fva">Styled with pretty</p>
+          <p class="cap">font-variant-alternates: styleset(pretty) — uses the named value</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>font-variation-settings</h2>
+      <p class="code">font-variation-settings: &lt;axis&gt; &lt;value&gt;</p>
+      <p class="hint">Uses the variable family “Segoe UI Variable” when installed (Windows 10/11), otherwise falls back to system-ui. Axes only change the rendering when the font supports them.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="vf vf-w200">Weights 200</p>
+          <p class="cap">'wght' 200 — set the weight axis</p>
+        </div>
+        <div class="cell">
+          <p class="vf vf-w700">Weights 700</p>
+          <p class="cap">'wght' 700 — heavier weight</p>
+        </div>
+        <div class="cell">
+          <p class="vf vf-wdth">Expanded width</p>
+          <p class="cap">'wdth' 110 — set the width axis</p>
+        </div>
+        <div class="cell">
+          <p class="vf vf-opsz">Optical 36</p>
+          <p class="cap">'opsz' 36 — set the optical size axis</p>
+        </div>
+        <div class="cell">
+          <p class="vf vf-multi">Multi-axis</p>
+          <p class="cap">'wght' 750, 'opsz' 36, 'wdth' 110 — multiple axes at once</p>
+        </div>
+        <div class="cell">
+          <p class="vf vf-xtra">Custom axis</p>
+          <p class="cap">'XTRA' 500 — set a custom axis</p>
+        </div>
+        <div class="cell">
+          <p class="vf">Normal</p>
+          <p class="cap">normal — no variation (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>font-optical-sizing</h2>
+      <p class="code">font-optical-sizing: auto | none</p>
+      <p class="hint">Optical sizing switches to a size-specific design when the font provides one — Segoe UI Variable adjusts its optical size as the text grows.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="vf vf-os vf-os-auto">Aa</p>
+          <p class="cap">auto — browser adjusts optical size (default)</p>
+        </div>
+        <div class="cell">
+          <p class="vf vf-os vf-os-none">Aa</p>
+          <p class="cap">none — disables optical sizing</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../07-typography-ot-features/index.html">&larr; Typography — OpenType Features</a>
+  <a class="pager-btn pager-next" href="../09-typography-2024/index.html">Typography 2024+ &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

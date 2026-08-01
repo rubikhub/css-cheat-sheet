@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outline</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Outline</h1>
+
+    <section>
+      <h2>outline</h2>
+      <p class="code">outline: &lt;width&gt; &lt;style&gt; &lt;color&gt;</p>
+      <p class="hint">Width-only and color-only values need a style to render, so those boxes add outline-style: solid. Click or Tab to the button to see a focus outline.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo o-sol o-1px">1px</div>
+          <p class="cap">1px — width only</p>
+        </div>
+        <div class="cell">
+          <div class="demo o-style">solid</div>
+          <p class="cap">solid — style only</p>
+        </div>
+        <div class="cell">
+          <div class="demo o-sol o-red">red</div>
+          <p class="cap">red — color only</p>
+        </div>
+        <div class="cell">
+          <div class="demo o-wstyle">1px solid</div>
+          <p class="cap">1px solid — width and style</p>
+        </div>
+        <div class="cell">
+          <div class="demo o-full">1px solid red</div>
+          <p class="cap">1px solid red — full outline</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-amber o-offset">2px dashed blue 3px</div>
+          <p class="cap">2px dashed blue 3px — outline with offset</p>
+        </div>
+        <div class="cell">
+          <button class="focus-demo" type="button">Focus me</button>
+          <p class="cap">:focus-visible outline ring</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (medium none currentColor) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>outline-width</h2>
+      <p class="code">outline-width: &lt;length&gt; | thin | medium | thick</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo ow-base ow-thin">thin</div>
+          <p class="cap">thin — thin outline</p>
+        </div>
+        <div class="cell">
+          <div class="demo ow-base ow-medium">medium</div>
+          <p class="cap">medium — medium outline</p>
+        </div>
+        <div class="cell">
+          <div class="demo ow-base ow-thick">thick</div>
+          <p class="cap">thick — thick outline</p>
+        </div>
+        <div class="cell">
+          <div class="demo ow-base ow-2px">2px</div>
+          <p class="cap">2px — pixel-based width</p>
+        </div>
+        <div class="cell">
+          <div class="demo ow-base ow-0">0</div>
+          <p class="cap">0 — no outline</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (medium) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>outline-style</h2>
+      <p class="code">outline-style: auto | none | dotted | dashed | solid | double | groove | ridge | inset | outset</p>
+      <p class="hint">A 3px slate outline width and color are applied so every style is clearly visible.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo os-base os-none">none</div>
+          <p class="cap">none — no outline</p>
+        </div>
+        <div class="cell">
+          <div class="demo os-base os-auto">auto</div>
+          <p class="cap">auto — browser-defined style</p>
+        </div>
+        <div class="cell">
+          <div class="demo os-base os-dotted">dotted</div>
+          <p class="cap">dotted — dotted line</p>
+        </div>
+        <div class="cell">
+          <div class="demo os-base os-dashed">dashed</div>
+          <p class="cap">dashed — dashed line</p>
+        </div>
+        <div class="cell">
+          <div class="demo os-base os-solid">solid</div>
+          <p class="cap">solid — solid line</p>
+        </div>
+        <div class="cell">
+          <div class="demo os-base os-double">double</div>
+          <p class="cap">double — double line</p>
+        </div>
+        <div class="cell">
+          <div class="demo os-base os-groove">groove</div>
+          <p class="cap">groove — 3D grooved line</p>
+        </div>
+        <div class="cell">
+          <div class="demo os-base os-ridge">ridge</div>
+          <p class="cap">ridge — 3D ridged line</p>
+        </div>
+        <div class="cell">
+          <div class="demo os-base os-inset">inset</div>
+          <p class="cap">inset — 3D inset line</p>
+        </div>
+        <div class="cell">
+          <div class="demo os-base os-outset">outset</div>
+          <p class="cap">outset — 3D outset line</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>outline-color</h2>
+      <p class="code">outline-color: &lt;color&gt; | invert</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo oc-base oc-invert">invert</div>
+          <p class="cap">invert — inverted color for visibility</p>
+        </div>
+        <div class="cell">
+          <div class="demo oc-base oc-red">red</div>
+          <p class="cap">red — named color</p>
+        </div>
+        <div class="cell">
+          <div class="demo oc-base oc-hex">#ff5733</div>
+          <p class="cap">#ff5733 — hex color</p>
+        </div>
+        <div class="cell">
+          <div class="demo oc-base oc-rgb">rgb(255, 0, 0)</div>
+          <p class="cap">rgb(255, 0, 0) — rgb color</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (currentColor) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>outline-offset</h2>
+      <p class="code">outline-offset: &lt;length&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo oo-base oo-3">3px</div>
+          <p class="cap">3px — outline pushed outward</p>
+        </div>
+        <div class="cell">
+          <div class="demo oo-base oo-neg">-2px</div>
+          <p class="cap">-2px — outline drawn inside the edge</p>
+        </div>
+        <div class="cell">
+          <div class="demo oo-base oo-0">0</div>
+          <p class="cap">0 — flush with the border edge (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>box-decoration-break</h2>
+      <p class="code">box-decoration-break: slice | clone</p>
+      <p class="hint">An inline highlight wraps over two lines inside a fixed-width box; slice cuts the decoration at the break, clone repeats it on each fragment.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="bdb slice"><span class="hl">A highlight that runs across several lines inside this narrow paragraph.</span></div>
+          <p class="cap">slice — decorations cut at the break</p>
+        </div>
+        <div class="cell">
+          <div class="bdb clone"><span class="hl">A highlight that runs across several lines inside this narrow paragraph.</span></div>
+          <p class="cap">clone — decorations repeat on each fragment</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../08-border-advanced/index.html">&larr; Border Advanced</a>
+  <a class="pager-btn pager-next" href="../10-border-radius/index.html">Border Radius &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

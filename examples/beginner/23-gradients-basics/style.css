@@ -1,0 +1,35 @@
+/* shared wide gradient box */
+.gbox {
+  width: 220px;
+  height: 120px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* linear-gradient */
+.lg-right { background: linear-gradient(to right, red, blue); }
+.lg-bottom { background: linear-gradient(to bottom, red, blue); }
+.lg-135 { background: linear-gradient(135deg, #6c5ce7, #fd79a8); }
+.lg-two { background: linear-gradient(red, blue); }
+.lg-multi { background: linear-gradient(to right, #6c5ce7, #a29bfe, #fd79a8); }
+.lg-stops { background: linear-gradient(to right, red 0%, blue 100%); }
+
+/* radial-gradient */
+.rg-circle { background: radial-gradient(circle, red, blue); }
+.rg-ellipse { background: radial-gradient(ellipse, red, blue); }
+.rg-center { background: radial-gradient(circle at center, #fff, #000); }
+.rg-top-left { background: radial-gradient(circle at top left, #fff, #0f172a); }
+.rg-two { background: radial-gradient(red, blue); }
+.rg-multi { background: radial-gradient(#00b894, #00cec9, #0984e3); }
+
+/* conic-gradient */
+.cg-wheel { background: conic-gradient(red, orange, yellow, green, blue); }
+.cg-custom { background: conic-gradient(#ff6b6b, #feca57, #48dbfb, #ff9ff3); }
+.cg-from0 { background: conic-gradient(from 0deg, red, yellow, blue); }
+.cg-from90 { background: conic-gradient(from 90deg, red, yellow, blue); }
+.cg-center { background: conic-gradient(at center, red, yellow, blue); }
+
+/* repeating variants */
+.rgp-linear { background: repeating-linear-gradient(45deg, red 0 10px, blue 10px 20px); }
+.rgp-radial { background: repeating-radial-gradient(circle, red 0 10px, blue 10px 20px); }
+.rgp-conic { background: repeating-conic-gradient(red 0 10%, blue 10% 20%); }

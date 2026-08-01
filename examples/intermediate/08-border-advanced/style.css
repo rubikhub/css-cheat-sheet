@@ -1,0 +1,46 @@
+/* border shorthand */
+.b-sol { border-style: solid; }
+.b-w1 { border: 1px; }
+.b-style { border: solid; }
+.b-color { border: red; }
+.b-wstyle { border: 1px solid; }
+.b-full { border: 1px solid red; }
+.b-wcolor { border: 1px red; }
+
+/* border-style */
+.bs-base {
+  border-width: 4px;
+  border-color: #1e293b;
+}
+.bs-none { border-style: none; }
+.bs-hidden { border-style: hidden; }
+.bs-dotted { border-style: dotted; }
+.bs-dashed { border-style: dashed; }
+.bs-solid { border-style: solid; }
+.bs-double { border-style: double; }
+.bs-groove { border-style: groove; }
+.bs-ridge { border-style: ridge; }
+.bs-inset { border-style: inset; }
+.bs-outset { border-style: outset; }
+
+/* border-top / border-right / border-bottom / border-left */
+.bt-sol { border-top-style: solid; }
+.bt-1px { border-top-width: 1px; }
+.bt-solid { border-top-style: solid; }
+.bt-red { border-top-color: red; }
+.bt-full { border-top: 1px solid red; }
+.bt-dashed-blue { border-top: 2px dashed blue; }
+
+/* border-image */
+.bi-1 {
+  border: 12px solid;
+  border-image: linear-gradient(135deg, #8b5cf6, #ec4899) 30;
+}
+.bi-2 {
+  border: 12px solid;
+  border-image: linear-gradient(135deg, #06b6d4, #3b82f6) 30 / 10px;
+}
+.bi-3 {
+  border: 12px solid;
+  border-image: linear-gradient(135deg, #f59e0b, #ef4444) 30 / 10px / 5px stretch;
+}

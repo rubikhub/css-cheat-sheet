@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Basics</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Flexbox Basics</h1>
+
+    <section>
+      <h2>display: flex</h2>
+      <p class="code">display: flex | inline-flex</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">flex — block-level flex container</p>
+        </div>
+        <div class="cell">
+          <p class="flow">An <span class="inline-fx demo-slate"><span class="f-item-sm demo-blue">1</span><span class="f-item-sm demo-green">2</span><span class="f-item-sm demo-amber">3</span></span> sits inline and shrinks to its content.</p>
+          <p class="cap">inline-flex — inline-level flex container</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (inline) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>flex-direction</h2>
+      <p class="code">flex-direction: row | row-reverse | column | column-reverse</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fx fx-row">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">row — horizontal, left to right (default)</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-row-reverse">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">row-reverse — horizontal, right to left</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-col">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">column — vertical, top to bottom</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-col-reverse">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">column-reverse — vertical, bottom to top</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (row) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>flex-wrap</h2>
+      <p class="code">flex-wrap: nowrap | wrap | wrap-reverse</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fx fx-sm fx-wrap-nowrap">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+            <div class="f-item demo-purple">4</div>
+            <div class="f-item demo-pink">5</div>
+            <div class="f-item demo-teal">6</div>
+          </div>
+          <p class="cap">nowrap — all items on one line (default)</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-sm fx-wrap">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+            <div class="f-item demo-purple">4</div>
+            <div class="f-item demo-pink">5</div>
+            <div class="f-item demo-teal">6</div>
+          </div>
+          <p class="cap">wrap — items wrap to new lines</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-sm fx-wrap-reverse">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+            <div class="f-item demo-purple">4</div>
+            <div class="f-item demo-pink">5</div>
+            <div class="f-item demo-teal">6</div>
+          </div>
+          <p class="cap">wrap-reverse — lines wrap in reverse order</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (nowrap) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>justify-content</h2>
+      <p class="code">justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fx jc-flex-start">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">flex-start — items at start (default)</p>
+        </div>
+        <div class="cell">
+          <div class="fx jc-flex-end">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">flex-end — items at end</p>
+        </div>
+        <div class="cell">
+          <div class="fx jc-center">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">center — items centered</p>
+        </div>
+        <div class="cell">
+          <div class="fx jc-between">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">space-between — space between items</p>
+        </div>
+        <div class="cell">
+          <div class="fx jc-around">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">space-around — space around each item</p>
+        </div>
+        <div class="cell">
+          <div class="fx jc-evenly">
+            <div class="f-item demo-blue">1</div>
+            <div class="f-item demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">space-evenly — equal space everywhere</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (flex-start) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>align-items</h2>
+      <p class="code">align-items: flex-start | flex-end | center | stretch | baseline</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fx fx-h ai-stretch">
+            <div class="f-item-ash demo-blue">stretch</div>
+            <div class="f-item-ash demo-green">stretch</div>
+            <div class="f-item-ash demo-amber">stretch</div>
+          </div>
+          <p class="cap">stretch — items fill the cross axis (default)</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-h ai-flex-start">
+            <div class="f-item f-item-tall demo-blue">1</div>
+            <div class="f-item f-item-short demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">flex-start — items at start</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-h ai-flex-end">
+            <div class="f-item f-item-tall demo-blue">1</div>
+            <div class="f-item f-item-short demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">flex-end — items at end</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-h ai-center">
+            <div class="f-item f-item-tall demo-blue">1</div>
+            <div class="f-item f-item-short demo-green">2</div>
+            <div class="f-item demo-amber">3</div>
+          </div>
+          <p class="cap">center — items centered</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-h ai-baseline">
+            <div class="f-item demo-blue">one</div>
+            <div class="f-item f-item-lg demo-green">big</div>
+            <div class="f-item f-item-short demo-amber">x</div>
+          </div>
+          <p class="cap">baseline — items aligned by text baseline</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (stretch) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>align-content</h2>
+      <p class="code">align-content: flex-start | flex-end | center | space-between | space-around | stretch</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fx fx-h fx-wrap ac-stretch">
+            <div class="f-item-fill demo-blue">1</div>
+            <div class="f-item-fill demo-green">2</div>
+            <div class="f-item-fill demo-amber">3</div>
+            <div class="f-item-fill demo-purple">4</div>
+            <div class="f-item-fill demo-pink">5</div>
+            <div class="f-item-fill demo-teal">6</div>
+            <div class="f-item-fill demo-cyan">7</div>
+            <div class="f-item-fill demo-indigo">8</div>
+          </div>
+          <p class="cap">stretch — lines stretch to fill (default)</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-h fx-wrap ac-flex-start">
+            <div class="f-item-sm demo-blue">1</div>
+            <div class="f-item-sm demo-green">2</div>
+            <div class="f-item-sm demo-amber">3</div>
+            <div class="f-item-sm demo-purple">4</div>
+            <div class="f-item-sm demo-pink">5</div>
+            <div class="f-item-sm demo-teal">6</div>
+            <div class="f-item-sm demo-cyan">7</div>
+            <div class="f-item-sm demo-indigo">8</div>
+          </div>
+          <p class="cap">flex-start — lines at start</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-h fx-wrap ac-flex-end">
+            <div class="f-item-sm demo-blue">1</div>
+            <div class="f-item-sm demo-green">2</div>
+            <div class="f-item-sm demo-amber">3</div>
+            <div class="f-item-sm demo-purple">4</div>
+            <div class="f-item-sm demo-pink">5</div>
+            <div class="f-item-sm demo-teal">6</div>
+            <div class="f-item-sm demo-cyan">7</div>
+            <div class="f-item-sm demo-indigo">8</div>
+          </div>
+          <p class="cap">flex-end — lines at end</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-h fx-wrap ac-center">
+            <div class="f-item-sm demo-blue">1</div>
+            <div class="f-item-sm demo-green">2</div>
+            <div class="f-item-sm demo-amber">3</div>
+            <div class="f-item-sm demo-purple">4</div>
+            <div class="f-item-sm demo-pink">5</div>
+            <div class="f-item-sm demo-teal">6</div>
+            <div class="f-item-sm demo-cyan">7</div>
+            <div class="f-item-sm demo-indigo">8</div>
+          </div>
+          <p class="cap">center — lines centered</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-h fx-wrap ac-between">
+            <div class="f-item-sm demo-blue">1</div>
+            <div class="f-item-sm demo-green">2</div>
+            <div class="f-item-sm demo-amber">3</div>
+            <div class="f-item-sm demo-purple">4</div>
+            <div class="f-item-sm demo-pink">5</div>
+            <div class="f-item-sm demo-teal">6</div>
+            <div class="f-item-sm demo-cyan">7</div>
+            <div class="f-item-sm demo-indigo">8</div>
+          </div>
+          <p class="cap">space-between — space between lines</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-h fx-wrap ac-around">
+            <div class="f-item-sm demo-blue">1</div>
+            <div class="f-item-sm demo-green">2</div>
+            <div class="f-item-sm demo-amber">3</div>
+            <div class="f-item-sm demo-purple">4</div>
+            <div class="f-item-sm demo-pink">5</div>
+            <div class="f-item-sm demo-teal">6</div>
+            <div class="f-item-sm demo-cyan">7</div>
+            <div class="f-item-sm demo-indigo">8</div>
+          </div>
+          <p class="cap">space-around — space around lines</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-h fx-wrap ac-evenly">
+            <div class="f-item-sm demo-blue">1</div>
+            <div class="f-item-sm demo-green">2</div>
+            <div class="f-item-sm demo-amber">3</div>
+            <div class="f-item-sm demo-purple">4</div>
+            <div class="f-item-sm demo-pink">5</div>
+            <div class="f-item-sm demo-teal">6</div>
+            <div class="f-item-sm demo-cyan">7</div>
+            <div class="f-item-sm demo-indigo">8</div>
+          </div>
+          <p class="cap">space-evenly — equal space between lines</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (stretch) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>gap</h2>
+      <p class="code">gap: &lt;length&gt; | &lt;percentage&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fx fx-sm fx-wrap gap-8">
+            <div class="f-item-sm demo-blue">1</div>
+            <div class="f-item-sm demo-green">2</div>
+            <div class="f-item-sm demo-amber">3</div>
+            <div class="f-item-sm demo-purple">4</div>
+            <div class="f-item-sm demo-pink">5</div>
+            <div class="f-item-sm demo-teal">6</div>
+          </div>
+          <p class="cap">8px — small gap</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-sm fx-wrap gap-1rem">
+            <div class="f-item-sm demo-blue">1</div>
+            <div class="f-item-sm demo-green">2</div>
+            <div class="f-item-sm demo-amber">3</div>
+            <div class="f-item-sm demo-purple">4</div>
+            <div class="f-item-sm demo-pink">5</div>
+            <div class="f-item-sm demo-teal">6</div>
+          </div>
+          <p class="cap">1rem — rem-based gap</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-sm fx-wrap gap-0">
+            <div class="f-item-sm demo-blue">1</div>
+            <div class="f-item-sm demo-green">2</div>
+            <div class="f-item-sm demo-amber">3</div>
+            <div class="f-item-sm demo-purple">4</div>
+            <div class="f-item-sm demo-pink">5</div>
+            <div class="f-item-sm demo-teal">6</div>
+          </div>
+          <p class="cap">0 — no gap (default)</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-sm fx-wrap gap-16-24">
+            <div class="f-item-sm demo-blue">1</div>
+            <div class="f-item-sm demo-green">2</div>
+            <div class="f-item-sm demo-amber">3</div>
+            <div class="f-item-sm demo-purple">4</div>
+            <div class="f-item-sm demo-pink">5</div>
+            <div class="f-item-sm demo-teal">6</div>
+          </div>
+          <p class="cap">16px 24px — row-gap 16, column-gap 24</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>flex-grow</h2>
+      <p class="code">flex-grow: &lt;number&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item g-0 demo-blue">0</div>
+            <div class="f-item g-0 demo-green">0</div>
+          </div>
+          <p class="cap">0 — items keep natural width (default)</p>
+        </div>
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item g-0 demo-slate">fixed</div>
+            <div class="f-item g-1 demo-blue">1</div>
+            <div class="f-item g-1 demo-green">1</div>
+          </div>
+          <p class="cap">1 — items grow equally to fill the row</p>
+        </div>
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item g-0 demo-slate">fixed</div>
+            <div class="f-item g-1 demo-blue">1</div>
+            <div class="f-item g-2 demo-green">2</div>
+          </div>
+          <p class="cap">2 — grows twice as much as flex-grow: 1</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>flex-shrink</h2>
+      <p class="code">flex-shrink: &lt;number&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fx fx-sm">
+            <div class="f-item f-wide s-0 demo-blue">0</div>
+            <div class="f-item f-wide s-0 demo-green">0</div>
+          </div>
+          <p class="cap">0 — items don't shrink, overflow the container</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-sm">
+            <div class="f-item f-wide s-1 demo-blue">1</div>
+            <div class="f-item f-wide s-1 demo-green">1</div>
+          </div>
+          <p class="cap">1 — items shrink equally (default)</p>
+        </div>
+        <div class="cell">
+          <div class="fx fx-sm">
+            <div class="f-item f-wide s-1 demo-blue">1</div>
+            <div class="f-item f-wide s-2 demo-green">2</div>
+          </div>
+          <p class="cap">2 — shrinks twice as much as flex-shrink: 1</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (1) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>flex-basis</h2>
+      <p class="code">flex-basis: &lt;length&gt; | &lt;percentage&gt; | auto | content</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item b-auto demo-blue">auto</div>
+            <div class="f-item b-auto demo-green">auto</div>
+          </div>
+          <p class="cap">auto — uses the width property (default)</p>
+        </div>
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item b-content demo-amber">content</div>
+            <div class="f-item b-content demo-purple">content</div>
+          </div>
+          <p class="cap">content — intrinsic content size</p>
+        </div>
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item b-0 demo-red">0</div>
+            <div class="f-item b-0 demo-pink">0</div>
+          </div>
+          <p class="cap">0 — zero initial size, width collapses to content</p>
+        </div>
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item b-200 demo-teal">200px</div>
+            <div class="f-item b-200 demo-cyan">200px</div>
+          </div>
+          <p class="cap">200px — fixed initial size</p>
+        </div>
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item b-50 demo-indigo">50%</div>
+            <div class="f-item b-50 demo-lime">50%</div>
+          </div>
+          <p class="cap">50% — half the container width</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>flex</h2>
+      <p class="code">flex: &lt;grow&gt; &lt;shrink&gt; &lt;basis&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item fl-1 demo-blue">1</div>
+            <div class="f-item fl-1 demo-green">1</div>
+            <div class="f-item fl-1 demo-amber">1</div>
+          </div>
+          <p class="cap">1 — grow equally, shrink equally, basis 0</p>
+        </div>
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item fl-default demo-blue">0 1 auto</div>
+            <div class="f-item fl-default demo-green">0 1 auto</div>
+            <div class="f-item fl-default demo-amber">0 1 auto</div>
+          </div>
+          <p class="cap">0 1 auto — don't grow, can shrink (default)</p>
+        </div>
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item fl-110 demo-purple">1 1 0</div>
+            <div class="f-item fl-110 demo-teal">1 1 0</div>
+            <div class="f-item fl-110 demo-pink">1 1 0</div>
+          </div>
+          <p class="cap">1 1 0 — equal widths regardless of content</p>
+        </div>
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item fl-00200 demo-indigo">0 0 200px</div>
+            <div class="f-item fl-00200 demo-cyan">0 0 200px</div>
+          </div>
+          <p class="cap">0 0 200px — fixed width, no grow or shrink</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0 1 auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>order</h2>
+      <p class="code">order: &lt;integer&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item o-0 demo-blue">1</div>
+            <div class="f-item o-0 demo-green">2</div>
+            <div class="f-item o-0 demo-amber">3</div>
+            <div class="f-item o-0 demo-purple">4</div>
+          </div>
+          <p class="cap">0 — default order (DOM order)</p>
+        </div>
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item o-0 demo-blue">1</div>
+            <div class="f-item o-1 demo-green">2</div>
+            <div class="f-item o-0 demo-amber">3</div>
+            <div class="f-item o-0 demo-purple">4</div>
+          </div>
+          <p class="cap">1 — item 2 moves to the end</p>
+        </div>
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item o-0 demo-blue">1</div>
+            <div class="f-item o-0 demo-green">2</div>
+            <div class="f-item o-neg demo-amber">3</div>
+            <div class="f-item o-0 demo-purple">4</div>
+          </div>
+          <p class="cap">-1 — item 3 moves to the front</p>
+        </div>
+        <div class="cell">
+          <div class="fx">
+            <div class="f-item o-2 demo-blue">1</div>
+            <div class="f-item o-0 demo-green">2</div>
+            <div class="f-item o-0 demo-amber">3</div>
+            <div class="f-item o-1 demo-purple">4</div>
+          </div>
+          <p class="cap">2 — item 1 moves to the end, after order 1</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../14-positioning-basics/index.html">&larr; Positioning Basics</a>
+  <a class="pager-btn pager-next" href="../16-grid-basics/index.html">Grid Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

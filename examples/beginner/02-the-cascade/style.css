@@ -1,31 +1,106 @@
-.position-demo {
-  color: red;
-  color: blue;
+/* ============================================================
+   The Cascade — shared rule styles.
+   other-style.css is linked AFTER this file and wins on ties.
+   ============================================================ */
+
+/* how the cascade works — stage chips */
+.stage-chip {
+  width: 130px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-align: center;
+}
+.stage-num {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+}
+.stage-name {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 2px;
 }
 
-.element-demo {
-  background: green;
-  background: purple;
-  color: white;
-  padding: 10px;
+/* stage 1 — position & order of appearance */
+.ord-box {
+  width: 170px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 8px;
 }
 
-p {
-  color: red;
+/* same stylesheet: two rules, later one wins */
+.ord-blue { background: #3b82f6; }
+.ord-blue { background: #8b5cf6; }
+
+/* same rule: last declaration wins */
+.ord-decl { background: #10b981; }
+.ord-decl { background: #f97316; }
+
+/* cross-stylesheet demo element */
+.cross {
+  background: #ef4444;
 }
 
-.highlight {
-  color: blue;
+/* stage 2 — specificity */
+.casc-spec {
+  font-size: 0.78rem;
+  color: #334155;
+}
+.casc-spec p {
+  margin: 4px 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+}
+.casc-spec p { background: #ef4444; }
+.casc-spec .highlight { background: #3b82f6; }
+
+/* stage 3 — origin */
+.ua-item {
+  margin: 4px 0;
+  padding: 6px 10px;
+  background: #f1f5f9;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #334155;
+}
+.authored-item {
+  margin: 4px 0;
+  padding: 6px 10px;
+  background: #8b5cf6;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
-.button {
-  background: blue;
-  color: white;
-  padding: 0.5rem 1rem;
-  margin-top: 8px;
-  display: inline-block;
+/* stage 4 — importance */
+.imp-box {
+  width: 190px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 8px;
 }
-
-.button-special {
-  background: red !important;
+.imp-normal { background: #3b82f6; }
+.imp-special {
+  background: #ef4444 !important;
 }

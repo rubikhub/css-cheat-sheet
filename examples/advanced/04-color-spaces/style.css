@@ -1,0 +1,45 @@
+/* color spaces page — transparency backdrop for alpha swatches */
+.checker {
+  background-image: repeating-conic-gradient(#d8d8d8 0% 25%, #fff 0% 50%);
+  background-size: 16px 16px;
+}
+
+/* oklch() */
+.sw-oklch-1 { background-color: oklch(70% 0.15 250); }
+.sw-oklch-2 { background-color: oklch(0.9 0.05 100 / 0.8); }
+.sw-oklch-3 { background-color: oklch(0.5 0.2 300); }
+.sw-oklch-4 { background-color: oklch(65% 0.15 260); }
+.sw-oklch-5 { background-color: oklch(75% 0.2 30); }
+
+/* oklab() */
+.sw-oklab-1 { background-color: oklab(0.7 0.1 -0.1); }
+.sw-oklab-2 { background-color: oklab(0.9 0.05 0.05 / 0.5); }
+.sw-oklab-3 { background-color: oklab(0.5 0.2 0); }
+
+/* lch() */
+.sw-lch-1 { background-color: lch(70% 50 240); }
+.sw-lch-2 { background-color: lch(90% 30 120 / 0.9); }
+.sw-lch-3 { background-color: lch(50% 60 20); }
+
+/* lab() */
+.sw-lab-1 { background-color: lab(50% 30 -20); }
+.sw-lab-2 { background-color: lab(90% 10 20 / 0.8); }
+.sw-lab-3 { background-color: lab(30% 50 50); }
+
+/* color() — sRGB fallback, then the wide-gamut value */
+.sw-p3 { background-color: #ff8000; background-color: color(display-p3 1 0.5 0); }
+.sw-prophoto { background-color: #b9733a; background-color: color(prophoto-rgb 0.8 0.4 0.2); }
+.sw-rec2020 { background-color: #8b5bb5; background-color: color(rec2020 0.5 0.3 0.7); }
+
+/* hwb() */
+.sw-hwb-1 { background-color: hwb(120 0% 0%); }
+.sw-hwb-2 { background-color: hwb(30 40% 10%); }
+.sw-hwb-3 { background-color: hwb(240 100% 0%); }
+.sw-hwb-4 { background-color: hwb(0 0% 100%); }
+.sw-hwb-5 { background-color: hwb(210 20% 10%); }
+
+/* device-cmyk() — sRGB fallback, then the CMYK value */
+.sw-cmyk-1 { background-color: #d50000; background-color: device-cmyk(0 1 1 0); }
+.sw-cmyk-2 { background-color: #00a9e0; background-color: device-cmyk(1 0 0 0); }
+.sw-cmyk-3 { background-color: #000; background-color: device-cmyk(0 0 0 1); }
+.sw-cmyk-4 { background-color: #5a3326; background-color: device-cmyk(0.2 0.6 0.1 0.3); }

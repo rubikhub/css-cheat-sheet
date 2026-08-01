@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced State Pseudo-classes</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Advanced State Pseudo-classes</h1>
+
+    <section>
+      <h2>:target-within</h2>
+      <p class="code">:target-within</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tw-wrap">
+            <section class="tw-target" id="tw-a">
+              <h3>Contains the target</h3>
+            </section>
+            <a href="#tw-a">Jump to #tw-a</a>
+          </div>
+          <p class="cap">:target-within — parent highlighted when a nested item is targeted</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:current</h2>
+      <p class="code">:current</p>
+      <div class="row">
+        <div class="cell">
+          <nav class="cur-nav">
+            <a href="#current-demo" class="cur-link">Home</a>
+            <a href="#current-demo" class="cur-link">Docs</a>
+            <a href="#current-demo" class="cur-link">Guide</a>
+          </nav>
+          <p class="cap">:current — highlight the active navigation link</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:past</h2>
+      <p class="code">:past</p>
+      <div class="row">
+        <div class="cell">
+          <div class="timeline">
+            <span class="tl-item">intro</span>
+            <span class="tl-item">content</span>
+            <span class="tl-item">outro</span>
+          </div>
+          <p class="cap">:past — dim content before the current item (transcripts)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:future</h2>
+      <p class="code">:future</p>
+      <div class="row">
+        <div class="cell">
+          <div class="timeline">
+            <span class="tl-item">slide 1</span>
+            <span class="tl-item">slide 2</span>
+            <span class="tl-item">slide 3</span>
+          </div>
+          <p class="cap">:future — gray content after the current item (slides)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:playing</h2>
+      <p class="code">video:playing | audio:playing</p>
+      <div class="row">
+        <div class="cell">
+          <div class="media-box">
+            <video class="mp4" controls muted src="data:video/mp4;base64,AAAAHGZ0eXBNNFYAAACAAiAgZzIAAAAAAAAA" style="display:none"></video>
+            <span class="mstatus">idle</span>
+          </div>
+          <p class="cap">video:playing — green border while playing</p>
+        </div>
+        <div class="cell">
+          <div class="media-box">
+            <span class="mstatus">now playing</span>
+          </div>
+          <p class="cap">audio:playing + .status — green status label beside playing audio</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:paused</h2>
+      <p class="code">video:paused</p>
+      <div class="row">
+        <div class="cell">
+          <div class="media-box paused-box">
+            <span class="mstatus">paused</span>
+          </div>
+          <p class="cap">video:paused — orange border when paused</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:running</h2>
+      <p class="code">.box:running</p>
+      <div class="row">
+        <div class="cell">
+          <div class="anim-box running-box">animate</div>
+          <p class="cap">.box:running — shadow while an animation is active</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:stopped</h2>
+      <p class="code">video:stopped</p>
+      <div class="row">
+        <div class="cell">
+          <div class="media-box stopped-box">
+            <span class="mstatus">stopped</span>
+          </div>
+          <p class="cap">video:stopped — dimmed when playback has stopped</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../12-subgrid/index.html">&larr; Subgrid & Named Grid Lines</a>
+  <a class="pager-btn pager-next" href="../14-form-pseudo-classes-advanced/index.html">Form Pseudo-classes — Advanced &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

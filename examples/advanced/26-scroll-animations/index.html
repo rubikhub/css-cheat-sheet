@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll-Driven Animations</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="root-bar" aria-hidden="true"></div>
+    <h1>Scroll-Driven Animations</h1>
+
+    <section>
+      <h2>animation-timeline</h2>
+      <p class="code">animation-timeline: scroll() | view()</p>
+      <p class="hint">Scroll the boxes below. A fixed blue bar at the very top of the page also fills as you scroll the document itself.</p>
+
+      <div class="scrollport">
+        <div class="sbar"></div>
+        <div class="filler"></div>
+      </div>
+      <p class="cap">scroll() — progress of the nearest scroll container</p>
+
+      <div class="scrollport">
+        <div class="sbar"></div>
+        <div class="filler"></div>
+      </div>
+      <p class="cap">scroll(nearest, block) — same as scroll(), spelled out</p>
+
+      <div class="scrollport">
+        <div class="reveal">first</div>
+        <div class="reveal">second</div>
+        <div class="reveal">third</div>
+        <div class="reveal">fourth</div>
+        <div class="filler"></div>
+      </div>
+      <p class="cap">view() — each card fades up as it enters the box</p>
+
+      <div class="row">
+        <div class="cell">
+          <div class="pulse"></div>
+          <p class="cap">auto — time-based animation (default); runs on its own</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-slate">scroll(root)</div>
+          <p class="cap">scroll(root) — the fixed top bar uses the document's scroll</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-range</h2>
+      <p class="code">animation-range: &lt;start&gt; &lt;end&gt;</p>
+      <p class="hint">Six items share a view() timeline but slice it differently. Scroll slowly to watch each one's range.</p>
+      <div class="scrollport range-port">
+        <div class="range-item rg-full">0% 100%</div>
+        <div class="range-item rg-entry">entry 0% entry 100%</div>
+        <div class="range-item rg-exit">exit 0% exit 100%</div>
+        <div class="range-item rg-cover">cover 0% cover 100%</div>
+        <div class="range-item rg-contain">contain 0% contain 100%</div>
+        <div class="range-item rg-normal">normal</div>
+        <div class="filler"></div>
+      </div>
+      <p class="cap">0% 100% / cover — animate across the whole visibility · entry — only while entering · exit — only while leaving · contain — only while fully inside · normal — the default (cover)</p>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-range-name</h2>
+      <p class="code">animation-range-name: &lt;custom-ident&gt; | normal</p>
+      <p class="hint">A named range point can be reused in animation-range-start / animation-range-end for fine control.</p>
+      <div class="scrollport range-port">
+        <div class="range-item rn-named">--my-range</div>
+        <div class="range-item rn-normal">normal</div>
+        <div class="filler"></div>
+      </div>
+      <p class="cap">--my-range — a named point, referenced elsewhere · normal — default range name</p>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-range-start / animation-range-end</h2>
+      <p class="code">animation-range-start: &lt;start&gt; · animation-range-end: &lt;end&gt;</p>
+      <p class="hint">One card starts late (20% through entry), the other ends early (80% through exit).</p>
+      <div class="scrollport range-port">
+        <div class="range-item rs-20">start: entry 20%</div>
+        <div class="range-item re-80">end: exit 80%</div>
+        <div class="filler"></div>
+      </div>
+      <p class="cap">entry 20% — the fade-in begins later · exit 80% — the fade-out ends earlier</p>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>view-timeline</h2>
+      <p class="code">view-timeline-name: &lt;name&gt; · view-timeline-axis: &lt;axis&gt;</p>
+      <p class="hint">The purple subject declares a named view timeline; its amber child bar is animated by that timeline and fills as the subject crosses the box.</p>
+      <div class="scrollport">
+        <div class="vt-subject">
+          subject
+          <div class="vt-bar"></div>
+        </div>
+        <div class="filler"></div>
+      </div>
+      <p class="cap">view-timeline-name: --reveal · view-timeline-axis: block — the bar tracks the subject's progress</p>
+      <p class="note">Global keywords also apply: inherit · initial (none block) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>timeline-scope</h2>
+      <p class="code">timeline-scope: &lt;name&gt; | none</p>
+      <p class="hint">timeline-scope: --scroller lets the green bar outside the box see the box's scroll timeline. Without it (none) the bar stays empty.</p>
+      <div class="scope-wrap">
+        <div class="scrollport scope-port">
+          <div class="filler"></div>
+        </div>
+        <div class="scope-bar"></div>
+      </div>
+      <p class="cap">--my-timeline — the box's timeline is exposed to the bar below</p>
+      <div class="scope-wrap none">
+        <div class="scrollport scope-port">
+          <div class="filler"></div>
+        </div>
+        <div class="scope-bar"></div>
+      </div>
+      <p class="cap">none — no scoping; the bar never fills</p>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../25-anchor-positioning/index.html">&larr; Anchor Positioning</a>
+  <a class="pager-btn pager-next" href="../27-scroll-state/index.html">Scroll State Queries &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

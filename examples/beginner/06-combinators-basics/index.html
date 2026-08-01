@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>06 - Combinators Basics</title>
+    <title>Combinators Basics</title>
     <link rel="stylesheet" href="../../common.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -11,49 +11,192 @@
     <h1>Combinators Basics</h1>
 
     <section>
-      <h2>Grouping Selector (h1, h2, h3)</h2>
-      <div class="demo">
-        <h3>h3 shares styles with h1 and h2</h3>
-      </div>
-    </section>
-
-    <section>
-      <h2>Descendant Combinator (.card p)</h2>
-      <div class="demo">
-        <div class="card">
-          <p>I'm a p inside .card — styled by .card p</p>
-          <div><p>I'm nested deeper — still targeted by .card p</p></div>
+      <h2>Grouping Selector</h2>
+      <p class="code">selector1, selector2, selector3</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mini grp-headings">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+          </div>
+          <p class="cap">h1, h2, h3 — multiple element types share styles</p>
+        </div>
+        <div class="cell">
+          <div class="mini grp-links">
+            <span class="button">.button</span>
+            <a class="link" href="#">.link</a>
+          </div>
+          <p class="cap">.button, .link — multiple classes share styles</p>
+        </div>
+        <div class="cell">
+          <div class="mini grp-ids">
+            <div id="grp-header">#header</div>
+            <div id="grp-footer">#footer</div>
+          </div>
+          <p class="cap">#header, #footer — multiple IDs share styles</p>
+        </div>
+        <div class="cell">
+          <div class="mini grp-mixed">
+            <p>p</p>
+            <ul>
+              <li>li</li>
+              <li>li</li>
+            </ul>
+            <span>span</span>
+          </div>
+          <p class="cap">p, li, span — mixed selectors share styles</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Child Combinator (.nav > li)</h2>
-      <div class="demo">
-        <ul class="nav">
-          <li><a href="#">Link 1</a></li>
-          <li><a href="#">Link 2</a></li>
-          <li><a href="#">Link 3</a></li>
-        </ul>
+      <h2>Descendant Combinator</h2>
+      <p class="code">A B</p>
+      <p class="hint">Targets all B elements inside A at any depth.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mini grp-desc-div">
+            <p>direct p</p>
+            <div><p>nested p — any depth</p></div>
+            <span>span — not matched</span>
+          </div>
+          <p class="cap">div p — all p inside div</p>
+        </div>
+        <div class="cell">
+          <div class="mini grp-desc-card">
+            <div class="card">
+              <span>span inside .card</span>
+              <div><span>nested span too</span></div>
+            </div>
+            <span>span outside — not matched</span>
+          </div>
+          <p class="cap">.card span — all span inside .card</p>
+        </div>
+        <div class="cell">
+          <div class="mini grp-desc-art">
+            <article>
+              <h2>h2 in article</h2>
+              <div><h2>nested h2 too</h2></div>
+            </article>
+            <h2>h2 outside — not matched</h2>
+          </div>
+          <p class="cap">article h2 — all h2 inside article</p>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>Adjacent Sibling (h3 + p)</h2>
-      <div class="demo">
-        <h3>Heading</h3>
-        <p>I'm the first p after h3 — styled by h3 + p (blue, bold)</p>
-        <p>I'm the second p — not affected by h3 + p</p>
+      <h2>Child Combinator</h2>
+      <p class="code">A &gt; B</p>
+      <p class="hint">Targets only direct child B elements of A.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mini grp-child-ul">
+            <ul>
+              <li>direct li</li>
+              <li>
+                direct li
+                <ul>
+                  <li>nested li — not matched</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <p class="cap">ul &gt; li — direct li children only</p>
+        </div>
+        <div class="cell">
+          <div class="mini grp-child-nav">
+            <nav>
+              <a href="#">direct a</a>
+              <span><a href="#">nested a — not matched</a></span>
+            </nav>
+          </div>
+          <p class="cap">.nav &gt; a — direct a children only</p>
+        </div>
+        <div class="cell">
+          <div class="mini grp-child-div">
+            <div>
+              <p>direct p</p>
+              <section><p>nested p — not matched</p></section>
+            </div>
+          </div>
+          <p class="cap">div &gt; p — direct p children only</p>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>General Sibling (h4 ~ p)</h2>
-      <div class="demo">
-        <h4>Section Title</h4>
-        <p>I'm after h4 — styled by h4 ~ p (italic)</p>
-        <p>I'm also after h4 — also styled</p>
+      <h2>Adjacent Sibling Combinator</h2>
+      <p class="code">A + B</p>
+      <p class="hint">Targets the first B element immediately after A.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mini grp-adj-h2">
+            <h2>Heading</h2>
+            <p>first p after h2</p>
+            <p>second p — not matched</p>
+          </div>
+          <p class="cap">h2 + p — first p right after h2</p>
+        </div>
+        <div class="cell">
+          <div class="mini grp-adj-hc">
+            <div class="header">header</div>
+            <div class="content">first .content after .header</div>
+            <div class="content">second .content — not matched</div>
+          </div>
+          <p class="cap">.header + .content — .content immediately after .header</p>
+        </div>
+        <div class="cell">
+          <div class="mini grp-adj-fig">
+            <figure>
+              <img alt="figure" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='30'><rect width='40' height='30' fill='%23cbd5e1'/></svg>" />
+              <figcaption>first figcaption after img</figcaption>
+              <figcaption>second figcaption — not matched</figcaption>
+            </figure>
+          </div>
+          <p class="cap">img + figcaption — figcaption immediately after img</p>
+        </div>
       </div>
     </section>
+
+    <section>
+      <h2>General Sibling Combinator</h2>
+      <p class="code">A ~ B</p>
+      <p class="hint">Targets all B elements that follow A.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mini grp-gen-h2">
+            <p>p before h2 — not matched</p>
+            <h2>Heading</h2>
+            <p>p after h2</p>
+            <p>another p after h2</p>
+          </div>
+          <p class="cap">h2 ~ p — all p after h2</p>
+        </div>
+        <div class="cell">
+          <div class="mini grp-gen-hc">
+            <div class="header">header</div>
+            <div class="content">content after header</div>
+            <div class="content">another content after header</div>
+          </div>
+          <p class="cap">.header ~ .content — all .content after .header</p>
+        </div>
+        <div class="cell">
+          <div class="mini grp-gen-input">
+            <label>label before input — not matched</label>
+            <input type="checkbox" checked />
+            <label>label after input</label>
+            <label>another label after input</label>
+          </div>
+          <p class="cap">input ~ label — all label after input</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../05-basic-selectors/index.html">&larr; Basic Selectors</a>
+  <a class="pager-btn pager-next" href="../07-color-functions-basics/index.html">Color Functions Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
   </body>
 </html>

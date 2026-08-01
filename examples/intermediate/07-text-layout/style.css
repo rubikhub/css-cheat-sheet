@@ -1,0 +1,164 @@
+/* text demo box — wide, light, left-aligned */
+.textbox {
+  width: 200px;
+  height: auto;
+  min-height: 90px;
+  background: #fff;
+  color: #1f2937;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.narrow {
+  width: 150px;
+}
+
+/* text-align */
+.ta-start { text-align: start; }
+.ta-left { text-align: left; }
+.ta-right { text-align: right; }
+.ta-center { text-align: center; }
+.ta-justify { text-align: justify; }
+
+/* text-align-last */
+.tal-base { text-align: justify; }
+.tl-auto { text-align-last: auto; }
+.tl-center { text-align-last: center; }
+.tl-left { text-align-last: left; }
+.tl-right { text-align-last: right; }
+.tl-justify { text-align-last: justify; }
+
+/* text-transform */
+.tt-none { text-transform: none; }
+.tt-cap { text-transform: capitalize; }
+.tt-upper { text-transform: uppercase; }
+.tt-lower { text-transform: lowercase; }
+.tt-full { text-transform: full-width; }
+
+/* text-indent */
+.ti-0 { text-indent: 0; }
+.ti-2em { text-indent: 2em; }
+.ti-20 { text-indent: 20px; }
+.ti-10p { text-indent: 10%; }
+
+/* text-overflow */
+.to-clip {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+.to-ellip {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* text-shadow */
+.shadow {
+  width: 200px;
+  background: #fff;
+  color: #1f2937;
+  border: 1px solid #e2e8f0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.ts-none { text-shadow: none; }
+.ts-off { text-shadow: 2px 2px #555; }
+.ts-blur { text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
+.ts-multi { text-shadow: 0 2px 6px #333, 0 0 12px #999; }
+
+/* text-wrap */
+.tw-wrap { text-wrap: wrap; }
+.tw-nowrap { text-wrap: nowrap; overflow: hidden; }
+.tw-balance { text-wrap: balance; }
+.tw-pretty { text-wrap: pretty; }
+
+/* white-space */
+.ws-normal { white-space: normal; }
+.ws-nowrap { white-space: nowrap; overflow: hidden; }
+.ws-pre { white-space: pre; }
+.ws-pre-wrap { white-space: pre-wrap; }
+.ws-pre-line { white-space: pre-line; }
+.ws-break { white-space: break-spaces; }
+
+/* word-break */
+.wb-normal { word-break: normal; }
+.wb-break-all { word-break: break-all; }
+.wb-keep { word-break: keep-all; }
+.wb-phrase { word-break: auto-phrase; }
+
+/* tab-size */
+.tsize-4 { white-space: pre; tab-size: 4; }
+.tsize-2 { white-space: pre; tab-size: 2; }
+.tsize-8 { white-space: pre; tab-size: 8; }
+
+/* line-clamp */
+.lc-none { overflow: hidden; line-clamp: none; }
+.lc-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 2;
+}
+.lc-3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 3;
+}
+.lc-legacy {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* text-justify */
+.tj-auto { text-align: justify; text-justify: auto; }
+.tj-none { text-align: justify; text-justify: none; }
+.tj-word { text-align: justify; text-justify: inter-word; }
+.tj-char { text-align: justify; text-justify: inter-character; }
+
+/* line-break */
+.lb-auto { line-break: auto; }
+.lb-loose { line-break: loose; }
+.lb-normal { line-break: normal; }
+.lb-strict { line-break: strict; }
+.lb-anywhere { line-break: anywhere; }
+
+/* white-space-collapse */
+.wsc-collapse { white-space-collapse: collapse; }
+.wsc-preserve { white-space-collapse: preserve; }
+.wsc-breaks { white-space-collapse: preserve-breaks; }
+.wsc-spaces { white-space-collapse: preserve-spaces; }
+.wsc-break { white-space-collapse: break-spaces; }
+
+/* text-wrap-mode */
+.twm-wrap { text-wrap-mode: wrap; }
+.twm-nowrap { text-wrap-mode: nowrap; overflow: hidden; }
+
+/* text-wrap-style */
+.tws-auto { text-wrap-style: auto; }
+.tws-balance { text-wrap-style: balance; }
+.tws-pretty { text-wrap-style: pretty; }
+.tws-stable { text-wrap-style: stable; }
+
+/* hyphens */
+.hy-none { hyphens: none; }
+.hy-manual { hyphens: manual; }
+.hy-auto { hyphens: auto; }
+
+/* hyphenate-character */
+.hc-auto { hyphens: auto; hyphenate-character: auto; }
+.hc-hyphen { hyphens: auto; hyphenate-character: "-"; }
+.hc-dot { hyphens: auto; hyphenate-character: "·"; }

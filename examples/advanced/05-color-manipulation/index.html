@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Manipulation</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Color Manipulation</h1>
+
+    <section>
+      <h2>color-mix()</h2>
+      <p class="code">color-mix(in &lt;color-space&gt;, &lt;color&gt; &lt;percentage&gt;, &lt;color&gt; &lt;percentage&gt;)</p>
+      <p class="hint">Below the three values is a ramp of #667eea mixed toward white in srgb.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch sw-mix-equal"></div>
+          <p class="cap">color-mix(in srgb, red, blue) — equal 50/50 mix</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-mix-weighted"></div>
+          <p class="cap">color-mix(in oklch, #667eea 30%, #764ba2 70%) — weighted mix</p>
+        </div>
+        <div class="cell">
+          <div class="demo mix-current">currentColor</div>
+          <p class="cap">color-mix(in srgb, currentColor 50%, transparent)</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch sw-mix-r0"></div>
+          <p class="cap">100% base — 0% white</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-mix-r20"></div>
+          <p class="cap">color-mix(in srgb, #667eea 80%, white 20%)</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-mix-r40"></div>
+          <p class="cap">color-mix(in srgb, #667eea 60%, white 40%)</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-mix-r60"></div>
+          <p class="cap">color-mix(in srgb, #667eea 40%, white 60%)</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-mix-r80"></div>
+          <p class="cap">color-mix(in srgb, #667eea 20%, white 80%)</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-mix-r100"></div>
+          <p class="cap">color-mix(in srgb, #667eea 0%, white 100%)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>relative color syntax</h2>
+      <p class="code">oklch(from &lt;color&gt; &lt;components&gt;)</p>
+      <p class="hint">Every swatch derives from --primary: #667eea with oklch(from …). Hover the button for a live darker variant.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch sw-rel-base"></div>
+          <p class="cap">base — var(--primary)</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-rel-lighter"></div>
+          <p class="cap">oklch(from var(--primary) calc(l + 0.2) c h) — lighter</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-rel-darker"></div>
+          <p class="cap">oklch(from var(--primary) calc(l - 0.2) c h) — darker</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-rel-alpha checker"></div>
+          <p class="cap">oklch(from var(--primary) l c h / 50%) — transparent</p>
+        </div>
+        <div class="cell">
+          <div class="swatch sw-rel-desat"></div>
+          <p class="cap">oklch(from var(--primary) l calc(c * 0.5) h) — desaturated</p>
+        </div>
+        <div class="cell">
+          <button type="button" class="rel-btn">Hover me</button>
+          <p class="cap">:hover — oklch(from var(--primary) calc(l - 0.1) c h)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>color-scheme</h2>
+      <p class="code">color-scheme: normal | light | dark | light dark</p>
+      <p class="hint">Each panel declares a scheme — checkboxes and date pickers restyle. `light dark` follows your OS setting.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="scheme-box sc-normal">
+            <input type="checkbox" checked /> <input type="date" />
+          </div>
+          <p class="cap">normal — no preference (default)</p>
+        </div>
+        <div class="cell">
+          <div class="scheme-box sc-light">
+            <input type="checkbox" checked /> <input type="date" />
+          </div>
+          <p class="cap">light — light scheme only</p>
+        </div>
+        <div class="cell">
+          <div class="scheme-box sc-dark">
+            <input type="checkbox" checked /> <input type="date" />
+          </div>
+          <p class="cap">dark — dark scheme only</p>
+        </div>
+        <div class="cell">
+          <div class="scheme-box sc-both">
+            <input type="checkbox" checked /> <input type="date" />
+          </div>
+          <p class="cap">light dark — supports both</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>light-dark()</h2>
+      <p class="code">color: light-dark(&lt;light-color&gt;, &lt;dark-color&gt;)</p>
+      <div class="row">
+        <div class="cell ld-cell">
+          <input type="checkbox" id="ld-toggle" class="ld-check" />
+          <label for="ld-toggle" class="ld-btn">Toggle dark mode</label>
+          <div class="ld-stage">
+            <div class="ld-card">
+              <p><code>light-dark(white, black)</code></p>
+              <p>background: light-dark(white, black)</p>
+            </div>
+            <div class="ld-card ld-vars">
+              <p><code>light-dark(var(--bg), var(--bg-dark))</code></p>
+              <p>custom properties — same flip</p>
+            </div>
+          </div>
+          <p class="cap">Tick the checkbox — the stage flips color-scheme and both cards re-resolve light-dark()</p>
+        </div>
+      </div>
+      <p class="hint">Requires color-scheme on an ancestor. The checkbox-hack flips this stage between light and dark without touching the OS.</p>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>contrast-color()</h2>
+      <p class="code">contrast-color(&lt;color&gt;)</p>
+      <p class="hint">Hover each badge — the background swaps and contrast-color() re-picks black or white text (Baseline 2026).</p>
+      <div class="row">
+        <div class="cell">
+          <span class="badge bc-white">contrast-color(white)</span>
+          <p class="cap">black text on white — hover flips the background to black</p>
+        </div>
+        <div class="cell">
+          <span class="badge bc-brand">contrast-color(#667eea)</span>
+          <p class="cap">automatic contrast against a brand color</p>
+        </div>
+        <div class="cell">
+          <span class="badge bc-var">contrast-color(var(--bg))</span>
+          <p class="cap">--bg swaps navy ↔ lime on hover</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../04-color-spaces/index.html">&larr; Color Spaces</a>
+  <a class="pager-btn pager-next" href="../06-background-blend-mode/index.html">Background Blend Mode &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

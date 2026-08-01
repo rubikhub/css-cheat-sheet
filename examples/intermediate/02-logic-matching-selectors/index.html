@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logic Matching Selectors</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Logic Matching Selectors</h1>
+
+    <section>
+      <h2>:is()</h2>
+      <p class="code">:is(&lt;selector-list&gt;)</p>
+      <p class="hint">Each heading and card below matches the list — hover a card.</p>
+      <div class="row">
+        <div class="cell">
+          <h3 class="is-heading">is(h1, h2, h3)</h3>
+          <p class="cap">:is(h1, h2, h3) — any heading level 1–3</p>
+        </div>
+        <div class="cell">
+          <div class="is-card">:is(.card, .panel)</div>
+          <p class="cap">:is(.card, .panel):hover</p>
+        </div>
+        <div class="cell">
+          <div class="is-panel">:is(.card, .panel)</div>
+          <p class="cap">:is(.card, .panel):hover</p>
+        </div>
+      </div>
+      <p class="note">Specificity equals the most specific argument. Also inherits the usual keywords: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>:where()</h2>
+      <p class="code">:where(&lt;selector-list&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <h3 class="wh-heading">where(h1, h2, h3)</h3>
+          <p class="cap">:where(h1, h2, h3) — any heading, zero specificity</p>
+        </div>
+        <div class="cell">
+          <div class="wh-card">:where(.card, .panel)</div>
+          <p class="cap">:where(.card, .panel):hover</p>
+        </div>
+        <div class="cell">
+          <div class="wh-panel">overridden</div>
+          <p class="cap">:where() has zero specificity, so a plain rule overrides it</p>
+        </div>
+      </div>
+      <p class="note">Matches like :is() but never adds specificity — easy to override.</p>
+    </section>
+
+    <section>
+      <h2>:not()</h2>
+      <p class="code">:not(&lt;selector-list&gt;)</p>
+      <p class="hint">All chips are styled, except disabled ones and the last chip.</p>
+      <div class="row chips-row">
+        <span class="chip">one</span>
+        <span class="chip disabled">disabled</span>
+        <span class="chip">three</span>
+        <span class="chip">four</span>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <span class="chip not-input">a div</span>
+          <p class="cap">:not(input) matches non-inputs</p>
+        </div>
+        <div class="cell">
+          <span class="chip disabled">disabled</span>
+          <p class="cap">:not(.disabled) — excluded</p>
+        </div>
+      </div>
+      <p class="note">Chained negatives work too: :not(.active):not(.disabled).</p>
+    </section>
+
+    <section>
+      <h2>:has()</h2>
+      <p class="code">:has(&lt;selector-list&gt;)</p>
+      <p class="hint">Cards that contain an image get highlighted. Check the box to light up the form.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="has-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='60'%3E%3Crect width='80' height='60' fill='%236366f1'/%3E%3C/svg%3E" alt="" />
+          </div>
+          <p class="cap">.card:has(img) — has image</p>
+        </div>
+        <div class="cell">
+          <div class="has-card">text only</div>
+          <p class="cap">.card:has(img) — no match</p>
+        </div>
+      </div>
+      <form class="has-form">
+        <label class="checkbox-line">
+          <input type="checkbox" />
+          tick me — form:has(input:checked)
+        </label>
+      </form>
+      <p class="note">Also matches focused groups (.group:has(input:focus)) and hovered navs (nav:has(a:hover)).</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../01-attribute-selectors/index.html">&larr; Attribute Selectors</a>
+  <a class="pager-btn pager-next" href="../03-background-advanced/index.html">Background Advanced &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

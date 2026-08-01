@@ -1,74 +1,48 @@
-.demo {
-  background: #f0f0f0;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  margin-bottom: 1rem;
-}
-.swatch {
-  display: inline-block;
-  width: 200px;
-  height: 80px;
-  border: 1px solid #ccc;
-  margin: 0.25rem;
-  border-radius: 4px;
-  vertical-align: top;
-  text-align: center;
-  line-height: 80px;
-  font-size: 1rem;
-  color: white;
-}
-
-/* Named */
-.named-red {
-  background: red;
-}
-.named-blue {
-  background: blue;
-}
-
-/* Hex */
-.hex6 {
-  background: #ff5733;
-}
-.hex3 {
-  background: #f00;
-}
-
-/* RGB/RGBA */
-.rgb {
-  background: rgb(0, 128, 0);
-}
-.rgba {
-  background: rgba(0, 0, 0, 0.5);
-}
-
-/* HSL/HSLA */
-.hsl {
-  background: hsl(210, 100%, 50%);
-}
-.hsla {
-  background: hsla(0, 0%, 0%, 0.5);
+/* transparent / alpha checkerboard */
+.sw-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  background: repeating-conic-gradient(#e2e8f0 0% 25%, #fff 0% 50%) 0 0 / 20px 20px;
 }
 
 /* currentColor */
-.current {
-  color: #0066cc;
+.cc-border {
+  color: #6366f1;
+  background: #fff;
   border: 3px solid currentColor;
-  padding: 0.5rem;
+}
+.cc-shadow {
+  color: #8b5cf6;
+  background: #fff;
+  box-shadow: 0 8px 18px currentColor;
+}
+.cc-gradient {
+  color: #0f766e;
+  background: linear-gradient(135deg, currentColor, #ccfbf1);
+  border: 1px solid currentColor;
 }
 
 /* transparent */
-.trans-btn {
-  background: transparent;
-  border: 2px solid #0066cc;
-  color: #0066cc;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition:
-    background 0.2s,
-    color 0.2s;
+.tr-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 120px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
 }
-.trans-btn:hover {
-  background: #0066cc;
-  color: white;
+.tr-hover {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  transition: background 0.25s, color 0.25s;
+}
+.tr-hover:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
 }

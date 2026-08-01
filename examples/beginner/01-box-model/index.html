@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>01 - Box Model</title>
+    <title>Box Model</title>
     <link rel="stylesheet" href="../../common.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -11,84 +11,202 @@
     <h1>Box Model</h1>
 
     <section>
-      <h2>content-box vs border-box</h2>
-      <div class="box-model-row">
-        <div>
-          <h3>content-box (default)</h3>
-          <div class="content-box">
-            width: 200px<br />padding: 20px<br />border: 10px<br />Total = 260px
+      <h2>The Four Areas</h2>
+      <p class="code">margin-box → border-box → padding-box → content-box</p>
+      <div class="row">
+        <div class="cell">
+          <div class="four-areas">
+            <div class="area-margin">
+              <span class="area-label">MARGIN — outside the border</span>
+              <div class="area-border">
+                <span class="area-label">BORDER — wraps padding + content</span>
+                <div class="area-padding">
+                  <span class="area-label">PADDING — space around content</span>
+                  <div class="area-content">CONTENT</div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div>
-          <h3>border-box</h3>
-          <div class="border-box">
-            width: 200px<br />padding: 20px<br />border: 10px<br />Total = 200px
-          </div>
+          <p class="cap">Four concentric boxes: margin wraps border wraps padding wraps content.</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Padding Shorthand</h2>
-      <div class="pad-all">padding: 1rem (all sides)</div>
-      <div class="pad-vh">padding: 1rem 2rem (vertical | horizontal)</div>
-      <div class="pad-trbl">
-        padding: 10px 20px 15px 5px (top | right | bottom | left)
+      <h2>box-sizing</h2>
+      <p class="code">box-sizing: content-box | border-box</p>
+      <div class="row">
+        <div class="cell">
+          <div class="bs-box bs-content">content-box</div>
+          <p class="cap">content-box — width applies to content only; total = width + padding + border</p>
+        </div>
+        <div class="cell">
+          <div class="bs-box bs-border">border-box</div>
+          <p class="cap">border-box — width includes padding and border (recommended)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (content-box) · revert · unset.</p>
+      <p class="note">Common reset: <code>* { box-sizing: border-box; }</code> — applied globally via the universal selector.</p>
+    </section>
+
+    <section>
+      <h2>width / height</h2>
+      <p class="code">width: &lt;length&gt; | &lt;percentage&gt; | auto | min-content | max-content | fit-content</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-blue w-200">200px</div>
+          <p class="cap">200px — fixed width</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-green w-50">50%</div>
+          <p class="cap">50% — relative to the container</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-red w-auto">auto</div>
+          <p class="cap">auto — fills available space (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-amber w-min">min-content</div>
+          <p class="cap">min-content — smallest possible width</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-purple w-max">max-content</div>
+          <p class="cap">max-content — largest possible width</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal w-fit">fit-content</div>
+          <p class="cap">fit-content — fits content, capped by a percentage</p>
+        </div>
+      </div>
+      <p class="note">height accepts the same value types as width.</p>
+    </section>
+
+    <section>
+      <h2>padding</h2>
+      <p class="code">padding: &lt;length&gt;{1,4}</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pad-box pad-all">1rem</div>
+          <p class="cap">padding: 1rem — all sides</p>
+        </div>
+        <div class="cell">
+          <div class="pad-box pad-vh">1rem 2rem</div>
+          <p class="cap">padding: 1rem 2rem — vertical | horizontal</p>
+        </div>
+        <div class="cell">
+          <div class="pad-box pad-three">1rem 2rem 1.5rem</div>
+          <p class="cap">padding: 1rem 2rem 1.5rem — top | horizontal | bottom</p>
+        </div>
+        <div class="cell">
+          <div class="pad-box pad-four">10px 20px 15px 5px</div>
+          <p class="cap">padding: 10px 20px 15px 5px — top | right | bottom | left</p>
+        </div>
+        <div class="cell">
+          <div class="pad-box pad-top">padding-top</div>
+          <p class="cap">padding-top: 1rem — single side</p>
+        </div>
+        <div class="cell">
+          <div class="pad-box pad-left">padding-left</div>
+          <p class="cap">padding-left: 2rem — single side</p>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>Border Shorthand</h2>
-      <div class="border-shorthand">border: 1px solid #333</div>
-      <div class="border-sides">
-        border-top: 1px solid red / border-bottom: 2px dashed green
+      <h2>border</h2>
+      <p class="code">border: &lt;width&gt; &lt;style&gt; &lt;color&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="bord-demo bd-short">1px solid #333</div>
+          <p class="cap">border: 1px solid #333 — shorthand</p>
+        </div>
+        <div class="cell">
+          <div class="bord-demo bd-width">border-width: 2px</div>
+          <p class="cap">border-width: 2px — line thickness</p>
+        </div>
+        <div class="cell">
+          <div class="bord-demo bd-style">border-style: solid</div>
+          <p class="cap">border-style: solid — line style</p>
+        </div>
+        <div class="cell">
+          <div class="bord-demo bd-color">border-color: blue</div>
+          <p class="cap">border-color: blue — line color</p>
+        </div>
+        <div class="cell">
+          <div class="bord-demo bd-top">border-top: red</div>
+          <p class="cap">border-top: 1px solid red — individual side</p>
+        </div>
+        <div class="cell">
+          <div class="bord-demo bd-bottom">border-bottom: dashed green</div>
+          <p class="cap">border-bottom: 2px dashed green — individual side</p>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>Margin Shorthand</h2>
-      <div class="margin-demo">
-        <div class="margin-all">margin: 1rem</div>
-        <div class="margin-vh">margin: 1rem 2rem</div>
-        <div class="margin-center">margin: 0 auto (centered)</div>
+      <h2>margin</h2>
+      <p class="code">margin: &lt;length&gt;{1,4} | auto</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mg-host"><div class="mg-box mg-all">1rem</div></div>
+          <p class="cap">margin: 1rem — all sides</p>
+        </div>
+        <div class="cell">
+          <div class="mg-host"><div class="mg-box mg-vh">1rem 2rem</div></div>
+          <p class="cap">margin: 1rem 2rem — vertical | horizontal</p>
+        </div>
+        <div class="cell">
+          <div class="mg-host"><div class="mg-box mg-center">0 auto</div></div>
+          <p class="cap">margin: 0 auto — centered horizontally</p>
+        </div>
+        <div class="cell">
+          <div class="mg-host"><div class="mg-box mg-top">20px</div></div>
+          <p class="cap">margin-top: 20px — single side</p>
+        </div>
+        <div class="cell">
+          <div class="mg-host">
+            <div class="mg-line">line</div>
+            <div class="mg-box mg-neg">-10px</div>
+          </div>
+          <p class="cap">margin-top: -10px — negative margin pulls elements closer</p>
+        </div>
       </div>
     </section>
 
     <section>
-      <h2>Width Values</h2>
-      <div class="width-px">width: 200px</div>
-      <div class="width-pct">width: 50%</div>
-      <div class="width-auto">width: auto (fills available space)</div>
-    </section>
-
-    <section>
-      <h2>Overflow</h2>
-      <div class="overflow-row">
-        <div>
-          <h3>overflow: visible</h3>
-          <div class="overflow-box ov-visible">
-            This text overflows the box and is visible outside its boundaries.
-          </div>
+      <h2>overflow</h2>
+      <p class="code">overflow: visible | hidden | scroll | auto</p>
+      <div class="row">
+        <div class="cell">
+          <div class="ov-box ov-visible">overflow: visible — this long text spills out of the box boundary.</div>
+          <p class="cap">visible — content spills out (default)</p>
         </div>
-        <div>
-          <h3>overflow: hidden</h3>
-          <div class="overflow-box ov-hidden">
-            This text overflows the box but is clipped and not visible.
-          </div>
+        <div class="cell">
+          <div class="ov-box ov-hidden">overflow: hidden — this long text is clipped at the box edge.</div>
+          <p class="cap">hidden — clips the overflowing content</p>
         </div>
-        <div>
-          <h3>overflow: scroll</h3>
-          <div class="overflow-box ov-scroll">
-            This text overflows the box and scrollbars are always shown.
-          </div>
+        <div class="cell">
+          <div class="ov-box ov-scroll">overflow: scroll — scrollbars are always shown.</div>
+          <p class="cap">scroll — always shows scrollbars</p>
         </div>
-        <div>
-          <h3>overflow: auto</h3>
-          <div class="overflow-box ov-auto">
-            This text overflows the box and scrollbars appear only when needed.
-          </div>
+        <div class="cell">
+          <div class="ov-box ov-auto">overflow: auto — scrollbars appear only when needed.</div>
+          <p class="cap">auto — shows scrollbars only when needed</p>
+        </div>
+        <div class="cell">
+          <div class="ov-box ov-x">overflow-x: auto — horizontal scroll only.</div>
+          <p class="cap">overflow-x: auto — horizontal scroll only</p>
+        </div>
+        <div class="cell">
+          <div class="ov-box ov-y">overflow-y: auto — vertical scroll only.</div>
+          <p class="cap">overflow-y: auto — vertical scroll only</p>
         </div>
       </div>
+      <p class="note">Global keywords also apply: inherit · initial (visible) · revert · unset.</p>
     </section>
+<nav class="pager">
+  <a class="pager-btn pager-next" href="../02-the-cascade/index.html">The Cascade &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
   </body>
 </html>

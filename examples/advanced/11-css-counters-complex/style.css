@@ -1,0 +1,106 @@
+/* css counters — complex patterns */
+
+/* shared list styling */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 130px;
+}
+.list li {
+  padding: 2px 0;
+  font-size: 0.85rem;
+  color: #1f2937;
+}
+.list li::before {
+  margin-right: 8px;
+  font-weight: 600;
+  color: #0f766e;
+}
+
+/* counter-set */
+.cs0 { counter-set: myCounter 0; }
+.cs0 li { counter-increment: myCounter; }
+.cs0 li::before { content: counter(myCounter); }
+
+.cs5 { counter-set: myCounter 5; }
+.cs5 li { counter-increment: myCounter; }
+.cs5 li::before { content: counter(myCounter); }
+
+.cs-multi { counter-set: a 0 b 0; }
+.cs-multi li { counter-increment: a b; }
+.cs-multi li::before { content: counter(a) "." counter(b); }
+
+/* counter-reset */
+.cr-section { counter-reset: section; }
+.cr-section li { counter-increment: section; }
+.cr-section li::before { content: counter(section) ". "; }
+
+.cr-chap { counter-reset: chapter figure; }
+.cr-chap > li { counter-increment: chapter; }
+.cr-chap > li::before { content: counter(chapter) ". "; }
+.cr-chap > li > ol { counter-reset: figure; }
+.cr-chap > li > ol > li { counter-increment: figure; }
+.cr-chap > li > ol > li::before { content: counter(chapter) "." counter(figure) ". "; }
+
+.cr5 { counter-reset: myCounter 5; }
+.cr5 li { counter-increment: myCounter; }
+.cr5 li::before { content: counter(myCounter); }
+
+/* counter-increment */
+.ci-section { counter-reset: step; }
+.ci-section li { counter-increment: step; }
+.ci-section li::before { content: counter(step); }
+
+.ci-figure { counter-reset: fig; }
+.ci-figure li { counter-increment: fig; }
+.ci-figure li::before { content: counter(fig); }
+
+.ci-2 { counter-reset: step2; }
+.ci-2 li { counter-increment: step2 2; }
+.ci-2 li::before { content: counter(step2); }
+
+.ci-neg { counter-reset: stepneg 4; }
+.ci-neg li { counter-increment: stepneg -1; }
+.ci-neg li::before { content: counter(stepneg); }
+
+.ci-none { counter-reset: stepnone; }
+.ci-none li { counter-increment: none; }
+.ci-none li::before { content: counter(stepnone); }
+
+/* content: counter() */
+.ct-decimal { counter-reset: section; }
+.ct-decimal li { counter-increment: section; }
+.ct-decimal li::before { content: counter(section); }
+
+.ct-punct { counter-reset: section; }
+.ct-punct li { counter-increment: section; }
+.ct-punct li::before { content: counter(section) ". "; }
+
+.ct-zero { counter-reset: entry; }
+.ct-zero li { counter-increment: entry; }
+.ct-zero li::before { content: counter(entry, decimal-leading-zero); }
+
+.ct-combined { counter-reset: chapter figure; }
+.ct-combined > li { counter-increment: chapter; }
+.ct-combined > li > ol { counter-reset: figure; }
+.ct-combined > li > ol > li { counter-increment: figure; }
+.ct-combined > li::before { content: counter(chapter); }
+.ct-combined > li > ol > li::before { content: counter(chapter) "." counter(figure); }
+
+.ct-roman { counter-reset: item; }
+.ct-roman li { counter-increment: item; }
+.ct-roman li::before { content: counter(item, upper-roman); }
+
+.ct-counters { counter-reset: part; }
+.ct-counters li { counter-increment: part; }
+.ct-counters li::before { content: counters(part, "."); }
+.ct-counters li ol { counter-reset: part; }
+
+.ct-marker { counter-reset: mk; }
+.ct-marker li { counter-increment: mk; list-style-type: disc; }
+.ct-marker li::marker {
+  content: counter(mk) ") ";
+  color: #0f766e;
+  font-weight: 600;
+}

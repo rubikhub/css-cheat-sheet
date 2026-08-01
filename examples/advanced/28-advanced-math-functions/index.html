@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Math Functions</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Advanced Math Functions</h1>
+
+    <section>
+      <h2>calc()</h2>
+      <p class="code">calc(&lt;expression&gt;)</p>
+      <div class="fwrap">
+        <div class="fbox c-sub">calc(100% - 2rem)</div>
+      </div>
+      <p class="cap">calc(100% - 2rem) → 328px (360px box − 2rem)</p>
+      <div class="fwrap">
+        <div class="fbox c-div">100% / 3</div>
+      </div>
+      <p class="cap">calc(100% / 3) → 120px</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox c-unit">1rem + 0.5vw</div>
+          <p class="cap">calc(1rem + 0.5vw) → 16px + 0.5vw</p>
+        </div>
+        <div class="cell">
+          <div class="fbox c-nest">nested</div>
+          <p class="cap">calc(calc(10px * 2) + calc(1rem / 2)) → 28px</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>clamp()</h2>
+      <p class="code">clamp(&lt;min&gt;, &lt;preferred&gt;, &lt;max&gt;)</p>
+      <div class="fwrap">
+        <div class="fbox cl-w">clamp(300px, 80%, 1200px)</div>
+      </div>
+      <p class="cap">clamp(300px, 80%, 1200px) → 300px (80% = 288px, clamped up to the min)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox cl-font">fluid</div>
+          <p class="cap">clamp(1rem, 2vw + 0.5rem, 2.5rem) — responsive font-size</p>
+        </div>
+        <div class="cell">
+          <div class="fbox cl-pad">pad</div>
+          <p class="cap">clamp(0.5rem, 2vw, 2rem) — fluid padding</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>min() / max()</h2>
+      <p class="code">min(&lt;values…&gt;) · max(&lt;values…&gt;)</p>
+      <div class="fwrap">
+        <div class="fbox mn-w">min(100%, 600px)</div>
+      </div>
+      <p class="cap">min(100%, 600px) → 360px (never wider than 600px)</p>
+      <div class="fwrap">
+        <div class="fbox mx-w">max(300px, 50%)</div>
+      </div>
+      <p class="cap">max(300px, 50%) → 300px (50% = 180px, so the minimum wins)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox mn-p">min(2rem, 5vw)</div>
+          <p class="cap">min(2rem, 5vw) → 32px while 5vw ≥ 32px</p>
+        </div>
+        <div class="cell">
+          <div class="fbox mx-f">max(1rem, 2vw)</div>
+          <p class="cap">max(1rem, 2vw) → 20px at a 1000px viewport</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>round()</h2>
+      <p class="code">round(&lt;strategy&gt;, &lt;value&gt;, &lt;interval&gt;)</p>
+      <p class="hint">107px is used so the strategy is visible; the spec's 100px examples already land on a multiple of 10.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox rd-n">100px</div>
+          <p class="cap">round(100px, 10px) → 100px</p>
+        </div>
+        <div class="cell">
+          <div class="fbox rd-up">110px</div>
+          <p class="cap">round(up, 107px, 10px) → 110px</p>
+        </div>
+        <div class="cell">
+          <div class="fbox rd-down">100px</div>
+          <p class="cap">round(down, 107px, 10px) → 100px</p>
+        </div>
+        <div class="cell">
+          <div class="fbox rd-nearest">110px</div>
+          <p class="cap">round(nearest, 107px, 10px) → 110px</p>
+        </div>
+        <div class="cell">
+          <div class="fbox rd-zero">100px</div>
+          <p class="cap">round(to-zero, 107px, 10px) → 100px</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>rem()</h2>
+      <p class="code">rem(&lt;dividend&gt;, &lt;divisor&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox rm-a">61px</div>
+          <p class="cap">rem(10px, 3px) → 1px (bar is 60px + 1px)</p>
+        </div>
+        <div class="cell">
+          <div class="rem-stack">
+            <div class="fbox rm-i i2">2</div>
+            <div class="fbox rm-i i3">0</div>
+            <div class="fbox rm-i i4">1</div>
+          </div>
+          <p class="cap">rem(var(--index), 3) → cycles 2, 0, 1</p>
+        </div>
+        <div class="cell">
+          <div class="fbox rm-neg">39px</div>
+          <p class="cap">rem(-10px, 3px) → -1px (sign follows the dividend)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>mod()</h2>
+      <p class="code">mod(&lt;dividend&gt;, &lt;divisor&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox md-a">61px</div>
+          <p class="cap">mod(10px, 3px) → 1px (bar is 60px + 1px)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox md-neg">62px</div>
+          <p class="cap">mod(-10px, 3px) → 2px — always positive</p>
+        </div>
+        <div class="cell">
+          <div class="fbox md-n">53px</div>
+          <p class="cap">mod(7, 4) → 3 (bar is 50px + 3px)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>sin() / cos() / tan()</h2>
+      <p class="code">sin(&lt;angle&gt;) · cos(&lt;angle&gt;) · tan(&lt;angle&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox sin">sin</div>
+          <p class="cap">sin(45deg) → 0.707 (90px × 0.707 ≈ 64px)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox cos">cos</div>
+          <p class="cap">cos(45deg) → 0.707 (100px × 0.707 ≈ 71px)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox tan">tan</div>
+          <p class="cap">tan(45deg) → 1 (100px × 1 = 100px)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox sin4">combo</div>
+          <p class="cap">calc(100px * sin(45deg)) → ≈71px — combined with calc</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>asin() / acos() / atan() / atan2()</h2>
+      <p class="code">asin(&lt;number&gt;) · acos(&lt;number&gt;) · atan(&lt;number&gt;) · atan2(&lt;y&gt;, &lt;x&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fsq asin">30°</div>
+          <p class="cap">asin(0.5) → 30deg</p>
+        </div>
+        <div class="cell">
+          <div class="fsq acos">60°</div>
+          <p class="cap">acos(0.5) → 60deg</p>
+        </div>
+        <div class="cell">
+          <div class="fsq atan">45°</div>
+          <p class="cap">atan(1) → 45deg</p>
+        </div>
+        <div class="cell">
+          <div class="fsq atan2">45°</div>
+          <p class="cap">atan2(30, 30) → 45deg from two coordinates</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>pow() / sqrt() / exp() / log()</h2>
+      <p class="code">pow(&lt;base&gt;, &lt;exponent&gt;) · sqrt(&lt;number&gt;) · exp(&lt;number&gt;) · log(&lt;number&gt;, &lt;base&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox pow">1024</div>
+          <p class="cap">pow(2, 10) → 1024 (×0.17px ≈ 174px)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox sqrt">4</div>
+          <p class="cap">sqrt(16) → 4 (×40px → 160px)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox exp">e</div>
+          <p class="cap">exp(1) → e ≈ 2.718 (×60px ≈ 163px)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox log">4.6</div>
+          <p class="cap">log(100) → ≈4.6, natural log (×35px ≈ 161px)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox log10">2</div>
+          <p class="cap">log(100, 10) → 2 (×80px → 160px)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>abs() / sign()</h2>
+      <p class="code">abs(&lt;number&gt;) · sign(&lt;number&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox abs-neg">100px</div>
+          <p class="cap">abs(-100px) → 100px</p>
+        </div>
+        <div class="cell">
+          <div class="fbox abs-pos">100px</div>
+          <p class="cap">abs(100px) → 100px</p>
+        </div>
+        <div class="cell">
+          <div class="fbox sgn-neg">-1</div>
+          <p class="cap">sign(-50px) → -1 (shifted up 20px)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox sgn-pos">1</div>
+          <p class="cap">sign(50px) → 1 (shifted down 20px)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox sgn-zero">0</div>
+          <p class="cap">sign(0) → 0 (no shift)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>hypot()</h2>
+      <p class="code">hypot(&lt;numbers…&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox hyp-1">5px</div>
+          <p class="cap">hypot(3px, 4px) → 5px (×24 → 120px)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox hyp-2">13px</div>
+          <p class="cap">hypot(5px, 12px) → 13px (×9 → 117px)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox hyp-3">13px</div>
+          <p class="cap">hypot(3px, 4px, 12px) → 13px across three axes</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>calc-size()</h2>
+      <p class="code">calc-size(&lt;basis&gt;, &lt;calculation&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox cs-half">half</div>
+          <p class="cap">calc-size(auto, size * 0.5) — half the intrinsic height</p>
+        </div>
+        <div class="cell">
+          <div class="fbox cs-min">min-content</div>
+          <p class="cap">calc-size(min-content, size + 2rem) — min-content width + 2rem</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>if()</h2>
+      <p class="code">if(&lt;condition&gt;: &lt;value&gt;; &lt;condition&gt;: &lt;value&gt;; &lt;else&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="if-dark">
+            <div class="fbox if-box">dark</div>
+          </div>
+          <p class="cap">if(style(--variant: dark): #0f172a; #f1f5f9) → dark branch</p>
+        </div>
+        <div class="cell">
+          <div class="fbox if-box">fallback</div>
+          <p class="cap">same rule with the condition false → the fallback</p>
+        </div>
+        <div class="cell">
+          <div class="fbox if-media">media</div>
+          <p class="cap">if(media(width &gt;= 600px): #0f766e; #f59e0b)</p>
+        </div>
+        <div class="cell">
+          <div class="fbox if-supports">grid</div>
+          <p class="cap">if(supports(display: grid): grid; block)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>random()</h2>
+      <p class="code">random() · random(&lt;min&gt;, &lt;max&gt;) · random(--seed)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox rn-01">0–1</div>
+          <p class="cap">random() → a number 0–1; the width rerandomizes on load</p>
+        </div>
+        <div class="cell">
+          <div class="fbox rn-range">range</div>
+          <p class="cap">random(10px, 40px) → a random length in range</p>
+        </div>
+        <div class="cell">
+          <div class="fsq rn-angle">angle</div>
+          <p class="cap">random(0deg, 360deg) → a random angle</p>
+        </div>
+        <div class="cell">
+          <div class="fbox rn-seed">seed</div>
+          <p class="cap">random(--seed, 40px, 100px) → stable for a given seed</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>random-item()</h2>
+      <p class="code">random-item(&lt;values…&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox ri-color">color</div>
+          <p class="cap">random-item(red, blue, green) → picks one of three colors</p>
+        </div>
+        <div class="cell">
+          <div class="fbox ri-length">length</div>
+          <p class="cap">random-item(30px, 60px, 90px) → one of three lengths</p>
+        </div>
+        <div class="cell">
+          <div class="fbox ri-seed">seed</div>
+          <p class="cap">random-item(--seed, 60px, 90px, 120px) → seeded, stable choice</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>sibling-index()</h2>
+      <p class="code">sibling-index()</p>
+      <div class="si-row">
+        <div class="fbox si-item">1</div>
+        <div class="fbox si-item">2</div>
+        <div class="fbox si-item">3</div>
+        <div class="fbox si-item">4</div>
+      </div>
+      <p class="cap">sibling-index() → 1, 2, 3, 4; each rotated 6deg × index</p>
+      <div class="si-row">
+        <div class="fbox si-lone">lone</div>
+      </div>
+      <p class="cap">returns 0 for a lone child — no rotation</p>
+    </section>
+
+    <section>
+      <h2>sibling-count()</h2>
+      <p class="code">sibling-count()</p>
+      <div class="sc-wrap">
+        <div class="fbox sc-item">a</div>
+        <div class="fbox sc-item">b</div>
+        <div class="fbox sc-item">c</div>
+      </div>
+      <p class="cap">sibling-count() → 3; each item is calc(100% / sibling-count())</p>
+      <div class="sc-wrap">
+        <div class="fbox sc-lone">lone</div>
+      </div>
+      <p class="cap">returns 0 for a lone child — calc(100% / 0) is invalid, so width falls back to auto</p>
+    </section>
+
+    <section>
+      <h2>toggle()</h2>
+      <p class="code">toggle(&lt;values…&gt;)</p>
+      <div class="tg-row">
+        <div class="fbox tg-font">A</div>
+        <div class="fbox tg-font">B</div>
+        <div class="fbox tg-font">C</div>
+      </div>
+      <p class="cap">toggle(1rem, 2rem) — alternates 16px / 32px per element</p>
+      <div class="tg-row">
+        <div class="fbox tg-color">1</div>
+        <div class="fbox tg-color">2</div>
+        <div class="fbox tg-color">3</div>
+      </div>
+      <p class="cap">toggle(red, blue, green) — cycles through three colors in document order</p>
+    </section>
+
+    <section>
+      <h2>attr() — typed values</h2>
+      <p class="code">attr(&lt;attr-name&gt; type(&lt;type&gt;), &lt;fallback&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fbox at-w" data-width="120px">width</div>
+          <p class="cap">attr(data-width type(&lt;length&gt;), 0) → 120px</p>
+        </div>
+        <div class="cell">
+          <div class="fbox at-c" data-color="#8b5cf6">color</div>
+          <p class="cap">attr(data-color type(&lt;color&gt;), black) → #8b5cf6</p>
+        </div>
+        <div class="cell">
+          <div class="fbox at-n" data-count="5">count</div>
+          <p class="cap">attr(data-count type(&lt;integer&gt;), 0) → 5, so 20px × 5 = 100px</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../27-scroll-state/index.html">&larr; Scroll State Queries</a>
+  <a class="pager-btn pager-next" href="../29-multi-column-layout/index.html">Multi-column Layout &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

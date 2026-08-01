@@ -1,0 +1,218 @@
+/* counter-reset chips */
+.cchip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 96px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #1f2937;
+}
+.cchip .num {
+  font-weight: 700;
+  color: #3b82f6;
+}
+.cchip .num::before {
+  content: counter(myCounter);
+}
+.cchip .num2 {
+  font-weight: 700;
+  color: #10b981;
+}
+.cchip .num2::before {
+  content: counter(anotherCounter);
+}
+
+.cr-none { counter-reset: none; }
+.cr-0a { counter-reset: myCounter; }
+.cr-0b { counter-reset: myCounter 0; }
+.cr-10 { counter-reset: myCounter 10; }
+.cr-m1 { counter-reset: myCounter -1; }
+.cr-multi { counter-reset: myCounter 0 anotherCounter 0; }
+
+/* counter-increment */
+.cinc {
+  counter-reset: myCounter 0;
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+.cinc span {
+  font-weight: 700;
+  color: #3b82f6;
+}
+.cinc span::before {
+  content: counter(myCounter);
+}
+
+.ci-none span::before { content: counter(myCounter); }
+.ci1 span::before {
+  counter-increment: myCounter;
+  content: counter(myCounter);
+}
+.ci1b span::before {
+  counter-increment: myCounter 1;
+  content: counter(myCounter);
+}
+.ci2 span::before {
+  counter-increment: myCounter 2;
+  content: counter(myCounter);
+}
+.cim1 span::before {
+  counter-increment: myCounter -1;
+  content: counter(myCounter);
+}
+.ci05 span::before {
+  counter-increment: myCounter 0.5;
+  content: counter(myCounter);
+}
+.cimulti span::before {
+  counter-increment: myCounter anotherCounter;
+  content: counter(myCounter) "/" counter(anotherCounter);
+}
+
+/* counter() */
+.cnt {
+  counter-reset: myCounter 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  min-width: 96px;
+}
+.cnt li {
+  counter-increment: myCounter;
+  padding: 2px 0;
+  white-space: nowrap;
+}
+.cnt li::before {
+  margin-right: 6px;
+  color: #0f766e;
+}
+.cnt-plain li::before { content: counter(myCounter) ". "; }
+.cnt-decimal li::before { content: counter(myCounter, decimal) ". "; }
+.cnt-dcl li::before { content: counter(myCounter, decimal-leading-zero) ". "; }
+.cnt-lroman li::before { content: counter(myCounter, lower-roman) ". "; }
+.cnt-uroman li::before { content: counter(myCounter, upper-roman) ". "; }
+.cnt-lalpha li::before { content: counter(myCounter, lower-alpha) ". "; }
+.cnt-ualpha li::before { content: counter(myCounter, upper-alpha) ". "; }
+
+/* nested counters */
+.nest {
+  counter-reset: parent 0;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 14px;
+  font-size: 0.8rem;
+}
+.nest > li {
+  counter-increment: parent;
+  padding: 2px 0;
+}
+.nest > li::before {
+  content: counter(parent) ". ";
+  color: #0f766e;
+}
+.nest ol {
+  counter-reset: child 0;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 14px;
+}
+.nest ol li {
+  counter-increment: child;
+  padding: 2px 0;
+}
+.nest ol li::before {
+  content: counter(parent) "." counter(child) ". ";
+  color: #0f766e;
+}
+
+/* counters() */
+.ctrs {
+  counter-reset: myCounter 0;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 14px;
+  font-size: 0.8rem;
+}
+.ctrs li {
+  counter-increment: myCounter;
+  padding: 2px 0;
+}
+.ctrs li::before {
+  margin-right: 6px;
+  color: #0f766e;
+  white-space: nowrap;
+}
+.ctrs-dot li::before { content: counters(myCounter, ".") " "; }
+.ctrs-arrow li::before { content: counters(myCounter, " > ") " "; }
+.ctrs-dash li::before { content: counters(myCounter, " - ") " "; }
+.ctrs-empty li::before { content: counters(myCounter, "", decimal) " "; }
+
+.ctrs-section { counter-reset: section 0; }
+.ctrs-section li { counter-increment: section; }
+.ctrs-section li::before {
+  content: counters(section, ".") " ";
+  color: #0f766e;
+}
+
+/* list-style-type — unordered */
+.lst {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 0.8rem;
+}
+.lst li { padding: 2px 0; }
+.ls-disc { list-style-type: disc; }
+.ls-circle { list-style-type: circle; }
+.ls-square { list-style-type: square; }
+.ls-none { list-style-type: none; }
+.ls-dopen { list-style-type: disclosure-open; }
+.ls-dclosed { list-style-type: disclosure-closed; }
+.ls-str { list-style-type: "→"; }
+
+/* list-style-type — ordered */
+.lso {
+  margin: 0;
+  padding-left: 26px;
+  font-size: 0.8rem;
+}
+.lso li { padding: 1px 0; }
+.lso-decimal { list-style-type: decimal; }
+.lso-dcl { list-style-type: decimal-leading-zero; }
+.lso-lroman { list-style-type: lower-roman; }
+.lso-uroman { list-style-type: upper-roman; }
+.lso-lalpha { list-style-type: lower-alpha; }
+.lso-ualpha { list-style-type: upper-alpha; }
+.lso-lgreek { list-style-type: lower-greek; }
+.lso-llatin { list-style-type: lower-latin; }
+.lso-ulatin { list-style-type: upper-latin; }
+.lso-hebrew { list-style-type: hebrew; }
+.lso-cjk { list-style-type: cjk-ideographic; }
+.lso-hiragana { list-style-type: hiragana; }
+.lso-katakana { list-style-type: katakana; }
+
+/* ::marker */
+.mk {
+  margin: 0;
+  padding-left: 24px;
+  font-size: 0.8rem;
+}
+.mk li { padding: 3px 0; }
+.mk-color li::marker {
+  color: #8b5cf6;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+.mk-content li::marker {
+  content: "✓ ";
+}

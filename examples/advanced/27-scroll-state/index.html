@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll State Queries</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Scroll State Queries</h1>
+
+    <section>
+      <h2>@scroll-state</h2>
+      <p class="code">@scroll-state(&lt;query&gt;)</p>
+      <p class="hint">Scroll the box: the header is plain while it travels, then turns teal and gains a shadow once it sticks to the top.</p>
+      <div class="state-port">
+        <div class="sticky-hdr">Sticky header</div>
+        <div class="state-filler"></div>
+      </div>
+      <p class="cap">stuck: top — styles only apply while the element is stuck</p>
+      <p class="note">The snapped and scrollable conditions are demoed in their own sections below.</p>
+    </section>
+
+    <section>
+      <h2>scroll-state()</h2>
+      <p class="code">scroll-state(&lt;query&gt;)</p>
+      <p class="hint">The named-container form. This box is a scroll-state container named <code>stage</code>; a chip inside it is restyled with <code>@container stage scroll-state(stuck: top)</code>.</p>
+      <div class="state-port named">
+        <div class="sticky-hdr named">Header</div>
+        <div class="state-filler"></div>
+        <div class="state-chip"><span class="chip-stuck">stuck</span><span class="chip-free">not stuck</span></div>
+      </div>
+      <p class="cap">stuck: top → chip turns teal · not stuck: top → chip stays gray</p>
+    </section>
+
+    <section>
+      <h2>scroll-state(stuck)</h2>
+      <p class="code">@scroll-state(stuck: &lt;edge&gt;)</p>
+      <p class="hint">The first box has room to scroll, so its header sticks and turns teal. The second never sticks.</p>
+      <div class="state-port">
+        <div class="sticky-hdr">Sticky header</div>
+        <div class="state-filler"></div>
+      </div>
+      <p class="cap">stuck: top — tall content makes the header stick</p>
+      <div class="state-port short">
+        <div class="sticky-hdr">Short content</div>
+        <div class="state-filler short-fill"></div>
+      </div>
+      <p class="cap">not stuck: top — no overflow means it never sticks</p>
+    </section>
+
+    <section>
+      <h2>scroll-state(snapped)</h2>
+      <p class="code">@scroll-state(snapped: &lt;edge&gt;)</p>
+      <p class="hint">A mandatory snap scroller: the slide that snaps to the top turns teal and scales up.</p>
+      <div class="snap-port">
+        <div class="snap-item">1</div>
+        <div class="snap-item">2</div>
+        <div class="snap-item">3</div>
+        <div class="snap-item">4</div>
+      </div>
+      <p class="cap">snapped: top — only the currently snapped slide is highlighted</p>
+    </section>
+
+    <section>
+      <h2>scroll-state(scrollable)</h2>
+      <p class="code">@scroll-state(scrollable: &lt;edge&gt;)</p>
+      <p class="hint">The amber badge pins to the bottom while more content remains below, and fades out once you reach the end.</p>
+      <div class="state-port">
+        <div class="state-filler"></div>
+        <div class="end-badge">more below ▾</div>
+      </div>
+      <p class="cap">scrollable: bottom — badge visible while you can keep scrolling · not scrollable: bottom — badge fades at the end</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../26-scroll-animations/index.html">&larr; Scroll-Driven Animations</a>
+  <a class="pager-btn pager-next" href="../28-advanced-math-functions/index.html">Advanced Math Functions &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

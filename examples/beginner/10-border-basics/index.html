@@ -8,36 +8,171 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h1>Border Basics</h1>
 
     <section>
       <h2>border-width</h2>
-      <div class="card-width">border-width: 1px</div>
-      <div class="emphasis">border-width: 3px</div>
+      <p class="code">border-width: &lt;length&gt; | thin | medium | thick</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bd-box bw-solid bw-thin">thin</div>
+          <p class="cap">thin — thin border</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bw-solid bw-medium">medium</div>
+          <p class="cap">medium — medium border (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bw-solid bw-thick">thick</div>
+          <p class="cap">thick — thick border</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bw-solid bw-1">1px</div>
+          <p class="cap">1px — pixel width</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bw-solid bw-2">2px</div>
+          <p class="cap">2px — thicker border</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bw-solid bw-0">0</div>
+          <p class="cap">0 — no border</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (medium) · revert · unset.</p>
     </section>
 
     <section>
       <h2>border-style</h2>
-      <div class="card-style">border-style: solid</div>
-      <div class="secondary">border-style: dashed</div>
+      <p class="code">border-style: none | solid | dashed | dotted | double | groove | ridge | inset | outset</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bd-box bs-none">none</div>
+          <p class="cap">none — no border (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bs-solid">solid</div>
+          <p class="cap">solid — solid line</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bs-dashed">dashed</div>
+          <p class="cap">dashed — dashed line</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bs-dotted">dotted</div>
+          <p class="cap">dotted — dotted line</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bs-double">double</div>
+          <p class="cap">double — double line</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bs-groove">groove</div>
+          <p class="cap">groove — 3D grooved effect</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bs-ridge">ridge</div>
+          <p class="cap">ridge — 3D ridged effect</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bs-inset">inset</div>
+          <p class="cap">inset — 3D inset effect</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bs-outset">outset</div>
+          <p class="cap">outset — 3D outset effect</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
     </section>
 
     <section>
       <h2>border-color</h2>
-      <div class="card-color">border-color: #e0e0e0</div>
-      <div class="accent">border-color: #0066cc</div>
+      <p class="code">border-color: &lt;color&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bd-box bc-current">currentColor</div>
+          <p class="cap">currentColor — matches text color</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bc-ccc">#ccc</div>
+          <p class="cap">#ccc — hex color</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bc-rgb">rgb(0, 0, 0)</div>
+          <p class="cap">rgb(0, 0, 0) — RGB color</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bc-red">red</div>
+          <p class="cap">red — named color</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box bc-trans">transparent</div>
+          <p class="cap">transparent — invisible border</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (currentColor) · revert · unset.</p>
     </section>
 
     <section>
       <h2>border</h2>
-      <div class="card">1px solid #e0e0e0</div>
-      <div class="highlight">2px solid #0066cc</div>
+      <p class="code">border: &lt;width&gt; &lt;style&gt; &lt;color&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bd-box b-1">1px solid #ccc</div>
+          <p class="cap">1px solid #ccc — width style color</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box b-2">2px dashed red</div>
+          <p class="cap">2px dashed red — thick dashed border</p>
+        </div>
+        <div class="cell">
+          <div class="demo bd-box b-none">none</div>
+          <p class="cap">none — no border (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none medium currentColor) · revert · unset.</p>
     </section>
-
 
     <section>
       <h2>border-radius</h2>
-      <div class="card-radius">border-radius: 8px</div>
-      <div class="avatar"></div>
+      <p class="code">border-radius: &lt;length&gt; | &lt;percentage&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-blue br-px4">4px</div>
+          <p class="cap">4px — slight rounding</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue br-8">8px</div>
+          <p class="cap">8px — moderate rounding</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue br-50">50%</div>
+          <p class="cap">50% — fully round (circle/ellipse)</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue br-rem">1rem</div>
+          <p class="cap">1rem — rem-based rounding</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue br-2">4px 8px</div>
+          <p class="cap">4px 8px — tl/br | tr/bl</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue br-4">4px 8px 12px 16px</div>
+          <p class="cap">4px 8px 12px 16px — tl | tr | br | bl</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue br-0">0</div>
+          <p class="cap">0 — no rounding (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0) · revert · unset.</p>
     </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../09-typography-basics/index.html">&larr; Typography Basics</a>
+  <a class="pager-btn pager-next" href="../11-lists-basics/index.html">Lists Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
   </body>
 </html>

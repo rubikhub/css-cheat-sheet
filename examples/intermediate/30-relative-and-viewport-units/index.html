@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relative &amp; Viewport Units</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Relative &amp; Viewport Units</h1>
+
+    <section>
+      <h2>ex — X-Height</h2>
+      <p class="code">font-size: 0.75ex · vertical-align</p>
+      <p class="hint">ex is the height of a lowercase "x" — roughly half the font size, used for baseline-aligned details.</p>
+      <div class="row">
+        <div class="cell">
+          <p class="ex-demo">x <sub>sub 0.75ex</sub></p>
+          <p class="cap">subscript at 0.75ex — sits at the x-height</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>ch — Character Width</h2>
+      <p class="code">max-width: 65ch · width: 20ch</p>
+      <p class="hint">ch is the width of the "0" glyph. Resize the window — the paragraph stops at 65 characters per line.</p>
+      <div class="row">
+        <div class="cell wide">
+          <p class="ch-demo">A readable measure uses around 65 characters per line — ch makes the column adapt to whatever font is used. This box is max-width: 65ch.</p>
+          <p class="cap">max-width: 65ch — ideal reading width</p>
+        </div>
+        <div class="cell">
+          <input class="ch-input" type="text" placeholder="20ch input" />
+          <p class="cap">input width: 20ch — fits ~20 characters</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>lh — Line Height</h2>
+      <p class="code">max-height: 3lh · overflow: hidden</p>
+      <p class="hint">Line-clamp style truncation with pure CSS — exactly three lines, no matter the font size.</p>
+      <div class="lh-box">
+        This paragraph is limited to three lines using max-height: 3lh. Any overflow is hidden, so the visible text always ends at a clean line boundary regardless of font size.
+      </div>
+      <p class="cap">max-height: 3lh — always shows exactly 3 lines</p>
+    </section>
+
+    <section>
+      <h2>vmin / vmax — Viewport Min / Max</h2>
+      <p class="code">width: 40vmin · height: 40vmin</p>
+      <p class="hint">A square sized with vmin always fits both portrait and landscape — it tracks the shorter viewport side. Resize the window.</p>
+      <div class="vmin-box">40vmin</div>
+      <p class="cap">width &amp; height: 40vmin — square that fits any orientation</p>
+    </section>
+
+    <section>
+      <h2>svh / lvh / dvh — Mobile Viewport Heights</h2>
+      <p class="code">height: 100dvh · height: 100svh</p>
+      <p class="hint">On mobile, the URL bar changes the visible height. dvh tracks it live; svh always uses the smallest height. On desktop they are equal.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="dvh-bar">100dvh</div>
+          <p class="cap">100dvh — dynamic: follows the URL bar</p>
+        </div>
+        <div class="cell">
+          <div class="svh-bar">100svh</div>
+          <p class="cap">100svh — small: never taller than the compact viewport</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>fr — Fraction of Free Space</h2>
+      <p class="code">grid-template-columns: 1fr 2fr 1fr</p>
+      <p class="hint">fr splits the remaining space proportionally — here the middle column takes twice as much as the sides.</p>
+      <div class="grid-fr">
+        <div class="fr-cell">1fr</div>
+        <div class="fr-cell fr-2">2fr</div>
+        <div class="fr-cell">1fr</div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../29-performance-and-rendering/index.html">&larr; Performance & Rendering</a>
+  <a class="pager-btn pager-next" href="../../advanced/01-has-selector/index.html">Advanced: :has() — The Parent Selector &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Advanced</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Background Advanced</h1>
+
+    <section>
+      <h2>background-image</h2>
+      <p class="code">background-image: &lt;image&gt; | &lt;gradient&gt; | none</p>
+      <div class="row">
+        <div class="cell">
+          <div class="bg-box bg-none"></div>
+          <p class="cap">none — no image (default)</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-linear"></div>
+          <p class="cap">linear-gradient(to right, red, blue)</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-angle"></div>
+          <p class="cap">linear-gradient(135deg, #667eea 0%, #764ba2 100%)</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-radial"></div>
+          <p class="cap">radial-gradient(circle, red, blue)</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-conic"></div>
+          <p class="cap">conic-gradient(red, orange, yellow, green, blue)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>repeating-linear-gradient()</h2>
+      <p class="code">background: repeating-linear-gradient(&lt;angle&gt;, &lt;color-stops&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="bg-box bg-rep-linear"></div>
+          <p class="cap">90deg — stripes every 40px</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-rep-linear-diag"></div>
+          <p class="cap">45deg — diagonal stripes</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>repeating-radial-gradient()</h2>
+      <p class="code">background: repeating-radial-gradient(&lt;shape&gt;, &lt;color-stops&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="bg-box bg-rep-radial"></div>
+          <p class="cap">circle — concentric rings</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>background-repeat</h2>
+      <p class="code">background-repeat: repeat | repeat-x | repeat-y | no-repeat | space | round</p>
+      <div class="row">
+        <div class="cell">
+          <div class="bg-box bg-rep-repeat"></div>
+          <p class="cap">repeat — tile both ways (default)</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-rep-x"></div>
+          <p class="cap">repeat-x — horizontal only</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-rep-y"></div>
+          <p class="cap">repeat-y — vertical only</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-rep-none"></div>
+          <p class="cap">no-repeat — single image</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-rep-space"></div>
+          <p class="cap">space — even spacing</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-rep-round"></div>
+          <p class="cap">round — tile and scale</p>
+        </div>
+      </div>
+      <p class="note">Two-value forms also work, e.g. repeat space, no-repeat space, repeat round.</p>
+    </section>
+
+    <section>
+      <h2>background-position</h2>
+      <p class="code">background-position: &lt;position&gt; | &lt;x&gt; &lt;y&gt;</p>
+      <p class="hint">A small dot is positioned inside each frame.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="bg-box bg-pos-center"></div>
+          <p class="cap">center (default)</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-pos-top"></div>
+          <p class="cap">top</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-pos-bottom"></div>
+          <p class="cap">bottom</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-pos-left"></div>
+          <p class="cap">left</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-pos-right"></div>
+          <p class="cap">right</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-pos-px"></div>
+          <p class="cap">20px 40px — x/y offsets</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-pos-pair"></div>
+          <p class="cap">top right — keyword pair</p>
+        </div>
+        <div class="cell">
+          <div class="bg-box bg-pos-edge"></div>
+          <p class="cap">right 10px bottom 20px</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>background-attachment</h2>
+      <p class="code">background-attachment: scroll | fixed | local</p>
+      <div class="row">
+        <div class="cell">
+          <div class="bg-scroll bg-attach-scroll">
+            scroll — background scrolls with the page. Resize or scroll the window to compare.
+          </div>
+          <p class="cap">scroll (default)</p>
+        </div>
+        <div class="cell">
+          <div class="bg-scroll bg-attach-fixed">
+            fixed — background stays pinned to the viewport.
+          </div>
+          <p class="cap">fixed</p>
+        </div>
+        <div class="cell">
+          <div class="bg-scroll bg-attach-local">
+            local — background scrolls with the element content. Scroll inside this box!
+          </div>
+          <p class="cap">local</p>
+        </div>
+      </div>
+      <p class="note">Two-value form also works, e.g. local scroll.</p>
+    </section>
+
+    <section>
+      <h2>background-clip</h2>
+      <p class="code">background-clip: border-box | padding-box | content-box | text</p>
+      <p class="hint">Each box has a dashed border and padding — the colored area shows the paint boundary.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="bg-clip bg-clip-border">border-box</div>
+          <p class="cap">border-box — extends under border (default)</p>
+        </div>
+        <div class="cell">
+          <div class="bg-clip bg-clip-padding">padding-box</div>
+          <p class="cap">padding-box — stops at padding edge</p>
+        </div>
+        <div class="cell">
+          <div class="bg-clip bg-clip-content">content-box</div>
+          <p class="cap">content-box — stops at content edge</p>
+        </div>
+        <div class="cell">
+          <div class="bg-clip-text">gradient text</div>
+          <p class="cap">text — clipped to the glyphs</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>background-origin</h2>
+      <p class="code">background-origin: border-box | padding-box | content-box</p>
+      <div class="row">
+        <div class="cell">
+          <div class="bg-origin bg-origin-padding">padding-box</div>
+          <p class="cap">padding-box — origin (default)</p>
+        </div>
+        <div class="cell">
+          <div class="bg-origin bg-origin-border">border-box</div>
+          <p class="cap">border-box — starts under border</p>
+        </div>
+        <div class="cell">
+          <div class="bg-origin bg-origin-content">content-box</div>
+          <p class="cap">content-box — starts inside padding</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../02-logic-matching-selectors/index.html">&larr; Logic Matching Selectors</a>
+  <a class="pager-btn pager-next" href="../04-image-sizing/index.html">Image Sizing &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

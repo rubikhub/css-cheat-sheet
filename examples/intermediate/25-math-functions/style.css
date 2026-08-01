@@ -1,0 +1,97 @@
+/* math-functions — measured bars */
+.wide {
+  width: 100%;
+  max-width: none;
+}
+
+.mtrack {
+  width: 100%;
+  height: 24px;
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.mbar {
+  height: 24px;
+  border-radius: 4px;
+}
+
+/* calc() */
+.calc-100-40 { width: calc(100% - 40px); }
+.calc-vh { width: calc(100vh - 80px); }
+.calc-rem { width: calc(1rem + 10px); }
+.calc-mul { width: calc(2 * 1rem); }
+.calc-vw { width: calc(14px + 0.5vw); }
+.calc-center { width: calc(50% - 100px); }
+.calc-nest { width: calc(100% - calc(2 * 20px)); }
+
+/* min() */
+.mn-50-300 { width: min(50%, 300px); }
+.mn-vh { width: min(100vh, 600px); }
+.mn-90-800 { width: min(90%, 800px); }
+
+/* max() */
+.mx-50-300 { width: max(50%, 300px); }
+.mx-vh { width: max(100vh, 600px); }
+.mx-80-600 { width: max(80%, 600px); }
+
+/* clamp() */
+.cl-300-800 { width: clamp(300px, 50%, 800px); }
+.cl-vh { width: clamp(200px, 50vh, 600px); }
+
+/* font-size / padding / margin demos */
+.fs-min { font-size: min(2vw, 16px); }
+.fs-max { font-size: max(1rem, 16px); }
+.fs-clamp { font-size: clamp(12px, 2vw, 16px); }
+
+.pad-min { padding: min(2rem, 40px); }
+.pad-max { padding: max(2rem, 40px); }
+.pad-clamp { padding: clamp(0.5rem, 2vw, 2rem); }
+
+.mholder {
+  width: 220px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 8px;
+}
+.mar-min { margin-left: min(5%, 50px); }
+.mar-max { margin-left: max(5%, 50px); }
+.mar-clamp { margin-left: clamp(1rem, 3vw, 3rem); }
+
+/* clamp() gap */
+.gap-demo {
+  display: flex;
+  gap: clamp(0.5rem, 1vw, 1rem);
+}
+.gap-a,
+.gap-b {
+  width: 54px;
+  height: 54px;
+  border-radius: 8px;
+  background: #14b8a6;
+}
+
+/* env() safe areas */
+.phone {
+  width: 130px;
+  height: 90px;
+  background: #0f172a;
+  border-radius: 12px;
+  border: 3px solid #1e293b;
+  display: flex;
+}
+.scr {
+  flex: 1;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.p-top { padding-top: env(safe-area-inset-top, 0px); }
+.p-bottom { padding-bottom: env(safe-area-inset-bottom, 16px); }
+.p-left { padding-left: env(safe-area-inset-left, 0px); }
+.p-right { padding-right: env(safe-area-inset-right, 12px); }
+.p-fb { padding-bottom: env(--demo-inset, 16px); }

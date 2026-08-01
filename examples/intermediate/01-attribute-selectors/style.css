@@ -1,0 +1,126 @@
+/* shared demo pieces */
+.sample {
+  font-size: 1rem;
+  padding: 6px 10px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+  background: #f8fafc;
+}
+.sample span {
+  padding: 2px 6px;
+}
+.chip {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+}
+.link {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #2563eb;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+/* [attr] — presence */
+[title] {
+  color: #0f766e;
+  background: #ccfbf1;
+  border-radius: 4px;
+  font-weight: 600;
+}
+[data-tag] {
+  color: #7c3aed;
+  background: #ede9fe;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* [attr~="value"] */
+.tokens.highlight,
+[class~="highlight"] {
+  background: #fef08a;
+  border-color: #f59e0b;
+  color: #713f12;
+}
+[class~="active"] {
+  background: #bbf7d0;
+  border-color: #16a34a;
+  color: #14532d;
+}
+[class~="primary"] {
+  background: #bfdbfe;
+  border-color: #2563eb;
+  color: #1e3a8a;
+}
+
+/* [attr|="value"] */
+.link[hreflang|="en"] {
+  background: #dbeafe;
+  border: 2px solid #2563eb;
+}
+.link[hreflang|="fr"] {
+  background: #fecaca;
+  border: 2px solid #dc2626;
+  color: #991b1b;
+}
+.chip[data-lang|="zh"] {
+  background: #fef3c7;
+  border-color: #f59e0b;
+}
+
+/* [attr^="value"] */
+.link[href^="https"] {
+  background: #dcfce7;
+  border: 2px solid #16a34a;
+}
+.link[href^="http"] {
+  background: #fef9c3;
+  border: 2px solid #eab308;
+}
+.chip[data-id^="user-"] {
+  background: #e0e7ff;
+  border-color: #4f46e5;
+}
+
+/* [attr$="value"] */
+.link[href$=".pdf"] {
+  background: #fee2e2;
+  border: 2px solid #dc2626;
+  color: #991b1b;
+}
+.link[href$=".zip"] {
+  background: #ffedd5;
+  border: 2px solid #ea580c;
+  color: #9a3412;
+}
+.chip[data-file$=".jpg"] {
+  background: #fce7f3;
+  border-color: #ec4899;
+}
+.chip[data-file$=".png"] {
+  background: #ccfbf1;
+  border-color: #0d9488;
+}
+
+/* [attr*="value"] */
+.link[href*="example"] {
+  background: #ede9fe;
+  border: 2px solid #8b5cf6;
+  color: #5b21b6;
+}
+.chip[class*="btn"] {
+  background: #dbeafe;
+  border-color: #2563eb;
+}
+.chip[src*="avatar"] {
+  background: #fef3c7;
+  border-color: #f59e0b;
+}

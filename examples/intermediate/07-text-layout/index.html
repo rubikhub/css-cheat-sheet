@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Layout &amp; Wrapping</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Text Layout &amp; Wrapping</h1>
+
+    <section>
+      <h2>text-align</h2>
+      <p class="code">text-align: left | right | center | justify | start | end</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox ta-start">The quick brown fox jumps over the lazy dog and keeps on running.</div>
+          <p class="cap">start — align to line start (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox ta-left">The quick brown fox jumps over the lazy dog and keeps on running.</div>
+          <p class="cap">left — align left</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox ta-right">The quick brown fox jumps over the lazy dog and keeps on running.</div>
+          <p class="cap">right — align right</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox ta-center">The quick brown fox jumps over the lazy dog and keeps on running.</div>
+          <p class="cap">center — center the text</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox ta-justify">The quick brown fox jumps over the lazy dog and keeps on running.</div>
+          <p class="cap">justify — stretch lines edge to edge</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (start) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>text-align-last</h2>
+      <p class="code">text-align-last: auto | start | end | left | right | center | justify</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox tal-base tl-auto">The quick brown fox jumps over the lazy dog and keeps on running through the forest and beyond the hills.</div>
+          <p class="cap">auto — uses the text-align value (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tal-base tl-center">The quick brown fox jumps over the lazy dog and keeps on running through the forest and beyond the hills.</div>
+          <p class="cap">center — center the last line</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tal-base tl-left">The quick brown fox jumps over the lazy dog and keeps on running through the forest and beyond the hills.</div>
+          <p class="cap">left — align the last line left</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tal-base tl-right">The quick brown fox jumps over the lazy dog and keeps on running through the forest and beyond the hills.</div>
+          <p class="cap">right — align the last line right</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tal-base tl-justify">The quick brown fox jumps over the lazy dog and keeps on running through the forest and beyond the hills.</div>
+          <p class="cap">justify — justify the last line</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>text-transform</h2>
+      <p class="code">text-transform: none | capitalize | uppercase | lowercase | full-width</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox tt-none">The quick brown fox 123</div>
+          <p class="cap">none — no transformation (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tt-cap">The quick brown fox 123</div>
+          <p class="cap">capitalize — capitalize each word</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tt-upper">The quick brown fox 123</div>
+          <p class="cap">uppercase — all uppercase</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tt-lower">The quick brown fox 123</div>
+          <p class="cap">lowercase — all lowercase</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tt-full">ABC 123</div>
+          <p class="cap">full-width — wide full-width characters</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>text-indent</h2>
+      <p class="code">text-indent: &lt;length&gt; | &lt;percentage&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox ti-0">The first line sits flush while the following lines of this paragraph start at the same margin.</div>
+          <p class="cap">0 — no indent (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox ti-2em">The first line sits further in while the following lines of this paragraph start at the margin.</div>
+          <p class="cap">2em — indent relative to font size</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox ti-20">The first line sits further in while the following lines of this paragraph start at the margin.</div>
+          <p class="cap">20px — fixed indent</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox ti-10p">The first line sits further in while the following lines of this paragraph start at the margin.</div>
+          <p class="cap">10% — percentage of container width</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>text-overflow</h2>
+      <p class="code">text-overflow: clip | ellipsis</p>
+      <p class="hint">Both demos combine white-space: nowrap and overflow: hidden so the text truncates.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox to-clip">This is a very long label that will not fit inside the box</div>
+          <p class="cap">clip — hard cut-off (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox to-ellip">This is a very long label that will not fit inside the box</div>
+          <p class="cap">ellipsis — trailing three dots</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (clip) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>text-shadow</h2>
+      <p class="code">text-shadow: none | &lt;offset-x&gt; &lt;offset-y&gt; &lt;blur&gt; &lt;color&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo shadow ts-none">Shadow</div>
+          <p class="cap">none — no shadow (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo shadow ts-off">Shadow</div>
+          <p class="cap">2px 2px #555 — offset shadow</p>
+        </div>
+        <div class="cell">
+          <div class="demo shadow ts-blur">Shadow</div>
+          <p class="cap">1px 1px 2px rgba(0,0,0,.5) — blur + alpha</p>
+        </div>
+        <div class="cell">
+          <div class="demo shadow ts-multi">Shadow</div>
+          <p class="cap">0 2px 6px #333, 0 0 12px #999 — multiple shadows</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>text-wrap</h2>
+      <p class="code">text-wrap: wrap | nowrap | balance | pretty</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox tw-wrap">The art of balancing a heading across the available lines of its box.</div>
+          <p class="cap">wrap — wrap at allowed break points (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tw-nowrap">This line never wraps no matter how long it gets.</div>
+          <p class="cap">nowrap — no wrapping</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tw-balance">The art of balancing a heading across the available lines of its box.</div>
+          <p class="cap">balance — balance line lengths</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tw-pretty">The art of balancing a heading across the available lines of its box.</div>
+          <p class="cap">pretty — minimize orphans and ragged edges</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (wrap) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>white-space</h2>
+      <p class="code">white-space: normal | nowrap | pre | pre-wrap | pre-line | break-spaces</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox ws-normal">one   two
+    three
+  four</div>
+          <p class="cap">normal — collapse spaces, wrap (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox ws-nowrap">one   two
+    three
+  four</div>
+          <p class="cap">nowrap — no wrapping</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox ws-pre">one   two
+    three
+  four</div>
+          <p class="cap">pre — preserve whitespace, no wrap</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox ws-pre-wrap">one   two
+    three
+  four</div>
+          <p class="cap">pre-wrap — preserve whitespace, wrap</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox ws-pre-line">one   two
+    three
+  four</div>
+          <p class="cap">pre-line — collapse spaces, keep breaks</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox ws-break">one   two
+    three
+  four</div>
+          <p class="cap">break-spaces — preserve breaks and spaces</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>word-break</h2>
+      <p class="code">word-break: normal | break-all | keep-all | auto-phrase</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox narrow wb-normal">pneumonoultramicroscopicsilicovolcanoconiosis</div>
+          <p class="cap">normal — default line breaking rules</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox narrow wb-break-all">pneumonoultramicroscopicsilicovolcanoconiosis</div>
+          <p class="cap">break-all — break between any characters</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox narrow wb-keep">pneumonoultramicroscopicsilicovolcanoconiosis</div>
+          <p class="cap">keep-all — no breaks between CJK words</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox narrow wb-phrase">pneumonoultramicroscopicsilicovolcanoconiosis</div>
+          <p class="cap">auto-phrase — break at phrase boundaries</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>tab-size</h2>
+      <p class="code">tab-size: &lt;integer&gt; | &lt;length&gt;</p>
+      <p class="hint">Each demo preserves whitespace with white-space: pre and shows the tab character width.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox tsize-4">A&#9;B&#9;C&#9;D</div>
+          <p class="cap">4 — four spaces per tab</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tsize-2">A&#9;B&#9;C&#9;D</div>
+          <p class="cap">2 — two spaces per tab</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tsize-8">A&#9;B&#9;C&#9;D</div>
+          <p class="cap">8 — default tab width</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>line-clamp</h2>
+      <p class="code">line-clamp: none | &lt;integer&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox lc-none">The autumn wind swept across the quiet valley carrying golden leaves past the old stone bridge while farmers gathered the last of the harvest before the first frost arrived.</div>
+          <p class="cap">none — no clamping (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox lc-2">The autumn wind swept across the quiet valley carrying golden leaves past the old stone bridge while farmers gathered the last of the harvest before the first frost arrived.</div>
+          <p class="cap">line-clamp: 2 — max two lines</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox lc-3">The autumn wind swept across the quiet valley carrying golden leaves past the old stone bridge while farmers gathered the last of the harvest before the first frost arrived.</div>
+          <p class="cap">line-clamp: 3 — max three lines</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox lc-legacy">The autumn wind swept across the quiet valley carrying golden leaves past the old stone bridge while farmers gathered the last of the harvest before the first frost arrived.</div>
+          <p class="cap">legacy — -webkit-box + -webkit-line-clamp: 3</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>text-justify</h2>
+      <p class="code">text-justify: auto | none | inter-word | inter-character</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox tj-auto">The quick brown fox jumps over the lazy dog and keeps on running through the forest and beyond the hills.</div>
+          <p class="cap">auto — browser picks the method (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tj-none">The quick brown fox jumps over the lazy dog and keeps on running through the forest and beyond the hills.</div>
+          <p class="cap">none — no justification, like left</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tj-word">The quick brown fox jumps over the lazy dog and keeps on running through the forest and beyond the hills.</div>
+          <p class="cap">inter-word — space between words</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tj-char">The quick brown fox jumps over the lazy dog and keeps on running through the forest and beyond the hills.</div>
+          <p class="cap">inter-character — space between chars (CJK)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>line-break</h2>
+      <p class="code">line-break: auto | loose | normal | strict | anywhere</p>
+      <p class="hint">Affects CJK and punctuation wrapping rules — subtle unless the text contains CJK and punctuation.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox narrow lb-auto">世界は広いです。これはテストの文章です。あいうえおかきくけこ。</div>
+          <p class="cap">auto — browser default rules</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox narrow lb-loose">世界は広いです。これはテストの文章です。あいうえおかきくけこ。</div>
+          <p class="cap">loose — relaxed rules</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox narrow lb-normal">世界は広いです。これはテストの文章です。あいうえおかきくけこ。</div>
+          <p class="cap">normal — standard breaking rules</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox narrow lb-strict">世界は広いです。これはテストの文章です。あいうえおかきくけこ。</div>
+          <p class="cap">strict — stricter punctuation rules</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox narrow lb-anywhere">世界は広いです。これはテストの文章です。あいうえおかきくけこ。</div>
+          <p class="cap">anywhere — break between any characters</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>white-space-collapse</h2>
+      <p class="code">white-space-collapse: collapse | preserve | preserve-breaks | preserve-spaces | break-spaces</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox wsc-collapse">one   two
+    three
+  four</div>
+          <p class="cap">collapse — collapse spaces and breaks</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox wsc-preserve">one   two
+    three
+  four</div>
+          <p class="cap">preserve — keep spaces and breaks</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox wsc-breaks">one   two
+    three
+  four</div>
+          <p class="cap">preserve-breaks — keep breaks, collapse spaces</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox wsc-spaces">one   two
+    three
+  four</div>
+          <p class="cap">preserve-spaces — keep spaces, collapse breaks</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox wsc-break">one   two
+    three
+  four</div>
+          <p class="cap">break-spaces — preserve all and allow breaks</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>text-wrap-mode</h2>
+      <p class="code">text-wrap-mode: wrap | nowrap</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox twm-wrap">A short paragraph that wraps across more than one line of the box.</div>
+          <p class="cap">wrap — wraps at soft wrap opportunities (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox twm-nowrap">A short paragraph that never wraps across more than one line.</div>
+          <p class="cap">nowrap — text does not wrap</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>text-wrap-style</h2>
+      <p class="code">text-wrap-style: auto | balance | pretty | stable</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox tws-auto">The art of balancing a heading across the available lines of its box.</div>
+          <p class="cap">auto — browser default wrapping</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tws-balance">The art of balancing a heading across the available lines of its box.</div>
+          <p class="cap">balance — balance line lengths</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tws-pretty">The art of balancing a heading across the available lines of its box.</div>
+          <p class="cap">pretty — fewer orphans and ragged edges</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox tws-stable">The art of balancing a heading across the available lines of its box.</div>
+          <p class="cap">stable — keep wrapping stable while editing</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>hyphens</h2>
+      <p class="code">hyphens: none | manual | auto</p>
+      <p class="hint">Automatic hyphenation needs a lang attribute so the browser picks the right dictionary.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox narrow hy-none" lang="en">The pneumonoultramicroscopic silicovolcanoconiosis is a supercalifragilistic mouthful to pronounce.</div>
+          <p class="cap">none — no hyphenation</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox narrow hy-manual" lang="en">The supercalifragilistic word anti&#xAD;disestablishmentarianism only breaks at a soft hyphen.</div>
+          <p class="cap">manual — hyphenate only at explicit hyphens</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox narrow hy-auto" lang="en">The pneumonoultramicroscopic silicovolcanoconiosis is a supercalifragilistic mouthful to pronounce.</div>
+          <p class="cap">auto — hyphenate automatically</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>hyphenate-character</h2>
+      <p class="code">hyphenate-character: auto | &lt;string&gt;</p>
+      <p class="hint">Sets the glyph shown at a hyphenation break; all demos use hyphens: auto with lang="en".</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo textbox narrow hc-auto" lang="en">The supercalifragilisticexpialidocious pneumonoultramicroscopic word needs careful hyphenation.</div>
+          <p class="cap">auto — language-appropriate hyphen</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox narrow hc-hyphen" lang="en">The supercalifragilisticexpialidocious pneumonoultramicroscopic word needs careful hyphenation.</div>
+          <p class="cap">"-" — a plain hyphen</p>
+        </div>
+        <div class="cell">
+          <div class="demo textbox narrow hc-dot" lang="en">The supercalifragilisticexpialidocious pneumonoultramicroscopic word needs careful hyphenation.</div>
+          <p class="cap">"·" — middle dot</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../06-text-decoration/index.html">&larr; Text Decoration</a>
+  <a class="pager-btn pager-next" href="../08-border-advanced/index.html">Border Advanced &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

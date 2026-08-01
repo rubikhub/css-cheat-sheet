@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Blend Mode</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Background Blend Mode</h1>
+
+    <section>
+      <h2>background-blend-mode</h2>
+      <p class="code">background-blend-mode: normal | multiply | screen | overlay | darken | lighten | color-dodge | color-burn | hard-light | soft-light | difference | exclusion | hue | saturation | color | luminosity</p>
+      <p class="hint">Every box stacks the same two gradients — only the blend mode differs. Hover the last box to flip normal → multiply live.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo blend bd-normal">normal</div>
+          <p class="cap">normal — no blending (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-multiply">multiply</div>
+          <p class="cap">multiply — darkens by multiplying colors</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-screen">screen</div>
+          <p class="cap">screen — lightens by inverting and multiplying</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-overlay">overlay</div>
+          <p class="cap">overlay — combines multiply and screen</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-darken">darken</div>
+          <p class="cap">darken — keeps the darker color of each layer</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-lighten">lighten</div>
+          <p class="cap">lighten — keeps the lighter color of each layer</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-dodge">color-dodge</div>
+          <p class="cap">color-dodge — brightens the bottom layer</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-burn">color-burn</div>
+          <p class="cap">color-burn — darkens the bottom layer</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-hardlight">hard-light</div>
+          <p class="cap">hard-light — strong contrast blend</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-softlight">soft-light</div>
+          <p class="cap">soft-light — soft glow blend</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-difference">difference</div>
+          <p class="cap">difference — subtracts the darker from the lighter color</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-exclusion">exclusion</div>
+          <p class="cap">exclusion — similar to difference with less contrast</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-hue">hue</div>
+          <p class="cap">hue — uses hue of the top layer</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-saturation">saturation</div>
+          <p class="cap">saturation — uses saturation of the top layer</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-color">color</div>
+          <p class="cap">color — uses hue and saturation of the top layer</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-luminosity">luminosity</div>
+          <p class="cap">luminosity — uses luminosity of the top layer</p>
+        </div>
+        <div class="cell">
+          <div class="demo blend bd-hover">hover</div>
+          <p class="cap">hover — normal flips to multiply</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../05-color-manipulation/index.html">&larr; Color Manipulation</a>
+  <a class="pager-btn pager-next" href="../07-typography-ot-features/index.html">Typography — OpenType Features &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS At-Rules — Advanced</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS At-Rules — Advanced</h1>
+
+    <section>
+      <h2>@property</h2>
+      <p class="code">@property --name { syntax; inherits; initial-value; }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="prop-color">--my-color swatch</div>
+          <p class="cap">syntax: '&lt;color&gt;' with initial-value: #333</p>
+        </div>
+        <div class="cell">
+          <div class="prop-size">--my-size text</div>
+          <p class="cap">syntax: '&lt;length&gt;' with initial-value: 1rem, inherits: true</p>
+        </div>
+        <div class="cell">
+          <div class="prop-num">--my-number value</div>
+          <p class="cap">syntax: '&lt;number&gt;' — typed custom property</p>
+        </div>
+        <div class="cell">
+          <div class="prop-anim">animate me</div>
+          <p class="cap">Registered props can be animated</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@layer</h2>
+      <p class="code">@layer &lt;name&gt;; | @layer &lt;name&gt; { ... }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="layer-demo">Cascade order</div>
+          <p class="cap">@layer base, components, utilities — later layers win at equal specificity</p>
+        </div>
+      </div>
+      <p class="note">The chip shows that utilities beat components and base regardless of source order.</p>
+    </section>
+
+    <section>
+      <h2>@scope</h2>
+      <p class="code">@scope (&lt;selector&gt;) to (&lt;limit&gt;) { ... }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="scope-card">
+            <p>Scoped paragraph</p>
+            <div class="scope-foot">
+              <p>Footer (excluded)</p>
+            </div>
+          </div>
+          <p class="cap">@scope (.card) to (.card-footer) — styles limited to the subtree</p>
+        </div>
+        <div class="cell">
+          <div class="scope-drop">
+            <p>Dropdown item</p>
+          </div>
+          <p class="cap">@scope (.dropdown) — scoped without a limit</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@starting-style</h2>
+      <p class="code">@starting-style { ... }</p>
+      <div class="row">
+        <div class="cell">
+          <label class="toast-toggle">
+            <input type="checkbox" class="toast-check" />
+            Toggle toast
+          </label>
+          <div class="toast">Toast appears with an enter transition</div>
+          <p class="cap">@starting-style — entry state before the element is displayed</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@counter-style</h2>
+      <p class="code">@counter-style &lt;name&gt; { system; symbols; suffix; }</p>
+      <div class="row">
+        <div class="cell">
+          <ol class="thumbs-list">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">system: cyclic with thumbs symbols — custom bullet list</p>
+        </div>
+        <div class="cell">
+          <ol class="roman-list">
+            <li>One</li>
+            <li>Two</li>
+          </ol>
+          <p class="cap">Custom suffix after each counter</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@supports</h2>
+      <p class="code">@supports (&lt;property&gt;: &lt;value&gt;) | not &lt;condition&gt; | and | or</p>
+      <div class="row">
+        <div class="cell">
+          <div class="supports-grid">Grid 3-col</div>
+          <p class="cap">@supports (display: grid) — property support</p>
+        </div>
+        <div class="cell">
+          <div class="supports-has">:has() support</div>
+          <p class="cap">@supports (selector(:has(*))) — selector support</p>
+        </div>
+        <div class="cell">
+          <div class="supports-and">grid + gap</div>
+          <p class="cap">@supports (display: grid) and (gap: 1rem) — combination</p>
+        </div>
+      </div>
+      <p class="note">@supports not (display: grid) — negation applies the fallback block.</p>
+    </section>
+
+    <section>
+      <h2>@import</h2>
+      <p class="code">@import url(&lt;url&gt;) [&lt;media-query&gt;]</p>
+      <div class="row">
+        <div class="cell">
+          <pre class="import-code">@import 'theme.css';
+@import 'print.css' print;</pre>
+          <p class="cap">Plain and print-only imports (must precede other rules)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>interpolate-size</h2>
+      <p class="code">interpolate-size: numeric-only | allow-keywords</p>
+      <div class="row">
+        <div class="cell">
+          <label class="acc-toggle">
+            <input type="checkbox" class="acc-check" />
+            Toggle accordion
+          </label>
+          <div class="accordion">height animates to auto</div>
+          <p class="cap">allow-keywords — enables animating height between fixed and auto</p>
+        </div>
+        <div class="cell">
+          <div class="interp-num">numeric-only</div>
+          <p class="cap">numeric-only — default, only numeric values animate</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@custom-media</h2>
+      <p class="code">@custom-media --name (&lt;media-features&gt;);</p>
+      <div class="row">
+        <div class="cell">
+          <div class="custom-media">Named media query</div>
+          <p class="cap">@custom-media --narrow (width &lt; 600px) — reusable named breakpoint</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@when / @else</h2>
+      <p class="code">@when &lt;condition&gt; { ... } @else { ... }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="when-demo">Conditional block</div>
+          <p class="cap">@when media(...) / @when supports(...) — generic if/else</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@function</h2>
+      <p class="code">@function --name (&lt;args&gt;) { result: &lt;value&gt;; }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fn-demo">fluid type</div>
+          <p class="cap">@function --fluid($min, $max) { result: clamp($min, 2vw, $max); }</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@mixin / @apply</h2>
+      <p class="code">@mixin --name { ... } | @apply --name;</p>
+      <div class="row">
+        <div class="cell">
+          <span class="chip-demo">@apply --chip</span>
+          <p class="cap">@mixin --chip + @apply — reusable style block</p>
+        </div>
+        <div class="cell">
+          <span class="badge-demo">Badge</span>
+          <p class="cap">Mixin applied to a second element</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@nest</h2>
+      <p class="code">@nest &lt;selector&gt; { ... }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="nest-demo">
+            <span>Hover the section</span>
+          </div>
+          <p class="cap">@nest section &gt; &amp; — nesting a compound selector</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@charset</h2>
+      <p class="code">@charset "UTF-8";</p>
+      <div class="row">
+        <div class="cell">
+          <pre class="import-code">@charset "UTF-8";</pre>
+          <p class="cap">Declares stylesheet encoding (must be the first line)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@namespace</h2>
+      <p class="code">@namespace &lt;prefix&gt;? &lt;url&gt;;</p>
+      <div class="row">
+        <div class="cell">
+          <svg class="ns-svg" viewBox="0 0 40 40" width="60" height="60">
+            <circle cx="20" cy="20" r="16" />
+          </svg>
+          <p class="cap">@namespace svg url(...); svg|circle { fill: blue; }</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../22-scroll-snap/index.html">&larr; Scroll Snap & Touch Interaction</a>
+  <a class="pager-btn pager-next" href="../24-container-queries/index.html">Container Queries &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

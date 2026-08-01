@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Functions</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Math Functions</h1>
+
+    <section>
+      <h2>calc()</h2>
+      <p class="code">calc(&lt;expression&gt;)</p>
+      <p class="hint">Each bar below is sized by a real calc() — the label shows the formula and the measured result on this page.</p>
+      <div class="row">
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-blue calc-100-40"></div></div>
+          <p class="cap">calc(100% - 40px) — full row minus a fixed 40px → ≈ 880px</p>
+        </div>
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-green calc-vh"></div></div>
+          <p class="cap">calc(100vh - 80px) — viewport height minus 80px → window-dependent</p>
+        </div>
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-red calc-rem"></div></div>
+          <p class="cap">calc(1rem + 10px) — rem plus px → 16px + 10px = 26px</p>
+        </div>
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-amber calc-mul"></div></div>
+          <p class="cap">calc(2 * 1rem) — multiply a value → 2 × 16px = 32px</p>
+        </div>
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-purple calc-vw"></div></div>
+          <p class="cap">calc(14px + 0.5vw) — fixed plus viewport unit → ≈ 19px at a 1000px window</p>
+        </div>
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-teal calc-center"></div></div>
+          <p class="cap">calc(50% - 100px) — offset a percentage → ≈ 460px - 100px = 360px</p>
+        </div>
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-indigo calc-nest"></div></div>
+          <p class="cap">calc(100% - calc(2 * 20px)) — nested calculation → ≈ 880px</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>min()</h2>
+      <p class="code">min(&lt;values&gt;)</p>
+      <div class="row">
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-blue mn-50-300"></div></div>
+          <p class="cap">min(50%, 300px) — 50% ≈ 460px would exceed 300px → width = 300px (capped)</p>
+        </div>
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-green mn-vh"></div></div>
+          <p class="cap">min(100vh, 600px) — viewport-based size capped at 600px → 600px on tall windows</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fs-min">Aa</div>
+          <p class="cap">min(2vw, 16px) — font-size capped: 2vw ≈ 20px → 16px</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-amber pad-min">pad</div>
+          <p class="cap">min(2rem, 40px) — padding: 2rem = 32px is the smaller → 32px</p>
+        </div>
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-purple mn-90-800"></div></div>
+          <p class="cap">min(90%, 800px) — fluid width capped at 800px → 800px</p>
+        </div>
+        <div class="cell">
+          <div class="mholder"><div class="demo demo-indigo mar-min">m</div></div>
+          <p class="cap">min(5%, 50px) — margin-left: 5% ≈ 46px is smaller → ≈ 46px</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>max()</h2>
+      <p class="code">max(&lt;values&gt;)</p>
+      <div class="row">
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-blue mx-50-300"></div></div>
+          <p class="cap">max(50%, 300px) — 50% ≈ 460px is the larger → width = 460px</p>
+        </div>
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-green mx-vh"></div></div>
+          <p class="cap">max(100vh, 600px) — takes 100vh whenever the window is taller than 600px</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal fs-max">Aa</div>
+          <p class="cap">max(1rem, 16px) — font-size floor → 16px (equal, no change)</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-amber pad-max">pad</div>
+          <p class="cap">max(2rem, 40px) — padding floor: 2rem = 32px < 40px → 40px</p>
+        </div>
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-purple mx-80-600"></div></div>
+          <p class="cap">max(80%, 600px) — 80% ≈ 736px is the larger → 736px</p>
+        </div>
+        <div class="cell">
+          <div class="mholder"><div class="demo demo-indigo mar-max">m</div></div>
+          <p class="cap">max(5%, 50px) — margin floor: 5% ≈ 46px < 50px → 50px</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>clamp()</h2>
+      <p class="code">clamp(&lt;min&gt;, &lt;preferred&gt;, &lt;max&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-teal fs-clamp">Aa</div>
+          <p class="cap">clamp(12px, 2vw, 16px) — fluid font: 2vw ≈ 20px → clamped to 16px</p>
+        </div>
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-blue cl-300-800"></div></div>
+          <p class="cap">clamp(300px, 50%, 800px) — preferred 50% ≈ 460px → 460px</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-amber pad-clamp">pad</div>
+          <p class="cap">clamp(0.5rem, 2vw, 2rem) — padding → 2vw ≈ 20px</p>
+        </div>
+        <div class="cell">
+          <div class="mholder"><div class="demo demo-indigo mar-clamp">m</div></div>
+          <p class="cap">clamp(1rem, 3vw, 3rem) — margin → 3vw ≈ 30px</p>
+        </div>
+        <div class="cell wide">
+          <div class="mtrack"><div class="mbar demo-green cl-vh"></div></div>
+          <p class="cap">clamp(200px, 50vh, 600px) — 50vh within bounds → ≈ half the window height</p>
+        </div>
+        <div class="cell">
+          <div class="gap-demo"><div class="gap-a"></div><div class="gap-b"></div></div>
+          <p class="cap">clamp(0.5rem, 1vw, 1rem) — flex gap → ≈ 10px between the squares</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>env()</h2>
+      <p class="code">env(&lt;custom-ident&gt;, &lt;fallback&gt;)</p>
+      <p class="hint">The safe-area insets exist and are 0px in desktop browsers, so the phones show no padding here — on a notched phone they report the real inset. The last cell uses an undefined env() name so you can see the fallback kick in.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="phone p-top"><div class="scr">top</div></div>
+          <p class="cap">env(safe-area-inset-top) — 0px on desktop</p>
+        </div>
+        <div class="cell">
+          <div class="phone p-bottom"><div class="scr">bottom</div></div>
+          <p class="cap">env(safe-area-inset-bottom) — 0px here; the real bottom inset on phones</p>
+        </div>
+        <div class="cell">
+          <div class="phone p-left"><div class="scr">left</div></div>
+          <p class="cap">env(safe-area-inset-left, 0px) — 0px on desktop</p>
+        </div>
+        <div class="cell">
+          <div class="phone p-right"><div class="scr">right</div></div>
+          <p class="cap">env(safe-area-inset-right, 12px) — 0px here (real inset wins over fallback)</p>
+        </div>
+        <div class="cell">
+          <div class="phone p-fb"><div class="scr">fallback</div></div>
+          <p class="cap">env(--demo-inset, 16px) — undefined env() var → fallback 16px is used</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../24-animation/index.html">&larr; Animation</a>
+  <a class="pager-btn pager-next" href="../26-nesting/index.html">Nesting &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

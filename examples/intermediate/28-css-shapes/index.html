@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Shapes</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Shapes</h1>
+
+    <section>
+      <h2>shape-outside</h2>
+      <p class="code">shape-outside: none | &lt;basic-shape&gt; | &lt;shape-box&gt; | &lt;image&gt;</p>
+      <p class="hint">Text wraps around the floated shape instead of its rectangle. clip-path and shape-outside share the same basic shapes — the shapes below show the geometry first.</p>
+      <h3>Basic shapes (clip-path visual)</h3>
+      <div class="row">
+        <div class="cell">
+          <div class="shape demo-blue cp-circle"></div>
+          <p class="cap">circle(50%)</p>
+        </div>
+        <div class="cell">
+          <div class="shape demo-green cp-ellipse"></div>
+          <p class="cap">ellipse(50% 40%)</p>
+        </div>
+        <div class="cell">
+          <div class="shape demo-purple cp-poly"></div>
+          <p class="cap">polygon(50% 0, 100% 38%, 82% 100%, 18% 100%, 0 38%)</p>
+        </div>
+        <div class="cell">
+          <div class="shape demo-teal cp-inset"></div>
+          <p class="cap">inset(20px)</p>
+        </div>
+      </div>
+      <h3>Text wrap values</h3>
+      <div class="row">
+        <div class="cell">
+          <div class="wrap">
+            <div class="floaty demo-blue sh-none"></div>
+            <p>Shape wrapping — line boxes hug the contour of shape-outside instead of the float's plain rectangle. Quick brown fox, lazy dog, five boxing wizards. Short padded sentences keep the demo compact and easy to scan.</p>
+          </div>
+          <p class="cap">none — the float box is used (default)</p>
+        </div>
+        <div class="cell">
+          <div class="wrap">
+            <div class="floaty demo-green sh-circle"></div>
+            <p>Shape wrapping — line boxes hug the contour of shape-outside instead of the float's plain rectangle. Quick brown fox, lazy dog, five boxing wizards. Short padded sentences keep the demo compact and easy to scan.</p>
+          </div>
+          <p class="cap">circle(50%) — circular wrap shape</p>
+        </div>
+        <div class="cell">
+          <div class="wrap">
+            <div class="floaty demo-purple sh-ellipse"></div>
+            <p>Shape wrapping — line boxes hug the contour of shape-outside instead of the float's plain rectangle. Quick brown fox, lazy dog, five boxing wizards. Short padded sentences keep the demo compact and easy to scan.</p>
+          </div>
+          <p class="cap">ellipse(50% 40%) — elliptical wrap shape</p>
+        </div>
+        <div class="cell">
+          <div class="wrap">
+            <div class="floaty demo-teal sh-inset"></div>
+            <p>Shape wrapping — line boxes hug the contour of shape-outside instead of the float's plain rectangle. Quick brown fox, lazy dog, five boxing wizards. Short padded sentences keep the demo compact and easy to scan.</p>
+          </div>
+          <p class="cap">inset(20px) — inset rectangle wrap</p>
+        </div>
+        <div class="cell">
+          <div class="wrap">
+            <div class="floaty demo-amber sh-poly"></div>
+            <p>Shape wrapping — line boxes hug the contour of shape-outside instead of the float's plain rectangle. Quick brown fox, lazy dog, five boxing wizards. Short padded sentences keep the demo compact and easy to scan.</p>
+          </div>
+          <p class="cap">polygon(...) — polygonal wrap shape</p>
+        </div>
+        <div class="cell">
+          <div class="wrap">
+            <img class="imgfloat sh-image" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='110' height='110'><circle cx='55' cy='55' r='52' fill='%233b82f6'/></svg>" alt="" />
+            <p>Shape wrapping — line boxes hug the contour of shape-outside instead of the float's plain rectangle. Quick brown fox, lazy dog, five boxing wizards. Short padded sentences keep the demo compact and easy to scan.</p>
+          </div>
+          <p class="cap">url(image) — shape from an image's alpha channel (inline SVG used here)</p>
+        </div>
+      </div>
+      <h3>Shape boxes</h3>
+      <div class="row">
+        <div class="cell">
+          <div class="wrap">
+            <div class="sb sb-margin"></div>
+            <p>Shape wrapping — line boxes hug the contour of shape-outside instead of the float's plain rectangle. Quick brown fox, lazy dog, five boxing wizards.</p>
+          </div>
+          <p class="cap">margin-box — wraps the outer margin edge (14px margin)</p>
+        </div>
+        <div class="cell">
+          <div class="wrap">
+            <div class="sb sb-border"></div>
+            <p>Shape wrapping — line boxes hug the contour of shape-outside instead of the float's plain rectangle. Quick brown fox, lazy dog, five boxing wizards.</p>
+          </div>
+          <p class="cap">border-box — wraps the border edge</p>
+        </div>
+        <div class="cell">
+          <div class="wrap">
+            <div class="sb sb-padding"></div>
+            <p>Shape wrapping — line boxes hug the contour of shape-outside instead of the float's plain rectangle. Quick brown fox, lazy dog, five boxing wizards.</p>
+          </div>
+          <p class="cap">padding-box — wraps the padding edge</p>
+        </div>
+        <div class="cell">
+          <div class="wrap">
+            <div class="sb sb-content"></div>
+            <p>Shape wrapping — line boxes hug the contour of shape-outside instead of the float's plain rectangle. Quick brown fox, lazy dog, five boxing wizards.</p>
+          </div>
+          <p class="cap">content-box — wraps the content edge (tightest)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>shape-margin</h2>
+      <p class="code">shape-margin: &lt;length-percentage&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="wrap">
+            <div class="floaty demo-green sm-0"></div>
+            <p>Shape margin — adds breathing room between the shape and the wrapping text. The fox jumps, the dog naps, the wizards box. Keep the copy short and readable for the demo.</p>
+          </div>
+          <p class="cap">0 — no extra margin (default)</p>
+        </div>
+        <div class="cell">
+          <div class="wrap">
+            <div class="floaty demo-green sm-20"></div>
+            <p>Shape margin — adds breathing room between the shape and the wrapping text. The fox jumps, the dog naps, the wizards box. Keep the copy short and readable for the demo.</p>
+          </div>
+          <p class="cap">20px — text stops 20px from the shape</p>
+        </div>
+        <div class="cell">
+          <div class="wrap">
+            <div class="floaty demo-green sm-10p"></div>
+            <p>Shape margin — adds breathing room between the shape and the wrapping text. The fox jumps, the dog naps, the wizards box. Keep the copy short and readable for the demo.</p>
+          </div>
+          <p class="cap">10% — percentage of the reference box</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>shape-image-threshold</h2>
+      <p class="code">shape-image-threshold: &lt;number&gt;</p>
+      <p class="hint">The float image is a soft-edged gradient circle (inline SVG). Raising the threshold shrinks the wrap toward the fully-opaque core.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="wrap">
+            <img class="imgfloat th-0" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='110' height='110'><defs><radialGradient id='g'><stop offset='50%' stop-color='%23ef4444' stop-opacity='1'/><stop offset='100%' stop-color='%23ef4444' stop-opacity='0'/></radialGradient></defs><rect width='110' height='110' fill='url(%23g)'/></svg>" alt="" />
+            <p>Threshold — only pixels above the alpha threshold shape the wrap. A soft edge lets low thresholds wrap broadly while high thresholds keep the text near the center.</p>
+          </div>
+          <p class="cap">0.0 — any opaque pixel counts (default)</p>
+        </div>
+        <div class="cell">
+          <div class="wrap">
+            <img class="imgfloat th-5" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='110' height='110'><defs><radialGradient id='g'><stop offset='50%' stop-color='%23ef4444' stop-opacity='1'/><stop offset='100%' stop-color='%23ef4444' stop-opacity='0'/></radialGradient></defs><rect width='110' height='110' fill='url(%23g)'/></svg>" alt="" />
+            <p>Threshold — only pixels above the alpha threshold shape the wrap. A soft edge lets low thresholds wrap broadly while high thresholds keep the text near the center.</p>
+          </div>
+          <p class="cap">0.5 — pixels above 50% opacity count</p>
+        </div>
+        <div class="cell">
+          <div class="wrap">
+            <img class="imgfloat th-1" src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='110' height='110'><defs><radialGradient id='g'><stop offset='50%' stop-color='%23ef4444' stop-opacity='1'/><stop offset='100%' stop-color='%23ef4444' stop-opacity='0'/></radialGradient></defs><rect width='110' height='110' fill='url(%23g)'/></svg>" alt="" />
+            <p>Threshold — only pixels above the alpha threshold shape the wrap. A soft edge lets low thresholds wrap broadly while high thresholds keep the text near the center.</p>
+          </div>
+          <p class="cap">1.0 — only fully opaque pixels count</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../27-media-queries/index.html">&larr; Media Queries</a>
+  <a class="pager-btn pager-next" href="../29-performance-and-rendering/index.html">Performance & Rendering &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

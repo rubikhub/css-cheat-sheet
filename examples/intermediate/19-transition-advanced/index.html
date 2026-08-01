@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition Advanced</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Transition Advanced</h1>
+
+    <section>
+      <h2>transition</h2>
+      <p class="code">transition: &lt;property&gt; &lt;duration&gt; &lt;timing&gt; &lt;delay&gt;</p>
+      <p class="hint">Hover each box to watch its transition.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo tr-single">single</div>
+          <p class="cap">color 0.3s ease — transition a single property</p>
+        </div>
+        <div class="cell">
+          <div class="demo tr-multi">multi</div>
+          <p class="cap">color 0.3s ease, background 0.5s ease-in-out — multiple properties</p>
+        </div>
+        <div class="cell">
+          <div class="demo tr-all">all</div>
+          <p class="cap">all 0.3s ease — transition all properties</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (all 0s ease 0s) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>transition-property</h2>
+      <p class="code">transition-property: &lt;property&gt; | none | all</p>
+      <p class="hint">Hover — only the listed property animates; anything else changes instantly.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo tp-color">color</div>
+          <p class="cap">color — transition color changes</p>
+        </div>
+        <div class="cell">
+          <div class="demo tp-bg">bg</div>
+          <p class="cap">background-color — transition background changes</p>
+        </div>
+        <div class="cell">
+          <div class="demo tp-opacity">fade</div>
+          <p class="cap">opacity — transition opacity changes</p>
+        </div>
+        <div class="cell">
+          <div class="demo tp-transform">move</div>
+          <p class="cap">transform — transition transforms</p>
+        </div>
+        <div class="cell">
+          <div class="demo tp-shadow">shadow</div>
+          <p class="cap">box-shadow — transition shadow changes</p>
+        </div>
+        <div class="cell">
+          <div class="demo tp-multi">multi</div>
+          <p class="cap">color, background-color, opacity — transition multiple properties</p>
+        </div>
+        <div class="cell">
+          <div class="demo tp-all">all</div>
+          <p class="cap">all — transition all properties</p>
+        </div>
+        <div class="cell">
+          <div class="demo tp-none">none</div>
+          <p class="cap">none — transition nothing</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (all) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>transition-duration</h2>
+      <p class="code">transition-duration: &lt;time&gt;</p>
+      <p class="hint">Hover — longer durations animate more slowly.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo td-0">0s</div>
+          <p class="cap">0s — no transition (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo td-03">0.3s</div>
+          <p class="cap">0.3s — quick transition</p>
+        </div>
+        <div class="cell">
+          <div class="demo td-500">500ms</div>
+          <p class="cap">500ms — half-second transition</p>
+        </div>
+        <div class="cell">
+          <div class="demo td-1">1s</div>
+          <p class="cap">1s — one-second transition</p>
+        </div>
+        <div class="cell">
+          <div class="demo td-25">2.5s</div>
+          <p class="cap">2.5s — slow transition</p>
+        </div>
+        <div class="cell">
+          <div class="demo td-multi">two</div>
+          <p class="cap">0.3s, 0.5s — per-property durations</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0s) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>transition-timing-function</h2>
+      <p class="code">transition-timing-function: &lt;timing-function&gt;</p>
+      <p class="hint">Hover — compare how each curve accelerates the same slide.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo tt-ease">ease</div>
+          <p class="cap">ease — slow start and end (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo tt-linear">linear</div>
+          <p class="cap">linear — constant speed</p>
+        </div>
+        <div class="cell">
+          <div class="demo tt-easein">ease-in</div>
+          <p class="cap">ease-in — slow start, fast end</p>
+        </div>
+        <div class="cell">
+          <div class="demo tt-easeout">ease-out</div>
+          <p class="cap">ease-out — fast start, slow end</p>
+        </div>
+        <div class="cell">
+          <div class="demo tt-easeio">ease-in-out</div>
+          <p class="cap">ease-in-out — slow start and end</p>
+        </div>
+        <div class="cell">
+          <div class="demo tt-cube">bezier</div>
+          <p class="cap">cubic-bezier(0.25, 0.1, 0.25, 1) — custom curve</p>
+        </div>
+        <div class="cell">
+          <div class="demo tt-bounce">bounce</div>
+          <p class="cap">cubic-bezier(0.68, -0.55, 0.27, 1.55) — bounce curve</p>
+        </div>
+        <div class="cell">
+          <div class="demo tt-steps">steps</div>
+          <p class="cap">steps(5, end) — jump in discrete steps</p>
+        </div>
+        <div class="cell">
+          <div class="demo tt-stepstart">start</div>
+          <p class="cap">step-start — jump to end instantly</p>
+        </div>
+        <div class="cell">
+          <div class="demo tt-stepend">end</div>
+          <p class="cap">step-end — hold until the end</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (ease) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>transition-delay</h2>
+      <p class="code">transition-delay: &lt;time&gt;</p>
+      <p class="hint">Hover and hold — the transition waits before it starts.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo tde-0">0s</div>
+          <p class="cap">0s — start immediately (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo tde-02">0.2s</div>
+          <p class="cap">0.2s — short delay</p>
+        </div>
+        <div class="cell">
+          <div class="demo tde-500">500ms</div>
+          <p class="cap">500ms — half-second delay</p>
+        </div>
+        <div class="cell">
+          <div class="demo tde-1">1s</div>
+          <p class="cap">1s — one-second delay</p>
+        </div>
+        <div class="cell">
+          <div class="demo tde-multi">two</div>
+          <p class="cap">0s, 0.2s — per-property delays</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0s) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>linear() easing</h2>
+      <p class="code">transition-timing-function: linear(&lt;points&gt;)</p>
+      <p class="hint">Hover — piecewise-linear easing built from stop points.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo tl-ramp">ramp</div>
+          <p class="cap">linear(0, 0.5, 1) — a three-point ramp</p>
+        </div>
+        <div class="cell">
+          <div class="demo tl-stops">stops</div>
+          <p class="cap">linear(0, 0.3 20%, 0.9 80%, 1) — stops with positions</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>transition-behavior</h2>
+      <p class="code">transition-behavior: normal | allow-discrete</p>
+      <p class="hint">Hover the box — a hidden label appears; allow-discrete fades it in, normal pops it.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo tb-normal">normal<span class="pop">pop</span></div>
+          <p class="cap">normal — no discrete property transitions (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo tb-ad">fade<span class="pop">pop</span></div>
+          <p class="cap">allow-discrete — allows transitions of discrete properties</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../18-pseudo-elements-advanced/index.html">&larr; Pseudo Elements Advanced</a>
+  <a class="pager-btn pager-next" href="../20-transform/index.html">Transform &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anchor Positioning</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Anchor Positioning</h1>
+
+    <section>
+      <h2>anchor-name</h2>
+      <p class="code">anchor-name: &lt;dashed-ident&gt; | none</p>
+      <p class="hint">The dark box is the anchor; the teal box is the popup. The anchor must carry the dashed-ident the popup references.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup a-bottom">--box</div>
+          </div>
+          <p class="cap">--box — the anchor's dashed-ident name</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor no-name">A</div>
+            <div class="popup orphan">--box?</div>
+          </div>
+          <p class="cap">none — no name; the popup can't attach</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>position-anchor</h2>
+      <p class="code">position-anchor: &lt;anchor-name&gt; | auto</p>
+      <div class="row">
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup a-right">--box</div>
+          </div>
+          <p class="cap">--box — links the popup to that anchor</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup auto-anchor">auto</div>
+          </div>
+          <p class="cap">auto — default anchor resolution (no link)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>anchor()</h2>
+      <p class="code">anchor(&lt;anchor-name&gt;, &lt;side&gt;)</p>
+      <p class="hint">Each popup pins one side of the anchor using the anchor() function inside its insets.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup a-bottom">bottom</div>
+          </div>
+          <p class="cap">anchor(bottom) — below the anchor</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup a-top">top</div>
+          </div>
+          <p class="cap">anchor(top) — above the anchor</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup a-right">right</div>
+          </div>
+          <p class="cap">anchor(right) — right side</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup a-left">left</div>
+          </div>
+          <p class="cap">anchor(left) — left side</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup a-center">center</div>
+          </div>
+          <p class="cap">anchor(center) — centered on the anchor</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup a-named">--box bottom</div>
+          </div>
+          <p class="cap">anchor(--box bottom) — named anchor, specific side</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>anchor-size()</h2>
+      <p class="code">anchor-size(&lt;anchor-name&gt; &lt;dimension&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="stage wide">
+            <div class="anchor wide">A</div>
+            <div class="popup size-w">width</div>
+            <div class="popup size-h">height</div>
+          </div>
+          <p class="cap">anchor-size(--box width) — popup matches the anchor's width; height matches too</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>position-area</h2>
+      <p class="code">position-area: &lt;area&gt;</p>
+      <p class="hint">Grid-style placement: pick a block edge (top/bottom) and an inline side (left/right/center).</p>
+      <div class="row">
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup pa-top">top</div>
+          </div>
+          <p class="cap">top — above the anchor</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup pa-bottom">bottom</div>
+          </div>
+          <p class="cap">bottom — below the anchor</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup pa-left">left</div>
+          </div>
+          <p class="cap">left — to the left</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup pa-right">right</div>
+          </div>
+          <p class="cap">right — to the right</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup pa-tl">top left</div>
+          </div>
+          <p class="cap">top left — top-left corner</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup pa-bc">bottom center</div>
+          </div>
+          <p class="cap">bottom center — bottom, centered</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup auto-anchor">auto</div>
+          </div>
+          <p class="cap">auto — no fixed area (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>position-try-fallbacks</h2>
+      <p class="code">position-try-fallbacks: &lt;try-option&gt;</p>
+      <p class="hint">The popup sits at position-area: bottom, right, or top right. When it would overflow the stage it flips to the opposite edge.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor low">A</div>
+            <div class="popup fb-block">flip-block</div>
+          </div>
+          <p class="cap">flip-block — flips across the block axis when overflowing</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor far-right">A</div>
+            <div class="popup fb-inline">flip-inline</div>
+          </div>
+          <p class="cap">flip-inline — flips across the inline axis</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor corner">A</div>
+            <div class="popup fb-both">both</div>
+          </div>
+          <p class="cap">flip-block flip-inline — flips on both axes</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor low">A</div>
+            <div class="popup fb-none">none</div>
+          </div>
+          <p class="cap">none — no fallbacks (default); the popup clips</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>@position-try</h2>
+      <p class="code">@position-try --name { position-area: top; }</p>
+      <p class="hint">A reusable named option: the popup starts at bottom and falls back to the --flip-top rule when it would overflow.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor low">A</div>
+            <div class="popup try-opt">bottom</div>
+          </div>
+          <p class="cap">position-try-fallbacks: --flip-top — falls back to a named rule</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>position-visibility</h2>
+      <p class="code">position-visibility: always | anchors-visible | no-overflow</p>
+      <p class="hint">These control whether the popup shows based on the anchor's visibility or its own overflow. In this calm layout all three look identical; they matter when the anchor scrolls out of view.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup pv-always">always</div>
+          </div>
+          <p class="cap">always — shown even without an anchor</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup pv-visible">anchors-visible</div>
+          </div>
+          <p class="cap">anchors-visible — hidden when the anchor is off-screen (default)</p>
+        </div>
+        <div class="cell">
+          <div class="stage">
+            <div class="anchor">A</div>
+            <div class="popup pv-overflow">no-overflow</div>
+          </div>
+          <p class="cap">no-overflow — only when it fits without overflowing</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../24-container-queries/index.html">&larr; Container Queries</a>
+  <a class="pager-btn pager-next" href="../26-scroll-animations/index.html">Scroll-Driven Animations &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

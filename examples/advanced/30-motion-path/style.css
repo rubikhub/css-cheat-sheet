@@ -1,0 +1,154 @@
+/* motion path tracks */
+.track {
+  position: relative;
+  width: 130px;
+  height: 110px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ef4444;
+}
+
+.dot.big {
+  width: 18px;
+  height: 18px;
+}
+
+@keyframes travel {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
+}
+
+/* offset-path */
+.op-path {
+  offset-path: path('M 10 90 C 35 15 95 15 120 90');
+  animation: travel 3s linear infinite;
+}
+
+.op-circle {
+  offset-path: circle(50px at 50% 50%);
+  animation: travel 3s linear infinite;
+}
+
+.op-poly {
+  offset-path: polygon(0 0, 100% 0, 100% 100%);
+  animation: travel 3s linear infinite;
+}
+
+.op-ray {
+  left: 20px;
+  top: 20px;
+  offset-path: ray(135deg);
+  animation: travel 3s linear infinite;
+}
+
+/* offset-distance */
+.d-0 {
+  offset-path: path('M 10 50 L 120 50');
+  offset-distance: 0%;
+}
+
+.d-100 {
+  offset-path: path('M 10 50 L 120 50');
+  offset-distance: 100%;
+}
+
+.d-40 {
+  offset-path: path('M 10 50 L 120 50');
+  offset-distance: 40px;
+}
+
+/* offset-rotate */
+.arrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.arrow::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 12px;
+  height: 2px;
+  background: #0f172a;
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 12px;
+  border-left: 8px solid #0f172a;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+
+.r-auto {
+  offset-path: path('M 12 85 C 35 15 95 15 118 85');
+  offset-rotate: auto;
+  animation: travel 3s linear infinite;
+}
+
+.r-reverse {
+  offset-path: path('M 12 85 C 35 15 95 15 118 85');
+  offset-rotate: reverse;
+  animation: travel 3s linear infinite;
+}
+
+.r-0 {
+  offset-path: path('M 12 85 C 35 15 95 15 118 85');
+  offset-rotate: 0deg;
+  animation: travel 3s linear infinite;
+}
+
+.r-45 {
+  offset-path: path('M 12 85 C 35 15 95 15 118 85');
+  offset-rotate: auto 45deg;
+  animation: travel 3s linear infinite;
+}
+
+/* offset-anchor */
+.oa-auto {
+  offset-path: circle(40px at 50% 50%);
+  offset-distance: 0%;
+  offset-anchor: auto;
+}
+
+.oa-tl {
+  offset-path: circle(40px at 50% 50%);
+  offset-distance: 0%;
+  offset-anchor: top left;
+}
+
+.oa-bc {
+  offset-path: circle(40px at 50% 50%);
+  offset-distance: 0%;
+  offset-anchor: 50% 100%;
+}
+
+/* offset (shorthand) */
+.off-diag {
+  offset: path('M 10 90 L 120 10') 50%;
+}
+
+.off-circle {
+  offset: circle(40px at 50% 50%) 0deg;
+}
+
+.off-auto {
+  offset: auto;
+}

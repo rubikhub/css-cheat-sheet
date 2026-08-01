@@ -1,0 +1,15 @@
+/* 14-form-pseudo-classes-advanced — topic-specific styles */
+
+/* :dir() */
+.dir-box { padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; }
+:dir(ltr) { text-align: left; padding-left: 1rem; }
+:dir(rtl) { text-align: right; padding-right: 1rem; }
+.dir-input { width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px; }
+input:dir(rtl) { border-color: #8b5cf6; background: #f5f3ff; }
+
+/* :lang() */
+.lang-box { padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 0; }
+:lang(en) { quotes: "\201C" "\201D"; }
+:lang(fr) { quotes: "\00AB" "\00BB"; }
+:lang(de) { quotes: "\201E" "\201C"; }
+:lang(ar) { direction: rtl; }

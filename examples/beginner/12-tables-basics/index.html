@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables Basics</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Tables Basics</h1>
+
+    <section>
+      <h2>border-collapse</h2>
+      <p class="code">border-collapse: separate | collapse</p>
+      <div class="row">
+        <div class="cell">
+          <table class="tb bc-separate">
+            <tr><th>ID</th><th>Name</th></tr>
+            <tr><td>1</td><td>Alpha</td></tr>
+            <tr><td>2</td><td>Beta</td></tr>
+          </table>
+          <p class="cap">separate — borders are separate (default)</p>
+        </div>
+        <div class="cell">
+          <table class="tb bc-collapse">
+            <tr><th>ID</th><th>Name</th></tr>
+            <tr><td>1</td><td>Alpha</td></tr>
+            <tr><td>2</td><td>Beta</td></tr>
+          </table>
+          <p class="cap">collapse — borders collapse into one</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (separate) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>border-spacing</h2>
+      <p class="code">border-spacing: &lt;length&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <table class="tb bsp-0">
+            <tr><th>ID</th><th>Name</th></tr>
+            <tr><td>1</td><td>Alpha</td></tr>
+            <tr><td>2</td><td>Beta</td></tr>
+          </table>
+          <p class="cap">0 — no spacing (default)</p>
+        </div>
+        <div class="cell">
+          <table class="tb bsp-4">
+            <tr><th>ID</th><th>Name</th></tr>
+            <tr><td>1</td><td>Alpha</td></tr>
+            <tr><td>2</td><td>Beta</td></tr>
+          </table>
+          <p class="cap">4px — small spacing</p>
+        </div>
+        <div class="cell">
+          <table class="tb bsp-2">
+            <tr><th>ID</th><th>Name</th></tr>
+            <tr><td>1</td><td>Alpha</td></tr>
+            <tr><td>2</td><td>Beta</td></tr>
+          </table>
+          <p class="cap">8px 12px — vertical horizontal</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>table-layout</h2>
+      <p class="code">table-layout: auto | fixed</p>
+      <div class="row">
+        <div class="cell">
+          <table class="tb tl-auto">
+            <tr><th>ID</th><th>Name</th></tr>
+            <tr><td>1</td><td>Supercalifragilistic</td></tr>
+          </table>
+          <p class="cap">auto — column width based on content (default)</p>
+        </div>
+        <div class="cell">
+          <table class="tb tl-fixed">
+            <tr><th>ID</th><th>Name</th></tr>
+            <tr><td>1</td><td>Supercalifragilistic</td></tr>
+          </table>
+          <p class="cap">fixed — column width based on first row</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>caption-side</h2>
+      <p class="code">caption-side: top | bottom</p>
+      <div class="row">
+        <div class="cell">
+          <table class="tb cs-top">
+            <caption>Table caption</caption>
+            <tr><th>ID</th><th>Name</th></tr>
+            <tr><td>1</td><td>Alpha</td></tr>
+            <tr><td>2</td><td>Beta</td></tr>
+          </table>
+          <p class="cap">top — above table (default)</p>
+        </div>
+        <div class="cell">
+          <table class="tb cs-bottom">
+            <caption>Table caption</caption>
+            <tr><th>ID</th><th>Name</th></tr>
+            <tr><td>1</td><td>Alpha</td></tr>
+            <tr><td>2</td><td>Beta</td></tr>
+          </table>
+          <p class="cap">bottom — below table</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (top) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../11-lists-basics/index.html">&larr; Lists Basics</a>
+  <a class="pager-btn pager-next" href="../13-display-basics/index.html">Display Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

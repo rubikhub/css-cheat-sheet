@@ -1,0 +1,41 @@
+/* scrollable demo boxes */
+.scroll-box {
+  width: 130px;
+  height: 110px;
+  padding: 8px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.sb-line {
+  margin: 0 0 10px;
+  font-size: 0.75rem;
+  color: #475569;
+  line-height: 1.4;
+}
+
+/* scrollbar-color */
+.sb-auto { scrollbar-color: auto; }
+.sb-888 { scrollbar-color: #888 #f1f1f1; }
+.sb-333 { scrollbar-color: #333 transparent; }
+.sb-current {
+  color: #8b5cf6;
+  scrollbar-color: currentColor transparent;
+}
+.sb-current .sb-line { color: #8b5cf6; }
+
+/* WebKit / Chromium pseudo-elements (alternative) */
+.sb-webkit::-webkit-scrollbar { width: 10px; }
+.sb-webkit::-webkit-scrollbar-track { background: #f1f5f9; }
+.sb-webkit::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366f1, #8b5cf6);
+  border-radius: 5px;
+}
+
+/* scrollbar-width */
+.sw-auto { scrollbar-width: auto; }
+.sw-thin { scrollbar-width: thin; }
+.sw-none { scrollbar-width: none; }

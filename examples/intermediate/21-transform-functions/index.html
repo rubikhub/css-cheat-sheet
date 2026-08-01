@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform Functions</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Transform Functions</h1>
+
+    <section>
+      <h2>translate()</h2>
+      <p class="code">translate(&lt;x&gt;, &lt;y&gt;)</p>
+      <p class="hint">Hover each box to move it from its current position.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo fn-tr">xy</div>
+          <p class="cap">translate(100px, 50px) — 100px right, 50px down</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-tr-x">x</div>
+          <p class="cap">translate(100px) — moves on the X axis only</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-trx">X</div>
+          <p class="cap">translateX(100px) — moves horizontally</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-try">Y</div>
+          <p class="cap">translateY(50px) — moves vertically</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-tr-pct">50%</div>
+          <p class="cap">translate(50%, 50%) — percentage-based move</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-tr3d">3D</div>
+          <p class="cap">translate3d(100px, 50px, 200px) — 3D move</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-trz">Z</div>
+          <p class="cap">translateZ(200px) — toward or away from the viewer</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>rotate()</h2>
+      <p class="code">rotate(&lt;angle&gt;)</p>
+      <p class="hint">Hover each box to rotate it.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo fn-r45">45</div>
+          <p class="cap">rotate(45deg) — 45° clockwise</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-r45n">-45</div>
+          <p class="cap">rotate(-45deg) — counter-clockwise</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-rturn">half</div>
+          <p class="cap">rotate(0.5turn) — half turn</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-rrad">rad</div>
+          <p class="cap">rotate(3.14rad) — angle in radians</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-rx">X</div>
+          <p class="cap">rotateX(45deg) — around the X axis</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-ry">Y</div>
+          <p class="cap">rotateY(45deg) — around the Y axis</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-rz">Z</div>
+          <p class="cap">rotateZ(45deg) — around the Z axis</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-r3d">3D</div>
+          <p class="cap">rotate3d(1, 1, 1, 45deg) — around a 3D axis</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>scale()</h2>
+      <p class="code">scale(&lt;x&gt;, &lt;y&gt;)</p>
+      <p class="hint">Hover each box to resize it.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo fn-s2">2×</div>
+          <p class="cap">scale(2) — doubles the size</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-s05">½</div>
+          <p class="cap">scale(0.5) — halves the size</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-sxy">xy</div>
+          <p class="cap">scale(2, 0.5) — different X and Y factors</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-sx">X</div>
+          <p class="cap">scaleX(2) — scales horizontally</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-sy">Y</div>
+          <p class="cap">scaleY(0.5) — scales vertically</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-s3d">
+            <span class="fn-chip fn-chip-back">back</span><span class="fn-chip fn-chip-front">front</span>
+          </div>
+          <p class="cap">scale3d(1, 1, 2) — 3D scale</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-sz">
+            <span class="fn-chip fn-chip-back">back</span><span class="fn-chip fn-chip-front">front</span>
+          </div>
+          <p class="cap">scaleZ(2) — scales along the Z axis</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>skew()</h2>
+      <p class="code">skew(&lt;x-angle&gt;, &lt;y-angle&gt;)</p>
+      <p class="hint">Hover each box to skew it.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo fn-k20">skew</div>
+          <p class="cap">skew(20deg) — skews on the X axis</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-kxy">both</div>
+          <p class="cap">skew(20deg, -10deg) — skews on both axes</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-kx">X</div>
+          <p class="cap">skewX(20deg) — skews horizontally</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-ky">Y</div>
+          <p class="cap">skewY(-10deg) — skews vertically</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>perspective()</h2>
+      <p class="code">perspective(&lt;length&gt;)</p>
+      <p class="hint">Hover each box to apply depth on the element itself.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo fn-p200">200px</div>
+          <p class="cap">perspective(200px) rotateY(45deg) — strong depth</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-p500">500px</div>
+          <p class="cap">perspective(500px) rotateX(30deg) — moderate depth</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-p1000">1000px</div>
+          <p class="cap">perspective(1000px) rotateY(-20deg) translateZ(100px) — combined</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Individual transform properties</h2>
+      <p class="code">translate: &lt;length-percentage&gt; ... | rotate: &lt;angle&gt; ... | scale: &lt;number&gt; ...</p>
+      <p class="hint">Hover — each standalone property animates independently of the transform property.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo fn-ipt fn-ipt-t">move</div>
+          <p class="cap">translate: 50% 20px — move the element</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-ipt fn-ipt-r">spin</div>
+          <p class="cap">rotate: 45deg — rotate the element</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-ipt fn-ipt-s">grow</div>
+          <p class="cap">scale: 1.5 — scale the element</p>
+        </div>
+        <div class="cell">
+          <div class="demo fn-ipt fn-ipt-c">all</div>
+          <p class="cap">translate · rotate · scale — applied in that order</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../20-transform/index.html">&larr; Transform</a>
+  <a class="pager-btn pager-next" href="../22-filter-and-clip-path/index.html">Filter & Clip Path &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

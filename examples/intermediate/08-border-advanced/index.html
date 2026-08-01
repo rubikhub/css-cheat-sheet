@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border Advanced</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Border Advanced</h1>
+
+    <section>
+      <h2>border</h2>
+      <p class="code">border: &lt;width&gt; &lt;style&gt; &lt;color&gt;</p>
+      <p class="hint">Width-only and color-only values need a style to render, so those boxes add border-style: solid.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo b-sol b-w1">1px</div>
+          <p class="cap">1px — width only</p>
+        </div>
+        <div class="cell">
+          <div class="demo b-style">solid</div>
+          <p class="cap">solid — style only</p>
+        </div>
+        <div class="cell">
+          <div class="demo b-sol b-color">red</div>
+          <p class="cap">red — color only</p>
+        </div>
+        <div class="cell">
+          <div class="demo b-wstyle">1px solid</div>
+          <p class="cap">1px solid — width and style</p>
+        </div>
+        <div class="cell">
+          <div class="demo b-full">1px solid red</div>
+          <p class="cap">1px solid red — full border</p>
+        </div>
+        <div class="cell">
+          <div class="demo b-sol b-wcolor">1px red</div>
+          <p class="cap">1px red — width and color</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (medium none currentColor) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>border-style</h2>
+      <p class="code">border-style: none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset</p>
+      <p class="hint">A 4px slate border width and color are applied so every style is clearly visible.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bs-base bs-none">none</div>
+          <p class="cap">none — no border</p>
+        </div>
+        <div class="cell">
+          <div class="demo bs-base bs-hidden">hidden</div>
+          <p class="cap">hidden — no border, hides in tables</p>
+        </div>
+        <div class="cell">
+          <div class="demo bs-base bs-dotted">dotted</div>
+          <p class="cap">dotted — dotted line</p>
+        </div>
+        <div class="cell">
+          <div class="demo bs-base bs-dashed">dashed</div>
+          <p class="cap">dashed — dashed line</p>
+        </div>
+        <div class="cell">
+          <div class="demo bs-base bs-solid">solid</div>
+          <p class="cap">solid — solid line</p>
+        </div>
+        <div class="cell">
+          <div class="demo bs-base bs-double">double</div>
+          <p class="cap">double — double line</p>
+        </div>
+        <div class="cell">
+          <div class="demo bs-base bs-groove">groove</div>
+          <p class="cap">groove — 3D grooved line</p>
+        </div>
+        <div class="cell">
+          <div class="demo bs-base bs-ridge">ridge</div>
+          <p class="cap">ridge — 3D ridged line</p>
+        </div>
+        <div class="cell">
+          <div class="demo bs-base bs-inset">inset</div>
+          <p class="cap">inset — 3D inset line</p>
+        </div>
+        <div class="cell">
+          <div class="demo bs-base bs-outset">outset</div>
+          <p class="cap">outset — 3D outset line</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>border-top / border-right / border-bottom / border-left</h2>
+      <p class="code">border-top: &lt;width&gt; &lt;style&gt; &lt;color&gt;</p>
+      <p class="hint">Each demo draws the border only on the top edge; the same values work on right, bottom, and left.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bt-sol bt-1px">1px</div>
+          <p class="cap">1px — width only</p>
+        </div>
+        <div class="cell">
+          <div class="demo bt-solid">solid</div>
+          <p class="cap">solid — style only</p>
+        </div>
+        <div class="cell">
+          <div class="demo bt-sol bt-red">red</div>
+          <p class="cap">red — color only</p>
+        </div>
+        <div class="cell">
+          <div class="demo bt-full">1px solid red</div>
+          <p class="cap">1px solid red — full top border</p>
+        </div>
+        <div class="cell">
+          <div class="demo bt-dashed-blue">2px dashed blue</div>
+          <p class="cap">2px dashed blue — dashed top border</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (medium none currentColor) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>border-image</h2>
+      <p class="code">border-image: &lt;source&gt; &lt;slice&gt; / &lt;width&gt; / &lt;outset&gt; &lt;repeat&gt;</p>
+      <p class="hint">No image files here — a linear-gradient stands in for the border image source.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bi-1">30</div>
+          <p class="cap">gradient 30 — image with slice</p>
+        </div>
+        <div class="cell">
+          <div class="demo bi-2">30 / 10px</div>
+          <p class="cap">gradient 30 / 10px — slice with width</p>
+        </div>
+        <div class="cell">
+          <div class="demo bi-3">30 / 10px / 5px stretch</div>
+          <p class="cap">gradient 30 / 10px / 5px stretch — full shorthand</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../07-text-layout/index.html">&larr; Text Layout & Wrapping</a>
+  <a class="pager-btn pager-next" href="../09-outline/index.html">Outline &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

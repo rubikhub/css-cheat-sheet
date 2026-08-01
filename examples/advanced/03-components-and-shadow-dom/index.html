@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Components & Shadow DOM</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Web Components & Shadow DOM</h1>
+
+    <section>
+      <h2>:host</h2>
+      <p class="code">:host</p>
+      <div class="row">
+        <div class="cell">
+          <my-box>Host element</my-box>
+          <p class="cap">:host — styles the component root element</p>
+        </div>
+        <div class="cell">
+          <my-box class="large">Large host</my-box>
+          <p class="cap">:host(.large) — host with the large class</p>
+        </div>
+        <div class="cell">
+          <my-box class="hover-host">Hover me</my-box>
+          <p class="cap">:host(:hover) — host in a hover state</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:host()</h2>
+      <p class="code">:host(&lt;selector&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <my-box class="theme-dark">Dark host</my-box>
+          <p class="cap">:host(.theme-dark) — styled via host class</p>
+        </div>
+        <div class="cell">
+          <my-box disabled>Disabled host</my-box>
+          <p class="cap">:host([disabled]) — dimmed + not interactive</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:host-context()</h2>
+      <p class="code">:host-context(&lt;selector&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="sidebar">
+            <my-box>In a .sidebar</my-box>
+          </div>
+          <p class="cap">:host-context(.sidebar) — themed by ancestor class</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::part()</h2>
+      <p class="code">::part(&lt;name&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <my-card>
+            <span slot="title">Card Title</span>
+            <p slot="body">Body text</p>
+          </my-card>
+          <p class="cap">my-card::part(header) — styles a named part from outside</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::slotted()</h2>
+      <p class="code">::slotted(&lt;selector&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <my-card>
+            <h3 slot="title">Slotted heading</h3>
+            <p slot="body">Slotted paragraph</p>
+            <span slot="footer">Footer slot</span>
+          </my-card>
+          <p class="cap">::slotted(h1) — styles slotted heading; [slot="footer"] gets a top border</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:defined</h2>
+      <p class="code">:defined</p>
+      <div class="row">
+        <div class="cell">
+          <my-widget>Widget content</my-widget>
+          <p class="cap">my-widget:defined — visible once the custom element is upgraded</p>
+        </div>
+        <div class="cell">
+          <my-widget class="not-upgraded">Will stay hidden if not defined</my-widget>
+          <p class="cap">:not(:defined) — hidden until registration upgrades it</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const template = document.createElement("template");
+      template.innerHTML = `
+        <style>
+          :host {
+            display: block;
+            font-family: sans-serif;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 12px;
+          }
+          :host(.large) { font-size: 1.5rem; }
+          :host(:hover) { border-color: #6366f1; }
+          :host([disabled]) { opacity: 0.5; pointer-events: none; }
+          :host-context(.sidebar) { background: #eef2ff; border-color: #6366f1; }
+          ::slotted(h3) { color: #6366f1; margin: 0; }
+          ::slotted([slot="footer"]) {
+            border-top: 1px solid #eee;
+            margin-top: 1rem;
+            padding-top: 1rem;
+          }
+        </style>
+        <slot name="title"></slot>
+        <slot name="body"></slot>
+        <slot name="footer"></slot>
+      `;
+      class MyBox extends HTMLElement {
+        connectedCallback() {
+          if (!this.shadowRoot) this.attachShadow({ mode: "open" }).append(template.content.cloneNode(true));
+        }
+      }
+      customElements.define("my-box", MyBox);
+
+      const cardTemplate = document.createElement("template");
+      cardTemplate.innerHTML = `
+        <style>
+          header { background: #6366f1; color: white; padding: 0.75rem; border-radius: 6px 6px 0 0; }
+        </style>
+        <header part="header"><slot name="title"></slot></header>
+        <div part="body"><slot name="body"></slot></div>
+        <div><slot name="footer"></slot></div>
+      `;
+      class MyCard extends HTMLElement {
+        connectedCallback() {
+          if (!this.shadowRoot) this.attachShadow({ mode: "open" }).append(cardTemplate.content.cloneNode(true));
+        }
+      }
+      customElements.define("my-card", MyCard);
+
+      class MyWidget extends HTMLElement {}
+      customElements.define("my-widget", MyWidget);
+    </script>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../02-selectors-2024/index.html">&larr; Selectors 2024+</a>
+  <a class="pager-btn pager-next" href="../04-color-spaces/index.html">Color Spaces &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

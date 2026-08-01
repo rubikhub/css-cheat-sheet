@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI &amp; Scroll</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>UI &amp; Scroll</h1>
+
+    <section>
+      <h2>user-select</h2>
+      <p class="code">user-select: auto | none | text | all | contain</p>
+      <p class="hint">Try highlighting the text in each box.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="select-demo us-auto">Auto — default selection</div>
+          <p class="cap">auto — default selection behavior</p>
+        </div>
+        <div class="cell">
+          <div class="select-demo us-none">None — can't select</div>
+          <p class="cap">none — prevent text selection</p>
+        </div>
+        <div class="cell">
+          <div class="select-demo us-text">Text — selectable</div>
+          <p class="cap">text — allow text selection</p>
+        </div>
+        <div class="cell">
+          <div class="select-demo us-all">All — click selects all</div>
+          <p class="cap">all — select all content on click</p>
+        </div>
+        <div class="cell">
+          <div class="select-demo us-contain">Contain — stays inside</div>
+          <p class="cap">contain — selection stays within the element</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>scroll-behavior</h2>
+      <p class="code">scroll-behavior: auto | smooth</p>
+      <p class="hint">Click the link inside each box to jump to the bottom.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="scroll-demo sb-auto">
+            <p>auto — instant jump</p>
+            <a href="#sb-auto-target">jump to bottom &darr;</a>
+            <div class="spacer"></div>
+            <p id="sb-auto-target" class="target">bottom</p>
+          </div>
+          <p class="cap">auto — instant jump</p>
+        </div>
+        <div class="cell">
+          <div class="scroll-demo sb-smooth">
+            <p>smooth — animated scroll</p>
+            <a href="#sb-smooth-target">jump to bottom &darr;</a>
+            <div class="spacer"></div>
+            <p id="sb-smooth-target" class="target">bottom</p>
+          </div>
+          <p class="cap">smooth — animated scrolling</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>overflow</h2>
+      <p class="code">overflow: visible | hidden | clip | scroll | auto</p>
+      <p class="hint">The inner gradient tile is larger than each box.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="ov-box ov-visible"><div class="ov-inner"></div></div>
+          <p class="cap">visible — content overflows the box</p>
+        </div>
+        <div class="cell">
+          <div class="ov-box ov-hidden"><div class="ov-inner"></div></div>
+          <p class="cap">hidden — clip overflowing content</p>
+        </div>
+        <div class="cell">
+          <div class="ov-box ov-clip"><div class="ov-inner"></div></div>
+          <p class="cap">clip — clip, no scroll container</p>
+        </div>
+        <div class="cell">
+          <div class="ov-box ov-scroll"><div class="ov-inner"></div></div>
+          <p class="cap">scroll — always show scrollbars</p>
+        </div>
+        <div class="cell">
+          <div class="ov-box ov-auto"><div class="ov-inner"></div></div>
+          <p class="cap">auto — scrollbars when needed</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (visible) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>scrollbar-width</h2>
+      <p class="code">scrollbar-width: auto | thin | none</p>
+      <div class="row">
+        <div class="cell">
+          <div class="scrollbar-demo sw-auto">
+            <p>Line 1</p><p>Line 2</p><p>Line 3</p><p>Line 4</p><p>Line 5</p><p>Line 6</p>
+          </div>
+          <p class="cap">auto — default thickness</p>
+        </div>
+        <div class="cell">
+          <div class="scrollbar-demo sw-thin">
+            <p>Line 1</p><p>Line 2</p><p>Line 3</p><p>Line 4</p><p>Line 5</p><p>Line 6</p>
+          </div>
+          <p class="cap">thin — thin scrollbar</p>
+        </div>
+        <div class="cell">
+          <div class="scrollbar-demo sw-none">
+            <p>Line 1</p><p>Line 2</p><p>Line 3</p><p>Line 4</p><p>Line 5</p><p>Line 6</p>
+          </div>
+          <p class="cap">none — hidden, still scrollable</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>scrollbar-color</h2>
+      <p class="code">scrollbar-color: auto | &lt;thumb&gt; &lt;track&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="scrollbar-demo sc-auto">
+            <p>Line 1</p><p>Line 2</p><p>Line 3</p><p>Line 4</p><p>Line 5</p><p>Line 6</p>
+          </div>
+          <p class="cap">auto — default colors</p>
+        </div>
+        <div class="cell">
+          <div class="scrollbar-demo sc-gray">
+            <p>Line 1</p><p>Line 2</p><p>Line 3</p><p>Line 4</p><p>Line 5</p><p>Line 6</p>
+          </div>
+          <p class="cap">#888 #f1f1f1 — thumb and track</p>
+        </div>
+        <div class="cell">
+          <div class="scrollbar-demo sc-dark">
+            <p>Line 1</p><p>Line 2</p><p>Line 3</p><p>Line 4</p><p>Line 5</p><p>Line 6</p>
+          </div>
+          <p class="cap">#333 transparent — transparent track</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>scrollbar-gutter</h2>
+      <p class="code">scrollbar-gutter: auto | stable | stable both-edges</p>
+      <p class="hint">The gutter reserves space so layout doesn't shift when scrollbars appear.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="scrollbar-demo sg-auto">
+            <p>Line 1</p><p>Line 2</p><p>Line 3</p>
+          </div>
+          <p class="cap">auto — no reserved gutter</p>
+        </div>
+        <div class="cell">
+          <div class="scrollbar-demo sg-stable">
+            <p>Line 1</p><p>Line 2</p><p>Line 3</p>
+          </div>
+          <p class="cap">stable — reserve classic scrollbar space</p>
+        </div>
+        <div class="cell">
+          <div class="scrollbar-demo sg-both">
+            <p>Line 1</p><p>Line 2</p><p>Line 3</p>
+          </div>
+          <p class="cap">stable both-edges — reserve on both sides</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>scroll-padding</h2>
+      <p class="code">scroll-padding: &lt;length-percentage&gt; ...</p>
+      <p class="hint">Drag the scrollbar — snap targets land with an offset.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="snap-demo sp-top">
+            <div class="snap-item">1</div>
+            <div class="snap-item">2</div>
+            <div class="snap-item">3</div>
+          </div>
+          <p class="cap">scroll-padding-top: 80px — offset for fixed headers</p>
+        </div>
+        <div class="cell">
+          <div class="snap-demo sp-uniform">
+            <div class="snap-item">1</div>
+            <div class="snap-item">2</div>
+            <div class="snap-item">3</div>
+          </div>
+          <p class="cap">scroll-padding: 1rem — uniform padding</p>
+        </div>
+        <div class="cell">
+          <div class="snap-demo sp-block">
+            <div class="snap-item">1</div>
+            <div class="snap-item">2</div>
+            <div class="snap-item">3</div>
+          </div>
+          <p class="cap">scroll-padding-block-start: 2rem — logical property</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>scroll-margin</h2>
+      <p class="code">scroll-margin: &lt;length&gt; ...</p>
+      <p class="hint">Drag the scrollbar — the offset is applied to the snap target.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="snap-demo">
+            <div class="snap-item sm-top">1</div>
+            <div class="snap-item">2</div>
+            <div class="snap-item">3</div>
+          </div>
+          <p class="cap">scroll-margin-top: 80px — offset for a target</p>
+        </div>
+        <div class="cell">
+          <div class="snap-demo">
+            <div class="snap-item sm-uniform">1</div>
+            <div class="snap-item">2</div>
+            <div class="snap-item">3</div>
+          </div>
+          <p class="cap">scroll-margin: 1rem — uniform margin</p>
+        </div>
+        <div class="cell">
+          <div class="snap-demo">
+            <div class="snap-item sm-block">1</div>
+            <div class="snap-item">2</div>
+            <div class="snap-item">3</div>
+          </div>
+          <p class="cap">scroll-margin-block: 2rem — logical property</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>resize</h2>
+      <p class="code">resize: none | both | horizontal | vertical</p>
+      <p class="hint">Drag the resize handle on each box's bottom-right corner.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="resize-demo rs-none">none</div>
+          <p class="cap">none — not resizable</p>
+        </div>
+        <div class="cell">
+          <div class="resize-demo rs-both">both</div>
+          <p class="cap">both — resize in both axes</p>
+        </div>
+        <div class="cell">
+          <div class="resize-demo rs-h">horizontal</div>
+          <p class="cap">horizontal — width only</p>
+        </div>
+        <div class="cell">
+          <div class="resize-demo rs-v">vertical</div>
+          <p class="cap">vertical — height only</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>appearance</h2>
+      <p class="code">appearance: none | auto | &lt;control&gt;</p>
+      <p class="hint">native control values restore the platform look on form controls.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" class="app-check app-auto" checked />
+          <p class="cap">auto — native control appearance</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" class="app-check app-none" checked />
+          <p class="cap">none — custom styled control</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" class="app-check app-checkbox" />
+          <p class="cap">checkbox — restore checkbox</p>
+        </div>
+        <div class="cell">
+          <input type="radio" class="app-check app-radio" name="appearance-radio" checked />
+          <p class="cap">radio — restore radio</p>
+        </div>
+        <div class="cell">
+          <select class="app-mlb">
+            <option>One</option>
+            <option>Two</option>
+          </select>
+          <p class="cap">menulist-button — restore select</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>pointer-events</h2>
+      <p class="code">pointer-events: auto | none</p>
+      <p class="hint">Hover the boxes and the SVG shapes — auto reacts, none doesn't.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="pe-box pe-auto"><a href="#">hover me</a></div>
+          <p class="cap">auto — normal pointer behavior</p>
+        </div>
+        <div class="cell">
+          <div class="pe-box pe-none"><a href="#">ignored</a></div>
+          <p class="cap">none — invisible to the pointer</p>
+        </div>
+        <div class="cell">
+          <svg class="pe-svg" viewBox="0 0 180 60">
+            <circle class="pe-vp" cx="30" cy="30" r="22" />
+            <circle class="pe-vf" cx="90" cy="30" r="22" />
+            <rect class="pe-bb" x="130" y="8" width="44" height="44" rx="8" />
+          </svg>
+          <p class="cap">SVG values — visiblePainted, visibleFill, bounding-box</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>field-sizing</h2>
+      <p class="code">field-sizing: fixed | content</p>
+      <p class="hint">Type into the textareas — content grows to fit, fixed stays put.</p>
+      <div class="row">
+        <div class="cell">
+          <textarea class="fs-demo fs-fixed" rows="2">fixed — stays at two rows</textarea>
+          <p class="cap">fixed — control keeps a fixed size</p>
+        </div>
+        <div class="cell">
+          <textarea class="fs-demo fs-content" rows="1" placeholder="type to grow">content — grows with text</textarea>
+          <p class="cap">content — grows/shrinks to fit</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>accent-color</h2>
+      <p class="code">accent-color: auto | &lt;color&gt;</p>
+      <p class="hint">Native checkboxes, radios, and range inputs pick up the accent.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="ac-row ac-auto">
+            <input type="checkbox" checked />
+            <input type="radio" checked />
+            <input type="range" />
+          </div>
+          <p class="cap">auto — browser default accent</p>
+        </div>
+        <div class="cell">
+          <div class="ac-row ac-brand">
+            <input type="checkbox" checked />
+            <input type="radio" checked />
+            <input type="range" />
+          </div>
+          <p class="cap">#667eea — brand accent color</p>
+        </div>
+        <div class="cell">
+          <div class="ac-row ac-current">
+            <input type="checkbox" checked />
+            <input type="radio" checked />
+            <input type="range" />
+          </div>
+          <p class="cap">currentColor — follow the text color</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>forced-color-adjust</h2>
+      <p class="code">forced-color-adjust: auto | none</p>
+      <p class="hint">Applies in forced-colors mode (e.g. Windows High Contrast).</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fc-demo fc-auto">auto</div>
+          <p class="cap">auto — browser may override colors</p>
+        </div>
+        <div class="cell">
+          <div class="fc-demo fc-none">none</div>
+          <p class="cap">none — keep author colors</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>zoom</h2>
+      <p class="code">zoom: normal | reset | &lt;number&gt; | &lt;percentage&gt;</p>
+      <p class="hint">zoom scales layout, dimensions, and font sizes (unlike transform: scale).</p>
+      <div class="row">
+        <div class="cell">
+          <div class="zm-box zm-normal">1×</div>
+          <p class="cap">normal — no zoom</p>
+        </div>
+        <div class="cell">
+          <div class="zm-box zm-15">1.5</div>
+          <p class="cap">1.5 — 150% scale</p>
+        </div>
+        <div class="cell">
+          <div class="zm-box zm-150">150%</div>
+          <p class="cap">150% — percentage scale</p>
+        </div>
+        <div class="cell">
+          <div class="zm-box zm-parent">
+            <span class="zm-reset">reset</span>
+          </div>
+          <p class="cap">reset — resets zoom for the subtree</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>overflow-clip-margin</h2>
+      <p class="code">overflow-clip-margin: &lt;length&gt;</p>
+      <p class="hint">Each box has overflow: clip and a 24px glow shadow.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="ocm-box ocm-0"><span>0px</span></div>
+          <p class="cap">0px — clip at the padding-box edge</p>
+        </div>
+        <div class="cell">
+          <div class="ocm-box ocm-20"><span>20px</span></div>
+          <p class="cap">20px — glow extends 20px before clipping</p>
+        </div>
+        <div class="cell">
+          <div class="ocm-box ocm-cb"><span>content</span></div>
+          <p class="cap">content-box — clip relative to the content box</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>empty-cells</h2>
+      <p class="code">empty-cells: show | hide</p>
+      <div class="row">
+        <div class="cell">
+          <table class="ec-table ec-show">
+            <tr><td>A</td><td></td><td>B</td></tr>
+            <tr><td></td><td>C</td><td></td></tr>
+          </table>
+          <p class="cap">show — render empty cells</p>
+        </div>
+        <div class="cell">
+          <table class="ec-table ec-hide">
+            <tr><td>A</td><td></td><td>B</td></tr>
+            <tr><td></td><td>C</td><td></td></tr>
+          </table>
+          <p class="cap">hide — hide empty cells</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../22-filter-and-clip-path/index.html">&larr; Filter & Clip Path</a>
+  <a class="pager-btn pager-next" href="../24-animation/index.html">Animation &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

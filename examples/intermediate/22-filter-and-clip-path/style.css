@@ -1,0 +1,68 @@
+/* filter & clip-path — shared demo surfaces */
+.f-box {
+  background: linear-gradient(135deg, #f43f5e, #f59e0b 45%, #06b6d4);
+}
+.cp-box {
+  background: linear-gradient(135deg, #6366f1, #ec4899 50%, #f59e0b);
+}
+
+/* hidden SVG definitions referenced via url() */
+.svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* filter — single functions */
+.f-none { filter: none; }
+.f-blur { filter: blur(5px); }
+.f-bright { filter: brightness(1.5); }
+.f-contrast { filter: contrast(200%); }
+.f-gray { filter: grayscale(100%); }
+.f-hue { filter: hue-rotate(90deg); }
+.f-invert { filter: invert(100%); }
+.f-opacity { filter: opacity(50%); }
+.f-saturate { filter: saturate(200%); }
+.f-sepia { filter: sepia(100%); }
+.f-shadow { filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.45)); }
+.f-url { filter: url(#soften); }
+
+/* filter — combined functions */
+.f-combo1 { filter: blur(2px) brightness(1.2); }
+.f-combo2 { filter: grayscale(50%) contrast(1.5) brightness(1.1); }
+
+/* clip-path — basic shapes */
+.cp-none { clip-path: none; }
+.cp-circle { clip-path: circle(50%); }
+.cp-circle-at { clip-path: circle(30% at 50% 50%); }
+.cp-ellipse { clip-path: ellipse(50% 30% at 50% 50%); }
+.cp-inset { clip-path: inset(10px 20px 30px 40px round 10px); }
+.cp-tri { clip-path: polygon(50% 0%, 100% 100%, 0% 100%); }
+.cp-rect { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
+.cp-star {
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+    50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+  );
+}
+.cp-path { clip-path: path("M 0 0 L 100 0 L 100 100 L 0 100 Z"); }
+.cp-url { clip-path: url(#clipTri); }
+
+/* clip-path — shape() function */
+.sh-box {
+  width: 150px;
+  height: 110px;
+  padding: 18px;
+  border: 10px solid rgba(15, 23, 42, 0.35);
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.sh-border { clip-path: shape() from border-box; }
+.sh-margin {
+  margin: 10px;
+  clip-path: shape(round 16px) from margin-box;
+}
+.sh-content { clip-path: shape() from content-box; }

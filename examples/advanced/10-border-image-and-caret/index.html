@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border Image &amp; Caret Color</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Border Image &amp; Caret Color</h1>
+
+    <section>
+      <h2>border-image</h2>
+      <p class="code">border-image: &lt;source&gt; &lt;slice&gt; / &lt;width&gt; &lt;repeat&gt;</p>
+      <p class="hint">Every demo uses a CSS gradient as the image source — no image files needed. The frame has a transparent border that the image replaces.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="frame bi-none">none</div>
+          <p class="cap">none — no border image (default)</p>
+        </div>
+        <div class="cell">
+          <div class="frame bi-round">round</div>
+          <p class="cap">gradient 30 round — image sliced at 30px, tiles to fit</p>
+        </div>
+        <div class="cell">
+          <div class="frame bi-stretch">stretch</div>
+          <p class="cap">gradient 30 stretch — image stretched to fill</p>
+        </div>
+        <div class="cell">
+          <div class="frame bi-fill">fill</div>
+          <p class="cap">gradient 30 fill — image also fills the middle area</p>
+        </div>
+        <div class="cell">
+          <div class="frame bi-source">source</div>
+          <p class="cap">border-image-source: linear-gradient(…) — gradient as the source</p>
+        </div>
+        <div class="cell">
+          <div class="frame bi-slice30">slice</div>
+          <p class="cap">border-image-slice: 30 — inset distance to slice the image</p>
+        </div>
+        <div class="cell">
+          <div class="frame bi-slice-sides">slice</div>
+          <p class="cap">border-image-slice: 10 20 30 40 — per-edge slice offsets</p>
+        </div>
+        <div class="cell">
+          <div class="frame bi-width">width</div>
+          <p class="cap">border-image-width: 10px — border image width</p>
+        </div>
+        <div class="cell">
+          <div class="frame bi-outset">outset</div>
+          <p class="cap">border-image-outset: 10px — extends beyond the border box</p>
+        </div>
+        <div class="cell">
+          <div class="frame bi-repeat">repeat</div>
+          <p class="cap">border-image-repeat: repeat — tiles without resizing</p>
+        </div>
+        <div class="cell">
+          <div class="frame bi-repeat-round">round</div>
+          <p class="cap">border-image-repeat: round — tiles scaled to fit evenly</p>
+        </div>
+        <div class="cell">
+          <div class="frame bi-repeat-space">space</div>
+          <p class="cap">border-image-repeat: space — tiles with space between</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>caret-color</h2>
+      <p class="code">caret-color: &lt;color&gt; | auto</p>
+      <p class="hint">Click into each field and type to see the caret color.</p>
+      <div class="row">
+        <div class="cell">
+          <input class="inp cc-auto" type="text" value="Edit me" />
+          <p class="cap">auto — browser picks a color for contrast (default)</p>
+        </div>
+        <div class="cell">
+          <input class="inp cc-red" type="text" value="Edit me" />
+          <p class="cap">red — any CSS color</p>
+        </div>
+        <div class="cell">
+          <input class="inp cc-hex" type="text" value="Edit me" />
+          <p class="cap">#d946ef — hex color</p>
+        </div>
+        <div class="cell">
+          <input class="inp cc-current" type="text" value="Edit me" />
+          <p class="cap">currentColor — matches the text color</p>
+        </div>
+        <div class="cell">
+          <input class="inp cc-trans" type="text" value="Edit me" />
+          <p class="cap">transparent — hides the caret</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../09-typography-2024/index.html">&larr; Typography 2024+</a>
+  <a class="pager-btn pager-next" href="../11-css-counters-complex/index.html">CSS Counters — Complex Patterns &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

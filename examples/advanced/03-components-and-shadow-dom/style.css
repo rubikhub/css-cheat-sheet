@@ -1,0 +1,21 @@
+/* 03-components-and-shadow-dom — light-DOM styles for the demo */
+
+my-box, my-card, my-widget {
+  display: block;
+  margin: 0;
+}
+
+/* my-card ::part() styles from outside the shadow tree */
+my-card::part(header) {
+  background: #6366f1;
+  color: white;
+  padding: 1rem;
+}
+
+/* :defined */
+my-widget:not(:defined) {
+  visibility: hidden;
+}
+my-widget:defined {
+  visibility: visible;
+}

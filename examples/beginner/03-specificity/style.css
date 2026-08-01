@@ -1,50 +1,98 @@
-p {
-  color: red;
-  line-height: 1.6;
+/* how specificity works — (A, B, C) chips */
+.spec-chip {
+  width: 150px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-align: center;
 }
-
-.intro {
-  color: blue;
-}
-
-#hero {
-  color: green;
-}
-
-a {
-  color: red;
+.spec-label {
   display: block;
-  margin-bottom: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+}
+.spec-score {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 4px;
 }
 
-a.my-class {
-  color: green;
+/* examples */
+.sp-box {
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.8rem;
 }
-
-a.my-class.another-class {
-  color: blue;
+.sp-box p {
+  margin: 4px 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 600;
 }
+.sp-box p { color: #ef4444; }
+.sp-box .sp-intro { color: #3b82f6; }
+#sp-hero { color: #10b981; }
 
-.card {
-  border: 1px solid #ccc;
+.sp-box a {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.sp-box a { color: #ef4444; }
+.sp-box a.sp-my { color: #10b981; }
+.sp-box a.sp-my.sp-another { color: #3b82f6; }
+.sp-box a.sp-my.sp-another[href] { color: #8b5cf6; }
+.sp-box a.sp-my.sp-another[href]:hover { color: #f97316; }
+
+/* common pitfalls */
+.sp-pit {
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  min-width: 150px;
+}
+#sp-sidebar {
+  width: 220px;
+  background: #ef4444;
+  color: #fff;
   padding: 10px;
-  margin-top: 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.sp-widget .sp-nav { width: 160px; }
+.sp-card {
+  padding: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #334155;
+}
+.sp-card.sp-primary.sp-featured {
+  border: 3px solid #f59e0b;
+  background: #fffbeb;
 }
 
-.card.primary {
-  border-color: #0066cc;
+/* boosting specificity */
+.sp-btn {
+  width: 150px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
 }
+.sp-btn.sp-btn { background: #10b981; }
 
-.card.primary.featured {
-  border-color: gold;
-  border-width: 2px;
-  border-style: solid;
-}
-
-.first {
-  color: red;
-}
-
-.second {
-  color: blue;
-}
+/* tie-breaking */
+.sp-box .sp-first { color: #ef4444; }
+.sp-box .sp-second { color: #3b82f6; }

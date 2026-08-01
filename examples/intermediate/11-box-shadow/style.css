@@ -1,0 +1,23 @@
+/* box-shadow */
+.bx-1 { box-shadow: 0 4px 6px rgba(108, 92, 231, 0.4); }
+.bx-2 {
+  box-shadow:
+    0 4px 6px rgba(108, 92, 231, 0.4),
+    0 12px 24px rgba(108, 92, 231, 0.2);
+}
+.bx-none { box-shadow: none; }
+.bx-hover {
+  box-shadow: 0 2px 4px rgba(108, 92, 231, 0.35);
+  transition: box-shadow 0.2s ease;
+}
+.bx-hover:hover {
+  box-shadow: 0 12px 24px rgba(108, 92, 231, 0.35);
+}
+
+/* box-shadow: inset */
+.bi-in { box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6); }
+.bi-combo {
+  box-shadow:
+    inset 0 2px 8px rgba(0, 0, 0, 0.6),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+}

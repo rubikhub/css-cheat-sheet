@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opacity</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Opacity</h1>
+
+    <section>
+      <h2>opacity</h2>
+      <p class="code">opacity: &lt;number&gt;</p>
+      <p class="hint">The striped background shows through each box — lower opacity means more transparency.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="fade-stage">
+            <div class="op-box op-1 demo-blue">1</div>
+          </div>
+          <p class="cap">1 — fully opaque (default)</p>
+        </div>
+        <div class="cell">
+          <div class="fade-stage">
+            <div class="op-box op-0 demo-green">0</div>
+          </div>
+          <p class="cap">0 — fully transparent (invisible)</p>
+        </div>
+        <div class="cell">
+          <div class="fade-stage">
+            <div class="op-box op-05 demo-amber">0.5</div>
+          </div>
+          <p class="cap">0.5 — 50% transparent</p>
+        </div>
+        <div class="cell">
+          <div class="fade-stage">
+            <div class="op-box op-025 demo-purple">0.25</div>
+          </div>
+          <p class="cap">0.25 — 75% transparent</p>
+        </div>
+        <div class="cell">
+          <div class="fade-stage">
+            <div class="op-box op-075 demo-red">0.75</div>
+          </div>
+          <p class="cap">0.75 — 25% transparent</p>
+        </div>
+        <div class="cell">
+          <div class="fade-stage">
+            <div class="op-box op-hover demo-teal">hover me</div>
+          </div>
+          <p class="cap">hover — fades from 1 to 0.4</p>
+        </div>
+      </div>
+      <p class="hint">Hover the teal box to see a smooth fade to opacity 0.4.</p>
+      <p class="note">Global keywords also apply: inherit · initial (1) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../16-grid-basics/index.html">&larr; Grid Basics</a>
+  <a class="pager-btn pager-next" href="../18-pseudo-classes-structural/index.html">Structural Pseudo-classes &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

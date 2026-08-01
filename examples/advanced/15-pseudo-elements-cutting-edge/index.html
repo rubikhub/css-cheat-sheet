@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cutting-edge Pseudo-elements</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Cutting-edge Pseudo-elements</h1>
+
+    <section>
+      <h2>::spelling-error</h2>
+      <p class="code">::spelling-error</p>
+      <div class="row">
+        <div class="cell">
+          <p class="error-text" contenteditable="true" spellcheck="true">Type a misspeled word here.</p>
+          <p class="cap">::spelling-error — custom wavy underline on misspelled text (browser-dependent)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::grammar-error</h2>
+      <p class="code">::grammar-error</p>
+      <div class="row">
+        <div class="cell">
+          <p class="error-text" contenteditable="true" spellcheck="true">He go to the store.</p>
+          <p class="cap">::grammar-error — custom underline for grammar errors (browser-dependent)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::highlight()</h2>
+      <p class="code">::highlight(&lt;custom-highlight-name&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <p class="hl-text">Search for the word <span class="search-term">highlight</span> to see it styled.</p>
+          <p class="cap">::highlight(my-highlight) — styles a named CSS Highlight range</p>
+        </div>
+      </div>
+      <p class="note">Requires the CSS Custom Highlight API (new Highlight(); highlight.add(range)).</p>
+    </section>
+
+    <section>
+      <h2>::backdrop</h2>
+      <p class="code">::backdrop</p>
+      <div class="row">
+        <div class="cell">
+          <button popovertarget="backdrop-pop">Open dialog</button>
+          <div popover id="backdrop-pop" class="backdrop-pop">
+            <p>Modal content</p>
+            <button popovertarget="backdrop-pop" popovertargetaction="hide">Close</button>
+          </div>
+          <p class="cap">dialog::backdrop — dim and blur content behind a top-layer element</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::target-text</h2>
+      <p class="code">::target-text</p>
+      <div class="row">
+        <div class="cell">
+          <p class="target-text-demo">Open with a #:~:text=fragment URL to highlight this paragraph.</p>
+          <p class="cap">::target-text — custom highlight for text-fragment navigation</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::details-content</h2>
+      <p class="code">details::details-content</p>
+      <div class="row">
+        <div class="cell">
+          <details class="dc-details" open>
+            <summary>Toggle accordion</summary>
+            <p class="dc-body">Content area is animated separately from the summary.</p>
+          </details>
+          <p class="cap">details::details-content — styles the hidden content region; :open expands it</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../14-form-pseudo-classes-advanced/index.html">&larr; Form Pseudo-classes — Advanced</a>
+  <a class="pager-btn pager-next" href="../16-view-transitions/index.html">View Transitions &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

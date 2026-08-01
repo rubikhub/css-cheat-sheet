@@ -1,0 +1,141 @@
+/* scrollable demo boxes */
+.state-port {
+  width: 360px;
+  max-width: 100%;
+  height: 220px;
+  overflow-y: auto;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  scrollbar-width: thin;
+}
+
+.state-port.short {
+  height: 140px;
+}
+
+.state-filler {
+  height: 900px;
+}
+
+.state-filler.short-fill {
+  height: 40px;
+}
+
+/* sticky header (stuck: top) */
+.sticky-hdr {
+  position: sticky;
+  top: 0;
+  padding: 10px 12px;
+  background: #e2e8f0;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #cbd5e1;
+  z-index: 2;
+}
+
+@scroll-state(stuck: top) {
+  .sticky-hdr {
+    background: #0f766e;
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* scroll-state() named container */
+.state-port.named {
+  container-name: stage;
+  container-type: scroll-state;
+}
+
+.state-chip {
+  position: sticky;
+  bottom: 10px;
+  width: fit-content;
+  margin: 10px auto;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #94a3b8;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.chip-stuck {
+  display: none;
+}
+
+@container stage scroll-state(stuck: top) {
+  .sticky-hdr.named {
+    background: #0f766e;
+    color: #fff;
+  }
+
+  .state-chip {
+    background: #0d9488;
+  }
+
+  .chip-stuck {
+    display: inline;
+  }
+
+  .chip-free {
+    display: none;
+  }
+}
+
+/* scroll-state(snapped) */
+.snap-port {
+  width: 360px;
+  max-width: 100%;
+  height: 260px;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  scrollbar-width: thin;
+}
+
+.snap-item {
+  height: 230px;
+  margin: 10px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  background: #3b82f6;
+  scroll-snap-align: start;
+}
+
+@scroll-state(snapped: top) {
+  .snap-item {
+    background: #0f766e;
+    transform: scale(1.03);
+  }
+}
+
+/* scroll-state(scrollable) */
+.end-badge {
+  position: sticky;
+  bottom: 10px;
+  width: fit-content;
+  margin: 10px auto;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #f59e0b;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+@scroll-state(not scrollable: bottom) {
+  .end-badge {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logical Properties</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Logical Properties</h1>
+
+    <section>
+      <h2>Physical vs Logical</h2>
+      <p class="code">top / bottom / left / right → block-start / block-end / inline-start / inline-end</p>
+      <p class="hint">Physical directions are absolute; logical ones follow the writing direction, so the same CSS works for LTR and RTL.</p>
+      <table class="demo-table">
+        <thead>
+          <tr>
+            <th>Physical</th>
+            <th>Logical</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>top</td>
+            <td>block-start</td>
+            <td>before the text block</td>
+          </tr>
+          <tr>
+            <td>bottom</td>
+            <td>block-end</td>
+            <td>after the text block</td>
+          </tr>
+          <tr>
+            <td>left</td>
+            <td>inline-start</td>
+            <td>where lines start (LTR: left, RTL: right)</td>
+          </tr>
+          <tr>
+            <td>right</td>
+            <td>inline-end</td>
+            <td>where lines end (LTR: right, RTL: left)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Writing Modes</h2>
+      <p class="code">direction: ltr | rtl · writing-mode: horizontal-tb | vertical-rl</p>
+      <div class="row">
+        <div class="cell">
+          <p class="wm wm-ltr">Left-to-right text flows this way across the page.</p>
+          <p class="cap">direction: ltr — default for English</p>
+        </div>
+        <div class="cell">
+          <p class="wm wm-rtl">טקסט בעברית זורם מימין לשמאל.</p>
+          <p class="cap">direction: rtl — Arabic / Hebrew</p>
+        </div>
+        <div class="cell">
+          <p class="wm wm-vrl">縦書き日本語のテキストです。</p>
+          <p class="cap">writing-mode: vertical-rl — Japanese</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Margin Logical Properties</h2>
+      <p class="code">margin-block-start · margin-block-end · margin-inline-start · margin-inline-end · margin-block · margin-inline</p>
+      <p class="hint">The blue child sits in a light frame — its margin changes which side of the frame it touches.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="lp-frame"><div class="lp-child lp-mbs">start</div></div>
+          <p class="cap">margin-block-start: 20px — top in LTR</p>
+        </div>
+        <div class="cell">
+          <div class="lp-frame"><div class="lp-child lp-mis">start</div></div>
+          <p class="cap">margin-inline-start: 20px — left in LTR</p>
+        </div>
+        <div class="cell">
+          <div class="lp-frame"><div class="lp-child lp-mb">block</div></div>
+          <p class="cap">margin-block: 16px 4px — start &amp; end</p>
+        </div>
+        <div class="cell">
+          <div class="lp-frame"><div class="lp-child lp-mi">inline</div></div>
+          <p class="cap">margin-inline: 16px 4px — start &amp; end</p>
+        </div>
+        <div class="cell">
+          <div class="lp-frame rtl"><div class="lp-child lp-mis">start</div></div>
+          <p class="cap">same margin-inline-start in RTL — lands on the right</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Padding Logical Properties</h2>
+      <p class="code">padding-block-start · padding-block-end · padding-inline-start · padding-inline-end · padding-block · padding-inline</p>
+      <p class="hint">The light inner box sits in the padded area — thicker colored padding shows where each value lands.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="lp-pad lp-pad-block"><span class="lp-pad-inner">block</span></div>
+          <p class="cap">padding-block: 1rem — top &amp; bottom</p>
+        </div>
+        <div class="cell">
+          <div class="lp-pad lp-pad-inline"><span class="lp-pad-inner">inline</span></div>
+          <p class="cap">padding-inline: 1.5rem — left &amp; right</p>
+        </div>
+        <div class="cell">
+          <div class="lp-pad lp-pad-bs"><span class="lp-pad-inner">start</span></div>
+          <p class="cap">padding-block-start: 28px — thicker top</p>
+        </div>
+        <div class="cell">
+          <div class="lp-pad lp-pad-ie"><span class="lp-pad-inner">end</span></div>
+          <p class="cap">padding-inline-end: 28px — right in LTR</p>
+        </div>
+        <div class="cell">
+          <div class="lp-pad lp-pad-ie rtl"><span class="lp-pad-inner">end</span></div>
+          <p class="cap">same padding-inline-end in RTL — flips to the left</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Border Logical Properties</h2>
+      <p class="code">border-block-start · border-block-end · border-inline-start · border-inline-end · border-block · border-inline</p>
+      <div class="row">
+        <div class="cell">
+          <div class="lp-border lp-b-block">block</div>
+          <p class="cap">border-block: 4px solid — top &amp; bottom</p>
+        </div>
+        <div class="cell">
+          <div class="lp-border lp-b-inline">inline</div>
+          <p class="cap">border-inline: 4px solid — left &amp; right</p>
+        </div>
+        <div class="cell">
+          <div class="lp-border lp-b-bs">start</div>
+          <p class="cap">border-block-start: 4px solid blue</p>
+        </div>
+        <div class="cell">
+          <div class="lp-border lp-b-ie">end</div>
+          <p class="cap">border-inline-end: 3px dashed red — right in LTR</p>
+        </div>
+        <div class="cell">
+          <div class="lp-border lp-b-ie rtl">end</div>
+          <p class="cap">same border-inline-end in RTL — left</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Border Radius (Logical)</h2>
+      <p class="code">border-start-start-radius · border-start-end-radius · border-end-start-radius · border-end-end-radius</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-blue lp-r-ss">start-start</div>
+          <p class="cap">start-start 16px — top-left in LTR</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-green lp-r-se">start-end</div>
+          <p class="cap">start-end 16px — top-right in LTR</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-red lp-r-es">end-start</div>
+          <p class="cap">end-start 16px — bottom-left in LTR</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-purple lp-r-ee">end-end</div>
+          <p class="cap">end-end 16px — bottom-right in LTR</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue lp-r-ss rtl">start-start</div>
+          <p class="cap">start-start in RTL — becomes top-right</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Size Logical Properties</h2>
+      <p class="code">inline-size · block-size · min-inline-size · min-block-size · max-inline-size · max-block-size</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-blue lp-iw">inline-size</div>
+          <p class="cap">inline-size: 220px — width in horizontal text</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-green lp-bh">block-size</div>
+          <p class="cap">block-size: 150px — height in horizontal text</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-red lp-min-i">min-inline-size</div>
+          <p class="cap">min-inline-size: 200px — never shrinks below</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-purple lp-max-i">max-inline-size</div>
+          <p class="cap">max-inline-size: 200px — caps the width</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-teal lp-vert">vertical</div>
+          <p class="cap">vertical-rl — inline/block swap</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Inset (Positioning) Logical Properties</h2>
+      <p class="code">inset-block-start · inset-block-end · inset-inline-start · inset-inline-end · inset-block · inset-inline · inset</p>
+      <div class="row">
+        <div class="cell">
+          <div class="lp-pos"><div class="lp-pos-box lp-inline-start">start</div></div>
+          <p class="cap">inset-inline-start + block-start — top-left in LTR</p>
+        </div>
+        <div class="cell">
+          <div class="lp-pos"><div class="lp-pos-box lp-inline-end">end</div></div>
+          <p class="cap">inset-inline-end + block-start — top-right in LTR</p>
+        </div>
+        <div class="cell">
+          <div class="lp-pos"><div class="lp-pos-box lp-block-end">end</div></div>
+          <p class="cap">inset-block-end + inline-start — bottom-left</p>
+        </div>
+        <div class="cell">
+          <div class="lp-pos"><div class="lp-pos-box lp-inset-0">inset: 0</div></div>
+          <p class="cap">inset: 0 — stretches to all sides</p>
+        </div>
+        <div class="cell">
+          <div class="lp-pos rtl"><div class="lp-pos-box lp-inline-end">end</div></div>
+          <p class="cap">inset-inline-end in RTL — top-left</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Text Alignment</h2>
+      <p class="code">text-align: start | end</p>
+      <div class="row">
+        <div class="cell">
+          <p class="lp-align">text-align: start — this line sits at the start.</p>
+          <p class="cap">text-align: start in LTR — left</p>
+        </div>
+        <div class="cell">
+          <p class="lp-align lp-align-end">text-align: end — this line sits at the end.</p>
+          <p class="cap">text-align: end in LTR — right</p>
+        </div>
+        <div class="cell">
+          <p class="lp-align rtl">text-align: start — this line sits at the start.</p>
+          <p class="cap">text-align: start in RTL — right</p>
+        </div>
+        <div class="cell">
+          <p class="lp-align lp-align-end rtl">text-align: end — this line sits at the end.</p>
+          <p class="cap">text-align: end in RTL — left</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Quick Reference</h2>
+      <p class="code">physical → logical</p>
+      <table class="demo-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Physical</th>
+            <th>Logical</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Margin</td>
+            <td>margin-top</td>
+            <td>margin-block-start</td>
+          </tr>
+          <tr>
+            <td>Padding</td>
+            <td>padding-left</td>
+            <td>padding-inline-start</td>
+          </tr>
+          <tr>
+            <td>Border</td>
+            <td>border-right</td>
+            <td>border-inline-end</td>
+          </tr>
+          <tr>
+            <td>Size</td>
+            <td>width</td>
+            <td>inline-size</td>
+          </tr>
+          <tr>
+            <td>Position</td>
+            <td>top</td>
+            <td>inset-block-start</td>
+          </tr>
+          <tr>
+            <td>Text</td>
+            <td>text-align: left</td>
+            <td>text-align: start</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Why Use Logical Properties?</h2>
+      <p class="code">layout that follows the writing direction</p>
+      <p class="note">
+        RTL support — layouts automatically adapt to right-to-left languages.<br />
+        Writing modes — works with vertical text.<br />
+        Future-proof — more flexible than physical directions.<br />
+        Less code — no need for separate RTL stylesheets.
+      </p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../23-gradients-basics/index.html">&larr; Gradients Basics</a>
+  <a class="pager-btn pager-next" href="../25-css-units-basics/index.html">CSS Units Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

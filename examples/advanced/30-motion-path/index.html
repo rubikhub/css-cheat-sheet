@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motion Path</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Motion Path</h1>
+
+    <section>
+      <h2>offset-path</h2>
+      <p class="code">offset-path: none | &lt;basic-shape&gt; | path(&lt;string&gt;)</p>
+      <p class="hint">Each track's red dot rides its path forever.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="track">
+            <div class="dot"></div>
+          </div>
+          <p class="cap">none — no motion path (default)</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="dot op-path"></div>
+          </div>
+          <p class="cap">path('M 10 90 C 35 15 95 15 120 90') — SVG curve</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="dot op-circle"></div>
+          </div>
+          <p class="cap">circle(50px at 50% 50%) — circular path</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="dot op-poly"></div>
+          </div>
+          <p class="cap">polygon(0 0, 100% 0, 100% 100%) — triangular path</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="dot op-ray"></div>
+          </div>
+          <p class="cap">ray(135deg) — a straight diagonal ray</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>offset-distance</h2>
+      <p class="code">offset-distance: &lt;length-percentage&gt;</p>
+      <p class="hint">Three dots pinned to the same straight path at different distances.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="track">
+            <div class="dot d-0"></div>
+          </div>
+          <p class="cap">0% — at the start of the path</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="dot d-100"></div>
+          </div>
+          <p class="cap">100% — at the end of the path</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="dot d-40"></div>
+          </div>
+          <p class="cap">40px — a fixed distance along the path</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>offset-rotate</h2>
+      <p class="code">offset-rotate: auto | reverse | &lt;angle&gt;</p>
+      <p class="hint">Arrows follow the same S-curve; watch how each one's orientation differs.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="track">
+            <div class="arrow r-auto"></div>
+          </div>
+          <p class="cap">auto — follows the path direction (default)</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="arrow r-reverse"></div>
+          </div>
+          <p class="cap">reverse — faces opposite the path direction</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="arrow r-0"></div>
+          </div>
+          <p class="cap">0deg — keeps a fixed orientation</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="arrow r-45"></div>
+          </div>
+          <p class="cap">auto 45deg — path direction plus 45deg</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>offset-anchor</h2>
+      <p class="code">offset-anchor: auto | &lt;position&gt;</p>
+      <p class="hint">Same circle path, different points of the dot aligned to the path — center, top-left corner, and bottom-center.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="track">
+            <div class="dot big oa-auto"></div>
+          </div>
+          <p class="cap">auto — the center rides the path (default)</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="dot big oa-tl"></div>
+          </div>
+          <p class="cap">top left — the top-left corner rides the path</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="dot big oa-bc"></div>
+          </div>
+          <p class="cap">50% 100% — the bottom-center rides the path</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>offset</h2>
+      <p class="code">offset: &lt;position&gt; || &lt;path&gt; || &lt;distance&gt; || &lt;rotate&gt; || &lt;anchor&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="track">
+            <div class="dot off-diag"></div>
+          </div>
+          <p class="cap">offset: path('M 10 90 L 120 10') 50% — path with distance</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="arrow off-circle"></div>
+          </div>
+          <p class="cap">offset: circle(40px at 50% 50%) 0deg — path with rotation</p>
+        </div>
+        <div class="cell">
+          <div class="track">
+            <div class="dot off-auto"></div>
+          </div>
+          <p class="cap">offset: auto — resets all offset properties</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../29-multi-column-layout/index.html">&larr; Multi-column Layout</a>
+  <a class="pager-btn pager-next" href="../31-paged-media/index.html">Paged Media & Print &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

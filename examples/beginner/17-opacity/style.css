@@ -1,0 +1,36 @@
+/* opacity — transparency values */
+.fade-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 100px;
+  border-radius: 8px;
+  background: repeating-linear-gradient(
+    45deg,
+    #e2e8f0 0 10px,
+    #cbd5e1 10px 20px
+  );
+}
+.op-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 70px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.op-1 { opacity: 1; }
+.op-0 { opacity: 0; }
+.op-05 { opacity: 0.5; }
+.op-025 { opacity: 0.25; }
+.op-075 { opacity: 0.75; }
+.op-hover {
+  transition: opacity 0.2s ease;
+}
+.op-hover:hover {
+  opacity: 0.4;
+}

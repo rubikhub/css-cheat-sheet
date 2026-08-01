@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter &amp; Clip Path</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Filter &amp; Clip Path</h1>
+
+    <section>
+      <h2>filter</h2>
+      <p class="code">filter: none | &lt;filter-function&gt;*</p>
+      <p class="hint">Each box shows the effect on the same colorful gradient.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo f-box f-none">none</div>
+          <p class="cap">none — no filter</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-blur">blur</div>
+          <p class="cap">blur(5px) — gaussian blur</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-bright">bright</div>
+          <p class="cap">brightness(1.5) — multiplier</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-contrast">contrast</div>
+          <p class="cap">contrast(200%) — adjustment</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-gray">gray</div>
+          <p class="cap">grayscale(100%) — removes color</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-hue">hue</div>
+          <p class="cap">hue-rotate(90deg) — rotates hue</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-invert">invert</div>
+          <p class="cap">invert(100%) — inverts colors</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-opacity">50%</div>
+          <p class="cap">opacity(50%) — opacity level</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-saturate">saturate</div>
+          <p class="cap">saturate(200%) — color saturation</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-sepia">sepia</div>
+          <p class="cap">sepia(100%) — sepia tone</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-shadow">shadow</div>
+          <p class="cap">drop-shadow(2px 2px 4px …) — follows shape</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-url">url()</div>
+          <p class="cap">url(#soften) — SVG filter reference</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-combo1">combo</div>
+          <p class="cap">blur(2px) brightness(1.2) — combined</p>
+        </div>
+        <div class="cell">
+          <div class="demo f-box f-combo2">photo</div>
+          <p class="cap">grayscale(50%) contrast(1.5) brightness(1.1) — photo effect</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>clip-path</h2>
+      <p class="code">clip-path: &lt;basic-shape&gt; | path(&lt;string&gt;) | url(&lt;url&gt;) | none</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo cp-box cp-none">none</div>
+          <p class="cap">none — no clipping</p>
+        </div>
+        <div class="cell">
+          <div class="demo cp-box cp-circle">circle</div>
+          <p class="cap">circle(50%) — circle clip</p>
+        </div>
+        <div class="cell">
+          <div class="demo cp-box cp-circle-at">at</div>
+          <p class="cap">circle(30% at 50% 50%) — positioned circle</p>
+        </div>
+        <div class="cell">
+          <div class="demo cp-box cp-ellipse">ellipse</div>
+          <p class="cap">ellipse(50% 30% at 50% 50%) — ellipse clip</p>
+        </div>
+        <div class="cell">
+          <div class="demo cp-box cp-inset">inset</div>
+          <p class="cap">inset(10px 20px 30px 40px round 10px) — rounded inset</p>
+        </div>
+        <div class="cell">
+          <div class="demo cp-box cp-tri">triangle</div>
+          <p class="cap">polygon(50% 0%, 100% 100%, 0% 100%) — triangle</p>
+        </div>
+        <div class="cell">
+          <div class="demo cp-box cp-rect">rect</div>
+          <p class="cap">polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%) — rectangle</p>
+        </div>
+        <div class="cell">
+          <div class="demo cp-box cp-star">star</div>
+          <p class="cap">polygon(…) 10 points — star polygon</p>
+        </div>
+        <div class="cell">
+          <div class="demo cp-box cp-path">path</div>
+          <p class="cap">path(&quot;M 0 0 L 100 0 L 100 100 L 0 100 Z&quot;) — SVG path</p>
+        </div>
+        <div class="cell">
+          <div class="demo cp-box cp-url">url()</div>
+          <p class="cap">url(#clipTri) — SVG clip reference</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>shape() (clip-path)</h2>
+      <p class="code">clip-path: shape(&lt;values&gt; from &lt;coordinate-system&gt;)</p>
+      <p class="hint">shape() builds clip regions with per-corner control. New syntax (Chrome 131+); unsupported browsers show the box unclipped.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="sh-box sh-border">border-box</div>
+          <p class="cap">shape() from border-box — clip to border box</p>
+        </div>
+        <div class="cell">
+          <div class="sh-box sh-margin">margin-box</div>
+          <p class="cap">shape(round 16px) from margin-box — rounded on margin box</p>
+        </div>
+        <div class="cell">
+          <div class="sh-box sh-content">content</div>
+          <p class="cap">shape() from content-box — clip to content box</p>
+        </div>
+      </div>
+    </section>
+
+    <svg class="svg-defs" aria-hidden="true">
+      <defs>
+        <filter id="soften">
+          <feGaussianBlur stdDeviation="3" />
+        </filter>
+        <clipPath id="clipTri">
+          <polygon points="0,100 100,100 50,0" />
+        </clipPath>
+      </defs>
+    </svg>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../21-transform-functions/index.html">&larr; Transform Functions</a>
+  <a class="pager-btn pager-next" href="../23-ui-and-scroll/index.html">UI & Scroll &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

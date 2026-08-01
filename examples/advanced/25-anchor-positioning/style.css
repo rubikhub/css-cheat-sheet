@@ -1,0 +1,218 @@
+/* anchor-name */
+.stage {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  background: #f1f5f9;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.anchor {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: #1e293b;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 6px;
+  anchor-name: --box;
+}
+
+.anchor.no-name {
+  anchor-name: none;
+}
+
+.anchor.low {
+  top: 88%;
+}
+
+.anchor.far-right {
+  left: 80%;
+}
+
+.anchor.corner {
+  top: 18%;
+  left: 80%;
+}
+
+.popup {
+  position: absolute;
+  padding: 4px 8px;
+  background: #0f766e;
+  color: #fff;
+  font-size: 0.65rem;
+  white-space: nowrap;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.popup.orphan {
+  top: 8px;
+  left: 8px;
+}
+
+/* position-anchor */
+.popup.auto-anchor {
+  position-anchor: auto;
+  top: 8px;
+  right: 8px;
+}
+
+/* anchor() */
+.a-bottom {
+  position-anchor: --box;
+  top: anchor(bottom);
+  left: anchor(center);
+  transform: translate(-50%, 6px);
+}
+
+.a-top {
+  position-anchor: --box;
+  bottom: anchor(top);
+  left: anchor(center);
+  transform: translate(-50%, -6px);
+}
+
+.a-right {
+  position-anchor: --box;
+  left: anchor(right);
+  top: anchor(center);
+  transform: translate(6px, -50%);
+}
+
+.a-left {
+  position-anchor: --box;
+  right: anchor(left);
+  top: anchor(center);
+  transform: translate(-6px, -50%);
+}
+
+.a-center {
+  position-anchor: --box;
+  top: anchor(center);
+  left: anchor(center);
+  transform: translate(-50%, -50%);
+}
+
+.a-named {
+  position-anchor: --box;
+  top: anchor(--box bottom);
+  left: anchor(center);
+  transform: translate(-50%, 6px);
+}
+
+/* anchor-size() */
+.stage.wide {
+  width: 220px;
+}
+
+.anchor.wide {
+  width: 110px;
+  height: 36px;
+}
+
+.popup.size-w {
+  position-anchor: --box;
+  width: anchor-size(--box width);
+  top: anchor(bottom);
+  left: anchor(left);
+  text-align: center;
+}
+
+.popup.size-h {
+  position-anchor: --box;
+  height: anchor-size(--box height);
+  left: anchor(right);
+  top: anchor(top);
+  margin-left: 8px;
+}
+
+/* position-area */
+.pa-top {
+  position-anchor: --box;
+  position-area: top;
+}
+
+.pa-bottom {
+  position-anchor: --box;
+  position-area: bottom;
+}
+
+.pa-left {
+  position-anchor: --box;
+  position-area: left;
+}
+
+.pa-right {
+  position-anchor: --box;
+  position-area: right;
+}
+
+.pa-tl {
+  position-anchor: --box;
+  position-area: top left;
+}
+
+.pa-bc {
+  position-anchor: --box;
+  position-area: bottom center;
+}
+
+/* position-try-fallbacks */
+.fb-block {
+  position-area: bottom;
+  position-try-fallbacks: flip-block;
+}
+
+.fb-inline {
+  position-area: right;
+  position-try-fallbacks: flip-inline;
+}
+
+.fb-both {
+  position-area: top right;
+  position-try-fallbacks: flip-block flip-inline;
+}
+
+.fb-none {
+  position-area: bottom;
+  position-try-fallbacks: none;
+}
+
+/* @position-try */
+@position-try --flip-top {
+  position-area: top;
+  margin-bottom: 8px;
+}
+
+.popup.try-opt {
+  position-area: bottom;
+  position-try-fallbacks: --flip-top;
+}
+
+/* position-visibility */
+.pv-always {
+  position-anchor: --box;
+  position-area: bottom;
+  position-visibility: always;
+}
+
+.pv-visible {
+  position-anchor: --box;
+  position-area: bottom;
+  position-visibility: anchors-visible;
+}
+
+.pv-overflow {
+  position-anchor: --box;
+  position-area: bottom;
+  position-visibility: no-overflow;
+}

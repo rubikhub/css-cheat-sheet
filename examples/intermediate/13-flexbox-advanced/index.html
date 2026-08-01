@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Advanced</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Flexbox Advanced</h1>
+
+    <section>
+      <h2>justify-content</h2>
+      <p class="code">justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right | stretch</p>
+      <div class="row">
+        <div class="cell">
+          <div class="flex-stage jc-flex-start">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">flex-start — items at start (default)</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage jc-flex-end">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">flex-end — items at end</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage jc-center">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">center — items centered</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage jc-space-between">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">space-between — space between items</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage jc-space-around">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">space-around — space around items</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage jc-space-evenly">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">space-evenly — equal space around items</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage jc-start">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">start — align to the start edge</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage jc-end">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">end — align to the end edge</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage jc-left">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">left — align to the left</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage jc-right">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">right — align to the right</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage jc-stretch">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">stretch — stretch items to fill</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (flex-start) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>align-items</h2>
+      <p class="code">align-items: stretch | flex-start | flex-end | center | baseline | start | end | self-start | self-end</p>
+      <div class="row">
+        <div class="cell">
+          <div class="flex-stage align-stage ai-stretch">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">stretch — stretch to fill container (default)</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage align-stage ai-flex-start">
+            <span class="flex-item demo-blue h-60">1</span>
+            <span class="flex-item demo-green h-28">2</span>
+            <span class="flex-item demo-red h-46">3</span>
+          </div>
+          <p class="cap">flex-start — items at start</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage align-stage ai-flex-end">
+            <span class="flex-item demo-blue h-60">1</span>
+            <span class="flex-item demo-green h-28">2</span>
+            <span class="flex-item demo-red h-46">3</span>
+          </div>
+          <p class="cap">flex-end — items at end</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage align-stage ai-center">
+            <span class="flex-item demo-blue h-60">1</span>
+            <span class="flex-item demo-green h-28">2</span>
+            <span class="flex-item demo-red h-46">3</span>
+          </div>
+          <p class="cap">center — items centered</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage align-stage ai-baseline">
+            <span class="flex-item demo-blue h-60 fs-lg">1</span>
+            <span class="flex-item demo-green h-28">2</span>
+            <span class="flex-item demo-red h-46">3</span>
+          </div>
+          <p class="cap">baseline — aligned by text baseline</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage align-stage ai-start">
+            <span class="flex-item demo-blue h-60">1</span>
+            <span class="flex-item demo-green h-28">2</span>
+            <span class="flex-item demo-red h-46">3</span>
+          </div>
+          <p class="cap">start — align to the start edge</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage align-stage ai-end">
+            <span class="flex-item demo-blue h-60">1</span>
+            <span class="flex-item demo-green h-28">2</span>
+            <span class="flex-item demo-red h-46">3</span>
+          </div>
+          <p class="cap">end — align to the end edge</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage align-stage ai-self-start">
+            <span class="flex-item demo-blue h-60">1</span>
+            <span class="flex-item demo-green h-28">2</span>
+            <span class="flex-item demo-red h-46">3</span>
+          </div>
+          <p class="cap">self-start — align to own start edge</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage align-stage ai-self-end">
+            <span class="flex-item demo-blue h-60">1</span>
+            <span class="flex-item demo-green h-28">2</span>
+            <span class="flex-item demo-red h-46">3</span>
+          </div>
+          <p class="cap">self-end — align to own end edge</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (stretch) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>align-content</h2>
+      <p class="code">align-content: stretch | flex-start | flex-end | center | space-between | space-around | space-evenly | start | end</p>
+      <p class="hint">Lines in a wrapping container — watch how the two rows of items move inside the tall stage.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="flex-stage ac-stage ac-stretch">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">stretch — stretch lines to fill (default)</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage ac-stage ac-flex-start">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">flex-start — lines at start</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage ac-stage ac-flex-end">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">flex-end — lines at end</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage ac-stage ac-center">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">center — lines centered</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage ac-stage ac-space-between">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">space-between — space between lines</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage ac-stage ac-space-around">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">space-around — space around lines</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage ac-stage ac-space-evenly">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">space-evenly — equal space between lines</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage ac-stage ac-start">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">start — align to the start edge</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage ac-stage ac-end">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">end — align to the end edge</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (stretch) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>gap</h2>
+      <p class="code">gap: &lt;length&gt; | &lt;percentage&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="flex-stage gap-wrap gap-items gap-0">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">0 — no gap (default)</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage gap-wrap gap-items gap-10">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">10px — fixed gap</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage gap-wrap gap-items gap-rem">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">1rem — rem-based gap</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage gap-wrap gap-items gap-pct">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">5% — percentage gap</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage gap-wrap gap-items gap-two">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">10px 20px — row-gap / column-gap</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage gap-wrap gap-items gap-two-rem">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+            <span class="flex-item demo-purple">4</span>
+            <span class="flex-item demo-teal">5</span>
+            <span class="flex-item demo-amber">6</span>
+          </div>
+          <p class="cap">1rem 2rem — rem-based row/column gap</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>order</h2>
+      <p class="code">order: &lt;integer&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="flex-stage o-0">
+            <span class="flex-item demo-blue item-a">1</span>
+            <span class="flex-item demo-green item-b">2</span>
+            <span class="flex-item demo-red item-c">3</span>
+          </div>
+          <p class="cap">0 — default order (1, 2, 3)</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage o-1">
+            <span class="flex-item demo-blue item-a">1</span>
+            <span class="flex-item demo-green item-b">2</span>
+            <span class="flex-item demo-red item-c">3</span>
+          </div>
+          <p class="cap">1 — item 1 moved later (2, 3, 1)</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage o-neg">
+            <span class="flex-item demo-blue item-a">1</span>
+            <span class="flex-item demo-green item-b">2</span>
+            <span class="flex-item demo-red item-c">3</span>
+          </div>
+          <p class="cap">-1 — item 3 moved earlier (3, 1, 2)</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage o-10">
+            <span class="flex-item demo-blue item-a">1</span>
+            <span class="flex-item demo-green item-b">2</span>
+            <span class="flex-item demo-red item-c">3</span>
+          </div>
+          <p class="cap">10 — item 2 moved much later (1, 3, 2)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>flex-basis</h2>
+      <p class="code">flex-basis: &lt;length&gt; | &lt;percentage&gt; | auto | content</p>
+      <p class="hint">The middle item has its initial main-axis size set by flex-basis.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="flex-stage fb-stage">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid fb-auto">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">auto — use width/height (default)</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage fb-stage">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid fb-content">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">content — intrinsic content size</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage fb-stage">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid fb-zero">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">0 — zero initial size</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage fb-stage">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid fb-px">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">100px — fixed length</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage fb-stage">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid fb-em">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">10em — em-based length</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage fb-stage">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid fb-pct">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">50% — percentage of container</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>flex</h2>
+      <p class="code">flex: &lt;grow&gt; &lt;shrink&gt; &lt;basis&gt;</p>
+      <p class="hint">The middle item carries the flex shorthand; A and C use the default.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="flex-stage fb-stage">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid flex-auto">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">auto — grow and shrink by 1, basis auto</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage fb-stage">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid flex-initial">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">initial — don&apos;t grow, shrink, auto basis (default)</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage fb-stage">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid flex-none">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">none — fully inflexible</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage fb-stage">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid flex-1">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">1 — grow equally, shrink equally, basis 0</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage fb-stage">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid flex-010">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">0 1 auto — don&apos;t grow, shrink, auto basis</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage fb-stage">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid flex-100">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">1 0 0% — grow, don&apos;t shrink, zero basis</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0 1 auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>align-self</h2>
+      <p class="code">align-self: auto | flex-start | flex-end | center | baseline | stretch | start | end | self-start | self-end</p>
+      <p class="hint">The middle item overrides the container&apos;s align-items: flex-start.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="flex-stage as-stage as-auto">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">auto — follow container&apos;s align-items (default)</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage as-stage as-flex-start">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">flex-start — align to start</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage as-stage as-flex-end">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">flex-end — align to end</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage as-stage as-center">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">center — centered</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage as-stage as-baseline">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid fs-lg">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">baseline — align by text baseline</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage as-stage as-stretch">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">stretch — stretch to fill</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage as-stage as-start">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">start — align to the start edge</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage as-stage as-end">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">end — align to the end edge</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage as-stage as-self-start">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">self-start — align to own start edge</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage as-stage as-self-end">
+            <span class="flex-item demo-blue">A</span>
+            <span class="flex-item demo-green mid">B</span>
+            <span class="flex-item demo-red">C</span>
+          </div>
+          <p class="cap">self-end — align to own end edge</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>place-items</h2>
+      <p class="code">place-items: &lt;align-items&gt; &lt;justify-items&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="flex-stage pi-stage pi-center pi-items">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">center — centered on both axes</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage pi-stage pi-stretch pi-items">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">stretch — stretched on both axes (default)</p>
+        </div>
+        <div class="cell">
+          <div class="flex-stage pi-stage pi-center-stretch pi-items">
+            <span class="flex-item demo-blue">1</span>
+            <span class="flex-item demo-green">2</span>
+            <span class="flex-item demo-red">3</span>
+          </div>
+          <p class="cap">center stretch — center vertically, stretch horizontally</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (stretch) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../12-counters-and-markers/index.html">&larr; Counters & Markers</a>
+  <a class="pager-btn pager-next" href="../14-grid-advanced/index.html">Grid Advanced &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

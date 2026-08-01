@@ -1,0 +1,40 @@
+/* 13-state-pseudo-classes-advanced — topic-specific styles */
+
+/* :target-within */
+.tw-wrap { border: 2px solid #e2e8f0; border-radius: 8px; padding: 10px; }
+.tw-target { border: 2px solid #cbd5e1; border-radius: 6px; padding: 8px; margin-bottom: 8px; }
+.tw-target h3 { margin: 0; font-size: 0.9rem; }
+.tw-wrap:target-within { background: #fffbeb; }
+.tw-wrap:target-within .tw-target { border-color: #f59e0b; }
+
+/* :current */
+.cur-nav { display: flex; gap: 8px; }
+.cur-link { padding: 6px 10px; border-radius: 6px; text-decoration: none; background: #e2e8f0; color: #334155; font-size: 0.85rem; }
+.cur-link:current { font-weight: bold; background: #6366f1; color: white; }
+
+/* :past / :future — timeline */
+.timeline { display: flex; gap: 8px; }
+.tl-item { padding: 8px 12px; border-radius: 6px; background: #6366f1; color: white; font-size: 0.8rem; }
+.timeline .tl-item:past { opacity: 0.5; }
+.timeline .tl-item:future { color: #64748b; background: #e2e8f0; }
+
+/* media state boxes */
+.media-box { border: 2px solid #e2e8f0; border-radius: 8px; padding: 10px; text-align: center; }
+.mstatus { font-size: 0.8rem; color: #64748b; }
+
+/* :playing / :paused / :stopped simulations */
+.playing-box { border-color: #10b981; }
+.playing-box .mstatus { color: #10b981; }
+.media-box:playing { border-color: #10b981; }
+.media-box:playing + .mstatus { color: #10b981; }
+.paused-box:playing { border-color: #f59e0b; }
+.paused-box { border-color: #f59e0b; }
+.paused-box .mstatus { color: #f59e0b; }
+.stopped-box { opacity: 0.5; border-color: #94a3b8; }
+
+/* :running */
+.anim-box { width: 70px; height: 70px; border-radius: 8px; background: #8b5cf6; display: grid; place-items: center; color: white; font-size: 0.75rem; animation: spin 2s linear infinite; }
+.anim-box:running { box-shadow: 0 0 10px rgb(0 0 0 / 0.3); }
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,132 @@
+/* position — positioning context + demo boxes */
+.p-stage {
+  position: relative;
+  width: 170px;
+  height: 110px;
+  border: 1px dashed #94a3b8;
+  border-radius: 8px;
+  background: #fff;
+}
+.box {
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.pos-static { position: static; }
+.pos-rel { position: relative; top: 12px; left: 12px; }
+.pos-abs { position: absolute; top: 8px; right: 8px; }
+.pos-fixed {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
+}
+
+/* sticky demo */
+.scroll-stage {
+  width: 190px;
+  height: 150px;
+  overflow: auto;
+  border: 1px dashed #94a3b8;
+  border-radius: 8px;
+  padding: 0 8px 8px;
+  font-size: 0.75rem;
+  color: #334155;
+  line-height: 1.4;
+}
+.sticky-head {
+  position: sticky;
+  top: 0;
+  margin: 0 -8px;
+  padding: 6px 8px;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* top / right / bottom / left — offsets */
+.off-auto { position: absolute; }
+.off-10 { position: absolute; top: 10px; left: 10px; }
+.off-2em { position: absolute; top: 2em; left: 0; }
+.off-50 { position: absolute; top: 50%; left: 50%; }
+.off-0 { position: absolute; top: 0; left: 0; }
+
+/* z-index — overlapping boxes */
+.z-box {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 58px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.z-a { top: 10px; left: 10px; }
+.z-b { top: 36px; left: 40px; }
+.z-c { top: 6px; left: 14px; }
+.z-d { top: 26px; left: 34px; }
+.z-e { top: 46px; left: 54px; }
+.z-1 { z-index: 1; }
+.z-high { z-index: 9999; }
+.z-neg { z-index: -1; }
+.z-0 { z-index: 0; }
+
+/* float — text wrapping demos */
+.f-wrap {
+  width: 240px;
+  padding: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #334155;
+  line-height: 1.4;
+}
+.f-wrap p { margin: 0; }
+.f-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.f-none { float: none; }
+.f-left { float: left; margin: 0 8px 4px 0; }
+.f-right { float: right; margin: 0 0 4px 8px; }
+.f-inline-start { float: inline-start; margin: 0 8px 4px 0; }
+.f-inline-end { float: inline-end; margin: 0 0 4px 8px; }
+
+/* clear — below-float demos */
+.c-wrap {
+  width: 240px;
+  padding: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #334155;
+  line-height: 1.4;
+}
+.c-wrap p { margin: 4px 0 0; }
+.c-box {
+  padding: 4px 6px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 4px 0 0;
+}
+.cl-none { clear: none; background: #64748b; }
+.cl-left { clear: left; background: #10b981; }
+.cl-right { clear: right; background: #f59e0b; }
+.cl-both { clear: both; background: #ef4444; }
+.cl-inline-start { clear: inline-start; background: #8b5cf6; }
+.cl-inline-end { clear: inline-end; background: #14b8a6; }

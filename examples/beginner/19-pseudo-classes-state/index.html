@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>State Pseudo-classes</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>State Pseudo-classes</h1>
+
+    <section>
+      <h2>:hover</h2>
+      <p class="code">:hover</p>
+      <p class="hint">Hover each element to trigger its state.</p>
+      <div class="row">
+        <div class="cell">
+          <a class="demo-link" href="#hover-link">link</a>
+          <p class="cap">a:hover — links on hover</p>
+        </div>
+        <div class="cell">
+          <button class="demo-btn" type="button">button</button>
+          <p class="cap">button:hover — buttons on hover</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue card-hover">card</div>
+          <p class="cap">.card:hover — cards on hover</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:active</h2>
+      <p class="code">:active</p>
+      <p class="hint">Press and hold each element to see its active state.</p>
+      <div class="row">
+        <div class="cell">
+          <button class="demo-btn" type="button">press</button>
+          <p class="cap">button:active — buttons while clicking</p>
+        </div>
+        <div class="cell">
+          <a class="demo-link" href="#active-link">press</a>
+          <p class="cap">a:active — links while clicking</p>
+        </div>
+        <div class="cell">
+          <button class="link-btn" type="button">press me</button>
+          <p class="cap">.link:active — custom link active state</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:focus</h2>
+      <p class="code">:focus</p>
+      <p class="hint">Click, or press Tab to move keyboard focus onto each element.</p>
+      <div class="row">
+        <div class="cell">
+          <input class="demo-input" type="text" placeholder="type here" aria-label="demo input" />
+          <p class="cap">input:focus — inputs when focused</p>
+        </div>
+        <div class="cell">
+          <button class="demo-btn" type="button">button</button>
+          <p class="cap">button:focus — buttons when focused</p>
+        </div>
+        <div class="cell">
+          <a class="demo-link" href="#focus-link">link</a>
+          <p class="cap">a:focus — links when focused</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:link</h2>
+      <p class="code">:link</p>
+      <div class="row">
+        <div class="cell">
+          <a class="demo-link" href="https://example.com/">unvisited</a>
+          <p class="cap">a:link — unvisited links</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:visited</h2>
+      <p class="code">:visited</p>
+      <p class="hint">Only applies to links you have actually visited. For privacy, browsers only allow limited styling (color, background-color, border-color).</p>
+      <div class="row">
+        <div class="cell">
+          <a class="demo-link" href="https://www.wikipedia.org/">wikipedia.org</a>
+          <p class="cap">a:visited — visited links</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:target</h2>
+      <p class="code">#section:target</p>
+      <p class="hint">Click a link — the element whose id matches the URL fragment becomes :target.</p>
+      <div class="row">
+        <div class="cell">
+          <a class="demo-link" href="#target-one">#section:target</a>
+          <div id="target-one" class="target-box">id="target-one"</div>
+          <p class="cap">:target — element matching the URL fragment</p>
+        </div>
+        <div class="cell">
+          <a class="demo-link" href="#highlight-box">.highlight:target</a>
+          <div id="highlight-box" class="highlight-box">id="highlight-box"</div>
+          <p class="cap">.highlight:target — highlighted element</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../18-pseudo-classes-structural/index.html">&larr; Structural Pseudo-classes</a>
+  <a class="pager-btn pager-next" href="../20-pseudo-elements-basics/index.html">Pseudo-Elements Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

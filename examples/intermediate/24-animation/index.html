@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Animation</h1>
+
+    <section>
+      <h2>animation</h2>
+      <p class="code">animation: &lt;name&gt; &lt;duration&gt; &lt;timing&gt; &lt;delay&gt; &lt;iteration&gt; &lt;direction&gt; &lt;fill-mode&gt; &lt;play-state&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo an-simple">fade</div>
+          <p class="cap">fadeIn 1s ease-in-out — name and duration</p>
+        </div>
+        <div class="cell">
+          <div class="demo an-multi">multi</div>
+          <p class="cap">fadeIn 1s ease-in-out, slideUp 0.5s ease — multiple animations</p>
+        </div>
+        <div class="cell">
+          <div class="demo an-full">full</div>
+          <p class="cap">pulse 1s ease-in-out 0.2s infinite alternate both — full shorthand</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none 0s ease 0s 1 normal none running) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-name</h2>
+      <p class="code">animation-name: none | &lt;keyframe-name&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo nm-none">none</div>
+          <p class="cap">none — no animation</p>
+        </div>
+        <div class="cell">
+          <div class="demo nm-fade">fadeIn</div>
+          <p class="cap">fadeIn — run the fadeIn keyframes</p>
+        </div>
+        <div class="cell">
+          <div class="demo nm-slide">slideUp</div>
+          <p class="cap">slideUp — run the slideUp keyframes</p>
+        </div>
+        <div class="cell">
+          <div class="demo nm-multi">both</div>
+          <p class="cap">fadeIn, pulse — multiple animations</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-duration</h2>
+      <p class="code">animation-duration: &lt;time&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo dur-0">0s</div>
+          <p class="cap">0s — no animation</p>
+        </div>
+        <div class="cell">
+          <div class="demo dur-05">0.5s</div>
+          <p class="cap">0.5s — half a second</p>
+        </div>
+        <div class="cell">
+          <div class="demo dur-1">1s</div>
+          <p class="cap">1s — one second</p>
+        </div>
+        <div class="cell">
+          <div class="demo dur-2s">2000ms</div>
+          <p class="cap">2000ms — milliseconds</p>
+        </div>
+        <div class="cell">
+          <div class="demo dur-multi">1s, 0.5s</div>
+          <p class="cap">1s, 0.5s — multiple durations</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0s) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-timing-function</h2>
+      <p class="code">animation-timing-function: ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier() | steps()</p>
+      <p class="hint">Compare how each easing curve drives the slide.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo tf-ease">ease</div>
+          <p class="cap">ease — slow start and end</p>
+        </div>
+        <div class="cell">
+          <div class="demo tf-linear">linear</div>
+          <p class="cap">linear — constant speed</p>
+        </div>
+        <div class="cell">
+          <div class="demo tf-in">ease-in</div>
+          <p class="cap">ease-in — accelerates</p>
+        </div>
+        <div class="cell">
+          <div class="demo tf-out">ease-out</div>
+          <p class="cap">ease-out — decelerates</p>
+        </div>
+        <div class="cell">
+          <div class="demo tf-inout">ease-in-out</div>
+          <p class="cap">ease-in-out — accelerate and decelerate</p>
+        </div>
+        <div class="cell">
+          <div class="demo tf-bezier">bezier</div>
+          <p class="cap">cubic-bezier(0.25, 0.1, 0.25, 1) — custom curve</p>
+        </div>
+        <div class="cell">
+          <div class="demo tf-steps">steps</div>
+          <p class="cap">steps(5, end) — stepped animation</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (ease) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-delay</h2>
+      <p class="code">animation-delay: &lt;time&gt;</p>
+      <p class="hint">Reload the page to see each box start at its own time.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo dl-0">0s</div>
+          <p class="cap">0s — start immediately</p>
+        </div>
+        <div class="cell">
+          <div class="demo dl-03">0.3s</div>
+          <p class="cap">0.3s — start after a delay</p>
+        </div>
+        <div class="cell">
+          <div class="demo dl-1">1s</div>
+          <p class="cap">1s — start after one second</p>
+        </div>
+        <div class="cell">
+          <div class="demo dl-neg">-0.5s</div>
+          <p class="cap">-0.5s — start mid-animation</p>
+        </div>
+        <div class="cell">
+          <div class="demo dl-multi">0s, 0.3s</div>
+          <p class="cap">0s, 0.3s — multiple delays</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0s) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-iteration-count</h2>
+      <p class="code">animation-iteration-count: &lt;number&gt; | infinite</p>
+      <p class="hint">Reload the page to replay the finite iterations.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo it-1">1</div>
+          <p class="cap">1 — play once</p>
+        </div>
+        <div class="cell">
+          <div class="demo it-3">3</div>
+          <p class="cap">3 — play three times</p>
+        </div>
+        <div class="cell">
+          <div class="demo it-half">0.5</div>
+          <p class="cap">0.5 — play half a cycle</p>
+        </div>
+        <div class="cell">
+          <div class="demo it-inf">∞</div>
+          <p class="cap">infinite — loop forever</p>
+        </div>
+        <div class="cell">
+          <div class="demo it-multi">1, 3</div>
+          <p class="cap">1, 3 — multiple counts</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (1) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-direction</h2>
+      <p class="code">animation-direction: normal | reverse | alternate | alternate-reverse</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo dr-normal">normal</div>
+          <p class="cap">normal — play forward</p>
+        </div>
+        <div class="cell">
+          <div class="demo dr-reverse">reverse</div>
+          <p class="cap">reverse — play backward</p>
+        </div>
+        <div class="cell">
+          <div class="demo dr-alternate">alternate</div>
+          <p class="cap">alternate — forward then backward</p>
+        </div>
+        <div class="cell">
+          <div class="demo dr-altrev">alt-rev</div>
+          <p class="cap">alternate-reverse — backward then forward</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-fill-mode</h2>
+      <p class="code">animation-fill-mode: none | forwards | backwards | both</p>
+      <p class="hint">Each box has a 0.5s delay — watch whether start/end styles are held.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo fm-none">none</div>
+          <p class="cap">none — no styles outside the animation</p>
+        </div>
+        <div class="cell">
+          <div class="demo fm-forwards">forwards</div>
+          <p class="cap">forwards — keep the end styles</p>
+        </div>
+        <div class="cell">
+          <div class="demo fm-backwards">backwards</div>
+          <p class="cap">backwards — apply start styles during the delay</p>
+        </div>
+        <div class="cell">
+          <div class="demo fm-both">both</div>
+          <p class="cap">both — apply both</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>animation-play-state</h2>
+      <p class="code">animation-play-state: running | paused</p>
+      <div class="row">
+        <div class="cell">
+          <div class="spin-demo ps-running"></div>
+          <p class="cap">running — playing</p>
+        </div>
+        <div class="cell">
+          <div class="spin-demo ps-paused"></div>
+          <p class="cap">paused — paused</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (running) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>@keyframes</h2>
+      <p class="code">@keyframes &lt;name&gt; { &lt;selector&gt; { &lt;declaration&gt; } }</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo kf-fromto">from / to</div>
+          <p class="cap">from { … } / to { … } — start and end states</p>
+        </div>
+        <div class="cell">
+          <div class="demo kf-pct">0% / 100%</div>
+          <p class="cap">0% { … } / 100% { … } — explicit states</p>
+        </div>
+        <div class="cell">
+          <div class="demo kf-mid">50%</div>
+          <p class="cap">50% { … } — midpoint state only</p>
+        </div>
+        <div class="cell">
+          <div class="demo kf-shared">shared</div>
+          <p class="cap">0%, 100% { … } — shared states</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>animation-composition</h2>
+      <p class="code">animation-composition: replace | add | accumulate</p>
+      <p class="hint">Two transforms (moveX + moveY) — replace uses one, add/accumulate combine them diagonally.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo com-replace">replace</div>
+          <p class="cap">replace — later animation overrides earlier</p>
+        </div>
+        <div class="cell">
+          <div class="demo com-add">add</div>
+          <p class="cap">add — values are added together</p>
+        </div>
+        <div class="cell">
+          <div class="demo com-accum">accumulate</div>
+          <p class="cap">accumulate — values are accumulated</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../23-ui-and-scroll/index.html">&larr; UI & Scroll</a>
+  <a class="pager-btn pager-next" href="../25-math-functions/index.html">Math Functions &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

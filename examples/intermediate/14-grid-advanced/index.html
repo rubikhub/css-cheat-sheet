@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Advanced</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Grid Advanced</h1>
+
+    <section>
+      <h2>grid-template-columns</h2>
+      <p class="code">grid-template-columns: &lt;track-list&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage gtc-none">
+            <span class="grid-item demo-blue">1</span>
+            <span class="grid-item demo-green">2</span>
+            <span class="grid-item demo-red">3</span>
+          </div>
+          <p class="cap">none — no explicit columns (default)</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gtc-one">
+            <span class="grid-item demo-blue">1</span>
+            <span class="grid-item demo-green">2</span>
+            <span class="grid-item demo-red">3</span>
+          </div>
+          <p class="cap">200px — single fixed column</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gtc-mixed">
+            <span class="grid-item demo-blue">1</span>
+            <span class="grid-item demo-green">2</span>
+            <span class="grid-item demo-red">3</span>
+          </div>
+          <p class="cap">200px 100px auto — mixed fixed and auto columns</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gtc-equal">
+            <span class="grid-item demo-blue">1</span>
+            <span class="grid-item demo-green">2</span>
+            <span class="grid-item demo-red">3</span>
+          </div>
+          <p class="cap">repeat(3, 1fr) — three equal columns</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gtc-mm">
+            <span class="grid-item demo-blue">1</span>
+            <span class="grid-item demo-green">2</span>
+            <span class="grid-item demo-red">3</span>
+          </div>
+          <p class="cap">repeat(2, minmax(100px, 1fr)) — two flexible columns</p>
+        </div>
+        <div class="cell wide">
+          <div class="grid-stage gtc-auto-fit">
+            <span class="grid-item demo-blue">1</span>
+          </div>
+          <p class="cap">repeat(auto-fit, minmax(200px, 1fr)) — tracks grow to fill the row</p>
+        </div>
+        <div class="cell wide">
+          <div class="grid-stage gtc-auto-fill">
+            <span class="grid-item demo-blue">1</span>
+          </div>
+          <p class="cap">repeat(auto-fill, minmax(150px, 1fr)) — extra empty track is kept, item does not grow</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>grid-template-rows</h2>
+      <p class="code">grid-template-rows: &lt;track-list&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage gtr-none">
+            <span class="grid-item demo-blue">1</span>
+            <span class="grid-item demo-green">2</span>
+            <span class="grid-item demo-red">3</span>
+          </div>
+          <p class="cap">none — no explicit rows (default)</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gtr-100">
+            <span class="grid-item demo-blue">1</span>
+            <span class="grid-item demo-green">2</span>
+            <span class="grid-item demo-red">3</span>
+          </div>
+          <p class="cap">100px — single fixed row</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gtr-mixed">
+            <span class="grid-item demo-blue">1</span>
+            <span class="grid-item demo-green">2</span>
+            <span class="grid-item demo-red">3</span>
+          </div>
+          <p class="cap">100px 200px auto — mixed fixed and auto rows</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gtr-equal">
+            <span class="grid-item demo-blue">1</span>
+            <span class="grid-item demo-green">2</span>
+            <span class="grid-item demo-red">3</span>
+          </div>
+          <p class="cap">repeat(3, 1fr) — three equal rows</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gtr-mm">
+            <span class="grid-item demo-blue">1</span>
+            <span class="grid-item demo-green">2</span>
+            <span class="grid-item demo-red">3</span>
+          </div>
+          <p class="cap">minmax(50px, auto) — minimum-height row</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>grid-template-areas</h2>
+      <p class="code">grid-template-areas: &lt;string&gt; | none</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage gta-none">
+            <span class="grid-item demo-blue">1</span>
+            <span class="grid-item demo-green">2</span>
+            <span class="grid-item demo-red">3</span>
+            <span class="grid-item demo-purple">4</span>
+          </div>
+          <p class="cap">none — no named areas (default)</p>
+        </div>
+        <div class="cell wide">
+          <div class="grid-stage gta-layout">
+            <span class="grid-item demo-blue ga-hd">header</span>
+            <span class="grid-item demo-green ga-sd">sidebar</span>
+            <span class="grid-item demo-red ga-main">main</span>
+            <span class="grid-item demo-purple ga-ft">footer</span>
+          </div>
+          <p class="cap">&quot;header header&quot; / &quot;sidebar main&quot; / &quot;footer footer&quot; — items placed by name</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>grid-auto-columns</h2>
+      <p class="code">grid-auto-columns: &lt;track-size&gt;</p>
+      <p class="hint">First column is explicit at 60px; the auto-created columns that follow use grid-auto-columns.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage gac gac-auto">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">auto — auto-sized (default)</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gac gac-100">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">100px — fixed size</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gac gac-fr">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">1fr — flexible size</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gac gac-min">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">min-content — smallest content size</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gac gac-max">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">max-content — largest content size</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gac gac-mm">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">minmax(100px, 1fr) — min/max size range</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>grid-auto-rows</h2>
+      <p class="code">grid-auto-rows: &lt;track-size&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage gar gar-auto">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">auto — auto-sized (default)</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gar gar-100">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">100px — fixed size</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gar gar-fr">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">1fr — flexible size</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gar gar-min">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">min-content — smallest content size</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gar gar-max">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">max-content — largest content size</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gar gar-mm">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">minmax(50px, auto) — min/max size range</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>grid-auto-flow</h2>
+      <p class="code">grid-auto-flow: row | column | dense</p>
+      <p class="hint">In the dense cells an item spans two columns/rows, so you can see gaps being backfilled.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage gaf-row">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green g-span2">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">row — fill by rows (default); note the gap below B</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gaf-column">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+            <span class="grid-item demo-teal">E</span>
+          </div>
+          <p class="cap">column — fill by columns</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gaf-dense">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green g-span2">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">dense — D backfills the gap below B</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gaf-row-dense">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green g-span2">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">row dense — rows with dense packing</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gaf-col-dense">
+            <span class="grid-item demo-blue g-span2r">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+            <span class="grid-item demo-teal">E</span>
+          </div>
+          <p class="cap">column dense — columns with dense packing</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (row) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>grid-column</h2>
+      <p class="code">grid-column: &lt;start&gt; | &lt;start&gt; / &lt;end&gt;</p>
+      <p class="hint">The wide item in each grid is placed with grid-column.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage gc-stage">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green gc-lines">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">1 / 3 — from line 1 to line 3</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gc-stage">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green gc-span-start">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">1 / span 2 — start at line 1, span 2 columns</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gc-stage">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green gc-span">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">span 2 — span 2 columns</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gc-stage">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green gc-auto">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">auto — auto placement (default)</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gc-stage">
+            <span class="grid-item demo-blue gc-end">B</span>
+          </div>
+          <p class="cap">auto / 1 — auto start, end at line 1</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gcn">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green gc-named">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">header-start / header-end — place by named lines</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>grid-row</h2>
+      <p class="code">grid-row: &lt;start&gt; | &lt;start&gt; / &lt;end&gt;</p>
+      <p class="hint">The tall item in each grid is placed with grid-row.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage gr-stage">
+            <span class="grid-item demo-blue gr-lines">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">1 / 3 — from row line 1 to line 3</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gr-stage">
+            <span class="grid-item demo-blue gr-span-start">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">1 / span 2 — start at line 1, span 2 rows</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gr-stage">
+            <span class="grid-item demo-blue gr-span">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">span 2 — span 2 rows</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gr-stage">
+            <span class="grid-item demo-blue gr-auto">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">auto — auto placement (default)</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage gr-stage">
+            <span class="grid-item demo-blue gr-end">A</span>
+          </div>
+          <p class="cap">auto / 1 — auto start, end at line 1</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>grid-area</h2>
+      <p class="code">grid-area: &lt;name&gt; | &lt;row-start&gt; / &lt;column-start&gt; / &lt;row-end&gt; / &lt;column-end&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage ga-tpl">
+            <span class="grid-item demo-blue ga-hd">header</span>
+          </div>
+          <p class="cap">header — place into a named area</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ga-tpl">
+            <span class="grid-item demo-green ga-sd">sidebar</span>
+          </div>
+          <p class="cap">sidebar — place into a named area</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ga-grid">
+            <span class="grid-item demo-red ga-line-num">A</span>
+          </div>
+          <p class="cap">1 / 1 / 3 / 3 — row-start / col-start / row-end / col-end</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ga-grid">
+            <span class="grid-item demo-purple ga-line-span">A</span>
+          </div>
+          <p class="cap">1 / span 2 / 3 / span 2 — line numbers with spans</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ga-grid">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">auto — auto placement (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>justify-items</h2>
+      <p class="code">justify-items: stretch | start | end | center | left | right</p>
+      <p class="hint">Items keep their fixed width, so the inline-axis alignment inside each cell is visible.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage ji ji-stretch">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">stretch — stretch to fill cell (default)</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ji ji-start">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">start — align to cell start</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ji ji-end">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">end — align to cell end</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ji ji-center">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">center — center in cell</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ji ji-left">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">left — align left</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ji ji-right">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">right — align right</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (stretch) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>align-items</h2>
+      <p class="code">align-items: stretch | start | end | center | baseline | self-start | self-end</p>
+      <p class="hint">Items keep their fixed height, so the block-axis alignment inside each cell is visible.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage ai ai-stretch">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">stretch — stretch to fill cell (default)</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ai ai-start">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">start — align to cell start</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ai ai-end">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">end — align to cell end</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ai ai-center">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">center — center in cell</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ai ai-baseline">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green big">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">baseline — align by text baseline</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ai ai-self-start">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">self-start — align to own start edge</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ai ai-self-end">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">self-end — align to own end edge</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (stretch) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>place-items</h2>
+      <p class="code">place-items: &lt;align-items&gt; &lt;justify-items&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage pi-grid pi-center">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">center — centered on both axes</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage pi-grid pi-start">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">start — aligned to start on both axes</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage pi-grid pi-stretch">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">stretch — stretched on both axes</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage pi-grid pi-center-start">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">center start — center vertically, start horizontally</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage pi-grid pi-stretch-end">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">stretch end — stretch vertically, end horizontally</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (stretch) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>place-content</h2>
+      <p class="code">place-content: &lt;align-content&gt; &lt;justify-content&gt;</p>
+      <p class="hint">The grid has fixed 60px tracks inside a taller stage, so the free space distribution is visible.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage pc-stage pc-center">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">center — centered on both axes</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage pc-stage pc-start">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">start — aligned to start on both axes</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage pc-stage pc-space-between">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">space-between — spread out on both axes</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage pc-stage pc-center-space-between">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green">B</span>
+            <span class="grid-item demo-red">C</span>
+            <span class="grid-item demo-purple">D</span>
+          </div>
+          <p class="cap">center space-between — center rows, space columns</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (normal) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>place-self</h2>
+      <p class="code">place-self: &lt;align-self&gt; &lt;justify-self&gt;</p>
+      <p class="hint">The highlighted item overrides the container alignment in its cell.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="grid-stage ps-stage">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green ps-mid ps-center">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">center — centered in the cell on both axes</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ps-stage">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green ps-mid ps-start">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">start — aligned to cell start on both axes</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ps-stage">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green ps-mid ps-stretch">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">stretch — stretched in both axes</p>
+        </div>
+        <div class="cell">
+          <div class="grid-stage ps-stage">
+            <span class="grid-item demo-blue">A</span>
+            <span class="grid-item demo-green ps-mid ps-end-center">B</span>
+            <span class="grid-item demo-red">C</span>
+          </div>
+          <p class="cap">end center — end vertically, center horizontally</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../13-flexbox-advanced/index.html">&larr; Flexbox Advanced</a>
+  <a class="pager-btn pager-next" href="../15-structural-pseudo-classes/index.html">Structural Pseudo Classes &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

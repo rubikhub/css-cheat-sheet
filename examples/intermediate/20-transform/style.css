@@ -1,0 +1,80 @@
+/* transform */
+.tf-none { transition: transform 0.4s ease; transform: rotate(20deg); }
+.tf-none:hover { transform: none; }
+.tf-rotate { transition: transform 0.4s ease; }
+.tf-rotate:hover { transform: rotate(45deg); }
+.tf-scale { transition: transform 0.4s ease; }
+.tf-scale:hover { transform: scale(2); }
+.tf-skew { transition: transform 0.4s ease; }
+.tf-skew:hover { transform: skew(20deg); }
+.tf-translate { transition: transform 0.4s ease; }
+.tf-translate:hover { transform: translate(100px, 50px); }
+.tf-3d { transition: transform 0.4s ease; }
+.tf-3d:hover { transform: perspective(500px) rotateX(45deg); }
+.tf-combo { transition: transform 0.4s ease; }
+.tf-combo:hover { transform: rotate(45deg) scale(1.5); }
+
+/* transform-origin */
+.to-center { transform-origin: center; transition: transform 0.4s ease; }
+.to-topleft { transform-origin: top left; transition: transform 0.4s ease; }
+.to-bottomright { transform-origin: bottom right; transition: transform 0.4s ease; }
+.to-offset { transform-origin: 100px 50px; transition: transform 0.4s ease; }
+.to-pct { transform-origin: 50% 50%; transition: transform 0.4s ease; }
+.to-3d { transform-origin: 50% 50% 100px; transition: transform 0.4s ease; }
+.to-center:hover,
+.to-topleft:hover,
+.to-bottomright:hover,
+.to-offset:hover,
+.to-pct:hover {
+  transform: rotate(35deg);
+}
+.to-3d:hover { transform: perspective(600px) rotateX(35deg); }
+
+/* transform-box (SVG) */
+.tbx-stage { display: block; }
+.tbx-rect {
+  fill: #3b82f6;
+  stroke: #e2e8f0;
+  stroke-width: 12px;
+  transform-origin: top left;
+  transition: transform 0.4s ease;
+}
+.tbx-content { transform-box: content-box; }
+.tbx-border { transform-box: border-box; }
+.tbx-fill { transform-box: fill-box; }
+.tbx-stroke { transform-box: stroke-box; }
+.tbx-view { transform-box: view-box; }
+.tbx-stage:hover .tbx-rect { transform: rotate(20deg); }
+
+/* perspective */
+.per-200 { perspective: 200px; }
+.per-500 { perspective: 500px; }
+.per-1000 { perspective: 1000px; }
+.per-card {
+  padding: 6px 10px;
+  background: #3b82f6;
+  border-radius: 6px;
+  transition: transform 0.5s ease;
+}
+.per-stage:hover .per-card { transform: rotateX(45deg); }
+
+/* perspective-origin */
+.po-stage { perspective: 300px; }
+.po-50 { perspective-origin: 50% 50%; }
+.po-00 { perspective-origin: 0 0; }
+.po-100 { perspective-origin: 100% 100%; }
+.po-top { perspective-origin: center top; }
+.po-offset { perspective-origin: 200px 100px; }
+.po-card {
+  padding: 6px 10px;
+  background: #3b82f6;
+  border-radius: 6px;
+  transition: transform 0.5s ease;
+}
+.po-stage:hover .po-card { transform: rotateY(40deg); }
+
+/* backface-visibility */
+.bv-visible { backface-visibility: visible; transition: transform 0.6s ease; }
+.bv-hidden { backface-visibility: hidden; transition: transform 0.6s ease; }
+.bv-visible:hover { transform: perspective(600px) rotateY(180deg); }
+.bv-hidden:hover { transform: perspective(600px) rotateY(180deg); }

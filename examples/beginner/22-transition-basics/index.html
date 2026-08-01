@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition Basics</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Transition Basics</h1>
+
+    <section>
+      <h2>transition-property</h2>
+      <p class="code">transition-property: none | all | &lt;property-list&gt;</p>
+      <p class="hint">Hover each box. All of them change background, transform, opacity and color — only the listed properties actually animate.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-blue tp-base tp-none">none</div>
+          <p class="cap">none — no transitions (default), changes snap</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue tp-base tp-all">all</div>
+          <p class="cap">all — animate every property</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue tp-base tp-opacity">opacity</div>
+          <p class="cap">opacity — animate opacity only</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue tp-base tp-transform">transform</div>
+          <p class="cap">transform — animate transform only</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue tp-base tp-bg">bg-color</div>
+          <p class="cap">background-color — animate background only</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-blue tp-base tp-multi">color, opacity</div>
+          <p class="cap">color, opacity — animate multiple properties</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (all) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>transition-duration</h2>
+      <p class="code">transition-duration: &lt;time&gt;</p>
+      <p class="hint">Hover each box and watch how the speed differs.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-green td-base td-0s">0s</div>
+          <p class="cap">0s — instant (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-green td-base td-02s">0.2s</div>
+          <p class="cap">0.2s — fast transition</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-green td-base td-03s">0.3s</div>
+          <p class="cap">0.3s — standard transition</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-green td-base td-05s">0.5s</div>
+          <p class="cap">0.5s — slow transition</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-green td-base td-1s">1s</div>
+          <p class="cap">1s — very slow transition</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-green td-base td-200ms">200ms</div>
+          <p class="cap">200ms — milliseconds</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0s) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>transition-timing-function</h2>
+      <p class="code">transition-timing-function: ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier() | steps()</p>
+      <p class="hint">Hover each box — a slow 0.8s run makes the acceleration curve visible.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-purple tt-base tt-ease">ease</div>
+          <p class="cap">ease — slow start and end (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-purple tt-base tt-linear">linear</div>
+          <p class="cap">linear — constant speed</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-purple tt-base tt-ease-in">ease-in</div>
+          <p class="cap">ease-in — starts slow</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-purple tt-base tt-ease-out">ease-out</div>
+          <p class="cap">ease-out — ends slow</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-purple tt-base tt-ease-in-out">ease-in-out</div>
+          <p class="cap">ease-in-out — slow start and end</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-purple tt-base tt-cubic">bezier</div>
+          <p class="cap">cubic-bezier(0.4, 0, 0.2, 1) — custom curve</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-purple tt-base tt-steps">steps</div>
+          <p class="cap">steps(5, end) — stepped animation</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (ease) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>transition-delay</h2>
+      <p class="code">transition-delay: &lt;time&gt;</p>
+      <p class="hint">Hover each box — longer delays wait before moving.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-amber tdly-base tdly-0s">0s</div>
+          <p class="cap">0s — start immediately (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-amber tdly-base tdly-01s">0.1s</div>
+          <p class="cap">0.1s — small delay</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-amber tdly-base tdly-02s">0.2s</div>
+          <p class="cap">0.2s — noticeable delay</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-amber tdly-base tdly-100ms">100ms</div>
+          <p class="cap">100ms — milliseconds</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0s) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>transition</h2>
+      <p class="code">transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt;</p>
+      <p class="hint">Hover each box — the shorthand combines property, duration, timing and delay in one declaration.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo demo-red sh-base ts-all">all 0.3s ease</div>
+          <p class="cap">all 0.3s ease — everything, 0.3s</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-red sh-base ts-bg">bg 0.2s</div>
+          <p class="cap">background-color 0.2s ease-in-out</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-red sh-base ts-opacity">opacity</div>
+          <p class="cap">opacity 0.5s linear 0.1s — with delay</p>
+        </div>
+        <div class="cell">
+          <div class="demo demo-red sh-base ts-none">none</div>
+          <p class="cap">none — no transitions (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (all 0s ease 0s) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../21-cursor/index.html">&larr; Cursor</a>
+  <a class="pager-btn pager-next" href="../23-gradients-basics/index.html">Gradients Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

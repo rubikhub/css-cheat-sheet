@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>07 - Color Functions Basics</title>
+    <title>Color Functions Basics</title>
     <link rel="stylesheet" href="../../common.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -12,48 +12,176 @@
 
     <section>
       <h2>Named Colors</h2>
-      <div class="demo">
-        <div class="swatch named-red">red</div>
-        <div class="swatch named-blue">blue</div>
+      <p class="code">color: &lt;named-color&gt;</p>
+      <p class="hint">Named colors are words the browser already knows. The checkerboard shows transparency.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch" style="background: red"></div>
+          <p class="cap">red — #ff0000</p>
+        </div>
+        <div class="cell">
+          <div class="swatch" style="background: blue"></div>
+          <p class="cap">blue — #0000ff</p>
+        </div>
+        <div class="cell">
+          <div class="swatch" style="background: green"></div>
+          <p class="cap">green — #008000</p>
+        </div>
+        <div class="cell">
+          <div class="swatch" style="background: black"></div>
+          <p class="cap">black — #000000</p>
+        </div>
+        <div class="cell">
+          <div class="swatch" style="background: white"></div>
+          <p class="cap">white — #ffffff</p>
+        </div>
+        <div class="cell">
+          <div class="sw-wrap">
+            <div class="swatch" style="background: transparent"></div>
+          </div>
+          <p class="cap">transparent — fully transparent</p>
+        </div>
+        <div class="cell">
+          <div class="swatch" style="background: currentColor; color: #8b5cf6"></div>
+          <p class="cap">currentColor — matches the current text color</p>
+        </div>
       </div>
     </section>
 
     <section>
       <h2>Hex Colors</h2>
-      <div class="demo">
-        <div class="swatch hex6">#ff5733</div>
-        <div class="swatch hex3">#f00</div>
+      <p class="code">color: #RRGGBB | #RGB</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch" style="background: #ff5733"></div>
+          <p class="cap">#ff5733 — 6-digit hex (full)</p>
+        </div>
+        <div class="cell">
+          <div class="swatch" style="background: #f00"></div>
+          <p class="cap">#f00 — 3-digit hex (shorthand)</p>
+        </div>
+        <div class="cell">
+          <div class="sw-wrap">
+            <div class="swatch" style="background: #ff573380"></div>
+          </div>
+          <p class="cap">#ff573380 — 8-digit hex (with alpha)</p>
+        </div>
+        <div class="cell">
+          <div class="sw-wrap">
+            <div class="swatch" style="background: #f008"></div>
+          </div>
+          <p class="cap">#f008 — 4-digit hex (shorthand with alpha)</p>
+        </div>
       </div>
     </section>
 
     <section>
       <h2>RGB / RGBA</h2>
-      <div class="demo">
-        <div class="swatch rgb">rgb(0,128,0)</div>
-        <div class="swatch rgba">rgba(0,0,0,0.5)</div>
+      <p class="code">color: rgb(red, green, blue) | rgba(red, green, blue, alpha)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch" style="background: rgb(255, 0, 0)"></div>
+          <p class="cap">rgb(255, 0, 0) — pure red</p>
+        </div>
+        <div class="cell">
+          <div class="swatch" style="background: rgb(0, 128, 0)"></div>
+          <p class="cap">rgb(0, 128, 0) — green</p>
+        </div>
+        <div class="cell">
+          <div class="swatch" style="background: rgb(255, 255, 255)"></div>
+          <p class="cap">rgb(255, 255, 255) — white</p>
+        </div>
+        <div class="cell">
+          <div class="sw-wrap">
+            <div class="swatch" style="background: rgba(0, 0, 0, 0.5)"></div>
+          </div>
+          <p class="cap">rgba(0, 0, 0, 0.5) — black at 50% opacity</p>
+        </div>
+        <div class="cell">
+          <div class="swatch" style="background: rgb(0% 50% 100%)"></div>
+          <p class="cap">rgb(0% 50% 100%) — percentage values</p>
+        </div>
+        <div class="cell">
+          <div class="sw-wrap">
+            <div class="swatch" style="background: rgb(255 0 0 / 0.5)"></div>
+          </div>
+          <p class="cap">rgb(255 0 0 / 0.5) — modern space syntax</p>
+        </div>
       </div>
     </section>
 
     <section>
       <h2>HSL / HSLA</h2>
-      <div class="demo">
-        <div class="swatch hsl">hsl(210,100%,50%)</div>
-        <div class="swatch hsla">hsla(0,0%,0%,0.5)</div>
+      <p class="code">color: hsl(hue, saturation%, lightness%) | hsla(hue, saturation%, lightness%, alpha)</p>
+      <div class="row">
+        <div class="cell">
+          <div class="swatch" style="background: hsl(0, 100%, 50%)"></div>
+          <p class="cap">hsl(0, 100%, 50%) — pure red</p>
+        </div>
+        <div class="cell">
+          <div class="swatch" style="background: hsl(120, 100%, 50%)"></div>
+          <p class="cap">hsl(120, 100%, 50%) — pure green</p>
+        </div>
+        <div class="cell">
+          <div class="swatch" style="background: hsl(240, 100%, 50%)"></div>
+          <p class="cap">hsl(240, 100%, 50%) — pure blue</p>
+        </div>
+        <div class="cell">
+          <div class="sw-wrap">
+            <div class="swatch" style="background: hsla(0, 0%, 0%, 0.5)"></div>
+          </div>
+          <p class="cap">hsla(0, 0%, 0%, 0.5) — black with opacity</p>
+        </div>
+        <div class="cell">
+          <div class="swatch" style="background: hsl(200 50% 50%)"></div>
+          <p class="cap">hsl(200 50% 50%) — modern space syntax</p>
+        </div>
       </div>
     </section>
 
     <section>
       <h2>currentColor</h2>
-      <div class="demo">
-        <div class="current">Border matches text color via currentColor</div>
+      <p class="code">color: currentColor</p>
+      <p class="hint">currentColor is a keyword that resolves to the element's computed text color — change the text color once and borders, shadows, and gradients follow.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo cc-border">border</div>
+          <p class="cap">currentColor in border — matches text color</p>
+        </div>
+        <div class="cell">
+          <div class="demo cc-shadow">shadow</div>
+          <p class="cap">currentColor in box-shadow</p>
+        </div>
+        <div class="cell">
+          <div class="demo cc-gradient">gradient</div>
+          <p class="cap">currentColor in linear-gradient</p>
+        </div>
       </div>
     </section>
 
     <section>
       <h2>transparent</h2>
-      <div class="demo">
-        <button class="trans-btn">Hover me — transparent becomes solid</button>
+      <p class="code">background: transparent</p>
+      <div class="row">
+        <div class="cell">
+          <div class="tr-wrap">
+            <div class="demo tr-hover">hover me</div>
+          </div>
+          <p class="cap">background: transparent — fills in on hover</p>
+        </div>
+        <div class="cell">
+          <div class="sw-wrap">
+            <div class="swatch" style="background: transparent"></div>
+          </div>
+          <p class="cap">transparent — rgba(0, 0, 0, 0)</p>
+        </div>
       </div>
+      <p class="hint">Hover the first box to see the transparent background fill with white.</p>
     </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../06-combinators-basics/index.html">&larr; Combinators Basics</a>
+  <a class="pager-btn pager-next" href="../08-background-basics/index.html">Background Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
   </body>
 </html>

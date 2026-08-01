@@ -1,0 +1,182 @@
+/* ============================================================
+   Paged Media & Print — topic-specific rules.
+   The real @page setup lives here so the page prints nicely.
+   ============================================================ */
+
+/* print button */
+.print-btn {
+  margin: 0 0 16px;
+  padding: 8px 18px;
+  font: 600 0.85rem "Segoe UI", system-ui, sans-serif;
+  color: #fff;
+  background: #0f172a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.print-btn:hover { background: #1e293b; }
+
+/* on-screen preview cards describing print-only rules */
+.pc {
+  width: 200px;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1.5px dashed #94a3b8;
+  border-radius: 8px;
+  font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
+  font-size: 0.7rem;
+  color: #0f172a;
+  flex-shrink: 0;
+}
+
+/* keep this dark banner's colors on paper */
+.print-exact {
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+/* @media print demo: screen-only vs print-only */
+.screen-only {
+  width: 130px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+  background: #e2e8f0;
+  color: #334155;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
+.screen-ph {
+  width: 130px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+  border: 1.5px dashed #94a3b8;
+  color: #64748b;
+  font-size: 0.72rem;
+  border-radius: 6px;
+}
+.print-only {
+  display: none;
+}
+
+/* orphans / widows demo paragraph */
+.ow-demo {
+  width: 220px;
+  font-size: 0.75rem;
+  color: #334155;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px;
+  orphans: 3;
+  widows: 3;
+}
+
+/* running header title for string-set */
+h1 {
+  string-set: book-title content(text);
+}
+
+/* ============================================================
+   The real print setup — apply @page so this example prints nicely.
+   ============================================================ */
+@page {
+  margin: 1.4cm;
+  size: A4;
+  @top-center {
+    content: string(book-title);
+    font-size: 9pt;
+    color: #64748b;
+  }
+  @bottom-center {
+    content: counter(page) " / " counter(pages);
+    font-size: 9pt;
+    color: #64748b;
+  }
+}
+
+@page :first {
+  margin-top: 2.6cm;
+}
+
+@page :left {
+  margin-left: 2.6cm;
+  margin-right: 1.4cm;
+}
+
+@page :right {
+  margin-right: 2.6cm;
+  margin-left: 1.4cm;
+}
+
+@page cover {
+  size: A4 landscape;
+  margin: 1cm;
+}
+
+@media print {
+  body {
+    background: #fff;
+    max-width: none;
+    padding: 0;
+  }
+  section {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+  h1,
+  h2 {
+    break-after: avoid;
+  }
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  .print-btn,
+  .hint {
+    display: none;
+  }
+  .demo,
+  .swatch,
+  .pc {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .screen-only,
+  .screen-ph {
+    display: none;
+  }
+  .print-only {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 130px;
+    height: 70px;
+    padding: 8px;
+    background: #0f766e;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    border-radius: 6px;
+  }
+  .break-section {
+    break-before: page;
+  }
+  .cover-page {
+    page: cover;
+  }
+}

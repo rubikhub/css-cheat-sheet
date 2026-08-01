@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attribute Selectors</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Attribute Selectors</h1>
+
+    <section>
+      <h2>[attr] — presence</h2>
+      <p class="code">[attr]</p>
+      <div class="row">
+        <div class="cell">
+          <p class="sample"><span title="hello">title attribute</span></p>
+          <p class="cap">[title] — any element with a title</p>
+        </div>
+        <div class="cell">
+          <p class="sample"><span data-tag="hot">data-tag</span></p>
+          <p class="cap">[data-tag] — any data attribute</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>[attr~="value"] — word in a list</h2>
+      <p class="code">[attr~="value"]</p>
+      <p class="hint">Each chip has a class token list — only chips containing the matching word light up.</p>
+      <div class="row">
+        <div class="cell">
+          <span class="chip tokens highlight">highlight</span>
+          <p class="cap">[class~="highlight"] matches</p>
+        </div>
+        <div class="cell">
+          <span class="chip tokens active">active</span>
+          <p class="cap">[class~="active"] matches</p>
+        </div>
+        <div class="cell">
+          <span class="chip tokens primary">primary</span>
+          <p class="cap">[class~="primary"] matches</p>
+        </div>
+        <div class="cell">
+          <span class="chip tokens muted">muted</span>
+          <p class="cap">[class~="muted"] — no rule</p>
+        </div>
+      </div>
+      <p class="note">Matches only a whole word in a space-separated list — not a substring.</p>
+    </section>
+
+    <section>
+      <h2>[attr|="value"] — value or value- prefix</h2>
+      <p class="code">[attr|="value"]</p>
+      <div class="row">
+        <div class="cell">
+          <a class="link" href="#en" hreflang="en">hreflang="en"</a>
+          <p class="cap">[hreflang|="en"] matches</p>
+        </div>
+        <div class="cell">
+          <a class="link" href="#en-us" hreflang="en-US">hreflang="en-US"</a>
+          <p class="cap">en-US also matches (hyphenated)</p>
+        </div>
+        <div class="cell">
+          <a class="link" href="#fr" hreflang="fr">hreflang="fr"</a>
+          <p class="cap">[hreflang|="fr"] matches</p>
+        </div>
+        <div class="cell">
+          <a class="link" href="#zh-cn" hreflang="zh-CN">hreflang="zh-CN"</a>
+          <p class="cap">[data-lang|="zh"] matches via data-lang</p>
+        </div>
+      </div>
+      <p class="note">Matches exact value or value followed by a hyphen (language + region).</p>
+    </section>
+
+    <section>
+      <h2>[attr^="value"] — starts with</h2>
+      <p class="code">[attr^="value"]</p>
+      <div class="row">
+        <div class="cell">
+          <a class="link" href="https://example.com">https://example.com</a>
+          <p class="cap">[href^="https"] matches</p>
+        </div>
+        <div class="cell">
+          <a class="link" href="http://example.com">http://example.com</a>
+          <p class="cap">[href^="http"] matches</p>
+        </div>
+        <div class="cell">
+          <span class="chip user-42">user-42</span>
+          <p class="cap">[data-id^="user-"] matches</p>
+        </div>
+        <div class="cell">
+          <span class="chip admin-1">admin-1</span>
+          <p class="cap">[data-id^="user-"] no match</p>
+        </div>
+      </div>
+      <p class="note">Useful for secure links, prefixes, and grouped ids.</p>
+    </section>
+
+    <section>
+      <h2>[attr$="value"] — ends with</h2>
+      <p class="code">[attr$="value"]</p>
+      <div class="row">
+        <div class="cell">
+          <a class="link" href="manual.pdf">manual.pdf</a>
+          <p class="cap">[href$=".pdf"] matches</p>
+        </div>
+        <div class="cell">
+          <a class="link" href="archive.zip">archive.zip</a>
+          <p class="cap">[href$=".zip"] matches</p>
+        </div>
+        <div class="cell">
+          <span class="chip photo.jpg">photo.jpg</span>
+          <p class="cap">[data-file$=".jpg"] matches</p>
+        </div>
+        <div class="cell">
+          <span class="chip photo.png">photo.png</span>
+          <p class="cap">[data-file$=".png"] matches</p>
+        </div>
+      </div>
+      <p class="note">Useful for styling links and assets by file type.</p>
+    </section>
+
+    <section>
+      <h2>[attr*="value"] — contains substring</h2>
+      <p class="code">[attr*="value"]</p>
+      <div class="row">
+        <div class="cell">
+          <a class="link" href="https://example.com">example.com</a>
+          <p class="cap">[href*="example"] matches</p>
+        </div>
+        <div class="cell">
+          <span class="chip btn-primary">btn-primary</span>
+          <p class="cap">[class*="btn"] matches</p>
+        </div>
+        <div class="cell">
+          <span class="chip avatar-small">avatar-small</span>
+          <p class="cap">[src*="avatar"] matches</p>
+        </div>
+        <div class="cell">
+          <span class="chip menu-item">menu-item</span>
+          <p class="cap">[data-name*="admin"] no match</p>
+        </div>
+      </div>
+      <p class="note">Matches the substring anywhere in the attribute value.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../../beginner/25-css-units-basics/index.html">&larr; Beginner: CSS Units Basics</a>
+  <a class="pager-btn pager-next" href="../02-logic-matching-selectors/index.html">Logic Matching Selectors &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

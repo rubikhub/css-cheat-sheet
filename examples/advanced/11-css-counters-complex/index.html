@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Counters — Complex Patterns</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Counters — Complex Patterns</h1>
+
+    <section>
+      <h2>counter-set</h2>
+      <p class="code">counter-set: &lt;name&gt; &lt;value&gt; | none</p>
+      <p class="hint">counter-set assigns a value immediately without incrementing — the following items then continue from it.</p>
+      <div class="row">
+        <div class="cell">
+          <ol class="list cs0">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">myCounter 0 — set counter to 0</p>
+        </div>
+        <div class="cell">
+          <ol class="list cs5">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">myCounter 5 — set counter to 5</p>
+        </div>
+        <div class="cell">
+          <ol class="list cs-multi">
+            <li>Alpha</li>
+            <li>Beta</li>
+            <li>Gamma</li>
+          </ol>
+          <p class="cap">a 0 b 0 — set multiple counters at once</p>
+        </div>
+        <div class="cell">
+          <ol class="list cs-none">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">none — no counter set (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>counter-reset</h2>
+      <p class="code">counter-reset: &lt;name&gt; &lt;start&gt; | none</p>
+      <p class="hint">counter-reset creates or resets a counter; the first increment then starts from the reset value.</p>
+      <div class="row">
+        <div class="cell">
+          <ol class="list cr-section">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">section — reset counter to 0</p>
+        </div>
+        <div class="cell">
+          <ol class="list cr-chap">
+            <li>Chapter
+              <ol class="list">
+                <li>Intro</li>
+                <li>Details</li>
+                <li>Summary</li>
+              </ol>
+            </li>
+            <li>Chapter
+              <ol class="list">
+                <li>Intro</li>
+                <li>Details</li>
+              </ol>
+            </li>
+          </ol>
+          <p class="cap">chapter figure — reset multiple counters</p>
+        </div>
+        <div class="cell">
+          <ol class="list cr5">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">myCounter 5 — start at 5</p>
+        </div>
+        <div class="cell">
+          <ol class="list cr-none">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">none — no counter reset (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>counter-increment</h2>
+      <p class="code">counter-increment: &lt;name&gt; &lt;step&gt;</p>
+      <p class="hint">counter-increment advances a counter by a step, which may be negative.</p>
+      <div class="row">
+        <div class="cell">
+          <ol class="list ci-section">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+          </ol>
+          <p class="cap">section — increment by 1</p>
+        </div>
+        <div class="cell">
+          <ol class="list ci-figure">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+          </ol>
+          <p class="cap">figure — increment by 1</p>
+        </div>
+        <div class="cell">
+          <ol class="list ci-2">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">myCounter 2 — increment by 2</p>
+        </div>
+        <div class="cell">
+          <ol class="list ci-neg">
+            <li>Top</li>
+            <li>Middle</li>
+            <li>Bottom</li>
+          </ol>
+          <p class="cap">myCounter -1 — increment by -1 (counts down)</p>
+        </div>
+        <div class="cell">
+          <ol class="list ci-none">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">none — no counter increment (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>content: counter()</h2>
+      <p class="code">content: counter(&lt;name&gt;, &lt;style&gt;)</p>
+      <p class="hint">counter() renders one counter; counters() joins a nested stack with a separator.</p>
+      <div class="row">
+        <div class="cell">
+          <ol class="list ct-decimal">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">counter(section) — decimal number</p>
+        </div>
+        <div class="cell">
+          <ol class="list ct-punct">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">counter(section) ". " — number with punctuation</p>
+        </div>
+        <div class="cell">
+          <ol class="list ct-zero">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">counter(entry, decimal-leading-zero) — zero-padded number</p>
+        </div>
+        <div class="cell">
+          <ol class="list ct-combined">
+            <li>Chapter
+              <ol class="list">
+                <li>Intro</li>
+                <li>Details</li>
+              </ol>
+            </li>
+            <li>Chapter
+              <ol class="list">
+                <li>Intro</li>
+                <li>Details</li>
+              </ol>
+            </li>
+          </ol>
+          <p class="cap">counter(chapter) "." counter(figure) — combined counters</p>
+        </div>
+        <div class="cell">
+          <ol class="list ct-roman">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">counter(item, upper-roman) — roman numeral style</p>
+        </div>
+        <div class="cell">
+          <ol class="list ct-counters">
+            <li>Level one
+              <ol class="list">
+                <li>Level two
+                  <ol class="list">
+                    <li>Level three</li>
+                  </ol>
+                </li>
+                <li>Sibling</li>
+              </ol>
+            </li>
+          </ol>
+          <p class="cap">counters(part, ".") — joins nested counters with a separator</p>
+        </div>
+        <div class="cell">
+          <ol class="list ct-marker">
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+          </ol>
+          <p class="cap">counter() inside ::marker — custom list markers</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../10-border-image-and-caret/index.html">&larr; Border Image & Caret Color</a>
+  <a class="pager-btn pager-next" href="../12-subgrid/index.html">Subgrid & Named Grid Lines &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

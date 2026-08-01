@@ -1,0 +1,46 @@
+/* shared text-decoration demo */
+.td-line {
+  margin: 6px 0;
+  padding: 6px 8px;
+  font-size: 1.15rem;
+}
+
+/* text-decoration (shorthand) */
+.td-none { text-decoration: none; }
+.td-underline { text-decoration: underline; }
+.td-overline { text-decoration: overline; }
+.td-through { text-decoration: line-through; }
+.td-wavy { text-decoration: underline wavy red; }
+.td-dotted { text-decoration: underline dotted; }
+
+/* text-decoration-line */
+.tdl-none { text-decoration-line: none; }
+.tdl-underline { text-decoration-line: underline; }
+.tdl-overline { text-decoration-line: overline; }
+.tdl-through { text-decoration-line: line-through; }
+.tdl-both { text-decoration-line: underline overline; }
+
+/* text-decoration-style */
+.tds-solid { text-decoration-line: underline; text-decoration-style: solid; }
+.tds-dashed { text-decoration-line: underline; text-decoration-style: dashed; }
+.tds-dotted { text-decoration-line: underline; text-decoration-style: dotted; }
+.tds-double { text-decoration-line: underline; text-decoration-style: double; }
+.tds-wavy { text-decoration-line: underline; text-decoration-style: wavy; }
+
+/* text-decoration-color */
+.tdc-current { text-decoration-line: underline; text-decoration-color: currentColor; }
+.tdc-red { text-decoration-line: underline; text-decoration-color: red; }
+.tdc-hex { text-decoration-line: underline; text-decoration-color: #a3a3a3; }
+
+/* text-decoration-thickness */
+.tdt-auto { text-decoration-line: underline; text-decoration-thickness: auto; }
+.tdt-from-font { text-decoration-line: underline; text-decoration-thickness: from-font; }
+.tdt-1 { text-decoration-line: underline; text-decoration-thickness: 1px; }
+.tdt-3 { text-decoration-line: underline; text-decoration-thickness: 3px; }
+
+/* text-underline-offset */
+.tuo-auto { text-decoration-line: underline; text-underline-offset: auto; }
+.tuo-from-font { text-decoration-line: underline; text-underline-offset: from-font; }
+.tuo-1 { text-decoration-line: underline; text-underline-offset: 1px; }
+.tuo-4 { text-decoration-line: underline; text-underline-offset: 4px; }
+.tuo-8 { text-decoration-line: underline; text-underline-offset: 8px; }

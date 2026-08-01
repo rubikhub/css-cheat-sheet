@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positioning Basics</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Positioning Basics</h1>
+
+    <section>
+      <h2>position</h2>
+      <p class="code">position: static | relative | absolute | fixed | sticky</p>
+      <div class="row">
+        <div class="cell">
+          <div class="p-stage">
+            <div class="box pos-static demo-slate">static</div>
+          </div>
+          <p class="cap">static — default, follows normal flow</p>
+        </div>
+        <div class="cell">
+          <div class="p-stage">
+            <div class="box pos-rel demo-blue">relative</div>
+          </div>
+          <p class="cap">relative — shifted from its normal spot</p>
+        </div>
+        <div class="cell">
+          <div class="p-stage">
+            <div class="box pos-abs demo-green">absolute</div>
+          </div>
+          <p class="cap">absolute — relative to nearest positioned ancestor</p>
+        </div>
+        <div class="cell">
+          <div class="box pos-fixed demo-amber">fixed</div>
+          <p class="cap">fixed — relative to the viewport (bottom-right)</p>
+        </div>
+        <div class="cell">
+          <div class="scroll-stage">
+            <div class="sticky-head demo-blue">sticky header</div>
+            <p>Scroll inside the box. This bar sticks to the top while the text moves underneath.</p>
+            <p>More content below, keeping the stage tall enough to scroll.</p>
+            <p>Even more filler text so the scrollable area has real length to travel through.</p>
+          </div>
+          <p class="cap">sticky — toggles between relative and fixed on scroll</p>
+        </div>
+      </div>
+      <p class="hint">Hover over the sticky demo and scroll inside the dashed box to see the bar stick to the top.</p>
+      <p class="note">Global keywords also apply: inherit · initial (static) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>top / right / bottom / left</h2>
+      <p class="code">top: &lt;length&gt; | &lt;percentage&gt; | auto</p>
+      <div class="row">
+        <div class="cell">
+          <div class="p-stage">
+            <div class="box off-auto demo-blue">auto</div>
+          </div>
+          <p class="cap">auto — no offset (default), stays at static spot</p>
+        </div>
+        <div class="cell">
+          <div class="p-stage">
+            <div class="box off-10 demo-green">10px</div>
+          </div>
+          <p class="cap">10px — pixel offset from top-left</p>
+        </div>
+        <div class="cell">
+          <div class="p-stage">
+            <div class="box off-2em demo-amber">2em</div>
+          </div>
+          <p class="cap">2em — em-based offset</p>
+        </div>
+        <div class="cell">
+          <div class="p-stage">
+            <div class="box off-50 demo-purple">50%</div>
+          </div>
+          <p class="cap">50% — percentage of containing block</p>
+        </div>
+        <div class="cell">
+          <div class="p-stage">
+            <div class="box off-0 demo-red">0</div>
+          </div>
+          <p class="cap">0 — flush with the edge</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>z-index</h2>
+      <p class="code">z-index: &lt;integer&gt; | auto</p>
+      <div class="row">
+        <div class="cell">
+          <div class="p-stage">
+            <div class="z-box z-a demo-blue">auto</div>
+            <div class="z-box z-b demo-green">auto</div>
+          </div>
+          <p class="cap">auto — DOM order decides (later wins)</p>
+        </div>
+        <div class="cell">
+          <div class="p-stage">
+            <div class="z-box z-a demo-blue">auto</div>
+            <div class="z-box z-b z-1 demo-green">1</div>
+          </div>
+          <p class="cap">1 — above auto siblings</p>
+        </div>
+        <div class="cell">
+          <div class="p-stage">
+            <div class="z-box z-c demo-slate">0</div>
+            <div class="z-box z-d demo-red">auto</div>
+            <div class="z-box z-e z-high demo-pink">9999</div>
+          </div>
+          <p class="cap">9999 — far above everything</p>
+        </div>
+        <div class="cell">
+          <div class="p-stage">
+            <div class="z-box z-a demo-blue">auto</div>
+            <div class="z-box z-b z-neg demo-red">-1</div>
+          </div>
+          <p class="cap">-1 — behind other elements</p>
+        </div>
+        <div class="cell">
+          <div class="p-stage">
+            <div class="z-box z-a z-0 demo-blue">0</div>
+            <div class="z-box z-b z-0 demo-green">0</div>
+          </div>
+          <p class="cap">0 — base level, later DOM wins</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>float</h2>
+      <p class="code">float: none | left | right | inline-start | inline-end</p>
+      <div class="row">
+        <div class="cell">
+          <div class="f-wrap">
+            <div class="f-box f-none demo-slate">none</div>
+            <p>The box sits in normal flow and the text below it, so nothing wraps around it.</p>
+          </div>
+          <p class="cap">none — element is not floated (default)</p>
+        </div>
+        <div class="cell">
+          <div class="f-wrap">
+            <div class="f-box f-left demo-blue">left</div>
+            <p>The box floats to the left and this paragraph text wraps around it neatly.</p>
+          </div>
+          <p class="cap">left — element floats to the left</p>
+        </div>
+        <div class="cell">
+          <div class="f-wrap">
+            <div class="f-box f-right demo-green">right</div>
+            <p>The box floats to the right and this paragraph text wraps around it neatly.</p>
+          </div>
+          <p class="cap">right — element floats to the right</p>
+        </div>
+        <div class="cell">
+          <div class="f-wrap">
+            <div class="f-box f-inline-start demo-purple">start</div>
+            <p>Inline-start means left in LTR, so this text wraps to the right of the box.</p>
+          </div>
+          <p class="cap">inline-start — floats to start of inline direction (left in LTR)</p>
+        </div>
+        <div class="cell">
+          <div class="f-wrap">
+            <div class="f-box f-inline-end demo-teal">end</div>
+            <p>Inline-end means right in LTR, so this text wraps to the left of the box.</p>
+          </div>
+          <p class="cap">inline-end — floats to end of inline direction (right in LTR)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>clear</h2>
+      <p class="code">clear: none | left | right | both | inline-start | inline-end</p>
+      <div class="row">
+        <div class="cell">
+          <div class="c-wrap">
+            <div class="f-box f-left demo-blue">L</div>
+            <div class="c-box cl-none">none</div>
+            <p>Not cleared, so it sits beside the left float.</p>
+          </div>
+          <p class="cap">none — allows floats on both sides (default)</p>
+        </div>
+        <div class="cell">
+          <div class="c-wrap">
+            <div class="f-box f-left demo-blue">L</div>
+            <div class="c-box cl-left demo-green">left</div>
+            <p>Cleared left, so it drops below the float.</p>
+          </div>
+          <p class="cap">left — clears left floats</p>
+        </div>
+        <div class="cell">
+          <div class="c-wrap">
+            <div class="f-box f-left demo-blue">L</div>
+            <div class="c-box cl-right demo-amber">right</div>
+            <p>Only clears right floats, so it stays beside this left float.</p>
+          </div>
+          <p class="cap">right — clears right floats only</p>
+        </div>
+        <div class="cell">
+          <div class="c-wrap">
+            <div class="f-box f-left demo-blue">L</div>
+            <div class="c-box cl-both demo-red">both</div>
+            <p>Cleared on both sides, so it drops below the float.</p>
+          </div>
+          <p class="cap">both — clears both left and right floats</p>
+        </div>
+        <div class="cell">
+          <div class="c-wrap">
+            <div class="f-box f-left demo-blue">L</div>
+            <div class="c-box cl-inline-start demo-purple">start</div>
+            <p>Clears start-side floats (left in LTR), so it drops below.</p>
+          </div>
+          <p class="cap">inline-start — clears start-side floats</p>
+        </div>
+        <div class="cell">
+          <div class="c-wrap">
+            <div class="f-box f-left demo-blue">L</div>
+            <div class="c-box cl-inline-end demo-teal">end</div>
+            <p>Only clears end-side floats (right in LTR), so it stays beside this left float.</p>
+          </div>
+          <p class="cap">inline-end — clears end-side floats</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../13-display-basics/index.html">&larr; Display Basics</a>
+  <a class="pager-btn pager-next" href="../15-flexbox-basics/index.html">Flexbox Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

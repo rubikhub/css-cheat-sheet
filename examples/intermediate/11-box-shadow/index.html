@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Shadows</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Box Shadows</h1>
+
+    <section>
+      <h2>box-shadow</h2>
+      <p class="code">box-shadow: none | &lt;offset-x&gt; &lt;offset-y&gt; &lt;blur&gt; &lt;spread&gt; &lt;color&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bx-1">single</div>
+          <p class="cap">0 4px 6px rgba(108, 92, 231, 0.4) — single shadow</p>
+        </div>
+        <div class="cell">
+          <div class="demo bx-2">layered</div>
+          <p class="cap">0 4px 6px + 0 12px 24px — layered shadows</p>
+        </div>
+        <div class="cell">
+          <div class="demo bx-none">none</div>
+          <p class="cap">none — no shadow (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo bx-hover">hover</div>
+          <p class="cap">:hover — raise the box</p>
+        </div>
+      </div>
+      <p class="hint">Hover the raised box to see the shadow grow.</p>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>box-shadow: inset</h2>
+      <p class="code">box-shadow: inset &lt;offset-x&gt; &lt;offset-y&gt; &lt;blur&gt; &lt;spread&gt; &lt;color&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bi-in">inner</div>
+          <p class="cap">inset 0 2px 8px rgba(0, 0, 0, 0.6) — inner shadow</p>
+        </div>
+        <div class="cell">
+          <div class="demo bi-combo">combo</div>
+          <p class="cap">inner + outer shadows combined</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../10-border-radius/index.html">&larr; Border Radius</a>
+  <a class="pager-btn pager-next" href="../12-counters-and-markers/index.html">Counters & Markers &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

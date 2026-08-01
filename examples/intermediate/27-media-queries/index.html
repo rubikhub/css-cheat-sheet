@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Queries</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Media Queries</h1>
+
+    <section>
+      <h2>@media &amp; Media Types</h2>
+      <p class="code">@media &lt;media-type&gt; and (&lt;media-feature&gt;) { ... }</p>
+      <p class="hint">Resize the window — the grid reflows and the gauges below read the current state via CSS content.</p>
+      <div class="grid">
+        <div class="g-item demo-blue">1</div>
+        <div class="g-item demo-green">2</div>
+        <div class="g-item demo-amber">3</div>
+        <div class="g-item demo-purple">4</div>
+        <div class="g-item demo-teal">5</div>
+        <div class="g-item demo-pink">6</div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <span class="ind mt-all"></span>
+          <p class="cap">all — matches every device (default)</p>
+        </div>
+        <div class="cell">
+          <span class="ind mt-screen"></span>
+          <p class="cap">screen — matches screen-based devices</p>
+        </div>
+        <div class="cell">
+          <span class="ind mt-print"></span>
+          <p class="cap">print — matches only while printing (try Ctrl+P)</p>
+        </div>
+        <div class="cell">
+          <span class="ind mt-max"></span>
+          <p class="cap">@media (max-width: 768px)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Media Features</h2>
+      <p class="code">@media (&lt;feature&gt;: &lt;value&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <span class="ind wf"></span>
+          <p class="cap">width / min-width / max-width — the grid reflows at 600px</p>
+        </div>
+        <div class="cell">
+          <span class="ind hf"></span>
+          <div class="hbox demo-green">h</div>
+          <p class="cap">height / min-height — box grows above 700px-tall windows</p>
+        </div>
+        <div class="cell">
+          <span class="ind ori"></span>
+          <div class="oribox demo-blue"></div>
+          <p class="cap">orientation — box is wide (landscape) or tall (portrait)</p>
+        </div>
+        <div class="cell">
+          <span class="ind ar"></span>
+          <p class="cap">aspect-ratio — e.g. 16/9</p>
+        </div>
+        <div class="cell">
+          <span class="ind dpr"></span>
+          <p class="cap">resolution — device pixel density, e.g. 2dppx</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Range Syntax</h2>
+      <p class="code">@media (min-width &lt;= width &lt;= max-width)</p>
+      <p class="hint">Modern range syntax without min-/max- prefixes. The gauges read the window width, not the card — resize the browser.</p>
+      <div class="row">
+        <div class="cell">
+          <span class="ind r-mid"></span>
+          <p class="cap">(400px &lt;= width &lt;= 700px) — between 400 and 700px</p>
+        </div>
+        <div class="cell">
+          <span class="ind r-ge"></span>
+          <p class="cap">(width &gt;= 600px) — same as min-width: 600px</p>
+        </div>
+        <div class="cell">
+          <span class="ind r-lt"></span>
+          <p class="cap">(width &lt; 1000px) — narrower than 1000px</p>
+        </div>
+        <div class="cell">
+          <span class="ind r-gt"></span>
+          <p class="cap">(600px &lt; width) — wider than 600px</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Logical Operators</h2>
+      <p class="code">@media &lt;condition&gt; and &lt;condition&gt; | @media or | not &lt;condition&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <span class="ind l-and"></span>
+          <p class="cap">and — all conditions must match (wide AND landscape)</p>
+        </div>
+        <div class="cell">
+          <span class="ind l-or"></span>
+          <p class="cap">or — any condition can match</p>
+        </div>
+        <div class="cell">
+          <span class="ind l-not"></span>
+          <p class="cap">not — negates the whole query</p>
+        </div>
+        <div class="cell">
+          <span class="ind l-comma"></span>
+          <p class="cap">, — comma list acts like or</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Interaction Features</h2>
+      <p class="code">@media (hover: none) | (pointer: coarse)</p>
+      <div class="row">
+        <div class="cell">
+          <span class="ind i-hover"></span>
+          <div class="hovcard demo-teal">Hover me</div>
+          <p class="cap">hover — can the primary input hover? Card lifts only when (hover: hover)</p>
+        </div>
+        <div class="cell">
+          <span class="ind i-ah"></span>
+          <p class="cap">any-hover — can any input hover?</p>
+        </div>
+        <div class="cell">
+          <span class="ind i-ptr"></span>
+          <p class="cap">pointer — accuracy of the primary pointer: fine / coarse / none</p>
+        </div>
+        <div class="cell">
+          <span class="ind i-ap"></span>
+          <p class="cap">any-pointer — accuracy of any pointer</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>User Preference Queries</h2>
+      <p class="code">@media (prefers-color-scheme: light | dark)</p>
+      <p class="hint">These reflect your OS settings — toggle dark mode / reduced motion in your system preferences to see them change.</p>
+      <div class="row">
+        <div class="cell">
+          <span class="ind p-scheme"></span>
+          <div class="theme-card">Light or dark?</div>
+          <p class="cap">prefers-color-scheme — the card restyles itself</p>
+        </div>
+        <div class="cell">
+          <span class="ind p-motion"></span>
+          <div class="motbox demo-purple">bounce</div>
+          <p class="cap">prefers-reduced-motion — the box stops bouncing when reduce is set</p>
+        </div>
+        <div class="cell">
+          <span class="ind p-contrast"></span>
+          <p class="cap">prefers-contrast — no-preference | more | less</p>
+        </div>
+        <div class="cell">
+          <span class="ind p-trans"></span>
+          <p class="cap">prefers-reduced-transparency — no-preference | reduce</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Display &amp; Device Features</h2>
+      <p class="code">@media (color-gamut: srgb | p3 | rec2020)</p>
+      <p class="hint">Read-only gauges reporting your current display capabilities.</p>
+      <div class="row">
+        <div class="cell">
+          <span class="ind d-gamut"></span>
+          <p class="cap">color-gamut — display color range</p>
+        </div>
+        <div class="cell">
+          <span class="ind d-dyn"></span>
+          <p class="cap">dynamic-range — standard | high (HDR)</p>
+        </div>
+        <div class="cell">
+          <span class="ind d-upd"></span>
+          <p class="cap">update — none | slow | fast refresh</p>
+        </div>
+        <div class="cell">
+          <span class="ind d-scr"></span>
+          <p class="cap">scripting — JS availability</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Additional Preference Features</h2>
+      <p class="code">@media (forced-colors: none | active)</p>
+      <div class="row">
+        <div class="cell">
+          <span class="ind a-fc"></span>
+          <div class="fc-btn">Button</div>
+          <p class="cap">forced-colors — High Contrast mode: the button border uses ButtonText</p>
+        </div>
+        <div class="cell">
+          <span class="ind a-ll"></span>
+          <p class="cap">light-level — ambient light: dim | normal | washed</p>
+        </div>
+        <div class="cell">
+          <span class="ind a-ic"></span>
+          <p class="cap">inverted-colors — none | inverted</p>
+        </div>
+        <div class="cell">
+          <span class="ind a-rd"></span>
+          <p class="cap">prefers-reduced-data — no-preference | reduce</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../26-nesting/index.html">&larr; Nesting</a>
+  <a class="pager-btn pager-next" href="../28-css-shapes/index.html">CSS Shapes &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

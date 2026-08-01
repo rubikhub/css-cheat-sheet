@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Transitions</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>View Transitions</h1>
+
+    <section>
+      <h2>::view-transition</h2>
+      <p class="code">::view-transition { position: fixed; inset: 0; }</p>
+      <p class="hint">The root pseudo-element wraps every snapshot in a fixed, full-viewport layer. Tick the checkbox to overlay the "page".</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="vt-r" class="trigger" />
+          <label for="vt-r" class="run-btn">Toggle overlay</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-root">::view-transition</div>
+          </div>
+          <p class="cap">::view-transition — the root transition container</p>
+        </div>
+      </div>
+      <p class="note">These pseudo-elements exist only while a transition runs — started by startViewTransition() or enabled navigation. The checkboxes simulate that moment; inspect a real transition in DevTools to see the pseudo-elements.</p>
+    </section>
+
+    <section>
+      <h2>::view-transition-group()</h2>
+      <p class="code">::view-transition-group(&lt;name&gt;) { animation-duration: 0.5s; }</p>
+      <p class="hint">Each named element becomes a transition group. Tick "Run" — the hero group animates slowly (0.5s) while the page group animates faster (0.3s).</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="vt-g1" class="trigger" />
+          <label for="vt-g1" class="run-btn">Run</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-snap vt-group-hero">hero</div>
+          </div>
+          <p class="cap">::view-transition-group(hero) — animates at 0.5s</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="vt-g2" class="trigger" />
+          <label for="vt-g2" class="run-btn">Run</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-snap vt-group-page">page</div>
+          </div>
+          <p class="cap">::view-transition-group(page) — animates at 0.3s</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::view-transition-image-pair()</h2>
+      <p class="code">::view-transition-image-pair(&lt;name&gt;) { mix-blend-mode: normal; }</p>
+      <p class="hint">The image pair layers the old and new snapshot of a group. Tick "Run" — the old snapshot fades out while the new one fades in on top.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="vt-p" class="trigger" />
+          <label for="vt-p" class="run-btn">Run</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-snap vt-old-snap">old</div>
+            <div class="vt-snap vt-new-snap">new</div>
+          </div>
+          <p class="cap">::view-transition-image-pair(hero) — the old and new state pair</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::view-transition-old()</h2>
+      <p class="code">::view-transition-old(&lt;name&gt;) { animation: fade-out 0.3s ease; }</p>
+      <p class="hint">The old pseudo-element holds the outgoing snapshot. Tick "Run" and the old hero fades out.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="vt-o" class="trigger" />
+          <label for="vt-o" class="run-btn">Run</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-snap vt-old-snap">old hero</div>
+          </div>
+          <p class="cap">::view-transition-old(hero) — the outgoing hero snapshot</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>::view-transition-new()</h2>
+      <p class="code">::view-transition-new(&lt;name&gt;) { animation: fade-in 0.3s ease; }</p>
+      <p class="hint">The new pseudo-element holds the incoming snapshot. Tick "Run" and the new hero fades in.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="vt-n" class="trigger" />
+          <label for="vt-n" class="run-btn">Run</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-snap vt-new-snap">new hero</div>
+          </div>
+          <p class="cap">::view-transition-new(hero) — the incoming hero snapshot</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>@view-transition</h2>
+      <p class="code">@view-transition { navigation: auto; }</p>
+      <p class="hint">The at-rule opts navigations into view transitions. Tick each checkbox to simulate its navigation scope.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="vt-nav1" class="trigger" />
+          <label for="vt-nav1" class="run-btn">Navigate</label>
+          <div class="vt-frame">
+            <div class="vt-page">A</div>
+            <div class="vt-snap vt-b">B</div>
+          </div>
+          <p class="cap">navigation: auto — enable transitions for navigation</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="vt-nav2" class="trigger" />
+          <label for="vt-nav2" class="run-btn">Navigate</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-snap vt-sec">section</div>
+          </div>
+          <p class="cap">navigation: same-document — same-document navigation only</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="vt-nav3" class="trigger" />
+          <label for="vt-nav3" class="run-btn">Navigate</label>
+          <div class="vt-frame">
+            <div class="vt-page">A</div>
+            <div class="vt-snap vt-b">B</div>
+          </div>
+          <p class="cap">navigation: none — disable transitions (instant swap)</p>
+        </div>
+      </div>
+      <p class="note">Requires the View Transition API. Until a transition is running — via startViewTransition() or same-origin navigation — the at-rule has no visible effect, so the demos simulate it with checkboxes.</p>
+    </section>
+
+    <section>
+      <h2>view-transition-name</h2>
+      <p class="code">view-transition-name: none | &lt;custom-ident&gt;</p>
+      <p class="hint">Assigns an element to a named group. Tick "Switch page" — an unnamed element snaps instantly, while the named hero morphs to its new state.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="vt-n1" class="trigger" />
+          <label for="vt-n1" class="run-btn">Switch page</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-snap vt-noname">no name</div>
+          </div>
+          <p class="cap">none — element takes no part in transitions (default)</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="vt-n2" class="trigger" />
+          <label for="vt-n2" class="run-btn">Switch page</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-snap vt-hero-name">hero</div>
+          </div>
+          <p class="cap">hero — name a group to animate separately</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>view-transition-class</h2>
+      <p class="code">view-transition-class: none | &lt;custom-ident&gt;*</p>
+      <p class="hint">Shares one class across several groups so a single rule animates them all. Tick "Animate" on each cell to compare.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="vt-c1" class="trigger" />
+          <label for="vt-c1" class="run-btn">Animate</label>
+          <div class="vt-frame">
+            <div class="vt-mini vt-card-a">a</div>
+            <div class="vt-mini vt-card-b">b</div>
+            <div class="vt-mini vt-card-c">c</div>
+          </div>
+          <p class="cap">card — group several elements under one class</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="vt-c2" class="trigger" />
+          <label for="vt-c2" class="run-btn">Animate</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-mini vt-no-class">a</div>
+          </div>
+          <p class="cap">none — no class (default)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>:active-view-transition</h2>
+      <p class="code">:active-view-transition { cursor: progress; }</p>
+      <p class="hint">Matches the transition root while it runs. Tick "Run" — the root gets a highlight ring and progress cursor, and live snapshots gain a shadow.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="vt-a1" class="trigger" />
+          <label for="vt-a1" class="run-btn">Run</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-snap vt-old-snap">old</div>
+          </div>
+          <p class="cap">:active-view-transition — the running transition root</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="vt-a2" class="trigger" />
+          <label for="vt-a2" class="run-btn">Run</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-snap vt-shadow-snap">snap</div>
+          </div>
+          <p class="cap">:active-view-transition::view-transition-group(*) &gt; ::view-transition-image-pair(*) — style active snapshots</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>:active-view-transition-type()</h2>
+      <p class="code">:active-view-transition-type(back)::view-transition-old(root) { animation-name: slide-out-right; }</p>
+      <p class="hint">Direction-aware styling. Tick "Go back" or "Go forward" — the outgoing page slides in opposite directions.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="vt-t1" class="trigger" />
+          <label for="vt-t1" class="run-btn">Go back</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-snap vt-old-snap">out</div>
+          </div>
+          <p class="cap">:active-view-transition-type(back) — the back-navigation transition</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="vt-t2" class="trigger" />
+          <label for="vt-t2" class="run-btn">Go forward</label>
+          <div class="vt-frame">
+            <div class="vt-page">page</div>
+            <div class="vt-snap vt-old-snap">out</div>
+          </div>
+          <p class="cap">:active-view-transition-type(forward) — the forward transition</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Nested &amp; Group View Transitions</h2>
+      <p class="code">view-transition-name: card; ::view-transition-group(&lt;name&gt;)</p>
+      <p class="hint">Naming a child element separately creates nested groups. Tick "Run" — the named child animates inside its parent card group.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="vt-nd1" class="trigger" />
+          <label for="vt-nd1" class="run-btn">Run</label>
+          <div class="vt-frame">
+            <div class="vt-nest">
+              <div class="vt-nest-img"></div>
+              <div class="vt-nest-txt">card</div>
+            </div>
+          </div>
+          <p class="cap">Name child separately — card-image animates inside its card group</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="vt-nd2" class="trigger" />
+          <label for="vt-nd2" class="run-btn">Run</label>
+          <div class="vt-frame">
+            <div class="vt-nest">
+              <div class="vt-nest-img"></div>
+              <div class="vt-nest-txt">card</div>
+            </div>
+          </div>
+          <p class="cap">Animate the child group inside the parent snapshot</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Cross-document View Transitions</h2>
+      <p class="code">@view-transition { navigation: auto; } + view-transition-name: title</p>
+      <p class="hint">Same-origin page loads animate when navigation is enabled and a shared element is named. Tick each "Load" to simulate a reload.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="vt-cd1" class="trigger" />
+          <label for="vt-cd1" class="run-btn">Load</label>
+          <div class="vt-frame">
+            <div class="vt-title">Home</div>
+          </div>
+          <p class="cap">navigation: auto — enable transitions for navigation</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="vt-cd2" class="trigger" />
+          <label for="vt-cd2" class="run-btn">Load</label>
+          <div class="vt-frame">
+            <div class="vt-title">Home</div>
+          </div>
+          <p class="cap">navigation: same-document — same-document navigations only</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="vt-cd3" class="trigger" />
+          <label for="vt-cd3" class="run-btn">Load</label>
+          <div class="vt-frame">
+            <div class="vt-title">Home</div>
+          </div>
+          <p class="cap">navigation: none — disable transitions</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="vt-cd4" class="trigger" />
+          <label for="vt-cd4" class="run-btn">Load</label>
+          <div class="vt-frame">
+            <div class="vt-title vt-title-named">Home</div>
+          </div>
+          <p class="cap">view-transition-name: title — shared element morphs between docs</p>
+        </div>
+      </div>
+      <p class="note">Cross-document transitions need the View Transition API (Chrome/Edge 111+, Safari 18+). @view-transition only takes effect during real same-origin navigations; the checkboxes above simulate the CSS.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../15-pseudo-elements-cutting-edge/index.html">&larr; Cutting-edge Pseudo-elements</a>
+  <a class="pager-btn pager-next" href="../17-scrollbar-styling/index.html">Scrollbar Styling &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

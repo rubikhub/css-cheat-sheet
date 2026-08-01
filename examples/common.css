@@ -1,3 +1,9 @@
+/* ============================================================
+   Shared design system — used by every CSS Cheat Sheet example.
+   Load first: <link rel="stylesheet" href="../../common.css" />
+   Each example only adds topic-specific rules in its style.css.
+   ============================================================ */
+
 *,
 *::before,
 *::after {
@@ -5,30 +11,275 @@
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
-  max-width: 900px;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 20px;
-  color: #333;
+  padding: 24px 20px 60px;
+  color: #1f2937;
+  background: #f8fafc;
+  line-height: 1.5;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 700;
-  border-bottom: 3px solid #2c3e50;
+  margin: 0 0 20px;
   padding-bottom: 10px;
-}
-
-section {
-  margin-bottom: 30px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #0f172a;
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 0 0 4px;
+}
+
+h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
   color: #475569;
+  margin: 0 0 8px;
+}
+
+section {
+  margin-bottom: 26px;
+  padding: 18px 20px 20px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+/* --- value / selector label (monospace badge) --- */
+.code {
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 2px 8px;
+  font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
+  font-size: 0.8rem;
+  color: #0f766e;
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 5px;
+}
+
+code,
+.val {
+  font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
+  font-size: 0.82em;
+  background: #f1f5f9;
+  padding: 1px 5px;
+  border-radius: 4px;
+  color: #0f172a;
+}
+
+/* --- demo grid --- */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 90px;
+  max-width: 220px;
+}
+
+.cap {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #64748b;
+  text-align: center;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+/* --- standard demo box --- */
+.demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 130px;
+  height: 100px;
+  padding: 8px;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* demo box palette (add alongside .demo or .swatch) */
+.demo-blue   { background: #3b82f6; }
+.demo-green  { background: #10b981; }
+.demo-red    { background: #ef4444; }
+.demo-amber  { background: #f59e0b; }
+.demo-purple { background: #8b5cf6; }
+.demo-teal   { background: #14b8a6; }
+.demo-slate  { background: #64748b; }
+.demo-pink   { background: #ec4899; }
+.demo-cyan   { background: #06b6d4; }
+.demo-orange { background: #f97316; }
+.demo-indigo { background: #6366f1; }
+.demo-lime   { background: #84cc16; }
+.demo-dark   { background: #1e293b; }
+
+/* --- color swatch --- */
+.swatch {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* --- callout / note --- */
+.note {
+  margin: 12px 0 0;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  color: #475569;
+  background: #f8fafc;
+  border-left: 3px solid #94a3b8;
+  border-radius: 0 6px 6px 0;
+}
+
+.hint {
   margin: 0 0 12px;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+}
+
+/* --- generic table for value demos --- */
+.demo-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 680px;
+  font-size: 0.85rem;
+}
+
+.demo-table th,
+.demo-table td {
+  border: 1px solid #e2e8f0;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.demo-table th {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.demo-table tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+/* --- floating prev / next pager (fixed on the viewport sides) --- */
+.pager {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  margin: 0;
+}
+
+.pager-btn {
+  position: absolute;
+  display: inline-block;
+  max-width: 30vw;
+  padding: 10px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #fff;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: auto;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.pager-btn:hover {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.pager-prev {
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pager-next {
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pager-back {
+  text-align: center;
+  margin: 14px 0 0;
+}
+
+.pager-all {
+  position: static;
+  max-width: none;
+  white-space: normal;
+  background: rgba(15, 23, 42, 0.7);
+}
+
+/* --- examples index page --- */
+.index-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+
+.index-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  font-size: 0.85rem;
+  color: #1f2937;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.index-link:hover {
+  border-color: #3b82f6;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.index-num {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  font-family: Consolas, "Cascadia Mono", "Courier New", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  background: #64748b;
+  border-radius: 6px;
 }

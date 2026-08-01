@@ -8,41 +8,228 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h1>Background Basics</h1>
+
     <section>
       <h2>background-color</h2>
-      <div class="card">Card with #f5f5f5</div>
-      <button class="button">Hover me (#0066cc)</button>
+      <p class="code">background-color: &lt;color&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bgc-trans">transparent</div>
+          <p class="cap">transparent — no color (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo" style="background: red">red</div>
+          <p class="cap">red — named color</p>
+        </div>
+        <div class="cell">
+          <div class="demo" style="background: currentColor; color: #14b8a6">currentColor</div>
+          <p class="cap">currentColor — matches text color</p>
+        </div>
+        <div class="cell">
+          <div class="demo" style="background: #ff5733">#ff5733</div>
+          <p class="cap">#ff5733 — hex color</p>
+        </div>
+        <div class="cell">
+          <div class="demo" style="background: #f00">#f00</div>
+          <p class="cap">#f00 — short hex</p>
+        </div>
+        <div class="cell">
+          <div class="demo" style="background: rgb(255, 0, 0)">rgb(255, 0, 0)</div>
+          <p class="cap">rgb(255, 0, 0) — RGB color</p>
+        </div>
+        <div class="cell">
+          <div class="demo" style="background: rgba(255, 0, 0, 0.5)">rgba(255, 0, 0, 0.5)</div>
+          <p class="cap">rgba(255, 0, 0, 0.5) — RGB with alpha</p>
+        </div>
+        <div class="cell">
+          <div class="demo" style="background: hsl(0, 100%, 50%)">hsl(0, 100%, 50%)</div>
+          <p class="cap">hsl(0, 100%, 50%) — HSL color</p>
+        </div>
+        <div class="cell">
+          <div class="demo" style="background: hsla(0, 100%, 50%, 0.5)">hsla(0, 100%, 50%, 0.5)</div>
+          <p class="cap">hsla(0, 100%, 50%, 0.5) — HSL with alpha</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (transparent) · revert · unset.</p>
     </section>
 
     <section>
       <h2>background-image</h2>
-      <div class="hero-img">hero.jpg background</div>
+      <p class="code">background-image: none | &lt;image&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bgi-none">none</div>
+          <p class="cap">none — no image (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgi-url">image</div>
+          <p class="cap">url('assets/…jpg') — local image, cover</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
     </section>
 
     <section>
       <h2>background-repeat</h2>
-      <div class="pattern">repeat</div>
-      <div class="no-tiling">no-repeat</div>
-      <div class="round">round</div>
-      <div class="space">round</div>
+      <p class="code">background-repeat: repeat | no-repeat | repeat-x | repeat-y | round | space</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bgrep bgrep-repeat">repeat</div>
+          <p class="cap">repeat — tile both directions (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgrep bgrep-norepeat">no-repeat</div>
+          <p class="cap">no-repeat — no tiling</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgrep bgrep-x">repeat-x</div>
+          <p class="cap">repeat-x — tile horizontally only</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgrep bgrep-y">repeat-y</div>
+          <p class="cap">repeat-y — tile vertically only</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgrep bgrep-round">round</div>
+          <p class="cap">round — tile and resize to fit</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgrep bgrep-space">space</div>
+          <p class="cap">space — tile with even spacing</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgrep bgrep-two">repeat space</div>
+          <p class="cap">repeat space — horizontal repeat, vertical space</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (repeat) · revert · unset.</p>
     </section>
 
     <section>
       <h2>background-size</h2>
-      <div class="hero-cover">cover</div>
-      <div class="contained">contain</div>
+      <p class="code">background-size: auto | cover | contain | &lt;length&gt; | &lt;percentage&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bgsz bgsz-auto">auto</div>
+          <p class="cap">auto — intrinsic size (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgsz bgsz-cover">cover</div>
+          <p class="cap">cover — scale to fill container</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgsz bgsz-contain">contain</div>
+          <p class="cap">contain — scale to fit inside</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgsz bgsz-200">200px</div>
+          <p class="cap">200px — fixed width</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgsz bgsz-200-100">200px 100px</div>
+          <p class="cap">200px 100px — fixed width and height</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgsz bgsz-50">50%</div>
+          <p class="cap">50% — percentage of container</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgsz bgsz-50-75">50% 75%</div>
+          <p class="cap">50% 75% — width and height percentages</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
     </section>
 
     <section>
       <h2>background-position</h2>
-      <div class="hero-position">center</div>
-      <div class="corner-accent">right 20px bottom 10px</div>
+      <p class="code">background-position: &lt;position&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bgpos bgpos-top">top</div>
+          <p class="cap">top — top edge</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgpos bgpos-bottom">bottom</div>
+          <p class="cap">bottom — bottom edge</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgpos bgpos-left">left</div>
+          <p class="cap">left — left edge</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgpos bgpos-right">right</div>
+          <p class="cap">right — right edge</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgpos bgpos-center">center</div>
+          <p class="cap">center — centered (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgpos bgpos-20px">20px</div>
+          <p class="cap">20px — x offset, y centered</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgpos bgpos-50">50%</div>
+          <p class="cap">50% — x at 50% (centered)</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgpos bgpos-top-right">top right</div>
+          <p class="cap">top right — keyword pair</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgpos bgpos-center-bottom">center bottom</div>
+          <p class="cap">center bottom — center horizontal, bottom vertical</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgpos bgpos-offset">right 10px bottom 20px</div>
+          <p class="cap">right 10px bottom 20px — precise positioning</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0% 0%) · revert · unset.</p>
     </section>
 
     <section>
-      <h2>background (shorthand)</h2>
-      <div class="hero-shorthand">url + center/cover no-repeat</div>
-      <div class="card-shorthand">#f5f5f5 url repeat</div>
+      <h2>background</h2>
+      <p class="code">background: &lt;bg-image&gt; &lt;position&gt; / &lt;size&gt; &lt;repeat&gt; &lt;attachment&gt; &lt;clip&gt; &lt;origin&gt; &lt;color&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bgsh-red">red</div>
+          <p class="cap">red — just color</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgsh-url">image</div>
+          <p class="cap">url('assets/…jpg') — just image (tiles by default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgsh-center">center</div>
+          <p class="cap">center — just position</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgsh-norepeat">no-repeat</div>
+          <p class="cap">no-repeat — just repeat</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgsh-fixed">fixed</div>
+          <p class="cap">fixed — image stays fixed while page scrolls</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgsh-multi">center no-repeat</div>
+          <p class="cap">url('assets/…jpg') center no-repeat — multiple values</p>
+        </div>
+        <div class="cell">
+          <div class="demo bgsh-full">full</div>
+          <p class="cap">red url('assets/…jpg') center/cover no-repeat — full shorthand</p>
+        </div>
+      </div>
+      <p class="hint">Scroll this page to see the "fixed" box keep its image still while the rest of the page moves.</p>
+      <p class="note">Global keywords also apply: inherit · initial (all sub-property defaults) · revert · unset.</p>
     </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../07-color-functions-basics/index.html">&larr; Color Functions Basics</a>
+  <a class="pager-btn pager-next" href="../09-typography-basics/index.html">Typography Basics &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
   </body>
 </html>

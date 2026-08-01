@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border Radius</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Border Radius</h1>
+
+    <section>
+      <h2>border-radius</h2>
+      <p class="code">border-radius: &lt;length&gt; | &lt;percentage&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo br-zero">0</div>
+          <p class="cap">0 — square corners (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo br-10">10px</div>
+          <p class="cap">10px — rounded</p>
+        </div>
+        <div class="cell">
+          <div class="demo br-50">50%</div>
+          <p class="cap">50% — circle</p>
+        </div>
+        <div class="cell">
+          <div class="demo br-two">10px 20px</div>
+          <p class="cap">10px 20px — two-value radii</p>
+        </div>
+        <div class="cell">
+          <div class="demo br-three">10px 20px 30px</div>
+          <p class="cap">10px 20px 30px — three-value radii</p>
+        </div>
+        <div class="cell">
+          <div class="demo br-four">10px 20px 30px 40px</div>
+          <p class="cap">10px 20px 30px 40px — all four corners</p>
+        </div>
+        <div class="cell">
+          <div class="demo br-pill">pill</div>
+          <p class="cap">50% on a wide box = pill</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>border-top-left-radius / border-top-right-radius</h2>
+      <p class="code">border-&lt;corner&gt;-radius: &lt;length&gt; | &lt;percentage&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo br-tl-tr">card top</div>
+          <p class="cap">top-left 20px, top-right 20px</p>
+        </div>
+        <div class="cell">
+          <div class="demo br-tl-half">50%</div>
+          <p class="cap">border-top-left-radius: 50%</p>
+        </div>
+        <div class="cell">
+          <div class="demo br-tr-ellipse">ellipse</div>
+          <p class="cap">top-right 10px 20px — h/v radii</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>border-bottom-left-radius / border-bottom-right-radius</h2>
+      <p class="code">border-&lt;corner&gt;-radius: &lt;length&gt; | &lt;percentage&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo br-bl-br">card bottom</div>
+          <p class="cap">bottom-left 20px, bottom-right 20px</p>
+        </div>
+        <div class="cell">
+          <div class="demo br-bl-half">50%</div>
+          <p class="cap">border-bottom-left-radius: 50%</p>
+        </div>
+        <div class="cell">
+          <div class="demo br-pill-bottom">pill</div>
+          <p class="cap">both bottom corners 50%</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>border-start-start-radius / border-end-end-radius</h2>
+      <p class="code">border-&lt;start|end&gt;-&lt;start|end&gt;-radius: &lt;length&gt; | &lt;percentage&gt;</p>
+      <p class="hint">Logical corners follow the writing direction — the same declarations flip between LTR and RTL.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo br-logical">LTR</div>
+          <p class="cap">start-start 16px, end-end 16px (LTR)</p>
+        </div>
+        <div class="cell">
+          <div class="demo br-logical rtl">RTL</div>
+          <p class="cap">same rules with direction: rtl</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>corner-shape</h2>
+      <p class="code">corner-shape: round | squircle | bevel | scoop | notch</p>
+      <p class="hint">Applied with border-radius: 24px. Unsupported browsers fall back to round corners (Chrome 136+).</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo cs-round">round</div>
+          <p class="cap">round — circular arcs (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo cs-squircle">squircle</div>
+          <p class="cap">squircle — superellipse</p>
+        </div>
+        <div class="cell">
+          <div class="demo cs-bevel">bevel</div>
+          <p class="cap">bevel — flat diagonal cut</p>
+        </div>
+        <div class="cell">
+          <div class="demo cs-scoop">scoop</div>
+          <p class="cap">scoop — inward scoop</p>
+        </div>
+        <div class="cell">
+          <div class="demo cs-notch">notch</div>
+          <p class="cap">notch — inward rectangle</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../09-outline/index.html">&larr; Outline</a>
+  <a class="pager-btn pager-next" href="../11-box-shadow/index.html">Box Shadows &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

@@ -1,0 +1,342 @@
+/* checkbox-hack trigger */
+.trigger {
+  display: none;
+}
+
+.run-btn {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.run-btn:active {
+  background: #dbeafe;
+}
+
+/* mini viewport frame + page */
+.vt-frame {
+  position: relative;
+  width: 150px;
+  height: 105px;
+  background: linear-gradient(135deg, #eef2ff, #f0fdfa);
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: box-shadow 0.3s ease;
+}
+
+.vt-page {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* snapshot element inside a frame */
+.vt-snap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 92px;
+  height: 60px;
+  margin: -30px 0 0 -46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  transition: all 0.35s ease;
+}
+
+/* ::view-transition */
+.vt-root {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(99 102 241 / 0.85);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#vt-r:checked ~ .vt-frame .vt-root {
+  opacity: 1;
+}
+
+/* ::view-transition-group() */
+.vt-group-hero {
+  background: linear-gradient(120deg, #8b5cf6, #ec4899);
+}
+
+.vt-group-page {
+  background: linear-gradient(120deg, #3b82f6, #14b8a6);
+}
+
+#vt-g1:checked ~ .vt-frame .vt-group-hero {
+  transform: translateX(40px) scale(1.15);
+  transition: transform 0.5s ease;
+}
+
+#vt-g2:checked ~ .vt-frame .vt-group-page {
+  transform: translateX(40px);
+  transition: transform 0.3s ease;
+}
+
+/* ::view-transition-image-pair() */
+.vt-old-snap {
+  background: linear-gradient(120deg, #f59e0b, #ef4444);
+}
+
+.vt-new-snap {
+  background: linear-gradient(120deg, #6366f1, #06b6d4);
+  opacity: 0;
+}
+
+#vt-p:checked ~ .vt-frame .vt-old-snap {
+  opacity: 0;
+}
+
+#vt-p:checked ~ .vt-frame .vt-new-snap {
+  opacity: 1;
+}
+
+/* ::view-transition-old() */
+#vt-o:checked ~ .vt-frame .vt-old-snap {
+  opacity: 0;
+}
+
+/* ::view-transition-new() */
+#vt-n:checked ~ .vt-frame .vt-new-snap {
+  opacity: 1;
+}
+
+/* @view-transition */
+.vt-b {
+  background: linear-gradient(120deg, #10b981, #06b6d4);
+  opacity: 0;
+}
+
+.vt-sec {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 92px;
+  height: 60px;
+  margin: -30px 0 0 -46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: linear-gradient(120deg, #6366f1, #a855f7);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#vt-nav1:checked ~ .vt-frame .vt-b {
+  opacity: 1;
+  transform: translateX(34px) scale(1.05);
+}
+
+#vt-nav2:checked ~ .vt-frame .vt-sec {
+  opacity: 1;
+}
+
+#vt-nav3:checked ~ .vt-frame .vt-b {
+  opacity: 1;
+  transition: none;
+}
+
+/* view-transition-name */
+.vt-noname {
+  background: linear-gradient(120deg, #94a3b8, #64748b);
+}
+
+.vt-hero-name {
+  background: linear-gradient(120deg, #8b5cf6, #ec4899);
+}
+
+#vt-n1:checked ~ .vt-frame .vt-noname {
+  transform: translateX(46px);
+  transition: none;
+}
+
+#vt-n2:checked ~ .vt-frame .vt-hero-name {
+  transform: translateX(46px) scale(1.2);
+}
+
+/* view-transition-class */
+.vt-mini {
+  position: absolute;
+  width: 36px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.vt-card-a {
+  left: 14px;
+  top: 16px;
+  background: #3b82f6;
+}
+
+.vt-card-b {
+  left: 58px;
+  top: 16px;
+  background: #10b981;
+}
+
+.vt-card-c {
+  left: 36px;
+  top: 50px;
+  background: #f59e0b;
+}
+
+.vt-no-class {
+  left: 57px;
+  top: 40px;
+  background: #64748b;
+}
+
+#vt-c1:checked ~ .vt-frame .vt-mini {
+  transform: translateY(26px) scale(1.1);
+  transition: transform 0.4s ease;
+}
+
+#vt-c2:checked ~ .vt-frame .vt-mini {
+  transform: translateY(26px);
+  transition: none;
+}
+
+/* :active-view-transition */
+#vt-a1:checked ~ .vt-frame {
+  box-shadow: 0 0 0 3px #6366f1;
+  cursor: progress;
+}
+
+.vt-shadow-snap {
+  background: linear-gradient(120deg, #06b6d4, #84cc16);
+}
+
+#vt-a2:checked ~ .vt-frame .vt-shadow-snap {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 16px rgb(15 23 42 / 0.35);
+}
+
+/* :active-view-transition-type() */
+#vt-t1:checked ~ .vt-frame .vt-old-snap {
+  transform: translateX(58px);
+  opacity: 0;
+}
+
+#vt-t2:checked ~ .vt-frame .vt-old-snap {
+  transform: translateX(-58px);
+  opacity: 0;
+}
+
+/* Nested & Group View Transitions */
+.vt-nest {
+  position: absolute;
+  left: 20px;
+  top: 16px;
+  width: 110px;
+  height: 74px;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.vt-nest-img {
+  height: 36px;
+  border-radius: 5px;
+  background: linear-gradient(120deg, #f59e0b, #ef4444);
+  transition: transform 0.4s ease;
+}
+
+.vt-nest-txt {
+  margin-top: 6px;
+  font-size: 0.6rem;
+  color: #64748b;
+  text-align: center;
+}
+
+#vt-nd1:checked ~ .vt-frame .vt-nest {
+  transform: translateY(12px) scale(1.06);
+}
+
+#vt-nd1:checked ~ .vt-frame .vt-nest-img {
+  transform: translateX(12px) scale(1.15);
+}
+
+#vt-nd2:checked ~ .vt-frame .vt-nest {
+  transform: translateY(12px) scale(1.06);
+}
+
+/* Cross-document View Transitions */
+.vt-title {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 22px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: #eef2ff;
+  color: #312e81;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-align: center;
+  transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.vt-title-named {
+  background: linear-gradient(120deg, #6366f1, #8b5cf6);
+  color: #fff;
+}
+
+#vt-cd1:checked ~ .vt-frame .vt-title {
+  transform: scale(1.12);
+  background: #dbeafe;
+}
+
+#vt-cd2:checked ~ .vt-frame .vt-title {
+  transform: scale(1.12);
+  background: #dbeafe;
+}
+
+#vt-cd3:checked ~ .vt-frame .vt-title {
+  transform: scale(1.12);
+  background: #dbeafe;
+  transition: none;
+}
+
+#vt-cd4:checked ~ .vt-frame .vt-title-named {
+  transform: translateX(18px) scale(1.15);
+}

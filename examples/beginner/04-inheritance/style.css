@@ -1,13 +1,130 @@
-.parent {
-  color: #0066cc;
-  font-size: 18px;
-  font-weight: bold;
+/* how inheritance works */
+.inh-parent {
+  width: 230px;
+  padding: 12px;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  color: #6366f1;
+}
+.inh-parent p {
+  margin: 6px 0 0;
+  background: #e0e7ff;
+  border-radius: 6px;
+  padding: 6px;
+}
+.inh-parent div {
+  margin: 6px 0 0;
+  background: #c7d2fe;
+  border-radius: 6px;
+  padding: 6px;
 }
 
-.component strong {
-  font-weight: inherit;
+/* which properties inherit? */
+.inh-inh,
+.inh-not {
+  width: 230px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+}
+.inh-inh {
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  color: #065f46;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+.inh-inh p {
+  margin: 6px 0 0;
+  background: #d1fae5;
+  border-radius: 6px;
+  padding: 6px;
+}
+.inh-not {
+  background: #fff1f2;
+  border: 1px solid #fda4af;
+  color: #881337;
+  border-width: 3px;
+  padding: 16px;
+}
+.inh-not p {
+  margin: 6px 0 0;
+  background: #fff;
+  border-radius: 6px;
+  padding: 6px;
 }
 
-.aside strong {
-  font-weight: initial;
+/* controlling inheritance */
+.inh-ctl,
+.inh-init,
+.inh-rev,
+.inh-uns,
+.inh-all {
+  width: 230px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: #334155;
 }
+.inh-ctl { font-weight: 400; }
+.inh-ctl strong { font-weight: inherit; }
+
+.inh-init { font-weight: 700; }
+.inh-init strong { font-weight: initial; }
+
+.inh-rev p {
+  padding: 2rem;
+  background: #fef3c7;
+  border-radius: 6px;
+}
+.inh-rev .revert-p { padding: revert; }
+
+.inh-uns { color: #6366f1; }
+.inh-uns .golden {
+  color: #b45309;
+  margin-top: 2em;
+  background: #fef3c7;
+  border-radius: 6px;
+  padding: 6px;
+}
+.inh-uns .unset-p {
+  color: unset;
+  margin: unset;
+  background: #eef2ff;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.inh-all { color: #6366f1; }
+.inh-all .styled-p {
+  color: #b45309;
+  font-weight: 700;
+  margin: 1em 0;
+  padding: 1em;
+  background: #fef3c7;
+  border-radius: 6px;
+}
+.inh-all .all-unset {
+  all: unset;
+  background: #eef2ff;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+/* practical example */
+.inh-prac {
+  width: 260px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.9rem;
+  color: #475569;
+}
+.inh-prac p { margin: 0; }

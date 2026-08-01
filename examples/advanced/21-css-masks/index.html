@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Masks</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>CSS Masks</h1>
+
+    <section>
+      <h2>mask-image</h2>
+      <p class="code">mask-image: &lt;image&gt; | none</p>
+      <p class="hint">Each box is revealed only where the mask is opaque — bright parts show the colorful stripes.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mask-demo mk-none"></div>
+          <p class="cap">none — no mask (default)</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mk-url"></div>
+          <p class="cap">url('mask.svg') — star mask via inline SVG data URI</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mk-linear"></div>
+          <p class="cap">linear-gradient(black 40%, transparent) — top stays, bottom fades</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mk-radial"></div>
+          <p class="cap">radial-gradient(circle, black 30%, transparent 70%) — soft disc</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>mask-mode</h2>
+      <p class="code">mask-mode: match-source | alpha | luminance</p>
+      <p class="hint">The same idea interpreted three ways — alpha reads transparency, luminance reads brightness.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mask-demo mm-match"></div>
+          <p class="cap">match-source — alpha for CSS images, luminance for SVG (default)</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mm-alpha"></div>
+          <p class="cap">alpha — masks by the alpha channel (soft-edged disc)</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mm-lum"></div>
+          <p class="cap">luminance — masks by brightness (white→black fade)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (match-source) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>mask-composite</h2>
+      <p class="code">mask-composite: add | subtract | intersect | exclude</p>
+      <p class="hint">A circle on the left and a square on the right overlap; the composite operator decides what stays visible.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mask-demo mc-mask mc-add"></div>
+          <p class="cap">add — layers overlaid (default)</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mc-mask mc-sub"></div>
+          <p class="cap">subtract — later layers cut out</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mc-mask mc-int"></div>
+          <p class="cap">intersect — keeps the overlapping area</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mc-mask mc-exc"></div>
+          <p class="cap">exclude — keeps non-overlapping areas</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (add) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>mask-size</h2>
+      <p class="code">mask-size: &lt;length&gt; | &lt;percentage&gt; | auto | cover | contain</p>
+      <p class="hint">One circle mask, five sizes — compare how cover clips edges while contain fits the whole circle.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mask-demo mk-sz-auto"></div>
+          <p class="cap">auto — natural mask size (100×100)</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mk-sz-cover"></div>
+          <p class="cap">cover — scales to cover the element (edges clipped)</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mk-sz-contain"></div>
+          <p class="cap">contain — scales to fit entirely</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mk-sz-50"></div>
+          <p class="cap">50% 50% — percentage sizing (65×50)</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mk-sz-len"></div>
+          <p class="cap">100px 200px — length sizing (stretched)</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (auto) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>mask-position</h2>
+      <p class="code">mask-position: &lt;position&gt;</p>
+      <p class="hint">A 40px mask circle moves around the 130×100 box.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="mask-demo mk-pos-center"></div>
+          <p class="cap">center — centered</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mk-pos-tl"></div>
+          <p class="cap">top left — pinned to the corner</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mk-pos-50"></div>
+          <p class="cap">50% 50% — percentage position (equal to center here)</p>
+        </div>
+        <div class="cell">
+          <div class="mask-demo mk-pos-off"></div>
+          <p class="cap">10px 20px — offset from the top-left corner</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (0% 0%) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../20-advanced-effects/index.html">&larr; Advanced Visual Effects</a>
+  <a class="pager-btn pager-next" href="../22-scroll-snap/index.html">Scroll Snap & Touch Interaction &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

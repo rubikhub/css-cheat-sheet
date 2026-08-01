@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Transforms</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>3D Transforms</h1>
+
+    <section>
+      <h2>transform-style</h2>
+      <p class="code">transform-style: flat | preserve-3d</p>
+      <p class="hint">Tick each "Rotate" — the flat stage flattens its z-offset child onto the plane, while preserve-3d keeps the child floating in front.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="ts1" class="trigger" />
+          <label for="ts1" class="run-btn">Rotate</label>
+          <div class="scene3d">
+            <div class="stage3d st-flat">
+              <div class="face3d">front</div>
+              <div class="face3d z">z</div>
+            </div>
+          </div>
+          <p class="cap">flat — children flattened onto the element's plane (default)</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="ts2" class="trigger" />
+          <label for="ts2" class="run-btn">Rotate</label>
+          <div class="scene3d">
+            <div class="stage3d st-preserve">
+              <div class="face3d">front</div>
+              <div class="face3d z">z</div>
+            </div>
+          </div>
+          <p class="cap">preserve-3d — children kept in 3D space</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (flat) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>perspective</h2>
+      <p class="code">perspective: &lt;length&gt; | none</p>
+      <p class="hint">Each scene rotates the same box to the same angle — only the viewer distance changes. Tick a "Rotate" to compare.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="pe1" class="trigger" />
+          <label for="pe1" class="run-btn">Rotate</label>
+          <div class="scene3d pe-none">
+            <div class="pe-box">none</div>
+          </div>
+          <p class="cap">none — no perspective (default)</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="pe2" class="trigger" />
+          <label for="pe2" class="run-btn">Rotate</label>
+          <div class="scene3d pe-500">
+            <div class="pe-box">500px</div>
+          </div>
+          <p class="cap">500px — short distance, strong depth</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="pe3" class="trigger" />
+          <label for="pe3" class="run-btn">Rotate</label>
+          <div class="scene3d pe-1000">
+            <div class="pe-box">1000px</div>
+          </div>
+          <p class="cap">1000px — long distance, subtle depth</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="pe4" class="trigger" />
+          <label for="pe4" class="run-btn">Rotate</label>
+          <div class="scene3d pe-20em">
+            <div class="pe-box">20em</div>
+          </div>
+          <p class="cap">20em — relative length distance</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>backface-visibility</h2>
+      <p class="code">backface-visibility: visible | hidden</p>
+      <p class="hint">Flip each card with its "Flip" — visible shows the mirrored front through the card, hidden swaps cleanly to the back face.</p>
+      <div class="row">
+        <div class="cell">
+          <input type="checkbox" id="bf1" class="trigger" />
+          <label for="bf1" class="run-btn">Flip</label>
+          <div class="scene3d">
+            <div class="flip">
+              <div class="face3d bf-front bfv">front</div>
+              <div class="face3d bf-back bfv">back</div>
+            </div>
+          </div>
+          <p class="cap">visible — back face visible when rotated (default)</p>
+        </div>
+        <div class="cell">
+          <input type="checkbox" id="bf2" class="trigger" />
+          <label for="bf2" class="run-btn">Flip</label>
+          <div class="scene3d">
+            <div class="flip">
+              <div class="face3d bf-front bfh">front</div>
+              <div class="face3d bf-back bfh">back</div>
+            </div>
+          </div>
+          <p class="cap">hidden — back face hidden when rotated</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (visible) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../17-scrollbar-styling/index.html">&larr; Scrollbar Styling</a>
+  <a class="pager-btn pager-next" href="../19-animation-fill-and-play-state/index.html">Animation — Direction, Fill & Play &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

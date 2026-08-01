@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Container &amp; Modern Units</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Container &amp; Modern Units</h1>
+
+    <section>
+      <h2>Container Query Units — cqw / cqh / cqi</h2>
+      <p class="code">container-type: inline-size · font-size: 4cqi</p>
+      <p class="hint">The two cards below sit in containers of different widths. Their font sizes scale with the container, not the viewport — resize the window.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="cq-card cq-wide">
+            <p class="cq-title">Wide card</p>
+            <p class="cq-body">font-size: 4cqi on the title scales with this card's width.</p>
+          </div>
+          <p class="cap">container ~600px → title uses cqi of its own container</p>
+        </div>
+        <div class="cell">
+          <div class="cq-card cq-narrow">
+            <p class="cq-title">Narrow card</p>
+            <p class="cq-body">The same 4cqi is smaller here because this container is narrower.</p>
+          </div>
+          <p class="cap">narrower container → smaller cqi-scaled text</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>cqmin / cqmax — Shape-Safe Scaling</h2>
+      <p class="code">width: 30cqmin · height: 30cqmin</p>
+      <p class="hint">A square sized with cqmin fits inside its container no matter the shape — it tracks the smaller container axis.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="cq-shape">30cqmin</div>
+          <p class="cap">width &amp; height: 30cqmin — fits any container shape</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>ic — Ideographic Character</h2>
+      <p class="code">max-width: 16ic</p>
+      <p class="hint">The CJK paragraph is capped at 16 full-width characters per line using ic.</p>
+      <div class="cjk-box">これはアイデオグラフ文字幅のデモです。十六文字で折り返します。</div>
+      <p class="cap">max-width: 16ic — 16 full-width characters per line</p>
+    </section>
+
+    <section>
+      <h2>cap — Cap Height</h2>
+      <p class="code">border-bottom: 0.15cap solid</p>
+      <p class="hint">The underline thickness is a fraction of the capital-letter height, so it stays proportional as the font size changes.</p>
+      <div class="cap-box">CAP</div>
+      <p class="cap">border-bottom: 0.15cap — proportional to uppercase height</p>
+    </section>
+
+    <section>
+      <h2>Fallback with clamp()</h2>
+      <p class="code">font-size: clamp(1rem, 4cqi, 2rem)</p>
+      <p class="hint">In browsers without container query unit support, the value falls back to the nearest supported clamp baseline.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="cq-card cq-clamp">
+            <p class="cq-title">Clamped</p>
+            <p class="cq-body">clamp(1rem, 4cqi, 2rem) — safe minimum and maximum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../32-css-2026-and-beyond/index.html">&larr; CSS 2026 & Beyond</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

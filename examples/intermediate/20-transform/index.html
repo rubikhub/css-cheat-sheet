@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Transform</h1>
+
+    <section>
+      <h2>transform</h2>
+      <p class="code">transform: &lt;transform-list&gt; | none</p>
+      <p class="hint">Hover each box to apply its transform.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo tf-none">none</div>
+          <p class="cap">none — no transform (default); hover straightens the tilt</p>
+        </div>
+        <div class="cell">
+          <div class="demo tf-rotate">rotate</div>
+          <p class="cap">rotate(45deg) — rotates the element</p>
+        </div>
+        <div class="cell">
+          <div class="demo tf-scale">scale</div>
+          <p class="cap">scale(2) — resizes the element</p>
+        </div>
+        <div class="cell">
+          <div class="demo tf-skew">skew</div>
+          <p class="cap">skew(20deg) — skews the element</p>
+        </div>
+        <div class="cell">
+          <div class="demo tf-translate">move</div>
+          <p class="cap">translate(100px, 50px) — moves the element</p>
+        </div>
+        <div class="cell">
+          <div class="demo tf-3d">3D</div>
+          <p class="cap">perspective(500px) rotateX(45deg) — 3D rotation with perspective</p>
+        </div>
+        <div class="cell">
+          <div class="demo tf-combo">combo</div>
+          <p class="cap">rotate(45deg) scale(1.5) — multiple transforms combined</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>transform-origin</h2>
+      <p class="code">transform-origin: &lt;position&gt;</p>
+      <p class="hint">Hover — the same 35° rotation pivots around each origin.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo to-center">center</div>
+          <p class="cap">center — center of the element (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo to-topleft">top left</div>
+          <p class="cap">top left — top-left corner</p>
+        </div>
+        <div class="cell">
+          <div class="demo to-bottomright">bottom right</div>
+          <p class="cap">bottom right — bottom-right corner</p>
+        </div>
+        <div class="cell">
+          <div class="demo to-offset">offset</div>
+          <p class="cap">100px 50px — fixed offset point</p>
+        </div>
+        <div class="cell">
+          <div class="demo to-pct">50% 50%</div>
+          <p class="cap">50% 50% — percentage point</p>
+        </div>
+        <div class="cell">
+          <div class="demo to-3d">3D</div>
+          <p class="cap">50% 50% 100px — 3D origin with z-offset</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (50% 50% 0) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>transform-box</h2>
+      <p class="code">transform-box: content-box | border-box | fill-box | stroke-box | view-box</p>
+      <p class="hint">SVG only — picks the reference box for transform-origin; hover rotates each rect from its top-left.</p>
+      <div class="row">
+        <div class="cell">
+          <svg class="tbx-stage" viewBox="0 0 120 100" width="120" height="100" aria-hidden="true">
+            <rect class="tbx-rect tbx-content" x="22" y="18" width="70" height="50" rx="6" />
+          </svg>
+          <p class="cap">content-box — content box as reference</p>
+        </div>
+        <div class="cell">
+          <svg class="tbx-stage" viewBox="0 0 120 100" width="120" height="100" aria-hidden="true">
+            <rect class="tbx-rect tbx-border" x="22" y="18" width="70" height="50" rx="6" />
+          </svg>
+          <p class="cap">border-box — border box as reference (default)</p>
+        </div>
+        <div class="cell">
+          <svg class="tbx-stage" viewBox="0 0 120 100" width="120" height="100" aria-hidden="true">
+            <rect class="tbx-rect tbx-fill" x="22" y="18" width="70" height="50" rx="6" />
+          </svg>
+          <p class="cap">fill-box — object bounding box as reference</p>
+        </div>
+        <div class="cell">
+          <svg class="tbx-stage" viewBox="0 0 120 100" width="120" height="100" aria-hidden="true">
+            <rect class="tbx-rect tbx-stroke" x="22" y="18" width="70" height="50" rx="6" />
+          </svg>
+          <p class="cap">stroke-box — stroke bounding box as reference</p>
+        </div>
+        <div class="cell">
+          <svg class="tbx-stage" viewBox="0 0 120 100" width="120" height="100" aria-hidden="true">
+            <rect class="tbx-rect tbx-view" x="22" y="18" width="70" height="50" rx="6" />
+          </svg>
+          <p class="cap">view-box — nearest SVG viewport as reference</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (border-box) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>perspective</h2>
+      <p class="code">perspective: none | &lt;length&gt;</p>
+      <p class="hint">Hover — shorter lengths give stronger depth on the same rotateX(45°).</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo per-stage"><span class="per-card">X</span></div>
+          <p class="cap">none — no perspective (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo per-stage per-200"><span class="per-card">X</span></div>
+          <p class="cap">200px — strong perspective</p>
+        </div>
+        <div class="cell">
+          <div class="demo per-stage per-500"><span class="per-card">X</span></div>
+          <p class="cap">500px — moderate perspective</p>
+        </div>
+        <div class="cell">
+          <div class="demo per-stage per-1000"><span class="per-card">X</span></div>
+          <p class="cap">1000px — subtle perspective</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>perspective-origin</h2>
+      <p class="code">perspective-origin: &lt;position&gt;</p>
+      <p class="hint">Hover — the vanishing point shifts while the card rotates in 3D.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo po-stage po-50"><span class="po-card">Y</span></div>
+          <p class="cap">50% 50% — center vanishing point (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo po-stage po-00"><span class="po-card">Y</span></div>
+          <p class="cap">0 0 — top-left vanishing point</p>
+        </div>
+        <div class="cell">
+          <div class="demo po-stage po-100"><span class="po-card">Y</span></div>
+          <p class="cap">100% 100% — bottom-right vanishing point</p>
+        </div>
+        <div class="cell">
+          <div class="demo po-stage po-top"><span class="po-card">Y</span></div>
+          <p class="cap">center top — keyword position</p>
+        </div>
+        <div class="cell">
+          <div class="demo po-stage po-offset"><span class="po-card">Y</span></div>
+          <p class="cap">200px 100px — fixed offset position</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (50% 50%) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>backface-visibility</h2>
+      <p class="code">backface-visibility: visible | hidden</p>
+      <p class="hint">Hover — both flip 180°; visible shows the mirrored back, hidden goes blank.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="demo bv-visible">back</div>
+          <p class="cap">visible — back face shown (default)</p>
+        </div>
+        <div class="cell">
+          <div class="demo bv-hidden">back</div>
+          <p class="cap">hidden — back face hidden</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (visible) · revert · unset.</p>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../19-transition-advanced/index.html">&larr; Transition Advanced</a>
+  <a class="pager-btn pager-next" href="../21-transform-functions/index.html">Transform Functions &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>

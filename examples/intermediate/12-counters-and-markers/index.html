@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counters &amp; Markers</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Counters &amp; Markers</h1>
+
+    <section>
+      <h2>counter-reset</h2>
+      <p class="code">counter-reset: &lt;name&gt; &lt;integer&gt; | none</p>
+      <p class="hint">Each chip shows the value of the counter it creates or resets.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="cchip cr-none"><span class="num"></span></div>
+          <p class="cap">none — no counter reset</p>
+        </div>
+        <div class="cell">
+          <div class="cchip cr-0a"><span class="num"></span></div>
+          <p class="cap">myCounter — create counter at 0</p>
+        </div>
+        <div class="cell">
+          <div class="cchip cr-0b"><span class="num"></span></div>
+          <p class="cap">myCounter 0 — create counter at 0</p>
+        </div>
+        <div class="cell">
+          <div class="cchip cr-10"><span class="num"></span></div>
+          <p class="cap">myCounter 10 — create counter at 10</p>
+        </div>
+        <div class="cell">
+          <div class="cchip cr-m1"><span class="num"></span></div>
+          <p class="cap">myCounter -1 — create counter at -1</p>
+        </div>
+        <div class="cell">
+          <div class="cchip cr-multi"><span class="num"></span>/<span class="num2"></span></div>
+          <p class="cap">myCounter 0 anotherCounter 0 — reset multiple</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>counter-increment</h2>
+      <p class="code">counter-increment: &lt;name&gt; &lt;integer&gt; | none</p>
+      <p class="hint">Each box shows the counter value after three successive increments.</p>
+      <div class="row">
+        <div class="cell">
+          <div class="cinc ci-none"><span></span><span></span><span></span></div>
+          <p class="cap">none — no increment (values stay 0)</p>
+        </div>
+        <div class="cell">
+          <div class="cinc ci1"><span></span><span></span><span></span></div>
+          <p class="cap">myCounter — increment by 1</p>
+        </div>
+        <div class="cell">
+          <div class="cinc ci1b"><span></span><span></span><span></span></div>
+          <p class="cap">myCounter 1 — increment by 1</p>
+        </div>
+        <div class="cell">
+          <div class="cinc ci2"><span></span><span></span><span></span></div>
+          <p class="cap">myCounter 2 — increment by 2</p>
+        </div>
+        <div class="cell">
+          <div class="cinc cim1"><span></span><span></span><span></span></div>
+          <p class="cap">myCounter -1 — decrement by 1</p>
+        </div>
+        <div class="cell">
+          <div class="cinc ci05"><span></span><span></span><span></span></div>
+          <p class="cap">myCounter 0.5 — increment by 0.5</p>
+        </div>
+        <div class="cell">
+          <div class="cinc cimulti"><span></span><span></span><span></span></div>
+          <p class="cap">myCounter anotherCounter — increment multiple</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (none) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>counter()</h2>
+      <p class="code">content: counter(&lt;name&gt;) | counter(&lt;name&gt;, &lt;list-style-type&gt;)</p>
+      <div class="row">
+        <div class="cell">
+          <ol class="cnt cnt-plain">
+            <li>alpha</li>
+            <li>beta</li>
+            <li>gamma</li>
+          </ol>
+          <p class="cap">counter(myCounter) — plain decimal</p>
+        </div>
+        <div class="cell">
+          <ol class="cnt cnt-decimal">
+            <li>alpha</li>
+            <li>beta</li>
+            <li>gamma</li>
+          </ol>
+          <p class="cap">counter(myCounter, decimal)</p>
+        </div>
+        <div class="cell">
+          <ol class="cnt cnt-dcl">
+            <li>alpha</li>
+            <li>beta</li>
+            <li>gamma</li>
+          </ol>
+          <p class="cap">decimal-leading-zero — padded numbers</p>
+        </div>
+        <div class="cell">
+          <ol class="cnt cnt-lroman">
+            <li>alpha</li>
+            <li>beta</li>
+            <li>gamma</li>
+          </ol>
+          <p class="cap">lower-roman — lowercase roman</p>
+        </div>
+        <div class="cell">
+          <ol class="cnt cnt-uroman">
+            <li>alpha</li>
+            <li>beta</li>
+            <li>gamma</li>
+          </ol>
+          <p class="cap">upper-roman — uppercase roman</p>
+        </div>
+        <div class="cell">
+          <ol class="cnt cnt-lalpha">
+            <li>alpha</li>
+            <li>beta</li>
+            <li>gamma</li>
+          </ol>
+          <p class="cap">lower-alpha — lowercase letters</p>
+        </div>
+        <div class="cell">
+          <ol class="cnt cnt-ualpha">
+            <li>alpha</li>
+            <li>beta</li>
+            <li>gamma</li>
+          </ol>
+          <p class="cap">upper-alpha — uppercase letters</p>
+        </div>
+        <div class="cell">
+          <ol class="nest">
+            <li>intro
+              <ol>
+                <li>setup</li>
+                <li>details</li>
+              </ol>
+            </li>
+            <li>outro</li>
+          </ol>
+          <p class="cap">counter(parent) "." counter(child) — nested</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>counters()</h2>
+      <p class="code">content: counters(&lt;name&gt;, &lt;separator&gt;) | counters(&lt;name&gt;, &lt;separator&gt;, &lt;list-style-type&gt;)</p>
+      <p class="hint">Each nested list joins every level's value with its separator.</p>
+      <div class="row">
+        <div class="cell">
+          <ol class="ctrs ctrs-dot">
+            <li>top
+              <ol>
+                <li>mid
+                  <ol>
+                    <li>leaf</li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+          </ol>
+          <p class="cap">counters(myCounter, ".") — joined by dots</p>
+        </div>
+        <div class="cell">
+          <ol class="ctrs ctrs-arrow">
+            <li>top
+              <ol>
+                <li>mid
+                  <ol>
+                    <li>leaf</li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+          </ol>
+          <p class="cap">counters(myCounter, " &gt; ") — joined by arrows</p>
+        </div>
+        <div class="cell">
+          <ol class="ctrs ctrs-dash">
+            <li>top
+              <ol>
+                <li>mid
+                  <ol>
+                    <li>leaf</li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+          </ol>
+          <p class="cap">counters(myCounter, " - ") — joined by dashes</p>
+        </div>
+        <div class="cell">
+          <ol class="ctrs ctrs-empty">
+            <li>top
+              <ol>
+                <li>mid
+                  <ol>
+                    <li>leaf</li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+          </ol>
+          <p class="cap">counters(myCounter, "", decimal) — empty separator</p>
+        </div>
+        <div class="cell">
+          <ol class="ctrs ctrs-section">
+            <li>top
+              <ol>
+                <li>mid
+                  <ol>
+                    <li>leaf</li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+          </ol>
+          <p class="cap">counters(section, ".") — section tree</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>list-style-type</h2>
+      <p class="code">list-style-type: disc | circle | square | none | decimal | lower-roman | upper-roman | &lt;string&gt;</p>
+      <div class="row">
+        <div class="cell">
+          <ul class="lst ls-disc">
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+          </ul>
+          <p class="cap">disc — filled circle (default)</p>
+        </div>
+        <div class="cell">
+          <ul class="lst ls-circle">
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+          </ul>
+          <p class="cap">circle — hollow circle</p>
+        </div>
+        <div class="cell">
+          <ul class="lst ls-square">
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+          </ul>
+          <p class="cap">square — filled square</p>
+        </div>
+        <div class="cell">
+          <ul class="lst ls-none">
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+          </ul>
+          <p class="cap">none — no marker</p>
+        </div>
+        <div class="cell">
+          <ul class="lst ls-dopen">
+            <li>expanded</li>
+            <li>item</li>
+          </ul>
+          <p class="cap">disclosure-open — expanded triangle</p>
+        </div>
+        <div class="cell">
+          <ul class="lst ls-dclosed">
+            <li>collapsed</li>
+            <li>item</li>
+          </ul>
+          <p class="cap">disclosure-closed — collapsed triangle</p>
+        </div>
+        <div class="cell">
+          <ul class="lst ls-str">
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+          </ul>
+          <p class="cap">"→" — custom string marker</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <ol class="lso lso-decimal">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">decimal — 1, 2, 3</p>
+        </div>
+        <div class="cell">
+          <ol class="lso lso-dcl">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">decimal-leading-zero — 01, 02, 03</p>
+        </div>
+        <div class="cell">
+          <ol class="lso lso-lroman">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">lower-roman — i, ii, iii</p>
+        </div>
+        <div class="cell">
+          <ol class="lso lso-uroman">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">upper-roman — I, II, III</p>
+        </div>
+        <div class="cell">
+          <ol class="lso lso-lalpha">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">lower-alpha — a, b, c</p>
+        </div>
+        <div class="cell">
+          <ol class="lso lso-ualpha">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">upper-alpha — A, B, C</p>
+        </div>
+        <div class="cell">
+          <ol class="lso lso-lgreek">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">lower-greek — greek letters</p>
+        </div>
+        <div class="cell">
+          <ol class="lso lso-llatin">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">lower-latin — lowercase latin</p>
+        </div>
+        <div class="cell">
+          <ol class="lso lso-ulatin">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">upper-latin — uppercase latin</p>
+        </div>
+        <div class="cell">
+          <ol class="lso lso-hebrew">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">hebrew — hebrew numerals</p>
+        </div>
+        <div class="cell">
+          <ol class="lso lso-cjk">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">cjk-ideographic — CJK numerals</p>
+        </div>
+        <div class="cell">
+          <ol class="lso lso-hiragana">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">hiragana — hiragana characters</p>
+        </div>
+        <div class="cell">
+          <ol class="lso lso-katakana">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ol>
+          <p class="cap">katakana — katakana characters</p>
+        </div>
+      </div>
+      <p class="note">Global keywords also apply: inherit · initial (disc) · revert · unset.</p>
+    </section>
+
+    <section>
+      <h2>::marker</h2>
+      <p class="code">::marker</p>
+      <p class="hint">::marker supports color, font-*, text-align, white-space, and content.</p>
+      <div class="row">
+        <div class="cell">
+          <ul class="mk mk-color">
+            <li>first</li>
+            <li>second</li>
+            <li>third</li>
+          </ul>
+          <p class="cap">::marker — color, font-weight, font-size</p>
+        </div>
+        <div class="cell">
+          <ul class="mk mk-content">
+            <li>done</li>
+            <li>done</li>
+            <li>pending</li>
+          </ul>
+          <p class="cap">::marker content — replace marker with "✓"</p>
+        </div>
+      </div>
+    </section>
+<nav class="pager">
+  <a class="pager-btn pager-prev" href="../11-box-shadow/index.html">&larr; Box Shadows</a>
+  <a class="pager-btn pager-next" href="../13-flexbox-advanced/index.html">Flexbox Advanced &rarr;</a>
+</nav>
+<p class="pager-back"><a class="pager-btn pager-all" href="../../index.html">All Examples</a></p>
+  </body>
+</html>
